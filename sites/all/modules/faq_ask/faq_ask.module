@@ -579,8 +579,10 @@ function faq_ask_node_delete($node) {
 function _faq_ask_get_terms($data) {
 
   $category = array();
+  $node = $data; //we need the original node data for the field_language retrieval later
   $vocabs = variable_get('faq_ask_vocabularies', 0);
-  $language = is_object($data)?$data->language:$data['language'];
+  //$language = is_object($data)?$data->language:$data['language'];
+  //$the node language property cannot be assumed to be the same as the field language property
 
   if (is_object($data))
     $data = (array)$data;
@@ -595,12 +597,12 @@ function _faq_ask_get_terms($data) {
 
   // Parse through all tagging fields in use
   foreach ($fields as $field_name => $field_details) {
-
+    $field_language = field_language('node', $node, 'field_faq');
     // If we have terms defined
-    if (isset($data[$field_name][$language])) {
+    if (isset($data[$field_name][$field_language])) {
 
       // Cycle through terms
-      foreach ($data[$field_name][$language] as $term) {
+      foreach ($data[$field_name][$field_language] as $term) {
 
         // If there is a term tid defined and it is an int
         if (isset($term['tid']) && is_int((int)$term['tid'])) {
@@ -2200,4 +2202,3 @@ function _faq_ask_get_term_field_name($node) {
   }
   return $fields;
 }
-

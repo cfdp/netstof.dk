@@ -8,3 +8,4 @@ sites/*/private
 sites/all/modules/maillog/*
 sites/all/modules/devel/*
 sites/all/modules/devel_themer/*
+sites/all/modules/git_deploy/*
