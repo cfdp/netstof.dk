@@ -204,7 +204,29 @@ tr .ajax-progress .throbber {
 }
 
 /**
- * RIGHT SIDE
+ * RIGHT SIDEBAR
+ */
+.region-sidebar-first {
+
+}
+	.region-sidebar-first section.block {
+	}
+	.region-sidebar-first section.block .block-inner {
+		padding: 30px 23px;
+		background: #FFFFFF;
+	}
+	.region-sidebar-first section.block h2.block-title {
+		color: #424242;
+		font-size: 25px; line-height: 25px;
+		margin-bottom: 25px;
+		font-weight: normal;
+	}
+	.region-sidebar-first section.block .block-content {
+		font-size: 11px; line-height: 13px;
+		color: #404040;
+	}
+/**
+ * RIGHT SIDE - fixed entrances
  */
 #right-side {
 	position: fixed;
@@ -235,3 +257,46 @@ tr .ajax-progress .throbber {
 	right: 0;
 	top: -100px;
 }
+
+/**
+ * FOOTER TOP
+ */
+.region-footer-top {
+}
+	.region-footer-top .block {
+		color: #FFFFFF;
+		font-size: 13px; line-height: 15px;
+		margin-bottom: 60px;
+	}
+	.region-footer-top .block-first {
+		width: 50%;
+		float: left;
+		text-transform: uppercase;
+	}
+	.region-footer-top .block-last {
+		width: 50%;
+		float: left;
+	}
+		.region-footer-top .block p {
+			margin-bottom: 0;
+		}
+/**
+ * FOOTER
+ */
+.region-footer {
+
+}
+	.region-footer section {
+		float: left;
+		width: 294px;
+		margin-right: 23px;
+	}
+	.region-footer .block-title {
+		font-size: 20px;
+		margin-bottom: 18px;
+		text-transform: uppercase;
+		font-weight: normal;
+	}
+	.region-footer section.block-last {
+		margin: 0;
+	}

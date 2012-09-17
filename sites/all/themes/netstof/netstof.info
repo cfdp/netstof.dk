@@ -19,6 +19,7 @@
   stylesheets[screen][] = css/blocks.css
   stylesheets[screen][] = css/views.css
   stylesheets[screen][] = css/nodes.css
+  stylesheets[screen][] = css/navigation.css
   stylesheets[screen][] = css/niels.css
 
   ; Print - uncomment to load basic print styles.
@@ -87,7 +88,9 @@
   regions[content]           = Main Content
   regions[leftcontent]       = Left Content
   regions[content_front]     = Front Page Content
+  regions[footer_top]            = Footer Top
   regions[footer]            = Footer
+  regions[footer_btm]            = Footer Bottom
   regions[header]            = Header
   regions[help]              = Help
   regions[featured]     	 	 = Featured

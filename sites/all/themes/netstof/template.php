@@ -93,6 +93,7 @@ function netstof_process_block(&$vars) {
 }
 // */
 
+/*
 function netstof_menu_link(array $variables) {
   $element = $variables['element'];
   $sub_menu = '';
@@ -109,5 +110,57 @@ function netstof_menu_link(array $variables) {
 	  
 	  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
 	  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+  }
+}
+*/
+
+function netstof_menu_link(array $variables) {
+
+  $element = $variables['element'];
+  $sub_menu = '';
+  
+  if($element["#bid"]["delta"]==2) {
+	  if ($element['#below']) {
+	    $sub_menu = drupal_render($element['#below']);
+	  }
+	  
+	  $desc = (isset($element["#localized_options"]["attributes"]["title"]) ? $element["#localized_options"]["attributes"]["title"] : null);
+	  //$icon = $element["#localized_options"]["menu_icon"]["path"];
+	  
+	  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+	  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . '<span>'.$desc.'</span>' . $sub_menu . "</li>\n";
+  }
+  else {
+ 	  if ($element['#below']) {
+	    $sub_menu = drupal_render($element['#below']);
+	  }
+	  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+	  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+  }
+}
+
+/**
+ * First and Last classes for blocks
+ */
+function netstof_block_list($region) {
+  // Code referenced from Fusion Core theme.
+  $drupal_list = block_list($region);
+  if (module_exists('context') && $context = context_get_plugin('reaction', 'block')) {
+    $context_list = $context->block_list($region);
+    $drupal_list = array_merge($context_list, $drupal_list);
+  }
+  return $drupal_list;
+}
+/**
+* Implements template_preprocess_block().
+*/
+function netstof_preprocess_block(&$vars) {
+  // Adds 'first' and 'last' class to blocks for styling.
+  $block_count = count(netstof_block_list($vars['block']->region));
+  if ($vars['block_id'] == 1 || $block_count == 1) {
+    $vars['classes_array'][] = 'block-first';
+  }
+  if ($vars['block_id'] == $block_count) {
+    $vars['classes_array'][] = 'block-last';
   }
 }

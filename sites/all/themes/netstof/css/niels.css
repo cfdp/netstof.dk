@@ -1,6 +1,6 @@
 /* diverse styling */
 #columns{
-	margin:0 15px 0 12px;
+	/* margin:0 15px 0 12px; */
 }
 #branding{
 	float:left;
@@ -10,6 +10,7 @@
 	float:right;
 }
 /* Menu styles */
+/*
 	.region-header ul.menu{
 		height:90px;padding:0;margin:0;
 	}
@@ -54,6 +55,7 @@
 			#header-container .region-header ul.menu a.menu-349.active{
 				background:url('/sites/all/themes/netstof/images/findhjaelp-sprite.png') no-repeat #ffad00 16px 8px;
 			}
+*/
 /* slideshow styles */
 #block-views-slideshow-block a{
 	text-decoration:none;color:#faad09;
@@ -113,19 +115,7 @@
 			text-transform:uppercase;text-align:right;
 			background:url('../images/read-more-arrow.png') no-repeat 190px 5px;
 		}
-/* underside styling */
-.not-front .content-inner{
-	margin: -7px 322px 0 0 !important;padding-bottom:20px;
-	background:#ffffff;
-}
-.not-front #main-content{
-	width:344px;margin:20px 27px 0 0;padding:0px 20px 20px 20px;
-	background:url('../images/content/border.jpg') repeat-y left top transparent;
-	float:left;
-}
-	.not-front #main-content #page-title{
-		margin-top:-8px;
-	}
+
 #leftcontent{
 	width:160px;margin-top:20px;padding:0 20px 0 20px;
 	float:left;

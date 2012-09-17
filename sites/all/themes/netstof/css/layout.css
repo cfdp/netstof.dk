@@ -38,8 +38,22 @@ body {
 	padding: 35px 0;
 }
 #main-content {
-	padding-right: 23px;
+	margin-right: 23px !important;
 }
+.not-front #main-content {
+/*
+	background: transparent url("../images/main-content-btm.png") no-repeat bottom center;
+	padding-bottom: 15px;
+*/
+}
+	.not-front #main-content > #main-content-header {
+		padding: 25px 22px 0;
+		background: #FFFFFF;
+	}
+	.not-front #main-content > #content {
+		padding: 0 22px;
+		background: #FFFFFF;
+	}
 
 /**
  * FOOTER

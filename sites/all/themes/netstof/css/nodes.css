@@ -1,0 +1,13 @@
+/**
+ * UNDERSIDER
+ */
+ 
+h1#page-title {
+	font-size: 28px; line-height: 28px;
+	color: #424242;
+	font-weight: normal;
+}
+.not-front #main-content > #content {
+	font-size: 13px; line-height: 16px;
+	color: #3e3e3e;
+}

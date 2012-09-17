@@ -128,7 +128,7 @@
 
 <div id="header-btm-container">
 	<div class="container">
-		<a href="#"><img src="/<?php print drupal_get_path("theme","netstof"); ?>/images/find-hjaelp.png" id="find-hjaelp" /></a>
+		<a href="#"><img src="<?php print drupal_get_path("theme","netstof"); ?>/images/find-hjaelp.png" id="find-hjaelp" /></a>
 	</div>
 </div>
 
@@ -143,13 +143,11 @@
 
   <div id="columns" class="columns clearfix">
     <div id="content-column" class="content-column" role="main">
-			<div id="undersidebanner">
-				<img src="/sites/all/themes/netstof/images/content/underside-banner.jpg" />
-			</div>
+
       <div class="content-inner clearfix">
 
 				<!-- region: Left Content -->
-          <?php if(!$is_front): ?>
+          <?php if(!$is_front && $page["leftcontent"]): ?>
             <div id="leftcontent" class="region">
               <?php print render($page["leftcontent"]); ?>
             </div>
@@ -228,12 +226,16 @@
 
 <div id="footer-container">
 
+	<div id="footer-top" class="container">
+	  <?php print render($page['footer_top']); ?>
+	</div>
+
 	<footer class="container">
 	  <?php print render($page['footer']); ?>
 	</footer>
 	
 	<div id="scroll-top">
-		<a href="#"><img src="/<?php print drupal_get_path("theme","netstof"); ?>/images/scroll-top.png" /></a>
+		<a href="#"><img src="<?php print drupal_get_path("theme","netstof"); ?>/images/scroll-top.png" /></a>
 	</div>
 
 </div>
@@ -246,12 +248,12 @@
 
 <div id="right-side">
 	<div id="right-del">
-		<a href="#"><img src="/<?php print drupal_get_path("theme","netstof"); ?>/images/right-del.png" /></a>	
+		<a href="#"><img src="<?php print drupal_get_path("theme","netstof"); ?>/images/right-del.png" /></a>	
 	</div>
 	<div id="right-brevkasse">
-		<a href="#"><img src="/<?php print drupal_get_path("theme","netstof"); ?>/images/right-brev.png" /></a>	
+		<a href="#"><img src="<?php print drupal_get_path("theme","netstof"); ?>/images/right-brev.png" /></a>	
 	</div>
 	<div id="right-feedback">
-		<a href="#"><img src="/<?php print drupal_get_path("theme","netstof"); ?>/images/right-feedback.png" /></a>	
+		<a href="#"><img src="<?php print drupal_get_path("theme","netstof"); ?>/images/right-feedback.png" /></a>	
 	</div>
 </div>
