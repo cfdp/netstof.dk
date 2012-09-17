@@ -1,0 +1,159 @@
+/* diverse styling */
+#columns{
+	margin:0 15px 0 12px;
+}
+#branding{
+	float:left;
+}
+.region-header{
+	height:90px;margin:0 0 5px 0;
+	float:right;
+}
+/* Menu styles */
+	.region-header ul.menu{
+		height:90px;padding:0;margin:0;
+	}
+		#header-container .region-header ul.menu li,
+		#header-container .region-header ul.menu li a{
+			width:140px;height:108px;padding:0;
+			display:block;float:left;
+		}
+		#header-container .region-header ul.menu a.menu-346{
+			background:url('/sites/all/themes/netstof/images/erfaringer-sprite.png') no-repeat transparent 16px -102px;
+		}
+			#header-container .region-header ul.menu a.menu-346:hover{
+				background:url('/sites/all/themes/netstof/images/erfaringer-sprite.png') no-repeat #5d5d5d 16px -102px;
+			}
+			#header-container .region-header ul.menu a.menu-346.active{
+				background:url('/sites/all/themes/netstof/images/erfaringer-sprite.png') no-repeat #ffad00 16px 8px;
+			}
+		#header-container .region-header ul.menu a.menu-347{
+			background:url('/sites/all/themes/netstof/images/raadgivning-sprite.png') no-repeat transparent 16px -102px;
+		}	
+			#header-container .region-header ul.menu a.menu-347:hover{
+				background:url('/sites/all/themes/netstof/images/raadgivning-sprite.png') no-repeat #5d5d5d 16px -102px;
+			}
+			#header-container .region-header ul.menu a.menu-347.active{
+				background:url('/sites/all/themes/netstof/images/raadgivning-sprite.png') no-repeat #ffad00 16px 8px;
+			}	
+		#header-container .region-header ul.menu a.menu-348{
+			background:url('/sites/all/themes/netstof/images/vidensbank-sprite.png') no-repeat transparent 16px -102px;
+		}
+			#header-container .region-header ul.menu a.menu-348:hover{
+				background:url('/sites/all/themes/netstof/images/vidensbank-sprite.png') no-repeat #5d5d5d 16px -102px;
+			}
+			#header-container .region-header ul.menu a.menu-348.active{
+				background:url('/sites/all/themes/netstof/images/vidensbank-sprite.png') no-repeat #ffad00 16px 8px;
+			}
+		#header-container .region-header ul.menu a.menu-349{
+			background:url('/sites/all/themes/netstof/images/findhjaelp-sprite.png') no-repeat transparent 16px -102px;
+		}			
+			#header-container .region-header ul.menu a.menu-349:hover{
+				background:url('/sites/all/themes/netstof/images/findhjaelp-sprite.png') no-repeat #5d5d5d 16px -102px;
+			}
+			#header-container .region-header ul.menu a.menu-349.active{
+				background:url('/sites/all/themes/netstof/images/findhjaelp-sprite.png') no-repeat #ffad00 16px 8px;
+			}
+/* slideshow styles */
+#block-views-slideshow-block a{
+	text-decoration:none;color:#faad09;
+}
+#block-views-slideshow-block .skin-default{
+	position:relative;
+}
+	#block-views-slideshow-block .views-slideshow-controls-top{
+		position:absolute;top:0;left:0;z-index:5;
+	}
+	#block-views-slideshow-block #views_slideshow_cycle_main_slideshow-block{
+		position:relative;top:0;left:0;z-index:4;
+	}
+		/* styling the text-overlay */
+		#widget_pager_top_slideshow-block{position:relative;}
+		#widget_pager_top_slideshow-block .views-slideshow-pager-field-item > div{display:none;}
+		#widget_pager_top_slideshow-block .views-slideshow-pager-field-item > div.views-field-counter{display:block;}
+		#widget_pager_top_slideshow-block .views-slideshow-pager-field-item.active{
+			width:209px;height:159px;margin-top:44px;padding:25px 20px 20px 20px;
+			background:url('../images/slideshow-text-bg.png') repeat-x top left transparent;
+			color:#ffffff;
+		}
+		#widget_pager_top_slideshow-block .views-field-counter{
+			width:18px;height:28px;padding:6px 0 0 12px;
+			background:#404040;
+			color:#ffffff;
+		}
+		#widget_pager_top_slideshow-block .views-slideshow-pager-field-item.active > div.views-field-counter{
+			width:43px;height:34px;
+			background-color:none;
+			background:url('../images/slide-active.png') no-repeat top left;
+			cursor:pointer;
+		}
+		#widget_pager_top_slideshow-block #views_slideshow_pager_field_item_top_slideshow-block_0 > div.views-field-counter{
+			position:absolute;top:0;left:-31px;
+		}
+		#widget_pager_top_slideshow-block #views_slideshow_pager_field_item_top_slideshow-block_1 > div.views-field-counter{
+			position:absolute;top:35px;left:-31px;
+		}
+		#widget_pager_top_slideshow-block #views_slideshow_pager_field_item_top_slideshow-block_2 > div.views-field-counter{
+			position:absolute;top:70px;left:-31px;
+		}
+		#widget_pager_top_slideshow-block #views_slideshow_pager_field_item_top_slideshow-block_3 > div.views-field-counter{
+			position:absolute;top:105px;left:-31px;
+		}
+		#widget_pager_top_slideshow-block .views-slideshow-pager-field-item.active > div{display:block;}
+		#widget_pager_top_slideshow-block .views-field-title{font-size:18px;}
+		#widget_pager_top_slideshow-block .views-field-field-slide-tags{
+			margin-bottom:10px;
+			text-transform:uppercase;font-size:11px;
+		}
+		#widget_pager_top_slideshow-block .views-field-body{font-size:13px;line-height:1.3;}
+		#widget_pager_top_slideshow-block .views-content-body > p{margin-bottom:10px;}
+		#widget_pager_top_slideshow-block .views-field-view-node{
+			margin-right:10px;padding:0 15px 0 0;
+			font-size:13px;
+			text-transform:uppercase;text-align:right;
+			background:url('../images/read-more-arrow.png') no-repeat 190px 5px;
+		}
+/* underside styling */
+.not-front .content-inner{
+	margin: -7px 322px 0 0 !important;padding-bottom:20px;
+	background:#ffffff;
+}
+.not-front #main-content{
+	width:344px;margin:20px 27px 0 0;padding:0px 20px 20px 20px;
+	background:url('../images/content/border.jpg') repeat-y left top transparent;
+	float:left;
+}
+	.not-front #main-content #page-title{
+		margin-top:-8px;
+	}
+#leftcontent{
+	width:160px;margin-top:20px;padding:0 20px 0 20px;
+	float:left;
+}
+	/* styling af left content på underside */
+	#leftcontent h3{
+		margin:14px 0 4px -6px;
+		padding:2px 0 2px 6px;
+		background:#e5e4e1;
+		font-size:14px;
+	}
+	#leftcontent .block-content h3:first-child{
+		margin-top:0;
+	}
+	#leftcontent strong{
+		font-size:13px;font-weight:bold;
+		text-transform:uppercase;
+	}
+	#leftcontent ul{
+		padding:0;margin:0;
+		list-style-image:url('../images/content/bullet.jpg');
+		list-style-position:inside;
+	}
+	#leftcontent ul li{
+		color:#a6a6a6;
+	}
+	#leftcontent p{
+		margin:0;padding:0;
+	}
+/* styling af højre sidebar */
+#block-block-7{margin-top:25px;}

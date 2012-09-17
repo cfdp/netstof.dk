@@ -1,0 +1,73 @@
+body {
+	background: url("../images/body-bg.png") repeat;
+}
+
+/**
+ * HEADER
+ */
+#header-container {
+	background: url("../images/header-bg.png") repeat;
+	min-height: 108px;
+	border-top: 3px solid #ffad00;
+}
+	header {
+	
+	}
+		header #logo {
+			padding: 17px 0 0 0;
+		}
+	
+#header-btm-container {
+	height: 46px;
+	background: #FFFFFF;
+}
+	#header-btm-container .container {
+		position: relative;
+		height: 46px;
+	}
+		#header-btm-container .container #find-hjaelp {
+			position: absolute;
+			left: -16px;
+			bottom: -16px;
+		}
+	
+/**
+ * PAGE
+ */
+#page {
+	padding: 35px 0;
+}
+#main-content {
+	padding-right: 23px;
+}
+
+/**
+ * FOOTER
+ */
+#footer-container {
+	background: url("../images/header-bg.png") repeat;
+	border-top: 3px solid #ffad00;
+	padding: 15px 0;
+	position: relative;
+}
+	footer {
+		color: #FFFFFF;
+		font-size: 13px;
+		line-height: 15px;
+	}
+	footer img {
+		margin: 0 10px -62px 10px;
+	}
+	
+#footer-white {
+	background: #FFFFFF;
+	height: 35px;
+}
+
+/**
+ * RESET
+ */
+#main-content, .block-inner, .pane-inner, .menu-wrapper, .branding-elements, .breadcrumb-wrapper, .attribution, .at-panel .rounded-corner, .block-panels-mini > .block-title, div.messages {
+	margin-left: 0;
+	margin-right: 0;
+}
