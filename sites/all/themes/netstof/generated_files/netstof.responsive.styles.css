@@ -41,9 +41,21 @@
   }
 }
 /*
- * Tablet sizes and up
+ * Tablet sizes and down
  */
-/* @media only screen and (min-width: 768px) {} */
+@media only screen and (max-width: 928px) {
+	#branding {
+		display: none;
+	}
+	#header-btm-container a {
+		display: none;
+	}
+	.region-header { 
+		width: 100%;
+		float: left !important;
+	}
+}
+
 /*
  * Desktops/laptops and up
  */
@@ -66,7 +78,7 @@ html {
 }
 
 }
-@media only screen and (min-width:321px) and (max-width:480px) {
+@media only screen and (min-width:321px) and (max-width:670px) {
 /*
  *   Important Information about this CSS File
  *
@@ -82,7 +94,7 @@ html {
 }
 
 }
-@media only screen and (min-width:481px) and (max-width:768px) {
+@media only screen and (min-width:671px) and (max-width:942px) {
 /*
  *   Important Information about this CSS File
  *
@@ -97,8 +109,50 @@ html {
   /* font-size: 81.3%; */
 }
 
+/**
+ * CONTENT
+ */
+#main-content {
+	margin-right: 0 !important;
 }
-@media only screen and (min-width:769px) and (max-width:959px) {
+
+/** 
+ * NAVIGATION
+ */
+.region-header .menu-block-wrapper > ul.menu { 
+	width: 611px;
+	float: left;
+}
+
+/**
+ * BLOCKS
+ */
+ 
+/* Sidebar First */
+.region-sidebar-first {
+	width: 634px !important;
+}
+.region-sidebar-first .block {
+	width: 294px !important;
+	float: left !important;
+	margin-right: 23px;
+}
+
+/* Footer top */
+.region-footer-top {
+	display: none;
+}
+
+/* Footer */
+.region-footer section.block {
+	margin: 10px 0 0 23px;
+}
+	.region-footer section.block-first,
+	.region-footer section.block-last {
+		margin: 10px 0 0 0;
+	}
+}
+@media only screen and (min-width:943px) and (max-width:1024px) {
 /*
  *   Important Information about this CSS File
  *
@@ -110,7 +164,7 @@ html {
  */
 
 }
-@media only screen and (min-width:960px) {
+@media only screen and (min-width:1025px) {
 /*
  *   Important Information about this CSS File
  *

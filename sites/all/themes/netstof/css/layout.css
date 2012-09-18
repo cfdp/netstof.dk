@@ -41,18 +41,15 @@ body {
 	margin-right: 23px !important;
 }
 .not-front #main-content {
-/*
-	background: transparent url("../images/main-content-btm.png") no-repeat bottom center;
-	padding-bottom: 15px;
-*/
+	box-shadow: 0 0 7px #BBB;
+	background: #FFFFFF url("../images/content-top.png") no-repeat top center;
 }
 	.not-front #main-content > #main-content-header {
 		padding: 25px 22px 0;
-		background: #FFFFFF;
 	}
 	.not-front #main-content > #content {
-		padding: 0 22px;
-		background: #FFFFFF;
+		padding: 0 22px 15px;
+		background: #FFFFFF url("../images/content-btm.png") no-repeat bottom center;
 	}
 
 /**

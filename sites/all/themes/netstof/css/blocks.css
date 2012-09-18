@@ -29,9 +29,7 @@
 /**
  * FORSIDE INDGANGE
  */
-#block-block-4 {
-	margin-top: 20px;
-}
+
 #entrances {
 	margin: 0;
 	list-style: none;
@@ -209,21 +207,27 @@ tr .ajax-progress .throbber {
 .region-sidebar-first {
 
 }
+	.region-sidebar-first .block {
+		margin-bottom: 23px;
+	}
 	.region-sidebar-first section.block {
+		box-shadow: 0 0 7px #BBB;
+		
 	}
 	.region-sidebar-first section.block .block-inner {
-		padding: 30px 23px;
-		background: #FFFFFF;
 	}
 	.region-sidebar-first section.block h2.block-title {
 		color: #424242;
+		background: #FFFFFF url("../images/block-top.png") no-repeat top center;
 		font-size: 25px; line-height: 25px;
-		margin-bottom: 25px;
 		font-weight: normal;
+		padding: 30px 23px 23px 23px;
 	}
 	.region-sidebar-first section.block .block-content {
 		font-size: 11px; line-height: 13px;
 		color: #404040;
+		background: #FFFFFF url("../images/block-btm.png") no-repeat bottom center;
+		padding: 0 23px 30px 23px;
 	}
 /**
  * RIGHT SIDE - fixed entrances
@@ -300,3 +304,29 @@ tr .ajax-progress .throbber {
 	.region-footer section.block-last {
 		margin: 0;
 	}
+	
+/**
+ * FOOTER BOTTOM
+ */
+.region-footer-btm {
+}
+	.region-footer-btm .block {
+		height: 25px;
+		padding-top: 10px;
+		font-size: 13px; line-height: 15px;
+	}
+	.region-footer-btm .block-first {
+		width: 50%;
+		float: left;
+		text-transform: uppercase;
+	}
+	.region-footer-btm .block-last {
+		width: 50%;
+		float: left;
+		text-align: right;
+		font-size: 11px;
+		color: #404040;
+	}
+		.region-footer-btm .block p {
+			margin-bottom: 0;
+		}

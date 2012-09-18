@@ -114,21 +114,36 @@ function netstof_menu_link(array $variables) {
 }
 */
 
+/**
+ * MENU LINKS
+ */
 function netstof_menu_link(array $variables) {
 
   $element = $variables['element'];
   $sub_menu = '';
+  $element['#localized_options']['html'] = TRUE;
+
+  /* Even/odd class on menu items */
+  static $count = 0;
+  $zebra = ($count % 2) ? 'even' : 'odd';
+  $count++;
+  $element['#attributes']['class'][] = $zebra;
   
-  if($element["#bid"]["delta"]==2) {
+  if(isset($element["#bid"]["delta"]) && $element["#bid"]["delta"]==2) {
 	  if ($element['#below']) {
 	    $sub_menu = drupal_render($element['#below']);
 	  }
-	  
-	  $desc = (isset($element["#localized_options"]["attributes"]["title"]) ? $element["#localized_options"]["attributes"]["title"] : null);
-	  //$icon = $element["#localized_options"]["menu_icon"]["path"];
+	
+	  /**
+	   * Add menu item's description below the menu title
+	   * Source: fusiondrupalthemes.com/forum/using-fusion/descriptions-under-main-menu
+	   */
+	  if ($element['#original_link']['menu_name'] == "main-menu" && isset($element['#localized_options']['attributes']['title'])){
+	    $element['#title'] .= '<em>' . $element['#localized_options']['attributes']['title'] . '</em>';
+	  }
 	  
 	  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
-	  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . '<span>'.$desc.'</span>' . $sub_menu . "</li>\n";
+	  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
   }
   else {
  	  if ($element['#below']) {

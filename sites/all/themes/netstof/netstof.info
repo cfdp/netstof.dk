@@ -88,12 +88,12 @@
   regions[content]           = Main Content
   regions[leftcontent]       = Left Content
   regions[content_front]     = Front Page Content
-  regions[footer_top]            = Footer Top
+  regions[footer_top]        = Footer Top
   regions[footer]            = Footer
-  regions[footer_btm]            = Footer Bottom
+  regions[footer_btm]        = Footer Bottom
   regions[header]            = Header
   regions[help]              = Help
-  regions[featured]     	 	 = Featured
+  regions[featured]     	 = Featured
 
 ;----------// Gpanel Regions
 

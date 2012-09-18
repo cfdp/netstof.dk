@@ -103,4 +103,22 @@ $(function() {
       tip: 'bottomMiddle',
    	}
 	});
+	
+	/**
+	 * MAIN MENU
+	 */
+
+    $('.region-header .menu-block-wrapper > ul.menu > li.expanded').not(".active-trail")
+    .hover(function() {
+    
+		$('.region-header .menu-block-wrapper > ul.menu > li.active-trail > ul').hide();
+        $("ul",this).fadeIn();
+       
+    }, function() {
+
+        $("ul",this).hide();
+		$('.region-header .menu-block-wrapper > ul.menu > li.active-trail > ul').fadeIn();
+		
+    });
+
 });

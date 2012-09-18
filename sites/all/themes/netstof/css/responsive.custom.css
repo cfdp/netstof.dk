@@ -12,17 +12,7 @@
  * NOTE: this file loads by default, to disable got to your theme settings and
  * look under the "CSS" settings tab.
  */
-/*
- * Really small screens and up
- */
-/* @media only screen and (min-width: 220px) {} */
-/*
- * Smartphone sizes and up
- */
-/* @media only screen and (min-width: 320px) {} */
-/*
- * Smartphone sizes and down
- */
+ 
 @media only screen and (max-width: 480px) {
   /* 
    * Float Region blocks example:
@@ -40,11 +30,24 @@
     width: 100%;
   }
 }
+
 /*
- * Tablet sizes and up
+ *  MOBILE + TABLETS
  */
-/* @media only screen and (min-width: 768px) {} */
-/*
- * Desktops/laptops and up
- */
-/* @media only screen and (min-width: 1025px) {} */
+@media only screen and (max-width: 942px) {
+	#branding {
+		display: none;
+	}
+	#header-btm-container a {
+		display: none;
+	}
+	/* Header */
+	.region-header { 
+		width: 100%;
+		float: left !important;
+	}
+	/* Footer top */
+	.region-footer-top {
+		display: none;
+	}
+}
