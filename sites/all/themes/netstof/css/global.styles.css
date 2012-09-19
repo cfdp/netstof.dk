@@ -38,6 +38,10 @@ body {
 
 }
 
+.form-item, .form-actions {
+    margin-top: 0 !important;
+}
+
 
 /* =============================================================================
  *   HTML Elements

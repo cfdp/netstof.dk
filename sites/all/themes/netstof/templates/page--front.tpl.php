@@ -128,7 +128,7 @@
 
 <div id="header-btm-container">
 	<div class="container">
-		<a href="#"><img src="<?php print $base_path."/".drupal_get_path("theme","netstof"); ?>/images/find-hjaelp.png" id="find-hjaelp" /></a>
+		<a href="#"><img src="<?php print $base_path.drupal_get_path("theme","netstof"); ?>/images/find-hjaelp.png" id="find-hjaelp" /></a>
 	</div>
 </div>
 
@@ -142,6 +142,10 @@
   <?php print render($page['help']); ?>   
 
   <div id="columns" class="columns clearfix">
+  
+	<!-- regions: Sidebar top -->
+    <?php $sidebar_top = render($page['sidebar_top']); print $sidebar_top; ?>  
+  
     <div id="content-column" class="content-column" role="main">
       <div class="content-inner">
 
@@ -227,7 +231,7 @@
 	</footer>
 
 	<div id="scroll-top">
-		<a href="#"><img src="<?php print $base_path."/".drupal_get_path("theme","netstof"); ?>/images/scroll-top.png" /></a>
+		<a href="#"><img src="<?php print $base_path.drupal_get_path("theme","netstof"); ?>/images/scroll-top.png" /></a>
 	</div>
 
 </div>
@@ -245,13 +249,13 @@
 
 <div id="right-side">
 	<div id="right-del">
-		<a href="#"><img src="<?php print $base_path."/".drupal_get_path("theme","netstof"); ?>/images/right-del.png" /></a>	
+		<a href="#"><img src="<?php print $base_path.drupal_get_path("theme","netstof"); ?>/images/right-del.png" /></a>	
 	</div>
 	<div id="right-brevkasse">
-		<a href="#"><img src="<?php print $base_path."/".drupal_get_path("theme","netstof"); ?>/images/right-brev.png" /></a>	
+		<a href="#"><img src="<?php print $base_path.drupal_get_path("theme","netstof"); ?>/images/right-brev.png" /></a>	
 	</div>
 	<div id="right-feedback">
-		<a href="#"><img src="<?php print $base_path."/".drupal_get_path("theme","netstof"); ?>/images/right-feedback.png" /></a>	
+		<a href="#"><img src="<?php print $base_path.drupal_get_path("theme","netstof"); ?>/images/right-feedback.png" /></a>	
 	</div>
 </div>
 

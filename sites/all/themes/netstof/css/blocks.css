@@ -290,7 +290,7 @@ tr .ajax-progress .throbber {
 .region-footer {
 
 }
-	.region-footer section {
+	.region-footer .block {
 		float: left;
 		width: 294px;
 		margin-right: 23px;
@@ -301,7 +301,7 @@ tr .ajax-progress .throbber {
 		text-transform: uppercase;
 		font-weight: normal;
 	}
-	.region-footer section.block-last {
+	.region-footer .block-last {
 		margin: 0;
 	}
 	
