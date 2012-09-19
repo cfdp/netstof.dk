@@ -12,55 +12,79 @@
  * NOTE: this file loads by default, to disable got to your theme settings and
  * look under the "CSS" settings tab.
  */
-/*
- * Really small screens and up
+ 
+
+/**
+ * MOBILE
  */
-/* @media only screen and (min-width: 220px) {} */
-/*
- * Smartphone sizes and up
- */
-/* @media only screen and (min-width: 320px) {} */
-/*
- * Smartphone sizes and down
- */
-@media only screen and (max-width: 480px) {
-  /* 
-   * Float Region blocks example:
-   * In smaller screen sizes we can remove the float and widths so all blocks
-   * stack instead of displaying horizonally. The selector used here is an
-   * "attribute selector" which will match on any float block class. Use your
-   * inspector or Firebug to get the classes from the page output if you need
-   * more granular control over block alignment and stacking.
-   * 
-   * "Float Region blocks" is an extension for floating blocks in regions, see
-   * your themes appearance settings, under the Extensions tab.
-   */
+@media only screen and (max-width: 670px) {
   .region[class*="float-blocks"] .block {
     float: none;
     width: 100%;
   }
+  /* Menu */
+  .region-header ul.menu > li  > ul {
+  	left: 23px;
+  	width: 100%;
+  	text-align: center;
+  }
+  /* Content */
+  #main-content {
+  	margin: 0 23px;
+  }
+  /* Sidebar first */
+  .region-sidebar-first .region-inner {
+	padding: 23px 23px 23px;  
+  }
+	.region-sidebar-first section.block h2.block-title {
+		background: url(/netstof/sites/all/themes/netstof/images/content-top.png) no-repeat scroll center top #FFFFFF;
+	}
+	.region-sidebar-first section.block .block-content {
+		background: url(/netstof/sites/all/themes/netstof/images/content-btm.png) no-repeat scroll center bottom #FFFFFF;
+	}
+  /* Footer */
+  #footer-container {
+  	padding-top: 23px;
+  	padding-left: 23px;
+  	padding-right: 23px;
+  	text-align: center;
+  }
+  #footer-btm {
+  	text-align: center;
+  }
+  	#footer-btm .block {
+  		text-align: center;
+  		float: none;
+  	}
+  	#footer-btm .block ul {
+  		text-align: center !important;
+	}
+  #scroll-top {
+  	top: -65px;
+  	right: 23px;
+  }
 }
-/*
- * Tablet sizes and down
+
+/**
+ *  MOBILE + TABLETS
  */
-@media only screen and (max-width: 928px) {
+@media only screen and (max-width: 942px) {
 	#branding {
 		display: none;
 	}
 	#header-btm-container a {
 		display: none;
 	}
+	/* Header */
 	.region-header { 
 		width: 100%;
 		float: left !important;
 	}
+	/* Footer top */
+	.region-footer-top {
+		display: none;
+	}
 }
-
-/*
- * Desktops/laptops and up
- */
-/* @media only screen and (min-width: 1025px) {} */
-
 
 @media only screen and (max-width:320px) {
 /*
@@ -136,11 +160,6 @@ html {
 	width: 294px !important;
 	float: left !important;
 	margin-right: 23px;
-}
-
-/* Footer top */
-.region-footer-top {
-	display: none;
 }
 
 /* Footer */

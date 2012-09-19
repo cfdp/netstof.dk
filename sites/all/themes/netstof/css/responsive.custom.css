@@ -13,25 +13,69 @@
  * look under the "CSS" settings tab.
  */
  
-@media only screen and (max-width: 480px) {
-  /* 
-   * Float Region blocks example:
-   * In smaller screen sizes we can remove the float and widths so all blocks
-   * stack instead of displaying horizonally. The selector used here is an
-   * "attribute selector" which will match on any float block class. Use your
-   * inspector or Firebug to get the classes from the page output if you need
-   * more granular control over block alignment and stacking.
-   * 
-   * "Float Region blocks" is an extension for floating blocks in regions, see
-   * your themes appearance settings, under the Extensions tab.
-   */
+
+/**
+ * MOBILE
+ */
+@media only screen and (max-width: 670px) {
   .region[class*="float-blocks"] .block {
     float: none;
     width: 100%;
   }
+  /* Menu */
+  .region-header .menu-block-wrapper > ul.menu { 
+  	padding-left: 23px;
+  }
+  .region-header ul.menu > li  > ul {
+  	left: 23px;
+  	width: 100%;
+  	text-align: center;
+  }
+  /* Page */
+  #page #columns {
+  	padding: 0 23px;
+  	max-width: 611px;
+  }
+  #main-content {
+  	margin-right: 0 !important;
+  }
+  /* Sidebar first */
+  .region-sidebar-first .region-inner {
+	padding: 23px 0 23px;  
+  }
+	.region-sidebar-first section.block h2.block-title {
+		background: url("../images/content-top.png") no-repeat scroll center top #FFFFFF;
+	}
+	.region-sidebar-first section.block .block-content {
+		background: url("../images/content-btm.png") no-repeat scroll center bottom #FFFFFF;
+	}
+  /* Footer */
+  #footer-container {
+  	padding-top: 23px;
+  	padding-left: 23px;
+  	padding-right: 23px;
+  	text-align: center;
+  }
+  #footer-white {
+  	display: none;
+  }
+  #footer-btm {
+  	text-align: center;
+  }
+  	#footer-btm .block {
+  		text-align: center;
+  		float: none;
+  	}
+  	#footer-btm .block ul {
+  		text-align: center !important;
+	}
+  #scroll-top {
+  	top: -65px;
+  	right: 23px;
+  }
 }
 
-/*
+/**
  *  MOBILE + TABLETS
  */
 @media only screen and (max-width: 942px) {
@@ -47,7 +91,49 @@
 		float: left !important;
 	}
 	/* Footer top */
-	.region-footer-top {
-		display: none;
+	.region-footer-top .block-last ul.menu {
+		text-align: center;
+	}
+	.region-footer-top .block {
+		margin-bottom: 15px;
+	}
+		.region-footer-top .block-last {
+			margin-bottom: 35px;
+		}
+	/* Sidebar top */
+	.region-sidebar-top {
+		position: relative;
+		padding-bottom: 23px;
+	}
+	/* Sidebar top */
+	.region-sidebar-top {
+		width: 100% !important;
+	}
+		.region-sidebar-top .region-inner {
+		}
+		#search-block-form input[type=search]{
+			width: 100%;
+		}
+		#search-block-form .container-inline {
+			position: relative;
+		}
+		#search-block-form #edit-actions {
+			width: 58px;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		#search-block-form .container-inline > div {
+			width: 100%;
+			overflow: hidden;
+		}
+}
+
+/**
+ * DESKTOP + TABLET Horizontal
+ */
+@media only screen and (min-width: 943px) {
+	.region-sidebar-first {
+		padding-top: 65px;
 	}
 }

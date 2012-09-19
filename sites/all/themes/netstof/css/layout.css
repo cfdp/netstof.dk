@@ -37,6 +37,9 @@ body {
 #page {
 	padding: 35px 0;
 }
+#page > #columns {
+	position: relative;
+}
 #main-content {
 	margin-right: 23px !important;
 }
@@ -51,6 +54,15 @@ body {
 		padding: 0 22px 15px;
 		background: #FFFFFF url("../images/content-btm.png") no-repeat bottom center;
 	}
+	
+/**
+ * SIDEBAR TOP
+ */
+.region-sidebar-top {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
 
 /**
  * FOOTER

@@ -142,6 +142,10 @@
   <?php print render($page['help']); ?>   
 
   <div id="columns" class="columns clearfix">
+  
+    <!-- regions: Sidebar top -->
+    <?php $sidebar_top = render($page['sidebar_top']); print $sidebar_top; ?>  
+  
     <div id="content-column" class="content-column" role="main">
 
       <div class="content-inner clearfix">
