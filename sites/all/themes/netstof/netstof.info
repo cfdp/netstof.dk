@@ -2,7 +2,7 @@
 ;----------// Theme Information
 
   name        = Netstof
-  description = Netstof Prototype
+  description = Custom theme for netstof.dk
   core        = 7.x
   base theme  = adaptivetheme
   release     = 7.x-3.x
