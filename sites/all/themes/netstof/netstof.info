@@ -13,6 +13,7 @@ stylesheets[screen][] = css/nodes.css
 stylesheets[screen][] = css/navigation.css
 stylesheets[screen][] = css/niels.css
 scripts[] = scripts/jquery.qtip-1.0.0-rc3.min.js
+scripts[] = scripts/retina.js
 scripts[] = scripts/settings.js
 regions[content] = Main Content
 regions[leftcontent] = Left Content

@@ -67,7 +67,7 @@
 		float: left;
 		background: url("../images/grid-box-bg.png") no-repeat center center;
 		width: 294px; height: 215px;
-		margin-bottom: 23px;
+		margin-top: 23px;
 		color: #404040;
 		font-size: 13px; line-height: 15px;
 		box-shadow: 0 0 7px #BBB;
@@ -129,7 +129,7 @@
 				height: 45px;
 				background: url("../images/icon-brev.png") no-repeat top left;
 			}
-			#block-views-front-page-grid-block .views-field-type .Erfaring {
+			#block-views-front-page-grid-block .views-field-type .Erfaringer {
 				padding: 10px 0 0 50px;
 				height: 45px;	
 				background: url("../images/icon-stories.png") no-repeat top left;
@@ -141,7 +141,7 @@
 			border-top: 1px dashed #373737;
 			border-bottom: 1px dashed #373737;
 			color: #424242;
-			margin: 15px 0;
+			margin: 15px 0 0 0;
 			font-size: 15px;
 		}
 			#edit-type-1-wrapper> label {
@@ -179,7 +179,7 @@
 						background: url("../images/forum_mikro.png") no-repeat center left;
 						padding-left: 25px;
 					}
-					#block-views-front-page-grid-block .view-filters .form-type-radio label[for=edit-type-1-faq] {
+					#block-views-front-page-grid-block .view-filters .form-type-radio label[for=edit-type-1-questions-and-answers] {
 						background: url("../images/brevkasse_mikro.png") no-repeat top left;
 						padding-left: 25px;
 					}

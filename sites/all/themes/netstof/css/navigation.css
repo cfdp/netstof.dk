@@ -37,6 +37,9 @@
 		background-color: #ffad00;
 		color: #404040;
 	}
+	.region-header .menu-block-wrapper > ul.menu > li.last > a {
+		background-position: center 20px !Important;
+	}
 		.region-header .menu-block-wrapper > ul.menu > li > a > em {
 			display: block;
 			font-size: 12px;

@@ -40,6 +40,9 @@
   	margin-right: 0 !important;
   }
   /* Sidebar first */
+  .region-sidebar-first {
+  
+  }
   .region-sidebar-first .region-inner {
 	padding: 23px 0 23px;  
   }
