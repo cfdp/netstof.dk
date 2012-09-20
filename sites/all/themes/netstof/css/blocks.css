@@ -54,115 +54,161 @@
 /**
  * VIEWS GRID
  */
-#block-views-masonry-block {
+#block-views-front-page-grid-block {
 	position: relative;
 }
-	#block-views-masonry-block .block-title {
+	#block-views-front-page-grid-block .block-title {
 		font-size: 28px;
 		color: #404040;
 		font-weight: normal;
 		padding-left: 23px;
 	}
-	#block-views-masonry-block .views-fluidgrid-item {
+	#block-views-front-page-grid-block .views-fluidgrid-item {
 		float: left;
 		background: url("../images/grid-box-bg.png") no-repeat center center;
-		width: 320px; height: 239px;
+		width: 294px; height: 215px;
+		margin-bottom: 23px;
 		color: #404040;
 		font-size: 13px; line-height: 15px;
+		box-shadow: 0 0 7px #BBB;
 	}
-	#block-views-masonry-block .views-fluidgrid-item .views-fluidgrid-item-inner {
-		width: 260px; height: 179px;
-		padding: 30px 30px;
+	#block-views-front-page-grid-block .views-fluidgrid-item .views-fluidgrid-item-inner {
+		padding: 23px 23px;
 		position: relative;
 	}
-	#block-views-masonry-block .views-fluidgrid-item .views-fluidgrid-item-inner:hover {
-		/* background: url("../images/grid-active.png") no-repeat 250px 10px; */
-	}
-	#block-views-masonry-block .plus-link {
+	#block-views-front-page-grid-block .plus-link {
 		background: url("../images/grid-active.png") no-repeat;
 		display: block;
 		height: 57px; width: 54px;
 		position: absolute;
-		top: 10px; right: 12px;
+		top: 0; right: 0;
 		display: none;
 	}
-		#block-views-masonry-block .views-field-created {
-			font-size: 11px;
-			margin-bottom: 15px;
+		#block-views-front-page-grid-block .views-field-created {
+			font-size: 11px; line-height: 11px;
+			margin-bottom: 13px;
+			float: left;
+			width: 50%;
 		}
-		#block-views-masonry-block .views-field-title a {
+		#block-views-front-page-grid-block .views-field-comment-count {
+			font-size: 11px; line-height: 11px;
+			margin-bottom: 13px;
+			float: right;
+			width: 50%;
+			text-align: right;		}
+			#block-views-front-page-grid-block .views-field-comment-count span {
+				background: url("../images/comment-count.png") no-repeat 0 4px;			
+				padding: 0 0 0 14px;
+			}
+		#block-views-front-page-grid-block .views-field-title {
+			width: 100%;
+			float: left;
+			margin-bottom: 3px;
+		}
+		#block-views-front-page-grid-block .views-field-title a {
 			font-size: 20px; line-height: 20px;
 			text-transform: uppercase;
 			color: #404040;
 		}
-		#block-views-masonry-block .views-field-body {
-			margin-top: 3px;
+		#block-views-front-page-grid-block .views-field-body {
+			float: left;
+			width: 100%;
 		}	
-		#block-views-masonry-block .views-field-field-kategori {
+		#block-views-front-page-grid-block .views-field-type {
 			color: #0a597b;
 			text-transform: uppercase;
 			font-size: 15px;
 		}	
-			#block-views-masonry-block .views-field-field-kategori .kategori-1 {
+			#block-views-front-page-grid-block .views-field-type .Forumemne {
 				padding: 10px 0 0 50px;
 				height: 45px;	
 				background: url("../images/icon-forum.png") no-repeat top left;
 			}
-			#block-views-masonry-block .views-field-field-kategori .kategori-3 {
+			#block-views-front-page-grid-block .views-field-type .Spørgsmål-til-brevkassen {
 				padding: 10px 0 0 50px;
 				height: 45px;
 				background: url("../images/icon-brev.png") no-repeat top left;
 			}
-			#block-views-masonry-block .views-field-field-kategori .kategori-4 {
+			#block-views-front-page-grid-block .views-field-type .Erfaring {
 				padding: 10px 0 0 50px;
 				height: 45px;	
 				background: url("../images/icon-stories.png") no-repeat top left;
 			}
 		
 		/* VIEWS GRID - FILTERS*/
-		#block-views-masonry-block .view-filters {
-			padding: 17px 0;
+		#block-views-front-page-grid-block .view-filters {
+			padding: 15px 0;
 			border-top: 1px dashed #373737;
 			border-bottom: 1px dashed #373737;
 			color: #424242;
 			margin: 15px 0;
 			font-size: 15px;
 		}
-			#edit-field-kategori-tid-wrapper > label {
+			#edit-type-1-wrapper> label {
 				float: left;
 				margin: 0 33px 0 23px;
 				text-transform: uppercase;
 			}
-			#edit-field-kategori-tid-wrapper > div {
+			#edit-type-1-wrapper > div {
 				float: left;
 			}
-			#block-views-masonry-block .view-filters .form-item-field-kategori-tid {
+			#block-views-front-page-grid-block .view-filters .form-type-radio {
 				float: left;
-				margin: 0 46px 0 0;
+				margin: 0 !important;
+				background: url("../images/filter-sep.png") no-repeat center left;
+				padding: 0 12px 0 25px;
 			}
-				#block-views-masonry-block .view-filters .form-item-field-kategori-tid label {
+				#block-views-front-page-grid-block .view-filters .form-type-radio:first-child {
+					background: none;
+					padding-left: 0;
+				}
+				#block-views-front-page-grid-block .view-filters .form-type-radio label {
 					cursor: pointer;
 					font-weight: normal;
 				}
-				#block-views-masonry-block .view-filters .form-item-field-kategori-tid input[checked=checked]+label {
+				#block-views-front-page-grid-block .view-filters .form-type-radio input[checked=checked]+label {
 					color: #0b5a7c;
-					font-weight: bold;
 				}
+					#block-views-front-page-grid-block .view-filters .form-type-radio label[for=edit-type-1-all] {
+					}
+					#block-views-front-page-grid-block .view-filters .form-type-radio label[for=edit-type-1-experience] {
+						background: url("../images/stories_mikro.png") no-repeat center left;
+						padding-left: 25px;
+					}
+					#block-views-front-page-grid-block .view-filters .form-type-radio label[for=edit-type-1-forum] {
+						background: url("../images/forum_mikro.png") no-repeat center left;
+						padding-left: 25px;
+					}
+					#block-views-front-page-grid-block .view-filters .form-type-radio label[for=edit-type-1-faq] {
+						background: url("../images/brevkasse_mikro.png") no-repeat top left;
+						padding-left: 25px;
+					}
 				
-			#block-views-masonry-block .view-filters input[type=radio]{
+			#block-views-front-page-grid-block .view-filters input[type=radio]{
 				display: none;
 			}
 		/* PAGER */
-		#block-views-masonry-block ul.pager {
+		#block-views-front-page-grid-block ul.pager {
 			position: absolute;
 			right: 28px;
-			top: 75px;
+			top: 65px;
 			color: #424242;
+			font-size: 14px;
+			font-weight: normal;
 		}
-			#block-views-masonry-block ul.pager li a {
+			#block-views-front-page-grid-block ul.pager li {
+				padding: 0;
+			}
+			#block-views-front-page-grid-block ul.pager li.pager-current {
+				padding: 0 10px;
+				font-family: "Cabin", sans-serif;
+				font-size: 15px;
+				font-weight: normal;
+			}
+			#block-views-front-page-grid-block ul.pager li a {
 				color: #FFF;
 				background: #424242;
-				padding: 4px 8px;
+				padding: 1px 8px;
 				text-decoration: none;
 			}
 			

@@ -78,6 +78,7 @@ $(function() {
     /**
      * TOOLTIPS
      */
+/*
 	$('.plus-link').qtip({
 	   content: 'Opret et nyt spørgsmål i brevkassen',
 	   show: 'mouseover',
@@ -103,6 +104,7 @@ $(function() {
       tip: 'bottomMiddle',
    	}
 	});
+*/
 	
 	/**
 	 * MAIN MENU
