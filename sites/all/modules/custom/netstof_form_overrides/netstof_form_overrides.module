@@ -1,0 +1,17 @@
+<?php
+
+       
+/*
+ * Implementation of hook_form_alter()
+ */
+function netstof_form_overrides_form_alter(&$form, &$form_state, $form_id){
+  dpm($form_id);
+  
+  if($form_id == "questions_and_answers_node_form" || "test_node_form"){
+    dpm($form);
+    //$form['field_profile_qna_taxonomy']['und']['#type'] = 'select';
+  }
+  
+  //$field_language = field_language('node', $node, 'field_faq');
+  
+}
