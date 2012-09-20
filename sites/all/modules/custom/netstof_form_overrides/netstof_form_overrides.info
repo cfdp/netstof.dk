@@ -1,8 +1,0 @@
-; $Id$
- 
-name = Netstof Form Overrides
-description = Form overrides to enhance usability and tweak default functionality
-package = CfDP Helper Modules
-core = 7.x
- 
-files[] = netstof_form_overrides.module
