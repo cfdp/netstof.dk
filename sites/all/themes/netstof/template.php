@@ -128,8 +128,8 @@ function netstof_menu_link(array $variables) {
   $zebra = ($count % 2) ? 'even' : 'odd';
   $count++;
   $element['#attributes']['class'][] = $zebra;
-  
-  if(isset($element["#bid"]["delta"]) && $element["#bid"]["delta"]==2) {
+    
+  if(isset($element["#bid"]["delta"]) && $element["#bid"]["delta"]==1) {
 	  if ($element['#below']) {
 	    $sub_menu = drupal_render($element['#below']);
 	  }

@@ -731,7 +731,6 @@ ul.pager li {
   background-image: none;
   display: inline;
   list-style-type: none;
-  padding: .5em;
 }
 
 ul.pager li.pager-current {

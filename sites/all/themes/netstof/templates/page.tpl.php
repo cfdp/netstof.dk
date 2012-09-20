@@ -158,6 +158,17 @@
           <?php endif; ?>
 				
         <<?php print $tag; ?> id="main-content">
+        
+          <!-- Banner -->
+          <?php if(arg(0)=="node") {
+          	
+          	$node = node_load(arg(1));
+          	
+          	if(!empty($node->field_billede)) {
+          		print render(field_view_field('node', $node, 'field_billede', array('label' => 'hidden', 'settings' => array('image_style' => 'page-banner'))));
+          	}
+          }
+          ?>
 
           <?php print render($title_prefix); // Does nothing by default in D7 core ?>
 

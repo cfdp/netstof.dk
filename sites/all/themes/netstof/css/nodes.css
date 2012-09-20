@@ -12,3 +12,10 @@ h1#page-title {
 	font-size: 13px; line-height: 16px;
 	color: #3e3e3e;
 }
+
+/**
+ * Simpel Side
+ */
+.field-name-field-billede figure {
+	line-height: 0;
+}
