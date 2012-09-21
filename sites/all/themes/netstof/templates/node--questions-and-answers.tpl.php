@@ -124,7 +124,7 @@ hide($content['links']);
   <?php if(!empty($user_picture) || $display_submitted): ?>
     <footer<?php print $footer_attributes; ?>>
       <?php print $user_picture; ?>
-      <p class="author-datetime"><?php print $submitted; ?></p>
+      <p class="qna-responding-counselor"><?php print t('This question was answered by: ').$name;?></p>
     </footer>
   <?php endif; ?>
   

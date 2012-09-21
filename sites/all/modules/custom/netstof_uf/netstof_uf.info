@@ -5,4 +5,4 @@ description = Functions to enhance usability and tweak default functionality
 package = CfDP Helper Modules
 core = 7.x
  
-files[] = netstof_utility_functions.module
+files[] = netstof_uf.module
