@@ -43,16 +43,17 @@ body {
 #main-content {
 	margin-right: 23px !important;
 }
-.not-front #main-content {
+.not-front.page-node #main-content {
 	box-shadow: 0 0 7px #BBB;
 	background: #FFFFFF url("../images/content-top.png") no-repeat top center;
 }
-	.not-front #main-content > #main-content-header {
+	.not-front.page-node #main-content > #main-content-header {
 		padding: 25px 22px 0;
 	}
-	.not-front #main-content > #content {
+	.not-front.page-node #main-content > #content {
 		padding: 0 22px 15px;
 		background: #FFFFFF url("../images/content-btm.png") no-repeat bottom center;
+		overflow: hidden;
 	}
 	
 /**

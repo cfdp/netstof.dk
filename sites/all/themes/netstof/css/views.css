@@ -1,0 +1,210 @@
+/**
+ * BREVKASSEN - Oversigt
+ */
+.page-node-305 {
+
+}
+.page-node-305 h1#page-title {
+	color: #0b5a7c !important;
+	padding: 3px 0 0 52px;
+	background: url("../images/icon-title-letter.png") no-repeat top left;
+	height: 36px;
+	margin-bottom: 0;
+}
+	.page-node-305 #content > .block-views {
+		float: left;
+		width: 50%;
+	}
+		.page-node-305 #content > .block-views > div {
+			padding-right: 20px;
+			margin-bottom: 20px;
+		}
+		.page-node-305 #content > .block-views .view-header {
+			float: left;
+			font-size: 12px;
+		}
+			.page-node-305 #content > .block-views .view-header h2 {
+				color: #0b5a7c;
+				font-weight: normal;
+				text-transform: uppercase;
+				font-size: 20px; line-height: 20px;	
+				padding-top: 20px;	
+				padding-left: 48px;		
+				height: 21px;
+			}
+				.page-node-305 #content > .block-views .view-header h2.psykolog {
+					background: url("../images/icon-psykolog.png") no-repeat 0 0;
+				}
+				.page-node-305 #content > .block-views .view-header h2.laege {
+					background: url("../images/icon-laege.png") no-repeat 0 0;
+				}
+			.page-node-305 #content > .block-views .view-header a {
+				color: #FFFFFF;
+				font-weight: bold;
+				text-transform: uppercase;
+				font-size: 15px; line-height: 15px;
+				display: inline-block;
+				background: #0b5a7c url("../images/icon-white-triangle.png") no-repeat 13px 11px;
+				padding: 10px 12px 10px 30px;
+				border-radius: 5px;
+			}
+		.page-node-305 #content > .block-views .view-content {
+			float: left;
+		}
+			.page-node-305 #content > .block-views .view-content ul {
+				margin: 0;
+				padding: 0;
+			}			
+			.page-node-305 #content > .block-views .view-content ul li {
+				list-style: none;
+				list-style-image: none;
+				margin: 0 0 10px 0;
+				padding: 0;
+			}
+				.page-node-305 #content > .block-views .view-content .views-field-picture {
+					float: left;
+					width: 104px;
+					margin: 0 7px 7px 0;
+				}
+					.page-node-305 #content > .block-views .view-content .views-field-picture img {
+						border: 2px solid #e2e1df;					
+					}
+				.page-node-305 #content > .block-views .view-content .views-field-name {
+					font-size: 15px; line-height: 15px;
+					text-transform: uppercase;
+					color: #424242;
+					padding: 10px 0;
+				}
+					.page-node-305 #content > .block-views .view-content .views-field-name a {
+						color: #424242;
+					}
+				.page-node-305 #content > .block-views .view-content .views-field-field-profile-public-description {
+					font-size: 12px;
+					color: #424242;
+				}
+				
+/**
+ * BREVKASSEN - Enkelt brevkasse
+ */
+.page-brevkasse #page-title {
+	display: none;
+}
+.view-Brevkasse {
+
+}
+	.view-Brevkasse .view-header {
+		margin-bottom: 14px;
+		box-shadow: 0 0 7px #BBB;	
+		background: #FFF;	
+		padding: 23px;
+		position: relative;
+		font-family: "Cabin", sans-serif;	
+	}
+			.view-Brevkasse .view-header .header-title {
+				padding: 0 0 0 50px;
+				margin-bottom: 15px;
+				height: 41px;
+			}
+				.view-Brevkasse.view-display-id-page_2 .header-title {
+					background: url("../images/icon-laege.png") no-repeat 0 0;
+				}
+				.view-Brevkasse.view-display-id-page_3 .header-title {
+					background: url("../images/icon-psykolog.png") no-repeat 0 0;
+				}
+				.view-Brevkasse .view-header .header-title span {
+					font-size: 13px;
+					color: #3e3e3e;
+				}
+				.view-Brevkasse .view-header .header-title h1 {
+					color: #0b5a7c;
+					font-size: 28px;
+					margin: 0; padding: 4px 0 0 0;
+					font-weight: normal;
+					font-family: "Cabin", sans-serif;
+				}
+		.view-Brevkasse .view-header #add-question {
+			position: absolute;
+			top: 23px;
+			right: 23px;
+			color: white;
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: 15px;
+			line-height: 15px;
+			display: inline-block;
+			background: #0B5A7C url("../images/icon-white-triangle.png") no-repeat 13px 11px;
+			padding: 10px 12px 10px 30px;
+			border-radius: 5px;
+		}
+	.view-Brevkasse .views-row {
+		margin-bottom: 14px;
+		box-shadow: 0 0 7px #BBB;	
+		background: #FFF;
+	}
+		.view-Brevkasse .views-row > .views-field {
+			background: #FFF;
+			border: none;
+			border-radius: 0;
+			overflow: hidden;
+			padding: 20px 23px 20px 52px;
+			font-family: "Cabin", sans-serif;
+		}
+			.view-Brevkasse .views-row > .views-field a {
+				padding: 0;
+			}
+			.view-Brevkasse .views-row > .views-field .ui-icon {
+				background: url("../images/icon-arrow-acc.png") no-repeat center center;
+				left: 23px;
+			}
+			.view-Brevkasse .views-row > .views-field.ui-state-active .ui-icon {
+				background: url("../images/icon-arrow-acc-active.png") no-repeat center center;			
+			}
+			.view-Brevkasse .views-row .acc_left {
+				float: left;
+				width: 75%;
+			}
+				.view-Brevkasse .views-row .acc_left .faq_acc_date {
+					color: #424242;
+					font-weight: bold;
+					font-size: 11px;
+					margin-bottom: 2px;
+				}
+				.view-Brevkasse .views-row .acc_left .faq_acc_title {
+					color: #3d3d3d;
+					font-size: 15px;
+					text-transform: uppercase;
+				}
+					.view-Brevkasse .views-field.ui-state-active .acc_left .faq_acc_title {
+						color: #0b5a7c;
+					}
+
+			.view-Brevkasse .views-row .acc_right {
+				width: 25%;
+				float: left;
+				font-size: 13px;
+				color: #3e3e3e;
+				text-align: right;
+			}
+				.view-Brevkasse .views-row .acc_right .faq_acc_sex {
+					display: inline;
+				}
+				.view-Brevkasse .views-row .acc_right .faq_acc_age {
+					display: inline;
+					padding-left: 3px;
+				}
+		.view-Brevkasse .views-row > .ui-accordion-content {
+			border: none;
+			color: #3e3e3e;
+			font-size: 12px; line-height: 14px;
+			font-family: "Cabin", sans-serif;
+			padding: 0 23px 20px 52px;
+			border-radius: 0;
+		}
+			.view-Brevkasse .views-row > .ui-accordion-content .views-label {
+				font-weight: bold;
+				margin-bottom: 5px;
+			}
+			.view-Brevkasse .views-row > .ui-accordion-content .views-field-view-node a {
+				color: #0b5a7c;
+				font-weight: bold;
+			}
