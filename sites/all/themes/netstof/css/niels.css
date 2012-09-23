@@ -118,7 +118,75 @@
 	width:160px;margin-top:20px;padding:0 20px 0 20px;
 	float:left;
 }
-	/* styling af left content på underside */
+/* styling af hurtige indgange til højre for slideshow */
+.region-sidebar-first #hurtige-genveje{
+	height:239px;
+	background:#3e3e3e;
+}
+	.region-sidebar-first #hurtige-genveje .left{float:left;}
+	.region-sidebar-first #hurtige-genveje .right{float:left;line-height:1;}	
+	/* .genvej & genvej-wrapper */
+	.region-sidebar-first #hurtige-genveje .genvej-wrapper{position:relative;}
+		.region-sidebar-first #hurtige-genveje .genvej-wrapper:hover{
+			background:url('../images/genvej-wrapper-hover.png') no-repeat transparent top left;
+		}
+		.region-sidebar-first #hurtige-genveje .genvej{
+			padding:24px 20px 23px 20px;
+			background:url('../images/genvej-border.png') repeat-x transparent top left;
+		}
+		.region-sidebar-first #hurtige-genveje .genvej:after{
+			content:"";
+			display:block;
+			clear:both;
+			width:100%;
+		}
+			.region-sidebar-first #hurtige-genveje .genvej-wrapper:first-child .genvej{
+				background:none;
+			}
+	/* styling of each invidual row */
+	.region-sidebar-first #hurtige-genveje #akut-hjaelp .left{
+		width:30px;height:31px;margin:0 15px 0 3px;
+		background:url(../images/akut-hjaelp-genvej.png) no-repeat transparent top left;
+	}
+	.region-sidebar-first #hurtige-genveje #brevkasse .left{
+		width:39px;height:29px;margin:0 10px 0 0;
+		background:url(../images/brevkasse-genvej.png) no-repeat transparent top left;
+	}
+		.region-sidebar-first #hurtige-genveje .genvej-wrapper .plus-brevkasse{display:none;}
+			.region-sidebar-first #hurtige-genveje .genvej-wrapper:hover .plus-brevkasse{
+				display:block;
+				width:68px;height:80px;
+				position:absolute;top:0;right:0;
+			}
+		.region-sidebar-first #hurtige-genveje #brevkasse:hover .left{
+			background:url(../images/brevkasse-hover-genvej.png) no-repeat transparent top left;
+		}
+	.region-sidebar-first #hurtige-genveje #debatforum .left{
+		width:41px;height:40px;margin:-3px 8px 0 0;
+		background:url(../images/forum-genvej.png) no-repeat transparent top left;
+	}
+		.region-sidebar-first #hurtige-genveje .genvej-wrapper .plus-debatforum{display:none;}
+		.region-sidebar-first #hurtige-genveje .genvej-wrapper:hover .plus-debatforum{
+			display:block;
+			width:68px;height:80px;
+			position:absolute;top:0;right:0;
+		}
+		.region-sidebar-first #hurtige-genveje #debatforum:hover .left{
+			background:url(../images/forum-hover-genvej.png) no-repeat transparent top left;
+		}
+	/* general row styling */
+	.region-sidebar-first #hurtige-genveje .genvej:hover .right .title a{color:#feac01;}
+	.region-sidebar-first #hurtige-genveje .genvej:hover .right .description{
+		color:#fefefe;
+		cursor:default;
+	}
+	.region-sidebar-first #hurtige-genveje .right a{font-size:18px;color:#fff;}
+	.region-sidebar-first #hurtige-genveje .right a{text-decoration:none;}
+	.region-sidebar-first #hurtige-genveje .right .description{margin-top:1px;}
+	.region-sidebar-first #hurtige-genveje .right .description{
+		font-size:12px;color:#b8b8b8;
+	}
+/* styling af left content på underside */
 	#leftcontent h3{
 		margin:14px 0 4px -6px;
 		padding:2px 0 2px 6px;

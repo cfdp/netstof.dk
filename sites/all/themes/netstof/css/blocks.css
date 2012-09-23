@@ -261,6 +261,7 @@ tr .ajax-progress .throbber {
 		
 	}
 	.region-sidebar-first section.block .block-inner {
+		background-color: #FFFFFF;
 	}
 	.region-sidebar-first section.block h2.block-title {
 		color: #424242;
