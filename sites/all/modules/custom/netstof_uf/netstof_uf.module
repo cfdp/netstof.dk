@@ -9,9 +9,10 @@ function netstof_uf_form_alter(&$form, &$form_state, $form_id){
   
   switch ($form_id) {
   case 'questions_and_answers_node_form':
-    //$form['#after_build'][] = 'netstof_uf_questions_and_answers_node_form_after_build';
+    $form['#after_build'][] = 'netstof_uf_node_form_after_build';
     break;
   case ("questions_and_answers_node_form" || "test_node_form"):
+    /*we want to change the field type on the form so the user can only choose one category - viable??? */
     //$field_language = field_language('node', $node, 'field_faq');
     //$form['field_profile_qna_taxonomy']['und']['#type'] = 'select';
     break;
@@ -21,21 +22,24 @@ function netstof_uf_form_alter(&$form, &$form_state, $form_id){
 }
 
 // afterbuild function - for removing the input text format fields for all users but admins
-/*
-function netstof_uf_NODE_TYPE_node_form_after_build($form) {
+function netstof_uf_node_form_after_build($form) {
     // We want this on a specific field
-    $form['YOUR_FIELD']['und']['0']['format']['#access'] = FALSE;
+    dpm($form);
+    if (!netstof_uf_user_has_role('administrator')) {
+      $form['body']['und']['0']['format']['guidelines']['#access'] = FALSE;
+      $form['body']['und']['0']['format']['help']['#access'] = FALSE;      
+    }
     return $form;
 }
-*/
+
   
 function netstof_uf_node_update($node) {
   global $user;
   //if it is the first time the node is edited by a counselor, change the author to the current user
-  if (($node->uid == 0) && ($node->type == "questions_and_answers") && netstof_uf_user_has_role('administrator')) {
+  if (($node->uid == 0) && ($node->type == "questions_and_answers") && netstof_uf_user_has_role('Brevkasseredaktør')) {
     $node->uid = $user->uid;
     node_save($node);
-    drupal_set_message(t('Author of node changed'));
+    drupal_set_message(t('Author of Questions and Answers node changed from anonymous to ').$user->name);
   }
 }
 
