@@ -21,99 +21,6 @@
  * 2. Uncomment the required function to use.
  */
 
-
-/**
- * Preprocess variables for the html template.
- */
-/* -- Delete this line to enable.
-function netstof_preprocess_html(&$vars) {
-  global $theme_key;
-
-  // Two examples of adding custom classes to the body.
-  
-  // Add a body class for the active theme name.
-  // $vars['classes_array'][] = drupal_html_class($theme_key);
-
-  // Browser/platform sniff - adds body classes such as ipad, webkit, chrome etc.
-  // $vars['classes_array'][] = css_browser_selector();
-
-}
-// */
-
-
-/**
- * Process variables for the html template.
- */
-/* -- Delete this line if you want to use this function
-function netstof_process_html(&$vars) {
-}
-// */
-
-
-/**
- * Override or insert variables for the page templates.
- */
-/* -- Delete this line if you want to use these functions
-function netstof_preprocess_page(&$vars) {
-}
-function netstof_process_page(&$vars) {
-}
-// */
-
-
-/**
- * Override or insert variables into the node templates.
- */
-/* -- Delete this line if you want to use these functions
-function netstof_preprocess_node(&$vars) {
-}
-function netstof_process_node(&$vars) {
-}
-// */
-
-
-/**
- * Override or insert variables into the comment templates.
- */
-/* -- Delete this line if you want to use these functions
-function netstof_preprocess_comment(&$vars) {
-}
-function netstof_process_comment(&$vars) {
-}
-// */
-
-
-/**
- * Override or insert variables into the block templates.
- */
-/* -- Delete this line if you want to use these functions
-function netstof_preprocess_block(&$vars) {
-}
-function netstof_process_block(&$vars) {
-}
-// */
-
-/*
-function netstof_menu_link(array $variables) {
-  $element = $variables['element'];
-  $sub_menu = '';
-
-  if($element["#original_link"]["menu_name"]=="main-menu") {
-
-	  if($element["#original_link"]["depth"]==1) {
-	  	$element["#title"] = "";
-	  }
-	
-	  if ($element['#below']) {
-	    $sub_menu = drupal_render($element['#below']);
-	  }
-	  
-	  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
-	  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
-  }
-}
-*/
-
 /**
  * MENU LINKS
  */
@@ -178,4 +85,26 @@ function netstof_preprocess_block(&$vars) {
   if ($vars['block_id'] == $block_count) {
     $vars['classes_array'][] = 'block-last';
   }
+}
+
+/**
+ * ALTER SEARCH BOX
+ */
+function netstof_form_alter(&$form, $form_state, $form_id) {
+
+	switch ($form_id)  {
+		case 'search_block_form':
+			$form["search_block_form"]["#default_value"] = "Søg på netstof.dk";
+			// On blur / On focus
+		    $form['search_block_form']['#attributes']['onblur'] = "if (this.value == '') {this.value = 'Søg på netstof.dk';}";
+		    $form['search_block_form']['#attributes']['onfocus'] = "if (this.value == 'Søg på netstof.dk') {this.value = '';}";
+		break;
+
+		case 'custom_search_blocks_form_1':
+			$form["custom_search_blocks_form_1"]["#default_value"] = "Søg i brevkassen";
+			// On blur / On focus
+		    $form['custom_search_blocks_form_1']['#attributes']['onblur'] = "if (this.value == '') {this.value = 'Søg i brevkassen';}";
+		    $form['custom_search_blocks_form_1']['#attributes']['onfocus'] = "if (this.value == 'Søg i brevkassen') {this.value = '';}";
+		break;
+	}
 }

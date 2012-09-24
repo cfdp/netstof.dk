@@ -23,35 +23,41 @@ h1#page-title {
 /**
  * Opret indhold - Spørgsmål til brevkassen
  */
+.page-node-add-questions-and-answers h1#page-title {
+	color: #0B5A7C !important;
+	padding: 3px 0 0 52px;
+	background: url("../images/icon-title-letter.png") no-repeat top left;
+	height: 36px;
+}
 #questions-and-answers-node-form {
 	font-family: "Cabin", sans-serif;
 }
- #questions-and-answers-node-form > div > .form-item {
- 	margin-bottom: 18px;
- }
- #questions-and-answers-node-form label {
- 	font-size: 13px;
- 	line-height: 13px;
- 	font-weight: bold;
- 	color: #424242;
- 	margin-bottom: 10px;
- }
-  #questions-and-answers-node-form label.option {
- 	font-weight: normal;
- }
- #questions-and-answers-node-form #edit-body-und-0-format {
- 	display: none;
- }
- #questions-and-answers-node-form #edit-body {
- 	margin-bottom: 18px;
- }
- #edit-field-profile-qna-taxonomy-und > div.form-item {
-
- }
-   #questions-and-answers-node-form div.description {
+	#questions-and-answers-node-form > div > .form-item {
+		margin-bottom: 18px;
+	}
+	#questions-and-answers-node-form label {
+		font-size: 13px;
+		line-height: 13px;
+		font-weight: bold;
+		color: #424242;
+		margin-bottom: 10px;
+	}
+	#questions-and-answers-node-form label.option {
+		font-weight: normal;
+	}
+	#questions-and-answers-node-form #edit-body-und-0-format {
+		display: none;
+	}
+	#questions-and-answers-node-form #edit-body {
+		margin-bottom: 18px;
+	}
+	#edit-field-profile-qna-taxonomy-und > div.form-item {
+	
+	}
+	#questions-and-answers-node-form div.description {
 	margin-left: 0;
-  }	
-  #questions-and-answers-node-form #edit-submit {
+	}	
+	#questions-and-answers-node-form #edit-submit {
 	color: white;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -62,4 +68,10 @@ h1#page-title {
 	border: none;
 	border-radius: 5px;
 	text-align: left;
-  }
+	}
+	#questions-and-answers-node-form input[type=text] {
+		padding: 3px 4px;
+		font-size: 12px;
+		color: #666;
+		font-family: "Cabin", sans-serif;
+	}
