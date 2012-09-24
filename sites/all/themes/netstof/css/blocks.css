@@ -316,7 +316,7 @@ tr .ajax-progress .throbber {
 		font-weight: normal;
 		padding: 30px 23px 23px 23px;
 	}
-	.region-sidebar-first .block .block-content {
+	.not-front .region-sidebar-first .block .block-content {
 		font-size: 11px; line-height: 13px;
 		color: #404040;
 		background: #FFFFFF url("../images/block-btm.png") no-repeat bottom center;
