@@ -207,6 +207,7 @@
             <div id="content" class="region">
               <?php print render($page["content"]); ?>
             </div>
+            <div id="content-btm-shadow"></div>
           <?php endif; ?>
 
           <!-- region: Main Content Front Page -->

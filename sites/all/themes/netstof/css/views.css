@@ -38,15 +38,39 @@
 				.page-node-305 #content > .block-views .view-header h2.laege {
 					background: url("../images/icon-laege.png") no-repeat 0 0;
 				}
-			.page-node-305 #content > .block-views .view-header a {
+				.page-node-305 #content > .block-views .view-header p {
+					float: left;
+					width: 100%;
+				}
+			.page-node-305 #content > .block-views .view-header a.goto-link {
 				color: #FFFFFF;
 				font-weight: bold;
 				text-transform: uppercase;
 				font-size: 15px; line-height: 15px;
-				display: inline-block;
+				display: block;
 				background: #0b5a7c url("../images/icon-white-triangle.png") no-repeat 13px 11px;
 				padding: 10px 12px 10px 30px;
-				border-radius: 5px;
+				float: left;
+				-webkit-border-top-left-radius: 5px;
+				-webkit-border-bottom-left-radius: 5px;
+				-moz-border-radius-topleft: 5px;
+				-moz-border-radius-bottomleft: 5px;
+				border-top-left-radius: 5px;
+				border-bottom-left-radius: 5px;
+			}
+			.page-node-305 #content > .block-views .view-header a.add-link {
+				display: block;
+				height: 35px;
+				width: 35px;
+				background: #0b5a7c url("../images/icon-plus-mini.png") no-repeat center center;
+				float: left;
+				margin-left: 3px;
+				-webkit-border-top-right-radius: 5px;
+				-webkit-border-bottom-right-radius: 5px;
+				-moz-border-radius-topright: 5px;
+				-moz-border-radius-bottomright: 5px;
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;
 			}
 		.page-node-305 #content > .block-views .view-content {
 			float: left;
@@ -132,8 +156,8 @@
 			font-size: 15px;
 			line-height: 15px;
 			display: inline-block;
-			background: #0B5A7C url("../images/icon-white-triangle.png") no-repeat 13px 11px;
-			padding: 10px 12px 10px 30px;
+			background: #0B5A7C url("../images/icon-plus.png") no-repeat 8px 9px;
+			padding: 10px 12px 10px 32px;
 			border-radius: 5px;
 		}
 	.view-Brevkasse .views-row {
@@ -208,3 +232,16 @@
 				color: #0b5a7c;
 				font-weight: bold;
 			}
+			
+/**
+ * PAGER
+ */
+.view-Brevkasse ul.pager {
+	margin-top: 23px;
+}
+	.view-Brevkasse ul.pager li {
+		font-size: 13px;
+	}
+	.view-Brevkasse ul.pager li a {
+		color: #424242;
+	}
