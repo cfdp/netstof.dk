@@ -54,7 +54,7 @@
 				background:url('/sites/all/themes/netstof/images/findhjaelp-sprite.png') no-repeat #ffad00 16px 8px;
 			}
 */
-/* slideshow styles */
+/* Slideshow */
 #block-views-slideshow-block a{
 	text-decoration:none;color:#faad09;
 }
@@ -67,7 +67,7 @@
 	#block-views-slideshow-block #views_slideshow_cycle_main_slideshow-block{
 		position:relative;top:0;left:0;z-index:4;
 	}
-		/* styling the text-overlay */
+		/* Text-overlay */
 		#widget_pager_top_slideshow-block{position:relative;}
 		#widget_pager_top_slideshow-block .views-slideshow-pager-field-item > div{display:none;}
 		#widget_pager_top_slideshow-block .views-slideshow-pager-field-item > div.views-field-counter{display:block;}
@@ -118,7 +118,7 @@
 	width:160px;margin-top:20px;padding:0 20px 0 20px;
 	float:left;
 }
-/* styling af hurtige indgange til højre for slideshow */
+/* Hurtige indgange til højre for slideshow */
 .region-sidebar-first #hurtige-genveje{
 	height:239px;
 	background:#3e3e3e;
@@ -143,7 +143,7 @@
 			.region-sidebar-first #hurtige-genveje .genvej-wrapper:first-child .genvej{
 				background:none;
 			}
-	/* styling of each invidual row */
+	/* Each invidual row */
 	.region-sidebar-first #hurtige-genveje #akut-hjaelp .left{
 		width:30px;height:31px;margin:0 15px 0 3px;
 		background:url(../images/akut-hjaelp-genvej.png) no-repeat transparent top left;
@@ -174,7 +174,7 @@
 		.region-sidebar-first #hurtige-genveje #debatforum:hover .left{
 			background:url(../images/forum-hover-genvej.png) no-repeat transparent top left;
 		}
-	/* general row styling */
+	/* General row styling */
 	.region-sidebar-first #hurtige-genveje .genvej:hover .right .title a{color:#feac01;}
 	.region-sidebar-first #hurtige-genveje .genvej:hover .right .description{
 		color:#fefefe;
@@ -186,7 +186,7 @@
 	.region-sidebar-first #hurtige-genveje .right .description{
 		font-size:12px;color:#b8b8b8;
 	}
-/* styling af left content på underside */
+/* Left content på underside */
 	#leftcontent h3{
 		margin:14px 0 4px -6px;
 		padding:2px 0 2px 6px;
@@ -211,5 +211,62 @@
 	#leftcontent p{
 		margin:0;padding:0;
 	}
-/* styling af højre sidebar */
+/* Højre sidebar */
 #block-block-7{margin-top:25px;}
+/* Brevkasse enkeltvisning */
+.not-front.node-type-questions-and-answers #main-content{
+	background:none;box-shadow:none;
+}
+	.not-front.node-type-questions-and-answers #main-content > #content{
+		padding:0;
+		background:none;box-shadow:none;
+	}
+		.node-type-questions-and-answers .node-content div{margin-top:15px;}
+		.node-type-questions-and-answers .node-content div:first-child{margin-top:0;}
+			.node-questions-and-answers .node-content .question, .node-questions-and-answers .node-content .answer{
+				padding:25px 22px 15px;
+				background:url("../images/content-top.png") no-repeat scroll center top #FFFFFF;
+				box-shadow:0 0 7px #BBBBBB;
+			}
+				.node-type-questions-and-answers .node-content #page-title{
+					margin-bottom:15px;
+					font-size:28px;color:#0b5a7c;
+				}
+				/* question part */
+				.node-questions-and-answers .node-content .question .date{margin-bottom:15px;}
+				.node-questions-and-answers .node-content .question .date-label{
+					font-size:13px;text-transform:uppercase;
+				}
+					.node-questions-and-answers .question .field-name-field-qna-sex:after,
+					.node-questions-and-answers .question .field-name-field-qna-age:after{
+						content:"";
+						display:block;
+						clear:both;
+						width:100%;
+					}
+						.node-questions-and-answers .question .field-name-field-qna-sex  h2, 
+						.node-questions-and-answers .question .field-name-field-qna-sex div,
+						.node-questions-and-answers .question .field-name-field-qna-age h2,
+						.node-questions-and-answers .question .field-name-field-qna-age div{
+							margin:0;
+							float:left;
+						}
+				/* answer part */
+				.node-type-questions-and-answers .node-content .answer {
+					padding-bottom:55px;
+				}
+				.node-type-questions-and-answers .answer .field-name-field-qna-answer h2{
+					font-size:20px;font-weight:normal;
+					text-transform:uppercase;
+				}
+				.node-type-questions-and-answers .answer .field-name-field-tags ul{margin:0;padding:0;}
+				.node-type-questions-and-answers .answer .field-name-field-tags ul li{
+					margin-left:5px;
+					display:inline;
+					text-transform:uppercase;
+				}
+				.node-type-questions-and-answers .answer .field-name-field-tags ul li:first-child{
+					margin-left:0;
+				}
+				.node-type-questions-and-answers .answer .field-name-field-tags ul li a{display:inline;}
+				.node-type-questions-and-answers .answer .user-picture img{margin:0;padding:0;}

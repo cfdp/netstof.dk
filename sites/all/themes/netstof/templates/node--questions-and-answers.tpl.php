@@ -105,8 +105,7 @@ hide($content['comments']);
 hide($content['links']);
 ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <?php print render($title_prefix); ?>
-
+	<?php print render($title_prefix); ?>
   <?php if ($title && !$page): ?>
     <header<?php print $header_attributes; ?>>
       <?php if ($title): ?>
@@ -118,15 +117,31 @@ hide($content['links']);
   <?php endif; ?>
 
   <div<?php print $content_attributes; ?>>
-    <?php print render($content); ?>
+    <?php hide($content); ?>
+		<div class="question">
+			<?php print t('Question') ?>:<br /> 
+			<?php if ($title): ?>
+				<h1 id="page-title">
+					<?php print $title; ?>
+				</h1>
+			<?php endif; ?>
+			<div class="date"><span class="date-label"><?php print t('Date'); ?>: </span><?php print format_date($created, $type = 'custom', $format = 'd.m.Y' , $timezone = 'Europe/Copenhagen', $langcode = NULL); ?></div> 
+			<?php print render($content['field_qna_sex']); ?>
+			<?php print render($content['field_qna_age']); ?>
+			<?php print render($content['body']); ?>
+		</div><!-- .question end -->
+		<div class="answer">
+			<?php print render($last_update); ?>
+			<?php print render($content['field_qna_answer']); ?>
+			<?php print render($content['field_tags']); ?>
+			<?php if(!empty($user_picture) || $display_submitted): ?>
+			<footer<?php print $footer_attributes; ?>>
+				<?php print $user_picture; ?>
+				<p class="qna-responding-counselor"><?php print t('This question was answered by: ').$name;?></p>
+			</footer>
+		<?php endif; ?>
+		</div><!-- .answer end -->
   </div>
-  
-  <?php if(!empty($user_picture) || $display_submitted): ?>
-    <footer<?php print $footer_attributes; ?>>
-      <?php print $user_picture; ?>
-      <p class="qna-responding-counselor"><?php print t('This question was answered by: ').$name;?></p>
-    </footer>
-  <?php endif; ?>
   
   <?php if ($links = render($content['links'])): ?>
     <nav<?php print $links_attributes; ?>><?php print $links; ?></nav>

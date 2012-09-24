@@ -179,3 +179,12 @@ function netstof_preprocess_block(&$vars) {
     $vars['classes_array'][] = 'block-last';
   }
 }
+/**
+ * Override or insert variables into the page template.
+ */
+function netstof_preprocess_page(&$variables, $hook) {
+	if (isset($variables['node'])) {  
+    $variables['theme_hook_suggestions'][] = 'page__type__'. $variables['node']->type;
+    $variables['theme_hook_suggestions'][] = "page__node__" . $variables['node']->nid;
+  }
+}
