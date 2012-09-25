@@ -150,7 +150,7 @@
 
       <div class="content-inner clearfix">
 
-				<!-- region: Left Content -->
+		  <!-- region: Left Content -->
           <?php if(!$is_front && $page["leftcontent"]): ?>
             <div id="leftcontent" class="region">
               <?php print render($page["leftcontent"]); ?>
@@ -175,7 +175,19 @@
           <?php if ($title || $primary_local_tasks || $secondary_local_tasks || $action_links = render($action_links)): ?>
             <header<?php print $content_header_attributes; ?>>
 
-              <?php if ($title): ?>
+          	  <?php 
+          	  /* Hide titles on specific content types */
+          	  $show_title = TRUE;
+          	  
+          	  $types = array("experience", "questions_and_answers");
+          	  
+          	  if(arg(0)=="node") { 
+          	  	$node = node_load(arg(1));
+          	  	if(in_array($node->type, $types)) $show_title = false;
+          	  }
+          	  ?>
+
+              <?php if ($title && $show_title): ?>
                 <h1 id="page-title">
                   <?php print $title; ?>
                 </h1>
