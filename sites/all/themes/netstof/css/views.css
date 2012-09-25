@@ -156,8 +156,8 @@
 			font-size: 15px;
 			line-height: 15px;
 			display: inline-block;
-			background: #0B5A7C url("../images/icon-plus.png") no-repeat 8px 9px;
-			padding: 10px 12px 10px 32px;
+			background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px;
+			padding: 10px 12px 10px 30px;
 			border-radius: 5px;
 		}
 	.view-Brevkasse .views-row {
@@ -232,10 +232,121 @@
 				color: #0b5a7c;
 				font-weight: bold;
 			}
-			
+	
+/**
+ * ERFARINGER - Oversigt
+ */
+
+.page-erfaringer #page-title {
+	display: none;
+}
+.view-erfaringer .view-header {
+	margin-bottom: 14px;
+	box-shadow: 0 0 7px #BBB;	
+	background: #FFF;	
+	padding: 23px 23px 10px 23px;
+	position: relative;
+	font-family: "Cabin", sans-serif;	
+}
+	.view-erfaringer .view-header h1 {
+		color: #404040;
+		font-size: 28px;
+		margin: 5px 0 30px 0; padding: 4px 0 0 0;
+		font-weight: normal;
+		font-family: "Cabin", sans-serif;
+	}
+	.view-erfaringer .view-header #add-experince {
+		position: absolute;
+		top: 23px;
+		right: 23px;
+		color: white;
+		font-weight: bold;
+		text-transform: uppercase;
+		font-size: 15px;
+		line-height: 15px;
+		display: inline-block;
+		background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px;
+		padding: 10px 12px 10px 30px;
+		border-radius: 5px;
+	}
+	.view-erfaringer .views-row {
+		margin-bottom: 14px;
+		box-shadow: 0 0 7px #BBB;	
+		background: #FFF;
+	}
+		.view-erfaringer .views-row > .views-field {
+			background: #FFF;
+			border: none;
+			border-radius: 0;
+			overflow: hidden;
+			padding: 20px 23px 20px 52px;
+			font-family: "Cabin", sans-serif;
+		}
+			.view-erfaringer .views-row > .views-field a {
+				padding: 0;
+			}
+			.view-erfaringer .views-row > .views-field .ui-icon {
+				background: url("../images/icon-arrow-acc.png") no-repeat center center;
+				left: 23px;
+			}
+			.view-erfaringer .views-row > .views-field.ui-state-active .ui-icon {
+				background: url("../images/icon-arrow-acc-active.png") no-repeat center center;			
+			}
+			.view-erfaringer .views-row .acc_left {
+				float: left;
+				width: 75%;
+			}
+				.view-erfaringer .views-row .acc_left .faq_acc_date {
+					color: #424242;
+					font-weight: bold;
+					font-size: 11px;
+					margin-bottom: 2px;
+				}
+				.view-erfaringer .views-row .acc_left .faq_acc_title {
+					color: #3d3d3d;
+					font-size: 15px;
+					text-transform: uppercase;
+				}
+					.view-Brevkasse .views-field.ui-state-active .acc_left .faq_acc_title {
+						color: #0b5a7c;
+					}
+
+			.view-erfaringer .views-row .acc_right {
+				width: 25%;
+				float: left;
+				font-size: 13px;
+				color: #3e3e3e;
+				text-align: right;
+			}
+				.view-erfaringer .views-row .acc_right .faq_acc_sex {
+					display: inline;
+				}
+				.view-erfaringer .views-row .acc_right .faq_acc_age {
+					display: inline;
+					padding-left: 3px;
+				}
+		.view-erfaringer .views-row > .ui-accordion-content {
+			border: none;
+			color: #3e3e3e;
+			font-size: 12px; line-height: 14px;
+			font-family: "Cabin", sans-serif;
+			padding: 0 23px 20px 52px;
+			border-radius: 0;
+		}
+			.view-erfaringer .views-row > .ui-accordion-content .views-label {
+				font-weight: bold;
+				margin-bottom: 5px;
+			}
+			.view-erfaringer .views-row > .ui-accordion-content .views-field-view-node a {
+				color: #0b5a7c;
+				font-weight: bold;
+			}
+
+ 
 /**
  * PAGER
  */
+ 
 .view-Brevkasse ul.pager {
 	margin-top: 23px;
 }

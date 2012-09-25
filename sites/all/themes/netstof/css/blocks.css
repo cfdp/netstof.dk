@@ -17,6 +17,7 @@
 		width: 186px;
 		font-size: 14px;
 		font-family: "Cabin", sans-serif;
+		outline: none;
 	}
 	#search-block-form input[type=submit]{
 		border: none;
@@ -52,6 +53,7 @@
 		width: 140px;
 		font-size: 14px;
 		font-family: "Cabin", sans-serif;
+		outline: none;
 	}
 	#custom-search-blocks-form-1 input[type=submit]{
 		border: none;
@@ -354,6 +356,8 @@ tr .ajax-progress .throbber {
 			border-bottom: none;
 			height: 0;
 			margin-bottom: 15px;
+			width: 100%;
+			float: left;
 		}
 	.region-sidebar-first #block-block-7 a.add-post {
 		color: white;
@@ -362,7 +366,7 @@ tr .ajax-progress .throbber {
 		font-size: 15px;
 		line-height: 15px;
 		display: block;
-		background: #77b5cf url("../images/icon-white-triangle.png") no-repeat 13px 11px;
+		background: #77b5cf url("../images/icon-plus-mini.png") no-repeat 11px 11px;
 		padding: 10px 12px 10px 30px;
 		border-radius: 5px;
 		float: left;
@@ -480,20 +484,25 @@ ul.ui-autocomplete {
 	background: none;
 	border-radius: 0;
 	margin: 0; padding: 0;
+	box-shadow: 2px 2px 4px #AAA;
+	background-color: #FFFFFF;
+	max-width: 236px;
 }
 	ul.ui-autocomplete li {
-		background-color: #FFFFFF;
-		padding: 8px 8px 8px 24px;
+		background-color: #FFFFFF !important;
 	}
 	ul.ui-autocomplete li a {
 		font-size: 13px;
 		color: #424242;
 		font-family: "Cabin", sans-serif;
 		border-radius: 0 !important;
-		background-color: #FFFFFF;
+		background-color: #FFFFFF !important;
+		padding: 6px 8px 6px 24px !important;
+		cursor: pointer;
 	}
-	ul.ui-autocomplete li .ui-state-hover {
+	ul.ui-autocomplete .ui-state-hover {
 		background-color: #EEEEEE !important;
-		border-radius: none !important;
-		margin: 0;
+		border-radius: 0 !important;
+		margin: 0 !important;
+		color: #424242 !important;
 	}
