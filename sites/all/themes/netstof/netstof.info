@@ -11,6 +11,7 @@ stylesheets[screen][] = css/blocks.css
 stylesheets[screen][] = css/views.css
 stylesheets[screen][] = css/nodes.css
 stylesheets[screen][] = css/navigation.css
+stylesheets[screen][] = css/forum.css
 stylesheets[screen][] = css/niels.css
 stylesheets[screen][] = css/benjamin.css
 scripts[] = scripts/jquery.qtip-1.0.0-rc3.min.js
