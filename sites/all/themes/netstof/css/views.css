@@ -90,6 +90,8 @@
 				list-style-image: none;
 				margin: 0 0 10px 0;
 				padding: 0;
+				float: left;
+				width: 100%;
 			}
 				.page-node-305 .field-name-field-oversigt .field-item .view-content .views-field-picture {
 					float: left;
@@ -104,6 +106,7 @@
 					text-transform: uppercase;
 					color: #424242;
 					padding: 10px 0;
+					float: left;
 				}
 					.page-node-305 .field-name-field-oversigt .field-item .view-content .views-field-name a {
 						color: #424242;
@@ -111,6 +114,7 @@
 				.page-node-305 .field-name-field-oversigt .field-item .views-field-field-profile-public-description {
 					font-size: 12px;
 					color: #424242;
+					float: left;
 				}
 				
 /**
