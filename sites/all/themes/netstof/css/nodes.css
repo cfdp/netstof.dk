@@ -12,6 +12,9 @@ h1#page-title {
 	font-size: 13px; line-height: 16px;
 	color: #3e3e3e;
 }
+.node-content a {
+	color: #1e6381;
+}
 	
 /**
  * TYPE: Simpel side, Artikler, Erfaringer
@@ -69,6 +72,23 @@ h1#page-title {
 /**
  * Opret indhold - Spørgsmål til brevkassen
  */
+.page-node-add section#main-content {
+	background: url("../images/big_shadow_top.png") no-repeat top center;
+	padding-top: 11px;
+	position: relative; top: -11px;
+}
+.page-node-add #main-content-header {
+	padding: 23px 23px 0 23px;
+	background: white url("../images/content-top.png") no-repeat top center;		
+}
+.page-node-add #content {
+	padding: 0 23px 23px 23px;
+	background: white url("../images/content-btm.png") no-repeat bottom center;		
+}
+.page-node-add #content-btm-shadow {
+	background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
+	height: 15px;		
+}
 .page-node-add-questions-and-answers h1#page-title {
 	color: #0B5A7C !important;
 	padding: 3px 0 0 52px;

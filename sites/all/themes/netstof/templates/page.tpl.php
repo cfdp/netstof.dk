@@ -170,7 +170,7 @@
           	  
           	  $types = array("experience", "questions_and_answers", "article", "page");
           	  
-          	  if(arg(0)=="node") { 
+          	  if(arg(0)=="node" && is_numeric(arg(1))) { 
           	  	$node = node_load(arg(1));
           	  	if(in_array($node->type, $types)) $show_title = false;
           	  }

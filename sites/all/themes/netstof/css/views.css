@@ -11,11 +11,14 @@
 	height: 36px;
 	margin-bottom: 0;
 }
-	.page-node-305 #content > .block-views {
+	.page-node-305 .field-name-field-oversigt {
+		overflow: hidden;
+	}
+	.page-node-305 .field-name-field-oversigt .field-item {
 		float: left;
 		width: 50%;
 	}
-		.page-node-305 #content > .block-views > div {
+		.page-node-305 .field-name-field-oversigt .field-item > div {
 			padding-right: 20px;
 			margin-bottom: 20px;
 		}
@@ -23,7 +26,7 @@
 			float: left;
 			font-size: 12px;
 		}
-			.page-node-305 #content > .block-views .view-header h2 {
+			.page-node-305 .field-name-field-oversigt .field-item h2 {
 				color: #0b5a7c;
 				font-weight: normal;
 				text-transform: uppercase;
@@ -32,17 +35,20 @@
 				padding-left: 48px;		
 				height: 21px;
 			}
-				.page-node-305 #content > .block-views .view-header h2.psykolog {
+				.page-node-305 .field-name-field-oversigt .field-item h2.psykolog {
 					background: url("../images/icon-psykolog.png") no-repeat 0 0;
 				}
-				.page-node-305 #content > .block-views .view-header h2.laege {
+				.page-node-305 .field-name-field-oversigt .field-item h2.laege {
 					background: url("../images/icon-laege.png") no-repeat 0 0;
 				}
-				.page-node-305 #content > .block-views .view-header p {
+				.page-node-305 .field-name-field-oversigt .field-item h2.rusmiddel {
+					background: url("../images/icon-rusmiddel.png") no-repeat 0 0;
+				}	
+				.page-node-305 .field-name-field-oversigt .field-item p {
 					float: left;
 					width: 100%;
 				}
-			.page-node-305 #content > .block-views .view-header a.goto-link {
+			.page-node-305 .field-name-field-oversigt .field-item a.goto-link {
 				color: #FFFFFF;
 				font-weight: bold;
 				text-transform: uppercase;
@@ -58,7 +64,7 @@
 				border-top-left-radius: 5px;
 				border-bottom-left-radius: 5px;
 			}
-			.page-node-305 #content > .block-views .view-header a.add-link {
+			.page-node-305 .field-name-field-oversigt .field-item a.add-link {
 				display: block;
 				height: 35px;
 				width: 35px;
@@ -72,37 +78,37 @@
 				border-top-right-radius: 5px;
 				border-bottom-right-radius: 5px;
 			}
-		.page-node-305 #content > .block-views .view-content {
+		.page-node-305 .field-name-field-oversigt .field-item .view-content {
 			float: left;
 		}
-			.page-node-305 #content > .block-views .view-content ul {
+			.page-node-305 .field-name-field-oversigt .field-item .view-content ul {
 				margin: 0;
 				padding: 0;
 			}			
-			.page-node-305 #content > .block-views .view-content ul li {
+			.page-node-305 .field-name-field-oversigt .field-item .view-content ul li {
 				list-style: none;
 				list-style-image: none;
 				margin: 0 0 10px 0;
 				padding: 0;
 			}
-				.page-node-305 #content > .block-views .view-content .views-field-picture {
+				.page-node-305 .field-name-field-oversigt .field-item .view-content .views-field-picture {
 					float: left;
 					width: 104px;
 					margin: 0 7px 7px 0;
 				}
-					.page-node-305 #content > .block-views .view-content .views-field-picture img {
+					.page-node-305 .field-name-field-oversigt .field-item .view-content .views-field-picture img {
 						border: 2px solid #e2e1df;					
 					}
-				.page-node-305 #content > .block-views .view-content .views-field-name {
+				.page-node-305 .field-name-field-oversigt .field-item .view-content .views-field-name {
 					font-size: 15px; line-height: 15px;
 					text-transform: uppercase;
 					color: #424242;
 					padding: 10px 0;
 				}
-					.page-node-305 #content > .block-views .view-content .views-field-name a {
+					.page-node-305 .field-name-field-oversigt .field-item .view-content .views-field-name a {
 						color: #424242;
 					}
-				.page-node-305 #content > .block-views .view-content .views-field-field-profile-public-description {
+				.page-node-305 .field-name-field-oversigt .field-item .views-field-field-profile-public-description {
 					font-size: 12px;
 					color: #424242;
 				}
