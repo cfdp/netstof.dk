@@ -506,3 +506,28 @@ ul.ui-autocomplete {
 		margin: 0 !important;
 		color: #424242 !important;
 	}
+	
+/**
+ * SENESTE INDLÆG
+ */
+ 
+.view-usergenerated-content {
+
+}
+	.view-usergenerated-content h3 {
+		font-size: 15px;
+		text-transform: uppercase;
+		font-weight: normal;
+		margin: 0 0 15px 0;
+		padding: 0;
+	}
+	.view-usergenerated-content .view-grouping {
+		margin: 0 0 30px 0;
+	}
+	.view-usergenerated-content .views-row {
+		margin-bottom: 5px;	
+	}
+		.view-usergenerated-content a {
+			font-size: 13px;
+			color: #FFFFFF;
+		}
