@@ -341,7 +341,71 @@
 				color: #0b5a7c;
 				font-weight: bold;
 			}
-
+			
+/**
+ * ARTIKLER - Oversigt
+ */
+.view-artikler {
+	position: relative;
+}
+.view-artikler .views-fluidgrid-item {
+	float: left;
+	background: url("../images/grid-box-bg.png") no-repeat 0 9px;
+	width: 294px;
+	color: #404040;
+	font-size: 13px; line-height: 15px;
+}
+	.view-artikler .views-fluidgrid-item .views-fluidgrid-item-inner {
+		height: 335px;
+		position: relative;
+		background: white url("../images/block-btm.png") no-repeat bottom center;
+	}
+	.view-artikler .views-fluidgrid-item .views-fluidgrid-item-top {
+		background: url("../images/small_shadow_top.png") no-repeat top center;
+		height: 9px;
+	}
+	.view-artikler .views-fluidgrid-item .views-fluidgrid-item-btm {
+		background: url("../images/small_shadow_bottom.png") no-repeat bottom center;
+		height: 12px;
+	}
+		.view-artikler .views-fluidgrid-item .views-field-field-image {
+			line-height: 0;
+		}
+		.view-artikler .views-fluidgrid-item .views-field-title {
+				padding: 23px 23px 9px;
+		}
+			.view-artikler .views-fluidgrid-item .views-field-title a {
+				color: #1e6381;
+				font-size: 20px; line-height: 20px;
+				text-transform: uppercase;
+			}
+		.view-artikler .views-fluidgrid-item .views-field-body {
+			padding: 0 23px;
+			font-size: 13px;
+			color: #404040;
+		}
+		/* Pager */
+		.view-artikler ul.pager {
+			color: #424242;
+			font-size: 14px;
+			font-weight: normal;
+			margin-top: 30px;
+		}
+			.view-artikler ul.pager li {
+				padding: 0;
+			}
+			.view-artikler ul.pager li.pager-current {
+				padding: 0 10px;
+				font-family: "Cabin", sans-serif;
+				font-size: 15px;
+				font-weight: normal;
+			}
+			.view-artikler ul.pager li a {
+				color: #FFF;
+				background: #424242;
+				padding: 1px 8px;
+				text-decoration: none;
+			}
  
 /**
  * PAGER

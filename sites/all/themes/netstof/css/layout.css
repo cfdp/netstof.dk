@@ -43,24 +43,6 @@ body {
 #main-content {
 	margin-right: 23px !important;
 }
-.node-type-page #main-content {
-	background: url("../images/big_shadow_top.png") no-repeat top center;
-	padding-top: 11px;
-	position: relative; top: -11px;
-}
-	.node-type-page #main-content > #main-content-header {
-		padding: 25px 22px 0;
-		background: #FFFFFF url("../images/content-top.png") no-repeat top center;
-	}
-	.node-type-page #main-content > #content {
-		padding: 0 22px 15px;
-		background: #FFFFFF url("../images/content-btm.png") no-repeat bottom center;
-		overflow: hidden;
-	}
-	.node-type-page #main-content > #content-btm-shadow {
-		background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
-		height: 15px;
-	}
 	
 /**
  * SIDEBAR TOP
