@@ -28,6 +28,9 @@
 	height: 36px;
 	margin-bottom: 0;
 }
+.page-forum #tasks {
+	display: none;
+}
 #forum-wrapper {
 	float: left;
 	width: 100%;
@@ -50,7 +53,7 @@
 				font-size: 20px;
 				line-height: 20px;
 				padding-top: 20px;
-				padding-left: 48px;
+				/* padding-left: 48px; */
 				height: 21px;
 				margin-bottom: 5px;
 			}
@@ -334,8 +337,11 @@ body[class*='page-forum-'] h1#page-title {
 		}
 
 /* Forumemnet - Specifikt */
+.forum-post.article {
+	margin-top: -11px;
+}
 .forum-post.article .forum-post-title {
-	font-size: 28px;
+	font-size: 28px; line-height: 28px;
 	color: #0b5a7c;
 	margin-bottom: 15px;
 	text-transform: none;
@@ -346,3 +352,9 @@ body[class*='page-forum-'] h1#page-title {
 		padding: 23px 23px 0 23px;
 	}
 	
+/**
+ * SVAR PÅ FORUMEMNE
+ */
+.page-comment-reply #comment-form {
+	padding-top: 23px;
+}

@@ -47,7 +47,7 @@
     <?php endif; ?>
   </div>
 
-  <div class="forum-post-wrapper">
+  <div class="forum-post-wrapper test">
     <div class="forum-post-panel-sub">
       <?php print $author_pane; ?>
     </div>

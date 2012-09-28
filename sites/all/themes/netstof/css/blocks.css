@@ -325,6 +325,9 @@ tr .ajax-progress .throbber {
 		padding: 0 23px 23px 23px;
 		overflow: hidden;
 	}
+		.not-front .region-sidebar-first .block .block-content a {
+			color: #0B5A7C;
+		}
 	
 	/* OM BREVKASSEN */
 	.region-sidebar-first #block-block-7 {
