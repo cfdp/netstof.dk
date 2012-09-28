@@ -156,22 +156,24 @@ h1#page-title {
 		background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
 		height: 15px;	
 	}
-	#comments-form-wrapper h2.comment-title {
+	#comments-form-wrapper h2.comment-title,
+	h2.comment-form {
 		padding: 25px 23px 25px;
 		/* background: white url("../images/content-top.png") no-repeat top center; */
 		background-color: #FFFFFF;
 		font-size: 20px;
 		text-transform: uppercase;
 		font-weight: normal;
+		margin: 0;
 	}
-	#comments-form-wrapper #comment-form {
+	#comment-form {
 		padding: 0 23px 15px;
 		background: white url("../images/content-btm.png") no-repeat bottom center;
 	}
-		#comments-form-wrapper #edit-comment-body-und-0-format {
+		#comment-form #edit-comment-body-und-0-format {
 			display: none;
 		}
-		#comments-form-wrapper #edit-submit {
+		#comment-form #edit-submit {
 			color: white;
 			font-weight: bold;
 			text-transform: uppercase;
@@ -232,3 +234,7 @@ section#comments {
 				padding: 10px 12px 10px 30px;
 				border-radius: 5px;
 				}
+#comments .pager,
+#forum-comments .pager {
+	display: none;
+}

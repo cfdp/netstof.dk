@@ -15,37 +15,33 @@
  */
 ?>
  <div id="forum-topic-list">
- 
   <?php if (!empty($title)) : ?>
     <caption><?php print $title; ?></caption>
   <?php endif; ?>
-
-  <table class="forum-table forum-table-topics <?php print $classes; ?>">
-    <tbody>
       <?php foreach ($rows as $count => $row): ?>
-        <tr class="<?php print implode(' ', $row_classes[$count]); ?>">
+          <div class="topic-row-top"></div>
+          <div class="topic-row"><div>
           <?php if (empty($shadow[$count])): ?>
             <?php foreach ($row as $field => $content): ?>
               <?php /* To add popup from teaser in the title of the td, add: title="<?php print $teasers[$count] ?>"*/ ?>
-              <td class="views-field views-field-<?php print $fields[$field]; ?>">
+              <div class="views-field views-field-<?php print $fields[$field]; ?>">
                <?php /* Extra label for stickies. */ ?>
                <?php if ($field == 'title' && !empty($sticky[$count])): ?>
                  <span class="sticky-label"><?php print t('Sticky:'); ?></span>
                <?php endif; ?>
                <?php print $content; ?>
-              </td>
+              </div>
             <?php endforeach; ?>
           <?php else: ?> 
             <?php /* For shadow posts, we print only the icon and themed notice. */ ?>
-            <td class="views-field views-field-<?php print $fields['topic_icon']; ?>">
+            <div class="views-field views-field-<?php print $fields['topic_icon']; ?>">
               <?php print $row['topic_icon']; ?>
-            </td>
-            <td class="views-field views-field-<?php print $fields['title']; ?>" colspan="<?php print count($header)-1; ?>">
+            </div>
+            <div class="views-field views-field-<?php print $fields['title']; ?>" colspan="<?php print count($header)-1; ?>">
                <?php print $shadow[$count]; ?>
-            </td>
+            </div>
           <?php endif; ?>
-        </tr>
+      	  </div></div>
+      	  <div class="topic-row-btm"></div>
       <?php endforeach; ?>
-    </tbody>
-  </table>
 </div>
