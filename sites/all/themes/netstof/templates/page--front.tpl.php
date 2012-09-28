@@ -128,7 +128,7 @@
 
 <div id="header-btm-container">
 	<div class="container">
-		<a href="#"><img src="<?php print $base_path.drupal_get_path("theme","netstof"); ?>/images/find-hjaelp.png" id="find-hjaelp" /></a>
+		<a href="/paaroerende" title="Artikler og rådgivning for pårørende"><img src="<?php print $base_path.drupal_get_path("theme","netstof"); ?>/images/find-hjaelp.png" id="find-hjaelp" /></a>
 	</div>
 </div>
 
