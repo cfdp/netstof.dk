@@ -128,7 +128,7 @@
 
 <div id="header-btm-container">
 	<div class="container">
-		<a href="#"><img src="<?php print $base_path.drupal_get_path("theme","netstof"); ?>/images/find-hjaelp.png" id="find-hjaelp" /></a>
+		<a href="/paaroerende" title="Artikler og rådgivning for pårørende"><img src="<?php print $base_path.drupal_get_path("theme","netstof"); ?>/images/find-hjaelp.png" id="find-hjaelp" /></a>
 	</div>
 </div>
 
@@ -211,8 +211,8 @@
             <div id="content-btm-shadow"></div>
           <?php endif; ?>
 
-          <!-- region: Main Content Front Page -->
-          <?php if($is_front): ?>
+          <!-- region: Main Content Front Page or Pårørende Front Page-->
+          <?php if($is_front  || (request_path() == "paaroerende")): ?>
             <div id="content-btm" class="region">
               <?php print render($page["content_front"]); ?>
             </div>
@@ -234,7 +234,7 @@
   </div><!-- /end #columns -->
   
   <!-- region: Featured -->
-  <?php if($is_front) print render($page['featured']); ?>
+  <?php if($is_front || (request_path() == "paaroerende")) print render($page['featured']); ?>
 
 </div>
 
