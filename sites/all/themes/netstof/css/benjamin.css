@@ -1,0 +1,11 @@
+/* various styling */
+
+/*PROFILE PAGE*/
+body.page-user #content {
+  margin-bottom: 14px;
+  box-shadow: 0 0 7px #BBB; 
+  background: #FFF; 
+  padding: 23px;
+  position: relative;
+  font-family: "Cabin", sans-serif; 
+}
