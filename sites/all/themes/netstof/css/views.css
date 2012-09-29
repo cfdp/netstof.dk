@@ -128,7 +128,7 @@
 .view-Brevkasse {
 
 }
-	.view-Brevkasse .view-header {
+	.view-Brevkasse .view-header, .view-usergenerated-content .view-header {
 		margin-bottom: 14px;
 		box-shadow: 0 0 7px #BBB;	
 		background: #FFF;	

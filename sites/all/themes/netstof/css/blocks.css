@@ -558,7 +558,7 @@ ul.ui-autocomplete {
 	.view-usergenerated-content .views-row {
 		margin-bottom: 5px;	
 	}
-		.view-usergenerated-content a {
+		#footer-container .view-usergenerated-content a, #footer-container #block-block-5 a, #footer-container #block-block-6 a {
 			font-size: 13px;
 			color: #FFFFFF;
 		}

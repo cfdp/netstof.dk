@@ -74,6 +74,9 @@ body {
 		font-size: 13px;
 		line-height: 15px;
 	}
+  footer p {
+    line-height: 20px;
+  }
 	footer img {
 		margin: 0 10px -62px 10px;
 	}
