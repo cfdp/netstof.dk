@@ -23,6 +23,8 @@ function netstof_uf_node_form_after_build($form) {
   /*Anonymous users should not be able to make new FAQ questions*/
   if (netstof_uf_user_has_role('anonymous user')) {
     $form['field_profile_qna_taxonomy']['und']['209']['#access'] = FALSE;
+    /*we limit the number of checkboxes that can be selected via jQuery*/
+    drupal_add_js(path_to_theme() . "/scripts/netstof_uf.js");
   }
   /*Only admins get to play with the text format*/     
   if (!netstof_uf_user_has_role('administrator')) {
