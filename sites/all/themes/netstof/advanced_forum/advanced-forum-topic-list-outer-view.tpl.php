@@ -39,7 +39,14 @@
 
   <?php if ($header): ?>
     <div class="view-header">
-      <?php print $header; ?>
+      <div class="view-header-top"></div>
+      <div class="view-header-content">
+      	<?php print $header; ?>
+        <?php if ($node_create_list): ?>
+    	<div class="forum-node-create-links forum-node-create-links-top"><?php print $node_create_list ?></div>
+ 		<?php endif; ?>
+	   </div>
+ 	   <div class="view-header-btm"></div>
     </div>
   <?php endif; ?>
 
@@ -53,10 +60,6 @@
     <div class="attachment attachment-before">
       <?php print $attachment_before; ?>
     </div>
-  <?php endif; ?>
-
-  <?php if ($node_create_list): ?>
-    <div class="forum-node-create-links forum-node-create-links-top"><?php print $node_create_list ?></div>
   <?php endif; ?>
 
   <?php if ($pager): ?>

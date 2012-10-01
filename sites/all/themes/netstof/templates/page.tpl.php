@@ -167,12 +167,14 @@
           	  <?php 
           	  /* Hide titles on specific content types */
           	  $show_title = TRUE;
-          	  
           	  $types = array("experience", "questions_and_answers", "article", "page", "forum");
           	  
           	  if(arg(0)=="node" && is_numeric(arg(1))) { 
-          	  	$node = node_load(arg(1));
-          	  	if(in_array($node->type, $types)) $show_title = false;
+				$node = node_load(arg(1));
+				if(in_array($node->type, $types)) $show_title = false;
+          	  }
+          	  else if(arg(0)=="forum") {
+	          	  $show_title = false;
           	  }
           	  ?>
 

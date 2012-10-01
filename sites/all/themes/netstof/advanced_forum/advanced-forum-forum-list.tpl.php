@@ -51,6 +51,11 @@
 	
 	<div class="forum-item">
 		<div>
+		<?php if (!empty($item->forum_image)): ?>
+		<div class="forum-icon">
+		<?php print $item->forum_image; ?>
+		</div>
+		<?php endif; ?>
 		<div class="forum-name">
 		<a href="<?php print $item->link; ?>"><?php print $item->name; ?></a>
 		</div>

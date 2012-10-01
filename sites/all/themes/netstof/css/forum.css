@@ -26,7 +26,7 @@
 	padding: 3px 0 0 52px;
 	background: url("../images/icon-forum.png") no-repeat top left;
 	height: 36px;
-	margin-bottom: 0;
+	margin-bottom: 20px;
 }
 .page-forum #tasks {
 	display: none;
@@ -47,13 +47,16 @@
 		#forum-wrapper .forum-item > div {
 			padding-right: 23px;
 		}
+			#forum-wrapper .forum-item .forum-icon {
+				float: left;
+				margin-right: 8px;
+			}
 			#forum-wrapper .forum-item .forum-name {
 				font-weight: normal;
 				text-transform: uppercase;
 				font-size: 20px;
 				line-height: 20px;
 				padding-top: 20px;
-				/* padding-left: 48px; */
 				height: 21px;
 				margin-bottom: 5px;
 			}
@@ -79,7 +82,6 @@
 			#forum-wrapper .forum-item .forum-description {
 				font-size: 12px; font-family: "Cabin";
 				color: #3e3e3e;
-				margin-bottom: 15px;
 				margin-top: 15px;
 				float: left;
 				width: 100%;
@@ -132,16 +134,15 @@
 /**
  * EMNELISTE - Oversigt
  */
+
 body[class*='page-forum-'] section#main-content {
 	background: none;
 	padding-top: 0;
 	position: relative; top: 0;
-	box-shadow: 0 0 7px #BBB;
 }
 body[class*='page-forum-'] #main-content-header {
-	padding: 23px;
-	background-color: #FFFFFF;
-	margin-bottom: 11px;
+	padding: 0;
+	margin-bottom: 0;
 }
 body[class*='page-forum-'] #content {
 	padding: 0;
@@ -155,6 +156,7 @@ body[class*='page-forum-'] #content-btm-shadow {
 	float: left;
 	width: 100%;		
 }
+/*
 body[class*='page-forum-'] h1#page-title {
 	color: #0B5A7C !important;
 	padding: 0 0 0 0;
@@ -162,27 +164,64 @@ body[class*='page-forum-'] h1#page-title {
 	height: 36px;
 	margin-bottom: 0;
 }
-.forum-node-create-links {
-	position: absolute;
-	top: 23px;
-	right: 23px;
-	width: auto;
-	padding: 0;	
+*/
+.view-advanced-forum-topic-list .view-header {
+	margin-top: -11px;
+	float: left;
+	width: 100%;
 }
-	.forum-add-node {
-		margin-right: 0 !important;
+	.view-advanced-forum-topic-list .view-header #forum-icon {
+		float: left;
+		margin-right: 8px;
 	}
-	.forum-add-node a {
-		color: white;
-		font-weight: bold;
-		text-transform: uppercase;
-		font-size: 15px;
-		line-height: 15px;
-		display: inline-block;
-		background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px;
-		padding: 10px 12px 10px 30px;
-		border-radius: 5px
+	.view-advanced-forum-topic-list .view-header #forum-name {
 	}
+		.view-advanced-forum-topic-list .view-header #forum-name h1 {
+			font-size: 28px; line-height: 28px;
+			color: #0b5a7c;
+			font-family: "Cabin", sans-serif;
+			margin: 15px 0 15px 0;
+			font-weight: normal;
+		}
+	.view-advanced-forum-topic-list .view-header-top {
+		background: url("../images/big_shadow_top.png") no-repeat top center;
+		height: 11px;
+		float: left;
+		width: 100%;
+	}
+	.view-advanced-forum-topic-list .view-header-btm {
+		background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
+		height: 15px;
+		float: left;
+		width: 100%;
+	}
+	.view-advanced-forum-topic-list .view-header-content {
+		background: white url("../images/content-btm.png") no-repeat bottom center;
+		padding: 23px 23px 10px 23px;
+		float: left;
+		position: relative;
+	}
+	.forum-node-create-links {
+		position: absolute;
+		top: 23px;
+		right: 23px;
+		width: auto;
+		padding: 0;	
+	}
+		.forum-add-node {
+			margin-right: 0 !important;
+		}
+		.forum-add-node a {
+			color: white;
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: 15px;
+			line-height: 15px;
+			display: inline-block;
+			background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px;
+			padding: 10px 12px 10px 30px;
+			border-radius: 5px
+		}
 .view-advanced-forum-topic-list .topic-row-top {
 	background: url("../images/big_shadow_top.png") no-repeat top center;
 	height: 11px;
