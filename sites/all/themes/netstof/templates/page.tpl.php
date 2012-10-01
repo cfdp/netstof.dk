@@ -165,7 +165,7 @@
             <header<?php print $content_header_attributes; ?>>
 
           	  <?php 
-          	  /* Hide titles on specific content types */
+          	  /* Hide titles on specific content types and pages */
           	  $show_title = TRUE;
           	  $types = array("experience", "questions_and_answers", "article", "page", "forum");
           	  
