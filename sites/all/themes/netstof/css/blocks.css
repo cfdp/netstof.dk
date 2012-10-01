@@ -407,6 +407,10 @@ tr .ajax-progress .throbber {
 			width: 100%;
 			float: left;
 		}
+		.region-sidebar-first #block-block-7 .block-content a,
+		.region-sidebar-first #block-block-8 .block-content a {
+			color: #77b5cf;
+		}
 	.region-sidebar-first #block-block-7 a.add-post,
 	.region-sidebar-first #block-block-8 a.add-post {
 		color: white;
