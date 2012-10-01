@@ -119,5 +119,12 @@ function netstof_form_alter(&$form, $form_state, $form_id) {
 		    $form['custom_search_blocks_form_1']['#attributes']['onblur'] = "if (this.value == '') {this.value = 'Søg i brevkassen';}";
 		    $form['custom_search_blocks_form_1']['#attributes']['onfocus'] = "if (this.value == 'Søg i brevkassen') {this.value = '';}";
 		break;
+		
+		case 'custom_search_blocks_form_2':
+			$form["custom_search_blocks_form_2"]["#default_value"] = "Søg i debatforum";
+			// On blur / On focus
+		    $form['custom_search_blocks_form_2']['#attributes']['onblur'] = "if (this.value == '') {this.value = 'Søg i debatforum';}";
+		    $form['custom_search_blocks_form_2']['#attributes']['onfocus'] = "if (this.value == 'Søg i debatforum') {this.value = '';}";
+		break;
 	}
 }

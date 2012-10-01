@@ -33,17 +33,20 @@
 		float: left;
 		margin: 0;
 	}
-/* Brevkasse */	
-#custom-search-blocks-form-1 {
+/* Brevkasse / Debatforum */	
+#custom-search-blocks-form-1,
+#custom-search-blocks-form-2 {
 	padding: 23px 23px 0 23px;
 	float: left;
 	background: #0b5a7c;
 }
-	#custom-search-blocks-form-1 .form-type-textfield {
+	#custom-search-blocks-form-1 .form-type-textfield,
+	#custom-search-blocks-form-2 .form-type-textfield {
 		width: 190px;
 		float: left;
 	}
-	#custom-search-blocks-form-1 input[type=text]{
+	#custom-search-blocks-form-1 input[type=text],
+	#custom-search-blocks-form-2 input[type=text]{
 		border: none;
 		background: #FFF url("../images/icon-loop-dark.png") no-repeat 14px 16px;
 		padding: 0 10px 0 40px;
@@ -55,7 +58,8 @@
 		font-family: "Cabin", sans-serif;
 		outline: none;
 	}
-	#custom-search-blocks-form-1 input[type=submit]{
+	#custom-search-blocks-form-1 input[type=submit],
+	#custom-search-blocks-form-2 input[type=submit]{
 		border: none;
 		background: #77b5cf;
 		text-transform: uppercase;
@@ -65,7 +69,8 @@
 		font-family: "Cabin", sans-serif;
 		font-size: 14px;
 	}
-	#custom-search-blocks-form-1 .form-actions {
+	#custom-search-blocks-form-1 .form-actions,
+	#custom-search-blocks-form-2 .form-actions {
 		float: left;
 		margin: 0;
 	}
@@ -356,15 +361,18 @@ tr .ajax-progress .throbber {
 			color: #0B5A7C;
 		}
 	
-	/* OM BREVKASSEN */
-	.region-sidebar-first #block-block-7 {
+	/* OM BREVKASSEN / OM DEBATFORUM */
+	.region-sidebar-first #block-block-7,
+	.region-sidebar-first #block-block-8 {
 		margin-top: 0;
 	}
-	.region-sidebar-first #block-block-7 h2.block-title {
+	.region-sidebar-first #block-block-7 h2.block-title,
+	.region-sidebar-first #block-block-8 h2.block-title {
 		background: #0b5a7c;
 		color: #FFFFFF;
 	}
-	.region-sidebar-first #block-block-7 .block-content {
+	.region-sidebar-first #block-block-7 .block-content,
+	.region-sidebar-first #block-block-8 .block-content {
 		background: #0b5a7c;
 		color: #FFFFFF;
 		font-size: 13px;
@@ -372,17 +380,26 @@ tr .ajax-progress .throbber {
 		padding: 0 23px 23px 23px;
 		float: left;
 	}
-		.region-sidebar-first #block-block-7 .block-content h2 {
+		.region-sidebar-first #block-block-7 .block-content h2,
+		.region-sidebar-first #block-block-8 .block-content h2 {
 			text-transform: uppercase;
 			font-weight: normal;
 			font-size: 20px;
 		}
-		.region-sidebar-first #block-block-7 .block-content p {
+		.region-sidebar-first #block-block-7 .block-content p,
+		.region-sidebar-first #block-block-8 .block-content p {
 			float: left;
 			width: 100%;
 			margin-bottom: 15px;
 		}
-		.region-sidebar-first #block-block-7 .block-content hr {
+		.region-sidebar-first #block-block-7 .block-content ul,
+		.region-sidebar-first #block-block-8 .block-content ul {
+			float: left;
+			width: 100%;
+			margin: 0 0 15px 0;
+		}
+		.region-sidebar-first #block-block-7 .block-content hr,
+		.region-sidebar-first #block-block-8 .block-content hr {
 			border-top: 1px dashed #FFFFFF;
 			border-bottom: none;
 			height: 0;
@@ -390,7 +407,12 @@ tr .ajax-progress .throbber {
 			width: 100%;
 			float: left;
 		}
-	.region-sidebar-first #block-block-7 a.add-post {
+		.region-sidebar-first #block-block-7 .block-content a,
+		.region-sidebar-first #block-block-8 .block-content a {
+			color: #77b5cf;
+		}
+	.region-sidebar-first #block-block-7 a.add-post,
+	.region-sidebar-first #block-block-8 a.add-post {
 		color: white;
 		font-weight: bold;
 		text-transform: uppercase;
@@ -562,3 +584,10 @@ ul.ui-autocomplete {
 			font-size: 13px;
 			color: #FFFFFF;
 		}
+		
+/**
+ * PAAROERENDE GRID
+ */
+#block-views-front-page-grid-block-1 {
+	margin-top: 23px;
+}
