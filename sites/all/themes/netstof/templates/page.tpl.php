@@ -173,7 +173,7 @@
 				$node = node_load(arg(1));
 				if(in_array($node->type, $types)) $show_title = false;
           	  }
-          	  else if(arg(0)=="forum") {
+          	  else if(arg(0)=="forum" && is_numeric(arg(1))) {
 	          	  $show_title = false;
           	  }
           	  ?>
