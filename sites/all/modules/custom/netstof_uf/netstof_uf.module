@@ -8,21 +8,12 @@ function netstof_uf_form_alter(&$form, &$form_state, $form_id){
   case 'questions_and_answers_node_form':
     $form['#after_build'][] = 'netstof_uf_node_form_after_build';
     break;
-  case ("questions_and_answers_node_form" || "test_node_form"):
-    /*we want to change the field type on the form so the user can only choose one category - viable??? */
-    //$field_language = field_language('node', $node, 'field_faq');
-    //$form['field_profile_qna_taxonomy']['und']['#type'] = 'select';
-    unset($form['field_profile_qna_taxonomy']['und']['6']);  
-    break;
   }
 }
 
 // afterbuild function - for removing the input text format fields for all users but admins
 function netstof_uf_node_form_after_build($form) {
-  //dpm($form);    
-  /*Anonymous users should not be able to make new FAQ questions*/
   if (netstof_uf_user_has_role('anonymous user')) {
-    $form['field_profile_qna_taxonomy']['und']['209']['#access'] = FALSE;
     /*we limit the number of checkboxes that can be selected via jQuery*/
     drupal_add_js(path_to_theme() . "/scripts/netstof_uf.js");
   }
