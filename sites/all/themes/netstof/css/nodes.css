@@ -21,43 +21,31 @@ h2,h3,h4,h5,h6 {
 }
 	
 /**
- * TYPE: Simpel side, Artikler, Erfaringer
+ * GENERAL NODE STYLING
  */
 .node {
 
 }
-	.node-type-page #node-wrapper,
-	.node-type-article #node-wrapper,
-	.node-type-experience #node-wrapper {
+	#node-wrapper {
 		margin-top: -11px;
 	}
-		.node-type-page #node-wrapper .node-top,
-		.node-type-article #node-wrapper .node-top,
-		.node-type-experience #node-wrapper .node-top {
+		.node-top {
 			background: url("../images/big_shadow_top.png") no-repeat top center;
 			height: 11px;
 		}
-		.node-type-page #node-wrapper .node-btm,
-		.node-type-article #node-wrapper .node-btm,
-		.node-type-experience #node-wrapper .node-btm {
+		.node-btm {
 			background: url("../images/big_shadow_bottom.png") no-repeat top center;
 			height: 15px;
 		}
-		.node-type-page #node-wrapper .node-middle,
-		.node-type-article #node-wrapper .node-middle,
-		.node-type-experience #node-wrapper .node-middle {
+		.node-middle {
 			background: white url("../images/content-btm.png") no-repeat bottom center;		
 			padding: 25px 23px;
 		}
-			.node-type-page #node-wrapper .node-middle nav ul li,
-			.node-type-article #node-wrapper .node-middle nav ul li,
-			.node-type-experience #node-wrapper .node-middle nav ul li {
+			.node-middle nav ul li {
 				float: right;
 				padding: 0 0 0 5px;
 			}
-			.node-type-page #node-wrapper .node-middle nav ul li a,
-			.node-type-article #node-wrapper .node-middle nav ul li a,
-			.node-type-experience #node-wrapper .node-middle nav ul li a {
+			.node-middle nav ul li a {
 				color: white;
 				font-weight: bold;
 				text-transform: uppercase;
@@ -72,6 +60,20 @@ h2,h3,h4,h5,h6 {
 				line-height: 0;
 			}
 			
+/**
+ * Type: FAQ
+ */
+.node-frequently-asked-question h1#page-title {
+	display: none;
+}
+.node-frequently-asked-question .field-name-body {
+	font-size: 28px;
+	color: #424242;
+	line-height: 28px;
+}
+	.node-frequently-asked-question .field-name-body p {
+		margin-bottom: 15px;
+	}
 
 /**
  * Opret indhold - Spørgsmål til brevkassen
