@@ -418,7 +418,102 @@
 				padding: 1px 8px;
 				text-decoration: none;
 			}
- 
+			
+/**
+ * FAQ - Oversigt
+ */
+.view-faq {
+	padding-top: 15px;
+	border-top: 1px dashed #dedddb;
+	overflow: hidden;
+}
+	.view-faq .item-list {
+		width: 50%;
+		float: left;	
+		margin-bottom: 20px;
+	}
+		.view-faq .item-list h3 {
+			font-size: 20px;
+			color: #40403f;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+			margin-top: 0;
+		}
+	.view-faq ul {
+		margin-right: 40px;
+	}
+		.view-faq ul li {
+		
+		}
+		.view-faq ul li a {
+			font-size: 13px;
+			color: #404040;
+		}
+		.view-faq ul li a:hover {
+			color: #0b5a7c;
+		}
+.view-faq .views-exposed-form {
+	margin-bottom: 25px;
+}
+	.view-faq .views-exposed-form #edit-body-value-wrapper {
+		float: left;
+		margin-right: 15px;
+	}
+		.view-faq .views-exposed-form #edit-body-value-wrapper input[type=text] {
+			border: none;
+			background: #404040 url("../images/icon-loop.png") no-repeat 14px 13px;
+			padding: 0 10px 0 40px;
+			margin: 0;
+			color: white;
+			height: 38px;
+			width: 186px;
+			font-size: 14px;
+			font-family: "Cabin", sans-serif;
+			outline: none;
+		}
+	.view-faq .views-exposed-form #edit-field-faq-category-tid-wrapper {
+		float: left;
+		margin-right: 15px;
+	}
+		.view-faq .views-exposed-form #edit-field-faq-category-tid-wrapper label {
+			float: left;
+			font-size: 15px;
+			color: #424232;
+			font-weight: bold;
+			text-transform: uppercase;
+			margin-right: 8px;
+			padding-top: 11px;
+		}
+		.view-faq .views-exposed-form #edit-field-faq-category-tid-wrapper .views-widget {
+			float: left;
+		}
+		.view-faq .views-exposed-form #edit-field-faq-category-tid-wrapper select {
+		border: none;
+		background: #404040 url("../images/select-arrow.png") no-repeat center right;
+		border-radius: 0;
+		padding: 10px 14px 10px 10px;
+		-webkit-appearance: none;
+		outline: none;
+		font-size: 14px;
+		font-family: "Cabin", sans-serif;
+		color: #FFFFFF;
+		height: 38px;
+		width: 170px;
+		}
+	.view-faq .views-exposed-form .views-submit-button {
+		float: left;
+	}
+		.view-faq .views-exposed-form .views-submit-button input[type=submit] {
+			border: none;
+			background: #FFAD00;
+			text-transform: uppercase;
+			color: white;
+			width: 58px;
+			height: 38px;
+			font-family: "Cabin", sans-serif;
+			font-size: 14px;
+		}
+		 
 /**
  * PAGER
  */
