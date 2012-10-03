@@ -8,21 +8,12 @@ function netstof_uf_form_alter(&$form, &$form_state, $form_id){
   case 'questions_and_answers_node_form':
     $form['#after_build'][] = 'netstof_uf_node_form_after_build';
     break;
-  case ("questions_and_answers_node_form" || "test_node_form"):
-    /*we want to change the field type on the form so the user can only choose one category - viable??? */
-    //$field_language = field_language('node', $node, 'field_faq');
-    //$form['field_profile_qna_taxonomy']['und']['#type'] = 'select';
-    unset($form['field_profile_qna_taxonomy']['und']['6']);  
-    break;
   }
 }
 
 // afterbuild function - for removing the input text format fields for all users but admins
 function netstof_uf_node_form_after_build($form) {
-  //dpm($form);    
-  /*Anonymous users should not be able to make new FAQ questions*/
   if (netstof_uf_user_has_role('anonymous user')) {
-    $form['field_profile_qna_taxonomy']['und']['209']['#access'] = FALSE;
     /*we limit the number of checkboxes that can be selected via jQuery*/
     drupal_add_js(path_to_theme() . "/scripts/netstof_uf.js");
   }
@@ -36,7 +27,7 @@ function netstof_uf_node_form_after_build($form) {
 
 function netstof_uf_node_update($node) {
   global $user;
-  //if it is the first time the node is edited by a counselor, change the author to the current user
+  //if it is the first time the questions_and_answers node is edited by a counselor, change the author to the current user
   if (($node->uid == 0) && ($node->type == "questions_and_answers") && netstof_uf_user_has_role('Brevkasseredaktør')) {
     $node->uid = $user->uid;
     node_save($node);
@@ -80,4 +71,117 @@ function netstof_uf_open_to_posts() {
     $closed = true;
   }
   return $closed;
+}
+
+function netstof_uf_test() {
+  $id = variable_get('sms_id', '');
+  drupal_set_message($id);
+}
+
+/**
+* Send SMS message
+*/
+function netstof_uf_sendsms() {
+  
+  //@todo - ensure input is 8 ciphers and add 45 here in the code - delete phone number
+  
+  $url_base = 'http://jd-1.dk/sms/sender.aspx';
+  $params = array();
+  $user_field = 'id';
+  $user = variable_get('sms_id', '');
+  $params[$user_field]=$user;
+
+  $number_field = 'sender';
+  $number = '4530239441';
+  $params[$number_field]=$number;
+  
+  $besked_field = 'message';
+  $besked = "Der er kommet et svar på dit spørgsmål, du kan læse det på http://netstof.dk/brevkasse/laege/mit-gode-spoergsmaal";
+  $besked = drupal_convert_to_utf8($besked, 'utf-8');
+  $params[$besked_field]=$besked;
+  
+  $query_string = http_build_query($params, NULL, '&');
+    
+  $headers = array('Content-Type' => 'application/x-www-form-urlencoded');
+  $http_result = drupal_http_request($url_base, array('headers' => $headers, 'method' => 'POST', 'data' => $query_string));
+
+  // Check for HTTP errors
+  if ($http_result->error) {
+    return array(
+      'status'  => FALSE,
+      'message' => t('An error occured during the HTTP request: @error',
+                     array('@error' => $http_result->error)),
+    );
+  }  
+}
+
+/**
+ * Implements hook_menu()
+ *
+ * @ingroup hooks
+ */
+function netstof_uf_menu() {
+  $items = array();
+  $items['netstof_uf/sms_receiver'] = array(
+    'title' => 'Netstof Utility Functions SMS message receiver',
+    'page callback' => 'netstof_uf_receivesms',
+    'page arguments' => array(1),
+    'access callback' => TRUE,
+  );
+  return $items;
+}
+
+/**
+* Receive SMS message
+*
+* @param 
+*   
+* @param 
+*   
+* @return
+*   
+*/
+function netstof_uf_receivesms() {
+  // Get config
+  /*$gateway = sms_gateways('gateway', 'simplegateway');
+  $config  = $gateway['configuration'];
+
+  $number_field   = $config['sms_simplegateway_recv_number_field'];
+  $gwnumber_field = $config['sms_simplegateway_recv_gwnumber_field'];
+  $message_field  = $config['sms_simplegateway_recv_message_field'];
+  */
+  
+  $number_field   = 'sender';
+  $message_field  = 'message';
+  
+  //$number  = $_REQUEST[$number_field];
+  $message = check_plain($_REQUEST[$message_field]);
+  
+  /*we limit the message length to 2000 characters*/
+  $message = wordwrap($message, 2000);
+  $message = explode("\n", $message);
+  $message = $message[0] . '...';
+  
+  
+  //$message = check_plain($message);
+  $watchdogmsg = array($message);  
+  watchdog('netstof_uf',t('SMS message received: '.  '<pre>'. print_r($message, TRUE) .'</pre>'),$watchdogmsg, WATCHDOG_NOTICE, $link = NULL);
+  
+  $return_this = '';
+  $return_this .= '<pre>';
+  $return_this .= print_r($message, TRUE);
+  $return_this .= '</pre>';
+  return $return_this;
+  //dpm($number.$message);
+  //$options = array();
+
+  // Define raw gateway response parameters
+  //$options['gateway_params'] = array();
+
+  // Define message receiver if possible
+  /*if (array_key_exists($gwnumber_field, $_REQUEST) && !empty($_REQUEST[$gwnumber_field])) {
+    $options['receiver'] = $_REQUEST[$gwnumber_field];
+  }
+  */
+  //sms_incoming($number, $message, $options);
 }
