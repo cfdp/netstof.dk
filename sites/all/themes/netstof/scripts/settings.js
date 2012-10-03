@@ -11,6 +11,11 @@ $(function() {
 	   $(".view-id-masonry .view-content").fadeIn();
 	});
 */
+	
+	/**
+	 * WATERMARKS
+	 */
+	$(".view-faq #edit-body-value").watermark("Søg i FAQ'en", {useNative: false});
 
 	/**
 	 * SCROLL TO TOP
