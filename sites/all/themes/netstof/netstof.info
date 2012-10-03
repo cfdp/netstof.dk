@@ -16,6 +16,7 @@ stylesheets[screen][] = css/niels.css
 stylesheets[screen][] = css/benjamin.css
 scripts[] = scripts/jquery.qtip-1.0.0-rc3.min.js
 scripts[] = scripts/retina.js
+scripts[] = scripts/jquery.watermark.min.js
 scripts[] = scripts/settings.js
 regions[content] = Main Content
 regions[leftcontent] = Left Content
