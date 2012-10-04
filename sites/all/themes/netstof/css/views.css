@@ -418,17 +418,213 @@
 				padding: 1px 8px;
 				text-decoration: none;
 			}
- 
+			
 /**
- * PAGER
+ * FAQ + Leksikon - Oversigt
+ */
+.view-faq,
+.view-leksikon {
+	padding-top: 15px;
+	border-top: 1px dashed #dedddb;
+	overflow: hidden;
+}
+.view-faq .view-content,
+.view-leksikon .view-content {
+	overflow: hidden;
+}
+	.view-faq .item-list {
+		float: left;
+		width: 50%;
+		margin-bottom: 20px;
+	}
+		.view-faq .item-list h3,
+		.view-leksikon .item-list .views-field-title {
+			font-size: 20px;
+			color: #40403f;
+			text-transform: uppercase;
+			margin-bottom: 5px;
+			margin-top: 0;
+		}
+		.view-faq .item-list h3 {
+			margin-bottom: 10px;
+		}
+		.view-leksikon .item-list .views-field-title,
+		.view-leksikon .item-list .views-field-body {
+			padding-right: 40px;
+		}
+		.view-leksikon .item-list .views-field-nothing {
+			margin-bottom: 7px;
+		}
+			.view-leksikon .item-list .views-field-nothing a {
+				border-right: 1px solid #424242;
+				padding-right: 5px;
+				margin-right: 4px;
+				line-height: 13px;
+			}
+			.view-leksikon .item-list .views-field-nothing a.last {
+				border-right: none;
+			}
+	.view-faq .item-list > ul {
+		margin-right: 40px;
+	}
+		.view-leksikon .view-content ul li {
+			width: 50%;
+			float: left;	
+			margin-bottom: 20px;
+			list-style: none;
+			list-style-image: none;
+			padding: 0 !important;
+			margin: 0 !important;
+			height: 95px;		
+		}
+		.view-faq .view-content ul li a,
+		.view-leksikon .view-content ul li a {
+			color: #404040;
+		}
+		.view-faq .view-content ul li a:hover,
+		.view-leksikon .view-content ul li a:hover {
+			color: #0b5a7c;
+		}
+.view-faq .views-exposed-form,
+.view-leksikon .views-exposed-form {
+	margin-bottom: 25px;
+}
+	.view-faq .views-exposed-form #edit-body-value-wrapper,
+	.view-leksikon .views-exposed-form #edit-title-wrapper {
+		float: left;
+		margin-right: 15px;
+	}
+		.view-faq .views-exposed-form #edit-body-value-wrapper input[type=text],
+		.view-leksikon .views-exposed-form #edit-title-wrapper input[type=text] {
+			border: none;
+			background: #404040 url("../images/icon-loop.png") no-repeat 14px 13px;
+			padding: 0 10px 0 40px;
+			margin: 0;
+			color: white;
+			height: 38px;
+			width: 186px;
+			font-size: 14px;
+			font-family: "Cabin", sans-serif;
+			outline: none;
+		}
+	.view-faq .views-exposed-form #edit-field-faq-category-tid-wrapper,
+	.view-leksikon .views-exposed-form #edit-field-encyclopedia-drug-category-tid-wrapper {
+		float: left;
+		margin-right: 15px;
+	}
+		.view-faq .views-exposed-form #edit-field-faq-category-tid-wrapper label,
+		.view-leksikon .views-exposed-form #edit-field-encyclopedia-drug-category-tid-wrapper label {
+			float: left;
+			font-size: 15px;
+			color: #424232;
+			font-weight: bold;
+			text-transform: uppercase;
+			margin-right: 8px;
+			padding-top: 11px;
+		}
+		.view-faq .views-exposed-form #edit-field-faq-category-tid-wrapper .views-widget,
+		.view-leksikon .views-exposed-form #edit-field-encyclopedia-drug-category-tid-wrapper .views-widget {
+			float: left;
+		}
+		.view-faq .views-exposed-form #edit-field-faq-category-tid-wrapper select,
+		.view-leksikon .views-exposed-form #edit-field-encyclopedia-drug-category-tid-wrapper select {
+		border: none;
+		background: #404040 url("../images/select-arrow.png") no-repeat center right;
+		border-radius: 0;
+		padding: 10px 14px 10px 10px;
+		-webkit-appearance: none;
+		outline: none;
+		font-size: 14px;
+		font-family: "Cabin", sans-serif;
+		color: #FFFFFF;
+		height: 38px;
+		width: 170px;
+		}
+	.view-faq .views-exposed-form .views-submit-button,
+	.view-leksikon .views-exposed-form .views-submit-button {
+		float: left;
+	}
+		.view-faq .views-exposed-form .views-submit-button input[type=submit],
+		.view-leksikon .views-exposed-form .views-submit-button input[type=submit] {
+			border: none;
+			background: #FFAD00;
+			text-transform: uppercase;
+			color: white;
+			width: 58px;
+			height: 38px;
+			font-family: "Cabin", sans-serif;
+			font-size: 14px;
+		}
+
+/**
+ * SØGERESULTATER
+ */
+.page-search-node section#main-content {
+	background: url("../images/big_shadow_top.png") no-repeat top center;
+	padding-top: 11px;
+	position: relative; top: -11px;
+}
+.page-search-node #main-content-header {
+	padding: 23px 23px 0 23px;
+	background: white url("../images/content-top.png") no-repeat top center;		
+}
+.page-search-node #content {
+	padding: 0 23px 23px 23px;
+	background: white url("../images/content-btm.png") no-repeat bottom center;		
+}
+.page-search-node #content-btm-shadow {
+	background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
+	height: 15px;		
+}
+.page-search-node #content h2 {
+	font-size: 20px;
+	text-transform: uppercase;
+	color: #3e3e3e;
+	margin-bottom: 20px;
+	margin-top: 30px;
+}
+ol.search-results {
+	margin: 0; padding: 0;
+}
+	ol.search-results li {
+		margin-bottom: 22px;
+	}
+		ol.search-results li h3 {
+			font-size: 15px;
+			text-transform: uppercase;
+			margin: 0 0 10px 0;
+			padding: 0;
+		}
+			ol.search-results li h3 a {
+				color: #3e3e3e;
+			}
+		ol.search-results li .search-snippet-info {
+			margin: 0;
+			padding: 0;
+		}
+		ol.search-results li .search-snippet {
+			font-size: 13px; line-height: 16px;
+			color: #3e3e3e;
+		}
+			ol.search-results li .search-snippet strong {
+				color: #ffad00;
+			}
+/**
+ * PAGER - Brevkasse, Leksikon 
  */
  
-.view-Brevkasse ul.pager {
-	margin-top: 23px;
+.view-Brevkasse ul.pager,
+.view-leksikon ul.pager,
+.page-search-node ul.pager {
+	margin-top: 25px;
 }
-	.view-Brevkasse ul.pager li {
+	.view-Brevkasse ul.pager li,
+	.view-leksikon ul.pager li,
+	.page-search-node ul.pager li {
 		font-size: 13px;
 	}
-	.view-Brevkasse ul.pager li a {
+	.view-Brevkasse ul.pager li a,
+	.view-leksikon ul.pager li a,
+	.page-search-node ul.pager li a {
 		color: #424242;
 	}

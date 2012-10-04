@@ -165,13 +165,11 @@
             <header<?php print $content_header_attributes; ?>>
 
           	  <?php 
-          	  /* Hide titles on specific content types and pages */
+          	  /* Hide titles on all node and forum pages */
           	  $show_title = TRUE;
-          	  $types = array("experience", "questions_and_answers", "article", "page", "forum");
           	  
           	  if(arg(0)=="node" && is_numeric(arg(1))) { 
-				$node = node_load(arg(1));
-				if(in_array($node->type, $types)) $show_title = false;
+				$show_title = false;
           	  }
           	  else if(arg(0)=="forum" && is_numeric(arg(1))) {
 	          	  $show_title = false;

@@ -1,13 +1,18 @@
 /**
- * SEARCH BLOCK
+ * SEARCH BLOCK / SEARCH FORM
  */
 .search-form {
 	margin-bottom: 0;
 }
-#search-block-form {
+#search-block-form,
+#search-form {
 
 }
-	#search-block-form input[type=search]{
+	#search-form .form-type-textfield label {
+		display: none;
+	}
+	#search-block-form input[type=search],
+	#search-form input[type=text]{
 		border: none;
 		background: #404040 url("../images/icon-loop.png") no-repeat 14px 16px;
 		padding: 0 10px 0 40px;
@@ -19,7 +24,8 @@
 		font-family: "Cabin", sans-serif;
 		outline: none;
 	}
-	#search-block-form input[type=submit]{
+	#search-block-form input[type=submit],
+	#search-form input[type=submit]{
 		border: none;
 		background: #ffad00;
 		text-transform: uppercase;
@@ -29,7 +35,8 @@
 		font-family: "Cabin", sans-serif;
 		font-size: 14px;
 	}
-	#search-block-form .container-inline > div {
+	#search-block-form .container-inline > div,
+	#search-form .container-inline > div {
 		float: left;
 		margin: 0;
 	}
@@ -513,17 +520,18 @@ tr .ajax-progress .throbber {
 		padding-top: 10px;
 		font-size: 13px; line-height: 15px;
 	}
-	.region-footer-btm .block-first {
-		width: 50%;
-		float: left;
-		text-transform: uppercase;
-	}
 	.region-footer-btm .block-last {
 		width: 50%;
 		float: left;
 		text-align: right;
 		font-size: 11px;
 		color: #404040;
+	}
+	.region-footer-btm .block-first {
+		width: 50%;
+		float: left;
+		text-transform: uppercase;
+		text-align: left;
 	}
 		.region-footer-btm .block p {
 			margin-bottom: 0;

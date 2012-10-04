@@ -24,14 +24,17 @@
 switch($row->node_type) {
 	case "questions_and_answers":
 		$type = "questions-and-answers";
+		$title = "Opret et nyt spørgsmål i brevkassen";
 	break;
 	case "forum":
 		$type = "forum";
+		$title = "Opret et nyt emne i debatforummet";
 	break;
 	case "experience":
 		$type = "experience";
+		$title = "Opret en ny erfaring";
 	break;
 }
 
-print "<a href='/node/add/".$type."' class='plus-link' title=''></a>";
+print "<a href='/node/add/".$type."' class='plus-link' title='".$title."'></a>";
 ?>

@@ -21,43 +21,31 @@ h2,h3,h4,h5,h6 {
 }
 	
 /**
- * TYPE: Simpel side, Artikler, Erfaringer
+ * GENERAL NODE STYLING
  */
 .node {
 
 }
-	.node-type-page #node-wrapper,
-	.node-type-article #node-wrapper,
-	.node-type-experience #node-wrapper {
+	#node-wrapper {
 		margin-top: -11px;
 	}
-		.node-type-page #node-wrapper .node-top,
-		.node-type-article #node-wrapper .node-top,
-		.node-type-experience #node-wrapper .node-top {
+		.node-top {
 			background: url("../images/big_shadow_top.png") no-repeat top center;
 			height: 11px;
 		}
-		.node-type-page #node-wrapper .node-btm,
-		.node-type-article #node-wrapper .node-btm,
-		.node-type-experience #node-wrapper .node-btm {
+		.node-btm {
 			background: url("../images/big_shadow_bottom.png") no-repeat top center;
 			height: 15px;
 		}
-		.node-type-page #node-wrapper .node-middle,
-		.node-type-article #node-wrapper .node-middle,
-		.node-type-experience #node-wrapper .node-middle {
+		.node-middle {
 			background: white url("../images/content-btm.png") no-repeat bottom center;		
 			padding: 25px 23px;
 		}
-			.node-type-page #node-wrapper .node-middle nav ul li,
-			.node-type-article #node-wrapper .node-middle nav ul li,
-			.node-type-experience #node-wrapper .node-middle nav ul li {
+			.node-middle nav ul li {
 				float: right;
 				padding: 0 0 0 5px;
 			}
-			.node-type-page #node-wrapper .node-middle nav ul li a,
-			.node-type-article #node-wrapper .node-middle nav ul li a,
-			.node-type-experience #node-wrapper .node-middle nav ul li a {
+			.node-middle nav ul li a {
 				color: white;
 				font-weight: bold;
 				text-transform: uppercase;
@@ -72,9 +60,105 @@ h2,h3,h4,h5,h6 {
 				line-height: 0;
 			}
 			
-
 /**
- * Opret indhold - Spørgsmål til brevkassen
+ * Node Type: FAQ
+ */
+.node-frequently-asked-question h1#page-title {
+	display: none;
+}
+.node-frequently-asked-question .field-name-body {
+	font-size: 28px;
+	color: #424242;
+	line-height: 28px;
+}
+	.node-frequently-asked-question .field-name-body p {
+		margin-bottom: 15px;
+	}
+	
+/**
+ * Node Type: LEKSIKON
+ */
+ 
+.node-encyclopedia-entry #page-title {
+	margin-bottom: 10px;
+}
+
+/* Tags */
+.node-encyclopedia-entry .field-name-field-tags {
+	font-size: 11px; line-height: 11px;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+	.node-encyclopedia-entry .field-name-field-tags h2 {
+		margin: 0;
+		padding: 0;
+		float: left;
+	}
+	.node-encyclopedia-entry .field-name-field-tags ul {
+		float: none;
+	}
+		.node-encyclopedia-entry .field-name-field-tags ul li {
+			text-transform: uppercase;
+			padding: 0 0 0 5px !important;
+			border-left: 1px solid #424242;
+			margin-left: 5px;
+			float: left;
+		}
+/* Tabs */
+.node-encyclopedia-entry .horizontal-tabs {
+	border: none;
+	margin: 0;
+}
+	.node-encyclopedia-entry ul.horizontal-tabs-list {
+		margin: 0 0 15px 0;
+		background-color: #404040;
+	}
+		.node-encyclopedia-entry ul.horizontal-tabs-list li {
+			height: 27px;
+			background-color: #404040;
+			border-right: 1px solid #FFFFFF;
+			outline: none;
+			min-width: inherit;
+		}
+		.node-encyclopedia-entry ul.horizontal-tabs-list li:focus,
+		.node-encyclopedia-entry ul.horizontal-tabs-list li:hover {
+			background-color: #404040;
+		}
+			.node-encyclopedia-entry ul.horizontal-tabs-list li a {
+				color: #e5e4e1;
+				font-size: 12px;
+				font-weight: bold;
+				outline: none;
+				padding: 0.5em 1em 0.3em 1em;
+			}
+			.node-encyclopedia-entry ul.horizontal-tabs-list li a:hover {
+				background-color: #404040;
+			}
+		.node-encyclopedia-entry ul.horizontal-tabs-list li.selected {
+		
+		}
+			.node-encyclopedia-entry ul.horizontal-tabs-list li.selected a {
+				color: #424242;
+				font-size: 15px;
+				text-transform: uppercase;
+				font-weight: bold;
+				background-color: #FFFFFF;
+				padding: 0.4em 1em 0.4em 1em;
+			}
+				.node-encyclopedia-entry ul.horizontal-tabs-list li.selected a:hover {
+					background-color: #FFFFFF;
+				}
+				.node-encyclopedia-entry ul.horizontal-tabs-list li.selected a strong {
+					color: #424242;
+				}
+	.node-encyclopedia-entry .horizontal-tabs fieldset.horizontal-tabs-pane {
+		padding: 0;
+		margin: 0;
+		font-size: 12px;
+		font-family: "Cabin", sans-serif;
+	}
+/**
+ * Opret indhold formular - Spørgsmål til brevkassen
  */
 .page-node-add section#main-content {
 	background: url("../images/big_shadow_top.png") no-repeat top center;
