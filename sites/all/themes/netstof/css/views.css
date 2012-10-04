@@ -428,6 +428,10 @@
 	border-top: 1px dashed #dedddb;
 	overflow: hidden;
 }
+.view-faq .view-content,
+.view-leksikon .view-content {
+	overflow: hidden;
+}
 	.view-faq .item-list {
 		float: left;
 		width: 50%;
@@ -448,6 +452,18 @@
 		.view-leksikon .item-list .views-field-body {
 			padding-right: 40px;
 		}
+		.view-leksikon .item-list .views-field-nothing {
+			margin-bottom: 7px;
+		}
+			.view-leksikon .item-list .views-field-nothing a {
+				border-right: 1px solid #424242;
+				padding-right: 5px;
+				margin-right: 4px;
+				line-height: 13px;
+			}
+			.view-leksikon .item-list .views-field-nothing a.last {
+				border-right: none;
+			}
 	.view-faq .item-list > ul {
 		margin-right: 40px;
 	}
@@ -459,7 +475,7 @@
 			list-style-image: none;
 			padding: 0 !important;
 			margin: 0 !important;
-			height: 75px;		
+			height: 95px;		
 		}
 		.view-faq .view-content ul li a,
 		.view-leksikon .view-content ul li a {
