@@ -101,12 +101,13 @@ function netstof_uf_test() {
 
 /**
 * Send SMS message
-* @param $mumber
+* @param $number
 *   The phone number the message should be sent to.
 */
-function netstof_uf_sendsms($number){
-  //@todo - ensure input is 8 ciphers and add 45 here in the code - delete phone number after sending message, if all went well
-  $url_base = 'https://jclients.azurewebsites.net/sms/sender.aspx';
+function netstof_uf_sendsms($number, $nid){
+  $gateway_url_base = 'https://jclients.azurewebsites.net/sms/sender.aspx';
+  global $base_url;
+  $site_path = $base_url . base_path();
   $params = array();
   $user_field = 'id';
   $user = variable_get('sms_id', '');
@@ -115,12 +116,12 @@ function netstof_uf_sendsms($number){
   $number = '45'.$number;
   $params[$number_field]=$number;
   $besked_field = 'message';
-  $besked = "Der er kommet et svar på dit spørgsmål, du kan læse det på http://netstof.dk/brevkasse/laege/mit-gode-spoergsmaal";
+  $besked = "Der er kommet et svar på dit spørgsmål, du kan læse det på ".$site_path."node/".$nid;
   $besked = drupal_convert_to_utf8($besked, 'utf-8');
   $params[$besked_field]=$besked;
   $query_string = http_build_query($params, NULL, '&');
   $headers = array('Content-Type' => 'application/x-www-form-urlencoded');
-  $http_result = drupal_http_request($url_base, array('headers' => $headers, 'method' => 'POST', 'data' => $query_string));
+  $http_result = drupal_http_request($gateway_url_base, array('headers' => $headers, 'method' => 'POST', 'data' => $query_string));
   $status = '<pre>SMS sent</pre>';
   // Check for HTTP errors
   if (isset($http_result->error)) {
