@@ -555,20 +555,76 @@
 			font-family: "Cabin", sans-serif;
 			font-size: 14px;
 		}
-		 
+
 /**
- * PAGER - Brevkasse, 
+ * SØGERESULTATER
+ */
+.page-search-node section#main-content {
+	background: url("../images/big_shadow_top.png") no-repeat top center;
+	padding-top: 11px;
+	position: relative; top: -11px;
+}
+.page-search-node #main-content-header {
+	padding: 23px 23px 0 23px;
+	background: white url("../images/content-top.png") no-repeat top center;		
+}
+.page-search-node #content {
+	padding: 0 23px 23px 23px;
+	background: white url("../images/content-btm.png") no-repeat bottom center;		
+}
+.page-search-node #content-btm-shadow {
+	background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
+	height: 15px;		
+}
+.page-search-node #content h2 {
+	font-size: 20px;
+	text-transform: uppercase;
+	color: #3e3e3e;
+	margin-bottom: 20px;
+	margin-top: 30px;
+}
+ol.search-results {
+	margin: 0; padding: 0;
+}
+	ol.search-results li {
+		margin-bottom: 22px;
+	}
+		ol.search-results li h3 {
+			font-size: 15px;
+			text-transform: uppercase;
+			margin: 0 0 10px 0;
+			padding: 0;
+		}
+			ol.search-results li h3 a {
+				color: #3e3e3e;
+			}
+		ol.search-results li .search-snippet-info {
+			margin: 0;
+			padding: 0;
+		}
+		ol.search-results li .search-snippet {
+			font-size: 13px; line-height: 16px;
+			color: #3e3e3e;
+		}
+			ol.search-results li .search-snippet strong {
+				color: #ffad00;
+			}
+/**
+ * PAGER - Brevkasse, Leksikon 
  */
  
 .view-Brevkasse ul.pager,
-.view-leksikon ul.pager {
+.view-leksikon ul.pager,
+.page-search-node ul.pager {
 	margin-top: 25px;
 }
 	.view-Brevkasse ul.pager li,
-	.view-leksikon ul.pager li {
+	.view-leksikon ul.pager li,
+	.page-search-node ul.pager li {
 		font-size: 13px;
 	}
 	.view-Brevkasse ul.pager li a,
-	.view-leksikon ul.pager li a {
+	.view-leksikon ul.pager li a,
+	.page-search-node ul.pager li a {
 		color: #424242;
 	}
