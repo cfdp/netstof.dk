@@ -61,7 +61,7 @@ h2,h3,h4,h5,h6 {
 			}
 			
 /**
- * Type: FAQ
+ * Node Type: FAQ
  */
 .node-frequently-asked-question h1#page-title {
 	display: none;
@@ -74,9 +74,89 @@ h2,h3,h4,h5,h6 {
 	.node-frequently-asked-question .field-name-body p {
 		margin-bottom: 15px;
 	}
-
+	
 /**
- * Opret indhold - Spørgsmål til brevkassen
+ * Node Type: LEKSIKON
+ */
+ 
+.node-encyclopedia-entry #page-title {
+	margin-bottom: 10px;
+}
+
+/* Tags */
+.node-encyclopedia-entry .field-name-field-tags {
+	font-size: 11px;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+	.node-encyclopedia-entry .field-name-field-tags h2 {
+		margin: 0 5px 0 0;
+		padding: 0;
+	}
+	.node-encyclopedia-entry .field-name-field-tags ul {
+	
+	}
+		.node-encyclopedia-entry .field-name-field-tags ul li {
+			text-transform: uppercase;
+			padding: 0 5px 0 0 !important;
+			border-right: 1px solid #424242;
+			margin-right: 5px;
+		}
+/* Tabs */
+.node-encyclopedia-entry .horizontal-tabs {
+	border: none;
+	margin: 0;
+}
+	.node-encyclopedia-entry ul.horizontal-tabs-list {
+		margin: 0 0 15px 0;
+		background-color: #404040;
+	}
+		.node-encyclopedia-entry ul.horizontal-tabs-list li {
+			height: 27px;
+			background-color: #404040;
+			border-right: 1px solid #FFFFFF;
+			outline: none;
+			min-width: inherit;
+		}
+		.node-encyclopedia-entry ul.horizontal-tabs-list li:focus,
+		.node-encyclopedia-entry ul.horizontal-tabs-list li:hover {
+			background-color: #404040;
+		}
+			.node-encyclopedia-entry ul.horizontal-tabs-list li a {
+				color: #e5e4e1;
+				font-size: 12px;
+				font-weight: bold;
+				outline: none;
+				padding: 0.5em 1em 0.3em 1em;
+			}
+			.node-encyclopedia-entry ul.horizontal-tabs-list li a:hover {
+				background-color: #404040;
+			}
+		.node-encyclopedia-entry ul.horizontal-tabs-list li.selected {
+		
+		}
+			.node-encyclopedia-entry ul.horizontal-tabs-list li.selected a {
+				color: #424242;
+				font-size: 15px;
+				text-transform: uppercase;
+				font-weight: bold;
+				background-color: #FFFFFF;
+				padding: 0.4em 1em 0.4em 1em;
+			}
+				.node-encyclopedia-entry ul.horizontal-tabs-list li.selected a:hover {
+					background-color: #FFFFFF;
+				}
+				.node-encyclopedia-entry ul.horizontal-tabs-list li.selected a strong {
+					color: #424242;
+				}
+	.node-encyclopedia-entry .horizontal-tabs fieldset.horizontal-tabs-pane {
+		padding: 0;
+		margin: 0;
+		font-size: 12px;
+		font-family: "Cabin", sans-serif;
+	}
+/**
+ * Opret indhold formular - Spørgsmål til brevkassen
  */
 .page-node-add section#main-content {
 	background: url("../images/big_shadow_top.png") no-repeat top center;

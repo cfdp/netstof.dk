@@ -2,20 +2,30 @@ var $ = jQuery.noConflict();
 
 $(function() {
 
-/*
-	$('.view-id-masonry').ajaxStart(function(){
-		console.log("test");
-	   $(".view-id-masonry .view-content").fadeOut();
-	});
-	$('.view-id-masonry').ajaxSuccess(function(){
-	   $(".view-id-masonry .view-content").fadeIn();
-	});
-*/
+	/**
+	 * ENCYCLOPEDIA TABS - Hash links
+	 */
+	var hash = window.location.hash;
+	if(hash!="") {
+		hash = hash.replace("#","");
+		switch(hash) {
+			case "stoffet":
+				jQuery(".horizontal-tab-button-0 a").trigger("click");
+			break;
+			case "effekten":
+				jQuery(".horizontal-tab-button-1 a").trigger("click");
+			break;
+			case "bivirkningen":
+				jQuery(".horizontal-tab-button-2 a").trigger("click");
+			break;
+		}
+	}
 	
 	/**
 	 * WATERMARKS
 	 */
 	$(".view-faq #edit-body-value").watermark("Søg i FAQ'en", {useNative: false});
+	$(".view-leksikon #edit-title").watermark("Søg i leksikon", {useNative: false});
 
 	/**
 	 * SCROLL TO TOP
@@ -51,17 +61,6 @@ $(function() {
 		
 		}
 	);
-	
-	/*
-    $('#right-side').scrollToFixed({
-        marginTop:
-            $('#header-btm-container').outerHeight() + 10,
-        limit:
-            $('#footer-container').offset().top -
-            $('#right-side').outerHeight() -
-            10
-    });
-	*/
 
 	/**
 	 * VIEWS GRID - FILTER
@@ -83,7 +82,7 @@ $(function() {
     /**
      * TOOLTIPS
      */
-/*
+	/*
 	$('.plus-link').qtip({
 	   content: 'Opret et nyt spørgsmål i brevkassen',
 	   show: 'mouseover',
@@ -109,7 +108,7 @@ $(function() {
       tip: 'bottomMiddle',
    	}
 	});
-*/
+	*/
 	
 	/**
 	 * MAIN MENU

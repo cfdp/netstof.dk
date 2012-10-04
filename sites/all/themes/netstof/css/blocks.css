@@ -513,17 +513,18 @@ tr .ajax-progress .throbber {
 		padding-top: 10px;
 		font-size: 13px; line-height: 15px;
 	}
-	.region-footer-btm .block-first {
-		width: 50%;
-		float: left;
-		text-transform: uppercase;
-	}
 	.region-footer-btm .block-last {
 		width: 50%;
 		float: left;
 		text-align: right;
 		font-size: 11px;
 		color: #404040;
+	}
+	.region-footer-btm .block-first {
+		width: 50%;
+		float: left;
+		text-transform: uppercase;
+		text-align: left;
 	}
 		.region-footer-btm .block p {
 			margin-bottom: 0;
