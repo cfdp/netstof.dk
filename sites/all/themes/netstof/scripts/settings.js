@@ -79,36 +79,7 @@ $(function() {
        }
     );
     
-    /**
-     * TOOLTIPS
-     */
-	/*
-	$('.plus-link').qtip({
-	   content: 'Opret et nyt spørgsmål i brevkassen',
-	   show: 'mouseover',
-	   hide: 'mouseout',
-	   position: { 
-	   	corner: { 
-	   		target: 'topMiddle', 
-	   		tooltip: 'bottomMiddle'
-	   	},
-       adjust: { y: 0, x: 12 }
-	   },
-	  style: { 
-      width: 200,
-      padding: 10,
-      background: '#3c3c3b',
-      color: 'white',
-      textAlign: 'left',
-      border: {
-         width: 0,
-         radius: 0,
-         color: '#3c3c3b'
-      },
-      tip: 'bottomMiddle',
-   	}
-	});
-	*/
+
 	
 	/**
 	 * MAIN MENU
@@ -126,5 +97,46 @@ $(function() {
 		$('.region-header .menu-block-wrapper > ul.menu > li.active-trail > ul').fadeIn();
 		
     });
-
+    
+    /**
+     * ATTACH TOOLTIPS
+     */
+    attachTooltips();
+    // Attaches tooltips on ajax complete - useful for ajax enabled views
+    $(document).ajaxComplete(function() {
+    	attachTooltips();
+    });
+    
 });
+
+/**
+ * TOOLTIPS
+ */
+function attachTooltips() {
+	$('.plus-link').qtip({
+	   show: 'mouseover',
+	   hide: 'mouseout',
+	   position: { 
+	   	corner: { 
+	   		target: 'topMiddle', 
+	   		tooltip: 'bottomMiddle'
+	   	},
+	   adjust: { y: 0, x: 12 }
+	   },
+	  style: { 
+	  width: 200,
+	  padding: 15,
+	  color: 'white',
+	  textAlign: 'left',
+	  border: {
+	     width: 0,
+	     radius: 0,
+	     color: '#3c3c3b'
+	  },
+	  classes: {
+	  	tooltip: "tool",
+	  },
+	  tip: 'bottomMiddle',
+		}
+	});
+}

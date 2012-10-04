@@ -93,3 +93,15 @@ body {
 	margin-left: 0;
 	margin-right: 0;
 }
+
+/**
+ * TOOLTIPS
+ */
+.qtip-contentWrapper {
+	background: #3c3c3b url("../images/icon-info.png") no-repeat 12px 14px !important;
+}
+.qtip-content {
+	background-color: transparent !important;
+	padding-left: 47px !important;
+	min-height: 35px;
+}
