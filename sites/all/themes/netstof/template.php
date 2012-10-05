@@ -86,6 +86,7 @@ function netstof_preprocess_block(&$vars) {
     $vars['classes_array'][] = 'block-last';
   }
 }
+
 /**
  * Override or insert variables into the page template.
  */
@@ -100,6 +101,7 @@ function netstof_preprocess_page(&$variables, $hook) {
   }
   $variables['paaroerende_img'] = $paaroerende_img;
 }
+
 /**
  * ALTER SEARCH BOX
  */
@@ -127,4 +129,39 @@ function netstof_form_alter(&$form, $form_state, $form_id) {
 		    $form['custom_search_blocks_form_2']['#attributes']['onfocus'] = "if (this.value == 'Søg i debatforum') {this.value = '';}";
 		break;
 	}
+}
+
+/**
+ * FIELD - field_encyclopedia_drug_forms
+ *
+ * Prints the taxonomy term icon if it is defined, if not the name is printed
+ */
+function netstof_field__field_encyclopedia_drug_forms__encyclopedia_entry($vars) {
+
+  $output = '';
+
+  // Render the label, if it's not hidden.
+  if (!$vars['label_hidden']) {
+    $output .= '<h2 class="field-label"' . $vars['title_attributes'] . '>' . $vars['label'] . ':&nbsp;</h2>';
+  }
+
+  // Render the items.
+  $output .= '<ul class="field-items"' . $vars['content_attributes'] . '>';
+  foreach ($vars['element']['#items'] as $delta => $item) {
+    $classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
+    if(isset($item["taxonomy_term"]->field_indtagelse_ikon[LANGUAGE_NONE])) {
+    	$output .= '<li class="' . $classes . '"' . $vars['item_attributes'][$delta] . '><img src="'.image_style_url("drug-forms-icon",$item["taxonomy_term"]->field_indtagelse_ikon[LANGUAGE_NONE][0]["uri"]).'" /></li>';
+  	}
+  	else {
+  	    $output .= '<li class="' . $classes . '"' . $vars['item_attributes'][$delta] . '>'.$item["taxonomy_term"]->name.'</li>';
+  	}
+  }
+
+  $output .= '</ul>';
+
+  // Render the top-level wrapper element.
+  $tag = $vars['tag'];
+  $output = "<$tag class=\"" . $vars['classes'] . '"' . $vars['attributes'] . '>' . $output . "</$tag>";
+
+  return $output;
 }

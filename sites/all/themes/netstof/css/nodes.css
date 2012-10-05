@@ -82,6 +82,25 @@ h2,h3,h4,h5,h6 {
 .node-encyclopedia-entry #page-title {
 	margin-bottom: 10px;
 }
+.node-encyclopedia-entry .field-label {
+	margin-top: 0;
+}
+.field-name-field-encyclopedia-duration {
+	margin-bottom: 1.5em;
+}
+.field-name-field-encyclopedia-drug-forms {
+
+}
+	.field-name-field-encyclopedia-drug-forms ul {
+		margin: 0; padding: 0;
+		overflow: hidden;
+	}
+		.field-name-field-encyclopedia-drug-forms ul li {
+			float: left;
+			list-style: none;
+			list-style-image: none;
+			margin: 5px 15px 0 0; padding: 0;
+		}
 
 /* Tags */
 .node-encyclopedia-entry .field-name-field-tags {
@@ -105,6 +124,8 @@ h2,h3,h4,h5,h6 {
 			float: left;
 		}
 /* Tabs */
+.node-encyclopedia-entry .field-group-htabs-wrapper {
+}
 .node-encyclopedia-entry .horizontal-tabs {
 	border: none;
 	margin: 0;
