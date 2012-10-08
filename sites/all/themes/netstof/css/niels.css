@@ -85,7 +85,6 @@
 			width:43px;height:34px;
 			background-color:none;
 			background:url('../images/slide-active.png') no-repeat top left;
-			cursor:pointer;
 		}
 		#widget_pager_top_slideshow-block #views_slideshow_pager_field_item_top_slideshow-block_0 > div.views-field-counter{
 			position:absolute;top:0;left:-31px;

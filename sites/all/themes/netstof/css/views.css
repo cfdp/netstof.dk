@@ -627,16 +627,21 @@ ol.search-results {
  
 .view-Brevkasse ul.pager,
 .view-leksikon ul.pager,
-.page-search-node ul.pager {
+.page-search-node ul.pager,
+.view-id-advanced_forum_topic_list ul.pager {
 	margin-top: 25px;
+	text-align: center;
+	width: 100%;
 }
 	.view-Brevkasse ul.pager li,
 	.view-leksikon ul.pager li,
-	.page-search-node ul.pager li {
+	.page-search-node ul.pager li,
+	.view-id-advanced_forum_topic_list ul.pager li {
 		font-size: 13px;
 	}
 	.view-Brevkasse ul.pager li a,
 	.view-leksikon ul.pager li a,
-	.page-search-node ul.pager li a {
+	.page-search-node ul.pager li a,
+	.view-id-advanced_forum_topic_list ul.pager li a {
 		color: #424242;
 	}

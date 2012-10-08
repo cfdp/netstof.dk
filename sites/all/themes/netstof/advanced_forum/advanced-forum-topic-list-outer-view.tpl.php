@@ -62,9 +62,9 @@
     </div>
   <?php endif; ?>
 
-  <?php if ($pager): ?>
+  <?php /* if ($pager): ?>
     <div class="forum-pager" id="forum-pager-top"><?php print $pager; ?></div>
-  <?php endif; ?>
+  <?php endif; */ ?>
 
   <?php if ($rows): ?>
     <div class="view-content">
