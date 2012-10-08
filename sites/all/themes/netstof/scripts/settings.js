@@ -107,13 +107,17 @@ $(function() {
     	attachTooltips();
     });
     
+    /**
+     * FORM STYLING - Dropkick (Select boxes)
+     */
+    $(".node-form .form-select").dropkick();    
 });
 
 /**
  * TOOLTIPS
  */
 function attachTooltips() {
-	$('.plus-link').qtip({
+	$('.tooltip').qtip({
 	   show: 'mouseover',
 	   hide: 'mouseout',
 	   position: { 

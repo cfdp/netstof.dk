@@ -76,7 +76,7 @@
 		</div>
 		<div class="goto-forum">
 			<a href="<?php print $item->link; ?>" class="goto-link">Gå til forum</a>
-			<a href="/node/add/forum" class="add-link"></a>
+			<a href="/node/add/forum" class="add-link tooltip" title="Opret et nyt emne i dette forum"></a>
 		</div>
 		</div>
 	</div>

@@ -36,5 +36,5 @@ switch($row->node_type) {
 	break;
 }
 
-print "<a href='/node/add/".$type."' class='plus-link' title='".$title."'></a>";
+print "<a href='/node/add/".$type."' class='plus-link tooltip' title='".$title."'></a>";
 ?>
