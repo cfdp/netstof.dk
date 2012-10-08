@@ -99,12 +99,12 @@ h2,h3,h4,h5,h6 {
 			float: left;
 			list-style: none;
 			list-style-image: none;
-			margin: 5px 15px 0 0; padding: 0;
+			margin: 5px 5px 0 0; padding: 0;
 		}
 
 /* Tags */
 .node-encyclopedia-entry .field-name-field-tags {
-	font-size: 11px; line-height: 11px;
+	font-size: 11px; line-height: 14px;
 	margin-bottom: 20px;
 	font-weight: bold;
 }
@@ -122,6 +122,11 @@ h2,h3,h4,h5,h6 {
 			border-left: 1px solid #424242;
 			margin-left: 5px;
 			float: left;
+		}
+		.node-encyclopedia-entry .field-name-field-tags ul li:first-child {
+			border-left: 0;
+			margin-left: 0;
+			padding-left: 0;
 		}
 /* Tabs */
 .node-encyclopedia-entry .field-group-htabs-wrapper {

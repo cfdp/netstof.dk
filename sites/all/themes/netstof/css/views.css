@@ -363,7 +363,7 @@
 .view-artikler .views-fluidgrid-item {
 	float: left;
 	background: url("../images/grid-box-bg.png") no-repeat 0 9px;
-	width: 294px;
+	width: 294px; height: auto;
 	color: #404040;
 	font-size: 13px; line-height: 15px;
 }
@@ -371,6 +371,7 @@
 		height: 335px;
 		position: relative;
 		background: white url("../images/block-btm.png") no-repeat bottom center;
+		padding: 0;
 	}
 	.view-artikler .views-fluidgrid-item .views-fluidgrid-item-top {
 		background: url("../images/small_shadow_top.png") no-repeat top center;
@@ -418,6 +419,17 @@
 				padding: 1px 8px;
 				text-decoration: none;
 			}
+			
+/**
+ * VIDENSBANK - Oversigt
+ */
+.view-vidensbanken .views-field-type {
+	font-size: 15px;
+	text-transform: uppercase;
+	text-align: center;
+	margin-top: 18px;
+	margin-bottom: 35px;
+}
 			
 /**
  * FAQ + Leksikon - Oversigt

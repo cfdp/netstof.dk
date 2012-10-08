@@ -107,10 +107,13 @@
 	}
 	
 /**
- * FORSIDE + PÅRØRENDE GRID
+ * FORSIDE + PÅRØRENDE + VIDENSBANK - (MASONRY GRID)
  */
 #block-views-front-page-grid-block, #block-views-front-page-grid-block-1 {
 	position: relative;
+}
+.view-vidensbanken {
+	margin-top: -10px;
 }
 	#block-views-front-page-grid-block .block-title, #block-views-front-page-grid-block-1 .block-title {
 		font-size: 28px;
@@ -118,23 +121,23 @@
 		font-weight: normal;
 		padding-left: 23px;
 	}
-	#block-views-front-page-grid-block .views-fluidgrid-item, #block-views-front-page-grid-block-1 .views-fluidgrid-item {
+	.views-fluidgrid-item {
 		float: left;
 		background: url("../images/grid-box-bg.png") no-repeat 0 9px;
 		width: 294px; height: 238px;
 		color: #404040;
 		font-size: 13px; line-height: 15px;
 	}
-	#block-views-front-page-grid-block .views-fluidgrid-item .views-fluidgrid-item-inner, #block-views-front-page-grid-block-1 .views-fluidgrid-item .views-fluidgrid-item-inner {
+	.views-fluidgrid-item .views-fluidgrid-item-inner {
 		padding: 23px 23px;
 		height: 171px;
 		position: relative;
 	}
-	#block-views-front-page-grid-block .views-fluidgrid-item .views-fluidgrid-item-top, #block-views-front-page-grid-block-1 .views-fluidgrid-item .views-fluidgrid-item-top {
+	.views-fluidgrid-item .views-fluidgrid-item-top {
 		background: url("../images/small_shadow_top.png") no-repeat top center;
 		height: 9px;
 	}
-	#block-views-front-page-grid-block .views-fluidgrid-item .views-fluidgrid-item-btm, #block-views-front-page-grid-block-1 .views-fluidgrid-item .views-fluidgrid-item-btm {
+	.views-fluidgrid-item .views-fluidgrid-item-btm {
 		background: url("../images/small_shadow_bottom.png") no-repeat bottom center;
 		height: 12px;
 	}
@@ -207,13 +210,18 @@
 			}
 		
 		/* VIEWS GRID - FILTERS AND VIEW HEADER ON PÅRØRENDE PAGE */
-		#block-views-front-page-grid-block .view-filters, #block-views-front-page-grid-block-1 .view-header  {
+		#block-views-front-page-grid-block .view-filters,
+		.view-vidensbanken .view-filters, 
+		#block-views-front-page-grid-block-1 .view-header  {
 			padding: 15px 0;
 			border-top: 1px dashed #373737;
 			border-bottom: 1px dashed #373737;
 			color: #424242;
 			margin: 15px 0 14px 0;
 			font-size: 15px;
+		}
+		.view-vidensbanken .view-filters {
+			margin-top: 0;
 		}
 		#block-views-front-page-grid-block-1 .view-header  {
       padding: 8px;
@@ -241,21 +249,26 @@
 			#edit-type-1-wrapper > div {
 				float: left;
 			}
-			#block-views-front-page-grid-block .view-filters .form-type-radio {
+			#block-views-front-page-grid-block .view-filters .form-type-radio,
+			.view-vidensbanken .view-filters .form-type-radio {
 				float: left;
 				margin: 0 !important;
 				background: url("../images/filter-sep.png") no-repeat center left;
 				padding: 0 12px 0 25px;
 			}
-				#block-views-front-page-grid-block .view-filters .form-type-radio:first-child {
+				#block-views-front-page-grid-block .view-filters .form-type-radio:first-child,
+				.view-vidensbanken .view-filters .form-type-radio:first-child {
 					background: none;
 					padding-left: 0;
 				}
-				#block-views-front-page-grid-block .view-filters .form-type-radio label {
+				#block-views-front-page-grid-block .view-filters .form-type-radio label,
+				.view-vidensbanken .view-filters .form-type-radio label {
 					cursor: pointer;
 					font-weight: normal;
+					color: #424242;
 				}
-				#block-views-front-page-grid-block .view-filters .form-type-radio input[checked=checked]+label {
+				#block-views-front-page-grid-block .view-filters .form-type-radio input[checked=checked]+label,
+				.view-vidensbanken .view-filters .form-type-radio input[checked=checked]+label {
 					color: #0b5a7c;
 				}
 					#block-views-front-page-grid-block .view-filters .form-type-radio label[for=edit-type-1-all] {
@@ -273,11 +286,13 @@
 						padding-left: 25px;
 					}
 				
-			#block-views-front-page-grid-block .view-filters input[type=radio]{
+			#block-views-front-page-grid-block .view-filters input[type=radio],
+			.view-vidensbanken .view-filters input[type=radio]{
 				display: none;
 			}
 		/* PAGER */
-		#block-views-front-page-grid-block ul.pager, #block-views-front-page-grid-block-1 ul.pager {
+		#block-views-front-page-grid-block ul.pager, 
+		#block-views-front-page-grid-block-1 ul.pager {
 			position: absolute;
 			right: 28px;
 			top: 65px;
@@ -285,16 +300,30 @@
 			font-size: 14px;
 			font-weight: normal;
 		}
-			#block-views-front-page-grid-block ul.pager li, #block-views-front-page-grid-block-1 ul.pager li  {
+		.view-vidensbanken ul.pager {
+			position: absolute;
+			right: 28px;
+			top: 59px;
+			color: #424242;
+			font-size: 14px;
+			font-weight: normal;		
+		}
+			#block-views-front-page-grid-block ul.pager li, 
+			#block-views-front-page-grid-block-1 ul.pager li,
+			.view-vidensbanken ul.pager li  {
 				padding: 0;
 			}
-			#block-views-front-page-grid-block ul.pager li.pager-current, #block-views-front-page-grid-block-1 ul.pager li.pager-current {
+			#block-views-front-page-grid-block ul.pager li.pager-current, 
+			#block-views-front-page-grid-block-1 ul.pager li.pager-current,
+			.view-vidensbanken ul.pager li.pager-current {
 				padding: 0 10px;
 				font-family: "Cabin", sans-serif;
 				font-size: 15px;
 				font-weight: normal;
 			}
-			#block-views-front-page-grid-block ul.pager li a, #block-views-front-page-grid-block-1 ul.pager li a {
+			#block-views-front-page-grid-block ul.pager li a, 
+			#block-views-front-page-grid-block-1 ul.pager li a,
+			.view-vidensbanken ul.pager li a {
 				color: #FFF;
 				background: #424242;
 				padding: 1px 8px;
@@ -467,6 +496,53 @@ tr .ajax-progress .throbber {
 	top: -100px;
 }
 
+/**
+ * RIGHT SIDE LIST VIEW
+ */
+ul.right-side-list {
+	overflow: hidden;
+	margin: 0; padding: 0;
+}
+	ul.right-side-list li {
+		float: left;
+		width: 100%;
+		list-style: none;
+		list-style-image: 0;
+		margin: 0 0 12px 0; padding: 0 0 13px 0;
+		border-bottom: 1px dashed #656565;
+	}
+	ul.right-side-list li.views-row-last {
+		border-bottom: none;
+		margin: 0;
+		padding: 0;
+	}
+	ul.right-side-list li a {
+		
+	}
+		ul.right-side-list li .views-field-field-billede {
+			margin-right: 12px;
+			float: left;
+		}
+		ul.right-side-list li .views-field-title {
+			font-size: 11px; line-height: 11px;
+			color: #404040;
+			text-transform: uppercase;
+			margin-bottom: 3px;
+			font-weight: bold;
+		}
+			ul.right-side-list li .views-field-title a {
+				color: #404040 !important;
+			}
+		ul.right-side-list li .views-field-body {
+			margin-bottom: 3px;
+		}
+		ul.right-side-list li .views-field-view-node {
+		}
+			ul.right-side-list li .views-field-view-node a {
+				color: #fead02 !important;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
 /**
  * FOOTER TOP
  */
