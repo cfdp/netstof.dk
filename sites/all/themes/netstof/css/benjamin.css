@@ -1,7 +1,7 @@
 /* various styling */
 
-/*PROFILE and WEBFORM PAGE*/
-body.page-user #content, body.node-type-webform #content {
+/*PROFILE*/
+body.page-user #content {
   margin-bottom: 14px;
   box-shadow: 0 0 7px #BBB; 
   background: #FFF; 

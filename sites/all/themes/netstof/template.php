@@ -150,7 +150,8 @@ function netstof_field__field_encyclopedia_drug_forms__encyclopedia_entry($vars)
   foreach ($vars['element']['#items'] as $delta => $item) {
     $classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
     if(isset($item["taxonomy_term"]->field_indtagelse_ikon[LANGUAGE_NONE])) {
-    	$output .= '<li class="' . $classes . '"' . $vars['item_attributes'][$delta] . '><img src="'.image_style_url("drug-forms-icon",$item["taxonomy_term"]->field_indtagelse_ikon[LANGUAGE_NONE][0]["uri"]).'" /></li>';
+      $term_desc = $item['taxonomy_term']->description;
+    	$output .= '<li class="' . $classes . '"' . $vars['item_attributes'][$delta] . '><img src="' .image_style_url("drug-forms-icon",$item['taxonomy_term']->field_indtagelse_ikon[LANGUAGE_NONE][0]['uri']). '" title="'.$term_desc.'" alt="'.$term_desc.'" /></li>';
   	}
   	else {
   	    $output .= '<li class="' . $classes . '"' . $vars['item_attributes'][$delta] . '>'.$item["taxonomy_term"]->name.'</li>';
