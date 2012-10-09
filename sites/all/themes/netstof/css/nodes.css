@@ -137,7 +137,8 @@ h2,h3,h4,h5,h6 {
 }
 	.node-encyclopedia-entry ul.horizontal-tabs-list {
 		margin: 0 0 15px 0;
-		background-color: #404040;
+		background-color: #FFFFFF;
+		border: none;
 	}
 		.node-encyclopedia-entry ul.horizontal-tabs-list li {
 			height: 27px;

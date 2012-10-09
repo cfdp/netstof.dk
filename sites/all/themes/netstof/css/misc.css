@@ -266,7 +266,7 @@
   overflow: visible;
 }
 
-.dk_fouc select {
+.node-form .form-select {
   position: relative;
   top: -99999em;
   visibility: hidden;
