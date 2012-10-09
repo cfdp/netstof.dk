@@ -32,12 +32,13 @@
 	.node-form > div > .form-item {
 		margin-bottom: 15px;
 	}
-	.node-form label {
+	.node-form label,
+	.comment-form label {
 		font-size: 13px;
 		line-height: 13px;
 		font-weight: bold;
 		color: #424242;
-		margin-bottom: 9px;
+		margin-bottom: 8px;
 	}
 	.node-form label.option {
 		font-weight: normal;
@@ -45,7 +46,8 @@
 	.node-form #edit-body-und-0-format {
 		display: none;
 	}
-	.node-form #edit-body {
+	.node-form #edit-body,
+	.comment-form #edit-comment-body {
 		margin-bottom: 18px;
 	}
 	.node-form div.description {
@@ -64,7 +66,8 @@
 	border-radius: 5px;
 	text-align: left;
 	}
-	.node-form input[type=text] {
+	.node-form input[type=text],
+	.comment-form input[type=text] {
 		padding: 6px 8px;
 		font-size: 12px;
 		color: #a29f99;
@@ -84,7 +87,10 @@
 		margin-right: 5px;
 	}
 	html.js input.form-autocomplete {
-	    background-position: 100% 7px;
+	    background-position: 99% 7px;
+	}
+	.comment-form a {
+		color: #0B5A7C;
 	}
 	/* HEADLINES */
 	.page-node-add-questions-and-answers h1#page-title {
@@ -267,3 +273,37 @@
 }
 
 /***** End Critical to the continued enjoyment of working dropdowns ******/
+
+/**
+ * TOOLTIPS
+ */
+.qtip {
+	font-size: 13px;
+}
+
+/** 
+ * THROBBER
+ */
+.progress-disabled {
+  float: none;
+  display:inline;
+}
+
+.ajax-progress {
+  float: none;
+  display:inline;
+  position: relative;
+}
+.ajax-progress .throbber {
+  float: none;
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  top: 0; left: 0;
+}
+tr .ajax-progress .throbber {
+  margin: 0 2px;
+}
+.ajax-progress-bar {
+  width: 16em;
+}
