@@ -71,6 +71,18 @@
 		font-family: "Cabin", sans-serif;
 		border: 1px solid #c8c8c8;
 	}
+	.node-form .form-type-checkbox {
+		overflow: hidden;
+		margin-bottom: 3px;
+	}	
+		.node-form .form-type-checkbox label {
+			margin: 0; padding: 0;
+			position: relative; top: 2px;
+		}
+	.node-form .styledCheckbox {
+		float: left;
+		margin-right: 5px;
+	}
 	html.js input.form-autocomplete {
 	    background-position: 100% 7px;
 	}

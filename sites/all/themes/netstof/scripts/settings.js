@@ -112,13 +112,12 @@ $(function() {
      */
     $(".node-form .form-select").dropkick();    
     
-/*
     $('.node-form .form-checkbox').screwDefaultButtons({ 
-		image: "url(sites/all/themes/netstof/images/checkboxSmall.jpg)",
-		width:	 85,
-		height:	 85
+		checked: "url(/sites/all/themes/netstof/images/checkbox-checked.png)",
+		unchecked: "url(/sites/all/themes/netstof/images/checkbox-unchecked.png)",
+		width:	 21,
+		height:	 21
 	});
-*/
 });
 
 /**
