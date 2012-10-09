@@ -111,6 +111,14 @@ $(function() {
      * FORM STYLING - Dropkick (Select boxes)
      */
     $(".node-form .form-select").dropkick();    
+    
+/*
+    $('.node-form .form-checkbox').screwDefaultButtons({ 
+		image: "url(sites/all/themes/netstof/images/checkboxSmall.jpg)",
+		width:	 85,
+		height:	 85
+	});
+*/
 });
 
 /**
