@@ -128,6 +128,10 @@
 		color: #404040;
 		font-size: 13px; line-height: 15px;
 	}
+	.views-fluidgrid-item a {
+    color: #404040;
+    font-size: 13px; line-height: 15px;
+  }
 	.views-fluidgrid-item .views-fluidgrid-item-inner {
 		padding: 23px 23px;
 		height: 171px;
