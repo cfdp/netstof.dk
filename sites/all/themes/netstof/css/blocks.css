@@ -107,42 +107,43 @@
 	}
 	
 /**
- * VIDENSBANK - Landing Page Blocks
+ * LANDING PAGE BLOCKS - Vidensbank, Raadgivning etc.
  */
-.page-vidensbank h1#page-title {
+.page-vidensbank h1#page-title,
+.page-raadgivning h1#page-title {
 	margin-bottom: 10px;
 	margin-left: 20px;
 }
-.block.vidensbank {
+.block.landing_page {
 }
-	.block.vidensbank .block-top {
+	.block.landing_page .block-top {
 		background: url("../images/big_shadow_top.png") no-repeat top center;
 		height: 11px;
 	}
-	.block.vidensbank .block-middle {
+	.block.landing_page .block-middle {
 		background: white url("../images/content-btm.png") no-repeat bottom center;
 		overflow: hidden;
 		padding: 0 20px 0 0;
 	}
-	.block.vidensbank .block-btm {
+	.block.landing_page .block-btm {
 		background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
 		height: 15px;
 	}
-	.block.vidensbank img {
+	.block.landing_page img {
 		float: left;
 		margin: 0 20px 0 0;
 	}	
-	.block.vidensbank h2 {
+	.block.landing_page h2 {
 		padding: 0 0 0 0;
 		font-size: 28px;
 	}	
-	.block.vidensbank strong {
+	.block.landing_page strong {
 	
 	}	
-	.block.vidensbank p {
+	.block.landing_page p {
 		margin-bottom: 13px;
 	}	
-	.block.vidensbank a.add-link {
+	.block.landing_page a.add-link {
 		color: white;
 		font-weight: bold;
 		text-transform: uppercase;
