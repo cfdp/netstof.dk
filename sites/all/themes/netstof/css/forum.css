@@ -156,15 +156,6 @@ body[class*='page-forum-'] #content-btm-shadow {
 	float: left;
 	width: 100%;		
 }
-/*
-body[class*='page-forum-'] h1#page-title {
-	color: #0B5A7C !important;
-	padding: 0 0 0 0;
-	background: none;
-	height: 36px;
-	margin-bottom: 0;
-}
-*/
 .view-advanced-forum-topic-list .view-header {
 	margin-top: -11px;
 	float: left;
@@ -379,13 +370,18 @@ body[class*='page-forum-'] h1#page-title {
 .forum-post.article {
 	margin-top: -11px;
 }
-.forum-post.article .forum-post-title {
-	font-size: 28px; line-height: 28px;
-	color: #0b5a7c;
-	margin-bottom: 15px;
-	text-transform: none;
-	margin-top: 15px;
-}
+	.forum-post.article #forum-icon {
+		float: left;
+		margin-right: 8px;
+	}
+	.forum-post.article #forum-headline h1 {
+		font-size: 28px;
+		line-height: 28px;
+		color: #0B5A7C;
+		font-family: "Cabin",sans-serif;
+		margin: 0 0 15px 0;
+		font-weight: normal;
+	}
 .forum-post.article	.forum-post-wrapper {
 		background-color: #FFFFFF;
 		padding: 23px 23px 0 23px;

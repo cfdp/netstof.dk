@@ -18,7 +18,6 @@
  * - $name: User name of post author.
  * - $author_pane: Entire contents of the Author Pane template.
  */
-
 ?>
 
 <?php /* if ($top_post): ?>
@@ -32,9 +31,28 @@
 
     <div class="forum-post-panel-main clearfix">
       <?php if (!empty($title)): ?>
+      	<?php
+      	/**
+      	 * Prints the forum category icon
+      	 */ 
+      	if($top_post) {
+      		$term = taxonomy_term_load($node->taxonomy_forums[LANGUAGE_NONE][0]["tid"]);
+      		print "<div id='forum-icon'>";
+      		print "<img src='".image_style_url("forum-icon", $term->field_ikon[LANGUAGE_NONE][0]["uri"])."' />";
+      		print "</div>";
+      		?>
+      		<div id="forum-headline">
+    	    	<span>Debat</span><br />
+	        	<h1><?php print $title; ?></h1>
+			</div>
+      	<?php
+      	}
+      	else {
+      	?>
         <div class="forum-post-title">
-          <?php print $title ?>
+          <?php print $title; ?>
         </div>
+      <?php } ?>
       <?php endif; ?>
       
       <?php if (!empty($author_pane)): ?>
