@@ -40,6 +40,7 @@ h2,h3,h4,h5,h6 {
 		.node-middle {
 			background: white url("../images/content-btm.png") no-repeat bottom center;		
 			padding: 25px 23px;
+			overflow: hidden;
 		}
 			.node-middle nav ul li {
 				float: right;
@@ -59,6 +60,14 @@ h2,h3,h4,h5,h6 {
 			.field-name-field-billede {
 				line-height: 0;
 			}
+			/* Narrow content area */
+			#rightcontent.narrow {
+				float: left;
+				padding-left: 23px;
+				width: 357px;
+				border-left: 1px dashed #dedddb;
+			}
+			
 			
 /**
  * Node Type: FAQ

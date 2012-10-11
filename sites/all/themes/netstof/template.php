@@ -132,9 +132,18 @@ function netstof_form_alter(&$form, $form_state, $form_id) {
 }
 
 /**
+* ADD BLOCK REGIONS INSIDE NODES
+*/
+function netstof_preprocess_node(&$variables) {
+    if ($blocks = block_get_blocks_by_region('leftcontent')) {
+  		$variables['leftcontent'] = $blocks;
+	}
+}
+
+/**
  * FIELD - field_encyclopedia_drug_forms
  *
- * Prints the taxonomy term icon if it is defined, if not the name is printed
+ * Prints the taxonomy term icon if it is defined, if not then the name is printed
  */
 function netstof_field__field_encyclopedia_drug_forms__encyclopedia_entry($vars) {
 

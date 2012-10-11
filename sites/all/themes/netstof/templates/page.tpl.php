@@ -149,13 +149,6 @@
     <div id="content-column" class="content-column" role="main">
 
       <div class="content-inner clearfix">
-
-		  <!-- region: Left Content -->
-          <?php if(!$is_front && $page["leftcontent"]): ?>
-            <div id="leftcontent" class="region">
-              <?php print render($page["leftcontent"]); ?>
-            </div>
-          <?php endif; ?>
 				
         <<?php print $tag; ?> id="main-content">
 

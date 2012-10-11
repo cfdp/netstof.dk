@@ -697,3 +697,45 @@ ul.ui-autocomplete {
 #block-views-front-page-grid-block-1 {
 	margin-top: 23px;
 }
+
+/**
+ * LEFT CONTENT
+ */
+.region-leftcontent {
+	width: 161px;
+	margin-right: 23px;
+	float: left;
+}
+	.region-leftcontent .block {
+		margin-bottom: 17px;
+	}
+	.region-leftcontent .block h2.block-title {
+		font-size: 14px;
+		color: #424242;
+		padding: 7px;
+		background: #e5e4e1;
+		margin: 0 0 9px 0;
+	}
+	.region-leftcontent .block-content {
+		padding: 0 7px;
+		font-size: 11px; line-height: 11px;
+	}
+		.region-leftcontent .block-content p {
+			margin-bottom: 5px;
+		}
+		.region-leftcontent .block-content a {
+			color: #404040;
+		}
+		.region-leftcontent .block-content .views-row {
+			margin-bottom: 4px;
+		}
+	.region-leftcontent .block h3 {
+		font-size: 11px; line-height: 11px;
+		font-weight: bold;
+		text-transform: uppercase;
+		margin: 0 0 4px 0;
+	}
+/* LIMIT GROUPING */
+.views-limit-grouping-group {
+	margin-bottom: 10px;
+}
