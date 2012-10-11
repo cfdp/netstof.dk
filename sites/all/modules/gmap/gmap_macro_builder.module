@@ -115,7 +115,7 @@ function gmap_macro_builder_form($form, &$form_state, $settings = array(), $hide
   $form['macroform']['controltype'] = array(
     '#type' => 'select',
     '#title' => t('Controls'),
-    '#options' => drupal_map_assoc(array('None', 'Small', 'Large')),
+    '#options' => drupal_map_assoc(array('None', 'Small', 'Large', 'Android')),
     '#required' => FALSE,
     '#default_value' => $defaults['controltype'],
   );

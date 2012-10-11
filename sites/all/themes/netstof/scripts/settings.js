@@ -2,6 +2,22 @@ var $ = jQuery.noConflict();
 
 $(function() {
 
+/*
+    var customStyle = [
+  	{
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      { "hue": "#ff0022" }
+    ]
+  	}
+	];
+
+	console.log(google.maps);
+
+	Drupal.gmap.setOptions({ 'styles': customStyle });
+*/
+
 	/**
 	 * ENCYCLOPEDIA TABS - Hash links
 	 */

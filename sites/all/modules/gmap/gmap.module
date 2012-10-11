@@ -17,7 +17,7 @@
  * See http://groups.google.com/group/Google-Maps-API/web/api-version-changes
  * for details on using other version numbers.
  */
-define('GMAP_API_VERSION', '2.115');
+define('GMAP_API_VERSION', '3');
 
 /**
  * Get the defaults for a gmap.
@@ -294,14 +294,15 @@ function _gmap_base_js() {
   $ret[$path . '/js/poly.js'] = array('weight' => 3);
 
   global $language;
+  $file = 'api/js';
   $query = array(
-    'file' => 'api',
     'v' => variable_get('gmap_api_version', GMAP_API_VERSION),
-    'key' => gmap_get_key(),
-    'hl' => $language->language,
+    'language' => $language->language,
+    'sensor' => 'false',
   );
-  $ret[url(gmap_views_protocol() . '://maps.google.com/maps', array('query' => $query))] = array(
+  $ret[url(gmap_views_protocol() . '://maps.google.com/maps/'.$file, array('query' => $query))] = array(
     'type' => 'external',
+    'weight' => 2
   );
 
   $ret[file_create_url('public://js/gmap_markers.js')] = array(
@@ -344,6 +345,18 @@ function _gmap_doheader() {
 //  drupal_add_js($gmap_path . '/js/highlight.js');
 //  drupal_add_js($gmap_path . '/js/' . $mm . '_marker.js');
   drupal_add_js(array('gmap_markermanager' => $mms[$mm]), 'setting');
+// @@@
+drupal_add_js($gmap_path . '/js/poly.js');
+
+  global $language;
+  $file = 'api/js';
+  $query = array(
+    'v' => variable_get('gmap_api_version', GMAP_API_VERSION),
+    'language' => $language->language,
+    'sensor' => 'false',
+  );
+  drupal_add_js(url('http://maps.google.com/maps/' . $file, array('query' => $query)));
+
   $gmap_initialized = TRUE;
 }
 
@@ -613,6 +626,8 @@ function gmap_element_info() {
         'js' => array(
           "$path/js/gmap_shapes.js" => array('weight' => 2),
           "$path/js/overlay_edit.js" => array('weight' => 2),
+          "$path/js/polylineEdit/src/polylineEdit_packed.js" => array('weight' => 3),
+          "$path/js/polygonEdit/src/polygonEdit_packed.js" => array('weight' =>3),
         ),
       ),
 //      '#theme' => 'select',

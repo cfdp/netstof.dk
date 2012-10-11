@@ -1,4 +1,5 @@
 <?php
+// $Id: gmap_settings_ui.inc,v 1.12.2.5 2010/06/08 20:49:13 bdragon Exp $
 
 /**
  * @file
@@ -9,7 +10,6 @@ function gmap_admin_settings($form, &$form_state) {
   // Reset the icondata cache.
   gmap_get_icondata(TRUE);
 
-  //note the same google api key variable name as in the googlemap module is used
   //note the name of the variable for center of the map is latlong although the format is actually longitude, latitude
 
   $form['initialization'] = array(
@@ -35,6 +35,15 @@ function gmap_admin_settings($form, &$form_state) {
 
   $form['initialization']['googlemap_api_key']['#title'] = t('Google Maps API Key');
   $form['initialization']['googlemap_api_key']['#description'] = t('Your personal Googlemaps API key.  If you want to use an API key, you can get one at <a href="http://code.google.com/apis/maps/signup.html">Google Map API website</a>.');
+
+if (file_default_scheme() != 'public') {
+  $form['initialization']['gmap_private_markerfile'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Path to gmap_markers.js'),
+      '#description' => t('You are using the <em>Private</em> download method. For markers to work properly. you must press the <em>Regenerate</em> button, manually copy js/gmap_markers.js from the files directory to a location accessible by the webserver, and enter the file path relative to the Drupal root (including the filename) in this field. Example: <em>sites/default/misc/gmap_markers.js</em>'),
+      '#default_value' => variable_get('gmap_private_markerfile', ''),
+    );
+  }
 
   $form['initialization']['rebuild'] = array(
     '#type' => 'fieldset',
@@ -147,7 +156,7 @@ function gmap_admin_settings($form, &$form_state) {
   $form['gmap_default']['controltype'] = array(
     '#type' => 'select',
     '#title' => t('Default control type'),
-    '#options' => array('None' => t('None'), 'Micro' => t('Micro'), 'Small' => t('Small'), 'Large' => t('Large')),
+    '#options' => array('None' => t('None'), 'Small' => t('Small'), 'Large' => t('Large')),
     '#default_value' => $defaults['controltype'],
   );
   gmap_widget_setup($form['gmap_default']['controltype'], 'controltype', 'settings_default_map');
@@ -157,9 +166,9 @@ function gmap_admin_settings($form, &$form_state) {
     '#title' => t('Map Type Control'),
     '#options' => array(
       'none' => t('None'),
-      'standard' => t('Standard (GMapTypeControl)'),
-      'hier' => t('Hierarchical (GHierarchicalMapTypeControl)'),
-      'menu' => t('Dropdown (GMenuMapTypeControl)'),
+      'standard' => t('Standard (google.maps.MapTypeControlStyle.DEFAULT)'),
+      'horiz' => t('Horizontal bar (google.maps.MapTypeControlStyle.HORIZONTAL_BAR)'),
+      'menu' => t('Dropdown (google.maps.MapTypeControlStyle.DROPDOWN_MENU)'),
     ),
     '#default_value' => $defaults['mtc'],
   );
@@ -342,7 +351,6 @@ function gmap_admin_settings($form, &$form_state) {
     '#required' => TRUE,
     '#options' => array(
       'gmap' => t('No manager (use GMap API directly)'),
-      'gmarkermanager' => t("Google's GMarkerManager"),
       'markermanager' => t('GMaps Utility Library MarkerManager'),
       'markerclusterer' => t('GMaps Utility Library MarkerClusterer'),
       'clusterer' => t("Jef Poskanzer's Clusterer"),
@@ -361,62 +369,11 @@ function gmap_admin_settings($form, &$form_state) {
     '#collapsed' => TRUE,
   );
 
-  // Google Maps API GMarkerManager
-  $form['gmap_markermanager']['gmarkermanager'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('GMarkerManager settings'),
-    '#description' => t('GMarkerManager is a new part of the official Google Maps API that provides a marker manager.'),
-    '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
-  );
-  $form['gmap_markermanager']['gmarkermanager']['borderPadding'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Border padding'),
-    '#description' => t('Markers located less than this number of pixels from the viewport will be added to the map by the manager (even if they would be fully invisible.)'),
-    '#size' => 4,
-    '#maxlength' => 4,
-    '#default_value' => $opts['gmarkermanager']['borderPadding'],
-  );
-  $form['gmap_markermanager']['gmarkermanager']['maxZoom'] = array(
-    '#type' => 'select',
-    '#title' => t('Maximum zoom'),
-    '#options' => drupal_map_assoc(range(0, 17)),
-    '#description' => t('At the specified zoom level and above, the marker manager will disable itself for additional speed.'),
-    '#default_value' => $opts['gmarkermanager']['maxZoom'],
-  );
-  $form['gmap_markermanager']['gmarkermanager']['trackMarkers'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Track markers'),
-    '#description' => t('If enabled, the marker manager will track marker movements. Leave off unless you need to move markers around with setPoint.'),
-    '#default_value' => $opts['gmarkermanager']['trackMarkers'],
-  );
-  $form['gmap_markermanager']['gmarkermanager']['defaults'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Marker defaults'),
-    '#description' => t('Default marker-specific settings for GMarkerManager. Markers will appear when the current zoom level is between minZoom and maxZoom.'),
-  );
-  $form['gmap_markermanager']['gmarkermanager']['defaults']['markerMinZoom'] = array(
-    '#type' => 'select',
-    '#title' => t('Minimum zoom'),
-    '#options' => drupal_map_assoc(range(0, 17)),
-    '#description' => t('At the specified zoom level and above (i.e. zooming in,) the marker will be shown. Choose 0 to show markers at all zoom levels by default.'),
-    '#default_value' => $opts['gmarkermanager']['markerMinZoom'],
-    '#parents' => array('gmap_markermanager', 'gmarkermanager', 'markerMinZoom'),
-  );
-  $form['gmap_markermanager']['gmarkermanager']['defaults']['markerMaxZoom'] = array(
-    '#type' => 'select',
-    '#title' => t('Maximum zoom'),
-    '#options' => drupal_map_assoc(range(0, 17)),
-    '#description' => t('At the specified zoom level and above (i.e. zooming in,) the marker will be hidden. Choose 0 to disable by default.'),
-    '#default_value' => $opts['gmarkermanager']['markerMaxZoom'],
-    '#parents' => array('gmap_markermanager', 'gmarkermanager', 'markerMaxZoom'),
-  );
-
   // GMaps Utility Library -- MarkerManager
   $form['gmap_markermanager']['markermanager'] = array(
     '#type' => 'fieldset',
     '#title' => t('MarkerManager settings'),
-    '#description' => t('MarkerManager is the improved open source version of GMarkerManager. To use, you must download it from <a href="@url">here</a> and place it in the <em>thirdparty</em> folder.', array('@url' => 'http://gmaps-utility-library.googlecode.com/svn/trunk/markermanager/release/src/')),
+    '#description' => t('MarkerManager is the improved open source version of GMarkerManager. To use, you must download it from <a href="@url">here</a> and place it in the <em>thirdparty</em> folder.', array('@url' => 'http://google-maps-utility-library-v3.googlecode.com/svn/tags/markermanager/1.0/src/')),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   );
@@ -474,7 +431,7 @@ function gmap_admin_settings($form, &$form_state) {
   $form['gmap_markermanager']['markerclusterer'] = array(
     '#type' => 'fieldset',
     '#title' => t('MarkerClusterer settings'),
-    '#description' => t('MarkerClusterer creates and manages per-zoom-level clusters for large amounts of markers (hundreds or thousands.) To use, you must download it from <a href="@url">here</a> and place it in the <em>thirdparty</em> folder.', array('@url' => 'http://gmaps-utility-library-dev.googlecode.com/svn/tags/markerclusterer/1.0/src/')),
+    '#description' => t('MarkerClusterer creates and manages per-zoom-level clusters for large amounts of markers (hundreds or thousands.) To use, you must download it from <a href="@url">here</a> and place it in the <em>thirdparty</em> folder.', array('@url' => 'http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclusterer/1.0/src/')),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   );
