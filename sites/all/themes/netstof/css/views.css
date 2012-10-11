@@ -42,7 +42,7 @@
 					background: url("../images/icon-laege.png") no-repeat 0 0;
 				}
 				.page-node-305 .field-name-field-oversigt .field-item h2.rusmiddel {
-					background: url("../images/icon-rusmiddel.png") no-repeat 0 0;
+					background: url("../images/icon-professor.png") no-repeat 0 0;
 				}	
 				.page-node-305 .field-name-field-oversigt .field-item p {
 					float: left;
@@ -128,37 +128,77 @@
 .view-Brevkasse {
 
 }
-	body.page-brevkasse .view-Brevkasse .view-header {
+	body.page-brevkasse .view-Brevkasse > .view-header {
 		margin-bottom: 14px;
 		box-shadow: 0 0 7px #BBB;	
 		background: #FFF;	
 		padding: 23px;
 		position: relative;
 		font-family: "Cabin", sans-serif;	
+		overflow: hidden;
 	}
-			.view-Brevkasse .view-header .header-title {
-				padding: 0 0 0 50px;
-				margin-bottom: 15px;
-				height: 41px;
+		.view-Brevkasse > .view-header .header-title {
+			padding: 0 0 0 50px;
+			margin-bottom: 19px;
+			height: 41px;
+		}
+			.view-Brevkasse.view-display-id-page_2 .header-title {
+				background: url("../images/icon-laege.png") no-repeat 0 0;
 			}
-				.view-Brevkasse.view-display-id-page_2 .header-title {
-					background: url("../images/icon-laege.png") no-repeat 0 0;
+			.view-Brevkasse.view-display-id-page_3 .header-title {
+				background: url("../images/icon-psykolog.png") no-repeat 0 0;
+			}
+			.view-Brevkasse.view-display-id-page_4 .header-title {
+				background: url("../images/icon-professor.png") no-repeat 0 0;
+			}
+			.view-Brevkasse .view-header .header-title span {
+				font-size: 13px;
+				color: #3e3e3e;
+			}
+			.view-Brevkasse > .view-header .header-title h1 {
+				color: #0b5a7c;
+				font-size: 28px;
+				margin: 0; padding: 4px 0 0 0;
+				font-weight: normal;
+				font-family: "Cabin", sans-serif;
+			}
+		.view-Brevkasse > .view-header > .view-brevkasseredaktoerer {
+			width: 50%;
+			float: left;
+		}
+			.view-brevkasseredaktoerer .views-field-picture {
+				float: left;
+				width: 104px;
+				margin: 0 7px 7px 0;
+			}
+				.view-brevkasseredaktoerer .views-field-picture img {
+					border: 2px solid #e2e1df;					
 				}
-				.view-Brevkasse.view-display-id-page_3 .header-title {
-					background: url("../images/icon-psykolog.png") no-repeat 0 0;
+			.view-brevkasseredaktoerer .views-field-name {
+				font-size: 15px; line-height: 15px;
+				text-transform: uppercase;
+				color: #424242;
+				padding: 10px 10px 10px 0;
+				float: left;
+				width: 151px;
+			}
+				.view-brevkasseredaktoerer .views-field-name a {
+					color: #424242;
 				}
-				.view-Brevkasse .view-header .header-title span {
-					font-size: 13px;
-					color: #3e3e3e;
-				}
-				.view-Brevkasse .view-header .header-title h1 {
-					color: #0b5a7c;
-					font-size: 28px;
-					margin: 0; padding: 4px 0 0 0;
-					font-weight: normal;
-					font-family: "Cabin", sans-serif;
-				}
-		.view-Brevkasse .view-header #add-question {
+			.view-brevkasseredaktoerer .views-field-field-profile-public-description {
+				font-size: 12px; font-family: "Cabin", sans-serif;
+				color: #424242;
+				float: left;
+				width: 151px;
+				padding: 0 10px 0 0;
+			}
+		.view-Brevkasse > .view-header > .brevkasse-desc {
+			width: 50%;
+			float: left;
+			font-size: 12px;
+			padding: 10px 0 0 0;
+		}
+		.view-Brevkasse > .view-header #add-question {
 			position: absolute;
 			top: 23px;
 			right: 23px;
@@ -172,40 +212,40 @@
 			padding: 10px 12px 10px 30px;
 			border-radius: 5px;
 		}
-	.view-Brevkasse .views-row {
+	.view-Brevkasse > .view-content > .views-row {
 		margin-bottom: 14px;
-		box-shadow: 0 0 7px #BBB;	
-		background: #FFF;
+		box-shadow: 0 0 7px #BBB;		
 	}
-		.view-Brevkasse .views-row > .views-field {
+		.view-Brevkasse > .view-content > .views-row > .views-field {
 			background: #FFF;
 			border: none;
 			border-radius: 0;
 			overflow: hidden;
 			padding: 20px 23px 20px 52px;
 			font-family: "Cabin", sans-serif;
+			margin-top: 0;
 		}
-			.view-Brevkasse .views-row > .views-field a {
+			.view-Brevkasse > .view-content > .views-row > .views-field a {
 				padding: 0;
 			}
-			.view-Brevkasse .views-row > .views-field .ui-icon {
+			.view-Brevkasse > .view-content > .views-row > .views-field .ui-icon {
 				background: url("../images/icon-arrow-acc.png") no-repeat center center;
 				left: 23px;
 			}
-			.view-Brevkasse .views-row > .views-field.ui-state-active .ui-icon {
+			.view-Brevkasse > .view-content > .views-row > .views-field.ui-state-active .ui-icon {
 				background: url("../images/icon-arrow-acc-active.png") no-repeat center center;			
 			}
-			.view-Brevkasse .views-row .acc_left {
+			.view-Brevkasse > .view-content > .views-row .acc_left {
 				float: left;
 				width: 75%;
 			}
-				.view-Brevkasse .views-row .acc_left .faq_acc_date {
+				.view-Brevkasse > .view-content > .views-row .acc_left .faq_acc_date {
 					color: #424242;
 					font-weight: bold;
 					font-size: 11px;
 					margin-bottom: 2px;
 				}
-				.view-Brevkasse .views-row .acc_left .faq_acc_title {
+				.view-Brevkasse > .view-content > .views-row .acc_left .faq_acc_title {
 					color: #3d3d3d;
 					font-size: 15px;
 					text-transform: uppercase;
@@ -214,21 +254,21 @@
 						color: #0b5a7c;
 					}
 
-			.view-Brevkasse .views-row .acc_right {
+			.view-Brevkasse > .view-content > .views-row .acc_right {
 				width: 25%;
 				float: left;
 				font-size: 13px;
 				color: #3e3e3e;
 				text-align: right;
 			}
-				.view-Brevkasse .views-row .acc_right .faq_acc_sex {
+				.view-Brevkasse > .view-content > .views-row .acc_right .faq_acc_sex {
 					display: inline;
 				}
-				.view-Brevkasse .views-row .acc_right .faq_acc_age {
+				.view-Brevkasse > .view-content > .views-row .acc_right .faq_acc_age {
 					display: inline;
 					padding-left: 3px;
 				}
-		.view-Brevkasse .views-row > .ui-accordion-content {
+		.view-Brevkasse > .view-content > .views-row > .ui-accordion-content {
 			border: none;
 			color: #3e3e3e;
 			font-size: 12px; line-height: 14px;
@@ -236,13 +276,17 @@
 			padding: 0 23px 20px 52px;
 			border-radius: 0;
 		}
-			.view-Brevkasse .views-row > .ui-accordion-content .views-label {
+			.view-Brevkasse > .view-content > .views-row > .ui-accordion-content .views-label {
 				font-weight: bold;
 				margin-bottom: 5px;
+				font-size: 12px;
+				display:block;
+				text-transform: uppercase;
 			}
-			.view-Brevkasse .views-row > .ui-accordion-content .views-field-view-node a {
+			.view-Brevkasse > .view-content > .views-row > .ui-accordion-content .views-field-view-node a {
 				color: #0b5a7c;
 				font-weight: bold;
+				font-size: 14px;
 			}
 	
 /**

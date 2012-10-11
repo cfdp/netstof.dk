@@ -153,7 +153,7 @@
 		background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px;
 		padding: 10px 12px 10px 30px;
 		border-radius: 5px;
-		width: 110px;
+		min-width: 110px;
 	}	
 
 
