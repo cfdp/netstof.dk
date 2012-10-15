@@ -107,12 +107,6 @@
         ?>
       </div>
 
-      <?php if (!empty($post_edited)): ?>
-        <div class="post-edited">
-          <?php print $post_edited ?>
-        </div>
-      <?php endif; ?>
-
       <?php if (!empty($signature)): ?>
         <div class="author-signature">
           <?php print $signature ?>
