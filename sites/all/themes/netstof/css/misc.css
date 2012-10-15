@@ -209,7 +209,55 @@
   max-height: 250px;
 }
 
-/******  End Theme ******/
+/******  DARK THEME ********/
+
+/* Container */
+.dk_theme_dark .dk_container {}
+  .dk_theme_dark a {}
+
+/* Toggle */
+.dk_theme_dark .dk_toggle {
+  background: #404040 url(/sites/all/themes/netstof/images/select-arrow.png) no-repeat center right;
+  border: none;	
+  color: #FFFFFF;
+  padding: 9px 0 9px 10px;
+  border-radius: 0;
+  -webkit-transition: border-color .5s;
+  -moz-transition: border-color .5s;
+  -o-transition: border-color .5s;
+  transition: border-color .5s;
+  font-size: 13px;
+}
+  .dk_theme_dark .dk_toggle:hover {}
+
+/* Focus State */
+.dk_theme_dark.dk_focus,
+.dk_theme_dark:focus {}
+  .dk_theme_dark.dk_focus .dk_toggle {}
+  
+/* Open State */
+.dk_theme_dark.dk_open {}
+  .dk_theme_dark.dk_open .dk_toggle {}
+
+/* Options Menu */
+.dk_theme_dark .dk_options {}
+  .dk_theme_dark .dk_options a {
+      	background-color: #fff;
+    	border-bottom: 1px solid #c8c8c8;
+    	padding: 8px 10px;
+    	color: #404040;
+  }
+  .dk_theme_dark .dk_options a:hover,
+  .dk_theme_dark .dk_option_current a {}
+
+/* Inner options */
+.dk_theme_dark .dk_options_inner {}
+
+/* Set a width property here */
+.dk_theme_dark .dk_options_inner,
+.dk_theme_dark.dk_touch .dk_options {}
+
+/******  End Dark Theme ******/
 
 /***** Critical to the continued enjoyment of working dropdowns ******/
 

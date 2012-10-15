@@ -2,7 +2,7 @@ var $ = jQuery.noConflict();
 
 $(function() {
 
-/*
+	/*
     var customStyle = [
   	{
     "featureType": "water",
@@ -16,7 +16,7 @@ $(function() {
 	console.log(google.maps);
 
 	Drupal.gmap.setOptions({ 'styles': customStyle });
-*/
+	*/
 
 	/**
 	 * ENCYCLOPEDIA TABS - Hash links
@@ -42,6 +42,8 @@ $(function() {
 	 */
 	$(".view-faq #edit-body-value").watermark("Søg i FAQ'en", {useNative: false});
 	$(".view-leksikon #edit-title").watermark("Søg i leksikon", {useNative: false});
+	$(".view-kort #edit-adresse").watermark("Adresse", {useNative: false});
+	$(".view-kort #edit-by").watermark("By", {useNative: false});
 
 	/**
 	 * SCROLL TO TOP
@@ -56,6 +58,7 @@ $(function() {
 	/**
 	 * RIGHT SIDE TABS
 	 */
+	/*
 	$("#right-side > div").hover(
 		
 		function() {
@@ -77,6 +80,7 @@ $(function() {
 		
 		}
 	);
+	*/
 
 	/**
 	 * VIEWS GRID - FILTER
@@ -94,8 +98,6 @@ $(function() {
            }
        }
     );
-    
-
 	
 	/**
 	 * MAIN MENU
@@ -124,10 +126,14 @@ $(function() {
     });
     
     /**
-     * FORM STYLING - Dropkick (Select boxes)
+     * FORM STYLING
      */
+     
+    // Dropkick (Select boxes)
     $(".node-form .form-select").dropkick();    
+    $("#edit-kommune").dropkick({theme:"dark"});    
     
+    // Checkboxes
     $('.node-form .form-checkbox').screwDefaultButtons({ 
 		checked: "url(/sites/all/themes/netstof/images/checkbox-checked.png)",
 		unchecked: "url(/sites/all/themes/netstof/images/checkbox-unchecked.png)",
