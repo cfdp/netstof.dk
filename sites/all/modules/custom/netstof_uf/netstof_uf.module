@@ -78,10 +78,12 @@ function netstof_uf_user_has_role($role, $user = NULL) {
 
 /**
  * Check if the current time is within opening hours
+ * @return
+ *   TRUE if the current time is within opening hours
  * @todo opening hours should be configurable fields in the administration
  */
 function netstof_uf_open_to_posts() {
-  $closed = false;
+  $open = true;
   $closingtime = 22;
   $openingtime = 9;
   $timezone = new DateTimeZone( "Europe/Copenhagen" );
@@ -89,9 +91,9 @@ function netstof_uf_open_to_posts() {
   $date->setTimezone($timezone);
   $present_hour =  $date->format('H');
   if($present_hour > ($closingtime -1) || $present_hour < $openingtime ){
-    $closed = true;
+    $open = false;
   }
-  return $closed;
+  return $open;
 }
 
 function netstof_uf_test() {
