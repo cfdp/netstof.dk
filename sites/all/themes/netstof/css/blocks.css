@@ -415,6 +415,9 @@
 		padding: 0 23px 23px 23px;
 		overflow: hidden;
 	}
+	body.page-paaroerende .region-sidebar-first .block .block-content {
+    padding: 0;
+  }
 		.not-front .region-sidebar-first .block .block-content a {
 			color: #0B5A7C;
 		}
