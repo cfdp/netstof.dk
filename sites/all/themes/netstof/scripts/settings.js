@@ -44,6 +44,10 @@ $(function() {
 	$(".view-leksikon #edit-title").watermark("Søg i leksikon", {useNative: false});
 	$(".view-kort #edit-adresse").watermark("Adresse", {useNative: false});
 	$(".view-kort #edit-by").watermark("By", {useNative: false});
+	/* feedback tab form */
+	$("#webform-client-form-564 #edit-submitted-dit-navn").watermark("Navn", {useNative: false});
+	$("#webform-client-form-564 #edit-submitted-din-e-mail").watermark("Email", {useNative: false});
+	$("#webform-client-form-564 #edit-submitted-indhold").watermark("Indhold", {useNative: false});
 
 	/**
 	 * SCROLL TO TOP
@@ -58,8 +62,7 @@ $(function() {
 	/**
 	 * RIGHT SIDE TABS
 	 */
-	/*
-	$("#right-side > div").hover(
+	$(".region-tabs-right .block").hover(
 		
 		function() {
 		
@@ -67,20 +70,24 @@ $(function() {
 				
 				right: "0"
 			
-			},200);
+			},201);
 		
 		},
 		function() {
 		
 			$(this).stop(true,true).animate({ 
 				
-				right: "-=75"
+				right: "-=179"
 			
-			},200);
+			},201);
 		
 		}
 	);
-	*/
+/*
+	$(".region-tabs-right input, .region-tabs-right textarea").focus(function() {
+			$(this).closest(".block").toggleClass("active").hover();
+	});
+*/
 
 	/**
 	 * VIEWS GRID - FILTER

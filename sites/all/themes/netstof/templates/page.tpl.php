@@ -162,7 +162,7 @@
           	  $show_title = TRUE;
           	  
           	  if(arg(0)=="node" && is_numeric(arg(1))) { 
-				$show_title = false;
+					  $show_title = false;
           	  }
           	  else if(arg(0)=="forum" && is_numeric(arg(1))) {
 	          	  $show_title = false;
@@ -221,7 +221,7 @@
       </div><!-- /end .content-inner -->
     </div><!-- /end #content-column -->
 
-    <!-- regions: Sidebar first and Sidebar second -->
+    <!-- region: Sidebar first -->
     <?php $sidebar_first = render($page['sidebar_first']); print $sidebar_first; ?>
 
   </div><!-- /end #columns -->
@@ -258,20 +258,7 @@
 
 <?php endif; ?>
 
-<?php 
-/* TABS HØJRE SIDE 
-
-<div id="right-side">
-	<div id="right-del">
-		<a href="#"><img src="<?php print $base_path.drupal_get_path("theme","netstof"); ?>/images/right-del.png" /></a>	
-	</div>
-	<div id="right-brevkasse">
-		<a href="#"><img src="<?php print $base_path.drupal_get_path("theme","netstof"); ?>/images/right-brev.png" /></a>	
-	</div>
-	<div id="right-feedback">
-		<a href="#"><img src="<?php print $base_path.drupal_get_path("theme","netstof"); ?>/images/right-feedback.png" /></a>	
-	</div>
-</div>
-
-*/
-?>
+<!-- region: Tabs Right -->
+<?php if ($page['tabs_right']): ?>
+	  <?php print render($page['tabs_right']); ?>
+<?php endif; ?>
