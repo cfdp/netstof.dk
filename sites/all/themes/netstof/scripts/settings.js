@@ -66,28 +66,36 @@ $(function() {
 		
 		function() {
 		
+			var right_space = 0;
+		
+			if($(this).hasClass("block-netstof-social")) {
+				right_space = -40;
+			}
+		
 			$(this).stop(true,true).animate({ 
 				
-				right: "0"
+				right: right_space
 			
-			},201);
+			},200);
 		
 		},
 		function() {
 		
 			$(this).stop(true,true).animate({ 
 				
-				right: "-=179"
+				right: "-179"
 			
-			},201);
+			},200);
 		
 		}
 	);
-/*
-	$(".region-tabs-right input, .region-tabs-right textarea").focus(function() {
-			$(this).closest(".block").toggleClass("active").hover();
-	});
-*/
+		/**
+		 * SCROLL TO FIXED
+		 */
+		$(".region-tabs-right").scrollToFixed({
+			marginTop: 10,
+			zIndex: 10
+		});
 
 	/**
 	 * VIEWS GRID - FILTER

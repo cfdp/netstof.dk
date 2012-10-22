@@ -31,22 +31,23 @@ function netstof_social_block_content() {
   
 	global $base_url;
 	$url = $base_url.request_uri();
-	$title = drupal_get_title();
+	$content_title = drupal_get_title();
+	$title = ($content_title!="" ? $content_title : "Netstof");
 	
 	$str = "<ul id='netstof-social-list'>";
     
 	$str .= "<li><a href='http://www.facebook.com/share.php?u=".$url."&title=".$title."'>";
-	$str .= "<img src='/".drupal_get_path("module","netstof_social")."/images/icon-fb.png' alt='Facebook' />";
+	$str .= "<img src='/".drupal_get_path("module","netstof_social")."/images/icon-fb.png' alt='Facebook' title='Del på Facebook' />";
 	$str .= "</a></li>";
 	
 	$str .= "<li><a href='http://twitter.com/home?status=".$title."+".$url."'>";
-	$str .= "<img src='/".drupal_get_path("module","netstof_social")."/images/icon-tw.png' alt='Twitter' />";
+	$str .= "<img src='/".drupal_get_path("module","netstof_social")."/images/icon-tw.png' alt='Twitter' title='Del på Twitter' />";
 	$str .= "</a></li>";
 	
-	$str .= "<li><a href='http://twitter.com/home?status=".$title."+".$url."'>";
-	$str .= "<img src='/".drupal_get_path("module","netstof_social")."/images/icon-em.png' alt='Twitter' />";
+	$str .= "<li><a href='mailto:?subject=Netstof.dk: ".$title."&amp;body=Jeg vil gerne dele dette link med dig: ".$url."'>";
+	$str .= "<img src='/".drupal_get_path("module","netstof_social")."/images/icon-em.png' alt='Email' title='Del på email' />";
 	$str .= "</a></li>";
-  
+	  
    $str .= "</ul>";
   
   	return $str;

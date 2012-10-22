@@ -492,7 +492,7 @@
  * RIGHT SIDE - fixed entrances
  */
 .region-tabs-right {
-	position: fixed;
+	position: absolute;
 	right: 0;
 	top: 195px;
 	line-height: 0;
