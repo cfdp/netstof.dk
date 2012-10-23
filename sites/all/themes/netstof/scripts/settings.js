@@ -197,8 +197,10 @@ function attachTooltips() {
 function attachWatermarks() {
 	$(".view-faq #edit-body-value").watermark("Søg i FAQ'en", {useNative: false});
 	$(".view-leksikon #edit-title").watermark("Søg i leksikon", {useNative: false});
+	/* kort */
 	$(".view-kort #edit-adresse").watermark("Adresse", {useNative: false});
 	$(".view-kort #edit-by").watermark("By", {useNative: false});
+	$(".view-kort #edit-kommuner").watermark("Kommune", {useNative: false});
 	/* feedback tab form */
 	$("#webform-client-form-564 #edit-submitted-dit-navn").watermark("Navn", {useNative: false});
 	$("#webform-client-form-564 #edit-submitted-din-e-mail").watermark("Email", {useNative: false});
