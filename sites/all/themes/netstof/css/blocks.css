@@ -150,13 +150,11 @@
 		font-size: 15px;
 		line-height: 15px;
 		display: inline-block;
-		background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px;
+		background: #0B5A7C url("../images/icon-white-triangle.png") no-repeat 11px 11px;
 		padding: 10px 12px 10px 30px;
 		border-radius: 5px;
 		min-width: 110px;
 	}	
-
-
 
 /**
  * FORSIDE + PÅRØRENDE + VIDENSBANK - (MASONRY GRID)
@@ -495,7 +493,6 @@
 	position: absolute;
 	right: 0;
 	top: 195px;
-	line-height: 0;
 	width: 220px;
 	overflow: hidden;
 }
@@ -505,6 +502,17 @@
 		background-color: #3b3b3b;
 		padding: 15px 0 15px 41px;
 		right: -179px;
+		font-size: 11px;
+	}
+	.region-tabs-right .tablink {
+		padding: 0;
+	}
+		.region-tabs-right .tablink p {
+			margin: 0; padding: 0;
+			line-height: 0;
+		}
+	.region-tabs-right .block a {
+		color: #1e6381;
 	}
 		/* Share Tab */
 		.block-netstof-social {
@@ -526,6 +534,10 @@
 			#block-webform-client-block-564 .block-inner {
 				background: #FFFFFF;
 				padding: 15px 15px 0 15px;
+				min-height: 80px;
+			}
+			#block-webform-client-block-564 div#messages {
+				display: none;
 			}
 			#block-webform-client-block-564 .form-item {
 				margin-bottom: 5px;
@@ -539,11 +551,17 @@
 				font-family: "Cabin", sans-serif;
 				border: 1px solid #c8c8c8;
 				max-width: 88%;
+				outline: none;
 			}
+				#block-webform-client-block-564 input[type=text].error,
+				#block-webform-client-block-564 input[type=email].error,
+				#block-webform-client-block-564 textarea.error {
+					border-color: #cc3333;
+				}
 			#block-webform-client-block-564 textarea {
-				max-width: 100%;
-				min-height: 150px;
-			}
+					max-width: 100%;
+					min-height: 150px;
+				}
 			#block-webform-client-block-564 input[type=submit] {
 				color: white;
 				font-weight: bold;
@@ -582,9 +600,6 @@ ul.right-side-list {
 		border-bottom: none;
 		margin: 0;
 		padding: 0;
-	}
-	ul.right-side-list li a {
-		
 	}
 		ul.right-side-list li .views-field-field-billede {
 			margin-right: 12px;
@@ -678,6 +693,9 @@ ul.right-side-list {
 	}
 		.region-footer-btm .block p {
 			margin-bottom: 0;
+		}
+		.region-footer-btm .block a {
+			color: #404040;
 		}
 		
 /**

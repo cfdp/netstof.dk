@@ -36,18 +36,6 @@ $(function() {
 			break;
 		}
 	}
-	
-	/**
-	 * WATERMARKS
-	 */
-	$(".view-faq #edit-body-value").watermark("Søg i FAQ'en", {useNative: false});
-	$(".view-leksikon #edit-title").watermark("Søg i leksikon", {useNative: false});
-	$(".view-kort #edit-adresse").watermark("Adresse", {useNative: false});
-	$(".view-kort #edit-by").watermark("By", {useNative: false});
-	/* feedback tab form */
-	$("#webform-client-form-564 #edit-submitted-dit-navn").watermark("Navn", {useNative: false});
-	$("#webform-client-form-564 #edit-submitted-din-e-mail").watermark("Email", {useNative: false});
-	$("#webform-client-form-564 #edit-submitted-indhold").watermark("Indhold", {useNative: false});
 
 	/**
 	 * SCROLL TO TOP
@@ -62,7 +50,7 @@ $(function() {
 	/**
 	 * RIGHT SIDE TABS
 	 */
-	$(".region-tabs-right .block").hover(
+	$(".region-tabs-right .slideout").hover(
 		
 		function() {
 		
@@ -89,13 +77,17 @@ $(function() {
 		
 		}
 	);
-		/**
-		 * SCROLL TO FIXED
-		 */
-		$(".region-tabs-right").scrollToFixed({
-			marginTop: 10,
-			zIndex: 10
-		});
+	
+	console.log($("#footer-container").offset().top);
+
+	/**
+	 * SCROLL TO FIXED
+	 */
+	$(".region-tabs-right").scrollToFixed({
+		limit: $("#footer-container").offset().top - 620,
+		marginTop: 10,
+		zIndex: 10,
+	});
 
 	/**
 	 * VIEWS GRID - FILTER
@@ -132,15 +124,6 @@ $(function() {
     });
     
     /**
-     * ATTACH TOOLTIPS
-     */
-    attachTooltips();
-    // Attaches tooltips on ajax complete - useful for ajax enabled views
-    $(document).ajaxComplete(function() {
-    	attachTooltips();
-    });
-    
-    /**
      * FORM STYLING
      */
      
@@ -149,12 +132,31 @@ $(function() {
     $("#edit-kommune").dropkick({theme:"dark"});    
     
     // Checkboxes
+	/*
     $('.node-form .form-checkbox').screwDefaultButtons({ 
 		checked: "url(/sites/all/themes/netstof/images/checkbox-checked.png)",
 		unchecked: "url(/sites/all/themes/netstof/images/checkbox-unchecked.png)",
 		width:	 21,
 		height:	 21
-	});
+	 });
+	*/
+    
+    /**
+     * ATTACH TOOLTIPS
+     */
+    attachTooltips();
+    
+    /**
+     * ATTACH WATERMARKS
+     */
+    attachWatermarks();
+    
+    // Ajax complete
+    $(document).ajaxComplete(function() {
+    	attachTooltips();
+    	attachWatermarks();
+    });
+    
 });
 
 /**
@@ -187,4 +189,18 @@ function attachTooltips() {
 	  tip: 'bottomMiddle',
 		}
 	});
+}
+
+/**
+ * WATERMARKS
+ */
+function attachWatermarks() {
+	$(".view-faq #edit-body-value").watermark("Søg i FAQ'en", {useNative: false});
+	$(".view-leksikon #edit-title").watermark("Søg i leksikon", {useNative: false});
+	$(".view-kort #edit-adresse").watermark("Adresse", {useNative: false});
+	$(".view-kort #edit-by").watermark("By", {useNative: false});
+	/* feedback tab form */
+	$("#webform-client-form-564 #edit-submitted-dit-navn").watermark("Navn", {useNative: false});
+	$("#webform-client-form-564 #edit-submitted-din-e-mail").watermark("Email", {useNative: false});
+	$("#webform-client-form-564 #edit-submitted-indhold").watermark("Indhold", {useNative: false});
 }
