@@ -33,7 +33,6 @@
 				font-size: 20px; line-height: 20px;	
 				padding-top: 20px;	
 				padding-left: 48px;		
-				height: 21px;
 			}
 				.page-node-305 .field-name-field-oversigt .field-item h2.psykolog {
 					background: url("../images/icon-psykolog.png") no-repeat 0 0;
@@ -140,7 +139,6 @@
 		.view-Brevkasse > .view-header .header-title {
 			padding: 0 0 0 50px;
 			margin-bottom: 19px;
-			height: 41px;
 		}
 			.view-Brevkasse.view-display-id-page_2 .header-title {
 				background: url("../images/icon-laege.png") no-repeat 0 0;
@@ -157,7 +155,7 @@
 			}
 			.view-Brevkasse > .view-header .header-title h1 {
 				color: #0b5a7c;
-				font-size: 28px;
+				font-size: 28px; line-height: 28px;
 				margin: 0; padding: 4px 0 0 0;
 				font-weight: normal;
 				font-family: "Cabin", sans-serif;

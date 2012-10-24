@@ -16,7 +16,8 @@ h2,h3,h4,h5,h6 {
 	font-family: "Cabin", sans-serif !important;
 	font-weight: normal;
 }
-.node-content a {
+.node-content a,
+.view-empty a {
 	color: #1e6381;
 }
 	

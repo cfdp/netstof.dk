@@ -1,4 +1,11 @@
 /**
+ * GENERAL FORM
+ */
+input, textarea {
+	max-width: 100%;
+}
+
+/**
  * ADD NODE FORMS
  */
 .page-node-add section#main-content {
