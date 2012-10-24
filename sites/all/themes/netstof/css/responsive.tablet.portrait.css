@@ -27,20 +27,6 @@ html {
 	float: left;
 }
 
-/**
- * BLOCKS
- */
- 
-/* Sidebar First */
-.region-sidebar-first {
-	width: 634px !important;
-}
-.region-sidebar-first .block {
-	width: 294px !important;
-	float: left !important;
-	margin-right: 23px;
-}
-
 /* Footer */
 .region-footer section.block {
 	margin: 10px 0 0 23px;
@@ -48,4 +34,7 @@ html {
 	.region-footer section.block-first,
 	.region-footer section.block-last {
 		margin: 10px 0 0 0;
+	}
+	.region-footer section.block-last {
+		clear: left;
 	}

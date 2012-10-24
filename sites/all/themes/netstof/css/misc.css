@@ -73,6 +73,7 @@
 		color: #a29f99;
 		font-family: "Cabin", sans-serif;
 		border: 1px solid #c8c8c8;
+		max-width: 90%;
 	}
 	.node-form .form-type-checkbox {
 		overflow: hidden;

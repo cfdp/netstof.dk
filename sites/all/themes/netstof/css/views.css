@@ -412,6 +412,7 @@
 	float: left;
 	background: url("../images/grid-box-bg.png") no-repeat 0 9px;
 	width: 294px; height: auto;
+	max-width: 100%;
 	color: #404040;
 	font-size: 13px; line-height: 15px;
 }
