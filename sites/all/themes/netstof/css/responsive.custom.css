@@ -109,6 +109,11 @@
 			margin-bottom: 5px;
 		}
 	/* Blocks */
+	.views-fluidgrid-wrapper > div {
+		margin: auto;
+		float: none !important;
+		position: static !important;
+	}
 	.block.landing_page .block-middle {
 		padding: 0 0 10px 0;
 	}
