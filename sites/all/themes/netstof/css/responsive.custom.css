@@ -100,6 +100,15 @@
 	.view-advanced-forum-topic-list .view-header-content {
 		padding-bottom: 23px;
 	}
+	.view-kort .views-exposed-widgets {
+		height: auto;
+	}
+		.view-kort .views-exposed-widgets {
+			float: none;
+			height: auto;
+			margin-bottom: 5px;
+		}
+	/* Blocks */
 	.block.landing_page .block-middle {
 		padding: 0 0 10px 0;
 	}
@@ -178,7 +187,6 @@
 			right: 0;
 			top: 67px;
 		}
-		
 	/* Sidebar top */
 	.region-sidebar-top {
 		position: relative;
