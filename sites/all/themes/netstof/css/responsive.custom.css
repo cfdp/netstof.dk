@@ -176,6 +176,7 @@
 		#block-views-front-page-grid-block ul.pager, 
 		#block-views-front-page-grid-block-1 ul.pager{
 			right: 0;
+			top: 67px;
 		}
 		
 	/* Sidebar top */

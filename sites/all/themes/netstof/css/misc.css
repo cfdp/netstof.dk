@@ -3,6 +3,8 @@
  */
 input, textarea {
 	max-width: 100%;
+	-webkit-appearance: none;
+   border-radius: 0;
 }
 
 /**
@@ -105,7 +107,6 @@ input, textarea {
 		color: #0B5A7C !important;
 		padding: 3px 0 0 52px;
 		background: url("../images/icon-title-letter.png") no-repeat top left;
-		height: 36px;
 	}
 
 
