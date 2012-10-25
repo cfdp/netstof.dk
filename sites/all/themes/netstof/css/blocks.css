@@ -504,6 +504,12 @@
 		right: -179px;
 		font-size: 11px;
 	}
+  .region-tabs-right .block.baseurl-info {
+    background-color: #aa0000;
+    color: #ffffff;
+    padding: 15px 0 15px 41px;
+    right: -100px;
+  }
 	.region-tabs-right .tablink {
 		padding: 0;
 	}
