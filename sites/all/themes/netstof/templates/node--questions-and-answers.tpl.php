@@ -131,6 +131,7 @@ hide($content['links']);
 			<?php print render($content['body']); ?>
 		</div><!-- .question end -->
 		<div class="answer">
+			<?php /* @todo: figure out how to print this correctly  - format: d.m.Y. print $last_update; */ ?>
 			<?php print render($content['field_qna_answer']); ?>
 			<?php print render($content['field_tags']); ?>
 			<?php if(!empty($user_picture) || $display_submitted): ?>
