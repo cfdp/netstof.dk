@@ -56,9 +56,7 @@ $(function() {
 		
 			var right_space = 0;
 		
-			if($(this).hasClass("block-netstof-social")) {
-				right_space = -40;
-			}
+			
 		
 			$(this).stop(true,true).animate({ 
 				

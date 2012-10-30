@@ -132,3 +132,27 @@
 	.region-footer-btm .block-first ul.menu li a {
 		color: #404040;
 	}
+	
+/**
+ * BREADCRUMB
+ */
+#breadcrumbs {
+	height: 35px;
+	background-color: #FFFFFF;
+}
+	#breadcrumbs ul {
+		list-style: none;
+		padding: 0 13px;
+		margin: 0;
+		overflow: hidden;
+	}
+	#breadcrumbs ul li {
+		float: left;
+		background: none;
+	}
+	#breadcrumbs ul li a {
+		float: left;
+		background: none;
+		height: auto; width: auto;
+		padding: 0;
+	}
