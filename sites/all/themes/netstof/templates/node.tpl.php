@@ -145,6 +145,12 @@ if(isset($content['field_billede'])) hide($content['field_billede']);
 		  <div<?php print $content_attributes; ?>>
 		    <?php print render($content); ?>
 		  </div>
+		  
+		  <?php if(isset($undercontent)) { ?>
+		  <div class="region region-undercontent"><div class="region-inner clearfix">
+		 	 <?php print render($undercontent); ?>
+		  </div></div>
+		  <?php } ?>
 		
 		  <?php if ($links = render($content['links'])): ?>
 		    <nav<?php print $links_attributes; ?>><?php print $links; ?></nav>

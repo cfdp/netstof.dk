@@ -796,7 +796,7 @@ ul.ui-autocomplete {
 			color: #404040;
 		}
 		.region-leftcontent .block-content .views-row {
-			margin-bottom: 4px;
+			margin-bottom: 5px;
 		}
 	.region-leftcontent .block h3 {
 		font-size: 11px; line-height: 11px;
@@ -804,7 +804,26 @@ ul.ui-autocomplete {
 		text-transform: uppercase;
 		margin: 0 0 4px 0;
 	}
-/* LIMIT GROUPING */
-.views-limit-grouping-group {
-	margin-bottom: 10px;
+	.region-leftcontent .views-limit-grouping-group {
+			margin-bottom: 15px;
+	}
+	
+/**
+ * UNDER CONTENT
+ */
+.region-undercontent {
+	margin-top: 40px;
 }
+	.region-undercontent .block {
+		margin-bottom: 20px;
+	}
+	.region-undercontent .block h3,
+	.region-undercontent .block-title {
+		font-size: 15px;
+		text-transform: uppercase;
+		background: #e5e4e1;
+		padding: 8px 6px;
+	}
+		.region-undercontent .block-content a {
+			color: #404040;
+		}	

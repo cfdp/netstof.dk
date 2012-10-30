@@ -135,7 +135,7 @@
 <div id="page" class="container <?php print $classes; ?>">
 
   <!-- Breadcrumbs -->
-  <?php if ($breadcrumb): print $breadcrumb; endif; ?>
+  <?php // if ($breadcrumb): print $breadcrumb; endif; ?>
 
   <!-- Messages and Help -->
   <?php print $messages; ?>
