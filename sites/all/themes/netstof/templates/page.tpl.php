@@ -134,9 +134,6 @@
 
 <div id="page" class="container <?php print $classes; ?>">
 
-  <!-- Breadcrumbs -->
-  <?php //if ($breadcrumb): print $breadcrumb; endif; ?>
-
   <!-- Messages and Help -->
   <?php print $messages; ?>
   <?php print render($page['help']); ?>   
@@ -230,6 +227,9 @@
   <?php if($is_front || (request_path() == "paaroerende")) print render($page['featured']); ?>
 
 </div>
+
+  <!-- Breadcrumbs -->
+  <?php if ($breadcrumb): print $breadcrumb; endif; ?>
 
 <!-- region: Footer -->
 <?php if ($page['footer']): ?>
