@@ -6,8 +6,8 @@
 }
 .page-node-305 h1#page-title {
 	color: #0b5a7c !important;
-	padding: 3px 0 0 52px;
-	background: url("../images/icon-title-letter.png") no-repeat top left;
+	padding: 10px 0 0 52px;
+	background: url("../images/icon-brev.png") no-repeat top left;
 	height: 36px;
 	margin-bottom: 0;
 }
@@ -669,6 +669,13 @@
 			font-family: "Cabin", sans-serif;
 			font-size: 14px;
 		}
+		.view-kort .views-exposed-form #edit-reset {
+			background: #404040;
+			width: 40px;
+		}
+		.view-kort #edit-adresse {
+			display: none;
+		}
 /* Kort */
 .view-kort.view-display-id-default > .view-content {
 	border-top: 1px dashed #dedddb;
@@ -683,6 +690,9 @@
 }
 .gmap-popup .views-field-nothing {
 	margin-bottom: 10px;
+}
+.gmap-popup .views-field-nothing-1 {
+	margin-top: 10px;
 }
 /* Attachments view */
 .view-kort.view-display-id-default > .attachment {

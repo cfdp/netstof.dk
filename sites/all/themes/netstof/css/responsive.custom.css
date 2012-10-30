@@ -97,6 +97,10 @@
 	.forum-node-create-links{
 		position: static;
 	}
+	.view-erfaringer .view-header #add-experience, .view-erfaringer .view-empty #add-experience {
+		position: static;
+
+	}
 	.view-advanced-forum-topic-list .view-header-content {
 		padding-bottom: 23px;
 	}
