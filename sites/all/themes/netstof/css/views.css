@@ -313,7 +313,7 @@
 		font-weight: normal;
 		font-family: "Cabin", sans-serif;
 	}
-	.view-erfaringer .view-header #add-experince {
+	.view-erfaringer .view-header #add-experience, .view-erfaringer .view-empty #add-experience {
 		position: absolute;
 		top: 23px;
 		right: 23px;
