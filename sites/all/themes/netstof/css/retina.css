@@ -1,0 +1,28 @@
+/**
+ * RETINA IMAGES
+ */
+@media screen and (-webkit-min-device-pixel-ratio: 2) 
+{
+	/* Forum */
+	.page-forum h1#page-title {
+		background: url("../images/icon-forum@x2.png") no-repeat top left;
+		background-size: 43px 41px;
+	}
+	/* Masonry Grid */
+/*
+	#block-views-front-page-grid-block .views-field-type .Spørgsmål-til-brevkassen {
+		background: url("../images/icon-brev@x2.png") no-repeat top left;
+		background-size: 39px 29px;
+	}
+*/
+	#block-views-front-page-grid-block .views-field-type .Debat {
+		background: url("../images/icon-forum@x2.png") no-repeat top left;
+		background-size: 43px 41px;
+	}
+/*
+	#block-views-front-page-grid-block .views-field-type .Erfaringer {
+		background: url("../images/icon-stories@x2.png") no-repeat top left;
+		background-size: 40px 32px;
+	}
+*/
+}

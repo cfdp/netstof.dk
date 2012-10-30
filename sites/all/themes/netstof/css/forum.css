@@ -51,6 +51,10 @@
 				float: left;
 				margin-right: 8px;
 			}
+			#forum-wrapper .forum-item .forum-icon img {
+				max-width: 42px;
+				max-height: 42px;
+			}
 			#forum-wrapper .forum-item .forum-name {
 				font-weight: normal;
 				text-transform: uppercase;
