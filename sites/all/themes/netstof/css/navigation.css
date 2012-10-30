@@ -2,7 +2,8 @@
  * HEADER MAIN MENU
  */
 .menu_icon {
-	background-position: center 15px !Important;
+	background-position: center 15px !important;
+	background-size: 52px 48px !important;
 }
 .region-header {
 	float: right;
