@@ -136,8 +136,9 @@ hide($content['links']);
 			<?php print render($content['field_tags']); ?>
 			<?php if(!empty($user_picture) || $display_submitted): ?>
 			<footer<?php print $footer_attributes; ?>>
-				<?php print $user_picture; ?>
-				<p class="qna-responding-counselor"><?php print t('This question was answered by: ').$name;?></p>
+				<?php print $user_picture; $node_author = user_load($node->uid); ?>
+				<p class="qna-responding-counselor"><?php print t('This question was answered by: ').$node_author->field_profile_full_name['und'][0]['value']; ?></p>
+				<?php  ?>
 			</footer>
 		<?php endif; ?>
 		</div><!-- .answer end -->

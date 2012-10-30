@@ -245,20 +245,7 @@
 
 <?php endif; ?>
 
-<?php 
-/* TABS HØJRE SIDE 
-
-<div id="right-side">
-	<div id="right-del">
-		<a href="#"><img src="<?php print $base_path.drupal_get_path("theme","netstof"); ?>/images/right-del.png" /></a>	
-	</div>
-	<div id="right-brevkasse">
-		<a href="#"><img src="<?php print $base_path.drupal_get_path("theme","netstof"); ?>/images/right-brev.png" /></a>	
-	</div>
-	<div id="right-feedback">
-		<a href="#"><img src="<?php print $base_path.drupal_get_path("theme","netstof"); ?>/images/right-feedback.png" /></a>	
-	</div>
-</div>
-
-*/
-?>
+<!-- region: Tabs Right -->
+<?php if ($page['tabs_right']): ?>
+    <?php print render($page['tabs_right']); ?>
+<?php endif; ?>
