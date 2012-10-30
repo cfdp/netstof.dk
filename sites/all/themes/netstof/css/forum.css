@@ -51,10 +51,6 @@
 				float: left;
 				margin-right: 8px;
 			}
-			#forum-wrapper .forum-item .forum-icon img {
-				max-width: 42px;
-				max-height: 42px;
-			}
 			#forum-wrapper .forum-item .forum-name {
 				font-weight: normal;
 				text-transform: uppercase;
@@ -377,6 +373,10 @@ body[class*='page-forum-'] #content-btm-shadow {
 	.forum-post.article #forum-icon {
 		float: left;
 		margin-right: 8px;
+	}
+	.forum-post.article #forum-icon img {
+		max-width: 42px;
+		max-height: 42px;
 	}
 	.forum-post.article #forum-headline h1 {
 		font-size: 28px;

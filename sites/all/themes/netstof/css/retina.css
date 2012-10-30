@@ -21,4 +21,29 @@
 		background: url("../images/icon-stories@x2.png") no-repeat top left;
 		background-size: 43px 41px;
 	}
+	/* Brevkasse */
+	.page-node-305 .field-name-field-oversigt .field-item h2.psykolog {
+		background: url("../images/icon-psykolog@x2.png") no-repeat 0 0;
+		background-size: 43px 41px;
+	}
+	.page-node-305 .field-name-field-oversigt .field-item h2.laege {
+		background: url("../images/icon-laege@x2.png") no-repeat 0 0;
+		background-size: 43px 41px;	
+	}
+	.page-node-305 .field-name-field-oversigt .field-item h2.rusmiddel {
+		background: url("../images/icon-professor@x2.png") no-repeat 0 0;
+		background-size: 43px 41px;	
+	}	
+			.view-Brevkasse.view-display-id-page_2 .header-title {
+				background: url("../images/icon-laege@x2.png") no-repeat 0 0;
+				background-size: 43px 41px;				
+			}
+			.view-Brevkasse.view-display-id-page_3 .header-title {
+				background: url("../images/icon-psykolog@x2.png") no-repeat 0 0;
+				background-size: 43px 41px;			
+			}
+			.view-Brevkasse.view-display-id-page_4 .header-title {
+				background: url("../images/icon-professor@x2.png") no-repeat 0 0;
+				background-size: 43px 41px;				
+			}
 }
