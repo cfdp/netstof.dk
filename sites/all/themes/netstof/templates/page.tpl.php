@@ -229,7 +229,7 @@
 </div>
 
   <!-- Breadcrumbs -->
-  <?php if ($breadcrumb): print $breadcrumb; endif; ?>
+  <?php // if ($breadcrumb): print $breadcrumb; endif; ?>
 
 <!-- region: Footer -->
 <?php if ($page['footer']): ?>
