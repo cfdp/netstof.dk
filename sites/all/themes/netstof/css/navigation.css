@@ -138,8 +138,8 @@
  * BREADCRUMB
  */
 #breadcrumbs {
-	height: 35px;
 	background-color: #FFFFFF;
+	padding: 8px 0;
 }
 	#breadcrumbs ul {
 		list-style: none;
@@ -149,11 +149,26 @@
 	}
 	#breadcrumbs ul li {
 		float: left;
-		background: none;
+		background: #404040 url("../images/bread-sep.png") no-repeat top right;
+		background-size: 12px 28px;
+		font-size: 12px; line-height: 1em;
+		color: #FFFFFF;
+		text-transform: uppercase;
+		font-weight: bold;
+		padding: 8px 16px 8px 5px;
+	}
+	#breadcrumbs ul li.first {
+		background: #404040;
+		width: 38px;
+		padding: 0; line-height: 0;
+	}
+	#breadcrumbs ul li.last {
+		background: #404040 url("../images/bread-sep-last.png") no-repeat top right;
+		background-size: 9px 28px;
 	}
 	#breadcrumbs ul li a {
 		float: left;
-		background: none;
 		height: auto; width: auto;
 		padding: 0;
+		color: #FFFFFF;
 	}

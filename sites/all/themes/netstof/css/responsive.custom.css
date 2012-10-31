@@ -254,6 +254,9 @@
  * DESKTOP + TABLET Horizontal
  */
 @media only screen and (min-width: 943px) {
+	#breadcrumbs {
+		display: none;
+	}
 	.region-sidebar-first {
 		padding-top: 56px;
 	}
