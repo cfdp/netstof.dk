@@ -185,12 +185,18 @@ function netstof_field__field_encyclopedia_drug_forms__encyclopedia_entry($vars)
 function netstof_breadcrumb($variables) {
   $breadcrumb = $variables['breadcrumb'];
   $crumbs = '';
+  $i = 0;
+  $num = count($breadcrumb);
   if (!empty($breadcrumb)) {
-    $crumbs = '<div id="breadcrumbs"><ul>';
+    $crumbs = '<div id="breadcrumbs"><div class="container"><ul>';
     foreach($breadcrumb as $value) {
-      $crumbs .= '<li>' . $value . '</li>';
+    	$classes = "crumb";
+    	// Home Link
+    	if($i==0) { $classes.=" first"; $value="<a href='/'><img src='/".drupal_get_path('theme','netstof')."/images/bread-home.png' /></a>"; }
+      $crumbs .= '<li class="'.$classes.'">' . $value . '</li>';
+      $i++;
     }
-    $crumbs .= '<li>' . drupal_get_title() . '</li></ul></div>';
+    $crumbs .= '<li class="crumb last">' . drupal_get_title() . '</li></ul></div></div>';
   }
   return $crumbs;
 }
