@@ -399,9 +399,12 @@
 		background: url("../images/small_shadow_bottom.png") no-repeat bottom center;
 		padding-bottom: 12px;
 	}
+	.region-sidebar-first .block .block-middle {
+		background: #FFFFFF;
+	}
 	.region-sidebar-first .block h2.block-title {
 		color: #424242;
-		background: #FFFFFF url("../images/block-top.png") no-repeat top center;
+		background: url("../images/block-top.png") no-repeat top center;
 		font-size: 25px; line-height: 25px;
 		font-weight: normal;
 		padding: 30px 23px 23px 23px;
@@ -409,7 +412,7 @@
 	.not-front .region-sidebar-first .block .block-content {
 		font-size: 11px; line-height: 13px;
 		color: #404040;
-		background: #FFFFFF url("../images/block-btm.png") no-repeat bottom center;
+		background: url("../images/block-btm.png") no-repeat bottom center;
 		padding: 0 23px 23px 23px;
 		overflow: hidden;
 	}
@@ -484,6 +487,46 @@
 		float: left;
 		clear: both;
 	}
+	/**
+	 * DANMARKSKORT BLOK
+	 */
+	.region-sidebar-first .maps-block div.block-middle {
+		background: #404040 url("../images/maps-bg-block.png") no-repeat bottom center !important;
+		padding-bottom: 160px;
+		position: relative;
+	}
+	.region-sidebar-first .maps-block h2.block-title {
+		font-size: 20px;
+		text-transform: uppercase;
+		color: #FFFFFF;
+		background: none;
+		padding-bottom: 15px;
+	}
+	.not-front .region-sidebar-first .maps-block .content {
+		color: #FFFFFF;
+		font-size: 14px;
+		line-height: 16px;
+		padding-bottom: 0;
+		background: none;
+	}
+	.maps-block .goto-maps {
+		position: absolute;
+		bottom: 25px;
+		right: 35px;
+	}
+		.maps-block .goto-maps a {
+			color: #3b3b3b !important;
+			font-weight: bold;
+			font-size: 17px; line-height: 17px;
+			display: block;
+		}
+		.maps-block .goto-maps span {
+			font-size: 9px; line-height: 9px;
+			text-transform: uppercase;
+			color: #878787;
+			clear: both;
+			display: block;
+		}
 	
 	
 /**
