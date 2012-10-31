@@ -40,6 +40,23 @@
 		float: left;
 		margin: 0;
 	}
+	/* Search form - IE FIX */
+	.lt-ie9 .region-sidebar-top {
+		width: 294px;
+		margin-left: -294px;
+	}
+	.lt-ie9 #search-block-form input[type=search],
+	.lt-ie9 #search-form input[type=text]{
+		line-height: 42px;
+	}
+	.lt-ie9 #search-block-form .form-item {
+		width: 236px;
+		height: 44px;
+	}
+	.lt-ie9 #search-block-form .form-actions {
+		width: 58px;
+		height: 44px;
+	}
 /* Brevkasse / Debatforum */	
 #custom-search-blocks-form-1,
 #custom-search-blocks-form-2 {
@@ -629,6 +646,12 @@
 	right: 0;
 	top: -100px;
 }
+	#scroll-top a {
+		display: block;
+		width: 41px;
+		height: 43px;
+		background: url("../images/scroll-top.png") no-repeat;
+	}
 
 /**
  * RIGHT SIDE LIST VIEW

@@ -310,7 +310,7 @@ body[class*='page-forum-'] #content-btm-shadow {
 		.forum-post-title {
 			padding: 0 !important;
 			margin: 0;
-			font-size: 20px;
+			font-size: 20px; line-height: 21px;
 			text-transform: uppercase;
 			color: #404040;
 			margin-bottom: 15px;

@@ -3,6 +3,19 @@
  */
 @media screen and (-webkit-min-device-pixel-ratio: 2) 
 {
+	/* Main Menu */
+	.region-header .menu-2060 {
+		background-image: url("../images/menu1-big.png");
+	}
+	.region-header .menu-237 {
+		background-image: url("../images/menu2-big.png");
+	}
+	.region-header .menu-2030 {
+		background-image: url("../images/menu3-big.png");
+	}
+	.region-header .menu-2031 {
+		background-image: url("../images/menu4-big.png");
+	}
 	/* Forum */
 	.page-forum h1#page-title {
 		background: url("../images/icon-forum@x2.png") no-repeat top left;
@@ -50,4 +63,10 @@
 				background: url("../images/icon-professor@x2.png") no-repeat 0 0;
 				background-size: 43px 41px;				
 			}
+	/* Scroll to top link */
+	#scroll-top a {
+		background: url("../images/scroll-top@x2.png") no-repeat;
+		background-size: 41px 43px;
+	}
+
 }

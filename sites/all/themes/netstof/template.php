@@ -196,7 +196,7 @@ function netstof_breadcrumb($variables) {
       $crumbs .= '<li class="'.$classes.'">' . $value . '</li>';
       $i++;
     }
-    $crumbs .= '<li class="crumb last">' . drupal_get_title() . '</li></ul></div></div>';
+    $crumbs .= '<li class="crumb last"><a href="#">' . drupal_get_title() . '</a></li></ul></div></div>';
   }
   return $crumbs;
 }

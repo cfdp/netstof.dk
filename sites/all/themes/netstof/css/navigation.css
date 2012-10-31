@@ -1,10 +1,6 @@
 /**
  * HEADER MAIN MENU
  */
-.menu_icon {
-	background-position: center 15px !important;
-	background-size: 52px 48px !important;
-}
 .region-header {
 	float: right;
 	position: relative;
@@ -45,6 +41,22 @@
 			font-style: normal;
 			text-transform: none;
 		}
+	.region-header .menu-2060 {
+		background-image: url("../images/menu1.png");
+	}
+	.region-header .menu-237 {
+		background-image: url("../images/menu2.png");
+	}
+	.region-header .menu-2030 {
+		background-image: url("../images/menu3.png");
+	}
+	.region-header .menu-2031 {
+		background-image: url("../images/menu4.png");
+	}
+	.menu_icon {
+		background-position: center 15px !important;
+		background-repeat: no-repeat;
+	}
 	/**
 	 * Undermenu
 	 */
@@ -145,10 +157,12 @@
 		list-style: none;
 		padding: 0 13px;
 		margin: 0;
-		overflow: hidden;
+		overflow-x:visible;
+    	overflow-y:hidden;
+    	white-space:nowrap;
 	}
 	#breadcrumbs ul li {
-		float: left;
+		display: inline-block;
 		background: #404040 url("../images/bread-sep.png") no-repeat top right;
 		background-size: 12px 28px;
 		font-size: 12px; line-height: 1em;
@@ -161,6 +175,7 @@
 		background: #404040;
 		width: 38px;
 		padding: 0; line-height: 0;
+		height: 28px;
 	}
 	#breadcrumbs ul li.last {
 		background: #404040 url("../images/bread-sep-last.png") no-repeat top right;
@@ -171,4 +186,5 @@
 		height: auto; width: auto;
 		padding: 0;
 		color: #FFFFFF;
+		max-width: 100%;
 	}

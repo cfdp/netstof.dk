@@ -93,6 +93,7 @@
 	#forum-wrapper .forum-item {
 		width: 100% !important;
 	}
+	/* Views */
 	.view-Brevkasse > .view-header #add-question,
 	.forum-node-create-links{
 		position: static;
@@ -112,6 +113,9 @@
 			height: auto;
 			margin-bottom: 5px;
 		}
+	.view-leksikon .view-content .item-list > ul li {
+		width: 100%;
+	}
 	/* Blocks */
 	.views-fluidgrid-wrapper > div {
 		margin: auto;
@@ -163,6 +167,10 @@
 	}
 	#scroll-top {
 		top: -65px;
+		right: 13px;
+	}
+	.not-front #scroll-top {
+		top: -110px;
 		right: 13px;
 	}
 }
