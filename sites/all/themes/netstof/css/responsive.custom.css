@@ -165,6 +165,10 @@
 		top: -65px;
 		right: 13px;
 	}
+	.not-front #scroll-top {
+		top: -110px;
+		right: 13px;
+	}
 }
 
 /**

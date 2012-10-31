@@ -145,10 +145,12 @@
 		list-style: none;
 		padding: 0 13px;
 		margin: 0;
-		overflow: hidden;
+		overflow-x:visible;
+    	overflow-y:hidden;
+    	white-space:nowrap;
 	}
 	#breadcrumbs ul li {
-		float: left;
+		display: inline-block;
 		background: #404040 url("../images/bread-sep.png") no-repeat top right;
 		background-size: 12px 28px;
 		font-size: 12px; line-height: 1em;
@@ -161,6 +163,7 @@
 		background: #404040;
 		width: 38px;
 		padding: 0; line-height: 0;
+		height: 28px;
 	}
 	#breadcrumbs ul li.last {
 		background: #404040 url("../images/bread-sep-last.png") no-repeat top right;
@@ -171,4 +174,5 @@
 		height: auto; width: auto;
 		padding: 0;
 		color: #FFFFFF;
+		max-width: 100%;
 	}
