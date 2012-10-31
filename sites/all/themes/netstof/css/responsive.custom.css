@@ -170,8 +170,11 @@
 		right: 13px;
 	}
 	.not-front #scroll-top {
-		top: -110px;
+		top: -115px;
 		right: 13px;
+	}
+	.region-leftcontent {
+		display: none !important;
 	}
 }
 
@@ -242,9 +245,6 @@
 		}
 	/* HIDE BLOCK REGIONS */
 	.region-sidebar-first {
-		display: none !important;
-	}
-	.region-leftcontent {
 		display: none !important;
 	}
 	.region-tabs-right {

@@ -635,6 +635,15 @@
 /**
  * GOOGLE MAPS KORT
  */
+.view-kort .view-empty {
+	border-top: 1px dashed #dedddb;
+	border-bottom: 1px dashed #dedddb;
+	float: left;
+	width: 100%;
+	min-height: 405px;
+	padding: 15px 0 0 0;
+	margin-top: 15px;
+}
 .view-kort.view-display-id-default {
 	overflow: hidden;
 }
@@ -650,7 +659,8 @@
 }
 	.view-kort .views-exposed-widgets > .views-exposed-widget {
 		float: left;
-		margin-right: 12px;
+		margin-right: 11px;
+		margin-bottom: 10px;
 		height: 32px;
 	}
 		.view-kort .views-exposed-widgets > .views-exposed-widget .form-item {
