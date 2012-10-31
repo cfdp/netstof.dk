@@ -45,11 +45,17 @@
 		width: 294px;
 		margin-left: -294px;
 	}
+	.lt-ie9 #search-block-form input[type=search],
+	.lt-ie9 #search-form input[type=text]{
+		line-height: 42px;
+	}
 	.lt-ie9 #search-block-form .form-item {
 		width: 236px;
+		height: 44px;
 	}
 	.lt-ie9 #search-block-form .form-actions {
 		width: 58px;
+		height: 44px;
 	}
 /* Brevkasse / Debatforum */	
 #custom-search-blocks-form-1,

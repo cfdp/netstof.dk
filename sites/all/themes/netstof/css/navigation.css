@@ -1,10 +1,6 @@
 /**
  * HEADER MAIN MENU
  */
-.menu_icon {
-	background-position: center 15px !important;
-	background-size: 52px 48px !important;
-}
 .region-header {
 	float: right;
 	position: relative;
@@ -45,6 +41,22 @@
 			font-style: normal;
 			text-transform: none;
 		}
+	.region-header .menu-2060 {
+		background-image: url("../images/menu1.png");
+	}
+	.region-header .menu-237 {
+		background-image: url("../images/menu2.png");
+	}
+	.region-header .menu-2030 {
+		background-image: url("../images/menu3.png");
+	}
+	.region-header .menu-2031 {
+		background-image: url("../images/menu4.png");
+	}
+	.menu_icon {
+		background-position: center 15px !important;
+		background-repeat: no-repeat;
+	}
 	/**
 	 * Undermenu
 	 */
