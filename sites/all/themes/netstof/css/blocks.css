@@ -629,6 +629,12 @@
 	right: 0;
 	top: -100px;
 }
+	#scroll-top a {
+		display: block;
+		width: 41px;
+		height: 43px;
+		background: url("../images/scroll-top.png") no-repeat;
+	}
 
 /**
  * RIGHT SIDE LIST VIEW
