@@ -40,6 +40,17 @@
 		float: left;
 		margin: 0;
 	}
+	/* Search form - IE FIX */
+	.lt-ie9 .region-sidebar-top {
+		width: 294px;
+		margin-left: -294px;
+	}
+	.lt-ie9 #search-block-form .form-item {
+		width: 236px;
+	}
+	.lt-ie9 #search-block-form .form-actions {
+		width: 58px;
+	}
 /* Brevkasse / Debatforum */	
 #custom-search-blocks-form-1,
 #custom-search-blocks-form-2 {
