@@ -235,7 +235,7 @@
 	</footer>
 
 	<div id="scroll-top">
-		<a href="#"><img src="<?php print $base_path.drupal_get_path("theme","netstof"); ?>/images/scroll-top.png" /></a>
+		<a href="#"></a>
 	</div>
 
 </div>

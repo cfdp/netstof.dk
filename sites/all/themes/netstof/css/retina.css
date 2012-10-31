@@ -52,11 +52,8 @@
 			}
 	/* Scroll to top link */
 	#scroll-top a {
-		display: block;
-		width: 26px;
-		height: 25px;
 		background: url("../images/scroll-top@x2.png") no-repeat;
-		background-size: 26px 25px;
+		background-size: 41px 43px;
 	}
 
 }
