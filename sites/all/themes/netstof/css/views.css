@@ -534,8 +534,14 @@
 			list-style-image: none;
 			padding: 0 !important;
 			margin: 0 !important;
-			height: 140px;		
+			height: 160px;		
 		}
+		.view-leksikon .item-list .views-label-field-tags, .view-leksikon .item-list .field-content {
+		  display:inline;
+		}
+		.view-leksikon .item-list .field-content {
+      padding-right: 10px;
+    }
 		.view-faq .view-content ul li a,
 		.view-leksikon .view-content ul li a {
 			color: #404040;
