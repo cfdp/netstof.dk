@@ -25,6 +25,7 @@
 		font-size: 14px; line-height: 15px;
 		text-transform: uppercase;
 		font-weight: bold;
+		background-size: 52px 48px;
 	}
 	.region-header .menu-block-wrapper > ul.menu > li > a:hover {
 		text-decoration: none;
