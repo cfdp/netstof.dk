@@ -6,15 +6,19 @@
 	/* Main Menu */
 	.region-header .menu-2060 {
 		background-image: url("../images/menu1-big.png");
+		background-size: 52px 48px;
 	}
 	.region-header .menu-237 {
 		background-image: url("../images/menu2-big.png");
+		background-size: 52px 48px;
 	}
 	.region-header .menu-2030 {
 		background-image: url("../images/menu3-big.png");
+		background-size: 52px 48px;
 	}
 	.region-header .menu-2031 {
 		background-image: url("../images/menu4-big.png");
+		background-size: 52px 48px;
 	}
 	/* Forum */
 	.page-forum h1#page-title {
