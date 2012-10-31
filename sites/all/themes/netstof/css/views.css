@@ -539,7 +539,7 @@
 		.view-leksikon .item-list .views-label-field-tags, .view-leksikon .item-list .field-content {
 		  display:inline;
 		}
-		.view-leksikon .item-list .field-content {
+		.view-leksikon .item-list .views-field-field-tags .field-content {
       padding-right: 10px;
     }
 		.view-faq .view-content ul li a,
