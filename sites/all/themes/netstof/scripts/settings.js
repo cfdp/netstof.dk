@@ -126,9 +126,10 @@ $(function() {
      */
      
     // Dropkick (Select boxes)
-    $(".node-form .form-select").dropkick();    
-    $("#edit-kommune").dropkick({theme:"dark"});    
-    
+    if( !isMobile.any() ) {
+	    $(".node-form .form-select").dropkick();    
+	    $("#edit-kommune").dropkick({theme:"dark"});    
+    }
     // Checkboxes
 	/*
     $('.node-form .form-checkbox').screwDefaultButtons({ 
