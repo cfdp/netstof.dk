@@ -572,6 +572,8 @@
 			#dk_container_kommune .dk_toggle {
 				color: #A29F99;
 				width: 88px !important;
+				border: none;
+				background-image: url('../images/dropdown-arrow-yellow.png');
 			}
 			#dk_container_kommune .dk_options a {
 			color: #424242 !important;
