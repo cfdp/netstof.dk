@@ -76,8 +76,6 @@ $(function() {
 		}
 	);
 	
-	console.log($("#footer-container").offset().top);
-
 	/**
 	 * SCROLL TO FIXED
 	 */
@@ -129,16 +127,21 @@ $(function() {
     if( !isMobile.any() ) {
 	    $(".node-form .form-select").dropkick();    
 	    $("#edit-kommune").dropkick({theme:"dark"});    
+    	 $("#goto-maps-form select").dropkick({
+			change: function () {
+			$(this).change();
+			}
+       });
     }
     // Checkboxes
-	/*
+/*
     $('.node-form .form-checkbox').screwDefaultButtons({ 
 		checked: "url(/sites/all/themes/netstof/images/checkbox-checked.png)",
 		unchecked: "url(/sites/all/themes/netstof/images/checkbox-unchecked.png)",
 		width:	 21,
 		height:	 21
 	 });
-	*/
+*/
     
     /**
      * ATTACH TOOLTIPS

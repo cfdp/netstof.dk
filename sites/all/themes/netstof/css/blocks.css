@@ -550,7 +550,36 @@
 			clear: both;
 			display: block;
 		}
-	
+	#goto-maps-form {
+		position: absolute;
+		bottom: 115px;
+		right: 23px;
+		width: 143px;
+	}	
+		#goto-maps-form select {
+			width: 143px;
+		}
+		#goto-maps-form label {
+			font-size: 13px;
+			text-transform: uppercase;
+			font-weight: normal;
+			margin-bottom: 5px;
+		}
+			#dk_container_kommune {
+				width: 143px;
+				background: #FFFFFF;
+			}
+			#dk_container_kommune .dk_toggle {
+				color: #A29F99;
+				width: 88px !important;
+			}
+			#dk_container_kommune .dk_options a {
+			color: #424242 !important;
+			}
+			#dk_container_kommune ul {
+				padding: 0; margin: 0;
+			}
+
 	
 /**
  * RIGHT SIDE - fixed entrances
