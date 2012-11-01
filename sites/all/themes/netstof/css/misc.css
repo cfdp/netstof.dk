@@ -105,10 +105,8 @@ input[type=search], input[type=text], input[type=password] {
 		color: #0B5A7C;
 	}
 	/* HEADLINES */
-	.page-node-add-questions-and-answers h1#page-title {
+	.page-node-add h1#page-title {
 		color: #0B5A7C !important;
-		padding: 3px 0 0 52px;
-		background: url("../images/icon-title-letter.png") no-repeat top left;
 	}
 
 
@@ -325,11 +323,6 @@ input[type=search], input[type=text], input[type=password] {
   overflow: visible;
 }
 
-.node-form .form-select {
-  position: relative;
-  top: -99999em;
-  visibility: hidden;
-}
 
 /***** End Critical to the continued enjoyment of working dropdowns ******/
 
