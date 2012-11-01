@@ -539,9 +539,12 @@
 		.view-leksikon .item-list .views-label-field-tags, .view-leksikon .item-list .field-content {
 		  display:inline;
 		}
-		.view-leksikon .item-list .views-field-field-tags .field-content {
-      padding-right: 10px;
-    }
+		.view-leksikon .item-list .views-field-field-tags {
+		  padding-right: 10px;
+		}
+		.view-leksikon .item-list .views-label-field-tags {
+		  font-weight: bold;
+		}
 		.view-faq .view-content ul li a,
 		.view-leksikon .view-content ul li a {
 			color: #404040;
