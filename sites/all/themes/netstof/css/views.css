@@ -662,9 +662,16 @@
 		margin-right: 11px;
 		margin-bottom: 10px;
 		height: 32px;
+		white-space: nowrap;
 	}
 		.view-kort .views-exposed-widgets > .views-exposed-widget .form-item {
 			margin: 0;
+		}
+		.view-kort #edit-by-wrapper {
+			width: 133px;
+		}
+		.view-kort .views-submit-button {
+			width: 58px;
 		}
 		.view-kort .views-exposed-form input[type="text"] {
 			border: none;
@@ -677,6 +684,9 @@
 			font-size: 13px;
 			font-family: "Cabin", sans-serif;
 			outline: none;
+		}
+		.lt-ie9 .view-kort .views-exposed-form input[type="text"] {
+			line-height: 32px;
 		}
 		.view-kort .views-exposed-form input[type="submit"] {
 			border: none;
