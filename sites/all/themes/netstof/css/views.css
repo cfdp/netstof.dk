@@ -292,10 +292,10 @@
 			}
 	
 /**
- * ERFARINGER - Oversigt
+ * ERFARINGER og OPLEVELSER- Oversigt
  */
 
-.page-erfaringer #page-title {
+.page-oplevelser #page-title {
 	display: none;
 }
 .view-erfaringer .view-header, .view-erfaringer .view-empty {
