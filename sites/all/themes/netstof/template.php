@@ -95,9 +95,9 @@ function netstof_preprocess_page(&$variables, $hook) {
     $variables['theme_hook_suggestions'][] = 'page__type__'. $variables['node']->type;
     $variables['theme_hook_suggestions'][] = "page__node__" . $variables['node']->nid;
   }
-  $paaroerende_img = "/images/find-hjaelp.png";
+  $paaroerende_img = "/images/ven_kaereste_familie_hvid.png";
   if (request_path() == "paaroerende") {
-      $paaroerende_img = "/images/paaroerende-link-active.png";
+      $paaroerende_img = "/images/ven_kaereste_familie_orange.png";
   }
   $variables['paaroerende_img'] = $paaroerende_img;
 }
