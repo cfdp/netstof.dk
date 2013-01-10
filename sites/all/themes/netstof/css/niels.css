@@ -121,33 +121,72 @@
 	width:160px;margin-top:20px;padding:0 20px 0 20px;
 	float:left;
 }
-/* quick links to the right of the slideshow */
+/* quick links to the right of the slideshow + mediekit (to be embedded on third party municipalitypages in iframes) */
 .region-sidebar-first #hurtige-genveje{
 	height:239px;
 	background:#3e3e3e;
 }
+.view-id-mediekit {
+  background:#3e3e3e;
+}
+.view-id-mediekit #mediekit-logo{
+  margin:10px 20px 20px 20px;
+  padding-top:20px;
+}
+
+.view-id-mediekit p.description{
+  font-size:14px;
+  padding:0 20px;
+}
+
+.view-id-mediekit .view-content{
+  padding-left:20px;
+}
+
+.view-id-mediekit .mediekit-extended .field-content,
+.view-id-mediekit .mediekit-extended .field-content a,
+.view-id-mediekit .mediekit-extended .views-label{
+  color: #FFFFFF;
+}
+
 body.page-paaroerende .region-sidebar-first #hurtige-genveje{
   background:#3e3e3e;
   height:auto;
 }
-	.region-sidebar-first #hurtige-genveje .left{float:left;}
-	.region-sidebar-first #hurtige-genveje .right{float:left;line-height:1;}	
+	.region-sidebar-first #hurtige-genveje .left,
+	.view-id-mediekit .left{float:left;}
+	.region-sidebar-first #hurtige-genveje .right,
+	.view-id-mediekit .right{float:left;line-height:1;}
+	
 	/* .genvej & genvej-wrapper */
-	.region-sidebar-first #hurtige-genveje .genvej-wrapper{position:relative;}
-		.region-sidebar-first #hurtige-genveje .genvej-wrapper:hover{
+	.region-sidebar-first #hurtige-genveje .genvej-wrapper,
+	.view-id-mediekit .genvej-wrapper{position:relative;}
+		.region-sidebar-first #hurtige-genveje .genvej-wrapper:hover,
+		.view-id-mediekit .genvej-wrapper:hover{
 			background:url('../images/genvej-wrapper-hover.png') no-repeat transparent top left;
 		}
 		.region-sidebar-first #hurtige-genveje .genvej{
 			padding:24px 20px 23px 20px;
 			background:url('../images/genvej-border.png') repeat-x transparent top left;
 		}
-		.region-sidebar-first #hurtige-genveje .genvej:after{
+		.view-id-mediekit .genvej{
+			padding:24px 20px 23px 20px;
+		}
+		.view-id-mediekit .dotted-line {
+			background:url('../images/genvej-border.png') repeat-x transparent top left;
+			height:2px;
+			margin:0 20px;
+		}
+		.region-sidebar-first #hurtige-genveje .genvej:after,
+		.view-id-mediekit .genvej:after
+		{
 			content:"";
 			display:block;
 			clear:both;
 			width:100%;
 		}
-			.region-sidebar-first #hurtige-genveje .genvej-wrapper:first-child .genvej{
+			.region-sidebar-first #hurtige-genveje .genvej-wrapper:first-child .genvej,
+			.view-id-mediekit .genvej-wrapper:first-child .genvej{
 				background:none;
 			}
 	/* Each invidual row */
@@ -155,17 +194,20 @@ body.page-paaroerende .region-sidebar-first #hurtige-genveje{
 		width:30px;height:31px;margin:0 15px 0 3px;
 		background:url(../images/akut-hjaelp-genvej.png) no-repeat transparent top left;
 	}
-	.region-sidebar-first #hurtige-genveje #brevkasse .left{
+	.region-sidebar-first #hurtige-genveje #brevkasse .left,
+	.view-id-mediekit #brevkasse .left{
 		width:39px;height:29px;margin:0 10px 0 0;
 		background:url(../images/brevkasse-genvej.png) no-repeat transparent top left;
 	}
-		.region-sidebar-first #hurtige-genveje .genvej-wrapper .plus-brevkasse{display:none;}
+		.region-sidebar-first #hurtige-genveje .genvej-wrapper .plus-brevkasse,
+		.view-id-mediekit .genvej-wrapper .plus-brevkasse{display:none;}
 			.region-sidebar-first #hurtige-genveje .genvej-wrapper:hover .plus-brevkasse{
 				display:block;
 				width:68px;height:80px;
 				position:absolute;top:0;right:0;
 			}
-		.region-sidebar-first #hurtige-genveje #brevkasse:hover .left{
+		.region-sidebar-first #hurtige-genveje #brevkasse:hover .left,
+		.view-id-mediekit #brevkasse:hover .left{
 			background:url(../images/brevkasse-hover-genvej.png) no-repeat transparent top left;
 		}
 	.region-sidebar-first #hurtige-genveje #debatforum .left{
@@ -181,18 +223,74 @@ body.page-paaroerende .region-sidebar-first #hurtige-genveje{
 		.region-sidebar-first #hurtige-genveje #debatforum:hover .left{
 			background:url(../images/forum-hover-genvej.png) no-repeat transparent top left;
 		}
+  .view-id-mediekit #find-hjaelp .left{
+ 		width:30px;height:46px;margin:0 15px 0 3px;
+    background:url(../images/menu4.png) no-repeat transparent top left;
+  }
+  .view-id-mediekit #leksikon .left{
+ 		width:52px;height:48px;margin:0 15px 0 3px;
+    background:url(../images/menu2.png) no-repeat transparent top left;
+  }
+  /* For the pages to be embedded as iframe */
+  body.page-node-796 #page,
+  body.page-node-797 #page{
+    padding:0px;
+  }
+  body.page-node-796 .node-middle,
+  body.page-node-797 .node-middle{
+    padding: 0px;
+  }
+  body.page-node-796 #node-wrapper,
+  body.page-node-797 #node-wrapper{
+    margin-top: -20px;
+  }
+  body.page-node-796 #page-title,
+  body.page-node-796 .node-btm,
+  body.page-node-797 #page-title,
+  body.page-node-797 .node-btm{
+    display:none;
+  }
+  .view-id-mediekit a.mediekit-compact{
+    color:#feac01;
+    display:block;
+    font-size:22px;
+    text-align:center;
+  }
+  .view-id-mediekit .mediekit-compact .field-content p{
+    color:#fefefe;
+    font-size:12px;
+    text-align:center;
+  }
 	/* General row styling */
-	.region-sidebar-first #hurtige-genveje .genvej:hover .right .title a{color:#feac01;}
-	.region-sidebar-first #hurtige-genveje .genvej:hover .right .description{
+	.region-sidebar-first #hurtige-genveje .genvej:hover .right .title a,
+	.view-id-mediekit .genvej:hover .right .title a{color:#feac01;}
+	.region-sidebar-first #hurtige-genveje .genvej:hover .right .description,
+	.view-id-mediekit .genvej:hover .right .description{
 		color:#fefefe;
 		cursor:default;
 	}
-	.region-sidebar-first #hurtige-genveje .right a{font-size:18px;color:#fff;}
-	.region-sidebar-first #hurtige-genveje .right a{text-decoration:none;}
-	.region-sidebar-first #hurtige-genveje .right .description{margin-top:1px;}
-	.region-sidebar-first #hurtige-genveje .right .description{
+	.region-sidebar-first #hurtige-genveje .right a,
+	.view-id-mediekit .right a{font-size:18px;color:#fff;}
+	.region-sidebar-first #hurtige-genveje .right a,
+	.view-id-mediekit .right a{text-decoration:none;}
+	.region-sidebar-first #hurtige-genveje .right .description,
+	.view-id-mediekit .right .description{margin-top:1px;}
+	.region-sidebar-first #hurtige-genveje .right .description,
+	.view-id-mediekit .views-field-changed{
 		font-size:12px;color:#b8b8b8;
 	}
+  .view-id-mediekit .views-field-title{
+		font-size:16px;text-transform:uppercase;
+	}
+	.view-id-mediekit .description,
+	.view-id-mediekit .views-field-changed .views-label-changed,
+	.view-id-mediekit .views-field-changed .description{
+	  color: #B8B8B8;
+	}
+	.view-id-mediekit .views-row{
+		padding:10px 0;
+	}
+	
 /* Left content on sub page */
 	#leftcontent h3{
 		margin:14px 0 4px -6px;
