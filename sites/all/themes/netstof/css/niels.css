@@ -234,6 +234,7 @@ body.page-paaroerende .region-sidebar-first #hurtige-genveje{
   /* For the pages to be embedded as iframe */
   body.page-node-796 #page,
   body.page-node-797 #page{
+    width: 280px;
     padding:0px;
   }
   body.page-node-796 .node-middle,
