@@ -192,7 +192,7 @@ function netstof_breadcrumb($variables) {
     foreach($breadcrumb as $value) {
     	$classes = "crumb";
     	// Home Link
-    	if($i==0) { $classes.=" first"; $value="<a href='/'><img src='/".drupal_get_path('theme','netstof')."/images/bread-home.png' /></a>"; }
+    	if($i==0) { $classes.=" first"; $value="<a href='/'>".t('Home')."</a>"; }
       $crumbs .= '<li class="'.$classes.'">' . $value . '</li>';
       $i++;
     }

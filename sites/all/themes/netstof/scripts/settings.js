@@ -60,7 +60,7 @@ $(function() {
 		
 			$(this).stop(true,true).animate({ 
 				
-				right: right_space
+				right: 179
 			
 			},200);
 		
@@ -69,7 +69,7 @@ $(function() {
 		
 			$(this).stop(true,true).animate({ 
 				
-				right: "-179"
+				right: "0"
 			
 			},200);
 		
@@ -79,11 +79,13 @@ $(function() {
 	/**
 	 * SCROLL TO FIXED
 	 */
+/*
 	$(".region-tabs-right").scrollToFixed({
 		limit: $("#footer-container").offset().top - 620,
-		marginTop: 10,
-		zIndex: 10,
+		marginTop: 192,
+		zIndex: 0,
 	});
+*/
 
 	/**
 	 * VIEWS GRID - FILTER
@@ -162,6 +164,11 @@ $(function() {
     	attachWatermarks();
     });
     
+    /**
+     * WYSIWYG
+     */
+	//tinyMCE.execCommand('mceRemoveControl', false, "edit-body-und-0-value"); // the editor_id equals the id of your textarea
+    
 });
 
 /**
@@ -212,6 +219,9 @@ function attachWatermarks() {
 	$("#webform-client-form-564 #edit-submitted-indhold").watermark("Indhold", {useNative: false});
 }
 
+/**
+ * isMobile - Detect mobile devices
+ */
 var isMobile = {
     Android: function() {
         return navigator.userAgent.match(/Android/i);

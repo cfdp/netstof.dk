@@ -23,6 +23,7 @@
 		font-size: 14px;
 		font-family: "Cabin", sans-serif;
 		outline: none;
+		box-sizing: content-box;
 	}
 	#search-block-form input[type=submit],
 	#search-form input[type=submit]{
@@ -37,8 +38,9 @@
 	}
 	#search-block-form .container-inline > div,
 	#search-form .container-inline > div {
-		float: left;
+		display: block;
 		margin: 0;
+		float: left;
 	}
 	/* Search form - IE FIX */
 	.lt-ie9 .region-sidebar-top {
@@ -49,11 +51,13 @@
 	.lt-ie9 #search-form input[type=text]{
 		line-height: 42px;
 	}
-	.lt-ie9 #search-block-form .form-item {
+	.lt-ie9 #search-block-form .form-item,
+	.lt-ie9 #search-form .form-item {
 		width: 236px;
 		height: 44px;
 	}
-	.lt-ie9 #search-block-form .form-actions {
+	.lt-ie9 #search-block-form .form-actions,
+	.lt-ie9 #search-form .form-actions {
 		width: 58px;
 		height: 44px;
 	}
@@ -343,6 +347,7 @@
 					cursor: pointer;
 					font-weight: normal;
 					color: #424242;
+					display: block;
 				}
 				#block-views-front-page-grid-block .view-filters .form-type-radio input[checked=checked]+label,
 				.view-vidensbanken .view-filters .form-type-radio input[checked=checked]+label {
@@ -366,6 +371,13 @@
 			#block-views-front-page-grid-block .view-filters input[type=radio],
 			.view-vidensbanken .view-filters input[type=radio]{
 				display: none;
+			}
+			.lt-ie9 #block-views-front-page-grid-block .view-filters input[type=radio],
+			.lt-ie9 .view-vidensbanken .view-filters input[type=radio]{
+				position: fixed;
+				top: -50px;
+				left: -50px;
+				display: block;
 			}
 		/* PAGER */
 		#block-views-front-page-grid-block ul.pager, 
@@ -587,19 +599,20 @@
  * RIGHT SIDE - fixed entrances
  */
 .region-tabs-right {
-	position: absolute;
-	right: 0;
-	top: 195px;
+	position: fixed;
+	right: -179px;
+	top: 192px;
 	width: 220px;
-	overflow: hidden;
+	float: left;
 }
 	.region-tabs-right .block {
 		margin-bottom: 2px;
 		position: relative;
 		background-color: #3b3b3b;
 		padding: 15px 0 15px 41px;
-		right: -179px;
+		right: 0;
 		font-size: 11px;
+		z-index: 10;
 	}
   .region-tabs-right .block.baseurl-info {
     background-color: #aa0000;

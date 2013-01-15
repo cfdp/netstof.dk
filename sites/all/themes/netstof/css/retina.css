@@ -72,5 +72,12 @@
 		background: url("../images/scroll-top@x2.png") no-repeat;
 		background-size: 41px 43px;
 	}
+	/**
+	 * Find hjælp
+	 */
+	.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf a {
+		background: url("../images/icon-phone@x2.png") no-repeat;
+		background-size: 11px 14px;
+	}
 
 }

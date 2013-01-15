@@ -38,11 +38,11 @@
       	if($top_post) {
       		$term = taxonomy_term_load($node->taxonomy_forums[LANGUAGE_NONE][0]["tid"]);
       		print "<div id='forum-icon'>";
-      		print "<img src='".image_style_url("forum-icon", $term->field_ikon[LANGUAGE_NONE][0]["uri"])."' />";
+      		print "<a href='/".arg(0, drupal_get_path_alias())."/".arg(1, drupal_get_path_alias())."'><img src='".image_style_url("forum-icon", $term->field_ikon[LANGUAGE_NONE][0]["uri"])."' /></a>";
       		print "</div>";
       		?>
       		<div id="forum-headline">
-    	    	<span>Debat</span><br />
+    	    	<span><a href="/<?php print arg(0, drupal_get_path_alias())."/".arg(1, drupal_get_path_alias()); ?>">Debat</a></span><br />
 	        	<h1><?php print $title; ?></h1>
 			</div>
       	<?php

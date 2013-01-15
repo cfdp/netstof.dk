@@ -173,10 +173,8 @@
 		padding: 8px 16px 8px 5px;
 	}
 	#breadcrumbs ul li.first {
-		background: #404040;
-		width: 38px;
-		padding: 0; line-height: 0;
-		height: 28px;
+		background: #404040 url("../images/bread-sep-first.png") no-repeat top right;
+		background-size: 70px 28px;
 	}
 	#breadcrumbs ul li.last {
 		background: #404040 url("../images/bread-sep-last.png") no-repeat top right;

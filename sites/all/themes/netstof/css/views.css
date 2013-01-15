@@ -757,13 +757,18 @@
 						color: #3E3E3E;
 					}
 					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-nothing {
-						width: 35%;
+						width: 30%;
 					}
 					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf {
 						text-align: right;
-						width: 30%;
+						width: 35%;
 					}
-
+					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf a {
+						display: inline-block;
+						background-position: center left;
+						padding: 0 0 0 15px;
+						background: url("../images/icon-phone.png") no-repeat;
+					}
 /**
  * SØGERESULTATER
  */

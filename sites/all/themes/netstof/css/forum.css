@@ -167,6 +167,9 @@ body[class*='page-forum-'] #content-btm-shadow {
 	}
 	.view-advanced-forum-topic-list .view-header #forum-name {
 	}
+		.view-advanced-forum-topic-list .view-header #forum-name a {
+			color: #0b5a7c;
+		}
 		.view-advanced-forum-topic-list .view-header #forum-name h1 {
 			font-size: 28px; line-height: 28px;
 			color: #0b5a7c;
