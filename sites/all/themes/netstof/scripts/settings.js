@@ -165,9 +165,14 @@ $(function() {
     });
     
     /**
-     * WYSIWYG
-     */
-	//tinyMCE.execCommand('mceRemoveControl', false, "edit-body-und-0-value"); // the editor_id equals the id of your textarea
+     * WYSIWYG - remove on mobile devices
+     */    
+   if( isMobile.any() ) {
+	   tinyMCE.onAddEditor.add(function(mgr,ed) {
+	  		id = ed.id;
+	  		setTimeout("tinyMCE.execCommand('mceRemoveControl', false, id)",100);
+		});
+   }
     
 });
 
