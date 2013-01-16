@@ -5,7 +5,7 @@ input, textarea {
 	max-width: 100%;
 	border-radius: 0;
 }
-input[type=search], input[type=text], input[type=password] {
+input[type=search], input[type=text], input[type=password], textarea {
 	-webkit-appearance: none;
 	padding: 6px 8px;
 	font-size: 12px;
