@@ -32,6 +32,21 @@ function netstof_uf_form_alter(&$form, &$form_state, $form_id){
   }
 }
 
+/* Questionnaire function
+ * With this function the scripts needed for a questionnaire
+ * can be added easily
+ */
+function netstof_uf_preprocess_page(&$variables) {
+  $is_active = true;
+  $is_front = drupal_is_front_page();
+  if ($is_active) {
+    drupal_add_css("http://popin.survey-xact.dk/popin/popin.css", 'external');
+    drupal_add_js("http://popin.survey-xact.dk/popin/popin.js", 'external');
+    drupal_add_js("http://popin.survey-xact.dk/dynjs/CCDPGMSX91CP/popin.js", 'external');
+    drupal_add_js("http://popin.survey-xact.dk/cookies.js", 'external');
+  }
+}
+
 // afterbuild function - for removing the input text format fields for all users but admins
 function netstof_uf_node_form_after_build($form) {
   if (netstof_uf_user_has_role('anonymous user')) {
