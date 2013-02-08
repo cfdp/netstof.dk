@@ -848,9 +848,30 @@ function adaptivetheme_preprocess_username(&$vars) {
  * Preprocess variables for theme_image()
  */
 function adaptivetheme_preprocess_image(&$vars) {
-  // Add a class to image elements based on the image style
-  if (isset($vars['style_name'])) {
-    $vars['attributes']['class'][] = 'image-style-' . drupal_html_class($vars['style_name']);
+
+  // Initialize the variable if there isn't one
+  if (!isset($vars['attributes']['class'])) {
+    $vars['attributes']['class'] = array();
+  }
+
+  // Some modules set the style name even when its empty, such as User Badges
+  // module, so initialize the class name variable with a "none" class
+  $style_name_class = 'none';
+  
+  // If there really is a style name use it for the class
+  if (isset($vars['style_name']) && !empty($vars['style_name'])) {
+    $style_name_class = drupal_html_class($vars['style_name']);
+  }
+
+  // In the first instance we assume class attributes is an array, as it should be,
+  // and add the image style class
+  if (is_array($vars['attributes']['class'])) {
+    $vars['attributes']['class'][] = 'image-style-' . $style_name_class;
+  }
+  else {
+    // Else it's a string, workaround for Media module bug: http://drupal.org/node/1722146
+    // and User Badges bug: http://drupal.org/node/1748394
+    $vars['attributes']['class'] .= ' image-style-' . $style_name_class;
   }
 }
 

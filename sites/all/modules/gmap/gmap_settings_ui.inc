@@ -18,23 +18,23 @@ function gmap_admin_settings($form, &$form_state) {
   );
 
   if (!module_exists('keys_api') && !module_exists('keys')) {
-    $form['initialization']['googlemap_api_key'] = array(
+    $form['initialization']['gmap_api_key'] = array(
       '#type' => 'textfield',
-      '#default_value' => variable_get('googlemap_api_key', ''),
+      '#default_value' => variable_get('gmap_api_key', ''),
       '#size' => 50,
       '#maxlength' => 255,
     );
   }
   else {
-    $form['initialization']['googlemap_api_key'] = array(
+    $form['initialization']['gmap_api_key'] = array(
       '#type' => 'item',
-      '#title' => t('Google Maps API Key'),
+      '#title' => t('Your Google maps API Version 3 key'),
       '#value' => t('Managed by <a href="@url">Keys</a>.', array('@url' => url('admin/settings/keys'))),
     );
   }
 
-  $form['initialization']['googlemap_api_key']['#title'] = t('Google Maps API Key');
-  $form['initialization']['googlemap_api_key']['#description'] = t('Your personal Googlemaps API key.  If you want to use an API key, you can get one at <a href="http://code.google.com/apis/maps/signup.html">Google Map API website</a>.');
+  $form['initialization']['gmap_api_key']['#title'] = t('Google Maps API Key');
+  $form['initialization']['gmap_api_key']['#description'] = t('This key is currently not required by Google.  Entering a Key will allow you to track map usage in Google.  If you want to use an API key, you can get one at <a href="http://code.google.com/apis/maps/signup.html">Google Map API website</a>.');
 
 if (file_default_scheme() != 'public') {
   $form['initialization']['gmap_private_markerfile'] = array(
@@ -319,6 +319,8 @@ if (file_default_scheme() != 'public') {
     'gridSize' => 60,
     'maxZoom' => 17,
     // @@@ Some way of representing MarkerStyleOptions?
+    // store an empty style array as default setting
+    'styles' => array(),
   ), $opts['markerclusterer']);
 
   $opts['clusterer'] = array_merge(array(
@@ -457,6 +459,17 @@ if (file_default_scheme() != 'public') {
     '#default_value' => $opts['markerclusterer']['maxZoom'],
   );
 
+  // add a text area for inputting styles as JSON
+  // this is a really quick hack to make a nested JSON data structure editable in UI
+  $form['gmap_markermanager']['markerclusterer']['styles'] = array(
+    '#type' => 'textarea',
+    '#title' => t('MarkerClusterer styles in JSON. Read description!'),
+    '#description' => t('Hack to get MarkerClusterer styles injected. Should parse with PHP\'s json_decode(), so put object member names in quotes and escape properly (at least slashes need to be escaped by backslash). Example: [{"height":34,"width":20,"opt_anchor":[10,17],"opt_textColor":"white","url":"\/sites\/all\/themes\/mytheme\/images\/icons\/gmap\/cluster.png"}]'),
+    '#default_value' => drupal_json_encode($opts['markerclusterer']['styles']),
+    '#cols' => 60,
+    '#rows' => 5,
+  );
+
   // Jef Poskanzer's Clusterer
   $form['gmap_markermanager']['clusterer'] = array(
     '#type' => 'fieldset',
@@ -571,6 +584,9 @@ if (file_default_scheme() != 'public') {
   // @@@ Convert to element level validation.
   $form['#validate'][] = 'gmap_admin_settings_validate';
 
+  // Add submit handler for JSON conversion.
+  $form['#submit'][] = 'gmap_admin_settings_markerclusterer_submit';
+
   return system_settings_form($form);
 }
 
@@ -590,6 +606,37 @@ function gmap_admin_settings_validate($form, &$form_state) {
   if (!$form_state['values']['gmap_default']['baselayers'][$form_state['values']['gmap_default']['maptype']]) {
     form_error($form['gmap_default']['baselayers']['maptype'], t('The default map type must be an enabled baselayer!'));
   }
+
+  // Check that this is valid JSON, or an empty string.
+  if ('' != $form_state['values']['gmap_markermanager']['markerclusterer']['styles'] && !is_array(json_decode($form_state['values']['gmap_markermanager']['markerclusterer']['styles']))) {
+    form_error($form['gmap_markermanager']['markerclusterer']['styles'], t('The MarkerClusterer styles setting should be empty or a JSON array of !doc_link objects.', array('!doc_link' => l('MarkerStyleOptions', 'http://gmaps-utility-library.googlecode.com/svn/trunk/markerclusterer/1.0/docs/reference.html#MarkerClustererOptions', array('attributes' => array('target' => '_blank'))))));
+  }
+
+}
+
+/**
+ * Handle correct storage of several MarkerClusterer settings.
+ */
+function gmap_admin_settings_markerclusterer_submit($form, &$form_state) {
+  /**
+  * Convert UI JSON text input into nested data structure.
+  * In that way, it is ready to be stored as serialized data and to be output
+  * with drupal_add_js().
+  */
+  // for convenience: empty input means empty array
+  if ('' == $form_state['values']['gmap_markermanager']['markerclusterer']['styles']) {
+    $styles_data = array();
+  }
+  else {
+    $styles_data = json_decode($form_state['values']['gmap_markermanager']['markerclusterer']['styles']);
+  }
+  $form_state['values']['gmap_markermanager']['markerclusterer']['styles'] = $styles_data;
+
+  // MarkerClusterer checks maxZoom to be a JS variable of type "number", so just do a type cast
+  $form_state['values']['gmap_markermanager']['markerclusterer']['maxZoom'] = (int) $form_state['values']['gmap_markermanager']['markerclusterer']['maxZoom'];
+
+  // MarkerClusterer checks gridSize to be a JS variable of type "number", so just do a type cast
+  $form_state['values']['gmap_markermanager']['markerclusterer']['gridSize'] = (int) $form_state['values']['gmap_markermanager']['markerclusterer']['gridSize'];
 }
 
 /**

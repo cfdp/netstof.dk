@@ -13,7 +13,7 @@
  * @see search_autocomplete.views.inc
  */
 function template_preprocess_views_search_autocomplete_style(&$vars) {
-  global $base_url;
+  global $base_root;
 
   $view = $vars["view"];
   $rows = $vars["rows"];
@@ -38,10 +38,10 @@ function template_preprocess_views_search_autocomplete_style(&$vars) {
       $regexp = "<a\s[^>]*href=(\"??)([^\" >]*?)\\1[^>]*>(.*)<\/a>";
       if (preg_match("/$regexp/siU", htmlspecialchars_decode($field->content, ENT_QUOTES), $matches)) {
 
-        $link   = $base_url . $matches[2];
+        $link   = $base_root . $matches[2];
         $value  = $matches[3];
 
-        if ($arg == '' || stripos($value, $arg)  !== FALSE ) {
+        if ($arg == '' || mb_stripos($value, $arg, 0, 'UTF-8')  !== FALSE ) {
 
           $label = "";
           if ($field->label)

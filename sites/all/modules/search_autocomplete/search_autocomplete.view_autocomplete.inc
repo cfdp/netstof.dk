@@ -218,26 +218,6 @@ function _search_autocomplete_render_fields($view, $row) {
 }
 
 /**
- * Strips illegal characters for an identifier from a JSON string.
- *
- * @param $input
- *   Identifier string to process.
- * @return
- *   Identifier string with illegal characters stripped away.
- */
-function _search_autocomplete_check_label($input) {
-  $output = str_replace(array('{', '}', '[', ']', ':', ',', '"', "'", chr(47), chr(92)), '', $input);
-  $output = preg_replace(
-              '/[\x{80}-\x{A0}' .      // Non-printable ISO-8859-1 + NBSP
-              '\x{01}-\x{1F}' .        // Non-printable ASCII characters
-              '\x{0}]/u',             // NULL byte
-            '', $output);
-
-  return check_plain(strip_tags($output));
-}
-
-
-/**
  * Gets JSON data from a View rendered in the JSON data document style.
  *
  * This is useful for when working with a JSON view in code.
@@ -369,10 +349,7 @@ function _search_autocomplete_json_encode($rows, $bitmask = NULL) {
        $json = str_replace(array('\/'), array('/'), $json);
     }
   } else {
-    $json = json_encode($rows);
-    
-    print("look at json: " . $json);
-
+    $json = json_encode($rows); 
     $json = str_replace(array('\/'), array('/'), $json);
   }
   return $json;

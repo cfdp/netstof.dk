@@ -29,10 +29,10 @@ Drupal.gmap.addHandler('gmap', function (elem) {
     if (obj.vars.behavior.highlight) {
       google.maps.event.addListener(m, 'mouseover', function () {
         var highlightColor = '#' + obj.vars.styles.highlight_color;
-        highlightMarker(obj.map, marker, 'hoverHighlight', highlightColor);
+        highlightMarker(obj, marker, 'hoverHighlight', highlightColor);
       });
       google.maps.event.addListener(m, 'mouseout', function () {
-        unHighlightMarker(obj.map, marker, 'hoverHighlight');
+        unHighlightMarker(obj, marker, 'hoverHighlight');
       });
     }
     if (obj.vars.behavior.extramarkerevents) {
@@ -57,7 +57,9 @@ Drupal.gmap.addHandler('gmap', function (elem) {
     }
     // If the highlight arg option is used in views highlight the marker.
     if (marker.opts.highlight == 1) {
-      highlightMarker(obj.map, marker, 'viewHighlight', marker.opts.highlightcolor);
+      google.maps.event.addListener( obj.mm, 'loaded', function() {
+        highlightMarker(obj, marker, 'viewHighlight', marker.opts.highlightcolor);
+      } );
     }
   });
 

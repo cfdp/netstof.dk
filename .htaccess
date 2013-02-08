@@ -20,7 +20,7 @@ ErrorDocument 404 /index.php
 DirectoryIndex index.php index.html index.htm
 
 # Override PHP settings that cannot be changed at runtime. See
-# sites/default/default.settings.php and drupal_initialize_variables() in
+# sites/default/default.settings.php and drupal_environment_initialize() in
 # includes/bootstrap.inc for settings that can be changed at runtime.
 
 # PHP 5, Apache 1 and 2.
@@ -84,8 +84,8 @@ DirectoryIndex index.php index.html index.htm
   # To redirect all users to access the site WITHOUT the 'www.' prefix,
   # (http://www.example.com/... will be redirected to http://example.com/...)
   # uncomment the following:
-  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-  RewriteRule ^ http://%1%{REQUEST_URI} [L,R=301]
+  # RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  # RewriteRule ^ http://%1%{REQUEST_URI} [L,R=301]
 
   # Modify the RewriteBase if you are using Drupal in a subdirectory or in a
   # VirtualDocumentRoot and the rewrite rules are not working properly.

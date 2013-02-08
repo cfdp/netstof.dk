@@ -97,13 +97,26 @@
   ; will find them in each layout PHP file in adaptivetheme/layouts/gpanels
 
 
-;----------// Custom Page Layout Plugins
+;----------// Custom Layout Plugins
 
-  ; Don't uncomment this unless you are actually developing a page layout
-  ; plugin, it will add a layout to all device groups that does little else
-  ; except provide and example page_layout plugin.
+  ; Adaptivetheme supports both Page Layout plugins (it's own native layout
+  ; plugin type) and Panels layout plugins. Page layouts control the sidebars
+  ; and main content column layout - these are controlled via theme settings for
+  ; Page layouts. The Panels layouts are for Panels module and are controlled via
+  ; the theme settings for Panels layouts.
+  
+  ; There are seperate directories for each type of layout and an example
+  ; plugin for each. These don't do very much, they are just examples, you can
+  ; use the core themes layout plugins as a guide. Please see the _README in the
+  ; layouts directory of this subtheme.
+  
+  ; Remove the semicolon to umcomment and clear the sites cache.
 
-  ; plugins[page_layout][layouts] = custom_layouts
+  ; Page layout plugins
+  ; plugins[page_layout][layouts] = layouts/page
+
+  ; Panels layout plugins
+  ; plugins[panels][layouts] = layouts/panels
 
 
 ;----------// Site Features
@@ -415,9 +428,9 @@
   ; Custom CSS
   settings[custom_css] = ''
 
-; Information added by drupal.org packaging script on 2012-07-31
-version = "7.x-3.0"
+; Information added by drupal.org packaging script on 2012-08-29
+version = "7.x-3.1"
 core = "7.x"
 project = "adaptivetheme"
-datestamp = "1343717778"
+datestamp = "1346238662"
 

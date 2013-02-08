@@ -104,6 +104,7 @@ p {
 h1#page-title {
   font-size: 1.33em;
   padding: 0;
+  display: inline-block;
 }
 #footer {
   margin-left: 10px;
@@ -127,11 +128,6 @@ h1#page-title {
   padding-top: 20px;
   position: relative;
   min-height: 50px;
-}
-#topbar,
-#main-content-header {
-  padding-left: 10px;
-  padding-right: 10px;
 }
 #page-footer {
   background: #fff;
@@ -531,10 +527,7 @@ div.admin .right {
   color: #222;
 }
 div.add-or-remove-shortcuts  {
-  padding-top:0;
-  position:absolute;
-  right:20px;
-  top:33%;
+  display: inline-block;
 }
 .admin-panel ul li {
   color: #555;
@@ -680,7 +673,7 @@ tbody {
 }
 td,th {
   margin: 0;
-  padding: 0.85em 0.6em;
+  padding: 10px 7px;
 }
 th.active a {
   padding-right: 25px;
@@ -710,11 +703,6 @@ tr:first-child td.container {
 }
 #block-admin-display-form tr .block {
   background: transparent;
-}
-tr.draggable td.block {
-  padding: 10px 0 0 6px;
-}
-.draggable a.tabledrag-handle {
 }
 body div.tabledrag-changed-warning {
   margin: 0 0 10px 0;
@@ -771,7 +759,7 @@ tr.even td.active {
   background: none;
 }
 a.tabledrag-handle .handle {
-  margin-top: 2px;
+  margin-top: -0.42em;
 }
 #system-modules table th {
   min-width: 60px;

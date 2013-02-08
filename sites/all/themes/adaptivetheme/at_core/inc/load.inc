@@ -593,7 +593,7 @@ function polly_wants_a_cracker($polly, $theme_name) {
             );
           }
         }
-        if ($crackers['ie']) {
+        if (isset($crackers['ie'])) {
           $baked_crackers = $crackers['ie'];
         }
       }

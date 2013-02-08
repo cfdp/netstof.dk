@@ -1,11 +1,6 @@
 # Ignore configuration files that may contain sensitive information.
 sites/*/settings*.php
-.project
 
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
-sites/all/modules/maillog/*
-sites/all/modules/devel/*
-sites/all/modules/devel_themer/*
-sites/all/modules/git_deploy/*

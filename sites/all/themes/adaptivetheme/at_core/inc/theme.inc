@@ -566,7 +566,7 @@ function adaptivetheme_field__image($vars) {
 
   // Check if image settings are enabled
   $image_settings_enabled = at_get_setting('enable_image_settings', $theme_name) === 1 ? TRUE : FALSE;
-  
+
   // Check if captions are enabled for full and/or teaser view modes
   if ($image_settings_enabled == TRUE) {
     $caption_full = at_get_setting('image_caption_full', $theme_name) === 1 ? TRUE : FALSE;
@@ -591,11 +591,14 @@ function adaptivetheme_field__image($vars) {
 
     // Captions
     if (isset($item['#item']['title']) && !empty($item['#item']['title']) && $image_settings_enabled == TRUE) {
-      // Ouch this is ugly, please tell me how to get the image style width?
-      $styles = '';
-      $width = 'auto';
+
+      // Ouch this is ugly, please tell me how to get the actual width of the image.
+      // image_style_load($item['#image_style']); will return the image style dimensions,
+      // but not the actual image width, which can be different, say when images
+      // scale, but I cannot decipher where these dimensions come from when
+      // the item is rendered.
       preg_match('/< *img[^>]*width *= *["\']?([^"\']*)/i', $item['#children'], $matches);
-      $width = $matches[1] . 'px';
+      $width = isset($matches[1]) ? $matches[1] . 'px' : 'auto';
       $styles = 'style="width:' . $width . ';"';
 
       if ($vars['field_view_mode'] == 'full') {

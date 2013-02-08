@@ -69,6 +69,7 @@ function at_build_page_layout($method, $sidebar_first, $sidebar_second, $sidebar
  */
 function at_build_panels_layout_css($panel_styles, $device_panels_data) {
   $output = '';
+  $declarations = $these_groups = $these_selectors_styles = array();
 
   foreach ($panel_styles as $panel_subtypes_data) {
     foreach ($panel_subtypes_data as $panel_subtype => $panel_subtype_styles_data) {

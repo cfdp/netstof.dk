@@ -265,10 +265,6 @@ Drupal.gmap.addHandler('gmap', function (elem) {
     // Disable default UI for custom options
     opts.disableDefaultUI = true;
     
-    // Added by Create Inside (Custom Styling)
-    var customStyle = [ { "featureType": "administrative.country", "stylers": [ { "visibility": "off" } ] },{ "featureType": "administrative.province", "stylers": [ { "visibility": "off" } ] },{ "featureType": "administrative.locality", "elementType": "geometry.stroke", "stylers": [ { "visibility": "off" } ] },{ "featureType": "administrative.neighborhood", "stylers": [ { "visibility": "off" } ] },{ "featureType": "administrative.land_parcel", "stylers": [ { "visibility": "off" } ] },{ "featureType": "landscape.natural", "stylers": [ { "color": "#e6e3df" } ] },{ "featureType": "poi.attraction", "stylers": [ { "visibility": "off" } ] },{ "featureType": "poi", "stylers": [ { "visibility": "off" } ] },{ "featureType": "road", "elementType": "geometry.fill", "stylers": [ { "color": "#ffad00" } ] },{ "featureType": "road", "elementType": "geometry.stroke", "stylers": [ { "visibility": "off" } ] },{ "featureType": "road", "elementType": "labels.icon", "stylers": [ { "visibility": "off" } ] },{ "featureType": "road", "elementType": "labels.text.stroke", "stylers": [ { "visibility": "on" }, { "color": "#ffffff" } ] },{ "featureType": "transit", "elementType": "labels.icon", "stylers": [ { "visibility": "off" } ] },{ "featureType": "transit.line", "elementType": "labels.text", "stylers": [ { "color": "#ffffff" }, { "visibility": "off" } ] },{ "featureType": "transit.line", "elementType": "geometry.fill", "stylers": [ { "color": "#ffffff" } ] },{ "featureType": "water", "stylers": [ { "color": "#ffffff" } ] },{ "featureType": "road", "stylers": [ { "visibility": "off" } ] },{ "featureType": "road.local", "stylers": [ { "visibility": "on" } ] },{ } ];
-  	opts.styles = customStyle;
-    
     // Set draggable property
     if (obj.vars.behavior.nodrag) {
       opts.draggable = false;
@@ -391,6 +387,8 @@ Drupal.gmap.addHandler('gmap', function (elem) {
           map.setCenter(new google.maps.LatLng(obj.vars.latitude, obj.vars.longitude), obj.vars.zoom);
         };
         jQuery(elem).parents('fieldset.collapsible').children('legend').children('a').click(r);
+        jQuery('.vertical-tab-button', jQuery(elem).parents('.vertical-tabs')).children('a').click(r);
+        jQuery(window).bind('hashchange', r);
         // Would be nice, but doesn't work.
         //$(elem).parents('fieldset.collapsible').children('.fieldset-wrapper').scroll(r);
       }, 0);
@@ -603,5 +601,15 @@ Drupal.behaviors.GMap = {
   }
     jQuery('.gmap-gmap:not(.gmap-processed)', context).addClass('gmap-processed').each(function () {Drupal.gmap.setup.call(this)});
     jQuery('.gmap-control:not(.gmap-processed)', context).addClass('gmap-processed').each(function () {Drupal.gmap.setup.call(this)});
+  },
+  detach: function (context, settings) {
+    jQuery('.gmap-processed', context).each(function (element) {
+      //find mapid
+      var id = jQuery(this).attr('id');
+      var mapid = id.split('-', 2);
+
+      //unload map
+      Drupal.gmap.unloadMap(mapid[1]);
+    });
   }
 };
