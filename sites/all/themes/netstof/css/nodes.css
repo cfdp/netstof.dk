@@ -73,7 +73,68 @@ h2,h3,h4,h5,h6 {
       .node-content footer {
         color: #3E3E3E;
       }
-			
+
+/**
+ * Node Type: Brevkasse
+ */
+/* Brevkasse enkeltvisning */
+.not-front.node-type-questions-and-answers #main-content{
+	background:none;box-shadow:none;
+}
+	.not-front.node-type-questions-and-answers #main-content > #content{
+		padding:0;
+		background:none;box-shadow:none;
+	}
+		.node-type-questions-and-answers .node-content div{margin-top:15px;}
+		.node-type-questions-and-answers .node-content div:first-child{margin-top:0;}
+			.node-questions-and-answers .node-content .question, .node-questions-and-answers .node-content .answer{
+				padding:25px 22px 15px;
+				background:url("../images/content-top.png") no-repeat scroll center top #FFFFFF;
+				box-shadow:0 0 7px #BBBBBB;
+			}
+				.node-type-questions-and-answers .node-content #page-title{
+					margin-bottom:15px;
+					font-size:28px;color:#0b5a7c;
+				}
+			/* question part */
+			.node-questions-and-answers .node-content .question .date{margin-bottom:15px;}
+			.node-questions-and-answers .node-content .question .date-label{
+				font-size:13px;text-transform:uppercase;
+			}
+				.node-questions-and-answers .question .field-name-field-qna-sex:after,
+				.node-questions-and-answers .question .field-name-field-qna-age:after{
+					content:"";
+					display:block;
+					clear:both;
+					width:100%;
+				}
+					.node-questions-and-answers .question .field-name-field-qna-sex  h2, 
+					.node-questions-and-answers .question .field-name-field-qna-sex div,
+					.node-questions-and-answers .question .field-name-field-qna-age h2,
+					.node-questions-and-answers .question .field-name-field-qna-age div{
+						margin:0;
+						float:left;
+					}
+			/* answer part */
+			.node-type-questions-and-answers .node-content .answer {
+				padding-bottom:1px;
+			}
+			.node-type-questions-and-answers .answer .field-name-field-qna-answer h2{
+				font-size:20px;font-weight:normal;
+				text-transform:uppercase;
+			}
+			.node-type-questions-and-answers .answer .field-name-field-tags ul{margin:0;padding:0;}
+			.node-type-questions-and-answers .answer .field-name-field-tags ul li{
+				margin-left:5px;
+				display:inline;
+				text-transform:uppercase;
+			}
+			.node-type-questions-and-answers .answer .field-name-field-tags ul li:first-child{
+				margin-left:0;
+			}
+			.node-type-questions-and-answers .answer .field-name-field-tags ul li a{display:inline;}
+			.node-type-questions-and-answers .answer .user-picture img{margin:0;padding:0;}			
+
 /**
  * Node Type: FAQ
  */
@@ -294,4 +355,21 @@ section#comments {
 #comments .pager,
 #forum-comments .pager {
 	display: none;
+}
+
+/*  
+ * Custom nodes
+ */
+ 
+/* Open new window button */
+a.open-new-window {
+    background: none repeat scroll 0 0 #0B5A7C;
+    border-radius: 5px 5px 5px 5px;
+    color: white;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 15px;
+    padding: 10px 12px;
+    text-transform: uppercase;
 }

@@ -13,6 +13,10 @@ body {
 	header {
 	
 	}
+	#branding{
+	  float:left;
+  }
+
 		header #logo {
 			padding: 17px 0 0 0;
 		}
