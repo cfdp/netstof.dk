@@ -4,6 +4,10 @@
 .search-form {
 	margin-bottom: 0;
 }
+/* Right sidebar */
+#block-block-7{
+  margin-top:25px;
+}
 #search-block-form,
 #search-form {
 

@@ -1,6 +1,6 @@
-/* various styling */
+/* For logged in users */
 
-/*PROFILE*/
+/* PROFILE */
 body.page-user #content {
   margin-bottom: 14px;
   box-shadow: 0 0 7px #BBB; 
