@@ -190,10 +190,6 @@
 				width: 151px;
 				padding: 0 10px 0 0;
 			}
-    body.page-brevkasse .view-brevkasseredaktoerer .views-field-name,
-    body.page-brevkasse .view-brevkasseredaktoerer .views-field-field-profile-public-description {
-      display: none;
-    }
 		.view-Brevkasse > .view-header > .brevkasse-desc {
 			width: 50%;
 			float: left;
