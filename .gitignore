@@ -8,3 +8,6 @@ sites/*/private
 sites/all/modules/git_deploy
 sites/all/modules/devel
 sites/all/modules/maillog
+
+#Ignore fetch remote files hack
+sites/default/files/.htaccess
