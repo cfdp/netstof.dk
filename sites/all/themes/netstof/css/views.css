@@ -15,7 +15,7 @@
 		overflow: hidden;
 	}
 	.page-node-305 .field-name-field-oversigt .field-item {
-		float: left;
+		display: inline-block;
 		width: 50%;
 	}
 		.page-node-305 .field-name-field-oversigt .field-item > div {
@@ -30,9 +30,9 @@
 				color: #0b5a7c;
 				font-weight: normal;
 				text-transform: uppercase;
-				font-size: 20px; line-height: 20px;	
-				padding-top: 20px;	
-				padding-left: 48px;		
+				font-size: 20px; line-height: 20px;
+				padding-top: 20px;
+				padding-left: 48px;
 			}
 				.page-node-305 .field-name-field-oversigt .field-item h2.psykolog {
 					background: url("../images/icon-psykolog.png") no-repeat 0 0;
@@ -42,7 +42,7 @@
 				}
 				.page-node-305 .field-name-field-oversigt .field-item h2.rusmiddel {
 					background: url("../images/icon-professor.png") no-repeat 0 0;
-				}	
+				}
 				.page-node-305 .field-name-field-oversigt .field-item p {
 					float: left;
 					width: 100%;
@@ -83,7 +83,7 @@
 			.page-node-305 .field-name-field-oversigt .field-item .view-content ul {
 				margin: 0;
 				padding: 0;
-			}			
+			}
 			.page-node-305 .field-name-field-oversigt .field-item .view-content ul li {
 				list-style: none;
 				list-style-image: none;
@@ -98,7 +98,7 @@
 					margin: 0 7px 7px 0;
 				}
 					.page-node-305 .field-name-field-oversigt .field-item .view-content .views-field-picture img {
-						border: 2px solid #e2e1df;					
+						border: 2px solid #e2e1df;
 					}
 				.page-node-305 .field-name-field-oversigt .field-item .view-content .views-field-name {
 					font-size: 15px; line-height: 15px;
@@ -117,7 +117,7 @@
 					float: left;
 					width: 151px;
 				}
-				
+
 /**
  * BREVKASSEN - Enkelt brevkasse
  */
@@ -129,11 +129,11 @@
 }
 	body.page-brevkasse .view-Brevkasse > .view-header {
 		margin-bottom: 14px;
-		box-shadow: 0 0 7px #BBB;	
-		background: #FFF;	
+		box-shadow: 0 0 7px #BBB;
+		background: #FFF;
 		padding: 23px;
 		position: relative;
-		font-family: "Cabin", sans-serif;	
+		font-family: "Cabin", sans-serif;
 		overflow: hidden;
 	}
 		.view-Brevkasse > .view-header .header-title {
@@ -170,7 +170,7 @@
 				margin: 0 7px 7px 0;
 			}
 				.view-brevkasseredaktoerer .views-field-picture img {
-					border: 2px solid #e2e1df;					
+					border: 2px solid #e2e1df;
 				}
 			.view-brevkasseredaktoerer .views-field-name {
 				font-size: 15px; line-height: 15px;
@@ -212,7 +212,7 @@
 		}
 	.view-Brevkasse > .view-content > .views-row {
 		margin-bottom: 14px;
-		box-shadow: 0 0 7px #BBB;		
+		box-shadow: 0 0 7px #BBB;
 	}
 		.view-Brevkasse > .view-content > .views-row > .views-field {
 			background: #FFF;
@@ -231,7 +231,7 @@
 				left: 23px;
 			}
 			.view-Brevkasse > .view-content > .views-row > .views-field.ui-state-active .ui-icon {
-				background: url("../images/icon-arrow-acc-active.png") no-repeat center center;			
+				background: url("../images/icon-arrow-acc-active.png") no-repeat center center;
 			}
 			.view-Brevkasse > .view-content > .views-row .acc_left {
 				float: left;
@@ -286,7 +286,7 @@
 				font-weight: bold;
 				font-size: 14px;
 			}
-	
+
 /**
  * ERFARINGER og OPLEVELSER- Oversigt
  */
@@ -296,11 +296,11 @@
 }
 .view-erfaringer .view-header, .view-erfaringer .view-empty {
 	margin-bottom: 14px;
-	box-shadow: 0 0 7px #BBB;	
-	background: #FFF;	
+	box-shadow: 0 0 7px #BBB;
+	background: #FFF;
 	padding: 23px 23px 10px 23px;
 	position: relative;
-	font-family: "Cabin", sans-serif;	
+	font-family: "Cabin", sans-serif;
 }
 	.view-erfaringer .view-header h1 {
 		color: #404040;
@@ -325,7 +325,7 @@
 	}
 	.view-erfaringer .views-row {
 		margin-bottom: 14px;
-		box-shadow: 0 0 7px #BBB;	
+		box-shadow: 0 0 7px #BBB;
 		background: #FFF;
 	}
 		.view-erfaringer .views-row > .views-field {
@@ -344,7 +344,7 @@
 				left: 23px;
 			}
 			.view-erfaringer .views-row > .views-field.ui-state-active .ui-icon {
-				background: url("../images/icon-arrow-acc-active.png") no-repeat center center;			
+				background: url("../images/icon-arrow-acc-active.png") no-repeat center center;
 			}
 			.view-erfaringer .views-row .acc_left {
 				float: left;
@@ -395,7 +395,7 @@
 				color: #0b5a7c;
 				font-weight: bold;
 			}
-			
+
 /**
  * ARTIKLER - Oversigt
  */
@@ -462,7 +462,7 @@
 				padding: 1px 8px;
 				text-decoration: none;
 			}
-			
+
 /**
  * VIDENSBANK - Oversigt
  */
@@ -473,7 +473,7 @@
 	margin-top: 18px;
 	margin-bottom: 35px;
 }
-			
+
 /**
  * FAQ + Leksikon - Oversigt
  */
@@ -524,13 +524,13 @@
 	}
 		.view-leksikon .view-content .item-list > ul li {
 			width: 50%;
-			float: left;	
+			float: left;
 			margin-bottom: 20px;
 			list-style: none;
 			list-style-image: none;
 			padding: 0 !important;
 			margin: 0 !important;
-			height: 160px;		
+			height: 160px;
 		}
 		.view-leksikon .item-list .views-label-field-tags, .view-leksikon .item-list .field-content {
 		  display:inline;
@@ -627,7 +627,7 @@
 			font-family: "Cabin", sans-serif;
 			font-size: 14px;
 		}
-		
+
 /**
  * GOOGLE MAPS KORT
  */
@@ -775,15 +775,15 @@
 }
 .page-search-node #main-content-header {
 	padding: 23px 23px 0 23px;
-	background: white url("../images/content-top.png") no-repeat top center;		
+	background: white url("../images/content-top.png") no-repeat top center;
 }
 .page-search-node #content {
 	padding: 0 23px 23px 23px;
-	background: white url("../images/content-btm.png") no-repeat bottom center;		
+	background: white url("../images/content-btm.png") no-repeat bottom center;
 }
 .page-search-node #content-btm-shadow {
 	background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
-	height: 15px;		
+	height: 15px;
 }
 .page-search-node #content h2 {
 	font-size: 20px;
@@ -819,9 +819,9 @@ ol.search-results {
 				color: #ffad00;
 			}
 /**
- * PAGER - Brevkasse, Leksikon 
+ * PAGER - Brevkasse, Leksikon
  */
- 
+
 .view-Brevkasse ul.pager,
 .view-leksikon ul.pager,
 .page-search-node ul.pager,
@@ -948,7 +948,7 @@ body.page-paaroerende .region-sidebar-first #hurtige-genveje{
 	.view-id-mediekit .left{float:left;}
 	.region-sidebar-first #hurtige-genveje .right,
 	.view-id-mediekit .right{float:left;line-height:1;}
-	
+
 	/* .genvej & genvej-wrapper */
 	.region-sidebar-first #hurtige-genveje .genvej-wrapper,
 	.view-id-mediekit .genvej-wrapper{position:relative;}
@@ -1082,7 +1082,7 @@ body.page-paaroerende .region-sidebar-first #hurtige-genveje{
 	.view-id-mediekit .views-row{
 		padding:5px 0;
 	}
-	
+
 /* Left content on sub page */
 	#leftcontent h3{
 		margin:14px 0 4px -6px;
