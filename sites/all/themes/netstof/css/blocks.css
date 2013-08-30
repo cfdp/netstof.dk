@@ -65,7 +65,7 @@
 		width: 58px;
 		height: 44px;
 	}
-/* Brevkasse / Debatforum */	
+/* Brevkasse / Debatforum */
 #custom-search-blocks-form-1,
 #custom-search-blocks-form-2 {
 	padding: 23px 23px 0 23px;
@@ -136,7 +136,7 @@
 	#entrances li:hover {
 		background: url("../images/ent-hover.png") no-repeat;
 	}
-	
+
 /**
  * LANDING PAGE BLOCKS - Vidensbank, Raadgivning etc.
  */
@@ -163,17 +163,17 @@
 	.block.landing_page img {
 		float: left;
 		margin: 0 20px 0 0;
-	}	
+	}
 	.block.landing_page h2 {
 		padding: 0 0 0 0;
 		font-size: 28px;
-	}	
+	}
 	.block.landing_page strong {
-	
-	}	
+
+	}
 	.block.landing_page p {
 		margin-bottom: 13px;
-	}	
+	}
 	.block.landing_page a.add-link {
 		color: white;
 		font-weight: bold;
@@ -185,7 +185,7 @@
 		padding: 10px 12px 10px 30px;
 		border-radius: 5px;
 		min-width: 110px;
-	}	
+	}
 
 /**
  * FORSIDE + PÅRØRENDE + VIDENSBANK - (MASONRY GRID)
@@ -251,7 +251,7 @@
 			text-align: right;
 		}
 		  #block-views-front-page-grid-block .views-field-comment-count span, #block-views-front-page-grid-block-1 .views-field-comment-count span {
-				background: url("../images/comment-count.png") no-repeat 0 4px;			
+				background: url("../images/comment-count.png") no-repeat 0 4px;
 				padding: 0 0 0 14px;
       }
 		#block-views-front-page-grid-block .views-field-title, #block-views-front-page-grid-block-1 .views-field-title {
@@ -267,7 +267,7 @@
 		#block-views-front-page-grid-block .views-field-body, #block-views-front-page-grid-block-1 .views-field-body {
 			float: left;
 			width: 100%;
-		}	
+		}
 		#block-views-front-page-grid-block .views-field-type {
 			color: #0a597b;
 			text-transform: uppercase;
@@ -280,7 +280,7 @@
     }
 			#block-views-front-page-grid-block .views-field-type .Debat {
 				padding: 10px 0 0 50px;
-				height: 45px;	
+				height: 45px;
 				background: url("../images/icon-forum.png") no-repeat top left;
 			}
 			#block-views-front-page-grid-block .views-field-type .Spørgsmål-til-brevkassen {
@@ -290,13 +290,13 @@
 			}
 			#block-views-front-page-grid-block .views-field-type .Erfaringer {
 				padding: 10px 0 0 50px;
-				height: 45px;	
+				height: 45px;
 				background: url("../images/icon-stories.png") no-repeat top left;
 			}
-		
+
 		/* VIEWS GRID - FILTERS AND VIEW HEADER ON PÅRØRENDE PAGE */
 		#block-views-front-page-grid-block .view-filters,
-		.view-vidensbanken .view-filters, 
+		.view-vidensbanken .view-filters,
 		#block-views-front-page-grid-block-1 .view-header  {
 			padding: 15px 0;
 			border-top: 1px dashed #373737;
@@ -371,7 +371,7 @@
 						background: url("../images/brevkasse_mikro.png") no-repeat top left;
 						padding-left: 25px;
 					}
-				
+
 			#block-views-front-page-grid-block .view-filters input[type=radio],
 			.view-vidensbanken .view-filters input[type=radio]{
 				display: none;
@@ -384,7 +384,7 @@
 				display: block;
 			}
 		/* PAGER */
-		#block-views-front-page-grid-block ul.pager, 
+		#block-views-front-page-grid-block ul.pager,
 		#block-views-front-page-grid-block-1 ul.pager {
 			position: absolute;
 			right: 28px;
@@ -399,14 +399,14 @@
 			top: 59px;
 			color: #424242;
 			font-size: 14px;
-			font-weight: normal;		
+			font-weight: normal;
 		}
-			#block-views-front-page-grid-block ul.pager li, 
+			#block-views-front-page-grid-block ul.pager li,
 			#block-views-front-page-grid-block-1 ul.pager li,
 			.view-vidensbanken ul.pager li  {
 				padding: 0;
 			}
-			#block-views-front-page-grid-block ul.pager li.pager-current, 
+			#block-views-front-page-grid-block ul.pager li.pager-current,
 			#block-views-front-page-grid-block-1 ul.pager li.pager-current,
 			.view-vidensbanken ul.pager li.pager-current {
 				padding: 0 10px;
@@ -414,7 +414,7 @@
 				font-size: 15px;
 				font-weight: normal;
 			}
-			#block-views-front-page-grid-block ul.pager li a, 
+			#block-views-front-page-grid-block ul.pager li a,
 			#block-views-front-page-grid-block-1 ul.pager li a,
 			.view-vidensbanken ul.pager li a {
 				color: #FFF;
@@ -422,7 +422,7 @@
 				padding: 1px 8px;
 				text-decoration: none;
 			}
-			
+
 
 /**
  * RIGHT SIDEBAR
@@ -461,7 +461,7 @@
 		.not-front .region-sidebar-first .block .block-content a {
 			color: #0B5A7C;
 		}
-	
+
 	/* OM BREVKASSEN / OM DEBATFORUM */
 	.region-sidebar-first #block-block-7,
 	.region-sidebar-first #block-block-8 {
@@ -571,7 +571,7 @@
 		bottom: 115px;
 		right: 23px;
 		width: 143px;
-	}	
+	}
 		#goto-maps-form select {
 			width: 143px;
 		}
@@ -598,7 +598,7 @@
 				padding: 0; margin: 0;
 			}
 
-	
+
 /**
  * RIGHT SIDE - fixed entrances
  */
@@ -650,7 +650,7 @@
 		#block-webform-client-block-564 {
 			background: transparent url("../images/tabs-feedback-btn.png") no-repeat 0 0;
 			padding-top: 0;
-		}	
+		}
 			#block-webform-client-block-564 .block-inner {
 				background: #FFFFFF;
 				padding: 15px 15px 0 15px;
@@ -793,7 +793,7 @@ ul.right-side-list {
 	.region-footer .block-last {
 		margin: 0;
 	}
-	
+
 /**
  * FOOTER BOTTOM
  */
@@ -823,7 +823,7 @@ ul.right-side-list {
 		.region-footer-btm .block a {
 			color: #404040;
 		}
-		
+
 /**
  * AUTO COMPLETE
  */
@@ -855,11 +855,11 @@ ul.ui-autocomplete {
 		margin: 0 !important;
 		color: #424242 !important;
 	}
-	
+
 /**
  * SENESTE INDLÆG
  */
- 
+
 .view-usergenerated-content {
 
 }
@@ -874,13 +874,19 @@ ul.ui-autocomplete {
 		margin: 0 0 30px 0;
 	}
 	.view-usergenerated-content .views-row {
-		margin-bottom: 5px;	
+		margin-bottom: 5px;
 	}
-		#footer-container .view-usergenerated-content a, #footer-container #block-block-5 a, #footer-container #block-block-6 a {
+		#footer-container .view-usergenerated-content a, #footer-container #block-block-5 a, #footer-container #block-block-6 a, #footer-container #block-block-26 a {
 			font-size: 13px;
 			color: #FFFFFF;
+			border-bottom: 1px #ccc dotted;
 		}
-		
+
+		#footer-container .view-usergenerated-content a:hover, #footer-container #block-block-5 a:hover, #footer-container #block-block-6 a:hover, #footer-container #block-block-26 a:hover {
+			border-bottom: 1px #fff dotted;
+			text-decoration: none;
+		}
+
 /**
  * PAAROERENDE GRID
  */
@@ -928,7 +934,7 @@ ul.ui-autocomplete {
 	.region-leftcontent .views-limit-grouping-group {
 			margin-bottom: 15px;
 	}
-	
+
 /**
  * UNDER CONTENT
  */
@@ -947,4 +953,4 @@ ul.ui-autocomplete {
 	}
 		.region-undercontent .block-content a {
 			color: #404040;
-		}	
+		}

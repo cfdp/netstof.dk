@@ -11,3 +11,7 @@ sites/all/modules/maillog
 
 #Ignore fetch remote files hack
 sites/default/files/.htaccess
+
+#Ignore mysql dumps
+*.sql.gz
+*.sql
