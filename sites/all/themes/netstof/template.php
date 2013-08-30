@@ -12,7 +12,7 @@
  * used as an alternative to directly editing or adding code to templates. Its
  * worth spending some time to learn more about these functions - they are a
  * powerful way to easily modify the output of any template variable.
- * 
+ *
  * Preprocess and Process Functions SEE: http://drupal.org/node/254940#variables-processor
  * 1. Rename each function and instance of "netstof" to match
  *    your subthemes name, e.g. if your theme name is "footheme" then the function
@@ -35,12 +35,12 @@ function netstof_menu_link(array $variables) {
   $zebra = ($count % 2) ? 'even' : 'odd';
   $count++;
   $element['#attributes']['class'][] = $zebra;
-    
+
   if(isset($element["#bid"]["delta"]) && $element["#bid"]["delta"]==1) {
 	  if ($element['#below']) {
 	    $sub_menu = drupal_render($element['#below']);
 	  }
-	
+
 	  /**
 	   * Add menu item's description below the menu title
 	   * Source: fusiondrupalthemes.com/forum/using-fusion/descriptions-under-main-menu
@@ -48,7 +48,7 @@ function netstof_menu_link(array $variables) {
 	  if ($element['#original_link']['menu_name'] == "main-menu" && isset($element['#localized_options']['attributes']['title'])){
 	    $element['#title'] .= '<em>' . $element['#localized_options']['attributes']['title'] . '</em>';
 	  }
-	  
+
 	  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
 	  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
   }
@@ -91,12 +91,16 @@ function netstof_preprocess_block(&$vars) {
  * Override or insert variables into the page template.
  */
 function netstof_preprocess_page(&$variables, $hook) {
-	if (isset($variables['node'])) {  
+	if (isset($variables['node'])) {
     $variables['theme_hook_suggestions'][] = 'page__type__'. $variables['node']->type;
     $variables['theme_hook_suggestions'][] = "page__node__" . $variables['node']->nid;
   }
   $paaroerende_img = "/images/ven_kaereste_familie_hvid.png";
-  if (request_path() == "paaroerende") {
+
+  // Highlight "paaroerende" menu link when on "paaroerende" pages
+  $current_request_path = request_path();
+
+  if ($current_request_path == "paaroerende" || strpos($current_request_path,'brevkasse/paaroerenderaadgivning') !== false ) {
       $paaroerende_img = "/images/ven_kaereste_familie_orange.png";
   }
   $variables['paaroerende_img'] = $paaroerende_img;
@@ -121,7 +125,7 @@ function netstof_form_alter(&$form, $form_state, $form_id) {
 		    $form['custom_search_blocks_form_1']['#attributes']['onblur'] = "if (this.value == '') {this.value = 'Søg i brevkassen';}";
 		    $form['custom_search_blocks_form_1']['#attributes']['onfocus'] = "if (this.value == 'Søg i brevkassen') {this.value = '';}";
 		break;
-		
+
 		case 'custom_search_blocks_form_2':
 			$form["custom_search_blocks_form_2"]["#default_value"] = "Søg i debatforum";
 			// On blur / On focus
