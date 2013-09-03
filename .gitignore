@@ -15,3 +15,5 @@ sites/default/files/.htaccess
 #Ignore mysql dumps
 *.sql.gz
 *.sql
+
+.DS_Store
