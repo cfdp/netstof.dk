@@ -6,7 +6,7 @@
 	position: relative;
 	z-index: 9;
 }
-.region-header .menu-block-wrapper > ul.menu { 
+.region-header .menu-block-wrapper > ul.menu {
 	height:154px;padding:0;margin:0;
 }
 	.region-header .menu-block-wrapper > ul.menu > li {
@@ -37,7 +37,7 @@
 	}
 		.region-header .menu-block-wrapper > ul.menu > li > a > em {
 			display: block;
-			font-size: 12px;
+			font-size: 13px;
 			font-weight: normal;
 			font-style: normal;
 			text-transform: none;
@@ -80,7 +80,7 @@
 		.region-header ul.menu > li  > ul > li {
 			list-style: none;
 			list-style-image: none;
-			display: inline;	
+			display: inline;
 			position: relative;
 			z-index: 10;
 			top: 12px;
@@ -121,7 +121,7 @@
 	.region-footer-top .block-last ul.menu li a {
 		color: #FFFFFF;
 	}
-	
+
 /**
  * FOOTER BOTTOM MENU
  */
@@ -146,7 +146,7 @@
 	.region-footer-btm .block-first ul.menu li a {
 		color: #404040;
 	}
-	
+
 /**
  * BREADCRUMB
  */
@@ -166,7 +166,7 @@
 		display: inline-block;
 		background: #404040 url("../images/bread-sep.png") no-repeat top right;
 		background-size: 12px 28px;
-		font-size: 12px; line-height: 1em;
+		font-size: 13px; line-height: 1em;
 		color: #FFFFFF;
 		text-transform: uppercase;
 		font-weight: bold;

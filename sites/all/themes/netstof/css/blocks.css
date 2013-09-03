@@ -238,13 +238,13 @@
     background: url("../images/grid-active.png") no-repeat;
   }
 		#block-views-front-page-grid-block .views-field-created, #block-views-front-page-grid-block-1 .views-field-created {
-			font-size: 11px; line-height: 11px;
+			font-size: 12px; line-height: 11px;
 			margin-bottom: 13px;
 			float: left;
 			width: 50%;
 		}
 		#block-views-front-page-grid-block .views-field-comment-count, #block-views-front-page-grid-block-1 .views-field-comment-count {
-			font-size: 11px; line-height: 11px;
+			font-size: 12px; line-height: 11px;
 			margin-bottom: 13px;
 			float: right;
 			width: 50%;
@@ -261,7 +261,6 @@
 		}
 		#block-views-front-page-grid-block .views-field-title a, #block-views-front-page-grid-block-1 .views-field-title a {
 			font-size: 20px; line-height: 20px;
-			text-transform: uppercase;
 			color: #404040;
 		}
 		#block-views-front-page-grid-block .views-field-body, #block-views-front-page-grid-block-1 .views-field-body {
@@ -449,7 +448,7 @@
 		padding: 30px 23px 23px 23px;
 	}
 	.not-front .region-sidebar-first .block .block-content {
-		font-size: 11px; line-height: 13px;
+		font-size: 12px; line-height: 13px;
 		color: #404040;
 		background: url("../images/block-btm.png") no-repeat bottom center;
 		padding: 0 23px 23px 23px;
@@ -615,7 +614,7 @@
 		background-color: #3b3b3b;
 		padding: 15px 0 15px 41px;
 		right: 0;
-		font-size: 11px;
+		font-size: 12px;
 		z-index: 10;
 	}
   .region-tabs-right .block.baseurl-info {
@@ -666,7 +665,7 @@
 			#block-webform-client-block-564 input[type=email],
 			#block-webform-client-block-564 textarea {
 				padding: 6px 8px;
-				font-size: 12px;
+				font-size: 13px;
 				color: #a29f99;
 				font-family: "Cabin", sans-serif;
 				border: 1px solid #c8c8c8;
@@ -732,7 +731,7 @@ ul.right-side-list {
 			float: left;
 		}
 		ul.right-side-list li .views-field-title {
-			font-size: 11px; line-height: 11px;
+			font-size: 12px; line-height: 11px;
 			color: #404040;
 			text-transform: uppercase;
 			margin-bottom: 3px;
@@ -808,7 +807,7 @@ ul.right-side-list {
 		width: 50%;
 		float: left;
 		text-align: right;
-		font-size: 11px;
+		font-size: 12px;
 		color: #404040;
 	}
 	.region-footer-btm .block-first {
@@ -914,7 +913,7 @@ ul.ui-autocomplete {
 	}
 	.region-leftcontent .block-content {
 		padding: 0 7px;
-		font-size: 11px; line-height: 11px;
+		font-size: 12px; line-height: 11px;
 	}
 		.region-leftcontent .block-content p {
 			margin-bottom: 5px;
@@ -926,7 +925,7 @@ ul.ui-autocomplete {
 			margin-bottom: 5px;
 		}
 	.region-leftcontent .block h3 {
-		font-size: 11px; line-height: 11px;
+		font-size: 12px; line-height: 11px;
 		font-weight: bold;
 		text-transform: uppercase;
 		margin: 0 0 4px 0;

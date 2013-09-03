@@ -24,7 +24,7 @@
 		}
 		.page-node-305 #content > .block-views .view-header {
 			float: left;
-			font-size: 12px;
+			font-size: 13px;
 		}
 			.page-node-305 .field-name-field-oversigt .field-item h2 {
 				color: #0b5a7c;
@@ -112,7 +112,7 @@
 						color: #424242;
 					}
 				.page-node-305 .field-name-field-oversigt .field-item .views-field-field-profile-public-description {
-					font-size: 12px;
+					font-size: 13px;
 					color: #424242;
 					float: left;
 					width: 151px;
@@ -127,7 +127,8 @@
 .view-Brevkasse {
 
 }
-	body.page-brevkasse .view-Brevkasse > .view-header {
+	body.page-brevkasse .view-Brevkasse > .view-header,
+	body.page-faq .view-faq > .view-header {
 		margin-bottom: 14px;
 		box-shadow: 0 0 7px #BBB;
 		background: #FFF;
@@ -136,7 +137,8 @@
 		font-family: "Cabin", sans-serif;
 		overflow: hidden;
 	}
-		.view-Brevkasse > .view-header .header-title {
+		.view-Brevkasse > .view-header .header-title,
+		.view-faq > .view-header .header-title {
 			padding: 0 0 0 50px;
 			margin-bottom: 19px;
 		}
@@ -149,11 +151,13 @@
 			.view-Brevkasse.view-display-id-page_4 .header-title {
 				background: url("../images/icon-professor.png") no-repeat 0 0;
 			}
-			.view-Brevkasse .view-header .header-title span {
+			.view-Brevkasse .view-header .header-title span,
+			.view-faq .view-header .header-title span {
 				font-size: 13px;
-				color: #3e3e3e;
+				color: #222;
 			}
-			.view-Brevkasse > .view-header .header-title h1 {
+			.view-Brevkasse > .view-header .header-title h1,
+			.view-faq > .view-header .header-title h1 {
 				color: #0b5a7c;
 				font-size: 28px; line-height: 28px;
 				margin: 0; padding: 4px 0 0 0;
@@ -184,7 +188,7 @@
 					color: #424242;
 				}
 			.view-brevkasseredaktoerer .views-field-field-profile-public-description {
-				font-size: 12px; font-family: "Cabin", sans-serif;
+				font-size: 13px; font-family: "Cabin", sans-serif;
 				color: #424242;
 				float: left;
 				width: 151px;
@@ -193,7 +197,7 @@
 		.view-Brevkasse > .view-header > .brevkasse-desc {
 			width: 50%;
 			float: left;
-			font-size: 12px;
+			font-size: 13px;
 			padding: 10px 0 0 0;
 		}
 		.view-Brevkasse > .view-header #add-question {
@@ -210,11 +214,13 @@
 			padding: 10px 12px 10px 30px;
 			border-radius: 5px;
 		}
-	.view-Brevkasse > .view-content > .views-row {
+	.view-Brevkasse > .view-content > .views-row,
+	.view-faq > .view-content > .views-row {
 		margin-bottom: 14px;
 		box-shadow: 0 0 7px #BBB;
 	}
-		.view-Brevkasse > .view-content > .views-row > .views-field {
+		.view-Brevkasse > .view-content > .views-row > .views-field,
+		.view-faq > .view-content > .views-row > .views-field {
 			background: #FFF;
 			border: none;
 			border-radius: 0;
@@ -223,65 +229,79 @@
 			font-family: "Cabin", sans-serif;
 			margin-top: 0;
 		}
-			.view-Brevkasse > .view-content > .views-row > .views-field a {
+			.view-Brevkasse > .view-content > .views-row > .views-field a,
+			.view-faq > .view-content > .views-row > .views-field a {
 				padding: 0;
 			}
-			.view-Brevkasse > .view-content > .views-row > .views-field .ui-icon {
+			.view-Brevkasse > .view-content > .views-row > .views-field .ui-icon,
+			.view-faq > .view-content > .views-row > .views-field .ui-icon {
 				background: url("../images/icon-arrow-acc.png") no-repeat center center;
 				left: 23px;
 			}
-			.view-Brevkasse > .view-content > .views-row > .views-field.ui-state-active .ui-icon {
+			.view-Brevkasse > .view-content > .views-row > .views-field.ui-state-active .ui-icon,
+			.view-faq > .view-content > .views-row > .views-field.ui-state-active .ui-icon {
 				background: url("../images/icon-arrow-acc-active.png") no-repeat center center;
 			}
-			.view-Brevkasse > .view-content > .views-row .acc_left {
+			.view-Brevkasse > .view-content > .views-row .acc_left,
+			.view-faq > .view-content > .views-row .acc_left {
 				float: left;
 				width: 75%;
 			}
-				.view-Brevkasse > .view-content > .views-row .acc_left .faq_acc_date {
+				.view-Brevkasse > .view-content > .views-row .acc_left .faq_acc_date,
+				.view-faq > .view-content > .views-row .acc_left .faq_acc_date {
 					color: #424242;
 					font-weight: bold;
-					font-size: 11px;
+					font-size: 12px;
 					margin-bottom: 2px;
 				}
-				.view-Brevkasse > .view-content > .views-row .acc_left .faq_acc_title {
+				.view-Brevkasse > .view-content > .views-row .acc_left .faq_acc_title,
+				.view-faq > .view-content > .views-row .acc_left .faq_acc_title {
 					color: #3d3d3d;
 					font-size: 15px;
 					text-transform: uppercase;
 				}
-					.view-Brevkasse .views-field.ui-state-active .acc_left .faq_acc_title {
+					.view-Brevkasse .views-field.ui-state-active .acc_left .faq_acc_title,
+					.view-faq .views-field.ui-state-active .acc_left .faq_acc_title {
 						color: #0b5a7c;
 					}
 
-			.view-Brevkasse > .view-content > .views-row .acc_right {
+			.view-Brevkasse > .view-content > .views-row .acc_right,
+			.view-faq > .view-content > .views-row .acc_right {
 				width: 25%;
 				float: left;
 				font-size: 13px;
-				color: #3e3e3e;
+				color: #222;
 				text-align: right;
 			}
-				.view-Brevkasse > .view-content > .views-row .acc_right .faq_acc_sex {
+				.view-Brevkasse > .view-content > .views-row .acc_right .faq_acc_sex,
+				.view-faq > .view-content > .views-row .acc_right .faq_acc_sex {
 					display: inline;
 				}
-				.view-Brevkasse > .view-content > .views-row .acc_right .faq_acc_age {
+				.view-Brevkasse > .view-content > .views-row .acc_right .faq_acc_age,
+				.view-faq > .view-content > .views-row .acc_right .faq_acc_age {
 					display: inline;
 					padding-left: 3px;
 				}
-		.view-Brevkasse > .view-content > .views-row > .ui-accordion-content {
+		.view-Brevkasse > .view-content > .views-row > .ui-accordion-content,
+		.view-faq > .view-content > .views-row > .ui-accordion-content {
 			border: none;
-			color: #3e3e3e;
-			font-size: 12px; line-height: 14px;
+			color: #222;
+			font-size: 13px; line-height: 15px;
 			font-family: "Cabin", sans-serif;
 			padding: 0 23px 20px 52px;
 			border-radius: 0;
+			height: auto !important;
 		}
-			.view-Brevkasse > .view-content > .views-row > .ui-accordion-content .views-label {
+			.view-Brevkasse > .view-content > .views-row > .ui-accordion-content .views-label,
+			.view-faq > .view-content > .views-row > .ui-accordion-content .views-label {
 				font-weight: bold;
 				margin-bottom: 5px;
-				font-size: 12px;
+				font-size: 13px; line-height: 15px;
 				display:block;
 				text-transform: uppercase;
 			}
-			.view-Brevkasse > .view-content > .views-row > .ui-accordion-content .views-field-view-node a {
+			.view-Brevkasse > .view-content > .views-row > .ui-accordion-content .views-field-view-node a,
+			.view-faq > .view-content > .views-row > .ui-accordion-content .views-field-view-node a {
 				color: #0b5a7c;
 				font-weight: bold;
 				font-size: 14px;
@@ -353,7 +373,7 @@
 				.view-erfaringer .views-row .acc_left .faq_acc_date {
 					color: #424242;
 					font-weight: bold;
-					font-size: 11px;
+					font-size: 12px;
 					margin-bottom: 2px;
 				}
 				.view-erfaringer .views-row .acc_left .faq_acc_title {
@@ -369,7 +389,7 @@
 				width: 25%;
 				float: left;
 				font-size: 13px;
-				color: #3e3e3e;
+				color: #222;
 				text-align: right;
 			}
 				.view-erfaringer .views-row .acc_right .faq_acc_sex {
@@ -381,8 +401,8 @@
 				}
 		.view-erfaringer .views-row > .ui-accordion-content {
 			border: none;
-			color: #3e3e3e;
-			font-size: 12px; line-height: 14px;
+			color: #222;
+			font-size: 13px; line-height: 14px;
 			font-family: "Cabin", sans-serif;
 			padding: 0 23px 20px 52px;
 			border-radius: 0;
@@ -750,7 +770,7 @@
 						width: 35%;
 					}
 					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-title a {
-						color: #3E3E3E;
+						color: #222;
 					}
 					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-nothing {
 						width: 30%;
@@ -788,7 +808,7 @@
 .page-search-node #content h2 {
 	font-size: 20px;
 	text-transform: uppercase;
-	color: #3e3e3e;
+	color: #222;
 	margin-bottom: 20px;
 	margin-top: 30px;
 }
@@ -805,7 +825,7 @@ ol.search-results {
 			padding: 0;
 		}
 			ol.search-results li h3 a {
-				color: #3e3e3e;
+				color: #222;
 			}
 		ol.search-results li .search-snippet-info {
 			margin: 0;
@@ -813,7 +833,7 @@ ol.search-results {
 		}
 		ol.search-results li .search-snippet {
 			font-size: 13px; line-height: 16px;
-			color: #3e3e3e;
+			color: #222;
 		}
 			ol.search-results li .search-snippet strong {
 				color: #ffad00;
@@ -1050,7 +1070,7 @@ body.page-paaroerende .region-sidebar-first #hurtige-genveje{
   }
   .view-id-mediekit .mediekit-compact .field-content p{
     color:#fefefe;
-    font-size:12px;
+    font-size:13px;
     text-align:center;
   }
 	/* General row styling */
@@ -1069,7 +1089,7 @@ body.page-paaroerende .region-sidebar-first #hurtige-genveje{
 	.view-id-mediekit .right .description{margin-top:1px;}
 	.region-sidebar-first #hurtige-genveje .right .description,
 	.view-id-mediekit .views-field-changed{
-		font-size:12px;color:#b8b8b8;
+		font-size:13px;color:#b8b8b8;
 	}
   .view-id-mediekit .views-field-title{
 		font-size:16px;text-transform:uppercase;

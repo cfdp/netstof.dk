@@ -8,7 +8,7 @@ input, textarea {
 input[type=search], input[type=text], input[type=password], textarea {
 	-webkit-appearance: none;
 	padding: 6px 8px;
-	font-size: 12px;
+	font-size: 13px;
 	color: #a29f99;
 	font-family: "Cabin", sans-serif;
 	border: 1px solid #c8c8c8;
@@ -24,15 +24,15 @@ input[type=search], input[type=text], input[type=password], textarea {
 }
 .page-node-add #main-content-header {
 	padding: 23px 23px 0 23px;
-	background: white url("../images/content-top.png") no-repeat top center;		
+	background: white url("../images/content-top.png") no-repeat top center;
 }
 .page-node-add #content {
 	padding: 0 23px 23px 23px;
-	background: white url("../images/content-btm.png") no-repeat bottom center;		
+	background: white url("../images/content-btm.png") no-repeat bottom center;
 }
 .page-node-add #content-btm-shadow {
 	background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
-	height: 15px;		
+	height: 15px;
 }
 .node-form {
 	font-family: "Cabin", sans-serif;
@@ -69,7 +69,7 @@ input[type=search], input[type=text], input[type=password], textarea {
 	.node-form div.description {
 		margin-left: 0;
 		clear: both;
-	}	
+	}
 	.node-form #edit-submit {
 	color: white;
 	font-weight: bold;
@@ -89,7 +89,7 @@ input[type=search], input[type=text], input[type=password], textarea {
 	.node-form .form-type-checkbox {
 		overflow: hidden;
 		margin-bottom: 3px;
-	}	
+	}
 		.node-form .form-type-checkbox label {
 			margin: 0; padding: 0;
 			position: relative; top: 2px;
@@ -125,7 +125,7 @@ input[type=search], input[type=text], input[type=password], textarea {
 /* One container to bind them... */
 .dk_container {
   font-family: 'Cabin', Arial, sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 14px;
   margin-bottom: 3px;
   border-radius: 0;
@@ -195,7 +195,7 @@ input[type=search], input[type=text], input[type=password], textarea {
     text-decoration: none;
   }
   .dk_option_current a {
-    font-weight: bold;  
+    font-weight: bold;
   }
 
 /* Inner container for options, this is what makes the scrollbar possible. */
@@ -227,7 +227,7 @@ input[type=search], input[type=text], input[type=password], textarea {
 /* Toggle */
 .dk_theme_dark .dk_toggle {
   background: #404040 url(/sites/all/themes/netstof/images/select-arrow.png) no-repeat center right;
-  border: none;	
+  border: none;
   color: #FFFFFF;
   padding: 9px 0 9px 10px;
   border-radius: 0;
@@ -243,7 +243,7 @@ input[type=search], input[type=text], input[type=password], textarea {
 .dk_theme_dark.dk_focus,
 .dk_theme_dark:focus {}
   .dk_theme_dark.dk_focus .dk_toggle {}
-  
+
 /* Open State */
 .dk_theme_dark.dk_open {}
   .dk_theme_dark.dk_open .dk_toggle {}
@@ -333,7 +333,7 @@ input[type=search], input[type=text], input[type=password], textarea {
 	font-size: 13px;
 }
 
-/** 
+/**
  * THROBBER
  */
 .progress-disabled {

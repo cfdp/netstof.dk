@@ -1,7 +1,7 @@
 /**
  * UNDERSIDER
  */
- 
+
 h1#page-title {
 	font-size: 28px; line-height: 28px;
 	color: #424242;
@@ -10,9 +10,9 @@ h1#page-title {
 }
 .not-front #main-content > #content {
 	font-size: 13px; line-height: 16px;
-	color: #3e3e3e;
+	color: #222;
 }
-h2,h3,h4,h5,h6 { 
+h2,h3,h4,h5,h6 {
 	font-family: "Cabin", sans-serif !important;
 	font-weight: normal;
 }
@@ -20,7 +20,7 @@ h2,h3,h4,h5,h6 {
 .view-empty a {
 	color: #1e6381;
 }
-	
+
 /**
  * GENERAL NODE STYLING
  */
@@ -39,7 +39,7 @@ h2,h3,h4,h5,h6 {
 			height: 15px;
 		}
 		.node-middle {
-			background: white url("../images/content-btm.png") no-repeat bottom center;		
+			background: white url("../images/content-btm.png") no-repeat bottom center;
 			padding: 25px 23px;
 			overflow: hidden;
 		}
@@ -71,7 +71,7 @@ h2,h3,h4,h5,h6 {
 			}
 	    /* Node footer */
       .node-content footer {
-        color: #3E3E3E;
+        color: #222;
       }
 
 /**
@@ -108,7 +108,7 @@ h2,h3,h4,h5,h6 {
 					clear:both;
 					width:100%;
 				}
-					.node-questions-and-answers .question .field-name-field-qna-sex  h2, 
+					.node-questions-and-answers .question .field-name-field-qna-sex  h2,
 					.node-questions-and-answers .question .field-name-field-qna-sex div,
 					.node-questions-and-answers .question .field-name-field-qna-age h2,
 					.node-questions-and-answers .question .field-name-field-qna-age div{
@@ -133,7 +133,7 @@ h2,h3,h4,h5,h6 {
 				margin-left:0;
 			}
 			.node-type-questions-and-answers .answer .field-name-field-tags ul li a{display:inline;}
-			.node-type-questions-and-answers .answer .user-picture img{margin:0;padding:0;}			
+			.node-type-questions-and-answers .answer .user-picture img{margin:0;padding:0;}
 
 /**
  * Node Type: FAQ
@@ -149,11 +149,11 @@ h2,h3,h4,h5,h6 {
 	.node-frequently-asked-question .field-name-body p {
 		margin-bottom: 15px;
 	}
-	
+
 /**
  * Node Type: LEKSIKON
  */
- 
+
 .node-encyclopedia-entry #page-title {
 	margin-bottom: 10px;
 }
@@ -179,7 +179,7 @@ h2,h3,h4,h5,h6 {
 
 /* Tags */
 .node-encyclopedia-entry .field-name-field-tags {
-	font-size: 11px; line-height: 14px;
+	font-size: 12px; line-height: 14px;
 	margin-bottom: 20px;
 	font-weight: bold;
 }
@@ -220,29 +220,30 @@ h2,h3,h4,h5,h6 {
 			background-color: #404040;
 			border-right: 1px solid #FFFFFF;
 			outline: none;
+			border: none;
 			min-width: inherit;
+			margin-right: 2px;
 		}
 		.node-encyclopedia-entry ul.horizontal-tabs-list li:focus,
 		.node-encyclopedia-entry ul.horizontal-tabs-list li:hover {
-			background-color: #404040;
+			background-color: #ffad00;
 		}
 			.node-encyclopedia-entry ul.horizontal-tabs-list li a {
 				color: #e5e4e1;
-				font-size: 12px;
+				font-size: 13px;
 				font-weight: bold;
 				outline: none;
 				padding: 0.5em 1em 0.3em 1em;
 			}
 			.node-encyclopedia-entry ul.horizontal-tabs-list li a:hover {
-				background-color: #404040;
+				background-color: #ffad00;
 			}
 		.node-encyclopedia-entry ul.horizontal-tabs-list li.selected {
-		
+
 		}
 			.node-encyclopedia-entry ul.horizontal-tabs-list li.selected a {
 				color: #424242;
 				font-size: 15px;
-				text-transform: uppercase;
 				font-weight: bold;
 				background-color: #FFFFFF;
 				padding: 0.4em 1em 0.4em 1em;
@@ -256,10 +257,10 @@ h2,h3,h4,h5,h6 {
 	.node-encyclopedia-entry .horizontal-tabs fieldset.horizontal-tabs-pane {
 		padding: 0;
 		margin: 0;
-		font-size: 12px;
+		font-size: 13px;
 		font-family: "Cabin", sans-serif;
 	}
-	
+
 /**
  * KOMMENTARER
  */
@@ -272,7 +273,7 @@ h2,h3,h4,h5,h6 {
 	}
 	#comments-form-wrapper .comment-btm {
 		background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
-		height: 15px;	
+		height: 15px;
 	}
 	#comments-form-wrapper h2.comment-title,
 	h2.comment-form {
@@ -307,7 +308,7 @@ h2,h3,h4,h5,h6 {
 		#comments-form-wrapper label {
 			margin-bottom: 3px;
 		}
-		
+
 section#comments {
 	margin: 0;
 }
@@ -316,22 +317,22 @@ section#comments {
 	}
 		section#comments article.comment .comment-top {
 			background: url("../images/big_shadow_top.png") no-repeat top center;
-			height: 11px;	
+			height: 11px;
 		}
 		section#comments article.comment .comment-btm {
 			background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
-			height: 15px;	
+			height: 15px;
 		}
 		section#comments article.comment .comment-middle {
 			position: relative;
 			padding: 50px 23px 50px;
-			background: white url("../images/content-btm.png") no-repeat bottom center;		
+			background: white url("../images/content-btm.png") no-repeat bottom center;
 		}
 			section#comments article.comment .submitted {
 				font-weight: bold;
 				text-transform: uppercase;
 				color: #424242;
-				font-size: 11px;
+				font-size: 12px;
 			}
 			section#comments article.comment .comment-middle nav {
 				position: absolute;
@@ -357,10 +358,10 @@ section#comments {
 	display: none;
 }
 
-/*  
+/*
  * Custom nodes
  */
- 
+
 /* Open new window button */
 a.open-new-window {
     background: none repeat scroll 0 0 #0B5A7C;

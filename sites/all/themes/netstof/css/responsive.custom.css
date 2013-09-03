@@ -12,7 +12,7 @@
  * NOTE: this file loads by default, to disable got to your theme settings and
  * look under the "CSS" settings tab.
  */
- 
+
 
 /**
  * MOBILE
@@ -36,7 +36,7 @@
 	.menu_icon {
 		background-position: center 5px !Important;
 	}
-	.region-header .menu-block-wrapper > ul.menu { 
+	.region-header .menu-block-wrapper > ul.menu {
 		height: 101px;
 		position: relative;
 	}
@@ -49,7 +49,7 @@
 			display:block;
 			color: #FFFFFF;
 			padding: 55px 0 0 0 !important;
-			font-size: 12px; line-height: 12px;
+			font-size: 13px; line-height: 12px;
 			text-transform: uppercase;
 			font-weight: bold;
 		}
@@ -67,7 +67,7 @@
 				top: 0;
 			}
 			.region-header ul.menu > li  > ul > li > a {
-				font-size: 12px;
+				font-size: 13px;
 			}
 	/* Page */
 	#page {
@@ -131,14 +131,14 @@
 		width: 294px;
 		max-width: none;
 		position: relative; left: -23px;
-	}	
+	}
 	.block.landing_page h2 {
 		padding: 0 23px;
 	}
 	.block.landing_page p {
 		padding: 0 23px;
 	}
-	#block-views-front-page-grid-block .block-title, 
+	#block-views-front-page-grid-block .block-title,
 	#block-views-front-page-grid-block-1 .block-title {
 		padding-left: 0;
 	}
@@ -183,7 +183,7 @@
  */
 @media only screen and (max-width: 942px) {
 	/* Header */
-	.region-header { 
+	.region-header {
 		width: 100%;
 		float: left !important;
 	}
@@ -202,7 +202,7 @@
 		.view-front-page-grid #edit-type-2 {
 			width: 50%;
 		}
-		#block-views-front-page-grid-block ul.pager, 
+		#block-views-front-page-grid-block ul.pager,
 		#block-views-front-page-grid-block-1 ul.pager{
 			right: 0;
 			top: 67px;
