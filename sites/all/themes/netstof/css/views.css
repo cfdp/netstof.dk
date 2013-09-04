@@ -811,6 +811,26 @@
 							width: 100% !important;
 						}
 					}
+
+.view-kort .dk-map-blured p {
+	font-size: 34px;
+	text-transform: uppercase;
+}
+
+@media screen and (min-width: 520px) {
+
+	.view-kort .dk-map-blured {
+		width: 100%;
+		height: 465px;
+		background: url("../images/dk-map-blured.jpg") no-repeat top center;
+	}
+	.view-kort .dk-map-blured p {
+		position: relative;
+		top: 91px;
+		left: 145px;
+	}
+}
+
 /**
  * SØGERESULTATER
  */
