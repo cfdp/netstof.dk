@@ -667,6 +667,11 @@
 .view-kort .view-filters {
 	float: left;
 	width: 100%;
+	padding: 20px;
+	background: rgba(255, 173 ,0 ,.28);
+	-webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 .view-kort .views-exposed-widgets {
 	float: left;
@@ -763,19 +768,32 @@
 				border-bottom: 1px dashed #dedddb;
 				overflow: hidden;
 			}
-				.view-kort.view-display-id-default > .attachment .item-list ul li > div {
-					float: left;
+				.view-kort.view-display-id-default > .attachment .item-list ul li > div a {
+					line-height: 18px;
 				}
-					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-title {
-						width: 35%;
+					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-title,
+					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-website {
+						width: 60%;
+						float: left;
+						clear: left;
+						margin-bottom: 4px;
 					}
 					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-title a {
+						font-size: 16px;
 						color: #222;
+						font-weight: bold;
 					}
 					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-nothing {
-						width: 30%;
+						color: #666;
+						width: 60%;
+						float: left;
+						clear: left;
+						margin-bottom: 4px;
 					}
-					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf {
+					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf,
+					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-email {
+						float: right;
+						clear: right;
 						text-align: right;
 						width: 35%;
 					}
@@ -784,6 +802,14 @@
 						background-position: center left;
 						padding: 0 0 0 15px;
 						background: url("../images/icon-phone.png") no-repeat;
+					}
+
+					@media screen and (max-width: 440px) {
+						.view-kort.view-display-id-default > .attachment .item-list ul li > div {
+							float: none !important;
+							text-align: left !important;
+							width: 100% !important;
+						}
 					}
 /**
  * SØGERESULTATER
