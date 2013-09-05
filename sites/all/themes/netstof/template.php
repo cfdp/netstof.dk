@@ -100,7 +100,7 @@ function netstof_preprocess_page(&$variables, $hook) {
   // Highlight "paaroerende" menu link when on "paaroerende" pages
   $current_request_path = request_path();
 
-  if ($current_request_path == "paaroerende" || strpos($current_request_path,'brevkasse/paaroerenderaadgivning') !== false ) {
+  if ($current_request_path == "paaroerende" || strpos($current_request_path,'brevkasse/paaroerenderaadgivning') !== false || strpos($current_request_path,'artikler/paaroerende') !== false ) {
       $paaroerende_img = "/images/ven_kaereste_familie_orange.png";
   }
   $variables['paaroerende_img'] = $paaroerende_img;
