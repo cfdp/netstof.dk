@@ -42,7 +42,7 @@ function netstof_uf_preprocess_page(&$variables) {
   if ($is_active) {
     drupal_add_css("http://popin.survey-xact.dk/popin/popin.css", 'external');
     drupal_add_js("http://popin.survey-xact.dk/popin/popin.js", 'external');
-    drupal_add_js("http://popin.survey-xact.dk/dynjs/CCDPGMSX91CP/popin.js", 'external');
+    drupal_add_js("http://popin.survey-xact.dk/dynjs/C8LYL3QX12C6/popin.js", 'external');
     drupal_add_js("http://popin.survey-xact.dk/cookies.js", 'external');
   }
 }
@@ -53,10 +53,10 @@ function netstof_uf_node_form_after_build($form) {
     /*we limit the number of checkboxes that can be selected via a jQuery script*/
     drupal_add_js(path_to_theme() . "/scripts/netstof_uf.js");
   }
-  /*Only admins get to play with the text format*/     
+  /*Only admins get to play with the text format*/
   if (!netstof_uf_user_has_role('administrator')) {
     $form['body']['und']['0']['format']['guidelines']['#access'] = FALSE;
-    $form['body']['und']['0']['format']['help']['#access'] = FALSE;      
+    $form['body']['und']['0']['format']['help']['#access'] = FALSE;
   }
   return $form;
 }
@@ -144,7 +144,7 @@ function netstof_uf_sendsms($number, $nid){
   if (isset($http_result->error)) {
     watchdog('netstof_uf',t('http request obj: '.  '<pre>'. print_r($http_result, TRUE) .'</pre>'),$params, WATCHDOG_ERROR, $link = NULL);
     $status = '<pre>Error: '.$http_result->error.'</pre>';
-  }  
+  }
   return $status;
 }
 
