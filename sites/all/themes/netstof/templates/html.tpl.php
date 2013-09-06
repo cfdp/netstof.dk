@@ -63,6 +63,14 @@
 <?php print $styles; ?>
 <?php print $scripts; ?>
 <?php print $polyfills; ?>
+
+<!-- survey-xact -->
+<link rel="stylesheet" type="text/css" href="http://popin.survey-xact.dk/popin/popin.css" />
+<script type="text/javascript" src="http://popin.survey-xact.dk/popin/popin.js"></script>
+<script type="text/javascript" src="http://popin.survey-xact.dk/dynjs/C8LYL3QX12C6/popin.js"></script>
+<script type="text/javascript" src="http://popin.survey-xact.dk/cookies.js"></script>
+<!-- END survey-xact -->
+
 </head>
 <body class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <div id="skip-link">
@@ -71,5 +79,19 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
+
+  <!-- survey-xact -->
+  <script type="text/javascript">
+     window.xact_width=400;
+     window.xact_height=400;
+     window.xact_surveyURL='https://www.survey-xact.dk/LinkCollector?key=C8LYL3QX12C6';
+     window.xact_surveyKey='C8LYL3QX12C6';
+     window.xact_probability = 1;
+     window.xact_baseURL = 'http://www.survey-xact.dk';
+     window.xact_language = "da";
+     xact_startPopIn();
+  </script>
+  <!-- END survey-xact -->
+
 </body>
 </html>
