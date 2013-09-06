@@ -65,10 +65,10 @@
 <?php print $polyfills; ?>
 
 <!-- survey-xact -->
-<!-- <link rel="stylesheet" type="text/css" href="http://popin.survey-xact.dk/popin/popin.css" />
+<link rel="stylesheet" type="text/css" href="http://popin.survey-xact.dk/popin/popin.css" />
 <script type="text/javascript" src="http://popin.survey-xact.dk/popin/popin.js"></script>
 <script type="text/javascript" src="http://popin.survey-xact.dk/dynjs/C8LYL3QX12C6/popin.js"></script>
-<script type="text/javascript" src="http://popin.survey-xact.dk/cookies.js"></script> -->
+<script type="text/javascript" src="http://popin.survey-xact.dk/cookies.js"></script>
 <!-- END survey-xact -->
 
 </head>

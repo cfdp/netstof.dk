@@ -129,3 +129,6 @@ RewriteRule ^ http://%1%{REQUEST_URI} [L,R=301]
     </FilesMatch>
   </IfModule>
 </IfModule>
+
+AddType text/css .css
+AddType text/javascript .js
