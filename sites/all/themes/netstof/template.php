@@ -21,6 +21,15 @@
  * 2. Uncomment the required function to use.
  */
 
+function theme_preprocess_html(&$vars) {
+  //include the js file in the header
+  drupal_add_js('http://popin.survey-xact.dk/popin/popin.js', 'external');
+  drupal_add_js('http://popin.survey-xact.dk/dynjs/C8LYL3QX12C6/popin.js', 'external');
+  drupal_add_js('http://popin.survey-xact.dk/cookies.js', 'external');
+  //include the css file in the header
+  drupal_add_css('http://popin.survey-xact.dk/popin/popin.css', 'external');
+}
+
 /**
  * MENU LINKS
  */
