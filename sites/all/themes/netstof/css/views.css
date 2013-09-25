@@ -813,8 +813,7 @@
 					}
 
 .view-kort .dk-map-blured p {
-	font-size: 34px;
-	text-transform: uppercase;
+	display: none;
 }
 
 @media screen and (min-width: 520px) {
