@@ -374,3 +374,21 @@ a.open-new-window {
     padding: 10px 12px;
     text-transform: uppercase;
 }
+
+
+/*Tag styringen form*/
+#webform-client-form-1052 .form-actions {
+	margin-top: 25px !important;
+}
+
+#webform-client-form-1052 .form-actions input.form-submit {
+	color: white;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 15px;
+	line-height: 15px;
+	display: inline-block;
+	background: #0B5A7C;
+	padding: 10px 12px 10px 12px;
+	border-radius: 5px;
+}
