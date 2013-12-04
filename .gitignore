@@ -17,3 +17,6 @@ sites/default/files/.htaccess
 *.sql
 
 .DS_Store
+.ruby-version
+.sass-cache
+*.sublime-workspace

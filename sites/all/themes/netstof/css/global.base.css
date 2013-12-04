@@ -15,6 +15,7 @@
 /*
  * Corrects block display not defined in IE6/7/8/9 & FF3
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\0000334}}
 article,
 aside,
 details,
@@ -32,6 +33,7 @@ summary {
 /*
  * Corrects inline-block display not defined in IE6/7/8/9 & FF3
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\0000344}}
 audio,
 canvas,
 video {
@@ -44,6 +46,7 @@ video {
  * Prevents modern browsers from displaying 'audio' without controls
  * Remove excess height in iOS5 devices
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\0000355}}
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -53,6 +56,7 @@ audio:not([controls]) {
  * Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
  * Known issue: no IE6 support
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\0000365}}
 [hidden] {
   display: none;
 }
@@ -69,9 +73,11 @@ audio:not([controls]) {
  * 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
  *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\0000383}}
 html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
+  line-height: 1.5;
   height: 100%;
   overflow-y: scroll;
 }
@@ -79,6 +85,7 @@ html {
 /*
  * 1 . Addresses margins handled incorrectly in IE6/7
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\0000395}}
 body {
   min-height: 100%;
   margin: 0;
@@ -92,6 +99,7 @@ body {
 /*
  * Addresses font-family inconsistency between 'textarea' and other form elements.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003111}}
 button,
 input,
 select,
@@ -105,6 +113,7 @@ textarea {
 /*
  * Addresses outline displayed oddly in Chrome
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003123}}
 a:focus {
   outline: thin dotted;
 }
@@ -113,6 +122,7 @@ a:focus {
  * Improves readability when focused and also mouse hovered in all browsers
  * people.opera.com/patrickl/experiments/keyboard/test
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003133}}
 a:hover,
 a:active {
   outline: 0;
@@ -127,31 +137,37 @@ a:active {
  * Addresses font sizes and margins set differently in IE6/7
  * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003149}}
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003155}}
 h2 {
   font-size: 1.5em;
   margin: 0.83em 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003161}}
 h3 {
   font-size: 1.17em;
   margin: 1em 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003167}}
 h4 {
   font-size: 1em;
   margin: 1.33em 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003173}}
 h5 {
   font-size: 0.83em;
   margin: 1.67em 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003179}}
 h6 {
   font-size: 0.75em;
   margin: 2.33em 0;
@@ -160,6 +176,7 @@ h6 {
 /*
  * Addresses styling not present in IE7/8/9, S5, Chrome
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003188}}
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -167,11 +184,13 @@ abbr[title] {
 /*
  * Addresses style set to 'bolder' in FF3+, S4/5, Chrome
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003197}}
 b,
 strong {
-  font-weight: 700;
+  font-weight: bold;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003202}}
 blockquote {
   margin: 1em 40px;
 }
@@ -179,6 +198,7 @@ blockquote {
 /*
  * Addresses styling not present in S5, Chrome
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003210}}
 dfn {
   font-style: italic;
 }
@@ -186,6 +206,7 @@ dfn {
 /*
  * Addresses styling not present in IE6/7/8/9
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003218}}
 mark {
   background: #ff0;
   color: #000;
@@ -194,6 +215,7 @@ mark {
 /*
  * Addresses margins set differently in IE6/7
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003228}}
 p,
 pre {
   margin: 0 0 1.5em;
@@ -203,18 +225,20 @@ pre {
  * Corrects font family set oddly in IE6, S4/5, Chrome
  * en.wikipedia.org/wiki/User:Davidgothberg/Test59
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003240}}
 pre,
 code,
 kbd,
 samp {
   font-family: monospace, serif;
-  _font-family: 'courier new', monospace;
+  _font-family: "courier new", monospace;
   font-size: 1em;
 }
 
 /*
  * Improves readability of pre-formatted text in all browsers
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003250}}
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -225,16 +249,19 @@ pre {
  * 1. Addresses CSS quotes not supported in IE6/7
  * 2. Addresses quote property not supported in S4
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003262}}
 q {
   quotes: none;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003268}}
 q:before,
 q:after {
   content: '';
   content: none;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003274}}
 small {
   font-size: 75%;
 }
@@ -243,6 +270,7 @@ small {
  * Prevents sub and sup affecting line-height in all browsers
  * gist.github.com/413930
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003284}}
 sub,
 sup {
   font-size: 75%;
@@ -251,10 +279,12 @@ sup {
   vertical-align: baseline;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003292}}
 sup {
   top: -0.5em;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003297}}
 sub {
   bottom: -0.25em;
 }
@@ -265,6 +295,7 @@ sub {
 /*
  * Addresses margins set differently in IE6/7
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003312}}
 dl,
 menu,
 ol,
@@ -272,6 +303,7 @@ ul {
   margin: 1em 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003317}}
 dd {
   margin: 0 0 0 40px;
 }
@@ -279,6 +311,7 @@ dd {
 /*
  * Addresses paddings set differently in IE6/7
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003327}}
 menu,
 ol,
 ul {
@@ -288,6 +321,7 @@ ul {
 /*
  * Corrects list images handled incorrectly in IE7
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003336}}
 nav ul,
 nav ol {
   list-style: none;
@@ -302,6 +336,7 @@ nav ol {
  * 2. Improves image quality when scaled in IE7
  *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003351}}
 img {
   /* border: 0; */
   /* Drupal core already does this, uncomment if you need it */
@@ -311,6 +346,7 @@ img {
 /*
  * Corrects overflow displayed oddly in IE9
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003360}}
 svg:not(:root) {
   overflow: hidden;
 }
@@ -321,6 +357,7 @@ svg:not(:root) {
 /*
  * Addresses margin not present in IE6/7/8/9, S5, O11
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003372}}
 figure {
   margin: 0;
 }
@@ -331,13 +368,15 @@ figure {
 /*
  * Corrects margin displayed oddly in IE6/7
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003384}}
 form {
   margin: 0;
 }
 
 /*
- * Define consistent border, margin, and padding
+ * Define consistent margin, and padding
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003392}}
 fieldset {
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
@@ -348,6 +387,7 @@ fieldset {
  * 2. Corrects text not wrapping in FF3
  * 3. Corrects alignment displayed oddly in IE6/7
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003403}}
 legend {
   border: 0;
   padding: 0;
@@ -360,6 +400,7 @@ legend {
  * 2. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
  * 3. Improves appearance and consistency in all browsers
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003419}}
 button,
 input,
 select,
@@ -373,6 +414,7 @@ textarea {
 /*
  * Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003431}}
 button,
 input {
   line-height: normal;
@@ -384,6 +426,7 @@ input {
  * 3. Removes inner spacing in IE7 without affecting normal text inputs
  *    Known issue: inner spacing remains in IE6
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003445}}
 button,
 input[type="button"],
 input[type="reset"],
@@ -396,6 +439,7 @@ input[type="submit"] {
 /*
  * Re-set default cursor for disabled elements
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003456}}
 button[disabled],
 input[disabled] {
   cursor: default;
@@ -407,6 +451,7 @@ input[disabled] {
  * 3. Removes excess padding in IE7
  *    Known issue: excess padding remains in IE6
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003468}}
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -419,6 +464,7 @@ input[type="radio"] {
  * 1. Addresses appearance set to searchfield in S5, Chrome
  * 2. Addresses box-sizing set to border-box in S5, Chrome (include -moz to future-proof)
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003480}}
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
@@ -429,6 +475,7 @@ input[type="search"] {
 /*
  * Removes inner padding and search cancel button in S5, Chrome on OS X
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003492}}
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
@@ -438,6 +485,7 @@ input[type="search"]::-webkit-search-cancel-button {
  * Removes inner padding and border in FF3+
  * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003502}}
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -448,6 +496,7 @@ input::-moz-focus-inner {
  * 1. Removes default vertical scrollbar in IE6/7/8/9
  * 2. Improves readability and alignment in all browsers
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003512}}
 textarea {
   overflow: auto;
   vertical-align: top;
@@ -459,6 +508,7 @@ textarea {
 /*
  * 1. Remove most spacing between table cells
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003525}}
 table {
   border: 1px solid;
   border-spacing: 0;
@@ -475,6 +525,7 @@ table {
  * see Extensions > Modify Output > Design
  * $gutter-width is set in _base.scss
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003551}}
 #main-content,
 .block-inner,
 .pane-inner,
@@ -483,7 +534,6 @@ table {
 .breadcrumb-wrapper,
 .attribution,
 .at-panel .rounded-corner,
-.block-panels-mini > .block-title,
 div.messages {
   margin-left: 10px;
   margin-right: 10px;
@@ -493,6 +543,7 @@ div.messages {
  * Panel pages need negative margin equal to the gutter width applied to #content,
  * this is taken care of in theme settings as per above for normal gutters
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003561}}
 #content .panel-display,
 #content .panel-flexible {
   margin-left: -10px;
@@ -509,12 +560,14 @@ div.messages {
  *   the "dissappering images" bug in IE8.
  * - Mapping services such as Google Maps may break also, see below for fixes.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003579}}
 img {
   height: auto;
   -ms-interpolation-mode: bicubic;
 }
 
 /* Ethan Marcotte - http://front.ie/l8rJaA */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003589}}
 img,
 embed,
 object,
@@ -523,6 +576,7 @@ video {
 }
 
 /* Disable flexiblity for IE8 and below */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003598}}
 .lt-ie9 img,
 .lt-ie9 object,
 .lt-ie9 embed,
@@ -531,6 +585,7 @@ video {
 }
 
 /* Override max-width 100% for map displays */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003611}}
 #map img,
 .gmap img,
 .view-gmap img,
@@ -546,6 +601,7 @@ video {
     Misc helpers, Accessibility classes etc
    ========================================================================== */
 /* Prevent overflowing content */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003628}}
 header[role=banner],
 .content-inner,
 .nav,
@@ -567,6 +623,7 @@ header[role=banner],
  * Kellum Method: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement
  * Additional helpers from http://html5boilerplate.com/docs/css/
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003644}}
 .ir {
   /* Kellum Method */
   display: block !important;
@@ -586,6 +643,7 @@ header[role=banner],
 }
 
 /* More robust element-invisible and element-focuable classes */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003664}}
 .element-invisible {
   border: 0;
   clip: rect(1px 1px 1px 1px);
@@ -598,6 +656,7 @@ header[role=banner],
   width: 1px;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003677}}
 .element-invisible.element-focusable:active,
 .element-invisible.element-focusable:focus {
   clip: auto;
@@ -608,6 +667,7 @@ header[role=banner],
 }
 
 /* Shift content offscreen, can be usefull when you reall need to do this */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003687}}
 .offscreen {
   position: absolute;
   top: -99999em;
@@ -618,6 +678,7 @@ header[role=banner],
 }
 
 /* Hide content from all users */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/global\.base\.scss}line{font-family:\00003698}}
 .element-hidden {
   display: none;
 }
