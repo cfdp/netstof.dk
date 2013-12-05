@@ -8,7 +8,35 @@
  * - Read the _README file in this directory, it contains useful help and other information.
  */
 /* Increase the body font size on small devices */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lajlev\/web\/netstof\.dk\/sites\/all\/themes\/netstof\/sass\/responsive\.tablet\.portrait\.scss}line{font-family:\0000316}}
 html {
-  font-size: 81.3%;
+  /* font-size: 81.3%; */
+}
+
+/**
+ * CONTENT
+ */
+#main-content {
+  margin-right: 0 !important;
+}
+
+/**
+ * NAVIGATION
+ */
+.region-header .menu-block-wrapper > ul.menu {
+  width: 611px;
+  float: left;
+}
+
+/* Footer */
+.region-footer section.block {
+  margin: 10px 0 0 23px;
+}
+
+.region-footer section.block-first,
+.region-footer section.block-last {
+  margin: 10px 0 0 0;
+}
+
+.region-footer section.block-last {
+  clear: left;
 }
