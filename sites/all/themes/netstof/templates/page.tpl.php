@@ -129,6 +129,7 @@
 <div id="header-btm-container">
 	<div class="container">
 		<a href="/paaroerende" title="Artikler og rådgivning for pårørende"><img src="<?php print $base_path.drupal_get_path("theme","netstof").$variables['paaroerende_img'];?>" id="find-hjaelp" /></a>
+    <iframe src="http://netstofchat.cybhus.dk/sites/all/themes/netstofchat/chat_header_widget/index.html" frameborder="0" scrolling="no" class="chat-header-widget"></iframe>
 	</div>
 </div>
 
@@ -136,17 +137,17 @@
 
   <!-- Messages and Help -->
   <?php print $messages; ?>
-  <?php print render($page['help']); ?>   
+  <?php print render($page['help']); ?>
 
   <div id="columns" class="columns clearfix">
-  
+
     <!-- regions: Sidebar top -->
-    <?php $sidebar_top = render($page['sidebar_top']); print $sidebar_top; ?>  
-  
+    <?php $sidebar_top = render($page['sidebar_top']); print $sidebar_top; ?>
+
     <div id="content-column" class="content-column" role="main">
 
       <div class="content-inner clearfix">
-				
+
         <<?php print $tag; ?> id="main-content">
 
           <?php print render($title_prefix); // Does nothing by default in D7 core ?>
@@ -154,11 +155,11 @@
           <?php if ($title || $primary_local_tasks || $secondary_local_tasks || $action_links = render($action_links)): ?>
             <header<?php print $content_header_attributes; ?>>
 
-          	  <?php 
+          	  <?php
           	  /* Hide titles on all node and forum pages */
           	  $show_title = TRUE;
-          	  
-          	  if(arg(0)=="node" && is_numeric(arg(1))) { 
+
+          	  if(arg(0)=="node" && is_numeric(arg(1))) {
 					  $show_title = false;
           	  }
           	  else if(arg(0)=="forum" && is_numeric(arg(1))) {
@@ -222,7 +223,7 @@
     <?php $sidebar_first = render($page['sidebar_first']); print $sidebar_first; ?>
 
   </div><!-- /end #columns -->
-  
+
   <!-- region: Featured -->
   <?php if($is_front || (request_path() == "paaroerende")) print render($page['featured']); ?>
 
@@ -243,7 +244,7 @@
 	<footer class="container">
 	  <?php print render($page['footer']); ?>
 	</footer>
-	
+
 	<div id="scroll-top">
 		<a href="#"></a>
 	</div>

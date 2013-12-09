@@ -1751,3 +1751,18 @@ tr.error {}
   min-height: 260px;
   width: auto;
 }
+
+// Chat Widget header - Iframe
+iframe.chat-header-widget{
+  width: 216px;
+  height: 91px;
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  top: -32px;
+  left: 180px;
+
+  @media (max-width: 942px){
+    display: none;
+  }
+}

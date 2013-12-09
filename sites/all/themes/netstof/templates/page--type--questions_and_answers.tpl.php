@@ -129,6 +129,7 @@
 <div id="header-btm-container">
 	<div class="container">
     <a href="/paaroerende" title="Artikler og rådgivning for pårørende"><img src="<?php print $base_path.drupal_get_path("theme","netstof").$variables['paaroerende_img'];?>" id="find-hjaelp" /></a>
+    <iframe src="http://netstofchat.cybhus.dk/sites/all/themes/netstofchat/chat_header_widget/index.html" frameborder="0" scrolling="no" class="chat-header-widget"></iframe>
 	</div>
 </div>
 
@@ -139,13 +140,13 @@
 
   <!-- Messages and Help -->
   <?php print $messages; ?>
-  <?php print render($page['help']); ?>   
+  <?php print render($page['help']); ?>
 
   <div id="columns" class="columns clearfix">
-  
+
 	<!-- regions: Sidebar top -->
-    <?php $sidebar_top = render($page['sidebar_top']); print $sidebar_top; ?>  
-  
+    <?php $sidebar_top = render($page['sidebar_top']); print $sidebar_top; ?>
+
     <div id="content-column" class="content-column" role="main">
       <div class="content-inner">
 
@@ -212,7 +213,7 @@
     <?php $sidebar_first = render($page['sidebar_first']); print $sidebar_first; ?>
 
   </div><!-- /end #columns -->
-  
+
   <!-- region: Featured -->
   <?php if($is_front) print render($page['featured']); ?>
 

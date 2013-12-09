@@ -1170,3 +1170,18 @@ div.messages ul {
   min-height: 260px;
   width: auto;
 }
+
+iframe.chat-header-widget {
+  width: 216px;
+  height: 91px;
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  top: -32px;
+  left: 180px;
+}
+@media (max-width: 942px) {
+  iframe.chat-header-widget {
+    display: none;
+  }
+}
