@@ -1,0 +1,8 @@
+name = Image poll
+description = "Allows creation of standard or approval weighted polls with the option to create write-ins, limit by electoral list or present any poll as a block.  It takes advantage of the Voting API to track votes with the option to use cookies instead of IP/Authenticated user ids."
+dependencies[] = number
+dependencies[] = list
+dependencies[] = votingapi
+
+core = 7.x
+package = "Voting"

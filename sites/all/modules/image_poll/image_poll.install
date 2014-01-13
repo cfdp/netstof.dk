@@ -1,0 +1,592 @@
+<?php
+
+/**
+ * @file
+ * Install file for Image Poll
+ * Much thanks to the example modules. MW
+ * 
+ * */
+
+
+function image_poll_field_image_schema() {
+  $schema = array();
+  
+  $schema['image_poll_choice_image'] = array(
+    'fields' => array(
+      'choice_id' => array(
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+      ),
+      'fid' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ),
+    ),
+    'primary key' => array('choice_id'),
+  );
+
+  return $schema;
+}
+
+function image_poll_install() {
+
+// fetch the t function for use in install
+  $t = get_t();
+
+  // We define the node type as an associative array.
+  $node_adv = array(
+    'type' => 'image_poll',
+    'name' => $t('Image Poll'),
+    'base' => 'node_content',
+    'has_title' => 1,
+    'description' => $t('Image Poll adds additional poll functionality, cookie voting, write-ins and voting modes.'),
+    'title_label' => $t('Question'),
+    'custom' => TRUE,
+  );
+
+  // Complete the node type definition by setting any defaults not explicitly
+  // declared above.
+  // http://api.drupal.org/api/function/node_type_set_defaults/7
+  $content_type = node_type_set_defaults($node_adv);
+
+  //We add a body field and set the body label immediately.
+  node_add_body_field($content_type, $t('Description'));
+
+  // Save the content type
+  node_type_save($content_type);
+
+
+  // Load the instance definition for our content type's body
+  // http://api.drupal.org/api/function/field_info_instance/7
+  $body_instance = field_info_instance('node', 'body', 'image_poll');
+
+  // Add our example_node_list view mode to the body instance display by
+  // instructing the body to display as a summary
+  $body_instance['display']['image_poll_list'] = array(
+    'label' => 'hidden',
+    'type' => 'text_summary_or_trimmed',
+  );
+
+  // http://api.drupal.org/api/function/field_update_instance/7
+  field_update_instance($body_instance);
+
+  // http://api.drupal.org/api/function/field_create_field/7
+  foreach (_image_poll_installed_fields() as $field) {
+    field_create_field($field);
+  }
+
+  // Create all the instances for our fields.
+  // http://api.drupal.org/api/function/field_create_instance/7
+  foreach (_image_poll_installed_instances() as $instance) {
+    $instance['entity_type'] = 'node';
+    $instance['bundle'] = $node_adv['type'];
+    field_create_instance($instance);
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ *
+ * @ingroup node_example
+ */
+function image_poll_uninstall() {
+  // Gather all the example content that might have been created while this
+  // module was enabled.  Simple selects still use db_query().
+  // http://api.drupal.org/api/function/db_query/7
+  $sql = 'SELECT nid FROM {node} n WHERE n.type = :type';
+  $result = db_query($sql, array(':type' => 'image_poll'));
+  $nid = array();
+  foreach ($result as $row) {
+    $nid[] = $row->nid;
+  }
+
+
+  if ($nid) {
+    db_delete('votingapi_vote')
+      ->condition('entity_id', $nid, 'IN')
+      ->condition('entity_type', 'image_poll')
+      ->execute();
+
+    // Delete all the nodes at once
+    // http://api.drupal.org/api/function/node_delete_multiple/7
+    node_delete_multiple($nid);
+  }
+  // Loop over each of the fields defined by this module and delete
+  // all instances of the field, their data, and the field itself.
+  // http://api.drupal.org/api/function/field_delete_field/7
+  foreach (array_keys(_image_poll_installed_fields()) as $field) {
+    field_delete_field($field);
+  }
+
+  // Loop over any remaining field instances attached to the node_example
+  // content type (such as the body field) and delete them individually.
+  // http://api.drupal.org/api/function/field_delete_field/7
+  $instances = field_info_instances('node', 'image_poll');
+  foreach ($instances as $instance_name => $instance) {
+    field_delete_instance($instance);
+  }
+
+  // Delete our content type
+  // http://api.drupal.org/api/function/node_type_delete/7
+  node_type_delete('image_poll');
+
+  // Purge all field infromation
+  // http://api.drupal.org/api/function/field_purge_batch/7
+  field_purge_batch(1000);
+}
+
+/**
+ * Returns a structured array defining the fields created by this content type.
+ *
+ * This is factored into this function so it can be used in both
+ * node_example_install() and node_example_uninstall().
+ *
+ * @return
+ *  An associative array specifying the fields we wish to add to our
+ *  new node type.
+ *
+ * @ingroup node_example
+ */
+function _image_poll_installed_fields() {
+  $t = get_t();
+  return array(
+    // -- Choices field --
+    'image_poll_choice' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'image_poll_choice',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'choice' => array(
+          0 => 'choice',
+        ),
+      ),
+      'module' => 'image_poll_field',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'image_poll',
+    ),
+    // -- Max number of choices field
+    'image_poll_max_choices' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'image_poll_max_choices',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'module' => 'number',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    // -- Cookie duration field
+    'image_poll_cookie_duration' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'image_poll_cookie_duration',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'module' => 'number',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    // Poll mode field
+    'image_poll_mode' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'image_poll_mode',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'normal' => $t('Normal (handled by default Vote API settings). Restricts to one vote per IP adress.'),
+          'cookie' => $t('By Cookie'),
+          'unlimited' => $t('Unlimited (Allows those with permission to vote on polls to vote as many times as they wish. Write-ins are disabled).'),
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    // Poll options field
+    'image_poll_options' => array(
+      'active' => '1',
+      'cardinality' => '4',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'image_poll_options',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'block' => $t('Generate a block for this poll'),
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+  );
+}
+
+/**
+ * Returns a structured array defining the instances for this content type.
+ *
+ * The instance lets Drupal know which widget to use to allow the user to enter
+ * data and how to react in different view modes.  We are going to display a
+ * page that uses a custom "node_example_list" view mode.  We will set a
+ * cardinality of three allowing our content type to give the user three color
+ * fields.
+ *
+ * This is factored into this function so it can be used in both
+ * node_example_install() and node_example_uninstall().
+ *
+ * @return
+ *  An associative array specifying the instances we wish to add to our new
+ *  node type.
+ *
+ * @ingroup node_example
+ */
+function _image_poll_installed_instances() {
+  $t = get_t();
+  return array(
+    // -- Choices field instance display info
+    'image_poll_choice' => array(
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => $t('Add at least 2 choices for your poll.  Write-in values indicate user generated content.  If you approve of a choice that has been written in by a user, uncheck it and it will be integrated into the poll for others to vote upon.'),
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '1',
+        ),
+        'example_node_list' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'image_poll_choice',
+      'label' => $t('Poll Choice'),
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'image_poll_field',
+        'settings' => array(),
+        'type' => 'image_poll_write_in',
+        'weight' => '1',
+      ),
+    ),
+    // -- Max choices instance display
+    'image_poll_max_choices' => array(
+      'default_value' => array(
+        0 => array(
+          'value' => '1',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => $t('Select the maximum number of choices that can be voted upon.'),
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'hidden',
+          'weight' => 2,
+        ),
+        'example_node_list' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'image_poll_max_choices',
+      'label' => $t('Maximum choices'),
+      'required' => 1,
+      'settings' => array(
+        'max' => '',
+        'min' => '1',
+        'prefix' => '',
+        'suffix' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => '2',
+      ),
+    ),
+    // Options fields display instance
+    'image_poll_options' => array(
+      'default_value' => array(
+        0 => array(
+          'value' => 'showvotes',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => $t('Generate a stand-alone block for this specific poll.'),
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 3,
+        ),
+        'example_node_list' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'image_poll_options',
+      'label' => $t('Voting options'),
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '5',
+      ),
+    ),
+    // Mode field instance display
+    'image_poll_mode' => array(
+      'default_value' => array(
+        0 => array(
+          'value' => 'normal',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => $t('Warning, changing this setting after votes have already been recorded for this poll will cause existing votes to be flushed.'),
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 4,
+        ),
+        'example_node_list' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'image_poll_mode',
+      'label' => $t('Vote storage mode'),
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '6',
+      ),
+    ),
+    // Cookie duration field
+    'image_poll_cookie_duration' => array(
+      'default_value' => array(
+        0 => array(
+          'value' => '42300',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => $t('If the poll\'s voting availability is being controlled by a cookie, this value determine how long to wait between votes in minutes. Default value is set for 1 month.'),
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'hidden',
+          'weight' => 8,
+        ),
+        'example_node_list' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'image_poll_cookie_duration',
+      'label' => $t('Cookie duration'),
+      'required' => 0,
+      'settings' => array(
+        'max' => '',
+        'min' => '1',
+        'prefix' => '',
+        'suffix' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => '7',
+      ),
+    ),
+  );
+}
+
+/*
+ * Implements hook_update_N()
+ * 7000 removes Show votes option.
+ */
+
+function image_poll_update_7000() {
+  db_delete('field_data_image_poll_options')
+    ->condition('image_poll_options_value', 'showvotes')
+    ->execute();
+  // fetch the t function for use in install
+  $t = get_t();
+
+  // Remove options that are no longer valid from initial build and replace
+  // only with valid options.
+  $field = array(
+    'field_name' => 'image_poll_options',
+    'settings' => array(
+      'allowed_values' => array(
+        'block' => $t('Generate a block for this poll'),
+      ),
+      'allowed_values_function' => '',
+    ),
+  );
+  field_update_field($field);
+}
+
+/*
+ * @file
+ * Image Poll Field Install
+ * 
+ * Custom field widget used by Image Poll to link write-in flag to each available choice.
+ * 
+ * Note: choice_id is necessary as a hidden field to provide a related unique value for each
+ * choice field. Each time a choice is removed or reordered, its delta is reset, as is the
+ * array provided in the node data.  As a result, simply passing an index to the votingapi as
+ * the id for a given choice proved inadequate in cases where choice delta changes due to 
+ * content editing or write-in values being merged.
+ * 
+ * Initially I had planned to use an auto-incrementing primary key field but this does not
+ * work with the custom field API, hence I settled for this solution.
+ * The unique value is just a randomized timestamp that has been converted to hex for brevity.
+ */
+
+function image_poll_field_schema($field) {
+  $columns = array(
+    'choice_id' => array('type' => 'varchar', 'length' => 10, 'not null' => TRUE),
+    'choice' => array('type' => 'varchar', 'length' => 500, 'not null' => TRUE),
+    'write_in' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0),
+  );
+  $indexes = array(
+    'choice' => array('choice'),
+  );
+  return array(
+    'columns' => $columns,
+    'indexes' => $indexes,
+  );
+}
+
+function image_poll_schema() {
+  $schema = array();
+  
+  $schema['image_poll_choice_image'] = array(
+    'fields' => array(
+      'choice_id' => array(
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+      ),
+      'fid' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ),
+    ),
+    'primary key' => array('choice_id'),
+  );
+
+  return $schema;
+}

@@ -1,0 +1,1617 @@
+<?php
+
+/*
+ * @file
+ * Image Poll Module
+ * 
+ * Image Poll provides you with a host of powerful options that go beyond the 
+ * abilities of the built in poll that ships with Drupal core. Here's what this 
+ * set of modules has to offer:
+ * 
+ *  1. Native Drupal ajax updating of voting results - no need for a page refresh.
+ *  2. A base CCK content type that can be modified to fit your needs. Need an 
+ *     image field or a footer message? No problem, just add them to the content 
+ *     type.
+ *  3. The ability to set any poll to generate a block.
+ *  4. The ability to allow more than one user choice. This is particularly handy 
+ *     for allowing users to rate a list of options.
+ *  5. An electoral list can be defined for each poll.
+ *  7. Three voting modes - normal (standard Voting API behavior), cookie 
+ *     tracking, or unlimited voting.
+ *  8. A variety of options for when and how to display voting results.
+ *  9. Up to four voting behaviors when Advanced Ranking Poll is enabled.
+ * 10. A converter module that can make your existing core Drupal polls into 
+ *     Image Polls.
+ */
+module_load_include('inc', 'image_poll', 'includes/image_poll_voteapi');
+module_load_include('inc', 'image_poll', 'includes/image_poll_helper');
+/**
+ * Implements hook_menu()
+ */
+
+function image_poll_preprocess_page(&$variables) {
+  if (isset($variables['node']) && $variables['node']->type == 'image_poll') {
+    // Add js
+  drupal_add_js(drupal_get_path('module', 'image_poll') .'/js/image_poll.js');
+    $variables['scripts'] = drupal_get_js();
+  }
+}
+
+function image_poll_menu() {
+// changed to inspect-votes because it conflicted with path for standard poll module.
+  $menu['node/%node/image_poll/votes'] = array(
+    'title' => 'Votes',
+    'page callback' => 'image_poll_votes_page',
+    'page arguments' => array(1),
+    'access callback' => '_image_poll_votes_access',
+    'access arguments' => array(1),
+    'weight' => 3,
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'image_poll.pages.inc',
+    'file path' => drupal_get_path('module', 'image_poll') . '/includes',
+  );
+
+// Allow voters to be removed.
+  $menu['node/%node/remove'] = array(
+    'page callback' => 'image_poll_remove_voter',
+    'page arguments' => array(1),
+    'access arguments' => array('administer polls'),
+    'weight' => 3,
+    'type' => MENU_CALLBACK,
+    'file' => 'image_poll.pages.inc',
+    'file path' => drupal_get_path('module', 'image_poll') . '/includes',
+  );
+
+// Allow votes to be cleared.
+  $menu['node/%node/image_poll/votes/clear'] = array(
+    'page callback' => 'image_poll_clear_votes_page',
+    'page arguments' => array(1),
+    'access callback' => '_image_poll_clear_votes_access',
+    'access arguments' => array(1),
+    'weight' => 3,
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'image_poll.pages.inc',
+    'file path' => drupal_get_path('module', 'image_poll') . '/includes',
+  );
+
+// Show the write-ins tab if poll is set to use them.
+  $menu['node/%node/write-ins'] = array(
+    'title' => 'Write-ins',
+    'page callback' => 'image_poll_writeins_page',
+    'page arguments' => array(1),
+    'access callback' => '_image_poll_writeins_access',
+    'access arguments' => array(1),
+    'weight' => 3,
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'image_poll.pages.inc',
+    'file path' => drupal_get_path('module', 'image_poll') . '/includes',
+  );
+
+// show results of poll to administrators
+  $menu['node/%node/results'] = array(
+    'title' => 'Results',
+    'page callback' => 'image_poll_results_page',
+    'page arguments' => array(1),
+    'access callback' => '_image_poll_results_access',
+    'access arguments' => array(1),
+    'weight' => 3,
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'image_poll.pages.inc',
+    'file path' => drupal_get_path('module', 'image_poll') . '/includes',
+  );
+
+// Allow votes to be cleared.
+  $menu['node/%node/image_poll/votes/clear'] = array(
+    'page callback' => 'image_poll_clear_votes_page',
+    'page arguments' => array(1),
+    'access callback' => '_image_poll_clear_votes_access',
+    'access arguments' => array(1),
+    'weight' => 3,
+    'type' => MENU_LOCAL_TASK,
+    'file path' => drupal_get_path('module', 'image_poll') . '/includes',
+    'file' => 'image_poll.pages.inc',
+  );
+  return $menu;
+}
+
+/**
+ * Implementation of hook_permission().
+ * 
+ * Note - rules for editting, deleting or creating polls is now handled by Node permissions
+ * since the poll content types are CCK.
+ */
+function image_poll_permission() {
+  return array(
+    'vote on polls' => array(
+      'title' => t('Vote on polls'),
+      'description' => t('User may vote on polls.'),
+    ),
+    'cancel own vote' => array(
+      'title' => t('Cancel own vote'),
+      'description' => t('User may cancel their vote in cases where individual user votes are being tracked.'),
+    ),
+    'administer polls' => array(
+      'title' => t('Administer polls'),
+      'description' => t('User may use poll administration pages.'),
+      'restrict access' => TRUE,
+    ),
+    'inspect all votes' => array(
+      'title' => t('Inspect all votes'),
+      'description' => t('User may use votes administration page.'),
+      'restrict access' => TRUE,
+    ),
+    'show vote results' => array(
+      'title' => t('Show vote results'),
+      'description' => t('User may view poll results in cases where access to results is restricted by node settings.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_node_view().
+ *
+ * Since node is defined as CCK in install script, needed to use this instead of
+ * hook_view.
+ */
+function image_poll_node_view($node, $view_mode) {
+  if ($node->type == 'image_poll') {
+    $data = image_poll_get_data($node);
+
+      drupal_add_css(drupal_get_path('module', 'image_poll') . '/css/image_poll.css', array('group' => CSS_DEFAULT, 'every_page' => TRUE));
+// replace the markup for choices with appropriate markup.
+      unset($node->content['image_poll_choice']);
+// check for eligibility to vote
+      if (image_poll_user_eligibility($node)) {
+// print out voting form
+        $previous = '';
+        $voteform = drupal_get_form('image_poll_choice_form', $node, $previous);
+        $node->content['image_poll_choice'] = array(0 => $voteform, '#weight' => 1);
+      } else {
+// get user's votes if they're logged in and if voting is normal
+        $votes = array();
+        if ($data->mode == 'normal') {
+          $votes = image_poll_get_user_votes($node->nid);
+        }
+
+        $results = image_poll_display_results($node->nid, $data);
+        $node->content['image_poll_choice'] = array('#markup' => $results, '#weight' => 1);
+      }
+  }
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function image_poll_block_info() {
+
+  $blocks['image_poll_recent'] = array(
+    'info' => t('Image Poll: Most Recent'),
+  );
+
+  $blocks = image_poll_get_poll_info_blocks($blocks);
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function image_poll_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'image_poll_recent':
+      $recent = image_poll_get_recent();
+      $block['subject'] = t('Most Recent Poll');
+      if ($recent) {
+        $block['content'] = array(
+          '#markup' => $recent,
+        );
+      }
+      break;
+    default:
+      $block = image_poll_generate_block_view($block, $delta);
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function image_poll_theme($existing, $type, $theme, $path) {
+  return array(
+    'image_poll_bar' => array(
+      'variables' => array(
+        'percentage' => 0,
+        'votes' => 0,
+        'voted' => 0,
+        'cancel_form' => NULL
+      ),
+      'path' => drupal_get_path('module', 'image_poll') . '/templates',
+      'template' => 'image_poll-bar'
+    ),
+    'image_poll_closed' => array(
+      'variables' => array('data' => NULL),
+      'path' => drupal_get_path('module', 'image_poll') . '/templates',
+      'template' => 'image_poll-closed'
+    ),
+    'image_poll_noresults' => array(
+      'variables' => array(
+        'votes' => NULL,
+        'nid' => NULL,
+        'cancel_form' => NULL
+      ),
+      'path' => drupal_get_path('module', 'image_poll') . '/templates',
+      'template' => 'image_poll-noresults'
+    ),
+    'image_poll_results' => array(
+      'variables' => array(
+        'bars' => NULL,
+        'total' => 0,
+        'voted' => NULL,
+        'nid' => NULL,
+        'cancel_form' => NULL
+      ),
+      'path' => drupal_get_path('module', 'image_poll') . '/templates',
+      'template' => 'image_poll-results'
+    ),
+    // Theme image output
+    'image_poll_image' => array(
+      'variables' => array('fid' => NULL, 'choice_text' => NULL),
+    ),
+    // Override / Add suggestion for image_poll choice form template
+    // TODO: is this the best way?
+    'image_poll_choice_form' => array(
+      'render element' => 'form',
+      'path' => drupal_get_path('module', 'image_poll') . '/templates',
+      'template' => 'image_poll-choice-form',
+    ),
+  );
+}
+
+/*
+ * Implements hook_node_presave().
+ */
+
+function image_poll_node_presave($node) {
+  if ($node->type === 'image_poll') {
+
+    $lang = $node->language;
+
+    if (!isset($node->image_poll_choice[$lang])) {
+      $lang = 'und';
+    }
+
+    // get all existing choices in the node
+    $choices = $node->image_poll_choice[$lang];
+    $count = count($choices);
+
+    // set up for the benefit of Devel to ensure values present
+    // a normal/average type of poll setting.
+    if (isset($node->devel_generate)) {
+      $node->image_poll_max_choices[$lang][0]['value'] = $count;
+      $node->image_poll_mode[$lang][0]['value'] = 'normal'; 43200; 
+      unset($node->image_poll_options);
+    }
+
+
+    // ensure there are no duplicate choice_ids in this node
+    $ids = array();
+    for ($i = 0; $i < $count; $i++) {
+      $id = $choices[$i]['choice_id'];
+      if (!in_array($id, $ids)) {
+        $ids[] = $id;
+      } else {
+        $new_id = dechex(time() * rand(5, 50));
+        $node->image_poll_choice[$lang][$i]['choice_id'] = $new_id;
+        $ids[] = $new_id;
+      }
+    }
+
+    // check for vote results for this node      
+    if (isset($nid)) {
+      $criteria = array();
+      $criteria['entity_id'] = $node->nid;
+      $criteria['entity_type'] = 'image_poll';
+      $results = votingapi_select_votes($criteria);
+
+      // Scrub any votes that are orphaned when a choice is removed.
+      if ($results) {
+        $noMatch = array();
+        foreach ($results as $vote) {
+          if (!in_array($vote['tag'], $ids)) {
+            $noMatch[] = $vote;
+          }
+        }
+
+        votingapi_delete_votes($noMatch);
+      }
+    }
+  }
+}
+
+/*
+ * Implements hook_node_delete().
+ */
+
+function image_poll_node_delete($node) {
+  db_delete('votingapi_vote')
+    ->condition('entity_id', $node->nid)
+    ->condition('entity_type', 'image_poll')
+    ->execute();
+
+  if ($node->type == 'image_poll') {
+    $lang = image_poll_get_choices_lang($node);
+    foreach ($node->image_poll_choice[$lang] as $choice) {
+      image_poll_image_delete($choice['choice_id']);
+    }
+  }
+}
+
+/*
+ * Implements hook_form_alter().
+ */
+
+function image_poll_form_alter(&$form, $form_state, $form_id) {
+// Add validation to max_choices field.
+  if ($form_id == 'image_poll_node_form') {
+    $lang = $form['language']['#value'];
+    unset($form['body']);
+    if (!isset($form['image_poll_max_choices'][$lang])) {
+      $lang = 'und';
+    }
+
+    $form['image_poll_max_choices'][$lang][0]['value']['#element_validate'][] = 'image_poll_validate_max_choices';
+  }
+// Instant voting
+  if ($form_id == 'image_poll_choice_form') {
+    $form[2]['#ajax'] = array(
+      'callback' => 'image_poll_form_submit',
+      'wrapper' => $form['#id']
+    );
+// no need to unset the submit button at this time since it's used by javascript to vote    
+//    unset($form['submit']);
+  }
+}
+
+/*
+ * Validate node fields
+ * 
+ * Extra validation for image_poll node edit - max choices field.
+ * Make sure that the max choices for a poll never exceeds the number of  choices
+ * entered by a user.
+ * 
+ */
+
+function image_poll_validate_max_choices($element, &$form_state, $form) {
+  $input_choices = array();
+  $lang = $form_state['build_info']['args'][0]->language;
+
+  if (!isset($form_state['input']['image_poll_choice'][$lang])) {
+    $lang = 'und';
+  }
+
+  $choices = $form_state['input']['image_poll_choice'][$lang];
+
+  foreach ($choices as $choice) {
+    if ($choice['choice']) {
+      $input_choices[] = $choice['choice'];
+    }
+  }
+
+  $max = (int) $element['#value'];
+  if ($max > count($input_choices)) {
+    form_error($element, t('The max number of choices is @max.', array('@max' => $max)));
+  }
+
+  if (count($input_choices) < 2) {
+    form_set_error('image_poll_choice', t('Please enter at least two choices.'));
+  }
+}
+
+/*
+ * Determine how to theme poll results 
+ * 
+ * @param $nid
+ * Node id of the poll
+ * @param $data
+ * Data from the node formatted by one of the helper functions in the 
+ * image_poll_helper.inc document.
+ * @param $page
+ * A boolean value that indicates whether the request is to be displayed 
+ * normally (0) or on the results page (1)
+ */
+
+function image_poll_display_results($nid, $data, $page = 0) {
+
+  $output = '';
+  $form = NULL;
+  
+// get user's votes if they're logged in and if voting is normal
+  $votes = array();
+  if ($data->mode == 'normal') {
+    $votes = image_poll_get_user_votes($nid);
+  }
+  if (user_access('cancel own vote') && $votes) {
+    $form = drupal_get_form('image_poll_cancel_vote_form', $nid);
+  }
+  $rendered_form = drupal_render($form);
+
+
+  if (!$page && $data->max_choices == '9999') {
+    $output .= theme('image_poll_closed', array('data' => $data));
+  } else {
+    $results = image_poll_get_votes($nid);
+    $bars = '';
+    $final = image_poll_update_choices($data->choices, $results['choices']);
+
+//TODO - update title to indicate that the source of a vote is a write in
+//       Allow permission to determine whether or not to display a write in vote in results.
+    foreach ($final as $item) {
+      $voted = FALSE;
+
+      if (in_array($item['tag'], $votes)) {
+        $voted = TRUE;
+      }
+      $title = $item['title'];
+
+      $show_bar = TRUE;
+      if ($item['write_in']) {
+        $title .= ' ' . t('(Write in)');
+
+        $show_bar = _image_poll_show_writeins_access();
+      }
+
+      if ($show_bar) {
+        $bars .= theme('image_poll_bar', array(
+          'title' => $title,
+          'percentage' => $item['percentage'],
+          'votes' => $item['votes'],
+          'voted' => $voted,
+          'cancel_form' => $rendered_form,
+          )
+        );
+      }
+    }
+
+    $output .= theme('image_poll_results', array(
+      'bars' => $bars,
+      'total' => $results['total'],
+      'voted' => $votes,
+      'nid' => $nid,
+      'cancel_form' => $rendered_form,
+      )
+    );
+  }
+
+  return $output;
+}
+
+/*
+ * Update vote choices
+ * 
+ * A helper function to associate results with choices and order them properly
+ * for display.
+ * 
+ * @param $choices
+ * An array of poll choices
+ * @param $results
+ * A keyed array containing voting choices and total votes.
+ * @return
+ * A keyed array of voting totals for each choice.
+ * 
+ */
+
+function image_poll_update_choices($choices, $results) {
+  $choiceSet = array();
+  $write_in = array();
+  foreach ($choices as $choice) {
+    $choiceSet[$choice['choice_id']] = $choice['choice'];
+    $write_in[$choice['choice_id']] = $choice['write_in'];
+  }
+
+  $final = array();
+  $final['0'] = array();
+
+  foreach ($results as $result) {
+    if ($result['index'] == $choices['0']['choice_id']) {
+    $final['0'] = array(
+      'title' => $choiceSet[$result['index']],
+      'percentage' => $result['percentage'],
+      'votes' => $result['votes'],
+      'tag' => $result['index'],
+      'write_in' => $write_in[$result['index']],
+    );
+// choice has been accounted for - remove it
+    unset($choiceSet[$result['index']]);
+    }
+    else {
+      $final['1'] = array(
+      'title' => $choiceSet[$result['index']],
+      'percentage' => $result['percentage'],
+      'votes' => $result['votes'],
+      'tag' => $result['index'],
+      'write_in' => $write_in[$result['index']],
+    );
+// choice has been accounted for - remove it
+    unset($choiceSet[$result['index']]);
+    }   
+  }
+
+// If there are still items in this array, it means they have
+// no votes associated with them but they still need to be 
+// rendered.
+
+  if (count($choiceSet) > 0) {
+    foreach ($choiceSet as $key => $choice) {
+      if ($choice == $choices['0']['choice']) {
+      $final['0'] = array(
+        'title' => $choice,
+        'percentage' => 0,
+        'votes' => 0,
+        'tag' => $key,
+        'write_in' => $write_in[$key],
+      );
+    }
+    else {
+      $final['1'] = array(
+        'title' => $choice,
+        'percentage' => 0,
+        'votes' => 0,
+        'tag' => $key,
+        'write_in' => $write_in[$key],
+      );
+    }
+    }
+  }
+
+  return $final;
+}
+
+/*
+ * Voting form for Image Poll
+ * 
+ * Native ajax functionality is being used to generate write-in field as poll
+ * settings and form state dictate.
+ */
+
+function image_poll_choice_form($form, &$form_state, $values, $previous) {
+  $data = image_poll_get_data($values);
+  $count = count($data->choices);
+  $options = array();
+
+  $form['#id'] = 'image_poll-form-' . $values->nid;
+  for ($i = 0; $i < $count; $i++) {
+    if (!$data->choices[$i]['write_in']) {
+      $options[] = strip_tags($data->choices[$i]['choice']);
+    }
+  }
+
+  $options = drupal_map_assoc($options);
+  $input_type = 'radios';
+  if ($data->max_choices > 1) {
+    $input_type = 'checkboxes';
+  }
+
+  if ($data->write_in && $data->mode != 'unlimited') {
+    $options['write-in'] = t('Other (Write-in)');
+    $form['choice_' + $count] = array(
+      '#type' => $input_type,
+      '#title' => '',
+      '#options' => $options,
+      '#ajax' => array(
+        'callback' => 'image_poll_writein_callback',
+        'wrapper' => 'image_poll-form-' . $values->nid,
+        'effect' => 'fade',
+      )
+    );
+
+    if (isset($form_state['values'])) {
+      foreach ($form_state['values'] as $key => $item) {
+        if (is_numeric($key)) {
+          break;
+        }
+      }
+
+      $selected = FALSE;
+      if ($input_type == 'radios') {
+        if ($item === 'write-in') {
+          $selected = TRUE;
+        }
+      } else {
+        if ($item['write-in']) {
+          $selected = TRUE;
+        }
+      }
+
+      if ($selected) {
+        $form['write_in'] = array(
+          '#type' => 'textfield',
+          '#element_validate' => array('image_poll_writein_validate'),
+          '#prefix' => '<div class="image_poll-write-in">',
+          '#suffix' => '</div>',
+          '#size' => '30'
+        );
+      }
+    }
+  } else {
+    $form['choice_' + $count] = array(
+      '#type' => $input_type,
+      '#title' => '',
+      '#options' => drupal_map_assoc($options),
+    );
+  }
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#ajax' => array(
+      'callback' => 'image_poll_form_submit',
+      'wrapper' => 'image_poll-form-' . $values->nid,
+      'name' => 'submit1',
+    ),
+    '#value' => t($values->nid),
+  );
+
+  $form['#previous_vote'] = array(
+       'type' => 'hidden',
+       '#value' => $previous,
+    );
+$stufff=$values->nid;
+  drupal_add_js(array('image_poll' => array('formid' => $stufff)), array('type' => 'setting'));
+  $form['#attached']['js'][] = drupal_get_path('module', 'image_poll') . '/js/image_poll.js';
+
+  return $form;
+}
+
+/*
+ * Validate contents of write-in field.
+ */
+
+function image_poll_writein_validate($element, &$form_state, $form) {
+  if (empty($element['#value'])) {
+    form_error($element, t('Please type in your write-in choice or select a different option.'));
+  }
+}
+
+/*
+ * Used by Ajax form to allow smoother validation of write-in.
+ */
+
+function image_poll_writein_callback($form, $form_state) {
+  return $form;
+}
+
+/**
+ * Submit handler for voting
+ */
+function image_poll_form_submit($form, &$form_state) {
+  $data = image_poll_get_form_data($form_state);
+  $count = count($data->choices);
+  $votes = $form[$count]['#value'];
+  $nid = $form_state['build_info']['args'][0]->nid;
+  $writein = '';
+  $message = image_poll_form_submit_check($data, $nid);
+//ddl($data);
+  if ($message) {
+    $form['message'] = array(
+      '#type' => 'markup',
+      '#prefix' => '<div id="message">',
+      '#suffix' => '</div>',
+      '#markup' => $message,
+    );
+    //unset the submit button due to multiple ajax requests 
+    unset($form['submit']);
+    return $form;
+  }
+
+// check to see if a write-in exists and was filled in.
+  if ($data->write_in) {
+
+    if (isset($form_state['values']['write_in'])) {
+      $writein = trim($form_state['values']['write_in']);
+
+// Sanitize and check to see if there's a valid write in afterward.
+// There is no reason for a user to be allowed to use html tags.
+      $writein = filter_xss($writein);
+      $writein = check_plain($writein);
+
+      if ($writein) {
+        $data->choices[] = image_poll_process_writein($nid, $writein, $data);
+      } else {
+        $form['message'] = array(
+          '#type' => 'markup',
+          '#prefix' => '<div id="message">',
+          '#suffix' => '</div>',
+          '#markup' => t('Please type in a valid write-in choice or select a different option.'),
+        );
+        return $form;
+      }
+    }
+  }
+
+// data structure returned from form is based upon whether it was a radios
+// or checkbox element
+if (!$form['#previous_vote']['#value']['#previous_vote_id']) {
+  if ($data->max_choices > 1) {
+    if ($writein) {
+      unset($votes['write-in']);
+      $votes[$writein] = $writein;
+    }
+    $selected = image_poll_checkbox_selected($data->choices, $votes);
+  } else {
+    if ($writein) {
+      $votes = $writein;
+    }
+    $selected = image_poll_radio_selected($data->choices, $votes);
+  }
+} else {
+  foreach (($data->choices) as $key => $value) {
+      if ($value['choice_id'] !== $form['#previous_vote']['#value']['#previous_vote_id']) {
+      $selected['0'] = $value['choice_id'];
+      }
+    }
+}
+
+  if (count($selected) > 0 && count($selected) <= $data->max_choices) {
+    foreach ($selected as $item) {
+      $vote = array();
+      $vote['type'] = 'image_poll';
+      $vote['tag'] = $item;
+      $vote['nid'] = $nid;
+      $vote['value'] = 1;
+      $vote['mode'] = $data->mode;
+      $vote['duration'] = $data->cookie_duration;
+      image_poll_add_votes($vote);
+    }
+
+    $element['#markup'] = image_poll_display_results($nid, $data);
+    return $element;
+  } else {
+    $form['message'] = array(
+      '#type' => 'markup',
+      '#prefix' => '<div id="message">',
+      '#suffix' => '</div>',
+      '#markup' => t('Select up to @quantity @votes.', array(
+        '@quantity' => $data->max_choices,
+        '@votes' => format_plural($data->max_choices, 'vote', 'votes')
+        )
+      ),
+    );
+    return $form;
+  }
+}
+
+// Method is used to check again for user having already voted to prevent having multiple
+// instances of the same poll open on different pages to cast more votes.
+function image_poll_form_submit_check($data, $nid) {
+  if ($data->mode === 'cookie' && isset($_COOKIE['image_poll' . $nid])) {
+    return t('You have already voted on this poll.');
+  }
+
+  if ($data->mode === 'normal') {
+    global $user;
+    $criteria = array();
+    $criteria['entity_id'] = $nid;
+    $criteria['entity_type'] = 'image_poll';
+
+    global $user;
+    if ($user->uid) {
+      $criteria['uid'] = $user->uid;
+    } else {
+      $criteria['vote_source'] = ip_address();
+    }
+
+    $results = votingapi_select_votes($criteria);
+    if ($results) {
+      ddl($data);
+      return t('You have already voted on this poll. Please refresh the page to see the lastest updates.');
+    }
+  }
+
+  return;
+}
+
+/*
+ * Form element for canceling votes
+ */
+
+function image_poll_cancel_vote_form($form, &$form_state, $nid) {
+
+  $form['#nid'] = $nid;
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#ajax' => array(
+      'callback' => 'image_poll_cancel_vote_submit',
+      'wrapper' => 'image_poll-' . $nid,
+      'name' => 'submit1',
+    ),
+    '#value' => t('Cancel your vote'),
+  );
+
+  return $form;
+}
+
+/*
+ * Submit function for cancelling a vote.
+ */
+
+function image_poll_cancel_vote_submit($form, &$form_state) {
+  global $user;
+  if ($user->uid) {
+    $nid = $form['#nid'];
+    $criteria = array();
+    $criteria['entity_id'] = $nid;
+    $criteria['entity_type'] = 'image_poll';
+    $criteria['uid'] = $user->uid;
+
+    $initial_vote = votingapi_select_votes($criteria);
+    $previous_vote['#previous_vote_id'] = $initial_vote['0']['tag'];
+
+    votingapi_delete_votes(votingapi_select_votes($criteria));
+
+    $node = node_load($nid);
+
+    if (image_poll_user_eligibility($node)) {
+// print out voting form
+      $update_form = drupal_get_form('image_poll_choice_form', $node, $previous_vote);
+      return drupal_render($update_form);
+
+    }
+  }
+  else {
+    $nid = $form['#nid'];
+    $criteria = array();
+    $criteria['entity_id'] = $nid;
+    $criteria['entity_type'] = 'image_poll';
+    $criteria['uid'] = $user->uid;
+
+    $selected_votes = votingapi_select_votes($criteria);
+    foreach ($selected_votes as $key => $value) {
+      if ($value['vote_source'] == ip_address()) {
+        $vote_id = $value['vote_id'];
+        $selected_vote[$vote_id] = $value;
+      }
+    }
+
+    $previous_vote['#previous_vote_id'] = $selected_vote[$vote_id]['tag'];
+
+    votingapi_delete_votes($selected_vote);
+
+    $node = node_load($nid);
+
+    if (image_poll_user_eligibility($node)) {
+// print out voting form
+      $update_form = drupal_get_form('image_poll_choice_form', $node, $previous_vote);
+      return drupal_render($update_form);
+    }
+  }
+}
+
+/*
+ * Process write-in value
+ * 
+ * Write in choice is added to node here.  Note that before the write in value
+ * is passed off to be saved, it is sanitized and checked in the form submit
+ * This allows the submit function to provide appropriate messaging if
+ * the resulting sanitized value returns as empty.
+ * 
+ * @param $nid
+ * Node id of the poll
+ * @param $writein
+ * The sanitized input of the write-in field.
+ * @param $data
+ * A data object of the relevant fields for the node.  It is defined by the
+ * helper functions in image_poll_helper.inc.
+ * @return
+ * Returns an array in the same format as a choice field:
+ *   choice:    The text of the choice
+ *   choice_id: The unique ID of the choice
+ *   write_in:  Boolean indicating whether or not the chioce was provided
+ *              by a write-in vote. In this case it is always TRUE.
+ * 
+ */
+
+function image_poll_process_writein($nid, $writein, $data) {
+  $node = node_load($nid);
+  $id = dechex(time() * rand(5, 50));
+  $writein_choice = array();
+
+  if ($node) {
+    $lang = $node->language;
+
+    if (!isset($node->image_poll_choice[$lang])) {
+      $lang = 'und';
+    }
+
+    $nodeChoices = $node->image_poll_choice[$lang];
+    $writein_choice = array(
+      'choice' => $writein,
+      'write_in' => 1,
+      'choice_id' => $id
+    );
+
+    $nodeChoices[] = $writein_choice;
+    $node->image_poll_choice[$lang] = $nodeChoices;
+    node_save($node);
+  }
+
+  return $writein_choice;
+}
+
+/*
+ * Gets content for most recent poll block.
+ * @return
+ * A rendered node or NULL.
+ */
+
+function image_poll_get_recent() {
+// check to see if the page that is loading this block is a node page
+  $loaded_node = menu_get_object();
+
+  $node = '';
+  $result = db_query("SELECT n.nid FROM {node} n
+                      LEFT JOIN {field_data_image_poll_options} o
+                      ON o.revision_id = n.vid
+                      WHERE
+                      n.nid NOT IN(
+                        SELECT entity_id
+                        FROM {field_data_image_poll_options}
+                      ) AND
+                      n.type = 'image_poll' AND
+                      n.status = 1 AND
+                      ORDER BY n.created DESC 
+                      LIMIT 1");
+  if ($result) {
+    foreach ($result as $record) {
+      $node = node_load($record->nid);
+      break;
+    }
+
+    if ($node) {
+// Prevent block from showing on its node's page.
+      if ($loaded_node) {
+        if ($loaded_node->nid == $record->nid) {
+          return '';
+        }
+      }
+      $rendered_node = node_view($node);
+      return drupal_render($rendered_node);
+    }
+  }
+
+  return $node;
+}
+
+/*
+ * Fetches available polls that are set to display as blocks and adds them
+ * to info list.
+ * 
+ * @param $blocks
+ * The list of available blocks.
+ * @return 
+ * Block object
+ */
+
+function image_poll_get_poll_info_blocks($blocks) {
+  $result = db_query("SELECT n.title, n.nid FROM {node} n
+                      LEFT JOIN {field_data_image_poll_options} o
+                      ON o.revision_id = n.vid
+                      WHERE
+                      n.type = 'image_poll' AND
+                      o.image_poll_options_value = 'block' AND
+                      n.status = 1
+                      ORDER BY n.created DESC");
+  if ($result) {
+    foreach ($result as $record) {
+
+      $blocks['image_poll_block_' . $record->nid] = array(
+        'info' => t('Image Poll: @title', array('@title' => $record->title)),
+      );
+    }
+  }
+
+  return $blocks;
+}
+
+/*
+ * Fetch nodes associated with delta for polls that are marked to show as blocks.
+ * 
+ * @param $block
+ * Reference to block object
+ * @param $delta
+ * The delta of the requested block.
+ * @return
+ * Returns a block object
+ */
+
+function image_poll_generate_block_view($block, $delta) {
+// only run this process when there is an Image Poll
+// block to process
+  $pattern = '/(?i)(image_poll)/';
+  if (@preg_match($pattern, $delta)) {
+// check to see if the page that is loading this block is a node page
+    $loaded_node = menu_get_object();
+    $parts = explode('_', $delta);
+    $nid = $parts[count($parts) - 1];
+    $isBlock = FALSE;
+    if ($nid) {
+      $node = node_load($nid);
+// had to test against type - value was returning a boolean but
+// simply doing if ($node) still indicated the node existed. MW
+      if (gettype($node) == 'object') {
+        isset($node->image_poll_options[$node->language]) ?
+            $options = $node->image_poll_options[$node->language] :
+            $options = $node->image_poll_options['und'];
+
+// need to check to see if the nid is meant to display as a block or not.
+// It's possible the value gets switched off but the block id is still
+// assigned to a region and will display anyway.
+        foreach ($options as $option) {
+          if ($option['value'] == 'block') {
+            $isBlock = TRUE;
+          }
+        }
+
+        if ($isBlock) {
+// prevent block from showing on its node's page
+          if ($loaded_node) {
+            if ($loaded_node->nid == $node->nid) {
+              return $block;
+            }
+          }
+          $rendered_node = node_view($node);
+          $block['subject'] = t('Poll');
+          $block['content'] = array(
+            '#markup' => drupal_render($rendered_node),
+          );
+        }
+      }
+    }
+  }
+  return $block;
+}
+
+/**
+ * Results access callback.
+ * 
+ * Results tab displays the same bar graph of poll results that is displayed 
+ * after casting a vote. It offers a means for users with the appropriate access 
+ * to be able to see the results without having to vote or in cases where 
+ * results are never displayed.
+ * 
+ * @param $node
+ * An Image Poll node.
+ * @return
+ * Returns TRUE or FALSE 
+ */
+function _image_poll_results_access($node) {
+  if ($node->type == 'image_poll') {
+    $data = image_poll_get_data($node);
+    $votes = image_poll_get_votes($node->nid);
+    return ($votes['total'] > 0 && (user_access("show vote results") || user_access('administer polls')));
+  }
+}
+
+/**
+ * Votes access callback.
+ * 
+ * Determines who is able to see the individual votes linked to user id or 
+ * anonymous id. Users with administer poll access can always see this page.
+ * 
+ * @param $node
+ * An Image Poll node. 
+ * @return
+ * Returns TRUE or FALSE
+ */
+function _image_poll_votes_access($node) {
+  if ($node->type == 'image_poll') {
+    $data = image_poll_get_data($node);
+    $votes = image_poll_get_votes($node->nid);
+    return ($votes['total'] > 0 && (user_access('inspect all votes') || user_access('administer polls')));
+  }
+}
+
+/**
+ * Clear votes access callback.
+
+ * @param $node
+ * An Image Poll node.
+ * @return
+ * Returns TRUE or FALSE
+ */
+function _image_poll_clear_votes_access($node) {
+  if ($node->type == 'image_poll') {
+    $votes = image_poll_get_votes($node->nid);
+    return ($votes['total'] > 0 && user_access('administer polls'));
+  }
+}
+
+/**
+ * Writeins access callback.
+ *
+ * @param $node
+ * An Image Poll node.
+ * @return
+ * Returns TRUE or FALSE
+ */
+function _image_poll_writeins_access($node) {
+  if ($node->type == 'image_poll') {
+    $data = image_poll_get_data($node);
+    return (user_access('administer polls') && $data->write_in);
+  }
+}
+
+/**
+ * Show write-ins access callback.
+ *
+ * @param $node
+ * An Image Poll node.
+ * @return
+ * Returns TRUE or FALSE
+ */
+function _image_poll_show_writeins_access() {
+  return user_access('show write-ins');
+}
+
+/**
+ * Implementation of hook_views_api().
+ */
+function image_poll_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'image_poll') . '/views',
+  );
+}
+
+/**
+/*
+ * @file
+ * Image Poll Field Module
+ * 
+ * Provides a FieldAPI field type for presenting an Image Poll choice field with
+ * a Boolean checkbox to indicate write-in status.
+ */
+
+
+function image_poll_image_default_styles() {
+  $styles = array();
+
+  $styles['image_poll_custom_style'] = array(
+    'effects' => array(
+      array(
+        'name' => 'image_resize', 
+        'data' => array(
+          'width' => 225,
+          'height' => 225,
+        ), 
+        'weight' => 0,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
+ * Implements hook_field_info().
+ */
+function image_poll_field_info() {
+  return array(
+    'image_poll' => array(
+      'label' => t('Image Poll Choice'),
+      'description' => t('A compound field for displaying a choice field and its write-in status.'),
+      'default_widget' => 'image_poll_write_in',
+      'default_formatter' => 'image_poll_choice',
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_is_empty().
+ */
+function image_poll_field_is_empty($item, $field) {
+  return (empty($item['choice']));
+}
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function image_poll_field_formatter_info() {
+  return array(
+    'image_poll_choice' => array(
+      'label' => t('Image Poll Widget'),
+      'field types' => array('image_poll'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ * Write-in flag is not visible.
+ */
+function image_poll_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+
+  switch ($display['type']) {
+    case 'image_poll_choice':
+      foreach ($items as $delta => $item) {
+        $element[$delta]['#markup'] = filter_xss($item['choice'], $allowed = array('em', 'strong', 'a', 'b', 'i'));
+      }
+      break;
+  }
+
+  return $element;
+}
+
+/**
+ * Implements hook_field_widget_info().
+ *
+ * Create appropriate FAPI widget for display in form.
+ */
+function image_poll_field_widget_info() {
+  return array(
+    'image_poll_write_in' => array(
+      'label' => t('Image Poll Choice'),
+      'field types' => array('image_poll'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_widget_form().
+ *
+ */
+function image_poll_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
+  $element += array(
+    '#delta' => $delta,
+  );
+
+  switch ($instance['widget']['type']) {
+    case 'image_poll_write_in':
+      $element['choice'] = array(
+        '#title' => check_plain($element['#title']),
+        '#type' => 'textfield',
+        '#size' => 110,
+        '#default_value' => empty($items[$delta]['choice']) ? '' : $items[$delta]['choice'],
+        '#description' => check_plain($element['#description']),
+        '#required' => $element['#required']
+      );
+      $element['write_in'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Write-in (When checked, item will not be displayed for voting until unchecked.)'),
+        '#default_value' => empty($items[$delta]['write_in']) ? 0 : 1,
+      );
+      $default = dechex(time() * rand(5, 50));
+      // decided to hex for a smaller value to stick into votingapi tag field. Added a randomized
+      // multiplier to make absolutely sure value is unique if choices are created at the same time.
+      $element['choice_id'] = array(
+        '#type' => 'hidden',
+        '#default_value' => empty($items[$delta]['choice_id']) ? $default : $items[$delta]['choice_id'],
+      );
+  }
+  return $element;
+}
+
+/**
+ * Implements hook_field_views_data().
+ */
+function image_poll_field_views_data($field) {
+  // An attempt to make a Views friendly display.
+
+  $views_fields = field_views_field_default_views_data($field);
+  foreach ($views_fields as $key => $data) {
+    $views_fields[$key][$field['field_name'] . '_choice']['argument']['name field'] = $field['field_name'] . '_choice';
+  }
+  return $views_fields;
+}
+
+
+
+function image_poll_field_widget_image_poll_write_in_form_alter(&$element, &$form_state, $context) {
+  $default_value = image_poll_image_load($element['choice_id']['#default_value']);
+
+  $element['image'] = array(
+    '#type' => 'managed_file',
+    '#title' => t('Image'),
+    '#default_value' => $default_value ? $default_value : 0,
+    
+    // Require the field - disabled for now due to addition of 1 more empty choice field by ajax
+    //'#required' => TRUE,
+    
+    // TODO: Do not hardwire image location
+    '#upload_location' => 'public://image_poll/image_poll-field-image',
+    '#upload_validators' => array(
+      'file_validate_is_image' => array(),
+      'file_validate_extensions' => array('png gif jpg jpeg'),
+    ),
+  );
+}
+
+/**
+ * Return image html.
+ */
+function theme_image_poll_image($variables) {
+  $fid = $variables['fid'];
+  $choice_text = isset($variables['choice_text']) ? $variables['choice_text'] : '';
+
+  if (!$fid) {
+    return '';
+  }
+
+  $file = file_load($fid);
+  return ' ' . theme('image_style', array(
+    'style_name' => variable_get('image_poll_style', 'image_poll_custom_style'),
+    'path' => $file->uri,
+    'title' => $choice_text,
+    'alt' => "$choice_text image",
+    'attributes' => array(
+      'class' => array('image', 'choice-image'),
+    ),
+  ));
+}
+
+/**
+ * Implements hook_node_update().
+ */
+function image_poll_node_update($node) {
+  if ($node->type == 'image_poll') {
+    image_poll_choices_save($node);
+  }
+}
+
+/**
+ * Implements hook_node_insert().
+ */
+function image_poll_node_insert($node) {
+  if ($node->type == 'image_poll') {
+    image_poll_choices_save($node);
+  }
+}
+
+/**
+ * Save choices images.
+ */
+function image_poll_choices_save($node) {
+  $lang = image_poll_get_choices_lang($node);
+
+  $new_images = array();
+  foreach ($node->image_poll_choice[$lang] as $choice) {
+    if ($choice['image']) {
+      $new_images[$choice['choice_id']] = $choice['image'];
+    }
+  }
+
+  $old_images = array();
+  if (isset($node->original)) {
+    foreach ($node->original->image_poll_choice[$lang] as $choice) {
+      if ($choice['image']) {
+        $old_images[$choice['choice_id']] = $choice['image'];
+      }
+    }
+  }
+
+  // Delete images, that existed in the old node, but do not exist in the new node
+  foreach ($old_images as $choice_id => $image) {
+    if (!isset($new_images[$choice_id])) {
+      image_poll_image_delete($choice_id);
+    }
+  }
+
+  foreach ($new_images as $choice_id => $image) {
+    // Delete images, that has changed in the new node
+    if (isset($old_images[$choice_id]) && $old_images[$choice_id] != $image) {
+      image_poll_image_delete($choice_id);
+    }
+
+    // Add images, which were not in the old node
+    if (!isset($old_images[$choice_id])) {
+      image_poll_image_add($node->nid, $choice_id, $image);
+    }
+  }
+}
+
+
+/**
+ * Implements hook_field_attach_load().
+ */
+function image_poll_field_attach_load($entity_type, $entities, $age, $options) {
+  if ($entity_type == 'node') {
+    // Find choice ids
+    $choice_ids = array();
+    foreach ($entities as $node) {
+      if ($node->type == 'image_poll') {
+        $lang = image_poll_get_choices_lang($node);
+        foreach ($node->image_poll_choice[$lang] as $choice) {
+          $choice_ids[] = $choice['choice_id'];
+        }
+      }
+    }
+
+    // Add data to nodes
+    if ($choice_ids) {
+      $images = image_poll_image_load_multiple($choice_ids);
+      foreach ($entities as &$node) {
+        if ($node->type == 'image_poll') {
+          $lang = image_poll_get_choices_lang($node);
+          foreach ($node->image_poll_choice[$lang] as &$choice) {
+            $choice['image'] = isset($images[$choice['choice_id']]) ? $images[$choice['choice_id']] : 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Return choices language.
+ */
+function image_poll_get_choices_lang($node) {
+  $lang = $node->language;
+  if (!isset($node->image_poll_choice[$lang])) {
+    $lang = 'und';
+  }
+  return $lang;
+}
+
+/**
+ * Return image fid by choice id.
+ */
+function image_poll_image_load($choice_id) {
+  return db_select('image_poll_choice_image', 'aci')
+    ->fields('aci', array('fid'))
+    ->condition('choice_id', $choice_id)
+    ->execute()
+    ->fetchField();
+}
+
+/**
+ * Return images by choice ids
+ */
+function image_poll_image_load_multiple($choice_ids) {
+  return db_select('image_poll_choice_image', 'aci')
+    ->fields('aci', array('choice_id', 'fid'))
+    ->condition('choice_id', $choice_ids, 'IN')
+    ->execute()
+    ->fetchAllKeyed();
+}
+
+/**
+ * Delete image file and relation by choice id.
+ */
+function image_poll_image_delete($choice_id) {
+  $image = image_poll_image_load($choice_id);
+  if ($image) {
+    // Delete file
+    $file = file_load($image);
+    file_usage_delete($file, 'image_poll');
+    file_delete($file);
+
+    // Delete relation
+    db_delete('image_poll_choice_image')
+      ->condition('choice_id', $choice_id)
+      ->execute();
+  }
+}
+
+/**
+ * Change file status and add relation.
+ */
+function image_poll_image_add($nid, $choice_id, $image) {
+  if (!$image || !$choice_id) {
+    return FALSE;
+  }
+
+  db_insert('image_poll_choice_image')
+    ->fields(array(
+      'choice_id' => $choice_id,
+      'fid' => $image,
+    ))
+    ->execute();
+
+  $file = file_load($image);
+  $file->status = FILE_STATUS_PERMANENT;
+  file_save($file);
+  file_usage_add($file, 'image_poll', 'node', $nid);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function image_poll_form_image_poll_choice_form_alter(&$form, &$form_state, $form_id) {
+  // Add choice images to form, designed to be accessed and themed at the template level.
+  // Image keys correspond to choice keys.
+
+  // Get images for this poll
+  $node = $form_state['build_info']['args'][0];
+  $lang = image_poll_get_choices_lang($node);
+  $images = array();
+  foreach ($node->image_poll_choice[$lang] as $choice) {
+    if ($choice['image']) {
+      $images[$choice['choice']] = $choice['image'];
+    }
+  }
+
+  // Return if we don't have any images set
+  if (empty($images)) {
+    return;
+  }
+
+  // Alter form
+  foreach (element_children($form) as $key) {
+    if ($form[$key]['#type'] == 'radios' || $form[$key]['#type'] == 'checkboxes') {
+      foreach ($form[$key]['#options'] as $option_value => &$option_text) {
+        $form['images'][$option_value]['#markup'] = theme('image_poll_image', array('fid' => $images[$option_value], 'choice_text' => $option_text));
+      }
+    }
+  }
+}
+
+/**
+ * Assign the elements of the form to variables so
+ * the themer can use those values to control how the
+ * form elements are displayed, or alternatively
+ * displaying the whole form as constructed above.
+ * @see Pro Drupal Development
+ */
+function template_preprocess_image_poll_choice_form(&$variables) {
+  $hidden = array();
+  // Provide variables named after form keys so themers can print each element independently.
+  foreach (element_children($variables['form']) as $key) {
+    $type = isset($variables['form'][$key]['#type']) ? $variables['form'][$key]['#type'] : '';
+
+    // Choices are badly keyed in image_poll choice form... we want to re-key them so they are easy to find.
+    // TODO: get these keys fixed in image_poll module
+    $new_key = $key;
+    if ($type == 'radios' || $type == 'checkboxes') {
+      $new_key = 'choices';
+    }
+
+    // Put all the hidden stuff together
+    if ($type == 'hidden' || $type == 'token') {
+      $hidden[] = drupal_render($variables['form'][$key]);
+    }
+
+    // Deal with elements that have child elements
+    elseif (element_children($variables['form'][$key])) {
+      // Render each child individually
+      foreach (element_children($variables['form'][$key]) as $child_key) {
+        $variables[$new_key][$child_key] = drupal_render($variables['form'][$key][$child_key]);
+      }
+    }
+    else {
+      $variables[$new_key] = drupal_render($variables['form'][$key]);
+    }
+  }
+
+  // Hidden form elements have no value to themers. No need for separation.
+  $variables['hidden'] = implode($hidden);
+}
+
+/**
+ * Preprocess function for image_poll-bar.tpl.php
+ */
+function image_poll_preprocess_image_poll_bar(&$vars) {
+  // Ideally, theme_image_poll_bar() would be passed $nid and $choice_id, which would
+  // allow us to get and pass the proper image directly here, rather than this placeholder hash.
+  $vars['image_placeholder'] = '<!-- image_poll-image-' . md5($vars['title']) . ' -->';
+}
+
+/**
+ * Preprocess function for image_poll-results.tpl.php
+ */
+function image_poll_preprocess_image_poll_results(&$vars) {
+  // We wouldn't need to implement this function if we could pass the image directly in
+  // image_poll_preprocess_image_poll_bar()
+  $node = node_load($vars['nid']);
+  $lang = image_poll_get_choices_lang($node);
+
+  foreach ($node->image_poll_choice[$lang] as $delta => $choice) {
+    $vars['bars'] = str_replace(
+      '<!-- image_poll-image-' . md5($choice['choice']) . ' -->',
+      theme('image_poll_image', array('fid' => $choice['image'], 'choice_text' => $choice['choice'])),
+      $vars['bars']
+    );
+  }
+}
