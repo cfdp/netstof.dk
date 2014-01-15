@@ -53,7 +53,7 @@ tt,
 samp,
 kbd,
 var {
-  font-family: Consolas, Monaco, "Courier New", Courier, monospace, sans-serif;
+  font-family: Consolas, Monaco, 'Courier New', Courier, monospace, sans-serif;
 }
 
 /* =============================================================================
@@ -590,9 +590,9 @@ ul.primary li.active a:focus {
 }
 
 ul.secondary {
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #ccc;
   margin: 1em 0 0;
-  padding: 0 0.3em 1em;
+  padding: 0 .3em 1em;
 }
 
 ul.secondary li {
@@ -933,7 +933,7 @@ ul.action-links {
 .form-item input.error,
 .form-item textarea.error,
 .form-item select.error {
-  border: 1px solid #cc0000;
+  border: 1px solid #c00;
 }
 
 .form-item label {
@@ -964,7 +964,7 @@ ul.action-links {
  * Define consistent borders
  */
 fieldset {
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
 }
 
 /*
@@ -1034,7 +1034,7 @@ th {
 }
 
 tbody tr {
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #ccc;
 }
 
 tr.odd {
@@ -1184,4 +1184,55 @@ iframe.chat-header-widget {
   iframe.chat-header-widget {
     display: none;
   }
+}
+
+/*Minipolls block overwrites*/
+#block-views-image-polls-block-1 {
+  background: transparent;
+}
+#block-views-image-polls-block-1 .block-content {
+  padding: 0;
+  width: 294px;
+}
+#block-views-image-polls-block-1 .node-middle {
+  padding: 0;
+}
+#block-views-image-polls-block-1 .node-middle .node-header h1 {
+  background: transparent;
+  margin-bottom: 10px;
+  padding: 10px 10px 0 10px;
+}
+#block-views-image-polls-block-1 .node-btm {
+  height: 0;
+}
+#block-views-image-polls-block-1 .field-name-field-extra-info {
+  padding: 0 10px;
+  width: 294px;
+}
+#block-views-image-polls-block-1 .poll {
+  min-width: 100px;
+  max-width: 294px;
+}
+#block-views-image-polls-block-1 .poll .poll-wrapper {
+  height: auto;
+}
+#block-views-image-polls-block-1 .poll .poll-wrapper .poll-bar {
+  width: 145px;
+}
+#block-views-image-polls-block-1 .poll .poll-wrapper .question-mark {
+  margin-left: 116px;
+}
+#block-views-image-polls-block-1 .poll .poll-wrapper .votes {
+  bottom: 70px;
+}
+#block-views-image-polls-block-1 .poll.image_poll .choices {
+  height: auto;
+  min-width: 100px;
+  max-width: 294px;
+}
+#block-views-image-polls-block-1 .poll.image_poll .choices .choice {
+  width: 145px;
+}
+#block-views-image-polls-block-1 .poll.image_poll .choices .choice .choice-image {
+  height: auto;
 }

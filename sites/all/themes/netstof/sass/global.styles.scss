@@ -1766,3 +1766,58 @@ iframe.chat-header-widget{
     display: none;
   }
 }
+
+/*Minipolls block overwrites*/
+
+#block-views-image-polls-block-1{
+  background: transparent;
+  .block-content{padding: 0; width: 294px;}
+  .node-middle{
+    padding: 0;
+    .node-header h1{
+      background: transparent;
+      margin-bottom: 10px;
+      padding: 10px 10px 0 10px;
+    }
+  }
+  .node-btm{height: 0;}
+
+  .field-name-field-extra-info{
+    padding: 0 10px;
+    width: 294px;
+  }
+
+  .poll {
+    min-width: 100px;
+    max-width: 294px;
+
+    .poll-wrapper{
+      height: auto;
+
+      .poll-bar{
+        width: 145px;
+      }
+
+      .question-mark{
+        margin-left: 116px;
+      }
+
+      .votes{
+        bottom: 70px;
+      }
+    }
+  }
+  .poll.image_poll .choices{
+    height: auto;
+    min-width: 100px;
+    max-width: 294px;
+
+    .choice{
+      width: 145px;
+
+      .choice-image{
+        height: auto;
+      }
+    }
+  }
+}
