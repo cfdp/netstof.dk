@@ -208,7 +208,7 @@ Custom changes for mini images poll
 .poll.image_poll .choices {
     min-width: 500px;
     max-width: 690px;
-    height: 271px;
+    height: auto;
 }
 
 .poll.image_poll .choices .choice {
@@ -227,8 +227,9 @@ Custom changes for mini images poll
 }
 
 .poll.image_poll .form-item.form-type-radio {
+  min-height: 53px;
   margin: 0;
-  padding: 10px;
+  padding: 10px 30px 10px 15px;
   text-align: center;
   vertical-align: middle;
   background-color: #312F2F;
@@ -236,6 +237,7 @@ Custom changes for mini images poll
 }
 
 .poll.image_poll .choice:last-child .form-item.form-type-radio {
+  padding: 10px 15px 10px 30px;
   background-color: #312F2F;
 }
 
@@ -283,7 +285,7 @@ Custom changes for mini images poll
 
 .poll-wrapper {
   position: relative;
-  height: 271px;
+  height: auto;
 }
 
 .poll .poll-bar {
@@ -390,10 +392,14 @@ Custom changes for mini images poll
 }
 
 .poll .poll-bar .choice-text {
+  min-height: 53px;
+  padding: 10px 15px 10px 30px;
   background-color: #312F2F;
 }
 
 .poll .poll-bar.voted .choice-text {
+  min-height: 53px;
+  padding: 10px 30px 10px 15px;
   background-color: #135377;
 }
 
