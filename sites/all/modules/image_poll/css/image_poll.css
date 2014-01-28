@@ -190,25 +190,20 @@ Custom changes for mini images poll
 
 /* Style image-poll-choice-form */
 
+[id^=image_poll-form] {
+  margin: 0;
+}
+
 .poll.image_poll input[type="radio"] {
-    width: 225px;
-    height: 225px;
-    margin: 0;
-    position: absolute;
-    z-index: 3;
-    filter: alpha(opacity=0);
-    -moz-opacity: 0;
-    -khtml-opacity: 0;
-    opacity: 0;
-    cursor: pointer;
-    left: 0;
-    bottom: 0;
+  display: none;
+  cursor: pointer;
+}
 }
 
 .poll.image_poll .choices {
     min-width: 500px;
     max-width: 690px;
-    height: auto;
+    height: 271px;
 }
 
 .poll.image_poll .choices .choice {
@@ -227,9 +222,8 @@ Custom changes for mini images poll
 }
 
 .poll.image_poll .form-item.form-type-radio {
-  min-height: 53px;
   margin: 0;
-  padding: 10px 30px 10px 15px;
+  padding: 10px;
   text-align: center;
   vertical-align: middle;
   background-color: #312F2F;
@@ -237,7 +231,6 @@ Custom changes for mini images poll
 }
 
 .poll.image_poll .choice:last-child .form-item.form-type-radio {
-  padding: 10px 15px 10px 30px;
   background-color: #312F2F;
 }
 
@@ -285,7 +278,7 @@ Custom changes for mini images poll
 
 .poll-wrapper {
   position: relative;
-  height: auto;
+  height: 271px;
 }
 
 .poll .poll-bar {
@@ -310,6 +303,10 @@ Custom changes for mini images poll
   font-family: 'Cabin', sans-serif;
   font-size: 14px;
   display: inline;
+}
+
+.poll .poll-bar form {
+  margin: 0;
 }
 
 .poll .question-mark {
@@ -352,20 +349,16 @@ Custom changes for mini images poll
   width: 80px;
   bottom: 140px;
   right: 0;
-  padding-bottom: 5px;
-  padding-top: 5px;
-  border: 2px solid #FFF;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -khtml-border-radius: 2px;
-  border-radius: 2px;
+  padding-bottom: 7px;
+  padding-top: 7px;
 }
 
 .poll .votes-wrapper .votes .total-votes{
   text-align: center;
   vertical-align: middle;
   color: #fff;
-  font-size: 14px;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 .poll .poll-bar + .poll-bar .votes-wrapper .votes {
@@ -392,14 +385,10 @@ Custom changes for mini images poll
 }
 
 .poll .poll-bar .choice-text {
-  min-height: 53px;
-  padding: 10px 15px 10px 30px;
   background-color: #312F2F;
 }
 
 .poll .poll-bar.voted .choice-text {
-  min-height: 53px;
-  padding: 10px 30px 10px 15px;
   background-color: #135377;
 }
 
@@ -411,6 +400,7 @@ Custom changes for mini images poll
   background-color: #135377;  
 }
 
+/* Hide the extra info field, it's reveale dby .js */
 .field-name-field-extra-info{
   display: none;
   width: 454px;
