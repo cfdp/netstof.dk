@@ -63,7 +63,7 @@
 	 */
 	.region-header ul.menu > li.expanded  > ul {
 		display: none;
-		width: 350px;
+		width: 370px;
 	}
 	.region-header ul.menu > li.expanded.active-trail  > ul {
 		display: block;
