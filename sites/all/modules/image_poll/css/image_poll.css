@@ -225,6 +225,16 @@ Custom changes for mini images poll
   height: 225px;
 }
 
+.poll.image_poll .choices .choice:first-child .form-item,
+.poll .poll-bar:first-child .choice-text{
+  padding-right: 30px;
+}
+
+.poll.image_poll .choices .choice:nth-child(2) .form-item,
+.poll .poll-bar:nth-child(2) .choice-text{
+  padding-left: 30px;
+}
+
 .poll.image_poll .form-item.form-type-radio {
   margin: 0;
   padding: 10px;
