@@ -1196,10 +1196,17 @@ article.node-image-poll .node-header #page-title {
   height: auto;
   min-height: 28px;
 }
+article.node-image-poll .poll .poll-bar:first-child .choice-text {
+  padding-right: 30px;
+}
+article.node-image-poll .poll .poll-bar:nth-child(2) .choice-text {
+  padding-left: 30px;
+}
 
 .field-name-field-extra-info {
   background: #efefef;
   border: 1px solid #ccc;
+  font-size: 13px;
   padding: 9px;
   width: 434px;
 }
