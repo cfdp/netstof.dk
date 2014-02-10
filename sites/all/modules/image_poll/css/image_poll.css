@@ -213,6 +213,10 @@ Custom changes for mini images poll
   position: relative;
 }
 
+.poll.image_poll .choices .choice:hover{
+  cursor: pointer;
+}
+
 .poll.image_poll .choices .choice + .choice {
   margin-left: -4px;
 }
