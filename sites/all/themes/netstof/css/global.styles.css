@@ -1227,7 +1227,10 @@ article.node-image-poll .node-header #page-title {
   height: 0;
 }
 #block-views-image-polls-block-1 .field-name-field-extra-info {
-  width: 274px;
+  border-color: #ccc;
+  border-style: solid;
+  border-width: 1px;
+  width: 276px;
 }
 #block-views-image-polls-block-1 .poll {
   min-width: 100px;
