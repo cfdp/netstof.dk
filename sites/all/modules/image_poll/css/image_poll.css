@@ -225,6 +225,13 @@ Custom changes for mini images poll
   height: 225px;
 }
 
+.poll.image_poll .choice .choice-text,
+.poll .poll-bar .choice-text{
+  display: table-cell;
+  min-height: 33px;
+  width: 225px;
+}
+
 .poll.image_poll .choices .choice:first-child .form-item,
 .poll .poll-bar:first-child .choice-text{
   padding-right: 30px;
