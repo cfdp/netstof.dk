@@ -246,7 +246,7 @@ Custom changes for mini images poll
   margin: 0;
   padding: 10px;
   text-align: center;
-  vertical-align: middle;
+  min-height: 32px;
   background-color: #312F2F;
   border-bottom: 1px solid #fff;
 }
