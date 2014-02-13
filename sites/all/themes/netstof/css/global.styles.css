@@ -1192,9 +1192,12 @@ article.node-image-poll {
   margin-bottom: 1em;
 }
 article.node-image-poll .node-header #page-title {
+  background: transparent;
   font-size: 1.6em;
   height: auto;
+  margin-bottom: 10px;
   min-height: 28px;
+  padding: 0;
 }
 
 .field-name-field-extra-info {
@@ -1207,6 +1210,10 @@ article.node-image-poll .node-header #page-title {
 .field-name-field-extra-info .field-label {
   font-size: 1.2em;
   margin: 0 0 5px 0;
+}
+
+.region-sidebar-first [id^=block-views-image-polls-block] .block-inner .block-middle .block-content {
+  padding: 0;
 }
 
 .minipoll-wrapper {
