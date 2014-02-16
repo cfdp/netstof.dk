@@ -103,7 +103,7 @@ td.poll-chvotes .form-text {
     padding-bottom: 0;
     background-color: #eee;
     text-align: left;
-    
+
 }
 
 .image_poll-ranking-table-wrapper thead th {
@@ -123,12 +123,12 @@ td.poll-chvotes .form-text {
     text-align: center;
     padding: 0;
     margin: 0;
-    width: 265px;    
+    width: 265px;
 }
 
 .image_poll-ranking-table-wrapper tfoot tr {
     background: transparent;
-    
+
 }
 
 .image_poll-ranking-table-wrapper tfoot .form-submit {
@@ -418,7 +418,7 @@ Custom changes for mini images poll
 }
 
 .poll .poll-bar.voted .votes-wrapper .votes {
-  background-color: #135377;  
+  background-color: #135377;
 }
 
 /* Hide the extra info field, it's reveale dby .js */

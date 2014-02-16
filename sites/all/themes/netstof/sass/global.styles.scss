@@ -1780,7 +1780,7 @@ article.node-image-poll{
     padding: 0;
    }
 }
-  
+
   .field-name-field-extra-info{
     background: #efefef;
     border: 1px solid #ccc;
@@ -1851,4 +1851,10 @@ article.node-image-poll{
       }
     }
   }
+}
+
+// Footer hack
+.region-footer-btm .block-first {
+  width: auto;
+  float: right;
 }
