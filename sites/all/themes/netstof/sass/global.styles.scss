@@ -1855,6 +1855,6 @@ article.node-image-poll{
 
 // Footer hack
 .region-footer-btm .block-first {
-  width: auto;
-  float: right;
+  width: auto !important;
+  float: right !important;
 }

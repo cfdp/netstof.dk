@@ -1269,6 +1269,6 @@ article.node-image-poll .node-header #page-title {
 }
 
 .region-footer-btm .block-first {
-  width: auto;
-  float: right;
+  width: auto !important;
+  float: right !important;
 }
