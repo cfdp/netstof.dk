@@ -1858,3 +1858,43 @@ article.node-image-poll{
   width: auto !important;
   float: right !important;
 }
+
+/* EU cookie compliance */
+
+#sliding-popup.sliding-popup-bottom {
+  
+  background: url('../images/header-bg.png') repeat;
+  border-top: 3px solid #ffad00;
+  
+  .popup-content{
+    padding: 10px;
+    #popup-text {
+      margin: 5px 0 0;
+    }
+
+    #popup-buttons button {
+    color: #FFFFFF;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 14px;
+    background: #0b5a7c;
+    padding: 10px 12px 10px 12px;
+    margin: 10px 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    display:inline-block;
+    vertical-align: middle;
+    -moz-box-shadow:inset 0px 0px 0px 0px transparent;
+    -webkit-box-shadow:inset 0px 0px 0px 0px transparent;
+    box-shadow:inset 0px 0px 0px 0px transparent;
+    border: 0 solid transparent;
+    text-shadow:0px 0px 0px transparent;
+    &:hover{
+      background: darken(#0b5a7c,10%);
+      }
+    }
+  }
+}
