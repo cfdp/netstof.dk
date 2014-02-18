@@ -1,5 +1,4 @@
 <?php
-// $Id: menu_icons_css_item.tpl.php,v 1.3 2010/02/15 15:35:48 skilip Exp $
 
 /**
  * @file
@@ -11,8 +10,6 @@
  * Variables:
  * $mlid
  * $path
- *
- * @author dylan@opensourcery.com
  */
 ?>
 a.menu-<?php print $mlid ?>, ul.links li.menu-<?php print $mlid ?> a {
@@ -20,6 +17,6 @@ a.menu-<?php print $mlid ?>, ul.links li.menu-<?php print $mlid ?> a {
   padding-<?php print "$pos:$size"?>px;
   background-repeat: no-repeat;
   background-position: <?php print $pos?>;
-  height: <?php print $size?>px;
+  height: <?php print $height?>px;
 }
 
