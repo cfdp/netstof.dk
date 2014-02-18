@@ -1196,7 +1196,7 @@ article.node-image-poll .node-header #page-title {
   height: auto;
   margin-bottom: 10px;
   min-height: 28px;
-  padding: 0;
+  padding: 0 23px;
 }
 
 .field-name-field-extra-info {
