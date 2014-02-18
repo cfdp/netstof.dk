@@ -48,6 +48,7 @@ class NodeNotifyTestCase extends DrupalWebTestCase {
     $permissions[] = 'post comments';
     $permissions[] = 'skip comment approval';
     $permissions[] = 'subscribe to comments';
+    $permissions[] = 'access user profiles';
     $this->privileged = $this->drupalCreateUser($permissions);
 
     $permissions[] = 'administer node notify';
@@ -102,7 +103,6 @@ class NodeNotifyTestCase extends DrupalWebTestCase {
 
     $this->drupalGet('node/add/' . $this->type->type);
     $this->assertNoPattern('/edit-node-notify-subscribe/', 'Node Notify disabled for anonymous user.');
-
 
     $this->drupalGet('node/' . $nid);
     $this->assertNoPattern("/node\/$nid\/subscribe/", 'No Subscribe link for anonymous user.');
@@ -163,7 +163,6 @@ class NodeNotifyTestCase extends DrupalWebTestCase {
     $this->assertResponse(403, 'Forbidden for unprivileged user.');
 
     $this->drupalLogout();
-
 
     $this->drupalLogin($this->privileged);
 
@@ -263,6 +262,28 @@ class NodeNotifyTestCase extends DrupalWebTestCase {
     $this->drupalGet("node/$nid/edit");
     $this->assertNoFieldById('edit-node-notify-subscribe', NULL,
       'No field displayed for user with no "administer node subscription" permission when editing existing node.'
+    );
+  }
+
+  /**
+   * Test that "ticked by default" feature works.
+   */
+  protected function testNodeNotifyNodeFormDefaultValue() {
+    $this->enableContentType($this->type);
+    $this->setDefaltValueForType($this->type, FALSE);
+
+    $this->drupalLogin($this->privileged);
+    $this->drupalGet('node/add/' . $this->type->type);
+    $this->assertFieldByXpath(
+      "//input[@type='checkbox' and @id='edit-node-notify-subscribe' and not(@checked='checked')]", NULL,
+      'Subscription checkbox not checked.'
+    );
+
+    $this->setDefaltValueForType($this->type, TRUE);
+    $this->drupalGet('node/add/' . $this->type->type);
+    $this->assertFieldByXpath(
+      "//input[@type='checkbox' and @id='edit-node-notify-subscribe' and @checked='checked']", NULL,
+      'Subscription checkbox checked by default.'
     );
   }
 
@@ -557,6 +578,45 @@ class NodeNotifyTestCase extends DrupalWebTestCase {
   }
 
   /**
+   * Test for issue #1950050.
+   */
+  protected function testNodeNotifyUserSubscriptionsTab() {
+    $testuser = $this->drupalCreateUser(array(
+      'access content',
+      'subscribe to node',
+    ));
+
+    $user_url = 'user/' . $testuser->uid;
+    $user_subscriptions = $user_url . '/subscriptions';
+
+    $this->drupalLogin($this->unprivileged);
+    $this->drupalGet($user_url);
+    $this->assertText(t('Access denied'), 'Access denied to user page');
+    $this->drupalGet($user_subscriptions);
+    $this->assertText(t('Access denied'), 'Access denied to user subscriptions');
+
+    $this->drupalLogout();
+    $this->drupalLogin($this->privileged);
+    $this->drupalGet($user_url);
+    $this->assertText(
+      $testuser->name,
+      'Access granted to user page for user with "access user profiles" permission.'
+    );
+    $this->drupalGet($user_subscriptions);
+    $this->assertText(
+      t('Access denied'),
+      'Access denied to user subscriptions for user with "access user profiles" permission.'
+    );
+
+    $this->drupalLogout();
+    $this->drupalLogin($this->admin);
+    $this->drupalGet($user_url);
+    $this->assertText($testuser->name, 'Access granted to user page');
+    $this->drupalGet($user_subscriptions);
+    $this->assertText(t('No subscriptions yet.'), 'Access granted to user subscriptions');
+  }
+
+  /**
    * Generate random email address with example.com as domain part.
    *
    * @return string
@@ -589,9 +649,23 @@ class NodeNotifyTestCase extends DrupalWebTestCase {
    *   Content type object.
    */
   protected function enableContentType($type) {
-    variable_set('node_notify_enabled_types', array(
-      $type->type => $type->type,
-    ));
+    $values = variable_get('node_notify_enabled_types', array());
+    $values[$type->type] = $type->type;
+    variable_set('node_notify_enabled_types', $values);
+  }
+
+  /**
+   * Set default value of subscription for content type.
+   *
+   * @param object $type
+   *   Content type object.
+   * @param bool $value
+   *   Default value.
+   */
+  protected function setDefaltValueForType($type, $value) {
+    $values = variable_get('node_notify_enabled_by_default', array());
+    $values[$type->type] = $value;
+    variable_set('node_notify_enabled_by_default', $values);
   }
 
   /**
@@ -621,7 +695,7 @@ class NodeNotifyTestCase extends DrupalWebTestCase {
    *   If comment was posted, associative array with id, subject, and comment
    *   keys.
    */
-  function postComment($node, $subject, $comment, $notify = NULL, $contact = NULL, $assertCommentVisible = TRUE) {
+  protected function postComment($node, $subject, $comment, $notify = NULL, $contact = NULL, $assert_comment_visible = TRUE) {
     $langcode = LANGUAGE_NONE;
     $edit = array();
     $edit['subject'] = $subject;
@@ -644,7 +718,7 @@ class NodeNotifyTestCase extends DrupalWebTestCase {
 
     // Get comment.
     if (!empty($match[1])) {
-      if ($assertCommentVisible) {
+      if ($assert_comment_visible) {
         if ($subject) {
           $this->assertText($subject, 'Comment subject posted.');
         }

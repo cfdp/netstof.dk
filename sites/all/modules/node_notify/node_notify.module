@@ -209,7 +209,7 @@ function node_notify_user_access($account) {
     return user_access('subscribe to node');
   }
   else {
-    return user_access('user_edit_access', $account)
+    return user_access('access user profiles')
       && user_access('administer node subscriptions');
   }
 }
@@ -235,8 +235,11 @@ function node_notify_form_alter(&$form, &$form_state, $form_id) {
   }
 
   $node = $form['#node'];
-  $node->node_notify_subscribe = isset($node->node_notify_subscribe)
-    ? $node->node_notify_subscribe : NULL;
+
+  $default_values = variable_get('node_notify_enabled_by_default', array());
+  if (!isset($node->node_notify_subscribe)) {
+    $node->node_notify_subscribe = isset($default_values[$node->type]) ? (bool) $default_values[$node->type] : FALSE;
+  }
 
   // Editing existing node.
   if (isset($node->nid)) {
@@ -270,7 +273,7 @@ function node_notify_form_alter(&$form, &$form_state, $form_id) {
         '#title' => t('Receive comment notifications by email'),
         '#description' => t('Enter your email address to receive email notifications.'),
         '#element_validate' => array('node_notify_validate_email_address'),
-        '#default_value' => $node->node_notify_subscribe,
+        '#default_value' => is_string($node->node_notify_subscribe) ? $node->node_notify_subscribe : '',
       );
     }
   }
