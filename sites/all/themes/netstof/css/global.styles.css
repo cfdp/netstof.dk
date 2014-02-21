@@ -1268,6 +1268,10 @@ article.node-image-poll .node-header #page-title {
   height: auto;
 }
 
+.view-image-polls a.btn {
+  margin-left: 1em;
+}
+
 .region-footer-btm .block-first {
   width: auto !important;
   float: right !important;
@@ -1307,4 +1311,16 @@ article.node-image-poll .node-header #page-title {
 }
 #sliding-popup.sliding-popup-bottom .popup-content #popup-buttons button:hover {
   background: #07384d;
+}
+
+a.btn {
+  color: white !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 15px;
+  display: inline-block;
+  background: #0b5a7c url("../images/icon-plus-mini.png") no-repeat 11px 11px;
+  padding: 10px 12px 10px 30px;
+  border-radius: 5px;
 }

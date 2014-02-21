@@ -1853,6 +1853,11 @@ article.node-image-poll{
   }
 }
 
+.view-image-polls a.btn {
+  margin-left: 1em;
+}
+
+
 // Footer hack
 .region-footer-btm .block-first {
   width: auto !important;
@@ -1901,4 +1906,16 @@ article.node-image-poll{
 
 #header-btm-container iframe {
   //display:none
+}
+
+a.btn {
+  color: white !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 15px;
+  display: inline-block;
+  background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px;
+  padding: 10px 12px 10px 30px;
+  border-radius: 5px
 }
