@@ -1862,10 +1862,10 @@ article.node-image-poll{
 /* EU cookie compliance */
 
 #sliding-popup.sliding-popup-bottom {
-  
+
   background: url('../images/header-bg.png') repeat;
   border-top: 3px solid #ffad00;
-  
+
   .popup-content{
     padding: 10px;
     #popup-text {
@@ -1897,4 +1897,8 @@ article.node-image-poll{
       }
     }
   }
+}
+
+#header-btm-container iframe {
+  //display:none
 }
