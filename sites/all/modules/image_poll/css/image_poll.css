@@ -426,3 +426,10 @@ Custom changes for mini images poll
   display: none;
   width: 454px;
 }
+
+#share-buttons img {
+  width: 35px;
+  padding: 5px;
+  border: 0;
+  display: inline;
+}

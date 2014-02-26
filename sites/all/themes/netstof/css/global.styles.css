@@ -1200,6 +1200,10 @@ article.node-image-poll .node-header #page-title {
   padding: 0 23px;
 }
 
+article.node-image-poll .links{
+  display: none;
+}
+
 .field-name-field-extra-info {
   background: #efefef;
   border: 1px solid #cccccc;
