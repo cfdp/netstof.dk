@@ -1284,14 +1284,14 @@ body.page-paaroerende .region-sidebar-first #hurtige-genveje {
 /* Each invidual row */
 .region-sidebar-first #hurtige-genveje #akut-hjaelp .left {
   width: 31px;
-  height: 31px;
+  height: 30px;
   margin: 0 15px 0 3px;
-  background: url(../images/afstemning-wh-30x30.png) no-repeat transparent top left;
+  background: url(../images/afstemning-wh.png) no-repeat transparent top left;
 }
 
 .region-sidebar-first #hurtige-genveje #akut-hjaelp:hover .left,
 .view-id-mediekit #akut-hjaelp:hover .left {
-  background: url(../images/afstemning-yel-30x30.png) no-repeat transparent top left;
+  background: url(../images/afstemning-yel.png) no-repeat transparent top left;
 }
 
 .region-sidebar-first #hurtige-genveje #brevkasse .left,
