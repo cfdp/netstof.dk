@@ -1190,6 +1190,7 @@ iframe.chat-header-widget {
 article.node-image-poll {
   margin-bottom: 1em;
 }
+
 article.node-image-poll .node-header #page-title {
   background: transparent;
   font-size: 1.6em;
@@ -1266,6 +1267,10 @@ article.node-image-poll .node-header #page-title {
 }
 .minipoll-wrapper .poll.image_poll .choices .choice .choice-image {
   height: auto;
+}
+
+.view-image-polls article.node-image-poll .node-header #page-title {
+  padding-top: 16px;
 }
 
 .view-image-polls a.btn {
