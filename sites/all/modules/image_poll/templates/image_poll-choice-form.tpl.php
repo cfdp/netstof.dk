@@ -51,7 +51,6 @@
   <?php print $hidden; ?>
   </div>
 </div>
-<h1>choiceform</h1>
 <?php
   $node = node_load($nid);
   $sharing_url = "http://netstof.dk/node/" . $nid;
