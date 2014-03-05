@@ -1910,8 +1910,8 @@ article.node-image-poll{
   }
 }
 
-#header-btm-container iframe {
-  //display:none
+.lt-ie9 #header-btm-container .chat-header-widget {
+  display: none;
 }
 
 a.btn {

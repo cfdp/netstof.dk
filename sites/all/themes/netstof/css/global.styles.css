@@ -1318,6 +1318,10 @@ article.node-image-poll .node-header #page-title {
   background: #07384d;
 }
 
+.lt-ie9 #header-btm-container .chat-header-widget {
+  display: none;
+}
+
 a.btn {
   color: white !important;
   font-weight: bold;
