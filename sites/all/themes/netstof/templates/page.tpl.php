@@ -129,7 +129,7 @@
 <div id="header-btm-container">
 	<div class="container">
 		<a href="/paaroerende" title="Artikler og rådgivning for pårørende"><img src="<?php print $base_path.drupal_get_path("theme","netstof").$variables['paaroerende_img'];?>" id="find-hjaelp" /></a>
-    <iframe style="//display:none" src="http://netstofchat.cybhus.dk/sites/all/themes/netstofchat/chat_header_widget/index.html" frameborder="0" scrolling="no" class="chat-header-widget"></iframe>
+    <iframe src="http://netstofchat.cybhus.dk/sites/all/themes/netstofchat/chat_header_widget/index.html" frameborder="0" scrolling="no" class="chat-header-widget"></iframe>
 	</div>
 </div>
 
