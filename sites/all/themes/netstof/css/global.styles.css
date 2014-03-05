@@ -1273,6 +1273,10 @@ article.node-image-poll .node-header #page-title {
   margin-left: 1em;
 }
 
+.view-display-id-page ul.links.inline {
+  display: none;
+}
+
 .region-footer-btm .block-first {
   width: auto !important;
   float: right !important;
