@@ -42,7 +42,7 @@ function netstof_uf_preprocess_page(&$variables) {
   if ($is_active) {
     drupal_add_css("http://popin.survey-xact.dk/popin/popin.css", 'external');
     drupal_add_js("http://popin.survey-xact.dk/popin/popin.js", 'external');
-    drupal_add_js("http://popin.survey-xact.dk/dynjs/C8LYL3QX12C6/popin.js", 'external');
+    drupal_add_js("http://popin.survey-xact.dk/dynjs/EWYNKMV9C13N/popin.js", 'external');
     drupal_add_js("http://popin.survey-xact.dk/cookies.js", 'external');
   }
 }
