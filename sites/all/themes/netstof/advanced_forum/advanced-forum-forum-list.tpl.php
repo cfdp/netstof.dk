@@ -48,13 +48,14 @@
   <?php $table_info = $table['table_info']; ?>
 	<div id="forum-wrapper">
     <?php foreach ($table['items'] as $item_id => $item): ?>
-	
+    <?php // Hide "Pårørende" forum in overview ?>
+    <?php if ($item->tid != 5): ?>
 	<div class="forum-item">
 		<div>
 		<?php if (!empty($item->forum_image)): ?>
-		<div class="forum-icon">
-		<?php print $item->forum_image; ?>
-		</div>
+  		<div class="forum-icon">
+  		<?php print $item->forum_image; ?>
+  		</div>
 		<?php endif; ?>
 		<div class="forum-name">
 		<a href="<?php print $item->link; ?>"><?php print $item->name; ?></a>
@@ -80,7 +81,8 @@
 		</div>
 		</div>
 	</div>
-	
+<?php endif; // $item->tid=5 ?>
+
     <?php endforeach; ?>
 	</div>
 <?php endforeach; ?>
