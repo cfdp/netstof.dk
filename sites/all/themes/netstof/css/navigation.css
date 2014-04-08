@@ -64,10 +64,10 @@
 	.region-header ul.menu > li.expanded  > ul {
 		display: none;
 		width: 370px;
+		z-index: 100;
 	}
 	.region-header ul.menu > li.expanded.active-trail  > ul {
 		display: block;
-		z-index: 100;
 	}
 	.region-header ul.menu > li  > ul {
 		height: 46px;
