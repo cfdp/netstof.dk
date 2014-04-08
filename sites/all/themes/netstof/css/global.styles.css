@@ -1199,6 +1199,9 @@ article.node-image-poll .node-header #page-title {
   padding: 10px 23px 0;
   display: block;
 }
+.page-image-polls article.node-image-poll .node-header #page-title {
+  padding: 10px 0 0;
+}
 
 .field-name-field-extra-info {
   background: #efefef;
