@@ -1338,7 +1338,7 @@ a.btn {
   border-radius: 5px;
 }
 
-#views_fluidgrid_front_page_grid_block .views-field views-field-timestamp {
+#views_fluidgrid_front_page_grid_block .views-field-timestamp {
   float: left;
   font-size: 12px;
   margin-bottom: 10px;
