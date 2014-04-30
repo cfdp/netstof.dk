@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  * @file
  * global.styles
@@ -53,7 +54,7 @@ tt,
 samp,
 kbd,
 var {
-  font-family: Consolas, Monaco, "Courier New", Courier, monospace, sans-serif;
+  font-family: Consolas, Monaco, 'Courier New', Courier, monospace, sans-serif;
 }
 
 /* =============================================================================
@@ -590,9 +591,9 @@ ul.primary li.active a:focus {
 }
 
 ul.secondary {
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #ccc;
   margin: 1em 0 0;
-  padding: 0 0.3em 1em;
+  padding: 0 .3em 1em;
 }
 
 ul.secondary li {
@@ -933,7 +934,7 @@ ul.action-links {
 .form-item input.error,
 .form-item textarea.error,
 .form-item select.error {
-  border: 1px solid #cc0000;
+  border: 1px solid #c00;
 }
 
 .form-item label {
@@ -964,7 +965,7 @@ ul.action-links {
  * Define consistent borders
  */
 fieldset {
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
 }
 
 /*
@@ -1034,7 +1035,7 @@ th {
 }
 
 tbody tr {
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #ccc;
 }
 
 tr.odd {
@@ -1205,7 +1206,7 @@ article.node-image-poll .node-header #page-title {
 
 .field-name-field-extra-info {
   background: #efefef;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   font-size: 13px;
   padding: 9px;
   width: 434px;
@@ -1335,4 +1336,10 @@ a.btn {
   background: #0b5a7c url("../images/icon-plus-mini.png") no-repeat 11px 11px;
   padding: 10px 12px 10px 30px;
   border-radius: 5px;
+}
+
+#views_fluidgrid_front_page_grid_block .views-field views-field-timestamp {
+  float: left;
+  font-size: 12px;
+  margin-bottom: 10px;
 }
