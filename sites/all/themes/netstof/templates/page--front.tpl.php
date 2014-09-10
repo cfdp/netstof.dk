@@ -195,6 +195,7 @@
           <?php if($is_front): ?>
             <div id="content-btm" class="region">
               <?php print render($page["content_front"]); ?>
+              <?php print render($page['content']['metatags']); ?>
             </div>
           <?php endif; ?>
 
