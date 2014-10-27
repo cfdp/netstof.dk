@@ -129,7 +129,7 @@
 <div id="header-btm-container">
 	<div class="container">
 		<a href="/paaroerende" title="Artikler og rådgivning for pårørende"><img src="<?php print $base_path.drupal_get_path("theme","netstof").$variables['paaroerende_img'];?>" id="find-hjaelp" /></a>
-    <iframe src="http://netstof.curachat.com/sites/all/themes/netstof-chat-theme/chatwidget/chat-header-widget/index.html?base_url=http://netstof.curachat.com&port=3003" frameborder="0" scrolling="no" class="chat-header-widget" style="visibility:hidden;" onload="this.style.visibility='visible';"></iframe>
+    <iframe src="https://netstof.curachat.com/sites/all/themes/netstof-chat-theme/chatwidget/chat-header-widget/index.html?base_url=https://netstof.curachat.com&port=3003" frameborder="0" scrolling="no" class="chat-header-widget" style="visibility:hidden;" onload="this.style.visibility='visible';"></iframe>
 	</div>
 </div>
 
