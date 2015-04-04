@@ -31,15 +31,19 @@ class gmap_plugin_style_gmap extends views_plugin_style {
     $options['latfield'] = array('default' => '');
     $options['lonfield'] = array('default' => '');
     $options['markerfield'] = array('default' => '');
+    $options['geofield'] = array('default' => '');
 
     $options['enablermt'] = array('default' => FALSE);
     $options['rmtfield'] = array('default' => '');
+    $options['rmtfieldraw'] = array('default' => TRUE);
     $options['rmtcallback'] = array('default' => '');
 
     $options['center_on_nodearg'] = array('default' => 0);
     $options['center_on_nodearg_arg'] = array('default' => '');
 
     $options['center_on_proximityarg'] = array('default' => 0);
+
+    $options['animation'] = array('default' => 0);
 
     $options['highlight_nodearg'] = array('default' => 0);
     $options['highlight_nodearg_arg'] = array('default' => '');
@@ -101,16 +105,24 @@ class gmap_plugin_style_gmap extends views_plugin_style {
       $lat_field = 'gmap_lat';
       $lon_field = 'gmap_lon';
     }
-    else if ($this->options['datasource'] == 'geofield') {
-      $lat_field = 'lat';
-      $lon_field = 'lon';
-    }
-    // Determine fieldname for latitude and longitude fields.
-    else if ($this->options['datasource'] == 'fields') {
-      $lat_field_obj = $this->view->display_handler->get_handler('field', $this->options['latfield']);
-      $lon_field_obj = $this->view->display_handler->get_handler('field', $this->options['lonfield']);
-      $lat_field = $lat_fied_obj->field_alias;
-      $lon_field = $lon_field_obj->field_alias;
+    else {
+      if ($this->options['datasource'] == 'geofield') {
+        $lat_field = 'field_' . $this->options['geofield']; // "[0]['raw']['lat']";
+        $lon_field = 'field_' . $this->options['geofield']; // "[0]['raw']['lon']";
+      }
+      else {
+        if ($this->options['datasource'] == 'geolocation') {
+          $lat_field = 'field_' . $this->options['geolocation']; // "[0]['raw']['lat']";
+          $lon_field = 'field_' . $this->options['geolocation']; // "[0]['raw']['lng']";
+        }
+        // Determine fieldname for latitude and longitude fields.
+        else {
+          if ($this->options['datasource'] == 'fields') {
+            $lat_field = 'field_' . $this->options['latfield']; // "[0]['raw']['value']";
+            $lon_field = 'field_' . $this->options['lonfield']; // "[0]['raw']['value']";
+          }
+        }
+      }
     }
 
     // Determine fieldname for marker field.
@@ -124,8 +136,6 @@ class gmap_plugin_style_gmap extends views_plugin_style {
       $rmt_field_obj = $this->view->display_handler->get_handler('field', $this->options['rmtfield']);
       $rmt_field = $rmt_field_obj->field_alias;
     }
-
-    $markername = isset($this->options['markertype']) ? $this->options['markertype'] : 'drupal';
 
     $markertypes = variable_get('gmap_node_markers', array());
     if ($this->options['markers'] == 'nodetype') {
@@ -145,6 +155,7 @@ class gmap_plugin_style_gmap extends views_plugin_style {
     // method if they wish some other way of handling grouping.
     $output = '';
     foreach ($sets as $title => $records) {
+      $markername = isset($this->options['markertype']) ? $this->options['markertype'] : 'drupal';
       $markers = array();
       $offsets = array();
       $center_lat = NULL;
@@ -176,25 +187,25 @@ class gmap_plugin_style_gmap extends views_plugin_style {
         $this->view->row_index = $row_index;
 
         if ($this->options['datasource'] == 'location') {
-          $lat = (float)$row->{$lat_field};
-          $lon = (float)$row->{$lon_field};
+          $lat = (float) $row->{$lat_field};
+          $lon = (float) $row->{$lon_field};
         }
-        else if ($this->options['datasource'] == 'geofield') {
-          $geofield_name = 'field_' . $this->options['markerfield'];
-          $geofield = isset($row->{$geofield_name}[0]['raw']) ? $row->{$geofield_name}[0]['raw'] : NULL;
-          if ($geofield) {
-            $lat = (float)$geofield[$lat_field];
-            $lon = (float)$geofield[$lon_field];
-          }
+        elseif ($this->options['datasource'] == 'geofield') {
+          $lat = isset($row->{$lat_field}[0]['raw']['lat']) ? (float) $row->{$lat_field}[0]['raw']['lat'] : NULL;
+          $lon = isset($row->{$lon_field}[0]['raw']['lon']) ? (float) $row->{$lon_field}[0]['raw']['lon'] : NULL;
         }
-        else if ($this->options['datasource'] == 'fields') {
-          $custom_field_latname = 'field_' . $lat_field;
-          $custom_field_lonname = 'field_' . $lon_field;
-          $custom_field_lat = isset($row->{$custom_field_latname}[0]['raw']) ? $row->{$custom_field_latname}[0]['raw'] : NULL;
-          $custom_field_lon = isset($row->{$custom_field_lonname}[0]['raw']) ? $row->{$custom_field_lonname}[0]['raw'] : NULL;
-          if ($custom_field_lat && $custom_field_lon) {
-           $lat = (float)$row->{$lat_field};
-           $lon = (float)$row->{$lon_field};
+        elseif ($this->options['datasource'] == 'geolocation') {
+          $lat = isset($row->{$lat_field}[0]['raw']['lat']) ? (float) $row->{$lat_field}[0]['raw']['lat'] : NULL;
+          $lon = isset($row->{$lon_field}[0]['raw']['lng']) ? (float) $row->{$lon_field}[0]['raw']['lng'] : NULL;
+        }
+        elseif ($this->options['datasource'] == 'fields') {
+          $lat = isset($row->{$lat_field}[0]['raw']['value']) ? (float) $row->{$lat_field}[0]['raw']['value'] : NULL;
+          $lon = isset($row->{$lon_field}[0]['raw']['value']) ? (float) $row->{$lon_field}[0]['raw']['value'] : NULL;
+
+          // Field is Location CCK
+          if (!$lat || !$lon) {
+            $lat = isset($row->{$lat_field}[0]['raw']['latitude']) ? $row->{$lat_field}[0]['raw']['latitude'] : NULL;
+            $lon = isset($row->{$lon_field}[0]['raw']['longitude']) ? $row->{$lon_field}[0]['raw']['longitude'] : NULL;
           }
         }
 
@@ -210,7 +221,10 @@ class gmap_plugin_style_gmap extends views_plugin_style {
           $center_lat = $lat;
         }
 
-        if (!empty($lat) && !empty($lon)) {
+        if ((!empty($lat) && !empty($lon))
+          && ($lat != 0 && $lon != 0)
+          && ($lat != 180 && $lon != 360)
+        ) {
           if ($this->options['markers'] == 'nodetype') {
             if (isset($markertypes[$row->gmap_node_type])) {
               $markername = $markertypes[$row->gmap_node_type];
@@ -231,7 +245,7 @@ class gmap_plugin_style_gmap extends views_plugin_style {
           }
           elseif ($this->options['markers'] == 'field') {
 
-            if (!empty($row->{$marker_field})) {
+            if (!empty($row->{$marker_field}) && !empty($row->{$marker_field}[0]['raw']['value'])) {
               $markername = $row->{$marker_field}[0]['raw']['value'];
             }
           }
@@ -248,7 +262,7 @@ class gmap_plugin_style_gmap extends views_plugin_style {
           if ($this->options['bubbletextenabled'] && !empty($this->options['bubbletextfield']) && !empty($this->rendered_fields[$row_index][$this->options['bubbletextfield']])) {
             $bubbletext = $this->rendered_fields[$row_index][$this->options['bubbletextfield']];
           }
-          elseif ($this->options['bubbletextenabled'] && $bubbletext_field_obj->real_field == 'nothing'){
+          elseif ($this->options['bubbletextenabled'] && $bubbletext_field_obj->real_field == 'nothing') {
             $bubbletext = $this->rendered_fields[$row_index][$this->options['bubbletextfield']];
           }
 
@@ -263,14 +277,20 @@ class gmap_plugin_style_gmap extends views_plugin_style {
               'title' => $tooltip,
               'highlight' => (!empty($highlight_nid) && !empty($row_nid) && $highlight_nid == $row_nid) ? 1 : 0,
               'highlightcolor' => $this->options['highlight_nodearg_color'],
+              'animation' => $this->options['animation'],
             ),
           );
 
           // RMT mode.
           if ($this->options['enablermt']) {
-            $marker['rmt'] = $row->{$rmt_field};
+            if ($this->options['rmtfieldraw']) {
+              $marker['rmt'] = $row->{$rmt_field};
+            }
+            else {
+              $marker['rmt'] = $this->rendered_fields[$row_index][$rmt_field_obj->field];
+            }
           }
-          else {
+          elseif (!empty($defaults['markermode'])) {
             // Marker mode: popup.
             if ($defaults['markermode'] == 1) {
               $marker['text'] = $this->row_plugin->render($row);
@@ -302,7 +322,8 @@ class gmap_plugin_style_gmap extends views_plugin_style {
           'view' => $this->view,
           'options' => $this->options,
           'rows' => $map,
-          'title' => $title));
+          'title' => $title
+        ));
       }
     }
 
@@ -318,8 +339,8 @@ class gmap_plugin_style_gmap extends views_plugin_style {
 
     $field_options = array();
     $fields = $this->display->handler->get_handlers('field');
-    foreach ($fields as $id => $handler) {
-      $field_options[$id] = $handler->ui_name(FALSE);
+    foreach ($fields as $handler) {
+      $field_options[$handler->options['id']] = (!empty($handler->options['label'])) ? $handler->options['label'] : $handler->options['id'];
     }
 
     $argument_options = array();
@@ -333,6 +354,7 @@ class gmap_plugin_style_gmap extends views_plugin_style {
       '#title' => t('Macro'),
       '#rows' => 3,
       '#default_value' => $this->options['macro'],
+      '#description' => t('Enter a macro. If left unchanged, it takes the default settings from <a href="!link">/admin/config/services/gmap</a>. See the <a href="http://drupal.org/documentation/modules/gmap/macros">documentation on GMap macros</a>.', array('!link' => url('admin/config/services/gmap'))),
     );
 
     $form['datasource'] = array(
@@ -341,8 +363,9 @@ class gmap_plugin_style_gmap extends views_plugin_style {
       '#options' => array(
         'location' => t('Location.module'),
         'geofield' => t('Geofield.module'),
+        'geolocation' => t('Geolocation.module'),
         'fields' => t('Choose latitude and longitude fields'),
-      //'geocode' => t('Just-in-time geocoding on field named "address"'),
+        //'geocode' => t('Just-in-time geocoding on field named "address"'),
       ),
       '#default_value' => $this->options['datasource'],
       '#multiple' => FALSE,
@@ -373,9 +396,19 @@ class gmap_plugin_style_gmap extends views_plugin_style {
       '#description' => t('Select the Geofield source field.'),
       '#type' => 'select',
       '#options' => $field_options,
-      '#default_value' => $this->options['geofield'],
+      '#default_value' => isset($this->options['geofield']) ? $this->options['geofield'] : NULL,
       '#process' => array('ctools_dependent_process'),
       '#dependency' => array('edit-style-options-datasource' => array('geofield')),
+    );
+
+    $form['geolocation'] = array(
+      '#title' => t('Geolocation field'),
+      '#description' => t('Select the Geolocation source field.'),
+      '#type' => 'select',
+      '#options' => $field_options,
+      '#default_value' => isset($this->options['geolocation']) ? $this->options['geolocation'] : NULL,
+      '#process' => array('ctools_dependent_process'),
+      '#dependency' => array('edit-style-options-datasource' => array('geolocation')),
     );
 
     $form['markers'] = array(
@@ -415,6 +448,13 @@ class gmap_plugin_style_gmap extends views_plugin_style {
       '#options' => $field_options,
       '#default_value' => $this->options['rmtfield'],
       '#process' => array('ctools_dependent_process'),
+      '#dependency' => array('edit-style-options-enablermt' => array(TRUE)),
+    );
+    $form['rmtfieldraw'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Use raw value of RMT field'),
+      '#description' => t('You can use a raw value of the RMT field or a displayed value, the displayed value is different from the raw value if the field output is rewrited in the field settings.'),
+      '#default_value' => $this->options['rmtfieldraw'],
       '#dependency' => array('edit-style-options-enablermt' => array(TRUE)),
     );
     $form['rmtcallback'] = array(
@@ -462,6 +502,14 @@ class gmap_plugin_style_gmap extends views_plugin_style {
       );
     }
 
+    // Use the values from google.maps.Animation. See https://developers.google.com/maps/documentation/javascript/reference
+    $form['animation'] = array(
+      '#type' => 'select',
+      '#options' => array(0 => 'None', 1 => 'Bounce', 2 => 'Drop'),
+      '#title' => t('Animation'),
+      '#default_value' => $this->options['animation'],
+      '#description' => t("Add animation to the markers."),
+    );
     $form['highlight_nodearg'] = array(
       '#type' => 'checkbox',
       '#title' => t('Highlight marker for node argument'),
@@ -540,7 +588,7 @@ class gmap_plugin_style_gmap extends views_plugin_style {
    * Validate the options form.
    */
   function options_validate(&$form, &$form_state) {
-	parent::options_validate($form, $form_state);
+    parent::options_validate($form, $form_state);
     // Check if highlight color is a valid hex color
     if (!preg_match('/^#[a-f0-9]{6}$/i', $form_state['values']['style_options']['highlight_nodearg_color'])) {
       form_error($form['highlight_nodearg_color'], t('Highlight colour must be a valid hex code in the form #FF0000.'));

@@ -2,7 +2,6 @@
 
 /**
  * @file
- *
  * Plugin to provide a user context
  */
 
@@ -29,15 +28,17 @@ $plugin = array(
 /**
  * Create a context, either from manual configuration or from an argument on the URL.
  *
- * @param $empty
+ * @param bool $empty
  *   If true, just return an empty context.
- * @param $data
+ *
+ * @param array|null $data
  *   If from settings form, an array as from a form. If from argument, a string.
- * @param $conf
+ *
+ * @param array|bool $conf
  *   TRUE if the $data is coming from admin configuration, FALSE if it's from a URL arg.
  *
- * @return
- *   a Context object/
+ * @return object.
+ *   a Context object.
  */
 function advanced_forum_forum_context_create_forum($empty, $data = NULL, $conf = FALSE) {
   $context = new ctools_context(array('forum', 'term'));
@@ -52,7 +53,7 @@ function advanced_forum_forum_context_create_forum($empty, $data = NULL, $conf =
       $data = taxonomy_term_load($data['tid']);
     }
     else {
-      $data = taxonomy_vocabulary_load(variable_get('forum_nav_vocabulary', ''));
+      $data = taxonomy_vocabulary_load(variable_get('forum_nav_vocabulary', 0));
       $data->tid = 0;
     }
   }
@@ -72,16 +73,19 @@ function advanced_forum_forum_context_create_forum($empty, $data = NULL, $conf =
   }
 }
 
-function advanced_forum_forum_context_settings_form($conf) {
+/**
+ * Context settings form.
+ */
+function advanced_forum_forum_context_settings_form($form, &$form_state) {
+  $conf = $form_state['conf'];
+
   if (empty($conf)) {
     $conf = array('tid' => 0);
   }
 
-  $form = array();
-
   $options = array();
-  $vocabulary = taxonomy_vocabulary_load(variable_get('forum_nav_vocabulary', ''));
-  $options[0] = $vocabulary->name;
+  $vocabulary = taxonomy_vocabulary_load(variable_get('forum_nav_vocabulary', 0));
+  $options[$vocabulary->vid] = $vocabulary->name;
 
   $tree = taxonomy_get_tree($vocabulary->vid);
   if ($tree) {
@@ -109,7 +113,14 @@ function advanced_forum_forum_context_convert($context, $type) {
   switch ($type) {
     case 'tid':
       return $context->data->tid;
+
     case 'name':
-      return $context->data->name;
+      $forum_term = $context->data;
+
+      if (module_exists('i18n_taxonomy')) {
+        $forum_term = i18n_taxonomy_localize_terms($forum_term);
+      }
+
+      return $forum_term->name;
   }
 }

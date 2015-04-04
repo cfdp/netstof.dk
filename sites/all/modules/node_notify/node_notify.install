@@ -15,11 +15,12 @@ function node_notify_requirements($phase) {
 
   if ('runtime' == $phase && module_exists('comment_notify')) {
     $info = system_get_info('module', 'comment_notify');
+    $tested_versions = array('7.x-1.0', '7.x-1.1', '7.x-1.2');
     $requirements['comment_notify'] = array(
       'title' => $t('Node Notify'),
       'value' => $info['version'],
-      'description' => $t('Node Notify expects Comment Notify version 7.x-1.0.'),
-      'severity' => $info['version'] == '7.x-1.0' ? REQUIREMENT_OK : REQUIREMENT_WARNING,
+      'description' => $t('Node Notify was tested with Comment Notify version\'s up to 7.x-1.2.'),
+      'severity' => in_array($info['version'], $tested_versions) ? REQUIREMENT_OK : REQUIREMENT_WARNING,
     );
   }
 

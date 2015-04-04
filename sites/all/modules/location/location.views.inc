@@ -5,14 +5,11 @@
  * Views 3 support for Location.
  */
 
-/*
-
-TODO:
+/**
+ * @TODO:
  * Finish porting!
  * Write "relationships" -- see book.views.inc, upload.views.inc, nodequeue...
-
-
-*/
+ */
 
 /**
  * Implementation of hook_views_handlers().
@@ -20,7 +17,7 @@ TODO:
 function location_views_handlers() {
   return array(
     'info' => array(
-      'path' => drupal_get_path('module', 'location') .'/handlers',
+      'path' => drupal_get_path('module', 'location') . '/handlers',
     ),
     'handlers' => array(
       'location_views_handler_field_latitude' => array(
@@ -71,14 +68,9 @@ function location_views_handlers() {
       'location_handler_sort_location_distance' => array(
         'parent' => 'views_handler_sort',
       ),
-//      'location_handler_relationship_location_distance' => array(
-//        'parent' => 'views_handler_relationship',
-//      ),
-
-//      'location_handler_field_location_coordinates_user' => array(
-//        'parent' => 'views_handler_field',
-//      ),
-
+      'location_handler_sort_location_country' => array(
+        'parent' => 'views_handler_sort',
+      ),
     ),
   );
 }
@@ -87,18 +79,15 @@ function location_views_handlers() {
  * Implementation of hook_views_data().
  */
 function location_views_data() {
-  // ----------------------------------------------------------------
-  // location table -- basic table information.
-
+  // Location table -- basic table information.
   // Define the base group of this table. Fields that don't
   // have a group defined will go into this field by default.
+  $data['location']['table']['group'] = t('Location', array(), array('context' => 'geolocation'));
 
-  $data['location']['table']['group'] = t('Location');
-
-  // Advertise this table as a possible base table
+  // Advertise this table as a possible base table.
   $data['location']['table']['base'] = array(
     'field' => 'lid',
-    'title' => t('Location'),
+    'title' => t('Location', array(), array('context' => 'geolocation')),
     'help' => t('Locations are addresses and map coordinates.'),
     'weight' => -10,
   );
@@ -116,6 +105,12 @@ function location_views_data() {
       'left_field' => 'lid',
       'field' => 'lid',
     ),
+    // Location links to taxonomy_term_data through location_instance via lid.
+    'taxonomy_term_data' => array(
+      'left_table' => 'location_instance',
+      'left_field' => 'lid',
+      'field' => 'lid',
+    ),
     // Location links to users through location_instance via lid.
     'users' => array(
       'left_table' => 'location_instance',
@@ -124,16 +119,14 @@ function location_views_data() {
     ),
   );
 
-  // ----------------------------------------------------------------
-  // location table -- fields
-
-  // lid
+  // Location table -- fields.
   $data['location']['lid'] = array(
     'title' => t('Lid'),
-    'help' => t('The location ID of the location.'), // The help that appears on the UI,
-    // Information for displaying the lid
+    // The help that appears on the UI.
+    'help' => t('The location ID of the location.'),
+    // Information for displaying the lid.
     'field' => array(
-      'handler' => 'views_handler_field', // @@@
+      'handler' => 'views_handler_field',
       'click sortable' => TRUE,
     ),
     // Information for accepting a lid as an argument
@@ -145,7 +138,7 @@ function location_views_data() {
       'validate type' => 'nid',
     ),
     */
-    // Information for accepting a lid as a filter
+    // Information for accepting a lid as a filter.
     'filter' => array(
       'handler' => 'views_handler_filter_numeric',
       'allow empty' => TRUE,
@@ -232,14 +225,13 @@ function location_views_data() {
     ),
     'argument' => array(
       'handler' => 'location_handler_argument_location_province',
-      //'name field' => 'name',
     ),
     'filter' => array(
       'handler' => 'location_handler_filter_location_province',
     ),
     'sort' => array(
       'handler' => 'views_handler_sort',
-      // TODO: needs handler to sort by name, not code
+      // TODO: needs handler to sort by name, not code.
     ),
   );
 
@@ -267,14 +259,12 @@ function location_views_data() {
     ),
     'argument' => array(
       'handler' => 'location_handler_argument_location_country',
-      //'name field' => 'name',
     ),
     'filter' => array(
       'handler' => 'location_handler_filter_location_country',
     ),
     'sort' => array(
-      'handler' => 'views_handler_sort',
-      // TODO: needs handler to sort by name, not code
+      'handler' => 'location_handler_sort_location_country',
     ),
   );
 
@@ -310,7 +300,8 @@ function location_views_data() {
     'title' => t('Coordinates'),
     'help' => t("The coordinates of the selected location in 'lat, long' format."),
     'field' => array(
-      'field' => 'latitude', // The handler adds the longitude.
+      // The handler adds the longitude.
+      'field' => 'latitude',
       'handler' => 'location_views_handler_field_coordinates',
       'click sortable' => FALSE,
     ),
@@ -332,31 +323,7 @@ function location_views_data() {
     'filter' => array(
       'handler' => 'location_views_handler_filter_proximity',
     ),
-//    'relationship' => array(
-//      'handler' => 'location_handler_relationship_location_distance',
-//    ),
   );
-
-//  $data['location']['coordinates_user'] = array(
-//    'title' => t('Coordinates of logged-on user'),
-//    'help' => t('This will contain the coordinates of the logged-on user.'),
-//    'field' => array(
-//      'handler' => 'location_handler_field_location_coordinates_user',
-//      'click sortable' => FALSE,
-//    ),
-//  );
-
-/*
-      'latitude' => array(
-        'name' => t('Latitude'),
-        'sortable' => TRUE,
-      ),
-      'longitude' => array(
-        'name' => t('Longitude'),
-        'sortable' => TRUE,
-      ),
-*/
-
 
   $data['location']['address'] = array(
     'title' => t('Address'),
@@ -368,8 +335,7 @@ function location_views_data() {
     ),
   );
 
-
-  $data['location_instance']['table']['group']  = t('Location');
+  $data['location_instance']['table']['group'] = t('Location', array(), array('context' => 'geolocation'));
 
   $data['location_instance']['table']['join'] = array(
     'location' => array(
@@ -388,8 +354,11 @@ function location_views_data() {
       'left_field' => 'vid',
       'field' => 'vid',
     ),
+    'taxonomy_term_data' => array(
+      'left_field' => 'tid',
+      'field' => 'vid',
+    ),
   );
-
 
   // Tell the base tables about us.
   $data['node']['table']['join']['location'] = array(
@@ -402,6 +371,11 @@ function location_views_data() {
     'left_field' => 'vid',
     'field' => 'vid',
   );
+  $data['taxonomy_term_data']['table']['join']['location'] = array(
+    'left_table' => 'location_instance',
+    'left_field' => 'vid',
+    'field' => 'tid',
+  );
   $data['users']['table']['join']['location'] = array(
     'left_table' => 'location_instance',
     'left_field' => 'uid',
@@ -413,9 +387,10 @@ function location_views_data() {
 
 /**
  * Helper function for proximity handlers.
+ *
  * Gets a list of available node location and cck location fields.
  *
- * @return
+ * @return array
  *   An array of the location field options.
  */
 function location_views_proximity_get_location_field_options() {
@@ -429,17 +404,19 @@ function location_views_proximity_get_location_field_options() {
       }
     }
   }
+
   return $field_options;
 }
 
 /**
  * Helper function for proximity handlers.
+ *
  * Gets available arguments for argument related handler options.
  *
- * @param $view
+ * @param object $view
  *   The view object.
  *
- * @return
+ * @return array
  *   An array containing arrays of the nid arguments and the uid arguments.
  */
 function location_views_proximity_get_argument_options($view) {
@@ -452,26 +429,33 @@ function location_views_proximity_get_argument_options($view) {
       $uid_argument_options[$id] = $handler->ui_name();
       $nid_argument_options[$id] = $handler->ui_name();
     }
-    else if ($handler->field == 'nid') {
-      $nid_argument_options[$id] = $handler->ui_name();
-    }
-    else if ($handler->field == 'uid') {
-      $uid_argument_options[$id] = $handler->ui_name();
+    else {
+      if ($handler->field == 'nid') {
+        $nid_argument_options[$id] = $handler->ui_name();
+      }
+      else {
+        if ($handler->field == 'uid') {
+          $uid_argument_options[$id] = $handler->ui_name();
+        }
+      }
     }
   }
+
   return array($nid_argument_options, $uid_argument_options);
 }
 
 /**
  * Helper function for proximity handlers.
+ *
  * Retrieves the coordinates of the location that this field measures distances against.
  *
- * @param $view
+ * @param object $view
  *   The view object.
- * @param $options
+ *
+ * @param array $options
  *   An array of the options (or values in the case of the filter) of the handler.
  *
- * @return
+ * @return array
  *   An array with keys 'latitude' and 'longitude' or an empty array.
  */
 function location_views_proximity_get_reference_location($view, $options) {
@@ -487,16 +471,23 @@ function location_views_proximity_get_reference_location($view, $options) {
         $coordinates['latitude'] = (float) $user_locations[$i]['latitude'];
         $coordinates['longitude'] = (float) $user_locations[$i]['longitude'];
       }
-      else if ($options['origin'] == 'hybrid') {
+      else {
+        if ($options['origin'] == 'hybrid') {
+          $coordinates['latitude'] = (float) $options['latitude'];
+          $coordinates['longitude'] = (float) $options['longitude'];
+        }
+      }
+      break;
+
+    case 'static':
+    case 'latlon_gmap':
+      // Validate actual values.
+      if (!empty($options['latitude']) && !empty($options['longitude'])) {
         $coordinates['latitude'] = (float) $options['latitude'];
         $coordinates['longitude'] = (float) $options['longitude'];
       }
       break;
-    case 'static':
-    case 'latlon_gmap':
-      $coordinates['latitude'] = (float) $options['latitude'];
-      $coordinates['longitude'] = (float) $options['longitude'];
-      break;
+
     case 'tied':
       if (!empty($view->filter)) {
         foreach ($view->filter as $filter) {
@@ -509,7 +500,20 @@ function location_views_proximity_get_reference_location($view, $options) {
           }
         }
       }
+      // If at this stage we don't have coordinates then check for a distance contextual filter.
+      if (!count(
+          $coordinates
+        ) && !empty($view->argument) && !empty($argument->value['latitude']) && !empty($argument->value['longitude'])
+      ) {
+        foreach ($view->argument as $argument) {
+          if ($argument->table == 'location' && $argument->field == 'distance') {
+            $coordinates['latitude'] = (float) $argument->value['latitude'];
+            $coordinates['longitude'] = (float) $argument->value['longitude'];
+          }
+        }
+      }
       break;
+
     case 'postal':
     case 'postal_default':
       // Force default for country.
@@ -525,6 +529,7 @@ function location_views_proximity_get_reference_location($view, $options) {
         }
       }
       break;
+
     case 'php':
       ob_start();
       $result = eval($options['php_code']);
@@ -534,9 +539,10 @@ function location_views_proximity_get_reference_location($view, $options) {
         $coordinates['longitude'] = (float) $result['longitude'];
       }
       break;
+
     case 'nid_arg':
       if ($nodehandler = $view->display_handler->get_handler('argument', $options['nid_arg'])) {
-        $nid = $nodehandler->get_value();
+        $nid = $nodehandler->get_value(NULL);
         if ($nid && is_numeric($nid) && $tempnode = node_load($nid)) {
           $field_name = $options['nid_loc_field'];
           if ($field_name == 'node') {
@@ -550,45 +556,59 @@ function location_views_proximity_get_reference_location($view, $options) {
                 $coordinates['latitude'] = (float) $cck_location[LANGUAGE_NONE][0]['latitude'];
                 $coordinates['longitude'] = (float) $cck_location[LANGUAGE_NONE][0]['longitude'];
               }
-              else if (isset($cck_location[0]['longitude']) && isset($cck_location[0]['latitude'])) {
-                $coordinates['latitude'] = (float) $cck_location[0]['latitude'];
-                $coordinates['longitude'] = (float) $cck_location[0]['longitude'];
+              else {
+                if (isset($cck_location[0]['longitude']) && isset($cck_location[0]['latitude'])) {
+                  $coordinates['latitude'] = (float) $cck_location[0]['latitude'];
+                  $coordinates['longitude'] = (float) $cck_location[0]['longitude'];
+                }
               }
             }
           }
         }
       }
       break;
+
     case 'uid_arg':
       if ($userhandler = $view->display_handler->get_handler('argument', $options['uid_arg'])) {
         $uid = $userhandler->get_value();
-        if ($uid && is_numeric($uid) && $tempuser = user_load(array('uid' => $uid))) {
+        if ($uid && is_numeric($uid) && $tempuser = user_load($uid)) {
           $coordinates['latitude'] = (float) $tempuser->location['latitude'];
           $coordinates['longitude'] = (float) $tempuser->location['longitude'];
         }
       }
       break;
+
     case 'distance_arg':
       foreach ($view->argument as $argument) {
         if ($argument->field == 'distance') {
           list($coords, $search_distance) = explode('_', $view->args[$argument->position]);
           list($lat, $lon) = explode(',', $coords);
           break;
+
         }
       }
       $coordinates['latitude'] = (float) $lat;
       $coordinates['longitude'] = (float) $lon;
       break;
+
     case 'geoip':
-      if (module_exists('geoip')) {
-        if ($geoip_location = geoip_city()) { // intentional assignment of $geoip
+      $coordinates['latitude'] = (float) $options['latitude'];
+      $coordinates['longitude'] = (float) $options['longitude'];
+      if (module_exists('smart_ip')) {
+        $smart_ip_session = smart_ip_session_get('smart_ip');
+        if (isset($smart_ip_session['location']['latitude']) &&
+          isset($smart_ip_session['location']['longitude'])
+        ) {
+          $coordinates['latitude'] = (float) $smart_ip_session['location']['latitude'];
+          $coordinates['longitude'] = (float) $smart_ip_session['location']['longitude'];
+        }
+      }
+      elseif (module_exists('geoip')) {
+        // Intentional assignment of $geoip.
+        if ($geoip_location = geoip_city()) {
           $coordinates['latitude'] = $geoip_location->latitude;
           $coordinates['longitude'] = $geoip_location->longitude;
         }
-      }
-      else if ($options['latitude'] && $options['longitude']) {
-        $coordinates['latitude'] = (float) $options['latitude'];
-        $coordinates['longitude'] = (float) $options['longitude'];
       }
       break;
 

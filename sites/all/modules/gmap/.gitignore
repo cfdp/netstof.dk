@@ -1,3 +1,5 @@
 #.gitignore
 *.patch
 *.diff
+.idea
+temp

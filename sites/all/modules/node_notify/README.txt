@@ -68,11 +68,14 @@ You should adjust permissions at Administration > People > Permissions
 
 - Administer node subscriptions
 
-  Enables role to disable or enable existing subscriptions on a node
-  through "Subscriptions" tab on node page
-  (node/%node/subscriptions). Allows changing node's subscription
-  status for node's (registered) author when combined with ability to
-  edit node.
+  Enables role to disable or enable existing subscriptions on a node in
+  "Subscriptions" tab on node page (node/%node/subscriptions). Allows changing
+  node's subscription status for node's (registered) author when combined with
+  ability to edit node.
+
+  Enables role to see user's subscriptions on "Subscriptions" tab on user's page
+  (user/%user/subscriptions) when combined with "View user profiles" (access
+  user profiles) permission.
 
 - Subscribe to node notifications
 

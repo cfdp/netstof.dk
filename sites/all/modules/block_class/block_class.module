@@ -1,53 +1,89 @@
 <?php
 
-/*
+/**
+ * @file
+ * Enhanced control over the CSS Classes of any Block.
+ *
+ * Block Class allows users to add classes to any block through the block's
+ * configuration interface. In this implementation css_class block values are
+ * stored in the block_class database table.
+ */
+
+/**
+ * Implements hook_permission().
+ */
+function block_class_permission() {
+  return array(
+    'administer block classes' => array(
+      'title' => t('Administer block classes'),
+      'description' => t('Set CSS classes for blocks.'),
+    ),
+  );
+}
+
+/**
+ * Implements theme_preprocess_block().
+ *
  * Extend block's classes with any user defined classes.
  */
 function block_class_preprocess_block(&$vars) {
-  $block = $vars['block'];
-
-  /* The original code: */
-  //$classes = block_class($block);
-  //$vars['classes_array'] = array_merge($vars['classes_array'], explode(' ', $classes));
-
-  /* Replaced with the following so it doesn't fire that many queries if you have a lot of blocks */
-  static $_block_class_blocks_classes;
-
-  if (! isset ($_block_class_blocks_classes)) {
-    $_block_class_blocks_classes = array();
-    $result = db_query('SELECT css_class, module, delta FROM {block_class}');
-    while ($record = $result->fetchObject()) {
-      $_block_class_blocks_classes[$record->module][$record->delta] = $record->css_class;
-    }
-  }
-
-  if (isset($_block_class_blocks_classes[$block->module][$block->delta])) {
-    $classes = $_block_class_blocks_classes[$block->module][$block->delta];
+  $classes = trim(block_class($vars['block']));
+  if (!empty($classes)) {
     $vars['classes_array'] = array_merge($vars['classes_array'], explode(' ', $classes));
   }
 }
 
-
 /**
- * Return classes as string
+ * Implements hook_preprocess_HOOK().
+ *
+ * Extend panel block's classes with any user defined classes.
  */
-function block_class($block) {
-  $ret = db_query('SELECT css_class FROM {block_class} WHERE module = :module AND delta = :delta', array(':module' => $block->module, ':delta' => $block->delta))->fetchField();
-  return $ret ? check_plain ($ret) : '';
+function block_class_preprocess_panels_pane(&$vars) {
+  if ($vars['pane']->type != 'block') {
+    return;
+  }
+  // Infer the block's $module and $delta from the pane subtype.
+  $block_parts = explode('-', $vars['pane']->subtype);
+  // Load the block based on the block parts.
+  $block = block_load($block_parts[0], $block_parts[1]);
+  // Return block_class classes as string.
+  $css_class = block_class($block);
+  // Add a generic 'module type' pane class.
+  $vars['classes_array'][] = drupal_html_class('pane-' . $block->module);
+  // Add $css_class to the $classes_array.
+  $vars['classes_array'][] = $css_class;
 }
 
+/**
+ * Return classes as string.
+ *
+ * Statically cache the block classes values for all the blocks to avoid firing
+ * multiple queries if there are many blocks.
+ */
+function block_class($block) {
+  $cache = &drupal_static(__FUNCTION__);
+  if (count($cache) <= 0) {
+    $query = db_select('block_class');
+    $query->addField(NULL, 'css_class');
+    $query->addExpression("CONCAT(module, '_', delta)", 'block_key');
+    $cache = $query->execute()->fetchAllKeyed(1, 0);
+  }
+  return !empty($cache[$block->module . '_' . $block->delta]) ? check_plain($cache[$block->module . '_' . $block->delta]) : '';
+}
 
 /**
- * Alter block edit form
+ * Implements hook_form_alter().
+ *
+ * Alter block edit form to add configuration field.
  */
 function block_class_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'block_admin_configure' || $form_id == 'block_add_block_form') {
-    $block = new stdClass;
+  if (user_access('administer block classes') && $form_id == 'block_admin_configure' || $form_id == 'block_add_block_form') {
+    $block = new stdClass();
     $block->module = $form['module']['#value'];
     $block->delta = $form['delta']['#value'];
     $css_class = block_class($block);
 
-    // Create a more technical description for users with administer blocks permission.
+    // More technical description for users with administer blocks permission.
     $description = t('Customize the styling of this block by adding CSS classes. Separate multiple classes by spaces.');
 
     $form['settings']['css_class'] = array(
@@ -62,9 +98,10 @@ function block_class_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 
-
 /**
- * Save supplied class.
+ * Helper function: additional submit callback for block configuration pages.
+ *
+ * Save supplied CSS classes.
  */
 function block_class_form_submit($form, &$form_state) {
   if ($form_state['values']['form_id'] == 'block_admin_configure' || $form_state['values']['form_id'] == 'block_add_block_form') {
@@ -74,8 +111,28 @@ function block_class_form_submit($form, &$form_state) {
       $class = $form_state['values']['css_class'];
       db_delete('block_class')->condition('module', $module)->condition('delta', $delta)->execute();
       if (!empty($class)) {
-        $id = db_insert('block_class')->fields(array('module' => $module, 'delta' => $delta, 'css_class' => $class))->execute();
+        $id = db_insert('block_class')
+          ->fields(array(
+            'module' => $module,
+            'delta' => $delta,
+            'css_class' => $class,
+          ))
+          ->execute();
       }
     }
   }
+}
+
+/**
+ * Implements hook_features_api().
+ */
+function block_class_features_api() {
+  return array(
+    'block_class' => array(
+      'name' => t('Block class'),
+      'feature_source' => TRUE,
+      'default_hook' => 'block_class_features_default_class',
+      'file' => drupal_get_path('module', 'block_class') . '/block_class.features.inc',
+    ),
+  );
 }

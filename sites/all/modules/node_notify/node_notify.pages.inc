@@ -117,9 +117,9 @@ function node_notify_node_subscriptions_page($node) {
     $rows[] = array(
       $record->uid ? l($record->name, 'user/' . $record->uid) : NULL,
       $record->email, format_date($record->subscribed_on),
-      $record->enabled
-      ? l(t('Disable'), $url . '/disable', array('query' => drupal_get_destination()))
-      : l(t('Enable'), $url . '/enable', array('query' => drupal_get_destination())),
+      $record->enabled ?
+      l(t('Disable'), $url . '/disable', array('query' => drupal_get_destination())) :
+      l(t('Enable'), $url . '/enable', array('query' => drupal_get_destination())),
     );
   }
 
@@ -172,9 +172,9 @@ function node_notify_user_subscriptions_page($account) {
     $rows[] = array(
       l($record->title, 'node/' . $record->nid),
       format_date($record->subscribed_on),
-      $record->enabled
-      ? l(t('Disable'), $url . '/disable', array('query' => drupal_get_destination()))
-      : l(t('Enable'), $url . '/enable', array('query' => drupal_get_destination())),
+      $record->enabled ?
+      l(t('Disable'), $url . '/disable', array('query' => drupal_get_destination())) :
+      l(t('Enable'), $url . '/enable', array('query' => drupal_get_destination())),
     );
   }
 

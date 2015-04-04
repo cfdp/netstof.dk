@@ -1,6 +1,8 @@
 <?php
 
-/* topic pager template
+/**
+ * @file
+ * Topic pager template.
  *
  * $pages: Array of linked numbers for first set of pages
  * $last_page_text: Linked text "Last page" (translatable)
@@ -9,5 +11,5 @@
  */
 ?>
 <?php if (!empty($pages)): ?>
-  <span class="topic-pager">(Page: <?php print implode(", ", $pages) . $last_page_text; ?>)</span>
+  <span class="topic-pager">(<?php print t('Page: ') . implode(", ", $pages) . $last_page_text; ?>)</span>
 <?php endif; ?>

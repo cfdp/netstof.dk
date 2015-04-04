@@ -21,6 +21,14 @@ function node_notify_settings_form($form, &$form_state) {
     '#default_value' => variable_get('node_notify_enabled_types', array()),
   );
 
+  $form['node_notify_enabled_by_default'] = array(
+    '#title' => t('Subscription enabled by default on'),
+    '#type' => 'checkboxes',
+    '#options' => $types,
+    '#default_value' => variable_get('node_notify_enabled_by_default', array()),
+    '#description' => t('Choose content types to tick off subscription checkbox by default for new content.'),
+  );
+
   $form['node_notify_cron'] = array(
     '#title' => t('Remove expired subscriptions'),
     '#description' => t('Remove disabled and expired subscriptions when cron is run.'),

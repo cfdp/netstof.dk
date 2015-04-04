@@ -5,6 +5,10 @@
  * Holds the contents of a preprocess function moved into its own file
  * to ease memory requirements and having too much code in one file.
  */
+
+/**
+ * Preprocess advanced forum topic list.
+ */
 function _template_preprocess_advanced_forum_topic_list_view(&$variables) {
 
   // Even though this isn't needed for the actual topic list view, the other
@@ -52,9 +56,11 @@ function _template_preprocess_advanced_forum_topic_list_view(&$variables) {
     // Grab the teaser so it can be used on the title of the td as a popup
     // preview. By default, the view provides the teaser as a popup on the
     // title link.
-    $teaser = $renders[$count]['teaser'];
-    $teaser = htmlentities($teaser);
-    $teasers[$count] = $teaser;
+    if (!empty($renders[$count]['teaser'])) {
+      $teaser = $renders[$count]['teaser'];
+      $teaser = htmlentities($teaser);
+      $teasers[$count] = $teaser;
+    }
 
     // Determine stickiness.
     if (!$stickies_done) {
@@ -79,7 +85,7 @@ function _template_preprocess_advanced_forum_topic_list_view(&$variables) {
       $variables['shadow'][$count] = theme('advanced_forum_shadow_topic', array(
         'title' => $row->node_title,
         'nid' => $row->nid,
-        'new_forum' => $term->name
+        'new_forum' => empty($term->name) ? "" : $term->name,
           ));
     }
     else {
@@ -89,7 +95,7 @@ function _template_preprocess_advanced_forum_topic_list_view(&$variables) {
 
   // Make the sticky variable available to the template.
   $variables['sticky'] = $sticky;
-  $variables['teasers'] = $teasers;
+  $variables['teasers'] = empty($teasers) ? NULL : $teasers;
 
   foreach ($columns as $field => $column) {
     // Create a second variable so we can easily find what fields we have and what the
@@ -99,7 +105,7 @@ function _template_preprocess_advanced_forum_topic_list_view(&$variables) {
       $variables['fields'][$field] .= ' active';
     }
 
-    // render the header labels
+    // Render the header labels.
     if ($field == $column && empty($fields[$field]->options['exclude'])) {
       $label = check_plain(!empty($fields[$field]) ? $fields[$field]->label() : '');
       if (empty($options['info'][$field]['sortable']) || !$fields[$field]->click_sortable()) {
@@ -149,14 +155,14 @@ function _template_preprocess_advanced_forum_topic_list_view(&$variables) {
       }
     }
 
-    // Add a CSS align class to each field if one was set
+    // Add a CSS align class to each field if one was set.
     if (!empty($options['info'][$field]['align'])) {
       $variables['fields'][$field] .= ' ' . drupal_clean_css_identifier($options['info'][$field]['align']);
     }
 
     // Render each field into its appropriate column.
     foreach ($result as $num => $row) {
-      // Add field classes
+      // Add field classes.
       $variables['field_classes'][$field][$num] = '';
       if ($fields[$field]->options['element_default_classes']) {
         $variables['field_classes'][$field][$num] = "views-field views-field-" . $variables['fields'][$field];
@@ -208,14 +214,18 @@ function _template_preprocess_advanced_forum_topic_list_view(&$variables) {
   $variables['row_classes'][0][] = 'views-row-first';
   $variables['row_classes'][count($variables['row_classes']) - 1][] = 'views-row-last';
 
-  $variables['classes_array'] = array('forum-table', 'forum-table-topics');
+  if (!variable_get('advanced_forum_keep_classes', FALSE) || !is_array($variables['classes_array'])) {
+    // Add in our classes overwriting existing.
+    $variables['classes_array'] = array();
+  }
+
+  $variables['classes_array'][] = 'forum-table forum-table-topics';
   if (empty($variables['rows']) && !empty($options['empty_table'])) {
     $variables['rows'][0][0] = $view->display_handler->render_area('empty');
     // Calculate the amounts of rows with output.
     $variables['field_attributes'][0][0]['colspan'] = count($variables['header']);
     $variables['field_classes'][0][0] = 'views-empty';
   }
-
 
   if (!empty($options['sticky'])) {
     drupal_add_js('misc/tableheader.js');

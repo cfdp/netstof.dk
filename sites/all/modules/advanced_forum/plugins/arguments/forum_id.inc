@@ -2,7 +2,6 @@
 
 /**
  * @file
- *
  * Plugin to provide an argument handler for a user id
  */
 
@@ -11,8 +10,8 @@
  * by the system that includes this file.
  */
 $plugin = array(
-  'title' => t("Forum ID"),
-  // keyword to use for %substitution
+  'title' => t("Forum: ID"),
+  // Keyword to use for %substitution.
   'keyword' => 'forum',
   'description' => t('Creates a forum context from a forum ID argument.'),
   'context' => 'advanced_forum_argument_forum_id_context',
@@ -42,8 +41,8 @@ function advanced_forum_argument_forum_id_context($arg = NULL, $conf = NULL, $em
     $term = taxonomy_term_load($arg);
   }
 
-  if ($arg == 0 || empty($term) || $term->vid != variable_get('forum_nav_vocabulary', '')) {
-    $term = taxonomy_vocabulary_load(variable_get('forum_nav_vocabulary', ''));
+  if ($arg == 0 || empty($term) || $term->vid != variable_get('forum_nav_vocabulary', 0)) {
+    $term = taxonomy_vocabulary_load(variable_get('forum_nav_vocabulary', 0));
     $term->tid = 0;
   }
 
@@ -55,7 +54,7 @@ function advanced_forum_argument_forum_id_context($arg = NULL, $conf = NULL, $em
 }
 
 /**
- * Settings form for the argument
+ * Settings form for the argument.
  */
 function advanced_forum_forum_id_settings_form(&$form, &$form_state, $conf) {
   $form['settings']['breadcrumb'] = array(
@@ -74,19 +73,14 @@ function advanced_forum_forum_id_breadcrumb($conf, $context) {
     return;
   }
 
-  $vocabulary = $context->vocabulary;
-
-  // Breadcrumb navigation:
   $breadcrumb = array();
-  if ($context->data->tid) {
-    $breadcrumb[] = l($vocabulary->name, 'forum');
-  }
-
-  if (isset($parents)) {
-    $parents = array_reverse($vocabulary->parents);
-    foreach ($parents as $p) {
-      if ($p->tid != $context->data->tid) {
-        $breadcrumb[] = l($p->name, 'forum/' . $p->tid);
+  if (isset($context->data->parents)) {
+    $parents = array_reverse($context->data->parents);
+    if (!empty($parents)) {
+      foreach ($parents as $p) {
+        if ($p->tid != $context->data->tid) {
+          $breadcrumb[] = l($p->name, 'forum/' . $p->tid);
+        }
       }
     }
   }

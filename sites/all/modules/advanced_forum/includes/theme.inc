@@ -5,7 +5,6 @@
  * Holds theme functions and template preprocesses.
  * Other style related functions are in style.inc
  */
-// THEME FUNCTIONS **********************************************************/
 
 /**
  * Theme function to display a link, optionally buttonized.
@@ -29,7 +28,9 @@ function theme_advanced_forum_l(&$variables) {
       $options['attributes']['class'][] = "af-button-$button_class";
     }
     $options['html'] = TRUE;
+    // @codingStandardsIgnoreStart
     $l = l('<span>' . $text . '</span>', $path, $options);
+    // @codingStandardsIgnoreEnd
   }
   else {
     // Standard link: just send it through l().
@@ -56,8 +57,8 @@ function theme_advanced_forum_node_type_create_list(&$variables) {
         'text' => t('New @node_type', array('@node_type' => $item['name'])),
         'path' => $item['href'],
         'options' => NULL,
-        'button_class' => 'large'
-          ));
+        'button_class' => 'large',
+        ));
       $output .= '</div>';
     }
   }
@@ -101,7 +102,7 @@ function theme_advanced_forum_reply_link(&$variables) {
       'text' => $reply_link['title'],
       'path' => $reply_link['href'],
       'options' => $reply_link['options'],
-      'button_class' => 'large'
+      'button_class' => 'large',
         ));
     $output .= '</div>';
     return $output;
@@ -120,9 +121,10 @@ function theme_advanced_forum_reply_link(&$variables) {
 /**
  * Theme function to a formatted list of subforums.
  *
- * @param $subforum_list
+ * @param array $variables
  *   Array of subforums.
- * @return
+ *
+ * @return string
  *   Formatted list of subforums.
  */
 function theme_advanced_forum_subforum_list(&$variables) {
@@ -149,9 +151,10 @@ function theme_advanced_forum_subforum_list(&$variables) {
 /**
  * Theme function to a formatted list of subcontainers.
  *
- * @param $subcontainer_list
+ * @param array $variables
  *   Array of subcontainers.
- * @return
+ *
+ * @return string
  *   Formatted list of subcontainers.
  */
 function theme_advanced_forum_subcontainer_list(&$variables) {
@@ -211,23 +214,23 @@ function advanced_forum_preprocess_views_view_fields__advanced_forum_search(&$va
  */
 function advanced_forum_preprocess_forum_submitted(&$variables) {
   advanced_forum_add_template_suggestions("submitted", $variables);
-  // Avoid E_ALL warning
+  // Avoid E_ALL warning.
   $variables['topic_link'] = '';
 
   if (isset($variables['topic']->node_title)) {
     $nid = $variables['topic']->nid;
 
-    // Make a fake node object to avoid the node load
+    // Make a fake node object to avoid the node load.
     $node = new stdClass();
     $node->nid = $nid;
     $node->type = $variables['topic']->type;
 
-    // Find the page of the first unread comment, if any
+    // Find the page of the first unread comment, if any.
     $comment_count = db_query('SELECT COUNT(cid) FROM {comment} WHERE nid = :nid', array(':nid' => $nid))->fetchField();
     $new_replies = advanced_forum_reply_num_new($nid);
     $query = advanced_forum_page_first_new($comment_count, $new_replies, $node);
 
-    // Format the node title with a link
+    // Format the node title with a link.
     $title_length = variable_get('advanced_forum_topic_title_length', 15);
     if ($title_length == 0) {
       $short_topic_title = $variables['topic']->node_title;
@@ -245,28 +248,35 @@ function advanced_forum_preprocess_forum_submitted(&$variables) {
     $variables['topic_link'] = l($short_topic_title, "node/$nid", array('query' => $query, 'fragment' => $fragment));
   }
 
-  // For items posted more than $cutoff hours ago, offer an actual date.
-  $cutoff = variable_get('advanced_forum_time_ago_cutoff', 48) * 60 * 60;
   if (isset($variables['topic']->created)) {
-    $variables['time'] = format_interval(REQUEST_TIME - $variables['topic']->created);
     $timestamp = $variables['topic']->created;
-    if (REQUEST_TIME - $timestamp > $cutoff) {
-      $variables['date_posted'] = format_date($timestamp, 'small');
+    $interval = REQUEST_TIME - $timestamp;
+    $variables['time'] = format_interval($interval);
+
+    // For items posted more than $cutoff hours ago, offer an actual date.
+    $cutoff = variable_get('advanced_forum_time_ago_cutoff', 48) * 60 * 60;
+    if ($interval > $cutoff) {
+      $variables['date_posted'] = format_date($timestamp, 'short');
+    }
+    else {
+      unset($variables['date_posted']);
     }
   }
 }
 
+/**
+ * Preprocess forum topic pager.
+ */
 function advanced_forum_preprocess_advanced_forum_topic_pager(&$variables) {
   $pagecount = $variables['pagecount'];
   $topic = $variables['topic'];
 
   // Get the information to assemble the pager. This returns an object with
   // the following properties:
-  //  initial_pages: Array of linked numbers for first set of pages
-  //  last_page_text: Linked text "Last page" (translatable)
-  //  last_page_number: Linked number pointing to the last page.
+  // - initial_pages: Array of linked numbers for first set of pages
+  // - last_page_text: Linked text "Last page" (translatable)
+  // - last_page_number: Linked number pointing to the last page.
   $topic_pager = advanced_forum_create_topic_pager($pagecount, $topic);
-
 
   $variables['last_page_text'] = '';
 
@@ -285,8 +295,7 @@ function advanced_forum_preprocess_advanced_forum_topic_pager(&$variables) {
 }
 
 /**
- * Preprocess variables for advanced-forum.naked.post-edited.tpl.php
- *
+ * Preprocess variables for advanced-forum.naked.post-edited.tpl.php.
  */
 function advanced_forum_preprocess_advanced_forum_post_edited(&$variables) {
   $editor = user_load($variables['who']);
@@ -296,11 +305,14 @@ function advanced_forum_preprocess_advanced_forum_post_edited(&$variables) {
   $variables['edited_reason'] = empty($variables['why']) ? '' : $variables['why'];
 }
 
+/**
+ * Preprocess forum shadow topic.
+ */
 function advanced_forum_preprocess_advanced_forum_shadow_topic(&$variables) {
   $nid = $variables['nid'];
 
   $variables['new_forum_url'] = url("node/$nid");
-  // compatibility variable
+  // Compatibility variable.
   $variables['new_forum_link'] = l(t('View topic'), "node/$nid");
 }
 
@@ -325,8 +337,9 @@ function advanced_forum_preprocess_advanced_forum_statistics(&$variables) {
 
   $authenticated_users = advanced_forum_statistics_online_users();
   $variables['online_users'] = implode(', ', $authenticated_users);
-  $variables['current_users'] = count($authenticated_users);
-  $variables['current_guests'] = db_query('SELECT COUNT(sid) AS count FROM {sessions} WHERE uid = 0 AND timestamp >= :ts', array(':ts' => (REQUEST_TIME - variable_get('user_block_seconds_online', 900))))->fetchField();
+  $variables['current_users'] = advanced_forum_session_count(FALSE);
+  // For backwards compatibility.
+  $variables['current_guests'] = 0;
   $variables['current_total'] = $variables['current_users'] + $variables['current_guests'];
 
   $latest_users = advanced_forum_statistics_latest_users();
@@ -343,30 +356,39 @@ function advanced_forum_preprocess_forum_list(&$variables) {
 
 /* * * JUST TOPIC LIST PAGES ************************************************* */
 
+/**
+ * Preprocess views forum topic list.
+ */
 function advanced_forum_preprocess_views_view_forum_topic_list__advanced_forum_topic_list(&$variables) {
   _advanced_forum_add_files();
-  // debug
   die("advanced_forum_preprocess_views_view_forum_topic_list__advanced_forum_topic_list");
   advanced_forum_add_template_suggestions("topic_list_view", $variables);
   // Set a variable for displaying the topic legend.
   $variables['topic_legend'] = theme('advanced_forum_topic_legend');
 }
 
+/**
+ * Preprocess views forum topic list.
+ */
 function advanced_forum_preprocess_views_view__advanced_forum_topic_list(&$variables) {
   _advanced_forum_add_files();
   advanced_forum_add_template_suggestions("topic_list_outer_view", $variables);
 
   $variables['node_create_list'] = '';
   $variables['forum_tools'] = '';
+  $variables['forum_jump'] = '';
 
   $menu_item = menu_get_item();
 
-  if ($menu_item['map'][0] == 'forum') {
-    $forum = $menu_item['map'][1];
-    if ($forum->vid == variable_get('forum_nav_vocabulary') && $forum->tid > 0 && !variable_get('advanced_forum_forum_disabled', FALSE)) {
-      $variables['node_create_list'] = theme('advanced_forum_node_type_create_list', array('forum_id' => $forum->tid));
-      $variables['forum_description'] = $forum->description;
-      $variables['forum_tools'] = advanced_forum_forum_tools($forum->tid);
+  if (!empty($menu_item) && $menu_item['access']) {
+    if (($menu_item['map'][0] == 'forum') && (!empty($menu_item['map'][1]))) {
+      $forum = $menu_item['map'][1];
+      if ($forum->vid == variable_get('forum_nav_vocabulary') && $forum->tid > 0) {
+        $variables['node_create_list'] = theme('advanced_forum_node_type_create_list', array('forum_id' => $forum->tid));
+        $variables['forum_description'] = $forum->description;
+        $variables['forum_tools'] = advanced_forum_forum_tools($forum->tid);
+        $variables['forum_jump'] = advanced_forum_forum_jump($forum->tid);
+      }
     }
   }
 }
@@ -401,13 +423,18 @@ function advanced_forum_preprocess_advanced_forum_topic_legend(&$variables) {
 }
 
 /* * * TOPIC PAGES *********************************************************** */
-
+/**
+ * Preprocess forum search topic.
+ */
 function advanced_forum_preprocess_advanced_forum_search_topic(&$variables) {
   advanced_forum_add_template_suggestions("search_topic", $variables);
 
   $variables['path'] = url('node/' . $variables['node']->nid . '/search');
 }
 
+/**
+ * Preprocess views forum search topic.
+ */
 function advanced_forum_preprocess_views_view_fields__advanced_forum_search_topic(&$variables) {
   _advanced_forum_add_files();
   advanced_forum_add_template_suggestions("search_result", $variables);
@@ -421,8 +448,7 @@ function advanced_forum_preprocess_advanced_forum_topic_header(&$variables) {
 
   $node = $variables['node'];
 
-
-  // Reply link / button
+  // Reply link/button.
   $variables['reply_link'] = theme('advanced_forum_reply_link', array('node' => $node));
 
   // Total posts, including first post.
@@ -441,7 +467,11 @@ function advanced_forum_preprocess_advanced_forum_topic_header(&$variables) {
   // Link to last post in topic.
   $variables['last_post_link'] = advanced_forum_last_post_link($node);
 
-  // Pager
+  // Pager.
+  if (isset($variables['node']->comment_count)) {
+    pager_default_initialize($variables['node']->comment_count, variable_get('comment_default_per_page_' . $variables['node']->type, 50));
+  }
+
   $variables['pager'] = theme('pager');
 }
 
@@ -492,6 +522,9 @@ function advanced_forum_preprocess_node(&$variables) {
   }
 }
 
+/**
+ * Preprocess comment wrapper.
+ */
 function advanced_forum_preprocess_comment_wrapper(&$variables) {
   $variables['reply_link'] = '';
   if (advanced_forum_is_styled($variables['node'], FALSE, 'comment-wrapper')) {
@@ -503,7 +536,7 @@ function advanced_forum_preprocess_comment_wrapper(&$variables) {
 
     if ($form_on_seperate_page || $comments_locked) {
       // If the post is locked or the comment form is on a seperate page,
-      // build the reply/locked link / button
+      // build the reply/locked link / button.
       $variables['reply_link'] = theme('advanced_forum_reply_link', array('node' => $variables['node']));
     }
   }
@@ -520,7 +553,9 @@ function advanced_forum_preprocess_comment(&$variables) {
 }
 
 /* * * ORGANIC GROUPS ******************************************************** */
-
+/**
+ * Preprocess view forum group list.
+ */
 function advanced_forum_preprocess_views_view__advanced_forum_group_topic_list(&$variables) {
   _advanced_forum_add_files();
   advanced_forum_add_template_suggestions("group_topic_list_outer_view", $variables);
