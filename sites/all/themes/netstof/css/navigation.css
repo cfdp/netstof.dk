@@ -16,6 +16,7 @@
 		text-align: center;
 		height: 154px;
 		position: relative;
+        padding: 0px;
 	}
 	.region-header .menu-block-wrapper > ul.menu > li > a {
 		width:140px;height:40px;

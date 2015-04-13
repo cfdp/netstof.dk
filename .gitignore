@@ -1,6 +1,25 @@
 # Ignore configuration files that may contain sensitive information.
 sites/*/settings*.php
+.project
 
-# Ignore paths that contain user-generated content.
+# Ignore paths that contain user-generated content and devel stuff.
 sites/*/files
 sites/*/private
+sites/all/modules/git_deploy
+sites/all/modules/devel
+sites/all/modules/maillog
+sites/all/modules/reroute_email
+sites/all/modules/smtp
+sites/all/modules/stage_file_proxy/
+
+#Ignore fetch remote files hack
+sites/default/files/.htaccess
+
+#Ignore mysql dumps
+*.sql.gz
+*.sql
+
+.DS_Store
+.ruby-version
+.sass-cache
+*.sublime-workspace
