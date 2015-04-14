@@ -833,22 +833,34 @@ ul.ui-autocomplete {
 	margin: 0; padding: 0;
 	box-shadow: 2px 2px 4px #AAA;
 	background-color: #FFFFFF;
-	max-width: 611px;
+	max-width: 211px !important;
 	z-index: 10 !important;
 }
-	ul.ui-autocomplete li {
+	#ui-theme-minimal.ui-menu li.ui-menu-item {
 		background-color: #FFFFFF !important;
+      		padding: 6px 8px 6px 24px !important;
+
 	}
-	ul.ui-autocomplete li a {
+
+	#ui-theme-minimal.ui-menu li.ui-menu-item a.ui-state-focus {
+		background: #EEEEEE !important;
+        border: none;
+	}
+
+	#ui-theme-minimal.ui-menu li.ui-menu-item:hover,
+    #ui-theme-minimal.ui-menu li.ui-menu-item a:hover {
+		background: #EEEEEE !important;
+        border: none;
+	}
+
+	#ui-theme-minimal.ui-menu li.ui-menu-item a {
 		font-size: 13px;
 		color: #424242;
 		font-family: "Cabin", sans-serif;
 		border-radius: 0 !important;
-		background-color: #FFFFFF !important;
-		padding: 6px 8px 6px 24px !important;
 		cursor: pointer;
 	}
-	ul.ui-autocomplete .ui-state-hover {
+	#ui-theme-minimal .ui-state-hover {
 		background-color: #EEEEEE !important;
 		border-radius: 0 !important;
 		margin: 0 !important;
