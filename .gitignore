@@ -15,7 +15,8 @@ sites/all/modules/hacked/
 sites/all/modules/linkchecker/
 sites/all/modules/security_review/
 
-#Ignore fetch remote files hack
+#Ignore .htaccess
+.htaccess
 sites/default/files/.htaccess
 
 #Ignore mysql dumps
