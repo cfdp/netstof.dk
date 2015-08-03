@@ -727,7 +727,8 @@
 			display: none;
 		}
 /* Kort */
-.view-kort.view-display-id-default > .view-content {
+.view-kort.view-display-id-default > .view-content,
+.view-kort-enkelt-kommune.view-display-id-default > .view-content {
 	border-top: 1px dashed #dedddb;
 	border-bottom: 1px dashed #dedddb;
 	float: left;
@@ -745,72 +746,92 @@
 	margin-top: 10px;
 }
 /* Attachments view */
-.view-kort.view-display-id-default > .attachment {
+.view-kort.view-display-id-default,
+.view-kort-enkelt-kommune.view-display-id-default {
+  & > .attachment {
 	float: left;
 	width: 100%;
-}
-	.view-kort.view-display-id-default > .attachment .item-list {
-		margin-top: 31px;
-	}
-		.view-kort.view-display-id-default > .attachment .item-list h3 {
-			font-size: 15px; line-height: 15px;
-			text-transform: uppercase;
-			margin: 0 0 7px 0;
+    
+    .item-list {
+      margin-top: 31px;
+      
+      h3 {
+        font-size: 15px; line-height: 15px;
+        text-transform: uppercase;
+        margin: 0 0 7px 0;
+	  }
+      ul {
+        list-style: none;
+        list-style-image: none;
+        margin: 0; padding: 0;
+        
+        li {
+          margin: 0; padding: 10px 0 10px 0;
+          font-size: 13px; line-height: 14px;
+          border-bottom: 1px dashed #dedddb;
+          overflow: hidden;
+          
+          > div a {
+		    line-height: 18px;
+		  }
+          
+          div.views-field-title,
+          div.views-field-field-steder-website {
+            width: 60%;
+            float: left;
+            clear: left;
+            margin-bottom: 4px;
+          }
+          
+          > div.views-field-title,
+          > div.views-field-field-steder-website,
+          > div.views-field-title a {
+/*            font-size: 16px;
+            color: #222;
+            font-weight: bold;*/
+		  }
+          
+          > div.views-field-nothing {
+            color: #666;
+            width: 60%;
+            float: left;
+            clear: left;
+            margin-bottom: 4px;
+          }
+          
+          > div.views-field-field-steder-tlf,
+          > div.views-field-field-steder-email {
+              float: right;
+              clear: right;
+              text-align: right;
+              width: 35%;
+          }
+          
+          > div.views-field-field-steder-tlf a {
+              display: inline-block;
+              background-position: center left;
+              padding: 0 0 0 15px;
+              background: url("../images/icon-phone.png") no-repeat;
+          }
+          
 		}
-			.view-kort.view-display-id-default > .attachment .item-list ul {
-				list-style: none;
-				list-style-image: none;
-				margin: 0; padding: 0;
-			}
-			.view-kort.view-display-id-default > .attachment .item-list ul li {
-				margin: 0; padding: 10px 0 10px 0;
-				font-size: 13px; line-height: 14px;
-				border-bottom: 1px dashed #dedddb;
-				overflow: hidden;
-			}
-				.view-kort.view-display-id-default > .attachment .item-list ul li > div a {
-					line-height: 18px;
-				}
-					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-title,
-					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-website {
-						width: 60%;
-						float: left;
-						clear: left;
-						margin-bottom: 4px;
-					}
-					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-title a {
-						font-size: 16px;
-						color: #222;
-						font-weight: bold;
-					}
-					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-nothing {
-						color: #666;
-						width: 60%;
-						float: left;
-						clear: left;
-						margin-bottom: 4px;
-					}
-					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf,
-					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-email {
-						float: right;
-						clear: right;
-						text-align: right;
-						width: 35%;
-					}
-					.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf a {
-						display: inline-block;
-						background-position: center left;
-						padding: 0 0 0 15px;
-						background: url("../images/icon-phone.png") no-repeat;
-					}
+      }
+    }    
+  }
+}
 
-					@media screen and (max-width: 440px) {
-						.view-kort.view-display-id-default > .attachment .item-list ul li > div {
-							float: none !important;
-							text-align: left !important;
-							width: 100% !important;
-						}
-					}
+
+
+@media screen and (max-width: 440px) {
+  .view-kort.view-display-id-default,
+  .view-kort-enkelt-kommune.view-display-id-default {
+    > .attachment .item-list ul li > div {
+      float: none !important;
+      text-align: left !important;
+      width: 100% !important;
+    }
+  }
+}
 
 .view-kort .dk-map-blured p {
 	display: none;

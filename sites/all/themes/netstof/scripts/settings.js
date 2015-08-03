@@ -126,7 +126,8 @@ $(function() {
      */
      
     // Dropkick (Select boxes)
-    if( !isMobile.any() ) {
+    /* @todo - since dropkick has been deactivated for some reason, we need to deactivate this as well */
+/*    if( !isMobile.any() ) {
 	    $(".node-form .form-select").dropkick();    
 	    $("#edit-kommune").dropkick({theme:"dark"});    
     	 $("#goto-maps-form select").dropkick({
@@ -134,7 +135,7 @@ $(function() {
 			$(this).change();
 			}
        });
-    }
+    }*/
     // Checkboxes
 /*
     $('.node-form .form-checkbox').screwDefaultButtons({ 

@@ -148,7 +148,7 @@
 body.page-brevkasse .view-Brevkasse > .view-header,
 body.page-faq .view-faq > .view-header {
   margin-bottom: 14px;
-  box-shadow: 0 0 7px #bbbbbb;
+  box-shadow: 0 0 7px #BBB;
   background: #FFF;
   padding: 23px;
   position: relative;
@@ -246,7 +246,7 @@ body.page-faq .view-faq > .view-header {
   font-size: 15px;
   line-height: 15px;
   display: inline-block;
-  background: #0b5a7c url("../images/icon-plus-mini.png") no-repeat 11px 11px;
+  background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px;
   padding: 10px 12px 10px 30px;
   border-radius: 5px;
 }
@@ -254,7 +254,7 @@ body.page-faq .view-faq > .view-header {
 .view-Brevkasse > .view-content > .views-row,
 .view-faq > .view-content > .views-row {
   margin-bottom: 14px;
-  box-shadow: 0 0 7px #bbbbbb;
+  box-shadow: 0 0 7px #BBB;
 }
 
 .view-Brevkasse > .view-content > .views-row > .views-field,
@@ -368,7 +368,7 @@ body.page-faq .view-faq > .view-header {
 
 .view-erfaringer .view-header, .view-erfaringer .view-empty {
   margin-bottom: 14px;
-  box-shadow: 0 0 7px #bbbbbb;
+  box-shadow: 0 0 7px #BBB;
   background: #FFF;
   padding: 23px 23px 10px 23px;
   position: relative;
@@ -394,14 +394,14 @@ body.page-faq .view-faq > .view-header {
   font-size: 15px;
   line-height: 15px;
   display: inline-block;
-  background: #0b5a7c url("../images/icon-plus-mini.png") no-repeat 11px 11px;
+  background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px;
   padding: 10px 12px 10px 30px;
   border-radius: 5px;
 }
 
 .view-erfaringer .views-row {
   margin-bottom: 14px;
-  box-shadow: 0 0 7px #bbbbbb;
+  box-shadow: 0 0 7px #BBB;
   background: #FFF;
 }
 
@@ -851,7 +851,8 @@ body.page-faq .view-faq > .view-header {
 }
 
 /* Kort */
-.view-kort.view-display-id-default > .view-content {
+.view-kort.view-display-id-default > .view-content,
+.view-kort-enkelt-kommune.view-display-id-default > .view-content {
   border-top: 1px dashed #dedddb;
   border-bottom: 1px dashed #dedddb;
   float: left;
@@ -873,30 +874,31 @@ body.page-faq .view-faq > .view-header {
 }
 
 /* Attachments view */
-.view-kort.view-display-id-default > .attachment {
+.view-kort.view-display-id-default > .attachment,
+.view-kort-enkelt-kommune.view-display-id-default > .attachment {
   float: left;
   width: 100%;
 }
-
-.view-kort.view-display-id-default > .attachment .item-list {
+.view-kort.view-display-id-default > .attachment .item-list,
+.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list {
   margin-top: 31px;
 }
-
-.view-kort.view-display-id-default > .attachment .item-list h3 {
+.view-kort.view-display-id-default > .attachment .item-list h3,
+.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list h3 {
   font-size: 15px;
   line-height: 15px;
   text-transform: uppercase;
   margin: 0 0 7px 0;
 }
-
-.view-kort.view-display-id-default > .attachment .item-list ul {
+.view-kort.view-display-id-default > .attachment .item-list ul,
+.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul {
   list-style: none;
   list-style-image: none;
   margin: 0;
   padding: 0;
 }
-
-.view-kort.view-display-id-default > .attachment .item-list ul li {
+.view-kort.view-display-id-default > .attachment .item-list ul li,
+.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li {
   margin: 0;
   padding: 10px 0 10px 0;
   font-size: 13px;
@@ -904,42 +906,48 @@ body.page-faq .view-faq > .view-header {
   border-bottom: 1px dashed #dedddb;
   overflow: hidden;
 }
-
-.view-kort.view-display-id-default > .attachment .item-list ul li > div a {
+.view-kort.view-display-id-default > .attachment .item-list ul li > div a,
+.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div a {
   line-height: 18px;
 }
-
-.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-title,
-.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-website {
+.view-kort.view-display-id-default > .attachment .item-list ul li div.views-field-title,
+.view-kort.view-display-id-default > .attachment .item-list ul li div.views-field-field-steder-website,
+.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li div.views-field-title,
+.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li div.views-field-field-steder-website {
   width: 60%;
   float: left;
   clear: left;
   margin-bottom: 4px;
 }
-
-.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-title a {
-  font-size: 16px;
-  color: #222;
-  font-weight: bold;
+.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-title,
+.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-website,
+.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-title a,
+.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-title,
+.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-website,
+.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-title a {
+  /*            font-size: 16px;
+              color: #222;
+              font-weight: bold;*/
 }
-
-.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-nothing {
+.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-nothing,
+.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-nothing {
   color: #666;
   width: 60%;
   float: left;
   clear: left;
   margin-bottom: 4px;
 }
-
 .view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf,
-.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-email {
+.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-email,
+.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf,
+.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-email {
   float: right;
   clear: right;
   text-align: right;
   width: 35%;
 }
-
-.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf a {
+.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf a,
+.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf a {
   display: inline-block;
   background-position: center left;
   padding: 0 0 0 15px;
@@ -947,7 +955,8 @@ body.page-faq .view-faq > .view-header {
 }
 
 @media screen and (max-width: 440px) {
-  .view-kort.view-display-id-default > .attachment .item-list ul li > div {
+  .view-kort.view-display-id-default > .attachment .item-list ul li > div,
+  .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div {
     float: none !important;
     text-align: left !important;
     width: 100% !important;
@@ -1284,14 +1293,14 @@ body.page-paaroerende .region-sidebar-first #hurtige-genveje {
 /* Each invidual row */
 .region-sidebar-first #hurtige-genveje #akut-hjaelp .left {
   width: 31px;
-  height: 30px;
+  height: 31px;
   margin: 0 15px 0 3px;
-  background: url(../images/afstemning-wh.png) no-repeat transparent top left;
+  background: url(../images/afstemning-wh-30x30.png) no-repeat transparent top left;
 }
 
 .region-sidebar-first #hurtige-genveje #akut-hjaelp:hover .left,
 .view-id-mediekit #akut-hjaelp:hover .left {
-  background: url(../images/afstemning-yel.png) no-repeat transparent top left;
+  background: url(../images/afstemning-yel-30x30.png) no-repeat transparent top left;
 }
 
 .region-sidebar-first #hurtige-genveje #brevkasse .left,

@@ -149,7 +149,7 @@ h4 {
 
 h5 {
   font-size: 1.1em;
-  margin: 0.3em 0;
+  margin: .3em 0;
   font-weight: bold !important;
 }
 
@@ -209,7 +209,7 @@ code,
 kbd,
 samp {
   font-family: monospace, serif;
-  _font-family: "courier new", monospace;
+  _font-family: 'courier new', monospace;
   font-size: 1em;
 }
 

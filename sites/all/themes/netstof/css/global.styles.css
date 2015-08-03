@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
  * @file
  * global.styles
@@ -33,7 +32,7 @@
  * element as these can be overridden using font theme settings.
  */
 html {
-  background: white;
+  background: #fff;
 }
 
 body {
@@ -1333,7 +1332,7 @@ a.btn {
   font-size: 15px;
   line-height: 15px;
   display: inline-block;
-  background: #0b5a7c url("../images/icon-plus-mini.png") no-repeat 11px 11px;
+  background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px;
   padding: 10px 12px 10px 30px;
   border-radius: 5px;
 }
