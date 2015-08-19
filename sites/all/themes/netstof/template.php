@@ -90,7 +90,7 @@ function netstof_preprocess_block(&$vars) {
  * Override or insert variables into the page template.
  */
 function netstof_preprocess_page(&$variables, $hook) {
-	if (isset($variables['node'])) {
+  if (isset($variables['node'])) {
     $variables['theme_hook_suggestions'][] = 'page__type__'. $variables['node']->type;
     $variables['theme_hook_suggestions'][] = "page__node__" . $variables['node']->nid;
   }
@@ -100,9 +100,14 @@ function netstof_preprocess_page(&$variables, $hook) {
   $current_request_path = request_path();
 
   if ($current_request_path == "paaroerende" || strpos($current_request_path,'brevkasse/paaroerende') !== false || strpos($current_request_path,'artikler/paaroerende') !== false || strpos($current_request_path,'debatfora/paaroerende') !== false) {
-      $paaroerende_img = "/images/ven_kaereste_familie_orange.png";
+    $paaroerende_img = "/images/ven_kaereste_familie_orange.png";
   }
   $variables['paaroerende_img'] = $paaroerende_img;
+  
+  // If we need a custom page title
+/*  if ($current_request_path == "kommuner/slagelse") {
+    drupal_set_title('Find hjælp i Slagelse');
+  }*/
 }
 
 /**

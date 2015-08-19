@@ -33,6 +33,16 @@ function netstof_uf_form_alter(&$form, &$form_state, $form_id){
   }
 }
 
+function netstof_uf_preprocess_html(&$variables) {
+/*  $current_path = current_path();
+  $path_array = explode('/', $current_path);
+  dpm($path_array);
+  if ( ( lenght($path_array) >= 3 ) && ( $path_array[0] == 'taxonomy' ) ) {
+    $term = taxonomy_term_load(arg(2));
+    $variables['classes_array'][] = 'vocabulary-' . strtolower($term->vocabulary_machine_name);
+  }*/
+}
+
 /* Questionnaire function
  * With this function the scripts needed for a questionnaire
  * can be added easily

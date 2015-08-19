@@ -1,7 +1,77 @@
+@import 'compass/css3';
+
 .page-taxonomy-term {
+  
+
   #main-content {
     background: white url("../images/content-btm.png") no-repeat bottom center;
     padding: 25px 23px;
     overflow: hidden;
+    
+    a, .view-empty a {
+      color: #1e6381;
+    }
+  }
+  
+  #main-content-header {
+
+    /*  @todo: apply a method to fit text to available width e.g. fittext.js plugin */
+    #page-title {
+      background: white url("../images/citysign.png") no-repeat bottom center;
+      border: 3px solid #000;
+      @include border-radius(15px);
+      height: 150px;
+      text-align: center;
+      color: #000;
+      font-size: 60px;
+      line-height: 100%;
+    }
+  }
+
+/* =============================================================================
+ *   Tabs (Select age field on the featured municipality pages)
+ * ========================================================================== */
+    
+  .views-exposed-form {
+    border-bottom: 1px solid;
+    border-bottom-color: #ccc;
+    border-collapse: collapse;
+    height: auto;
+    line-height: normal;
+    list-style: none;
+    white-space: nowrap;
+    margin: 20px 0;
+    padding: 0 0 0 5px;
+  }
+
+  .form-type-bef-link {
+    display: block;
+    float: left;
+    margin: 0 1px -1px;
+  }
+
+  .form-type-bef-link a {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    margin-right: 1px;
+    padding: 0 10px;
+    display: block;
+    float: left;
+    height: 1.5em;
+    line-height: 1.5em;
+  }
+
+  .form-type-bef-link a:hover,
+  .form-type-bef-link a:focus {
+    background-color: #eee;
+    border-color: #ccc;
+  }
+
+  .form-type-bef-link.selected a,
+  .form-type-bef-link.selected a:hover,
+  .form-type-bef-link.selected a:focus {
+    border: 1px solid #ccc;
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
   }
 }
