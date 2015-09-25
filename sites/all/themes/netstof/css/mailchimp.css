@@ -1,0 +1,19 @@
+#node-541 #mc_embed_signup .mc-field-group input {
+  width: 95%;
+}
+
+#node-541 #mc_embed_signup .mc-field-group.input-group input {
+    width: auto;
+}
+#node-541 #mc_embed_signup .mc-field-group.input-group label {
+  padding-left: 10px;
+}
+
+#node-541 #mc_embed_signup .mc-field-group .asterisk {
+  top: 42px;
+  right: 5px;
+}
+
+#node-541 #mc_embed_signup .indicates-required .asterisk {
+  vertical-align: top;
+}
