@@ -137,8 +137,11 @@ hide($content['links']);
 			<?php if(!empty($user_picture) || $display_submitted): ?>
 			<footer<?php print $footer_attributes; ?>>
 				<?php print $user_picture; $node_author = user_load($node->uid); ?>
-				<p class="qna-responding-counselor"><?php print t('This question was answered by: ').$node_author->field_profile_full_name['und'][0]['value']; ?></p>
-				<?php  ?>
+				<p class="qna-responding-counselor">
+                  <?php if (isset($node_author->field_profile_full_name['und'][0]['value'])) {
+                    print t('This question was answered by: ').$node_author->field_profile_full_name['und'][0]['value'];
+                  } ?>
+                </p>
 			</footer>
 		<?php endif; ?>
 		</div><!-- .answer end -->

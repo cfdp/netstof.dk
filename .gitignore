@@ -1,6 +1,7 @@
 # Ignore configuration files that may contain sensitive information.
 sites/*/settings*.php
 .project
+stats
 
 # Ignore paths that contain user-generated content and devel stuff.
 sites/*/files
@@ -9,6 +10,7 @@ sites/all/modules/git_deploy
 sites/all/modules/devel
 sites/all/modules/maillog
 sites/all/modules/reroute_email
+sites/all/modules/masquerade
 sites/all/modules/smtp
 sites/all/modules/stage_file_proxy/
 sites/all/modules/hacked/

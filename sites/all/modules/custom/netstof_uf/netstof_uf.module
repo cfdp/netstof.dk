@@ -83,6 +83,28 @@ function netstof_uf_node_update($node) {
 }
 
 /**
+  * Implements hook_page_build().
+  */
+function netstof_uf_page_build(&$page) {
+  // If user is brevkassered. we might need the jquery UI for showing a modal window
+  if ( netstof_uf_user_has_role('Brevkasseredaktør') ) {
+    drupal_add_library('system', 'ui.dialog');
+  }
+}
+
+/**
+  * Implements hook_page_alter().
+  */
+function netstof_uf_page_alter(&$page) {
+  // If user is brevkassered. we output the html for the modal popup
+  if ( netstof_uf_user_has_role('Brevkasseredaktør') ) {
+    $page['content']['ns-modal-popup'] = array(
+      '#weight' => -10,
+      '#markup' => '<div id="ns-dialog" style="display: none;" title="Husk registreringsskemaet"><p>Kære brevkasserådgiver: Husk at udfylde <a style="color: #0b5a7c; text-decoration: none;" href="https://docs.google.com/a/cyberhus.dk/forms/d/1Zeu7NwMk4nRkbsYpjnyKq7tzzZHRQM2sDyzQEfiiZ74/viewform?formkey=dEVoR2FjeU10WVUzdDVhTFVkdl9WS1E6MA#gid=0" target="_blank">registreringsskemaet.</a></p></div>',
+    );
+  }
+}
+/**
 * Check to see if a user has been assigned a certain role.
 *
 * @param $role
@@ -134,8 +156,15 @@ function netstof_uf_test() {
 */
 function netstof_uf_sendsms($number, $nid){
   $gateway_url_base = 'https://jclients.azurewebsites.net/sms/sender.aspx';
+  $params = array();
   global $base_url;
   $site_path = $base_url . base_path();
+  // Don't try to send SMS if we're on a dev site
+  if ( ($base_url != "http://netstof.dk") && ($base_url != "https://netstof.dk") ) {
+    $status = '<pre>SMS NOT sent - dev mode.</pre>';
+    watchdog('netstof_uf',t($status . ' Base URL: '.  '<pre>'. $base_url .'</pre>'),$params, WATCHDOG_WARNING, $link = NULL);
+    return $status;
+  }
   $params = array();
   $user_field = 'id';
   $user = variable_get('sms_id', '');
@@ -155,6 +184,11 @@ function netstof_uf_sendsms($number, $nid){
   if (isset($http_result->error)) {
     watchdog('netstof_uf',t('http request obj: '.  '<pre>'. print_r($http_result, TRUE) .'</pre>'),$params, WATCHDOG_ERROR, $link = NULL);
     $status = '<pre>Error: '.$http_result->error.'</pre>';
+  }
+  else {
+    //Don't show the phone number in the log
+    $params[$number_field]=null;
+    watchdog('netstof_uf',t($status),$params, WATCHDOG_INFO, $link = NULL);
   }
   return $status;
 }
