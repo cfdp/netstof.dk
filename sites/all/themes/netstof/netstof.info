@@ -16,6 +16,7 @@ stylesheets[screen][] = css/forum.css
 stylesheets[screen][] = css/misc.css
 stylesheets[screen][] = css/retina.css
 stylesheets[screen][] = css/user.css
+stylesheets[screen][] = css/mailchimp.css
 scripts[] = scripts/jquery.qtip-1.0.0-rc3.min.js
 scripts[] = scripts/jquery.watermark.min.js
 #scripts[] = scripts/jquery.dropkick-1.0.0.js
