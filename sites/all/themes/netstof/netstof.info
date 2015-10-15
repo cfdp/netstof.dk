@@ -23,6 +23,7 @@ scripts[] = scripts/jquery.screwdefaultbuttonsV2.min.js
 scripts[] = scripts/jquery.scrolltofixed.js
 scripts[] = scripts/settings.js
 scripts[] = scripts/netstof.js
+
 regions[content] = Main Content
 regions[leftcontent] = Left Content
 regions[undercontent] = Under Content

@@ -143,12 +143,12 @@ function netstof_form_alter(&$form, $form_state, $form_id) {
 * ADD BLOCK REGIONS INSIDE NODES
 */
 function netstof_preprocess_node(&$variables) {
-   if ($blocks = block_get_blocks_by_region('leftcontent')) {
-  		$variables['leftcontent'] = $blocks;
-	}
-	if ($blocks = block_get_blocks_by_region('undercontent')) {
-  		$variables['undercontent'] = $blocks;
-	}
+ if ($blocks = block_get_blocks_by_region('leftcontent')) {
+      $variables['leftcontent'] = $blocks;
+  }
+  if ($blocks = block_get_blocks_by_region('undercontent')) {
+      $variables['undercontent'] = $blocks;
+  }
 }
 
 /**
