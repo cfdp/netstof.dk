@@ -485,19 +485,19 @@ a.open-new-window {
   content: "";
 }
 
-.node-541 #mc_embed_signup .indicates-required .asterisk {
+#node-541 #mc_embed_signup .indicates-required .asterisk {
   vertical-align: top;
 }
-.node-541 #mc_embed_signup .mc-field-group.input-group input {
+#node-541 #mc_embed_signup .mc-field-group.input-group input {
   width: auto;
 }
-.node-541 #mc_embed_signup .mc-field-group.input-group label {
+#node-541 #mc_embed_signup .mc-field-group.input-group label {
   padding-left: 10px;
 }
-.node-541 #mc_embed_signup .mc-field-group input {
+#node-541 #mc_embed_signup .mc-field-group input {
   width: 95%;
 }
-.node-541 #mc_embed_signup .mc-field-group .asterisk {
+#node-541 #mc_embed_signup .mc-field-group .asterisk {
   top: 42px;
   right: 5px;
 }
