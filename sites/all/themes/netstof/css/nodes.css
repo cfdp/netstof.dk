@@ -1,395 +1,503 @@
 /**
  * UNDERSIDER
  */
-
 h1#page-title {
-	font-size: 28px; line-height: 28px;
-	color: #424242;
-	font-weight: normal;
-	margin-bottom: 25px;
+  font-size: 28px;
+  line-height: 28px;
+  color: #424242;
+  font-weight: normal;
+  margin-bottom: 25px;
 }
+
 .not-front #main-content > #content {
-	font-size: 13px; line-height: 16px;
-	color: #222;
+  font-size: 13px;
+  line-height: 16px;
+  color: #222;
 }
-h2,h3,h4,h5,h6 {
-	font-family: "Cabin", sans-serif !important;
-	font-weight: normal;
+
+h2, h3, h4, h5, h6 {
+  font-family: "Cabin", sans-serif !important;
+  font-weight: normal;
 }
+
 .node-content a,
 .view-empty a {
-	color: #1e6381;
+  color: #1e6381;
 }
 
 /**
  * GENERAL NODE STYLING
  */
-.node {
-
+#node-wrapper {
+  margin-top: -11px;
 }
-	#node-wrapper {
-		margin-top: -11px;
-	}
-		.node-top {
-			background: url("../images/big_shadow_top.png") no-repeat top center;
-			height: 11px;
-		}
-		.node-btm {
-			background: url("../images/big_shadow_bottom.png") no-repeat top center;
-			height: 15px;
-		}
-		.node-middle {
-			background: white url("../images/content-btm.png") no-repeat bottom center;
-			padding: 25px 23px;
-			overflow: hidden;
-		}
-			.node-middle nav ul li {
-				float: right;
-				padding: 0 0 0 5px;
-			}
-			.node-middle nav ul li a {
-				color: white;
-				font-weight: bold;
-				text-transform: uppercase;
-				font-size: 15px;
-				line-height: 15px;
-				display: inline-block;
-				background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px;
-				padding: 10px 12px 10px 30px;
-				border-radius: 5px;
-			}
-			.field-name-field-billede {
-				line-height: 0;
-			}
-			/* Narrow content area */
-			#rightcontent.narrow {
-				float: left;
-				padding-left: 23px;
-				width: 357px;
-				max-width: 100%;
-				border-left: 1px dashed #dedddb;
-			}
-	    /* Node footer */
-      .node-content footer {
-        color: #222;
-      }
+
+.node-top {
+  background: url("../images/big_shadow_top.png") no-repeat top center;
+  height: 11px;
+}
+
+.node-btm {
+  background: url("../images/big_shadow_bottom.png") no-repeat top center;
+  height: 15px;
+}
+
+.node-middle {
+  background: white url("../images/content-btm.png") no-repeat bottom center;
+  padding: 25px 23px;
+  overflow: hidden;
+}
+
+.node-middle nav ul li {
+  float: right;
+  padding: 0 0 0 5px;
+}
+
+.node-middle nav ul li a {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 15px;
+  display: inline-block;
+  background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px;
+  padding: 10px 12px 10px 30px;
+  border-radius: 5px;
+}
+
+.field-name-field-billede {
+  line-height: 0;
+}
+
+/* Narrow content area */
+#rightcontent.narrow {
+  float: left;
+  padding-left: 23px;
+  width: 357px;
+  max-width: 100%;
+  border-left: 1px dashed #dedddb;
+}
+
+/* Node footer */
+.node-content footer {
+  color: #222;
+}
 
 /**
  * Node Type: Brevkasse
  */
 /* Brevkasse enkeltvisning */
-.not-front.node-type-questions-and-answers #main-content{
-	background:none;box-shadow:none;
+.not-front.node-type-questions-and-answers #main-content {
+  background: none;
+  box-shadow: none;
 }
-	.not-front.node-type-questions-and-answers #main-content > #content{
-		padding:0;
-		background:none;box-shadow:none;
-	}
-		.node-type-questions-and-answers .node-content div{margin-top:15px;}
-		.node-type-questions-and-answers .node-content div:first-child{margin-top:0;}
-			.node-questions-and-answers .node-content .question, .node-questions-and-answers .node-content .answer{
-				padding:25px 22px 15px;
-				background:url("../images/content-top.png") no-repeat scroll center top #FFFFFF;
-				box-shadow:0 0 7px #BBBBBB;
-			}
-				.node-type-questions-and-answers .node-content #page-title{
-					margin-bottom:15px;
-					font-size:28px;color:#0b5a7c;
-				}
-			/* question part */
-			.node-questions-and-answers .node-content .question .date{margin-bottom:15px;}
-			.node-questions-and-answers .node-content .question .date-label{
-				font-size:13px;text-transform:uppercase;
-			}
-				.node-questions-and-answers .question .field-name-field-qna-sex:after,
-				.node-questions-and-answers .question .field-name-field-qna-age:after{
-					content:"";
-					display:block;
-					clear:both;
-					width:100%;
-				}
-					.node-questions-and-answers .question .field-name-field-qna-sex  h2,
-					.node-questions-and-answers .question .field-name-field-qna-sex div,
-					.node-questions-and-answers .question .field-name-field-qna-age h2,
-					.node-questions-and-answers .question .field-name-field-qna-age div{
-						margin:0;
-						float:left;
-					}
-			/* answer part */
-			.node-type-questions-and-answers .node-content .answer {
-				padding-bottom:1px;
-			}
-			.node-type-questions-and-answers .answer .field-name-field-qna-answer h2{
-				font-size:20px;font-weight:normal;
-				text-transform:uppercase;
-			}
-			.node-type-questions-and-answers .answer .field-name-field-tags ul{margin:0;padding:0;}
-			.node-type-questions-and-answers .answer .field-name-field-tags ul li{
-				margin-left:5px;
-				display:inline;
-				text-transform:uppercase;
-			}
-			.node-type-questions-and-answers .answer .field-name-field-tags ul li:first-child{
-				margin-left:0;
-			}
-			.node-type-questions-and-answers .answer .field-name-field-tags ul li a{display:inline;}
-			.node-type-questions-and-answers .answer .user-picture img{margin:0;padding:0;}
+
+.not-front.node-type-questions-and-answers #main-content > #content {
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.node-type-questions-and-answers .node-content div {
+  margin-top: 15px;
+}
+
+.node-type-questions-and-answers .node-content div:first-child {
+  margin-top: 0;
+}
+
+.node-questions-and-answers .node-content .question, .node-questions-and-answers .node-content .answer {
+  padding: 25px 22px 15px;
+  background: url("../images/content-top.png") no-repeat scroll center top #FFFFFF;
+  box-shadow: 0 0 7px #BBBBBB;
+}
+
+.node-type-questions-and-answers .node-content #page-title {
+  margin-bottom: 15px;
+  font-size: 28px;
+  color: #0b5a7c;
+}
+
+/* question part */
+.node-questions-and-answers .node-content .question .date {
+  margin-bottom: 15px;
+}
+
+.node-questions-and-answers .node-content .question .date-label {
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.node-questions-and-answers .question .field-name-field-qna-sex:after,
+.node-questions-and-answers .question .field-name-field-qna-age:after {
+  content: "";
+  display: block;
+  clear: both;
+  width: 100%;
+}
+
+.node-questions-and-answers .question .field-name-field-qna-sex h2,
+.node-questions-and-answers .question .field-name-field-qna-sex div,
+.node-questions-and-answers .question .field-name-field-qna-age h2,
+.node-questions-and-answers .question .field-name-field-qna-age div {
+  margin: 0;
+  float: left;
+}
+
+/* answer part */
+.node-type-questions-and-answers .node-content .answer {
+  padding-bottom: 1px;
+}
+
+.node-type-questions-and-answers .answer .field-name-field-qna-answer h2 {
+  font-size: 20px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.node-type-questions-and-answers .answer .field-name-field-tags ul {
+  margin: 0;
+  padding: 0;
+}
+
+.node-type-questions-and-answers .answer .field-name-field-tags ul li {
+  margin-left: 5px;
+  display: inline;
+  text-transform: uppercase;
+}
+
+.node-type-questions-and-answers .answer .field-name-field-tags ul li:first-child {
+  margin-left: 0;
+}
+
+.node-type-questions-and-answers .answer .field-name-field-tags ul li a {
+  display: inline;
+}
+
+.node-type-questions-and-answers .answer .user-picture img {
+  margin: 0;
+  padding: 0;
+}
 
 /**
  * Node Type: FAQ
  */
 .node-frequently-asked-question h1#page-title {
-	display: none;
+  display: none;
 }
+
 .node-frequently-asked-question .field-name-body {
-	font-size: 28px;
-	color: #424242;
-	line-height: 28px;
+  font-size: 28px;
+  color: #424242;
+  line-height: 28px;
 }
-	.node-frequently-asked-question .field-name-body p {
-		margin-bottom: 15px;
-	}
+
+.node-frequently-asked-question .field-name-body p {
+  margin-bottom: 15px;
+}
 
 /**
  * Node Type: LEKSIKON
  */
-
 .node-encyclopedia-entry #page-title {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
-.node-encyclopedia-entry .field-label {
-	margin-top: 0;
-}
-.field-name-field-encyclopedia-duration {
-	margin-bottom: 1.5em;
-}
-.field-name-field-encyclopedia-drug-forms {
 
+.node-encyclopedia-entry .field-label {
+  margin-top: 0;
 }
-	.field-name-field-encyclopedia-drug-forms ul {
-		margin: 0; padding: 0;
-		overflow: hidden;
-	}
-		.field-name-field-encyclopedia-drug-forms ul li {
-			float: left;
-			list-style: none;
-			list-style-image: none;
-			margin: 5px 5px 0 0; padding: 0;
-		}
+
+.field-name-field-encyclopedia-duration {
+  margin-bottom: 1.5em;
+}
+
+.field-name-field-encyclopedia-drug-forms ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.field-name-field-encyclopedia-drug-forms ul li {
+  float: left;
+  list-style: none;
+  list-style-image: none;
+  margin: 5px 5px 0 0;
+  padding: 0;
+}
 
 /* Tags */
 .node-encyclopedia-entry .field-name-field-tags {
-	font-size: 12px; line-height: 14px;
-	margin-bottom: 20px;
-	font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
-	.node-encyclopedia-entry .field-name-field-tags h2 {
-		margin: 0;
-		padding: 0;
-		float: left;
-	}
-	.node-encyclopedia-entry .field-name-field-tags ul {
-		float: none;
-	}
-		.node-encyclopedia-entry .field-name-field-tags ul li {
-			text-transform: uppercase;
-			padding: 0 0 0 5px !important;
-			border-left: 1px solid #424242;
-			margin-left: 5px;
-			float: left;
-		}
-		.node-encyclopedia-entry .field-name-field-tags ul li:first-child {
-			border-left: 0;
-			margin-left: 0;
-			padding-left: 0;
-		}
-/* Tabs */
-.node-encyclopedia-entry .field-group-htabs-wrapper {
-}
-.node-encyclopedia-entry .horizontal-tabs {
-	border: none;
-	margin: 0;
-}
-	.node-encyclopedia-entry ul.horizontal-tabs-list {
-		margin: 0 0 15px 0;
-		background-color: #FFFFFF;
-		border: none;
-	}
-		.node-encyclopedia-entry ul.horizontal-tabs-list li {
-			height: 27px;
-			background-color: #404040;
-			border-right: 1px solid #FFFFFF;
-			outline: none;
-			border: none;
-			min-width: inherit;
-			margin-right: 2px;
-		}
-		.node-encyclopedia-entry ul.horizontal-tabs-list li:focus,
-		.node-encyclopedia-entry ul.horizontal-tabs-list li:hover {
-			background-color: #ffad00;
-		}
-			.node-encyclopedia-entry ul.horizontal-tabs-list li a {
-				color: #e5e4e1;
-				font-size: 13px;
-				font-weight: bold;
-				outline: none;
-				padding: 0.5em 1em 0.3em 1em;
-			}
-			.node-encyclopedia-entry ul.horizontal-tabs-list li a:hover {
-				background-color: #ffad00;
-			}
-		.node-encyclopedia-entry ul.horizontal-tabs-list li.selected {
 
-		}
-			.node-encyclopedia-entry ul.horizontal-tabs-list li.selected a {
-				color: #424242;
-				font-size: 15px;
-				font-weight: bold;
-				background-color: #FFFFFF;
-				padding: 0.4em 1em 0.4em 1em;
-			}
-				.node-encyclopedia-entry ul.horizontal-tabs-list li.selected a:hover {
-					background-color: #FFFFFF;
-				}
-				.node-encyclopedia-entry ul.horizontal-tabs-list li.selected a strong {
-					color: #424242;
-				}
-	.node-encyclopedia-entry .horizontal-tabs fieldset.horizontal-tabs-pane {
-		padding: 0;
-		margin: 0;
-		font-size: 13px;
-		font-family: "Cabin", sans-serif;
-	}
+.node-encyclopedia-entry .field-name-field-tags h2 {
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+.node-encyclopedia-entry .field-name-field-tags ul {
+  float: none;
+}
+
+.node-encyclopedia-entry .field-name-field-tags ul li {
+  text-transform: uppercase;
+  padding: 0 0 0 5px !important;
+  border-left: 1px solid #424242;
+  margin-left: 5px;
+  float: left;
+}
+
+.node-encyclopedia-entry .field-name-field-tags ul li:first-child {
+  border-left: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Tabs */
+.node-encyclopedia-entry .horizontal-tabs {
+  border: none;
+  margin: 0;
+}
+
+.node-encyclopedia-entry ul.horizontal-tabs-list {
+  margin: 0 0 15px 0;
+  background-color: #FFFFFF;
+  border: none;
+}
+
+.node-encyclopedia-entry ul.horizontal-tabs-list li {
+  height: 27px;
+  background-color: #404040;
+  border-right: 1px solid #FFFFFF;
+  outline: none;
+  border: none;
+  min-width: inherit;
+  margin-right: 2px;
+}
+
+.node-encyclopedia-entry ul.horizontal-tabs-list li:focus,
+.node-encyclopedia-entry ul.horizontal-tabs-list li:hover {
+  background-color: #ffad00;
+}
+
+.node-encyclopedia-entry ul.horizontal-tabs-list li a {
+  color: #e5e4e1;
+  font-size: 13px;
+  font-weight: bold;
+  outline: none;
+  padding: 0.5em 1em 0.3em 1em;
+}
+
+.node-encyclopedia-entry ul.horizontal-tabs-list li a:hover {
+  background-color: #ffad00;
+}
+
+.node-encyclopedia-entry ul.horizontal-tabs-list li.selected a {
+  color: #424242;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #FFFFFF;
+  padding: 0.4em 1em 0.4em 1em;
+}
+
+.node-encyclopedia-entry ul.horizontal-tabs-list li.selected a:hover {
+  background-color: #FFFFFF;
+}
+
+.node-encyclopedia-entry ul.horizontal-tabs-list li.selected a strong {
+  color: #424242;
+}
+
+.node-encyclopedia-entry .horizontal-tabs fieldset.horizontal-tabs-pane {
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  font-family: "Cabin", sans-serif;
+}
 
 /**
  * KOMMENTARER
  */
-#comments-form-wrapper {
-
+#comments-form-wrapper .comment-top {
+  background: url("../images/big_shadow_top.png") no-repeat top center;
+  height: 11px;
 }
-	#comments-form-wrapper .comment-top {
-		background: url("../images/big_shadow_top.png") no-repeat top center;
-		height: 11px;
-	}
-	#comments-form-wrapper .comment-btm {
-		background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
-		height: 15px;
-	}
-	#comments-form-wrapper h2.comment-title,
-	h2.comment-form {
-		padding: 25px 23px 25px;
-		/* background: white url("../images/content-top.png") no-repeat top center; */
-		background-color: #FFFFFF;
-		font-size: 20px;
-		text-transform: uppercase;
-		font-weight: normal;
-		margin: 0;
-	}
-	#comment-form {
-		padding: 0 23px 15px;
-		background: white url("../images/content-btm.png") no-repeat bottom center;
-	}
-		#comment-form #edit-comment-body-und-0-format {
-			display: none;
-		}
-		#comment-form #edit-submit {
-			color: white;
-			font-weight: bold;
-			text-transform: uppercase;
-			font-size: 14px;
-			line-height: 14px;
-			background: #0B5A7C url("../images/icon-plus.png") no-repeat 10px 8px;
-			padding: 10px 12px 10px 35px;
-			border: none;
-			border-radius: 5px;
-			text-align: left;
-			margin-top: 15px;
-		}
-		#comments-form-wrapper label {
-			margin-bottom: 3px;
-		}
+
+#comments-form-wrapper .comment-btm {
+  background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
+  height: 15px;
+}
+
+#comments-form-wrapper h2.comment-title,
+h2.comment-form {
+  padding: 25px 23px 25px;
+  /* background: white url("../images/content-top.png") no-repeat top center; */
+  background-color: #FFFFFF;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin: 0;
+}
+
+#comment-form {
+  padding: 0 23px 15px;
+  background: white url("../images/content-btm.png") no-repeat bottom center;
+}
+
+#comment-form #edit-comment-body-und-0-format {
+  display: none;
+}
+
+#comment-form #edit-submit {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 14px;
+  background: #0B5A7C url("../images/icon-plus.png") no-repeat 10px 8px;
+  padding: 10px 12px 10px 35px;
+  border: none;
+  border-radius: 5px;
+  text-align: left;
+  margin-top: 15px;
+}
+
+#comments-form-wrapper label {
+  margin-bottom: 3px;
+}
 
 section#comments {
-	margin: 0;
+  margin: 0;
 }
-	section#comments article.comment {
-		margin-bottom: 0;
-	}
-		section#comments article.comment .comment-top {
-			background: url("../images/big_shadow_top.png") no-repeat top center;
-			height: 11px;
-		}
-		section#comments article.comment .comment-btm {
-			background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
-			height: 15px;
-		}
-		section#comments article.comment .comment-middle {
-			position: relative;
-			padding: 50px 23px 50px;
-			background: white url("../images/content-btm.png") no-repeat bottom center;
-		}
-			section#comments article.comment .submitted {
-				font-weight: bold;
-				text-transform: uppercase;
-				color: #424242;
-				font-size: 12px;
-			}
-			section#comments article.comment .comment-middle nav {
-				position: absolute;
-				bottom: 23px; right: 23px;
-				float: right;
-			}
-				section#comments article.comment .comment-middle nav li {
-					padding: 0 0 0 5px;
-				}
-				section#comments article.comment .comment-middle nav a {
-				color: white;
-				font-weight: bold;
-				text-transform: uppercase;
-				font-size: 15px;
-				line-height: 15px;
-				display: inline-block;
-				background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px;
-				padding: 10px 12px 10px 30px;
-				border-radius: 5px;
-				}
+
+section#comments article.comment {
+  margin-bottom: 0;
+}
+
+section#comments article.comment .comment-top {
+  background: url("../images/big_shadow_top.png") no-repeat top center;
+  height: 11px;
+}
+
+section#comments article.comment .comment-btm {
+  background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
+  height: 15px;
+}
+
+section#comments article.comment .comment-middle {
+  position: relative;
+  padding: 50px 23px 50px;
+  background: white url("../images/content-btm.png") no-repeat bottom center;
+}
+
+section#comments article.comment .submitted {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #424242;
+  font-size: 12px;
+}
+
+section#comments article.comment .comment-middle nav {
+  position: absolute;
+  bottom: 23px;
+  right: 23px;
+  float: right;
+}
+
+section#comments article.comment .comment-middle nav li {
+  padding: 0 0 0 5px;
+}
+
+section#comments article.comment .comment-middle nav a {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 15px;
+  display: inline-block;
+  background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px;
+  padding: 10px 12px 10px 30px;
+  border-radius: 5px;
+}
+
 #comments .pager,
 #forum-comments .pager {
-	display: none;
+  display: none;
 }
 
 /*
  * Custom nodes
  */
-
 /* Open new window button */
 a.open-new-window {
-    background: none repeat scroll 0 0 #0B5A7C;
-    border-radius: 5px 5px 5px 5px;
-    color: white;
-    display: inline-block;
-    font-size: 15px;
-    font-weight: bold;
-    line-height: 15px;
-    padding: 10px 12px;
-    text-transform: uppercase;
+  background: none repeat scroll 0 0 #0B5A7C;
+  border-radius: 5px 5px 5px 5px;
+  color: white;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 15px;
+  padding: 10px 12px;
+  text-transform: uppercase;
 }
-
 
 /*Tag styringen form*/
 #webform-client-form-1052 .form-actions {
-	margin-top: 25px !important;
+  margin-top: 25px !important;
 }
 
 #webform-client-form-1052 .form-actions input.form-submit {
-	color: white;
-	font-weight: bold;
-	text-transform: uppercase;
-	font-size: 15px;
-	line-height: 15px;
-	display: inline-block;
-	background: #0B5A7C;
-	padding: 10px 12px 10px 12px;
-	border-radius: 5px;
-	border: none;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 15px;
+  display: inline-block;
+  background: #0B5A7C;
+  padding: 10px 12px 10px 12px;
+  border-radius: 5px;
+  border: none;
+}
+
+.menu-name-menu-kommunemenu ul {
+  background-color: #404040;
+  margin-top: 0;
+  padding: 10px;
+}
+.menu-name-menu-kommunemenu ul li {
+  color: white;
+  display: inline;
+}
+.menu-name-menu-kommunemenu ul li a {
+  color: white;
+  font-size: 12px;
+  padding-right: 10px;
+  text-transform: uppercase;
+}
+.menu-name-menu-kommunemenu ul li:after {
+  content: "//";
+}
+.menu-name-menu-kommunemenu ul li:last-child:after {
+  content: "";
+}
+
+.node-541 #mc_embed_signup .indicates-required .asterisk {
+  vertical-align: top;
+}
+.node-541 #mc_embed_signup .mc-field-group.input-group input {
+  width: auto;
+}
+.node-541 #mc_embed_signup .mc-field-group.input-group label {
+  padding-left: 10px;
+}
+.node-541 #mc_embed_signup .mc-field-group input {
+  width: 95%;
+}
+.node-541 #mc_embed_signup .mc-field-group .asterisk {
+  top: 42px;
+  right: 5px;
 }
