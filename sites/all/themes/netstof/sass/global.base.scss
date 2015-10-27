@@ -178,7 +178,20 @@ strong {
 }
 
 blockquote {
-  margin: 1em 40px;
+  border-left: 3px solid #ABABAB;
+  font-size: 16px;
+  line-height: 24px;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-left: 15px;
+  p {
+    }
+  
+  .blockquote-source {
+    border-left: none;
+    padding-left: 0;
+    font-style: italic;
+  }
 }
 
 /*

@@ -1,3 +1,5 @@
+/* $legacy-support-for-ie6: true;
+$legacy-support-for-ie7: true; */
 /*
  * responsive.custom.css is for custom media queries that are not set via the
  * theme settings, such as cascading media queries.

@@ -1,3 +1,5 @@
+/* $legacy-support-for-ie6: true;
+$legacy-support-for-ie7: true; */
 /*
  * @file
  * global.styles
@@ -47,13 +49,6 @@ body {
 /* =============================================================================
  *   HTML Elements
  * ========================================================================== */
-blockquote p {
-  font-size: 20px;
-  line-height: 30px;
-  margin-left: 100px;
-  border-left: 3px solid #ABABAB;
-}
-
 pre,
 code,
 tt,
