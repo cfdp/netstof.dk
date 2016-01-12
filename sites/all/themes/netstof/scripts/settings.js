@@ -6,7 +6,7 @@ $(function() {
 	 * Fix for doubleclick issues on iPhone / iPad
 	 * http://stackoverflow.com/questions/3038898/ipad-iphone-hover-problem-causes-the-user-to-double-click-a-link
 	 */
-	$('a').on('click touchend', function(e) {
+	$('a.single-click-mobile').on('click touchend', function(e) {
 	    var el = $(this);
 	    var link = el.attr('href');
 	    window.location = link;
