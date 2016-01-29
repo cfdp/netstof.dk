@@ -48,34 +48,22 @@ $(function() {
 	});
 
 	/**
-	 * RIGHT SIDE TABS
+	 * RIGHT SIDE TABS (deactivated)
 	 */
-	$(".region-tabs-right .slideout").hover(
+/*	$(".region-tabs-right .slideout").hover(
 		
 		function() {
-		
 			var right_space = 0;
-		
-			
-		
-			$(this).stop(true,true).animate({ 
-				
+			$(this).stop(true,true).animate({
 				right: 179
-			
 			},200);
-		
 		},
 		function() {
-		
-			$(this).stop(true,true).animate({ 
-				
-				right: "0"
-			
+			$(this).stop(true,true).animate({
 			},200);
-		
 		}
-	);
-	
+	);*/
+
 	/**
 	 * SCROLL TO FIXED
 	 */
