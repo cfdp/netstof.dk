@@ -2,21 +2,15 @@ var $ = jQuery.noConflict();
 
 $(function() {
 
-	/*
-    var customStyle = [
-  	{
-    "featureType": "water",
-    "elementType": "geometry",
-    "stylers": [
-      { "hue": "#ff0022" }
-    ]
-  	}
-	];
-
-	console.log(google.maps);
-
-	Drupal.gmap.setOptions({ 'styles': customStyle });
-	*/
+	/**
+	 * Fix for doubleclick issues on iPhone / iPad
+	 * http://stackoverflow.com/questions/3038898/ipad-iphone-hover-problem-causes-the-user-to-double-click-a-link
+	 */
+	$('a.single-click-mobile').on('click touchend', function(e) {
+	    var el = $(this);
+	    var link = el.attr('href');
+	    window.location = link;
+	});
 
 	/**
 	 * ENCYCLOPEDIA TABS - Hash links

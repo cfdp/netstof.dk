@@ -117,10 +117,11 @@ function netstof_form_alter(&$form, $form_state, $form_id) {
 
 	switch ($form_id)  {
 		case 'search_block_form':
-			$form["search_block_form"]["#default_value"] = "Søg på netstof.dk";
+      // this breaks on dk-map redirect pages
+			// $form["search_block_form"]["#default_value"] = "Søg på netstof.dk";
 			// On blur / On focus
-		    $form['search_block_form']['#attributes']['onblur'] = "if (this.value == '') {this.value = 'Søg på netstof.dk';}";
-		    $form['search_block_form']['#attributes']['onfocus'] = "if (this.value == 'Søg på netstof.dk') {this.value = '';}";
+		    // $form['search_block_form']['#attributes']['onblur'] = "if (this.value == '') {this.value = 'Søg på netstof.dk';}";
+		    // $form['search_block_form']['#attributes']['onfocus'] = "if (this.value == 'Søg på netstof.dk') {this.value = '';}";
 		break;
 
 		case 'custom_search_blocks_form_1':
