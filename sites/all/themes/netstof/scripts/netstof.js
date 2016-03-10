@@ -7,8 +7,16 @@
         var path_params = $(location).attr('search');
         var path_hostname = $(location).attr('hostname');
         var path_name= $(location).attr('pathname');
-        if (path_params.substring(9,12) == "318") {
-          window.location.replace("/kommuner/slagelse"+path_params);
+        var term_id = path_params.substring(9,12);
+
+        switch (term_id) { 
+	        case '318': 
+            window.location.replace("/kommuner/slagelse"+path_params);
+		        break;
+	        case '255': 
+            window.location.replace("/kommuner/esbjerg"+path_params);
+		        break;
+	        default:
         }
       });
     }
