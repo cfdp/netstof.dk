@@ -51,10 +51,10 @@ function netstof_uf_preprocess_page(&$variables) {
   $is_active = true;
   $is_front = drupal_is_front_page();
   if ($is_active) {
-    drupal_add_css("http://popin.survey-xact.dk/popin/popin.css", 'external');
-    drupal_add_js("http://popin.survey-xact.dk/popin/popin.js", 'external');
-    drupal_add_js("http://popin.survey-xact.dk/dynjs/DTSEEM3L3696/popin.js", 'external');
-    drupal_add_js("http://popin.survey-xact.dk/cookies.js", 'external');
+    drupal_add_css("https://popin.survey-xact.dk/popin/popin.css", 'external');
+    drupal_add_js("https://popin.survey-xact.dk/popin/popin.js", 'external');
+    drupal_add_js("https://popin.survey-xact.dk/dynjs/DTSEEM3L3696/popin.js", 'external');
+    drupal_add_js("https://popin.survey-xact.dk/cookies.js", 'external');
   }
 }
 
