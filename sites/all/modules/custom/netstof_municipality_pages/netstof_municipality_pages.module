@@ -1,0 +1,121 @@
+<?php
+/**
+ * @file
+ * A custom module to control the layout of the Municipality term pages
+ */
+
+/**
+ * Implements hook_help().
+ *
+ * Displays help and module information.
+ *
+ * @param path 
+ *   Which path of the site we're using to display help
+ * @param arg 
+ *   Array that holds the current path as returned from arg() function
+ */
+function netstof_municipality_pages_help($path, $arg) {
+  switch ($path) {
+    case "admin/helt#netstof_municipality_pages":
+      return '' . t("Displays links to nodes created on this date") . '';
+      break;
+  }
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function netstof_municipality_pages_block_info() {
+  $blocks['netstof_municipality_pages_logo'] = array(
+    // The name that will appear in the block list.
+    'info' => t('Netstof Municipality Pages: Logo'),
+    'status' => 1,
+    'region' => 'sidebar_first',
+    // Default setting.
+    'cache' => DRUPAL_CACHE_PER_ROLE,
+  );
+  $blocks['netstof_municipality_pages_text'] = array(
+    // The name that will appear in the block list.
+    'info' => t('Netstof Municipality Pages: Text'),
+    'status' => 1,
+    'region' => 'sidebar_first',
+    // Default setting.
+    'cache' => DRUPAL_CACHE_PER_ROLE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function netstof_municipality_pages_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+      
+    case 'netstof_municipality_pages_logo':
+      $block['subject'] = t('');
+      if (user_access('access content')) {
+        // Use our custom function to retrieve data.
+        $result = netstof_municipality_pages_contents('logo');
+
+       // No custom page for this municipality - yet
+        if (empty($result)) {
+          $block['content'] = t('Intet billede tilgængeligt');  
+        } 
+        else {
+          $variables = array(
+            'path' => '/sites/default/files/kommune-images/esbjerg-logo-120px-wide.png', 
+            'alt' => 'Test alt',
+            'title' => 'Test title',
+            'width' => '50%',
+            'height' => '50%',
+            'attributes' => array('class' => 'some-img', 'id' => 'my-img'),
+            );
+          $img = theme('image', $variables);
+          $block['content'] = theme('image', $variables);
+        }
+      }
+      break;
+      
+      case 'netstof_municipality_pages_text':
+      $block['subject'] = t('');
+      if (user_access('access content')) {
+        // Use our custom function to retrieve data.
+        $result = netstof_municipality_pages_contents('text');
+
+       // No custom page for this municipality - yet
+        if (empty($result)) {
+          $block['content'] = t('Denne kommune har endnu ingen side på Netstof.');  
+        } 
+        else {
+          // Pass data through theme function.
+          //$block['content'] = theme('municipality_text', array('municipality_text' => $result));
+        }
+      }
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Custom content function.
+ *
+ * Fetch the logo and text from the Municipality term page, if it exists
+ * saved in that time period.
+ *
+ * @return
+ *   The Municipality data from the current term page, else an empty array
+ */
+function netstof_municipality_pages_contents($type = ''){
+  //Start by checking that there is data available
+  
+  if ($type == 'logo') {
+    $content = "Logo image";
+  }
+  else if ($type == 'text') {
+    $content = "TEXT TEXT";
+  }
+  return $content;
+}

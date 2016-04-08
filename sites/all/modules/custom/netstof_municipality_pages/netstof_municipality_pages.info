@@ -1,0 +1,6 @@
+name = Netstof Municipality Pages
+description = Creates custom blocks for the Municipality term pages and inserts content from the term page
+core = 7.x
+package = "Netstof"
+
+files[] = netstof_municipality_pages.module
