@@ -1,4 +1,6 @@
 name = Netstof Social
 description = Provides a block with custom social sharing links
-package = CfDP Helper Modules
+package = "Netstof"
 core = 7.x
+
+files[] = netstof_social.module

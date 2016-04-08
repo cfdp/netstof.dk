@@ -2,7 +2,7 @@
  
 name = Netstof Utility Functions
 description = Functions to enhance usability and tweak default functionality
-package = CfDP Helper Modules
+package = "Netstof"
 core = 7.x
  
 files[] = netstof_uf.module
