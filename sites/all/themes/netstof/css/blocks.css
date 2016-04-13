@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/* $legacy-support-for-ie6: true;
+$legacy-support-for-ie7: true; */
 /**
  * SEARCH BLOCK / SEARCH FORM
  */
@@ -497,8 +499,8 @@
   padding-top: 9px;
 }
 .not-front .region-sidebar-first .block .block-content {
-  font-size: 12px;
-  line-height: 13px;
+  font-size: 14px;
+  line-height: 18px;
   color: #404040;
   background: url("../images/block-btm.png") no-repeat bottom center;
   padding: 0 23px 23px 23px;
@@ -511,13 +513,13 @@
   padding-top: 23px;
   text-align: center;
 }
-.region-sidebar-first .municipality-feature .view-header h2 {
+.region-sidebar-first .municipality-feature .view-header h3 {
   font-size: 20px;
   line-height: 1em;
 }
 .region-sidebar-first .municipality-feature .block-content p {
-  font-size: 13px;
-  line-height: 15px;
+  font-size: 14px;
+  line-height: 18px;
 }
 .region-sidebar-first .municipality-feature .municipality-img {
   display: inline-block;

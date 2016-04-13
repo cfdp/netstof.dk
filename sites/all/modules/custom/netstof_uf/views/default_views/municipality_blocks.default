@@ -1,6 +1,5 @@
 <?php
 function municipality_blocks() {
-
 $view = new view();
 $view->name = 'municipality_blocks';
 $view->description = '';
@@ -89,7 +88,7 @@ $handler->display->display_options['defaults']['header'] = FALSE;
 $handler->display->display_options['header']['area']['id'] = 'area';
 $handler->display->display_options['header']['area']['table'] = 'views';
 $handler->display->display_options['header']['area']['field'] = 'area';
-$handler->display->display_options['header']['area']['content'] = '<h2>Velkommen </h3>';
+$handler->display->display_options['header']['area']['content'] = '<h3>[field_desc_block_heading]</h3>';
 $handler->display->display_options['header']['area']['format'] = 'full_html';
 $handler->display->display_options['header']['area']['tokenize'] = TRUE;
 $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -99,6 +98,13 @@ $handler->display->display_options['fields']['description']['table'] = 'taxonomy
 $handler->display->display_options['fields']['description']['field'] = 'description';
 $handler->display->display_options['fields']['description']['label'] = '';
 $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+/* Felt: Ord i ordforråd: Beskrivelse, overskrift */
+$handler->display->display_options['fields']['field_desc_block_heading']['id'] = 'field_desc_block_heading';
+$handler->display->display_options['fields']['field_desc_block_heading']['table'] = 'field_data_field_desc_block_heading';
+$handler->display->display_options['fields']['field_desc_block_heading']['field'] = 'field_desc_block_heading';
+$handler->display->display_options['fields']['field_desc_block_heading']['label'] = '';
+$handler->display->display_options['fields']['field_desc_block_heading']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_desc_block_heading']['element_label_colon'] = FALSE;
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
 $handler->display->display_options['defaults']['filters'] = FALSE;
 /* Filter criterion: Ordforråd: Internt navn */
@@ -126,9 +132,8 @@ $translatables['municipality_blocks'] = array(
   t('Alle'),
   t('Kommunelogo'),
   t('Kommunebeskrivelse'),
-  t('<h2>Velkommen </h3>'),
+  t('<h3>[field_desc_block_heading]</h3>'),
 );
-
   
   return $view;
 

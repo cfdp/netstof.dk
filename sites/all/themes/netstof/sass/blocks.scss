@@ -1,3 +1,6 @@
+// _base.scss imports _custom.scss and other partials.
+@import "base";
+
 /**
  * SEARCH BLOCK / SEARCH FORM
  */
@@ -434,7 +437,8 @@
 
     .block-content {
       .not-front & {
-        font-size: 12px; line-height: 13px;
+        font-size: $normal-font-size;
+        line-height: $normal-line-height;
         color: #404040;
         background: url("../images/block-btm.png") no-repeat bottom center;
         padding: 0 23px 23px 23px;
@@ -456,14 +460,14 @@
       text-align: center;
     }
 
-    .view-header h2 {
+    .view-header h3 {
       font-size: 20px;
       line-height: 1em;
     }
 
     .block-content p {
-      font-size: 13px;
-      line-height: 15px;
+      font-size: $normal-font-size;
+      line-height: $normal-line-height;
     }
 
     .municipality-img {

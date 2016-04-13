@@ -1,3 +1,5 @@
+/* $legacy-support-for-ie6: true;
+$legacy-support-for-ie7: true; */
 /**
  * UNDERSIDER
  */
@@ -10,8 +12,8 @@ h1#page-title {
 }
 
 .not-front #main-content > #content {
-  font-size: 13px;
-  line-height: 16px;
+  font-size: 14px;
+  line-height: 18px;
   color: #222;
 }
 
