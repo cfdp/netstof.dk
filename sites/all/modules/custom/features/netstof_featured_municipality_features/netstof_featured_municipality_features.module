@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Netstof featured municipality features feature.
+ */
+
+include_once 'netstof_featured_municipality_features.features.inc';
