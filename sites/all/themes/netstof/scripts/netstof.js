@@ -1,27 +1,4 @@
 (function($) {
-  /* Redirects user to a custom municipality page */
-  Drupal.behaviors.DKmapRedirect = {
-    attach: function (context, settings) {
-      /* Only add the functionality once on the relevant pages */
-      $('.page-node-569', context).once('DKMapRedirect', function () {
-        var path_params = $(location).attr('search');
-        var path_hostname = $(location).attr('hostname');
-        var path_name= $(location).attr('pathname');
-        var term_id = path_params.substring(9,12);
-
-        switch (term_id) { 
-	        case '318': 
-            window.location.replace("/kommuner/slagelse"+path_params);
-		        break;
-	        case '255': 
-            window.location.replace("/kommuner/esbjerg"+path_params);
-		        break;
-	        default:
-        }
-      });
-    }
-  };
-
   /*This function makes sure no more than 1 checkbox can be chosen on a form (Used on the Questions and Answers form)*/
   Drupal.behaviors.QNA = {
     attach: function (context, settings) {

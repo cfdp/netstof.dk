@@ -487,9 +487,43 @@
 /**
  * RIGHT SIDEBAR
  */
+.region-sidebar-first {
+  /**
+   * FEATURED MUNICIPALITY PAGES BLOCKS
+   */
+}
 .region-sidebar-first .block {
   background: url("../images/small_shadow_top.png") no-repeat top center;
   padding-top: 9px;
+}
+.not-front .region-sidebar-first .block .block-content {
+  font-size: 12px;
+  line-height: 13px;
+  color: #404040;
+  background: url("../images/block-btm.png") no-repeat bottom center;
+  padding: 0 23px 23px 23px;
+  overflow: hidden;
+}
+.region-sidebar-first .municipality-feature {
+  padding-top: 10px;
+}
+.region-sidebar-first .municipality-feature.logo .block-content {
+  padding-top: 23px;
+  text-align: center;
+}
+.region-sidebar-first .municipality-feature .view-header h2 {
+  font-size: 20px;
+}
+.region-sidebar-first .municipality-feature .block-content p {
+  font-size: 13px;
+  line-height: 15px;
+}
+.region-sidebar-first .municipality-feature .municipality-img {
+  display: inline-block;
+  max-width: 120px;
+}
+.region-sidebar-first .municipality-feature .municipality-img.views-row-first {
+  margin-right: 10px;
 }
 
 .region-sidebar-first .block .block-inner {
@@ -508,15 +542,6 @@
   line-height: 25px;
   font-weight: normal;
   padding: 30px 23px 23px 23px;
-}
-
-.not-front .region-sidebar-first .block .block-content {
-  font-size: 12px;
-  line-height: 13px;
-  color: #404040;
-  background: url("../images/block-btm.png") no-repeat bottom center;
-  padding: 0 23px 23px 23px;
-  overflow: hidden;
 }
 
 body.page-paaroerende .region-sidebar-first #block-block-19 .block-content {
@@ -685,17 +710,6 @@ body.page-paaroerende .region-sidebar-first #block-block-19 .block-content {
 #dk_container_kommune ul {
   padding: 0;
   margin: 0;
-}
-
-/**
- * FEATURED MUNICIPALITY PAGES BLOK
- */
-.block.municipality-feature h2.block-title {
-  font-size: 20px;
-}
-.block.municipality-feature .block-content p {
-  font-size: 13px;
-  line-height: 15px;
 }
 
 /**

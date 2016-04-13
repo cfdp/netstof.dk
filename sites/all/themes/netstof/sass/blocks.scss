@@ -428,11 +428,54 @@
  */
 .region-sidebar-first {
 
-}
-	.region-sidebar-first .block {
+  .block {
 		background: url("../images/small_shadow_top.png") no-repeat top center;
 		padding-top: 9px;
-	}
+
+    .block-content {
+      .not-front & {
+        font-size: 12px; line-height: 13px;
+        color: #404040;
+        background: url("../images/block-btm.png") no-repeat bottom center;
+        padding: 0 23px 23px 23px;
+        overflow: hidden;
+      }
+    }
+  }
+
+
+  /**
+   * FEATURED MUNICIPALITY PAGES BLOCKS
+   */
+  .municipality-feature {
+
+    padding-top: 10px;
+
+    &.logo .block-content {
+      padding-top: 23px;
+      text-align: center;
+    }
+
+    .view-header h2 {
+      font-size: 20px;
+    }
+
+    .block-content p {
+      font-size: 13px;
+      line-height: 15px;
+    }
+
+    .municipality-img {
+      display: inline-block;
+      max-width: 120px;
+
+      &.views-row-first {
+        margin-right: 10px;
+      }
+    }
+  }
+
+}
 	.region-sidebar-first .block .block-inner {
 		background: url("../images/small_shadow_bottom.png") no-repeat bottom center;
 		padding-bottom: 12px;
@@ -447,13 +490,7 @@
 		font-weight: normal;
 		padding: 30px 23px 23px 23px;
 	}
-	.not-front .region-sidebar-first .block .block-content {
-		font-size: 12px; line-height: 13px;
-		color: #404040;
-		background: url("../images/block-btm.png") no-repeat bottom center;
-		padding: 0 23px 23px 23px;
-		overflow: hidden;
-	}
+
 	body.page-paaroerende .region-sidebar-first #block-block-19 .block-content {
     padding: 0;
   }
@@ -597,19 +634,7 @@
 				padding: 0; margin: 0;
 			}
 
-/**
- * FEATURED MUNICIPALITY PAGES BLOK
- */
-.block.municipality-feature {
-  h2.block-title {
-    font-size: 20px;
-  }
-  
-  .block-content p {
-    font-size: 13px;
-    line-height: 15px;
-  }
-}
+
 
 
 /**
