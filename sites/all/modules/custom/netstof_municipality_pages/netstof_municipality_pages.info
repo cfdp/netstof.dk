@@ -1,5 +1,5 @@
 name = Netstof Municipality Pages
-description = Creates custom blocks for the Municipality term pages and inserts content from the term page
+description = Fetches featured municipality tids and redirects DK-map to single term view
 core = 7.x
 package = "Netstof"
 

@@ -507,12 +507,13 @@
 .region-sidebar-first .municipality-feature {
   padding-top: 10px;
 }
-.region-sidebar-first .municipality-feature.logo .block-content {
+.region-sidebar-first .municipality-feature.logo .view-content {
   padding-top: 23px;
   text-align: center;
 }
 .region-sidebar-first .municipality-feature .view-header h2 {
   font-size: 20px;
+  line-height: 1em;
 }
 .region-sidebar-first .municipality-feature .block-content p {
   font-size: 13px;
