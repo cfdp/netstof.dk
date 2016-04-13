@@ -1,0 +1,135 @@
+<?php
+function municipality_blocks() {
+
+$view = new view();
+$view->name = 'municipality_blocks';
+$view->description = '';
+$view->tag = 'default';
+$view->base_table = 'taxonomy_term_data';
+$view->human_name = 'Municipality blocks';
+$view->core = 7;
+$view->api_version = '3.0';
+$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+/* Display: Master */
+$handler = $view->new_display('default', 'Master', 'default');
+$handler->display->display_options['title'] = '<none>';
+$handler->display->display_options['use_more_always'] = FALSE;
+$handler->display->display_options['access']['type'] = 'perm';
+$handler->display->display_options['cache']['type'] = 'none';
+$handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['query']['options']['distinct'] = TRUE;
+$handler->display->display_options['exposed_form']['type'] = 'basic';
+$handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+$handler->display->display_options['pager']['type'] = 'some';
+$handler->display->display_options['pager']['options']['items_per_page'] = '5';
+$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['row_plugin'] = 'fields';
+/* Felt: Ord i ordforråd: Kommunelogo */
+$handler->display->display_options['fields']['field_municipality_logo']['id'] = 'field_municipality_logo';
+$handler->display->display_options['fields']['field_municipality_logo']['table'] = 'field_data_field_municipality_logo';
+$handler->display->display_options['fields']['field_municipality_logo']['field'] = 'field_municipality_logo';
+$handler->display->display_options['fields']['field_municipality_logo']['label'] = '';
+$handler->display->display_options['fields']['field_municipality_logo']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_municipality_logo']['element_default_classes'] = FALSE;
+$handler->display->display_options['fields']['field_municipality_logo']['click_sort_column'] = 'fid';
+$handler->display->display_options['fields']['field_municipality_logo']['settings'] = array(
+  'image_style' => 'municipality_logo',
+  'image_link' => '',
+);
+$handler->display->display_options['fields']['field_municipality_logo']['group_rows'] = FALSE;
+$handler->display->display_options['fields']['field_municipality_logo']['delta_offset'] = '0';
+$handler->display->display_options['fields']['field_municipality_logo']['separator'] = '';
+/* Contextual filter: Ord i ordforråd: Term ID */
+$handler->display->display_options['arguments']['tid']['id'] = 'tid';
+$handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
+$handler->display->display_options['arguments']['tid']['field'] = 'tid';
+$handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+$handler->display->display_options['arguments']['tid']['exception']['title'] = 'Alle';
+$handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+$handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+$handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+/* Filter criterion: Ordforråd: Internt navn */
+$handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+$handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+$handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+$handler->display->display_options['filters']['machine_name']['value'] = array(
+  'municipalities' => 'municipalities',
+);
+/* Filter criterion: Ord i ordforråd: Kommunelogo (field_municipality_logo:fid) */
+$handler->display->display_options['filters']['field_municipality_logo_fid']['id'] = 'field_municipality_logo_fid';
+$handler->display->display_options['filters']['field_municipality_logo_fid']['table'] = 'field_data_field_municipality_logo';
+$handler->display->display_options['filters']['field_municipality_logo_fid']['field'] = 'field_municipality_logo_fid';
+$handler->display->display_options['filters']['field_municipality_logo_fid']['operator'] = 'not empty';
+
+/* Display: Kommunelogo */
+$handler = $view->new_display('block', 'Kommunelogo', 'block');
+$handler->display->display_options['defaults']['css_class'] = FALSE;
+$handler->display->display_options['css_class'] = 'municipality-feature logo';
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['style_options']['row_class'] = 'municipality-img';
+$handler->display->display_options['style_options']['default_row_class'] = FALSE;
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['row_plugin'] = 'fields';
+$handler->display->display_options['row_options']['inline'] = array(
+  'field_municipality_logo' => 'field_municipality_logo',
+);
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+
+/* Display: Kommunebeskrivelse */
+$handler = $view->new_display('block', 'Kommunebeskrivelse', 'block_1');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['defaults']['css_class'] = FALSE;
+$handler->display->display_options['css_class'] = 'municipality-feature';
+$handler->display->display_options['defaults']['header'] = FALSE;
+/* Overskrift: Global: Text area */
+$handler->display->display_options['header']['area']['id'] = 'area';
+$handler->display->display_options['header']['area']['table'] = 'views';
+$handler->display->display_options['header']['area']['field'] = 'area';
+$handler->display->display_options['header']['area']['content'] = '<h2>Velkommen </h3>';
+$handler->display->display_options['header']['area']['format'] = 'full_html';
+$handler->display->display_options['header']['area']['tokenize'] = TRUE;
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Felt: Ord i ordforråd: Beskrivelse af term */
+$handler->display->display_options['fields']['description']['id'] = 'description';
+$handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+$handler->display->display_options['fields']['description']['field'] = 'description';
+$handler->display->display_options['fields']['description']['label'] = '';
+$handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Ordforråd: Internt navn */
+$handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+$handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+$handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+$handler->display->display_options['filters']['machine_name']['value'] = array(
+  'municipalities' => 'municipalities',
+);
+/* Filter criterion: Ord i ordforråd: Beskrivelse af term */
+$handler->display->display_options['filters']['description']['id'] = 'description';
+$handler->display->display_options['filters']['description']['table'] = 'taxonomy_term_data';
+$handler->display->display_options['filters']['description']['field'] = 'description';
+$handler->display->display_options['filters']['description']['operator'] = 'longerthan';
+$handler->display->display_options['filters']['description']['value'] = '0';
+$translatables['municipality_blocks'] = array(
+  t('Master'),
+  t('<none>'),
+  t('more'),
+  t('Apply'),
+  t('Gendan'),
+  t('Sort by'),
+  t('Asc'),
+  t('Desc'),
+  t('Alle'),
+  t('Kommunelogo'),
+  t('Kommunebeskrivelse'),
+  t('<h2>Velkommen </h3>'),
+);
+
+  
+  return $view;
+
+}
