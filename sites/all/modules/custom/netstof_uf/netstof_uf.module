@@ -245,3 +245,19 @@ function netstof_uf_save_sms($message) {
   $node = node_submit($node);
   node_save($node);
 }
+
+/**
+ * Implements hook_views_api().
+ *
+ * We are storing some of our views in code
+ */
+function netstof_uf_views_api() {
+  return array(
+    // Indicates the Views API Version:
+    // Views 2 = 2
+    // Views 3 = 3 (Latest)
+    'api' => 3,
+    // This is the path to your views files.
+    'path' => drupal_get_path('module', 'netstof_uf') . '/views',
+  );
+}
