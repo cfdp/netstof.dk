@@ -48,7 +48,7 @@ function netstof_uf_preprocess_html(&$variables) {
  * can be added easily
  */
 function netstof_uf_preprocess_page(&$variables) {
-  $is_active = true;
+  $is_active = false;
   $is_front = drupal_is_front_page();
   if ($is_active) {
     drupal_add_css("https://popin.survey-xact.dk/popin/popin.css", 'external');
