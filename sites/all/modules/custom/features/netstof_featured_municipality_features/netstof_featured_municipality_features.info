@@ -19,4 +19,4 @@ features[field][] = taxonomy_term-municipalities-field_municipality_logo
 features[field][] = taxonomy_term-municipalities-field_oversigt
 features[image][] = municipality_logo
 features[taxonomy][] = municipalities
-mtime = 1460553862
+mtime = 1460555215

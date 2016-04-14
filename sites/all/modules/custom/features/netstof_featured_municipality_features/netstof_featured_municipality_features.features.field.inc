@@ -74,7 +74,7 @@ function netstof_featured_municipality_features_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '3',
+        'weight' => '1',
       ),
     ),
   );
@@ -144,7 +144,7 @@ function netstof_featured_municipality_features_field_default_fields() {
           'size' => '100',
         ),
         'type' => 'text_textfield',
-        'weight' => '1',
+        'weight' => '4',
       ),
     ),
   );
@@ -204,8 +204,8 @@ function netstof_featured_municipality_features_field_default_fields() {
         'file_directory' => 'municipalities',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '2 MB',
-        'max_resolution' => '500x500',
-        'min_resolution' => '50x50',
+        'max_resolution' => '2000x2000',
+        'min_resolution' => '120x50',
         'title_field' => 1,
         'user_register_form' => FALSE,
       ),
@@ -217,7 +217,7 @@ function netstof_featured_municipality_features_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -226,7 +226,7 @@ function netstof_featured_municipality_features_field_default_fields() {
   $fields['taxonomy_term-municipalities-field_oversigt'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_oversigt',
@@ -308,7 +308,7 @@ function netstof_featured_municipality_features_field_default_fields() {
         'module' => 'viewfield',
         'settings' => array(),
         'type' => 'viewfield_select',
-        'weight' => '8',
+        'weight' => '5',
       ),
     ),
   );
