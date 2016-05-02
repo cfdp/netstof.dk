@@ -52,7 +52,7 @@ function template_preprocess_views_search_autocomplete_style(&$vars) {
 
     // Extract the URL...
     $regexp = "<a\s[^>]*href=(\"??)([^\" >]*?)\\1[^>]*>(.*)<\/a>";
-    $link_value = $row[$style_options['input_link']]->content;
+    $link_value = $row[$style_options['input_link']]->raw;
     if (preg_match("/$regexp/siU", htmlspecialchars_decode($row[$style_options['input_link']]->content, ENT_QUOTES), $matches)) {
         $link_value = $matches[2];
     }
@@ -68,7 +68,7 @@ function template_preprocess_views_search_autocomplete_style(&$vars) {
     /* ----------------
      * Build the value...
      * ----------------  */
-    $object['value'] = trim(strip_tags($row[$style_options['input_label']]->content));
+    $object['value'] = trim($row[$style_options['input_label']]->content);
 
     /* ----------------
      * Build the array of output fields...
@@ -77,7 +77,7 @@ function template_preprocess_views_search_autocomplete_style(&$vars) {
     foreach ($style_options['output_fields'] as $field_name) {
       // Add the field if the value is not null.
       if (array_key_exists($field_name, $row) && $row[$field_name] && $row[$field_name]->content) {
-        $object['fields'][$field_name] = trim($row[$field_name]->label . ' ' . $row[$field_name]->content);
+        $object['fields'][$field_name] = htmlspecialchars_decode(trim($row[$field_name]->label . ' ' . $row[$field_name]->content), ENT_QUOTES);
       }
     }
 

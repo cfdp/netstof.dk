@@ -58,7 +58,9 @@
       var input_selector = "input[type='text']:not(.ui-autocomplete-processed):not(.form-autocomplete)";
       var selector = '';
 
-      $("<ul id='sa_admin_menu'><div class='sa_title'>Search Aucomplete</div><li class='sa_add'>" + Drupal.t('add autocompletion') + "</li></ul>").appendTo($('body'));
+      $("body").once('search-autocomplete', function () {
+        $("<ul id='sa_admin_menu'><div class='sa_title'>Search Aucomplete</div><li class='sa_add'>" + Drupal.t('add autocompletion') + "</li></ul>").appendTo($('body'));
+      });
 
       $("body").delegate(input_selector, "mouseover", function (event) {
         var offset = $(this).offset();

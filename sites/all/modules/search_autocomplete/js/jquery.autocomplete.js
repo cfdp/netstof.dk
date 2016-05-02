@@ -1,26 +1,37 @@
 /**
  * @file
  * SEARCH AUTOCOMPLETE javascript mechanism.
- * 
+ *
  * Sponsored by:
  * www.axiomcafe.fr
  */
 
 (function ($) {
 
+  function strip(html)
+  {
+   var tmp = document.createElement("DIV");
+   tmp.innerHTML = html;
+   return tmp.textContent || tmp.innerText || "";
+  }
+
   // Autocomplete
   $.ui.autocomplete.prototype._renderItem = function (ul, item) {
     var term = this.term;
     var first = ("group" in item)  ? 'first' : '';
     var innerHTML = '<div class="ui-autocomplete-fields ' + first + '">';
+    item.value = strip(item.value);
+    item.label = Drupal.checkPlain(item.label);
     if (item.fields) {
       $.each(item.fields, function(key, value) {
         var regex = new RegExp('(' + $.trim(term) + ')', 'gi');
-        var output = value;
+        var output = Drupal.checkPlain(value);
         if (value.indexOf('src=') == -1 && value.indexOf('href=') == -1) {
-          output = value.replace(regex, "<span class='ui-autocomplete-field-term'>$1</span>");
+          output = output.replace(regex, "<span class='ui-autocomplete-field-term'>$1</span>");
+          innerHTML += ('<div class="ui-autocomplete-field-' + key + '">' + output + '</div>');
+        } else {
+          innerHTML += ('<div class="ui-autocomplete-field-' + key + '">' + value + '</div>');
         }
-        innerHTML += ('<div class="ui-autocomplete-field-' + key + '">' + output + '</div>');
       });
     } else {
       innerHTML += ('<div class="ui-autocomplete-field">' + item.label + '</div>');
@@ -35,11 +46,11 @@
       $(group).appendTo(ul);
     }
     var elem =  $("<li class=ui-menu-item-" + first + "></li>" )
-    .append("<a>" + innerHTML + "</a>");   
+    .append("<a>" + innerHTML + "</a>");
     if (item.value == '') {
     	elem = $("<li class='ui-state-disabled ui-menu-item-" + first + " ui-menu-item'>" + item.label + "</li>" );
     }
-	elem.data("item.autocomplete", item).appendTo(ul);
+    elem.data("item.autocomplete", item).appendTo(ul);
     
     Drupal.attachBehaviors(elem);
     return elem;
@@ -55,9 +66,10 @@
       if (Drupal.settings.search_autocomplete) {
         $.each(Drupal.settings.search_autocomplete, function(key, value) {
           $(Drupal.settings.search_autocomplete[key].selector).bind("mouseover", function() {
-             $(Drupal.settings.search_autocomplete[key].selector).addClass('ui-autocomplete-processed ui-theme-' + Drupal.settings.search_autocomplete[key].theme).autocomplete({
+             $(Drupal.settings.search_autocomplete[key].selector).addClass('form-autocomplete ui-autocomplete-processed').attr('data-sa-theme', Drupal.settings.search_autocomplete[key].theme).autocomplete({
             	 	minLength: Drupal.settings.search_autocomplete[key].minChars,
             	 	source: function(request, response) {
+                 $(Drupal.settings.search_autocomplete[key].selector).addClass('throbbing');
 		              // External URL:
 		              if (Drupal.settings.search_autocomplete[key].type == 'external') {
 		                $.getJSON(Drupal.settings.search_autocomplete[key].datas, { q: encodeURIComponent(request.term) }, function (results) {
@@ -90,6 +102,7 @@
 		            open: function(event, ui) {
 		              $(".ui-autocomplete li.ui-menu-item:odd").addClass("ui-menu-item-odd");
 		              $(".ui-autocomplete li.ui-menu-item:even").addClass("ui-menu-item-even");
+		              $(Drupal.settings.search_autocomplete[key].selector).removeClass('throbbing');
 		            },
 		            select: function(event, ui) {
 		              if (Drupal.settings.search_autocomplete[key].auto_redirect == 1 && ui.item.link) {
@@ -100,12 +113,14 @@
 		              }
 		            },
 		            focus: function (event, ui) {
-		              if (ui.item.group.group_id == 'no_results' || ui.item.group.group_id == 'all_results') {
-		                  event.preventDefault();
+		              if (typeof ui.item.group != 'undefined') {
+  		              if (ui.item.group.group_id == 'no_results' || ui.item.group.group_id == 'all_results') {
+  		                  event.preventDefault();
+  		              }
 		              }
 		            },
-		            appendTo: $(Drupal.settings.search_autocomplete[key].selector).parent(),
-             }).autocomplete("widget").attr("id", "ui-theme-" + Drupal.settings.search_autocomplete[key].theme);
+		            appendTo: $(Drupal.settings.search_autocomplete[key].selector).parent()
+             }).autocomplete("widget").attr("data-sa-theme", Drupal.settings.search_autocomplete[key].theme);
         	});
           $(Drupal.settings.search_autocomplete[key].selector).trigger('mouseover');
        });
