@@ -1,0 +1,494 @@
+<?php
+function kort() {
+
+$view = new view();
+$view->name = 'kort';
+$view->description = '';
+$view->tag = 'default';
+$view->base_table = 'node';
+$view->human_name = 'Kort';
+$view->core = 7;
+$view->api_version = '3.0';
+$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+/* Display: Master */
+$handler = $view->new_display('default', 'Master', 'default');
+$handler->display->display_options['title'] = 'Kort';
+$handler->display->display_options['use_more_always'] = FALSE;
+$handler->display->display_options['access']['type'] = 'perm';
+$handler->display->display_options['cache']['type'] = 'none';
+$handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['query']['options']['distinct'] = TRUE;
+$handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+$handler->display->display_options['exposed_form']['options']['submit_button'] = 'Søg';
+$handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'X';
+$handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+$handler->display->display_options['exposed_form']['options']['bef'] = array(
+  'general' => array(
+    'allow_secondary' => 0,
+    'secondary_label' => 'Avancerede indstillinger',
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
+  ),
+  'field_steder_kommune_tid' => array(
+    'bef_format' => 'default',
+    'more_options' => array(
+      'bef_select_all_none' => FALSE,
+      'bef_collapsible' => 0,
+      'is_secondary' => 0,
+      'any_label' => '',
+      'bef_filter_description' => '<none>',
+      'tokens' => array(
+        'available' => array(
+          0 => 'global_types',
+          1 => 'vocabulary',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'bef_filter_description' => NULL,
+        'any_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'rewrite' => array(
+        'filter_rewrite_values' => '',
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'bef_filter_description' => NULL,
+        'any_label' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
+  ),
+  'field_steder_over_under18_value' => array(
+    'bef_format' => 'bef',
+    'more_options' => array(
+      'bef_select_all_none' => 0,
+      'bef_collapsible' => 0,
+      'is_secondary' => 0,
+      'any_label' => '',
+      'bef_filter_description' => '',
+      'tokens' => array(
+        'available' => array(
+          0 => 'global_types',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'bef_filter_description' => NULL,
+        'any_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'rewrite' => array(
+        'filter_rewrite_values' => '',
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'bef_filter_description' => NULL,
+        'any_label' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
+  ),
+  'secondary_label' => NULL,
+  'collapsible_label' => NULL,
+  'combine_rewrite' => NULL,
+  'reset_label' => NULL,
+  'bef_filter_description' => NULL,
+  'any_label' => NULL,
+  'filter_rewrite_values' => NULL,
+);
+$handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+$handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'filtered_html';
+$handler->display->display_options['pager']['type'] = 'none';
+$handler->display->display_options['style_plugin'] = 'gmapextended';
+$handler->display->display_options['style_options']['fallback_values'] = array(
+  'text' => '',
+  'rmt' => '',
+  'iwq' => '',
+  'iwo' => '',
+  'link' => '',
+  'latitude' => '',
+  'longitude' => '',
+  'title' => '',
+  'markername' => 'netstof orange',
+  'offset' => '',
+);
+$handler->display->display_options['style_options']['field_purposes'] = array(
+  'title' => 'text',
+  'latitude' => 'latitude',
+  'longitude' => 'longitude',
+  'street' => '',
+  'postal_code' => '',
+  'city' => '',
+  'nothing' => '',
+  'field_steder_tlf' => '',
+  'field_steder_email' => '',
+  'field_steder_website' => '',
+  'nothing_1' => '',
+);
+$handler->display->display_options['style_options']['center_on_proximityfilter_rel'] = 'none';
+$handler->display->display_options['row_plugin'] = 'fields';
+/* No results behavior: Global: Text area */
+$handler->display->display_options['empty']['area']['id'] = 'area';
+$handler->display->display_options['empty']['area']['table'] = 'views';
+$handler->display->display_options['empty']['area']['field'] = 'area';
+$handler->display->display_options['empty']['area']['empty'] = TRUE;
+$handler->display->display_options['empty']['area']['content'] = '<div class="dk-map-blured">
+<p>Vælg kommune</p>
+</div>';
+$handler->display->display_options['empty']['area']['format'] = 'full_html';
+/* Felt: Indhold: Titel */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+/* Felt: Location: Latitude */
+$handler->display->display_options['fields']['latitude']['id'] = 'latitude';
+$handler->display->display_options['fields']['latitude']['table'] = 'location';
+$handler->display->display_options['fields']['latitude']['field'] = 'latitude';
+$handler->display->display_options['fields']['latitude']['exclude'] = TRUE;
+$handler->display->display_options['fields']['latitude']['style'] = 'dd';
+/* Felt: Location: Longitude */
+$handler->display->display_options['fields']['longitude']['id'] = 'longitude';
+$handler->display->display_options['fields']['longitude']['table'] = 'location';
+$handler->display->display_options['fields']['longitude']['field'] = 'longitude';
+$handler->display->display_options['fields']['longitude']['exclude'] = TRUE;
+$handler->display->display_options['fields']['longitude']['style'] = 'dd';
+/* Felt: Location: Street */
+$handler->display->display_options['fields']['street']['id'] = 'street';
+$handler->display->display_options['fields']['street']['table'] = 'location';
+$handler->display->display_options['fields']['street']['field'] = 'street';
+$handler->display->display_options['fields']['street']['label'] = '';
+$handler->display->display_options['fields']['street']['exclude'] = TRUE;
+$handler->display->display_options['fields']['street']['element_label_colon'] = FALSE;
+/* Felt: Location: Postal Code */
+$handler->display->display_options['fields']['postal_code']['id'] = 'postal_code';
+$handler->display->display_options['fields']['postal_code']['table'] = 'location';
+$handler->display->display_options['fields']['postal_code']['field'] = 'postal_code';
+$handler->display->display_options['fields']['postal_code']['label'] = '';
+$handler->display->display_options['fields']['postal_code']['exclude'] = TRUE;
+$handler->display->display_options['fields']['postal_code']['element_label_colon'] = FALSE;
+/* Felt: Location: City */
+$handler->display->display_options['fields']['city']['id'] = 'city';
+$handler->display->display_options['fields']['city']['table'] = 'location';
+$handler->display->display_options['fields']['city']['field'] = 'city';
+$handler->display->display_options['fields']['city']['label'] = '';
+$handler->display->display_options['fields']['city']['exclude'] = TRUE;
+$handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
+/* Felt: Global: Custom text */
+$handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+$handler->display->display_options['fields']['nothing']['table'] = 'views';
+$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+$handler->display->display_options['fields']['nothing']['label'] = '';
+$handler->display->display_options['fields']['nothing']['alter']['text'] = '[street], [postal_code], [city]';
+$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+/* Felt: Indhold: Telefonnummer */
+$handler->display->display_options['fields']['field_steder_tlf']['id'] = 'field_steder_tlf';
+$handler->display->display_options['fields']['field_steder_tlf']['table'] = 'field_data_field_steder_tlf';
+$handler->display->display_options['fields']['field_steder_tlf']['field'] = 'field_steder_tlf';
+$handler->display->display_options['fields']['field_steder_tlf']['label'] = '';
+$handler->display->display_options['fields']['field_steder_tlf']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['field_steder_tlf']['alter']['path'] = 'tel:[field_steder_tlf]';
+$handler->display->display_options['fields']['field_steder_tlf']['element_label_colon'] = FALSE;
+/* Felt: Indhold: Email */
+$handler->display->display_options['fields']['field_steder_email']['id'] = 'field_steder_email';
+$handler->display->display_options['fields']['field_steder_email']['table'] = 'field_data_field_steder_email';
+$handler->display->display_options['fields']['field_steder_email']['field'] = 'field_steder_email';
+$handler->display->display_options['fields']['field_steder_email']['label'] = '';
+$handler->display->display_options['fields']['field_steder_email']['element_label_colon'] = FALSE;
+/* Felt: Indhold: Website */
+$handler->display->display_options['fields']['field_steder_website']['id'] = 'field_steder_website';
+$handler->display->display_options['fields']['field_steder_website']['table'] = 'field_data_field_steder_website';
+$handler->display->display_options['fields']['field_steder_website']['field'] = 'field_steder_website';
+$handler->display->display_options['fields']['field_steder_website']['label'] = '';
+$handler->display->display_options['fields']['field_steder_website']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['field_steder_website']['alter']['path'] = '[field_steder_website-value]';
+$handler->display->display_options['fields']['field_steder_website']['alter']['absolute'] = TRUE;
+$handler->display->display_options['fields']['field_steder_website']['alter']['external'] = TRUE;
+$handler->display->display_options['fields']['field_steder_website']['element_label_colon'] = FALSE;
+/* Felt: Global: Custom text */
+$handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+$handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+$handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+$handler->display->display_options['fields']['nothing_1']['label'] = '';
+$handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Find på Google Maps';
+$handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'https://maps.google.dk/maps?q=[street]+[city]+[postal_code]';
+$handler->display->display_options['fields']['nothing_1']['alter']['absolute'] = TRUE;
+$handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+/* Sort criterion: Indhold: Post date */
+$handler->display->display_options['sorts']['created']['id'] = 'created';
+$handler->display->display_options['sorts']['created']['table'] = 'node';
+$handler->display->display_options['sorts']['created']['field'] = 'created';
+$handler->display->display_options['sorts']['created']['order'] = 'DESC';
+/* Filter criterion: Indhold: Udgivet */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Indhold: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'steder' => 'steder',
+);
+$handler->display->display_options['filters']['type']['group'] = 1;
+/* Filter criterion: Indhold: Kommune (field_steder_kommune) */
+$handler->display->display_options['filters']['field_steder_kommune_tid']['id'] = 'field_steder_kommune_tid';
+$handler->display->display_options['filters']['field_steder_kommune_tid']['table'] = 'field_data_field_steder_kommune';
+$handler->display->display_options['filters']['field_steder_kommune_tid']['field'] = 'field_steder_kommune_tid';
+$handler->display->display_options['filters']['field_steder_kommune_tid']['value'] = array(
+  505 => '505',
+);
+$handler->display->display_options['filters']['field_steder_kommune_tid']['group'] = 1;
+$handler->display->display_options['filters']['field_steder_kommune_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_steder_kommune_tid']['expose']['operator_id'] = 'field_steder_kommune_tid_op';
+$handler->display->display_options['filters']['field_steder_kommune_tid']['expose']['operator'] = 'field_steder_kommune_tid_op';
+$handler->display->display_options['filters']['field_steder_kommune_tid']['expose']['identifier'] = 'kommune';
+$handler->display->display_options['filters']['field_steder_kommune_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+  4 => 0,
+  5 => 0,
+  6 => 0,
+);
+$handler->display->display_options['filters']['field_steder_kommune_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_steder_kommune_tid']['vocabulary'] = 'municipalities';
+$handler->display->display_options['filters']['field_steder_kommune_tid']['error_message'] = FALSE;
+/* Filter criterion: Indhold: Over eller under 18 (field_steder_over_under18) */
+$handler->display->display_options['filters']['field_steder_over_under18_value']['id'] = 'field_steder_over_under18_value';
+$handler->display->display_options['filters']['field_steder_over_under18_value']['table'] = 'field_data_field_steder_over_under18';
+$handler->display->display_options['filters']['field_steder_over_under18_value']['field'] = 'field_steder_over_under18_value';
+$handler->display->display_options['filters']['field_steder_over_under18_value']['group'] = 1;
+$handler->display->display_options['filters']['field_steder_over_under18_value']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_steder_over_under18_value']['expose']['operator_id'] = 'field_steder_over_under18_value_op';
+$handler->display->display_options['filters']['field_steder_over_under18_value']['expose']['operator'] = 'field_steder_over_under18_value_op';
+$handler->display->display_options['filters']['field_steder_over_under18_value']['expose']['identifier'] = 'alder';
+$handler->display->display_options['filters']['field_steder_over_under18_value']['expose']['multiple'] = TRUE;
+/* Filter criterion: adresse */
+$handler->display->display_options['filters']['street']['id'] = 'street';
+$handler->display->display_options['filters']['street']['table'] = 'location';
+$handler->display->display_options['filters']['street']['field'] = 'street';
+$handler->display->display_options['filters']['street']['ui_name'] = 'adresse';
+$handler->display->display_options['filters']['street']['operator'] = 'contains';
+$handler->display->display_options['filters']['street']['group'] = 1;
+$handler->display->display_options['filters']['street']['expose']['operator_id'] = 'street_op';
+$handler->display->display_options['filters']['street']['expose']['operator'] = 'street_op';
+$handler->display->display_options['filters']['street']['expose']['identifier'] = 'adresse';
+
+/* Display: Page */
+$handler = $view->new_display('page', 'Page', 'page');
+$handler->display->display_options['defaults']['header'] = FALSE;
+$handler->display->display_options['path'] = 'kort';
+
+/* Display: Bilag */
+$handler = $view->new_display('attachment', 'Bilag', 'attachment_1');
+$handler->display->display_options['defaults']['group_by'] = FALSE;
+$handler->display->display_options['group_by'] = TRUE;
+$handler->display->display_options['pager']['type'] = 'none';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'list';
+$handler->display->display_options['style_options']['grouping'] = array(
+  0 => array(
+    'field' => 'field_steder_kommune',
+    'rendered' => 1,
+    'rendered_strip' => 0,
+  ),
+);
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['row_plugin'] = 'fields';
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['header'] = FALSE;
+$handler->display->display_options['defaults']['empty'] = FALSE;
+$handler->display->display_options['defaults']['relationships'] = FALSE;
+/* Relationship: Indhold: Taxonomy terms on node */
+$handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+$handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+$handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+$handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+  'municipalities' => 'municipalities',
+  'forums' => 0,
+  'brevkasser' => 0,
+  'faq' => 0,
+  'drug_intake_type' => 0,
+  'drug_category' => 0,
+  'tags' => 0,
+);
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Felt: Location: Postal Code */
+$handler->display->display_options['fields']['postal_code']['id'] = 'postal_code';
+$handler->display->display_options['fields']['postal_code']['table'] = 'location';
+$handler->display->display_options['fields']['postal_code']['field'] = 'postal_code';
+$handler->display->display_options['fields']['postal_code']['label'] = '';
+$handler->display->display_options['fields']['postal_code']['exclude'] = TRUE;
+$handler->display->display_options['fields']['postal_code']['element_label_colon'] = FALSE;
+/* Felt: Location: Street */
+$handler->display->display_options['fields']['street']['id'] = 'street';
+$handler->display->display_options['fields']['street']['table'] = 'location';
+$handler->display->display_options['fields']['street']['field'] = 'street';
+$handler->display->display_options['fields']['street']['label'] = '';
+$handler->display->display_options['fields']['street']['exclude'] = TRUE;
+$handler->display->display_options['fields']['street']['element_label_colon'] = FALSE;
+/* Felt: Location: City */
+$handler->display->display_options['fields']['city']['id'] = 'city';
+$handler->display->display_options['fields']['city']['table'] = 'location';
+$handler->display->display_options['fields']['city']['field'] = 'city';
+$handler->display->display_options['fields']['city']['label'] = '';
+$handler->display->display_options['fields']['city']['exclude'] = TRUE;
+$handler->display->display_options['fields']['city']['element_label_colon'] = FALSE;
+/* Felt: Indhold: Titel */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['title']['alter']['text'] = '<b>[title]</b>';
+$handler->display->display_options['fields']['title']['alter']['absolute'] = TRUE;
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+/* Felt: Indhold: Kommune */
+$handler->display->display_options['fields']['field_steder_kommune']['id'] = 'field_steder_kommune';
+$handler->display->display_options['fields']['field_steder_kommune']['table'] = 'field_data_field_steder_kommune';
+$handler->display->display_options['fields']['field_steder_kommune']['field'] = 'field_steder_kommune';
+$handler->display->display_options['fields']['field_steder_kommune']['label'] = '';
+$handler->display->display_options['fields']['field_steder_kommune']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_steder_kommune']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_steder_kommune']['type'] = 'taxonomy_term_reference_plain';
+/* Felt: Indhold: Telefonnummer */
+$handler->display->display_options['fields']['field_steder_tlf']['id'] = 'field_steder_tlf';
+$handler->display->display_options['fields']['field_steder_tlf']['table'] = 'field_data_field_steder_tlf';
+$handler->display->display_options['fields']['field_steder_tlf']['field'] = 'field_steder_tlf';
+$handler->display->display_options['fields']['field_steder_tlf']['label'] = '';
+$handler->display->display_options['fields']['field_steder_tlf']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['field_steder_tlf']['alter']['path'] = 'tel:[field_steder_tlf]';
+$handler->display->display_options['fields']['field_steder_tlf']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_steder_tlf']['empty'] = '-';
+$handler->display->display_options['fields']['field_steder_tlf']['empty_zero'] = TRUE;
+/* Felt: Global: Custom text */
+$handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+$handler->display->display_options['fields']['nothing']['table'] = 'views';
+$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+$handler->display->display_options['fields']['nothing']['label'] = '';
+$handler->display->display_options['fields']['nothing']['alter']['text'] = '[street], [postal_code] [city]';
+$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+/* Felt: Indhold: Email */
+$handler->display->display_options['fields']['field_steder_email']['id'] = 'field_steder_email';
+$handler->display->display_options['fields']['field_steder_email']['table'] = 'field_data_field_steder_email';
+$handler->display->display_options['fields']['field_steder_email']['field'] = 'field_steder_email';
+$handler->display->display_options['fields']['field_steder_email']['label'] = '';
+$handler->display->display_options['fields']['field_steder_email']['element_label_colon'] = FALSE;
+/* Felt: Indhold: Website */
+$handler->display->display_options['fields']['field_steder_website']['id'] = 'field_steder_website';
+$handler->display->display_options['fields']['field_steder_website']['table'] = 'field_data_field_steder_website';
+$handler->display->display_options['fields']['field_steder_website']['field'] = 'field_steder_website';
+$handler->display->display_options['fields']['field_steder_website']['label'] = '';
+$handler->display->display_options['fields']['field_steder_website']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['field_steder_website']['alter']['path'] = '[field_steder_website-value]';
+$handler->display->display_options['fields']['field_steder_website']['alter']['absolute'] = TRUE;
+$handler->display->display_options['fields']['field_steder_website']['alter']['external'] = TRUE;
+$handler->display->display_options['fields']['field_steder_website']['element_label_colon'] = FALSE;
+$handler->display->display_options['defaults']['sorts'] = FALSE;
+/* Sort criterion: Ord i ordforråd: Navn */
+$handler->display->display_options['sorts']['name']['id'] = 'name';
+$handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
+$handler->display->display_options['sorts']['name']['field'] = 'name';
+$handler->display->display_options['sorts']['name']['relationship'] = 'term_node_tid';
+/* Sort criterion: Indhold: Titel */
+$handler->display->display_options['sorts']['title']['id'] = 'title';
+$handler->display->display_options['sorts']['title']['table'] = 'node';
+$handler->display->display_options['sorts']['title']['field'] = 'title';
+$handler->display->display_options['displays'] = array(
+  'default' => 'default',
+  'page' => 'page',
+);
+$handler->display->display_options['inherit_arguments'] = FALSE;
+$handler->display->display_options['inherit_exposed_filters'] = TRUE;
+$translatables['kort'] = array(
+  t('Master'),
+  t('Kort'),
+  t('more'),
+  t('Søg'),
+  t('X'),
+  t('Sort by'),
+  t('Asc'),
+  t('Desc'),
+  t('Avancerede indstillinger'),
+  t('<none>'),
+  t('Select any filter and click on Apply to see results'),
+  t('<div class="dk-map-blured">
+<p>Vælg kommune</p>
+</div>'),
+  t('Latitude'),
+  t('Longitude'),
+  t('[street], [postal_code], [city]'),
+  t('Find på Google Maps'),
+  t('Page'),
+  t('Bilag'),
+  t('term'),
+  t('<b>[title]</b>'),
+  t('-'),
+  t('[street], [postal_code] [city]'),
+);
+
+
+  return $view;
+
+}

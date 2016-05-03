@@ -16,6 +16,7 @@ sites/all/modules/stage_file_proxy/
 sites/all/modules/hacked/
 sites/all/modules/linkchecker/
 sites/all/modules/security_review/
+sites/all/modules/diff
 
 #Ignore .htaccess
 .htaccess
