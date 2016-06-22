@@ -22,19 +22,21 @@ function netstof_municipality_pages_help($path, $arg) {
   }
 }
 /*
- * Find the featured municipality pages by filtering out the terms that have
- * an image attached
+ * Find the featured municipality pages by filtering on membership status field on the term
  */
 function netstof_municipality_pages_page_build() {
   if (current_path() == 'node/569') {
 
-    $query = "SELECT DISTINCT taxonomy_term_data.tid AS tid FROM {taxonomy_term_data} taxonomy_term_data LEFT JOIN {taxonomy_vocabulary} taxonomy_vocabulary ON taxonomy_term_data.vid = taxonomy_vocabulary.vid LEFT JOIN {field_data_field_municipality_logo} field_data_field_municipality_logo ON taxonomy_term_data.tid = field_data_field_municipality_logo.entity_id AND (field_data_field_municipality_logo.entity_type = 'taxonomy_term' AND field_data_field_municipality_logo.deleted = '0') WHERE (( (taxonomy_vocabulary.machine_name IN ('municipalities')) AND (field_data_field_municipality_logo.field_municipality_logo_fid IS NOT NULL ) ))";
+    $query = "SELECT taxonomy_term_data.tid AS tid FROM {taxonomy_term_data} taxonomy_term_data
+LEFT JOIN {taxonomy_vocabulary} taxonomy_vocabulary ON taxonomy_term_data.vid = taxonomy_vocabulary.vid
+INNER JOIN {field_data_field_municipality_member} field_data_field_municipality_member ON taxonomy_term_data.tid = field_data_field_municipality_member.entity_id AND (field_data_field_municipality_member.entity_type = 'taxonomy_term' AND field_data_field_municipality_member.deleted = '0')
+WHERE (( (taxonomy_vocabulary.machine_name IN  ('municipalities')) AND (field_data_field_municipality_member.field_municipality_member_value = '1') ))";
 
     $result = db_query($query)->fetchAll();
     foreach($result as $item) {
       $tids[] = $item->tid;
     }
-    //Add the tids of the
+    //Add the tids of the municipalities to a javascript array
     drupal_add_js(array('netstof_municipality_pages' => array('tids' => $tids)), array('type' => 'setting'));
   }
 }
