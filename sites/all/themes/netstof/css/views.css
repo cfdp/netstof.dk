@@ -1,1489 +1,467 @@
 @charset "UTF-8";
-/**
- * BREVKASSEN - Oversigt
- */
-.page-node-305 h1#page-title {
-  color: #0b5a7c !important;
-  padding: 10px 0 0 52px;
-  background: url("../images/icon-brev.png") no-repeat top left;
-  height: 36px;
-  margin-bottom: 0;
-}
-
-.page-node-305 .field-name-field-oversigt {
-  overflow: hidden;
-}
-
-.page-node-305 .field-name-field-oversigt .field-item {
-  display: inline-block;
-  width: 50%;
-}
-
-.page-node-305 .field-name-field-oversigt .field-item > div {
-  padding-right: 20px;
-  margin-bottom: 20px;
-}
-
-.page-node-305 #content > .block-views .view-header {
-  float: left;
-  font-size: 13px;
-}
-
-.page-node-305 .field-name-field-oversigt .field-item h2 {
-  color: #0b5a7c;
-  font-weight: normal;
-  text-transform: uppercase;
-  font-size: 20px;
-  line-height: 20px;
-  padding-top: 20px;
-  padding-left: 48px;
-}
-
-.page-node-305 .field-name-field-oversigt .field-item h2.psykolog {
-  background: url("../images/icon-psykolog.png") no-repeat 0 0;
-}
-
-.page-node-305 .field-name-field-oversigt .field-item h2.laege {
-  background: url("../images/icon-laege.png") no-repeat 0 0;
-}
-
-.page-node-305 .field-name-field-oversigt .field-item h2.rusmiddel {
-  background: url("../images/icon-professor.png") no-repeat 0 0;
-}
-
-.page-node-305 .field-name-field-oversigt .field-item p {
-  float: left;
-  width: 100%;
-}
-
-.page-node-305 .field-name-field-oversigt .field-item a.goto-link {
-  color: #FFFFFF;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 15px;
-  line-height: 15px;
-  display: block;
-  background: #0b5a7c url("../images/icon-white-triangle.png") no-repeat 13px 11px;
-  padding: 10px 12px 10px 30px;
-  float: left;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -moz-border-radius-topleft: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-
-.page-node-305 .field-name-field-oversigt .field-item a.add-link {
-  display: block;
-  height: 35px;
-  width: 35px;
-  background: #0b5a7c url("../images/icon-plus-mini.png") no-repeat center center;
-  float: left;
-  margin-left: 3px;
-  -webkit-border-top-right-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  -moz-border-radius-topright: 5px;
-  -moz-border-radius-bottomright: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.page-node-305 .field-name-field-oversigt .field-item .view-content {
-  float: left;
-}
-
-.page-node-305 .field-name-field-oversigt .field-item .view-content ul {
-  margin: 0;
-  padding: 0;
-}
-
-.page-node-305 .field-name-field-oversigt .field-item .view-content ul li {
-  list-style: none;
-  list-style-image: none;
-  margin: 0 0 10px 0;
-  padding: 0;
-  float: left;
-  width: 100%;
-}
-
-.page-node-305 .field-name-field-oversigt .field-item .view-content .views-field-picture {
-  float: left;
-  width: 104px;
-  margin: 0 7px 7px 0;
-}
-
-.page-node-305 .field-name-field-oversigt .field-item .view-content .views-field-picture img {
-  border: 2px solid #e2e1df;
-}
-
-.page-node-305 .field-name-field-oversigt .field-item .view-content .views-field-name {
-  font-size: 15px;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: #424242;
-  padding: 10px 0;
-  float: left;
-  width: 151px;
-}
-
-.page-node-305 .field-name-field-oversigt .field-item .view-content .views-field-name a {
-  color: #424242;
-}
-
-.page-node-305 .field-name-field-oversigt .field-item .views-field-field-profile-public-description {
-  font-size: 13px;
-  color: #424242;
-  float: left;
-  width: 151px;
-}
-
-/**
- * BREVKASSEN - Enkelt brevkasse
- */
-.page-brevkasse #page-title {
-  display: none;
-}
-
-body.page-brevkasse .view-Brevkasse > .view-header,
-body.page-faq .view-faq > .view-header {
-  margin-bottom: 14px;
-  box-shadow: 0 0 7px #BBB;
-  background: #FFF;
-  padding: 23px;
-  position: relative;
-  font-family: "Cabin", sans-serif;
-  overflow: hidden;
-}
-
-.view-Brevkasse > .view-header .header-title,
-.view-faq > .view-header .header-title {
-  padding: 0 0 0 50px;
-  margin-bottom: 19px;
-}
-
-.view-Brevkasse.view-display-id-page_2 .header-title {
-  background: url("../images/icon-laege.png") no-repeat 0 0;
-}
-
-.view-Brevkasse.view-display-id-page_3 .header-title {
-  background: url("../images/icon-psykolog.png") no-repeat 0 0;
-}
-
-.view-Brevkasse.view-display-id-page_4 .header-title {
-  background: url("../images/icon-professor.png") no-repeat 0 0;
-}
-
-.view-Brevkasse .view-header .header-title span,
-.view-faq .view-header .header-title span {
-  font-size: 13px;
-  color: #222;
-}
-
-.view-Brevkasse > .view-header .header-title h1,
-.view-faq > .view-header .header-title h1 {
-  color: #0b5a7c;
-  font-size: 28px;
-  line-height: 28px;
-  margin: 0;
-  padding: 4px 0 0 0;
-  font-weight: normal;
-  font-family: "Cabin", sans-serif;
-}
-
-.view-Brevkasse > .view-header > .view-brevkasseredaktoerer {
-  width: 50%;
-  float: left;
-}
-
-.view-brevkasseredaktoerer .views-field-picture {
-  float: left;
-  width: 104px;
-  margin: 0 7px 7px 0;
-}
-
-.view-brevkasseredaktoerer .views-field-picture img {
-  border: 2px solid #e2e1df;
-}
-
-.view-brevkasseredaktoerer .views-field-name {
-  font-size: 15px;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: #424242;
-  padding: 10px 10px 10px 0;
-  float: left;
-  width: 151px;
-}
-
-.view-brevkasseredaktoerer .views-field-name a {
-  color: #424242;
-}
-
-.view-brevkasseredaktoerer .views-field-field-profile-public-description {
-  font-size: 13px;
-  font-family: "Cabin", sans-serif;
-  color: #424242;
-  float: left;
-  width: 151px;
-  padding: 0 10px 0 0;
-}
-
-.view-Brevkasse > .view-header > .brevkasse-desc {
-  width: 50%;
-  float: left;
-  font-size: 13px;
-  padding: 10px 0 0 0;
-}
-
-.view-Brevkasse > .view-header #add-question {
-  position: absolute;
-  top: 23px;
-  right: 23px;
-  color: white;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 15px;
-  line-height: 15px;
-  display: inline-block;
-  background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px;
-  padding: 10px 12px 10px 30px;
-  border-radius: 5px;
-}
-
-.view-Brevkasse > .view-content > .views-row,
-.view-faq > .view-content > .views-row {
-  margin-bottom: 14px;
-  box-shadow: 0 0 7px #BBB;
-}
-
-.view-Brevkasse > .view-content > .views-row > .views-field,
-.view-faq > .view-content > .views-row > .views-field {
-  background: #FFF;
-  border: none;
-  border-radius: 0;
-  overflow: hidden;
-  padding: 20px 23px 20px 52px;
-  font-family: "Cabin", sans-serif;
-  margin-top: 0;
-}
-
-.view-Brevkasse > .view-content > .views-row > .views-field a,
-.view-faq > .view-content > .views-row > .views-field a {
-  padding: 0;
-}
-
-.view-Brevkasse > .view-content > .views-row > .views-field .ui-icon,
-.view-faq > .view-content > .views-row > .views-field .ui-icon {
-  background: url("../images/icon-arrow-acc.png") no-repeat center center;
-  left: 23px;
-}
-
-.view-Brevkasse > .view-content > .views-row > .views-field.ui-state-active .ui-icon,
-.view-faq > .view-content > .views-row > .views-field.ui-state-active .ui-icon {
-  background: url("../images/icon-arrow-acc-active.png") no-repeat center center;
-}
-
-.view-Brevkasse > .view-content > .views-row .acc_left,
-.view-faq > .view-content > .views-row .acc_left {
-  float: left;
-  width: 75%;
-}
-
-.view-Brevkasse > .view-content > .views-row .acc_left .faq_acc_date,
-.view-faq > .view-content > .views-row .acc_left .faq_acc_date {
-  color: #424242;
-  font-weight: bold;
-  font-size: 12px;
-  margin-bottom: 2px;
-}
-
-.view-Brevkasse > .view-content > .views-row .acc_left .faq_acc_title,
-.view-faq > .view-content > .views-row .acc_left .faq_acc_title {
-  color: #3d3d3d;
-  font-size: 15px;
-  text-transform: uppercase;
-}
-
-.view-Brevkasse .views-field.ui-state-active .acc_left .faq_acc_title,
-.view-faq .views-field.ui-state-active .acc_left .faq_acc_title {
-  color: #0b5a7c;
-}
-
-.view-Brevkasse > .view-content > .views-row .acc_right,
-.view-faq > .view-content > .views-row .acc_right {
-  width: 25%;
-  float: left;
-  font-size: 13px;
-  color: #222;
-  text-align: right;
-}
-
-.view-Brevkasse > .view-content > .views-row .acc_right .faq_acc_sex,
-.view-faq > .view-content > .views-row .acc_right .faq_acc_sex {
-  display: inline;
-}
-
-.view-Brevkasse > .view-content > .views-row .acc_right .faq_acc_age,
-.view-faq > .view-content > .views-row .acc_right .faq_acc_age {
-  display: inline;
-  padding-left: 3px;
-}
-
-.view-Brevkasse > .view-content > .views-row > .ui-accordion-content,
-.view-faq > .view-content > .views-row > .ui-accordion-content {
-  border: none;
-  color: #222;
-  font-size: 13px;
-  line-height: 15px;
-  font-family: "Cabin", sans-serif;
-  padding: 0 23px 20px 52px;
-  border-radius: 0;
-  height: auto !important;
-}
-
-.view-Brevkasse > .view-content > .views-row > .ui-accordion-content .views-label,
-.view-faq > .view-content > .views-row > .ui-accordion-content .views-label {
-  font-weight: bold;
-  margin-bottom: 5px;
-  font-size: 13px;
-  line-height: 15px;
-  display: block;
-  text-transform: uppercase;
-}
-
-.view-Brevkasse > .view-content > .views-row > .ui-accordion-content .views-field-view-node a,
-.view-faq > .view-content > .views-row > .ui-accordion-content .views-field-view-node a {
-  color: #0b5a7c;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-/**
- * ERFARINGER og OPLEVELSER- Oversigt
- */
-.page-oplevelser #page-title {
-  display: none;
-}
-
-.view-erfaringer .view-header, .view-erfaringer .view-empty {
-  margin-bottom: 14px;
-  box-shadow: 0 0 7px #BBB;
-  background: #FFF;
-  padding: 23px 23px 10px 23px;
-  position: relative;
-  font-family: "Cabin", sans-serif;
-}
-
-.view-erfaringer .view-header h1 {
-  color: #404040;
-  font-size: 28px;
-  margin: 5px 0 30px 0;
-  padding: 4px 0 0 0;
-  font-weight: normal;
-  font-family: "Cabin", sans-serif;
-}
-
-.view-erfaringer .view-header #add-experience, .view-erfaringer .view-empty #add-experience {
-  position: absolute;
-  top: 23px;
-  right: 23px;
-  color: white;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 15px;
-  line-height: 15px;
-  display: inline-block;
-  background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px;
-  padding: 10px 12px 10px 30px;
-  border-radius: 5px;
-}
-
-.view-erfaringer .views-row {
-  margin-bottom: 14px;
-  box-shadow: 0 0 7px #BBB;
-  background: #FFF;
-}
-
-.view-erfaringer .views-row > .views-field {
-  background: #FFF;
-  border: none;
-  border-radius: 0;
-  overflow: hidden;
-  padding: 20px 23px 20px 52px;
-  font-family: "Cabin", sans-serif;
-}
-
-.view-erfaringer .views-row > .views-field a {
-  padding: 0;
-}
-
-.view-erfaringer .views-row > .views-field .ui-icon {
-  background: url("../images/icon-arrow-acc.png") no-repeat center center;
-  left: 23px;
-}
-
-.view-erfaringer .views-row > .views-field.ui-state-active .ui-icon {
-  background: url("../images/icon-arrow-acc-active.png") no-repeat center center;
-}
-
-.view-erfaringer .views-row .acc_left {
-  float: left;
-  width: 75%;
-}
-
-.view-erfaringer .views-row .acc_left .faq_acc_date {
-  color: #424242;
-  font-weight: bold;
-  font-size: 12px;
-  margin-bottom: 2px;
-}
-
-.view-erfaringer .views-row .acc_left .faq_acc_title {
-  color: #3d3d3d;
-  font-size: 15px;
-  text-transform: uppercase;
-}
-
-.view-Brevkasse .views-field.ui-state-active .acc_left .faq_acc_title {
-  color: #0b5a7c;
-}
-
-.view-erfaringer .views-row .acc_right {
-  width: 25%;
-  float: left;
-  font-size: 13px;
-  color: #222;
-  text-align: right;
-}
-
-.view-erfaringer .views-row .acc_right .faq_acc_sex {
-  display: inline;
-}
-
-.view-erfaringer .views-row .acc_right .faq_acc_age {
-  display: inline;
-  padding-left: 3px;
-}
-
-.view-erfaringer .views-row > .ui-accordion-content {
-  border: none;
-  color: #222;
-  font-size: 13px;
-  line-height: 14px;
-  font-family: "Cabin", sans-serif;
-  padding: 0 23px 20px 52px;
-  border-radius: 0;
-}
-
-.view-erfaringer .views-row > .ui-accordion-content .views-label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.view-erfaringer .views-row > .ui-accordion-content .views-field-view-node a {
-  color: #0b5a7c;
-  font-weight: bold;
-}
-
-/**
- * ARTIKLER - Oversigt
- */
-.view-artikler {
-  position: relative;
-}
-
-.view-artikler .views-fluidgrid-item {
-  float: left;
-  background: url("../images/grid-box-bg.png") no-repeat 0 9px;
-  width: 294px;
-  height: auto;
-  max-width: 100%;
-  color: #404040;
-  font-size: 13px;
-  line-height: 15px;
-}
-
-.view-artikler .views-fluidgrid-item .views-fluidgrid-item-inner {
-  height: 335px;
-  position: relative;
-  background: white url("../images/block-btm.png") no-repeat bottom center;
-  padding: 0;
-}
-
-.view-artikler .views-fluidgrid-item .views-fluidgrid-item-top {
-  background: url("../images/small_shadow_top.png") no-repeat top center;
-  height: 9px;
-}
-
-.view-artikler .views-fluidgrid-item .views-fluidgrid-item-btm {
-  background: url("../images/small_shadow_bottom.png") no-repeat bottom center;
-  height: 12px;
-}
-
-.view-artikler .views-fluidgrid-item .views-field-field-image {
-  line-height: 0;
-}
-
-.view-artikler .views-fluidgrid-item .views-field-title {
-  padding: 23px 23px 9px;
-}
-
-.view-artikler .views-fluidgrid-item .views-field-title a {
-  color: #1e6381;
-  font-size: 20px;
-  line-height: 20px;
-  text-transform: uppercase;
-}
-
-.view-artikler .views-fluidgrid-item .views-field-body {
-  padding: 0 23px;
-  font-size: 13px;
-  color: #404040;
-}
+/** BREVKASSEN - Oversigt */
+.page-node-305 h1#page-title { color: #0b5a7c !important; padding: 10px 0 0 52px; background: url("../images/icon-brev.png") no-repeat top left; height: 36px; margin-bottom: 0; }
+
+.page-node-305 .field-name-field-oversigt { overflow: hidden; }
+
+.page-node-305 .field-name-field-oversigt .field-item { display: inline-block; width: 50%; }
+
+.page-node-305 .field-name-field-oversigt .field-item > div { padding-right: 20px; margin-bottom: 20px; }
+
+.page-node-305 #content > .block-views .view-header { float: left; font-size: 13px; }
+
+.page-node-305 .field-name-field-oversigt .field-item h2 { color: #0b5a7c; font-weight: normal; text-transform: uppercase; font-size: 20px; line-height: 20px; padding-top: 20px; padding-left: 48px; }
+
+.page-node-305 .field-name-field-oversigt .field-item h2.psykolog { background: url("../images/icon-psykolog.png") no-repeat 0 0; }
+
+.page-node-305 .field-name-field-oversigt .field-item h2.laege { background: url("../images/icon-laege.png") no-repeat 0 0; }
+
+.page-node-305 .field-name-field-oversigt .field-item h2.rusmiddel { background: url("../images/icon-professor.png") no-repeat 0 0; }
+
+.page-node-305 .field-name-field-oversigt .field-item p { float: left; width: 100%; }
+
+.page-node-305 .field-name-field-oversigt .field-item a.goto-link { color: #FFFFFF; font-weight: bold; text-transform: uppercase; font-size: 15px; line-height: 15px; display: block; background: #0b5a7c url("../images/icon-white-triangle.png") no-repeat 13px 11px; padding: 10px 12px 10px 30px; float: left; -webkit-border-top-left-radius: 5px; -webkit-border-bottom-left-radius: 5px; -moz-border-radius-topleft: 5px; -moz-border-radius-bottomleft: 5px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; }
+
+.page-node-305 .field-name-field-oversigt .field-item a.add-link { display: block; height: 35px; width: 35px; background: #0b5a7c url("../images/icon-plus-mini.png") no-repeat center center; float: left; margin-left: 3px; -webkit-border-top-right-radius: 5px; -webkit-border-bottom-right-radius: 5px; -moz-border-radius-topright: 5px; -moz-border-radius-bottomright: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; }
+
+.page-node-305 .field-name-field-oversigt .field-item .view-content { float: left; }
+
+.page-node-305 .field-name-field-oversigt .field-item .view-content ul { margin: 0; padding: 0; }
+
+.page-node-305 .field-name-field-oversigt .field-item .view-content ul li { list-style: none; list-style-image: none; margin: 0 0 10px 0; padding: 0; float: left; width: 100%; }
+
+.page-node-305 .field-name-field-oversigt .field-item .view-content .views-field-picture { float: left; width: 104px; margin: 0 7px 7px 0; }
+
+.page-node-305 .field-name-field-oversigt .field-item .view-content .views-field-picture img { border: 2px solid #e2e1df; }
+
+.page-node-305 .field-name-field-oversigt .field-item .view-content .views-field-name { font-size: 15px; line-height: 15px; text-transform: uppercase; color: #424242; padding: 10px 0; float: left; width: 151px; }
+
+.page-node-305 .field-name-field-oversigt .field-item .view-content .views-field-name a { color: #424242; }
+
+.page-node-305 .field-name-field-oversigt .field-item .views-field-field-profile-public-description { font-size: 13px; color: #424242; float: left; width: 151px; }
+
+/** BREVKASSEN - Enkelt brevkasse */
+.page-brevkasse #page-title { display: none; }
+
+body.page-brevkasse .view-Brevkasse > .view-header, body.page-faq .view-faq > .view-header { margin-bottom: 14px; box-shadow: 0 0 7px #BBB; background: #FFF; padding: 23px; position: relative; font-family: "Cabin", sans-serif; overflow: hidden; }
+
+.view-Brevkasse > .view-header .header-title, .view-faq > .view-header .header-title { padding: 0 0 0 50px; margin-bottom: 19px; }
+
+.view-Brevkasse.view-display-id-page_2 .header-title { background: url("../images/icon-laege.png") no-repeat 0 0; }
+
+.view-Brevkasse.view-display-id-page_3 .header-title { background: url("../images/icon-psykolog.png") no-repeat 0 0; }
+
+.view-Brevkasse.view-display-id-page_4 .header-title { background: url("../images/icon-professor.png") no-repeat 0 0; }
+
+.view-Brevkasse .view-header .header-title span, .view-faq .view-header .header-title span { font-size: 13px; color: #222; }
+
+.view-Brevkasse > .view-header .header-title h1, .view-faq > .view-header .header-title h1 { color: #0b5a7c; font-size: 28px; line-height: 28px; margin: 0; padding: 4px 0 0 0; font-weight: normal; font-family: "Cabin", sans-serif; }
+
+.view-Brevkasse > .view-header > .view-brevkasseredaktoerer { width: 50%; float: left; }
+
+.view-brevkasseredaktoerer .views-field-picture { float: left; width: 104px; margin: 0 7px 7px 0; }
+
+.view-brevkasseredaktoerer .views-field-picture img { border: 2px solid #e2e1df; }
+
+.view-brevkasseredaktoerer .views-field-name { font-size: 15px; line-height: 15px; text-transform: uppercase; color: #424242; padding: 10px 10px 10px 0; float: left; width: 151px; }
+
+.view-brevkasseredaktoerer .views-field-name a { color: #424242; }
+
+.view-brevkasseredaktoerer .views-field-field-profile-public-description { font-size: 13px; font-family: "Cabin", sans-serif; color: #424242; float: left; width: 151px; padding: 0 10px 0 0; }
+
+.view-Brevkasse > .view-header > .brevkasse-desc { width: 50%; float: left; font-size: 13px; padding: 10px 0 0 0; }
+
+.view-Brevkasse > .view-header #add-question { position: absolute; top: 23px; right: 23px; color: white; font-weight: bold; text-transform: uppercase; font-size: 15px; line-height: 15px; display: inline-block; background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px; padding: 10px 12px 10px 30px; border-radius: 5px; }
+
+.view-Brevkasse > .view-content > .views-row, .view-faq > .view-content > .views-row { margin-bottom: 14px; box-shadow: 0 0 7px #BBB; }
+
+.view-Brevkasse > .view-content > .views-row > .views-field, .view-faq > .view-content > .views-row > .views-field { background: #FFF; border: none; border-radius: 0; overflow: hidden; padding: 20px 23px 20px 52px; font-family: "Cabin", sans-serif; margin-top: 0; }
+
+.view-Brevkasse > .view-content > .views-row > .views-field a, .view-faq > .view-content > .views-row > .views-field a { padding: 0; }
+
+.view-Brevkasse > .view-content > .views-row > .views-field .ui-icon, .view-faq > .view-content > .views-row > .views-field .ui-icon { background: url("../images/icon-arrow-acc.png") no-repeat center center; left: 23px; }
+
+.view-Brevkasse > .view-content > .views-row > .views-field.ui-state-active .ui-icon, .view-faq > .view-content > .views-row > .views-field.ui-state-active .ui-icon { background: url("../images/icon-arrow-acc-active.png") no-repeat center center; }
+
+.view-Brevkasse > .view-content > .views-row .acc_left, .view-faq > .view-content > .views-row .acc_left { float: left; width: 75%; }
+
+.view-Brevkasse > .view-content > .views-row .acc_left .faq_acc_date, .view-faq > .view-content > .views-row .acc_left .faq_acc_date { color: #424242; font-weight: bold; font-size: 12px; margin-bottom: 2px; }
+
+.view-Brevkasse > .view-content > .views-row .acc_left .faq_acc_title, .view-faq > .view-content > .views-row .acc_left .faq_acc_title { color: #3d3d3d; font-size: 15px; text-transform: uppercase; }
+
+.view-Brevkasse .views-field.ui-state-active .acc_left .faq_acc_title, .view-faq .views-field.ui-state-active .acc_left .faq_acc_title { color: #0b5a7c; }
+
+.view-Brevkasse > .view-content > .views-row .acc_right, .view-faq > .view-content > .views-row .acc_right { width: 25%; float: left; font-size: 13px; color: #222; text-align: right; }
+
+.view-Brevkasse > .view-content > .views-row .acc_right .faq_acc_sex, .view-faq > .view-content > .views-row .acc_right .faq_acc_sex { display: inline; }
+
+.view-Brevkasse > .view-content > .views-row .acc_right .faq_acc_age, .view-faq > .view-content > .views-row .acc_right .faq_acc_age { display: inline; padding-left: 3px; }
+
+.view-Brevkasse > .view-content > .views-row > .ui-accordion-content, .view-faq > .view-content > .views-row > .ui-accordion-content { border: none; color: #222; font-size: 13px; line-height: 15px; font-family: "Cabin", sans-serif; padding: 0 23px 20px 52px; border-radius: 0; height: auto !important; }
+
+.view-Brevkasse > .view-content > .views-row > .ui-accordion-content .views-label, .view-faq > .view-content > .views-row > .ui-accordion-content .views-label { font-weight: bold; margin-bottom: 5px; font-size: 13px; line-height: 15px; display: block; text-transform: uppercase; }
+
+.view-Brevkasse > .view-content > .views-row > .ui-accordion-content .views-field-view-node a, .view-faq > .view-content > .views-row > .ui-accordion-content .views-field-view-node a { color: #0b5a7c; font-weight: bold; font-size: 14px; }
+
+/** ERFARINGER og OPLEVELSER- Oversigt */
+.page-oplevelser #page-title { display: none; }
+
+.view-erfaringer .view-header, .view-erfaringer .view-empty { margin-bottom: 14px; box-shadow: 0 0 7px #BBB; background: #FFF; padding: 23px 23px 10px 23px; position: relative; font-family: "Cabin", sans-serif; }
+
+.view-erfaringer .view-header h1 { color: #404040; font-size: 28px; margin: 5px 0 30px 0; padding: 4px 0 0 0; font-weight: normal; font-family: "Cabin", sans-serif; }
+
+.view-erfaringer .view-header #add-experience, .view-erfaringer .view-empty #add-experience { position: absolute; top: 23px; right: 23px; color: white; font-weight: bold; text-transform: uppercase; font-size: 15px; line-height: 15px; display: inline-block; background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px; padding: 10px 12px 10px 30px; border-radius: 5px; }
+
+.view-erfaringer .views-row { margin-bottom: 14px; box-shadow: 0 0 7px #BBB; background: #FFF; }
+
+.view-erfaringer .views-row > .views-field { background: #FFF; border: none; border-radius: 0; overflow: hidden; padding: 20px 23px 20px 52px; font-family: "Cabin", sans-serif; }
+
+.view-erfaringer .views-row > .views-field a { padding: 0; }
+
+.view-erfaringer .views-row > .views-field .ui-icon { background: url("../images/icon-arrow-acc.png") no-repeat center center; left: 23px; }
+
+.view-erfaringer .views-row > .views-field.ui-state-active .ui-icon { background: url("../images/icon-arrow-acc-active.png") no-repeat center center; }
+
+.view-erfaringer .views-row .acc_left { float: left; width: 75%; }
+
+.view-erfaringer .views-row .acc_left .faq_acc_date { color: #424242; font-weight: bold; font-size: 12px; margin-bottom: 2px; }
+
+.view-erfaringer .views-row .acc_left .faq_acc_title { color: #3d3d3d; font-size: 15px; text-transform: uppercase; }
+
+.view-Brevkasse .views-field.ui-state-active .acc_left .faq_acc_title { color: #0b5a7c; }
+
+.view-erfaringer .views-row .acc_right { width: 25%; float: left; font-size: 13px; color: #222; text-align: right; }
+
+.view-erfaringer .views-row .acc_right .faq_acc_sex { display: inline; }
+
+.view-erfaringer .views-row .acc_right .faq_acc_age { display: inline; padding-left: 3px; }
+
+.view-erfaringer .views-row > .ui-accordion-content { border: none; color: #222; font-size: 13px; line-height: 14px; font-family: "Cabin", sans-serif; padding: 0 23px 20px 52px; border-radius: 0; }
+
+.view-erfaringer .views-row > .ui-accordion-content .views-label { font-weight: bold; margin-bottom: 5px; }
+
+.view-erfaringer .views-row > .ui-accordion-content .views-field-view-node a { color: #0b5a7c; font-weight: bold; }
+
+/** ARTIKLER - Oversigt */
+.view-artikler { position: relative; }
+
+.view-artikler .views-fluidgrid-item { float: left; background: url("../images/grid-box-bg.png") no-repeat 0 9px; width: 294px; height: auto; max-width: 100%; color: #404040; font-size: 13px; line-height: 15px; }
+
+.view-artikler .views-fluidgrid-item .views-fluidgrid-item-inner { height: 335px; position: relative; background: white url("../images/block-btm.png") no-repeat bottom center; padding: 0; }
+
+.view-artikler .views-fluidgrid-item .views-fluidgrid-item-top { background: url("../images/small_shadow_top.png") no-repeat top center; height: 9px; }
+
+.view-artikler .views-fluidgrid-item .views-fluidgrid-item-btm { background: url("../images/small_shadow_bottom.png") no-repeat bottom center; height: 12px; }
+
+.view-artikler .views-fluidgrid-item .views-field-field-image { line-height: 0; }
+
+.view-artikler .views-fluidgrid-item .views-field-title { padding: 23px 23px 9px; }
+
+.view-artikler .views-fluidgrid-item .views-field-title a { color: #1e6381; font-size: 20px; line-height: 20px; text-transform: uppercase; }
+
+.view-artikler .views-fluidgrid-item .views-field-body { padding: 0 23px; font-size: 13px; color: #404040; }
 
 /* Pager */
-.view-artikler ul.pager {
-  color: #424242;
-  font-size: 14px;
-  font-weight: normal;
-  margin-top: 30px;
-}
+.view-artikler ul.pager { color: #424242; font-size: 14px; font-weight: normal; margin-top: 30px; }
 
-.view-artikler ul.pager li {
-  padding: 0;
-}
+.view-artikler ul.pager li { padding: 0; }
 
-.view-artikler ul.pager li.pager-current {
-  padding: 0 10px;
-  font-family: "Cabin", sans-serif;
-  font-size: 15px;
-  font-weight: normal;
-}
+.view-artikler ul.pager li.pager-current { padding: 0 10px; font-family: "Cabin", sans-serif; font-size: 15px; font-weight: normal; }
 
-.view-artikler ul.pager li a {
-  color: #FFF;
-  background: #424242;
-  padding: 1px 8px;
-  text-decoration: none;
-}
+.view-artikler ul.pager li a { color: #FFF; background: #424242; padding: 1px 8px; text-decoration: none; }
 
-/**
- * VIDENSBANK - Oversigt
- */
-.view-vidensbanken .views-field-type {
-  font-size: 15px;
-  text-transform: uppercase;
-  text-align: center;
-  margin-top: 18px;
-  margin-bottom: 35px;
-}
+/** VIDENSBANK - Oversigt */
+.view-vidensbanken .views-field-type { font-size: 15px; text-transform: uppercase; text-align: center; margin-top: 18px; margin-bottom: 35px; }
 
-/**
- * FAQ + Leksikon - Oversigt
- */
-.view-faq,
-.view-leksikon {
-  padding-top: 15px;
-  border-top: 1px dashed #dedddb;
-  overflow: hidden;
-}
+/** FAQ + Leksikon - Oversigt */
+.view-faq, .view-leksikon { padding-top: 15px; border-top: 1px dashed #dedddb; overflow: hidden; }
 
-.view-faq .view-content,
-.view-leksikon .view-content {
-  overflow: hidden;
-}
+.view-faq .view-content, .view-leksikon .view-content { overflow: hidden; }
 
-.view-faq .item-list {
-  float: left;
-  width: 50%;
-  margin-bottom: 20px;
-}
+.view-faq .item-list { float: left; width: 50%; margin-bottom: 20px; }
 
-.view-faq .item-list h3,
-.view-leksikon .item-list .views-field-title {
-  font-size: 20px;
-  color: #40403f;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-  margin-top: 0;
-}
+.view-faq .item-list h3, .view-leksikon .item-list .views-field-title { font-size: 20px; color: #40403f; text-transform: uppercase; margin-bottom: 5px; margin-top: 0; }
 
-.view-faq .item-list h3 {
-  margin-bottom: 10px;
-}
+.view-faq .item-list h3 { margin-bottom: 10px; }
 
-.view-leksikon .item-list .views-field-title,
-.view-leksikon .item-list .views-field-body {
-  padding-right: 40px;
-}
+.view-leksikon .item-list .views-field-title, .view-leksikon .item-list .views-field-body { padding-right: 40px; }
 
-.view-leksikon .item-list .views-field-nothing {
-  margin-bottom: 7px;
-}
+.view-leksikon .item-list .views-field-nothing { margin-bottom: 7px; }
 
-.view-leksikon .item-list .views-field-nothing a {
-  border-right: 1px solid #424242;
-  padding-right: 5px;
-  margin-right: 4px;
-  line-height: 13px;
-}
+.view-leksikon .item-list .views-field-nothing a { border-right: 1px solid #424242; padding-right: 5px; margin-right: 4px; line-height: 13px; }
 
-.view-leksikon .item-list .views-field-nothing a.last {
-  border-right: none;
-}
+.view-leksikon .item-list .views-field-nothing a.last { border-right: none; }
 
-.view-faq .item-list > ul {
-  margin-right: 40px;
-}
+.view-faq .item-list > ul { margin-right: 40px; }
 
-.view-leksikon .view-content .item-list > ul li {
-  width: 50%;
-  float: left;
-  margin-bottom: 20px;
-  list-style: none;
-  list-style-image: none;
-  padding: 0 !important;
-  margin: 0 !important;
-  height: 160px;
-}
+.view-leksikon .view-content .item-list > ul li { width: 50%; float: left; margin-bottom: 20px; list-style: none; list-style-image: none; padding: 0 !important; margin: 0 !important; height: 160px; }
 
-.view-leksikon .item-list .views-label-field-tags, .view-leksikon .item-list .field-content {
-  display: inline;
-}
+.view-leksikon .item-list .views-label-field-tags, .view-leksikon .item-list .field-content { display: inline; }
 
-.view-leksikon .item-list .views-field-field-tags {
-  padding-right: 10px;
-}
+.view-leksikon .item-list .views-field-field-tags { padding-right: 10px; }
 
-.view-leksikon .item-list .views-label-field-tags {
-  font-weight: bold;
-}
+.view-leksikon .item-list .views-label-field-tags { font-weight: bold; }
 
-.view-faq .view-content ul li a,
-.view-leksikon .view-content ul li a {
-  color: #404040;
-}
+.view-faq .view-content ul li a, .view-leksikon .view-content ul li a { color: #404040; }
 
-.view-faq .view-content ul li a:hover,
-.view-leksikon .view-content ul li a:hover {
-  color: #0b5a7c;
-}
+.view-faq .view-content ul li a:hover, .view-leksikon .view-content ul li a:hover { color: #0b5a7c; }
 
-.view-leksikon-ikoner {
-  margin-bottom: 5px;
-}
+.view-leksikon-ikoner { margin-bottom: 5px; }
 
-.view-leksikon-ikoner .views-row {
-  float: left;
-  margin-right: 5px;
-}
+.view-leksikon-ikoner .views-row { float: left; margin-right: 5px; }
 
 /* Filter */
-.view-faq .views-exposed-form,
-.view-leksikon .views-exposed-form {
-  margin-bottom: 25px;
-}
+.view-faq .views-exposed-form, .view-leksikon .views-exposed-form { margin-bottom: 25px; }
 
-.view-faq .views-exposed-form #edit-body-value-wrapper,
-.view-leksikon .views-exposed-form #edit-title-wrapper {
-  float: left;
-  margin-right: 15px;
-}
+.view-faq .views-exposed-form #edit-body-value-wrapper, .view-leksikon .views-exposed-form #edit-title-wrapper { float: left; margin-right: 15px; }
 
-.view-faq .views-exposed-form #edit-body-value-wrapper input[type=text],
-.view-leksikon .views-exposed-form #edit-title-wrapper input[type=text] {
-  border: none;
-  background: #404040 url("../images/icon-loop.png") no-repeat 14px 13px;
-  padding: 0 10px 0 40px;
-  margin: 0;
-  color: white;
-  height: 38px;
-  width: 186px;
-  font-size: 14px;
-  font-family: "Cabin", sans-serif;
-  outline: none;
-}
+.view-faq .views-exposed-form #edit-body-value-wrapper input[type=text], .view-leksikon .views-exposed-form #edit-title-wrapper input[type=text] { border: none; background: #404040 url("../images/icon-loop.png") no-repeat 14px 13px; padding: 0 10px 0 40px; margin: 0; color: white; height: 38px; width: 186px; font-size: 14px; font-family: "Cabin", sans-serif; outline: none; }
 
-.view-faq .views-exposed-form #edit-field-faq-category-tid-wrapper,
-.view-leksikon .views-exposed-form #edit-field-encyclopedia-drug-category-tid-wrapper {
-  float: left;
-  margin-right: 15px;
-}
+.view-faq .views-exposed-form #edit-field-faq-category-tid-wrapper, .view-leksikon .views-exposed-form #edit-field-encyclopedia-drug-category-tid-wrapper { float: left; margin-right: 15px; }
 
-.view-faq .views-exposed-form #edit-field-faq-category-tid-wrapper label,
-.view-leksikon .views-exposed-form #edit-field-encyclopedia-drug-category-tid-wrapper label {
-  float: left;
-  font-size: 15px;
-  color: #424232;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-right: 8px;
-  padding-top: 11px;
-}
+.view-faq .views-exposed-form #edit-field-faq-category-tid-wrapper label, .view-leksikon .views-exposed-form #edit-field-encyclopedia-drug-category-tid-wrapper label { float: left; font-size: 15px; color: #424232; font-weight: bold; text-transform: uppercase; margin-right: 8px; padding-top: 11px; }
 
-.view-faq .views-exposed-form #edit-field-faq-category-tid-wrapper .views-widget,
-.view-leksikon .views-exposed-form #edit-field-encyclopedia-drug-category-tid-wrapper .views-widget {
-  float: left;
-}
+.view-faq .views-exposed-form #edit-field-faq-category-tid-wrapper .views-widget, .view-leksikon .views-exposed-form #edit-field-encyclopedia-drug-category-tid-wrapper .views-widget { float: left; }
 
-.view-faq .views-exposed-form #edit-field-faq-category-tid-wrapper select,
-.view-leksikon .views-exposed-form #edit-field-encyclopedia-drug-category-tid-wrapper select {
-  border: none;
-  background: #404040 url("../images/select-arrow.png") no-repeat center right;
-  border-radius: 0;
-  padding: 10px 14px 10px 10px;
-  -webkit-appearance: none;
-  outline: none;
-  font-size: 14px;
-  font-family: "Cabin", sans-serif;
-  color: #FFFFFF;
-  height: 38px;
-  width: 170px;
-}
+.view-faq .views-exposed-form #edit-field-faq-category-tid-wrapper select, .view-leksikon .views-exposed-form #edit-field-encyclopedia-drug-category-tid-wrapper select { border: none; background: #404040 url("../images/select-arrow.png") no-repeat center right; border-radius: 0; padding: 10px 14px 10px 10px; -webkit-appearance: none; outline: none; font-size: 14px; font-family: "Cabin", sans-serif; color: #FFFFFF; height: 38px; width: 170px; }
 
-.view-faq .views-exposed-form .views-submit-button,
-.view-leksikon .views-exposed-form .views-submit-button {
-  float: left;
-}
+.view-faq .views-exposed-form .views-submit-button, .view-leksikon .views-exposed-form .views-submit-button { float: left; }
 
-.view-faq .views-exposed-form .views-submit-button input[type=submit],
-.view-leksikon .views-exposed-form .views-submit-button input[type=submit] {
-  border: none;
-  background: #FFAD00;
-  text-transform: uppercase;
-  color: white;
-  width: 58px;
-  height: 38px;
-  font-family: "Cabin", sans-serif;
-  font-size: 14px;
-}
+.view-faq .views-exposed-form .views-submit-button input[type=submit], .view-leksikon .views-exposed-form .views-submit-button input[type=submit] { border: none; background: #FFAD00; text-transform: uppercase; color: white; width: 58px; height: 38px; font-family: "Cabin", sans-serif; font-size: 14px; }
 
-/**
- * GOOGLE MAPS KORT
- */
-.view-kort .view-empty {
-  border-top: 1px dashed #dedddb;
-  border-bottom: 1px dashed #dedddb;
-  float: left;
-  width: 100%;
-  min-height: 405px;
-  padding: 15px 0 0 0;
-  margin-top: 15px;
-}
+/** GOOGLE MAPS KORT */
+.view-kort .view-empty { border-top: 1px dashed #dedddb; border-bottom: 1px dashed #dedddb; float: left; width: 100%; min-height: 405px; padding: 15px 0 0 0; margin-top: 15px; }
 
-.view-kort.view-display-id-default {
-  overflow: hidden;
-}
+.view-kort.view-display-id-default { overflow: hidden; }
 
 /* Exposed filters */
-.view-kort .view-filters {
-  float: left;
-  width: 100%;
-  padding: 20px;
-  background: rgba(255, 173, 0, 0.28);
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
+.view-kort .view-filters { float: left; width: 100%; padding: 20px; background: rgba(255, 173, 0, 0.28); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-.view-kort .views-exposed-widgets {
-  float: left;
-  width: 100%;
-  height: 32px;
-}
+.view-kort .views-exposed-widgets { float: left; width: 100%; height: 32px; }
 
-.view-kort .views-exposed-widgets > .views-exposed-widget {
-  float: left;
-  margin-right: 11px;
-  margin-bottom: 10px;
-  height: 32px;
-  white-space: nowrap;
-}
+.view-kort .views-exposed-widgets > .views-exposed-widget { float: left; margin-right: 11px; margin-bottom: 10px; height: 32px; white-space: nowrap; }
 
-.view-kort .views-exposed-widgets > .views-exposed-widget .form-item {
-  margin: 0;
-}
+.view-kort .views-exposed-widgets > .views-exposed-widget .form-item { margin: 0; }
 
-.view-kort #edit-by-wrapper {
-  width: 133px;
-}
+.view-kort #edit-by-wrapper { width: 133px; }
 
-.view-kort .views-submit-button {
-  width: 58px;
-}
+.view-kort .views-submit-button { width: 58px; }
 
-.view-kort .views-exposed-form input[type="text"] {
-  border: none;
-  background: #404040;
-  padding: 0 10px 0 10px;
-  margin: 0;
-  color: white;
-  height: 32px;
-  width: 113px;
-  font-size: 13px;
-  font-family: "Cabin", sans-serif;
-  outline: none;
-}
+.view-kort .views-exposed-form input[type="text"] { border: none; background: #404040; padding: 0 10px 0 10px; margin: 0; color: white; height: 32px; width: 113px; font-size: 13px; font-family: "Cabin", sans-serif; outline: none; }
 
-.lt-ie9 .view-kort .views-exposed-form input[type="text"] {
-  line-height: 32px;
-}
+.lt-ie9 .view-kort .views-exposed-form input[type="text"] { line-height: 32px; }
 
-.view-kort .views-exposed-form input[type="submit"] {
-  border: none;
-  background: #FFAD00;
-  text-transform: uppercase;
-  color: white;
-  width: 58px;
-  height: 32px;
-  font-family: "Cabin", sans-serif;
-  font-size: 14px;
-}
+.view-kort .views-exposed-form input[type="submit"] { border: none; background: #FFAD00; text-transform: uppercase; color: white; width: 58px; height: 32px; font-family: "Cabin", sans-serif; font-size: 14px; }
 
-.view-kort .views-exposed-form #edit-reset {
-  background: #404040;
-  width: 40px;
-}
+.view-kort .views-exposed-form #edit-reset { background: #404040; width: 40px; }
 
-.view-kort #edit-adresse {
-  display: none;
-}
+.view-kort #edit-adresse { display: none; }
 
 /* Kort */
-.view-kort.view-display-id-default > .view-content,
-.view-kort-enkelt-kommune.view-display-id-default > .view-content {
-  border-top: 1px dashed #dedddb;
-  border-bottom: 1px dashed #dedddb;
-  float: left;
-  width: 100%;
-  margin: 15px 0 0 0;
-}
+.view-kort.view-display-id-default > .view-content, .view-kort-enkelt-kommune.view-display-id-default > .view-content { border-top: 1px dashed #dedddb; border-bottom: 1px dashed #dedddb; float: left; width: 100%; margin: 15px 0 0 0; }
 
-.gmap-popup .views-field-title {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
+.gmap-popup .views-field-title { font-weight: bold; margin-bottom: 10px; }
 
-.gmap-popup .views-field-nothing {
-  margin-bottom: 10px;
-}
+.gmap-popup .views-field-nothing { margin-bottom: 10px; }
 
-.gmap-popup .views-field-nothing-1 {
-  margin-top: 10px;
-}
+.gmap-popup .views-field-nothing-1 { margin-top: 10px; }
 
 /* Attachments view */
-.view-kort.view-display-id-default > .attachment,
-.view-kort-enkelt-kommune.view-display-id-default > .attachment {
-  float: left;
-  width: 100%;
-}
-.view-kort.view-display-id-default > .attachment .item-list,
-.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list {
-  margin-top: 31px;
-}
-.view-kort.view-display-id-default > .attachment .item-list h3,
-.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list h3 {
-  font-size: 15px;
-  line-height: 15px;
-  text-transform: uppercase;
-  margin: 0 0 7px 0;
-}
-.view-kort.view-display-id-default > .attachment .item-list ul,
-.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul {
-  list-style: none;
-  list-style-image: none;
-  margin: 0;
-  padding: 0;
-}
-.view-kort.view-display-id-default > .attachment .item-list ul li,
-.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li {
-  margin: 0;
-  padding: 10px 0 10px 0;
-  font-size: 13px;
-  line-height: 14px;
-  border-bottom: 1px dashed #dedddb;
-  overflow: hidden;
-}
-.view-kort.view-display-id-default > .attachment .item-list ul li > div a,
-.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div a {
-  line-height: 18px;
-}
-.view-kort.view-display-id-default > .attachment .item-list ul li div.views-field-title,
-.view-kort.view-display-id-default > .attachment .item-list ul li div.views-field-field-steder-website,
-.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li div.views-field-title,
-.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li div.views-field-field-steder-website {
-  width: 60%;
-  float: left;
-  clear: left;
-  margin-bottom: 4px;
-}
-.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-title,
-.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-website,
-.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-title a,
-.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-title,
-.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-website,
-.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-title a {
-  /*            font-size: 16px;
-              color: #222;
-              font-weight: bold;*/
-}
-.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-nothing,
-.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-nothing {
-  color: #666;
-  width: 60%;
-  float: left;
-  clear: left;
-  margin-bottom: 4px;
-}
-.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf,
-.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-email,
-.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf,
-.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-email {
-  float: right;
-  clear: right;
-  text-align: right;
-  width: 35%;
-}
-.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf a,
-.view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf a {
-  display: inline-block;
-  background-position: center left;
-  padding: 0 0 0 15px;
-  background: url("../images/icon-phone.png") no-repeat;
-}
+.view-kort.view-display-id-default > .attachment, .view-kort-enkelt-kommune.view-display-id-default > .attachment { float: left; width: 100%; }
+.view-kort.view-display-id-default > .attachment .item-list, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list { margin-top: 31px; }
+.view-kort.view-display-id-default > .attachment .item-list h3, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list h3 { font-size: 15px; line-height: 15px; text-transform: uppercase; margin: 0 0 7px 0; }
+.view-kort.view-display-id-default > .attachment .item-list ul, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+.view-kort.view-display-id-default > .attachment .item-list ul li, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li { margin: 0; padding: 10px 0 10px 0; font-size: 13px; line-height: 14px; border-bottom: 1px dashed #dedddb; overflow: hidden; }
+.view-kort.view-display-id-default > .attachment .item-list ul li > div a, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div a { line-height: 18px; }
+.view-kort.view-display-id-default > .attachment .item-list ul li div.views-field-title, .view-kort.view-display-id-default > .attachment .item-list ul li div.views-field-field-steder-website, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li div.views-field-title, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li div.views-field-field-steder-website { width: 60%; float: left; clear: left; margin-bottom: 4px; }
+.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-title, .view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-website, .view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-title a, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-title, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-website, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-title a { /*            font-size: 16px; color: #222; font-weight: bold;*/ }
+.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-nothing, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-nothing { color: #666; width: 60%; float: left; clear: left; margin-bottom: 4px; }
+.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf, .view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-email, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-email { float: right; clear: right; text-align: right; width: 35%; }
+.view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf a, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-tlf a { display: inline-block; background-position: center left; padding: 0 0 0 15px; background: url("../images/icon-phone.png") no-repeat; }
 
-@media screen and (max-width: 440px) {
-  .view-kort.view-display-id-default > .attachment .item-list ul li > div,
-  .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div {
-    float: none !important;
-    text-align: left !important;
-    width: 100% !important;
-  }
-}
-.view-kort .dk-map-blured p {
-  display: none;
-}
+@media screen and (max-width: 440px) { .view-kort.view-display-id-default > .attachment .item-list ul li > div, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div { float: none !important; text-align: left !important; width: 100% !important; } }
+.view-kort .dk-map-blured p { display: none; }
 
-@media screen and (min-width: 520px) {
-  .view-kort .dk-map-blured {
-    width: 100%;
-    height: 465px;
-    background: url("../images/dk-map-blured.jpg") no-repeat top center;
-  }
+@media screen and (min-width: 520px) { .view-kort .dk-map-blured { width: 100%; height: 465px; background: url("../images/dk-map-blured.jpg") no-repeat top center; }
+  .view-kort .dk-map-blured p { position: relative; top: 91px; left: 145px; } }
+/** SØGERESULTATER */
+.page-search-node section#main-content { background: url("../images/big_shadow_top.png") no-repeat top center; padding-top: 11px; position: relative; top: -11px; }
 
-  .view-kort .dk-map-blured p {
-    position: relative;
-    top: 91px;
-    left: 145px;
-  }
-}
-/**
- * SØGERESULTATER
- */
-.page-search-node section#main-content {
-  background: url("../images/big_shadow_top.png") no-repeat top center;
-  padding-top: 11px;
-  position: relative;
-  top: -11px;
-}
+.page-search-node #main-content-header { padding: 23px 23px 0 23px; background: white url("../images/content-top.png") no-repeat top center; }
 
-.page-search-node #main-content-header {
-  padding: 23px 23px 0 23px;
-  background: white url("../images/content-top.png") no-repeat top center;
-}
+.page-search-node #content { padding: 0 23px 23px 23px; background: white url("../images/content-btm.png") no-repeat bottom center; }
 
-.page-search-node #content {
-  padding: 0 23px 23px 23px;
-  background: white url("../images/content-btm.png") no-repeat bottom center;
-}
+.page-search-node #content-btm-shadow { background: url("../images/big_shadow_bottom.png") no-repeat bottom center; height: 15px; }
 
-.page-search-node #content-btm-shadow {
-  background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
-  height: 15px;
-}
+.page-search-node #content h2 { font-size: 20px; text-transform: uppercase; color: #222; margin-bottom: 20px; margin-top: 30px; }
 
-.page-search-node #content h2 {
-  font-size: 20px;
-  text-transform: uppercase;
-  color: #222;
-  margin-bottom: 20px;
-  margin-top: 30px;
-}
+ol.search-results { margin: 0; padding: 0; }
 
-ol.search-results {
-  margin: 0;
-  padding: 0;
-}
+ol.search-results li { margin-bottom: 22px; }
 
-ol.search-results li {
-  margin-bottom: 22px;
-}
+ol.search-results li h3 { font-size: 15px; text-transform: uppercase; margin: 0 0 10px 0; padding: 0; }
 
-ol.search-results li h3 {
-  font-size: 15px;
-  text-transform: uppercase;
-  margin: 0 0 10px 0;
-  padding: 0;
-}
+ol.search-results li h3 a { color: #222; }
 
-ol.search-results li h3 a {
-  color: #222;
-}
+ol.search-results li .search-snippet-info { margin: 0; padding: 0; }
 
-ol.search-results li .search-snippet-info {
-  margin: 0;
-  padding: 0;
-}
+ol.search-results li .search-snippet { font-size: 13px; line-height: 16px; color: #222; }
 
-ol.search-results li .search-snippet {
-  font-size: 13px;
-  line-height: 16px;
-  color: #222;
-}
+ol.search-results li .search-snippet strong { color: #ffad00; }
 
-ol.search-results li .search-snippet strong {
-  color: #ffad00;
-}
+/** PAGER - Brevkasse, Leksikon */
+.view-Brevkasse ul.pager, .view-leksikon ul.pager, .page-search-node ul.pager, .view-id-advanced_forum_topic_list ul.pager { margin-top: 25px; text-align: center; width: 100%; }
 
-/**
- * PAGER - Brevkasse, Leksikon
- */
-.view-Brevkasse ul.pager,
-.view-leksikon ul.pager,
-.page-search-node ul.pager,
-.view-id-advanced_forum_topic_list ul.pager {
-  margin-top: 25px;
-  text-align: center;
-  width: 100%;
-}
+.view-Brevkasse ul.pager li, .view-leksikon ul.pager li, .page-search-node ul.pager li, .view-id-advanced_forum_topic_list ul.pager li { font-size: 13px; }
 
-.view-Brevkasse ul.pager li,
-.view-leksikon ul.pager li,
-.page-search-node ul.pager li,
-.view-id-advanced_forum_topic_list ul.pager li {
-  font-size: 13px;
-}
-
-.view-Brevkasse ul.pager li a,
-.view-leksikon ul.pager li a,
-.page-search-node ul.pager li a,
-.view-id-advanced_forum_topic_list ul.pager li a {
-  color: #424242;
-}
+.view-Brevkasse ul.pager li a, .view-leksikon ul.pager li a, .page-search-node ul.pager li a, .view-id-advanced_forum_topic_list ul.pager li a { color: #424242; }
 
 /* Slideshow */
-.netstof-slideshow a {
-  text-decoration: none;
-  color: #faad09;
-}
+.netstof-slideshow a { text-decoration: none; color: #faad09; }
 
-.netstof-slideshow .skin-default {
-  position: relative;
-}
+.netstof-slideshow .skin-default { position: relative; }
 
-.netstof-slideshow .views-slideshow-controls-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 5;
-}
+.netstof-slideshow .views-slideshow-controls-top { position: absolute; top: 0; left: 0; z-index: 5; }
 
-.netstof-slideshow #views_slideshow_cycle_main_slideshow-block {
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 4;
-}
+.netstof-slideshow #views_slideshow_cycle_main_slideshow-block { position: relative; top: 0; left: 0; z-index: 4; }
 
 /* Text-overlay */
-.widget_pager_top {
-  position: relative;
-}
+.widget_pager_top { position: relative; }
 
-.views-slideshow-pager-field-item > div {
-  display: none;
-}
+.views-slideshow-pager-field-item > div { display: none; }
 
-.views-slideshow-pager-field-item > div.views-field-counter {
-  display: block;
-}
+.views-slideshow-pager-field-item > div.views-field-counter { display: block; }
 
-.views-slideshow-pager-field-item.active {
-  width: 209px;
-  height: 159px;
-  margin-top: 44px;
-  padding: 25px 20px 20px 20px;
-  background: url("../images/slideshow-text-bg.png") repeat-x top left transparent;
-  color: #ffffff;
-}
+.views-slideshow-pager-field-item.active { width: 209px; height: 159px; margin-top: 44px; padding: 25px 20px 20px 20px; background: url("../images/slideshow-text-bg.png") repeat-x top left transparent; color: #ffffff; }
 
-.netstof-slideshow .views-field-counter {
-  width: 18px;
-  height: 28px;
-  padding: 6px 0 0 12px;
-  background: #404040;
-  color: #ffffff;
-}
+.netstof-slideshow .views-field-counter { width: 18px; height: 28px; padding: 6px 0 0 12px; background: #404040; color: #ffffff; }
 
-.netstof-slideshow .views-slideshow-pager-field-item.active > div.views-field-counter {
-  width: 43px;
-  height: 34px;
-  background-color: none;
-  background: url("../images/slide-active.png") no-repeat top left;
-}
+.netstof-slideshow .views-slideshow-pager-field-item.active > div.views-field-counter { width: 43px; height: 34px; background-color: none; background: url("../images/slide-active.png") no-repeat top left; }
 
-#widget_pager_top_slideshow-block #views_slideshow_pager_field_item_top_slideshow-block_0 > div.views-field-counter,
-#widget_pager_top_slideshow-block_1 #views_slideshow_pager_field_item_top_slideshow-block_1_0 > div.views-field-counter {
-  position: absolute;
-  top: 0;
-  left: -31px;
-}
+#widget_pager_top_slideshow-block #views_slideshow_pager_field_item_top_slideshow-block_0 > div.views-field-counter, #widget_pager_top_slideshow-block_1 #views_slideshow_pager_field_item_top_slideshow-block_1_0 > div.views-field-counter { position: absolute; top: 0; left: -31px; }
 
-#widget_pager_top_slideshow-block #views_slideshow_pager_field_item_top_slideshow-block_1 > div.views-field-counter,
-#widget_pager_top_slideshow-block_1 #views_slideshow_pager_field_item_top_slideshow-block_1_1 > div.views-field-counter {
-  position: absolute;
-  top: 35px;
-  left: -31px;
-}
+#widget_pager_top_slideshow-block #views_slideshow_pager_field_item_top_slideshow-block_1 > div.views-field-counter, #widget_pager_top_slideshow-block_1 #views_slideshow_pager_field_item_top_slideshow-block_1_1 > div.views-field-counter { position: absolute; top: 35px; left: -31px; }
 
-#widget_pager_top_slideshow-block #views_slideshow_pager_field_item_top_slideshow-block_2 > div.views-field-counter,
-#widget_pager_top_slideshow-block_1 #views_slideshow_pager_field_item_top_slideshow-block_1_2 > div.views-field-counter {
-  position: absolute;
-  top: 70px;
-  left: -31px;
-}
+#widget_pager_top_slideshow-block #views_slideshow_pager_field_item_top_slideshow-block_2 > div.views-field-counter, #widget_pager_top_slideshow-block_1 #views_slideshow_pager_field_item_top_slideshow-block_1_2 > div.views-field-counter { position: absolute; top: 70px; left: -31px; }
 
-#widget_pager_top_slideshow-block #views_slideshow_pager_field_item_top_slideshow-block_3 > div.views-field-counter,
-#widget_pager_top_slideshow-block_1 #views_slideshow_pager_field_item_top_slideshow-block_1_3 > div.views-field-counter {
-  position: absolute;
-  top: 105px;
-  left: -31px;
-}
+#widget_pager_top_slideshow-block #views_slideshow_pager_field_item_top_slideshow-block_3 > div.views-field-counter, #widget_pager_top_slideshow-block_1 #views_slideshow_pager_field_item_top_slideshow-block_1_3 > div.views-field-counter { position: absolute; top: 105px; left: -31px; }
 
-.netstof-slideshow .widget_pager_top .views-slideshow-pager-field-item.active > div {
-  display: block;
-}
+.netstof-slideshow .widget_pager_top .views-slideshow-pager-field-item.active > div { display: block; }
 
-.netstof-slideshow .widget_pager_top .views-field-title {
-  font-size: 18px;
-}
+.netstof-slideshow .widget_pager_top .views-field-title { font-size: 18px; }
 
-.netstof-slideshow .widget_pager_top .views-field-field-slide-tags {
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  font-size: 11px;
-}
+.netstof-slideshow .widget_pager_top .views-field-field-slide-tags { margin-bottom: 10px; text-transform: uppercase; font-size: 11px; }
 
-.netstof-slideshow .widget_pager_top .views-field-body {
-  font-size: 13px;
-  line-height: 1.3;
-}
+.netstof-slideshow .widget_pager_top .views-field-body { font-size: 13px; line-height: 1.3; }
 
-.netstof-slideshow .widget_pager_top .views-content-body > p {
-  margin-bottom: 10px;
-}
+.netstof-slideshow .widget_pager_top .views-content-body > p { margin-bottom: 10px; }
 
-.netstof-slideshow .widget_pager_top .views-field-view-node {
-  margin-right: 10px;
-  padding: 0 15px 0 0;
-  font-size: 13px;
-  text-transform: uppercase;
-  text-align: right;
-  background: url("../images/read-more-arrow.png") no-repeat 190px 4px;
-}
+.netstof-slideshow .widget_pager_top .views-field-view-node { margin-right: 10px; padding: 0 15px 0 0; font-size: 13px; text-transform: uppercase; text-align: right; background: url("../images/read-more-arrow.png") no-repeat 190px 4px; }
 
-#leftcontent {
-  width: 160px;
-  margin-top: 20px;
-  padding: 0 20px 0 20px;
-  float: left;
-}
+#leftcontent { width: 160px; margin-top: 20px; padding: 0 20px 0 20px; float: left; }
 
 /* quick links to the right of the slideshow + mediekit (to be embedded on third party municipalitypages in iframes) */
-.region-sidebar-first #hurtige-genveje {
-  height: 239px;
-  background: #3e3e3e;
-}
+.region-sidebar-first #hurtige-genveje { height: 239px; background: #3e3e3e; }
 
-.view-id-mediekit {
-  background: #3e3e3e;
-}
+.view-id-mediekit { background: #3e3e3e; }
 
-.view-id-mediekit #mediekit-logo {
-  margin: 10px 20px 10px 20px;
-  padding-top: 20px;
-}
+.view-id-mediekit #mediekit-logo { margin: 10px 20px 10px 20px; padding-top: 20px; }
 
-.view-id-mediekit p {
-  margin-bottom: 10px;
-}
+.view-id-mediekit p { margin-bottom: 10px; }
 
-.view-id-mediekit p.description {
-  font-size: 14px;
-  padding: 0 20px;
-}
+.view-id-mediekit p.description { font-size: 14px; padding: 0 20px; }
 
-.view-id-mediekit .view-content {
-  padding: 0 20px;
-}
+.view-id-mediekit .view-content { padding: 0 20px; }
 
-.view-id-mediekit .mediekit-extended .field-content,
-.view-id-mediekit .mediekit-extended .field-content a,
-.view-id-mediekit .mediekit-extended .views-label {
-  color: #FFFFFF;
-}
+.view-id-mediekit .mediekit-extended .field-content, .view-id-mediekit .mediekit-extended .field-content a, .view-id-mediekit .mediekit-extended .views-label { color: #FFFFFF; }
 
-body.page-paaroerende .region-sidebar-first #hurtige-genveje {
-  background: #3e3e3e;
-  height: auto;
-}
+body.page-paaroerende .region-sidebar-first #hurtige-genveje { background: #3e3e3e; height: auto; }
 
-.region-sidebar-first #hurtige-genveje .left,
-.view-id-mediekit .left {
-  float: left;
-}
+.region-sidebar-first #hurtige-genveje .left, .view-id-mediekit .left { float: left; }
 
-.region-sidebar-first #hurtige-genveje .right,
-.view-id-mediekit .right {
-  float: left;
-  line-height: 1;
-}
+.region-sidebar-first #hurtige-genveje .right, .view-id-mediekit .right { float: left; line-height: 1; }
 
 /* .genvej & genvej-wrapper */
-.region-sidebar-first #hurtige-genveje .genvej-wrapper,
-.view-id-mediekit .genvej-wrapper {
-  position: relative;
-}
+.region-sidebar-first #hurtige-genveje .genvej-wrapper, .view-id-mediekit .genvej-wrapper { position: relative; }
 
-.region-sidebar-first #hurtige-genveje .genvej-wrapper:hover,
-.view-id-mediekit .genvej-wrapper:hover {
-  background: url("../images/genvej-wrapper-hover.png") no-repeat transparent top left;
-}
+.region-sidebar-first #hurtige-genveje .genvej-wrapper:hover, .view-id-mediekit .genvej-wrapper:hover { background: url("../images/genvej-wrapper-hover.png") no-repeat transparent top left; }
 
-.region-sidebar-first #hurtige-genveje .genvej {
-  padding: 24px 20px 23px 20px;
-  background: url("../images/genvej-border.png") repeat-x transparent top left;
-}
+.region-sidebar-first #hurtige-genveje .genvej { padding: 24px 20px 23px 20px; background: url("../images/genvej-border.png") repeat-x transparent top left; }
 
-.view-id-mediekit .genvej {
-  padding: 20px;
-}
+.view-id-mediekit .genvej { padding: 20px; }
 
-.view-id-mediekit .dotted-line {
-  background: url("../images/genvej-border.png") repeat-x transparent top left;
-  height: 2px;
-  margin: 0 20px;
-}
+.view-id-mediekit .dotted-line { background: url("../images/genvej-border.png") repeat-x transparent top left; height: 2px; margin: 0 20px; }
 
-.region-sidebar-first #hurtige-genveje .genvej:after,
-.view-id-mediekit .genvej:after {
-  content: "";
-  display: block;
-  clear: both;
-  width: 100%;
-}
+.region-sidebar-first #hurtige-genveje .genvej:after, .view-id-mediekit .genvej:after { content: ""; display: block; clear: both; width: 100%; }
 
-.region-sidebar-first #hurtige-genveje .genvej-wrapper:first-child .genvej,
-.view-id-mediekit .genvej-wrapper:first-child .genvej {
-  background: none;
-}
+.region-sidebar-first #hurtige-genveje .genvej-wrapper:first-child .genvej, .view-id-mediekit .genvej-wrapper:first-child .genvej { background: none; }
 
 /* Each invidual row */
-.region-sidebar-first #hurtige-genveje #akut-hjaelp .left {
-  width: 31px;
-  height: 31px;
-  margin: 0 15px 0 3px;
-  background: url(../images/afstemning-wh-30x30.png) no-repeat transparent top left;
-}
+.region-sidebar-first #hurtige-genveje #akut-hjaelp .left { width: 31px; height: 31px; margin: 0 15px 0 3px; background: url(../images/afstemning-wh-30x30.png) no-repeat transparent top left; }
 
-.region-sidebar-first #hurtige-genveje #akut-hjaelp:hover .left,
-.view-id-mediekit #akut-hjaelp:hover .left {
-  background: url(../images/afstemning-yel-30x30.png) no-repeat transparent top left;
-}
+.region-sidebar-first #hurtige-genveje #akut-hjaelp:hover .left, .view-id-mediekit #akut-hjaelp:hover .left { background: url(../images/afstemning-yel-30x30.png) no-repeat transparent top left; }
 
-.region-sidebar-first #hurtige-genveje #brevkasse .left,
-.view-id-mediekit #brevkasse .left {
-  width: 39px;
-  height: 29px;
-  margin: 0 10px 0 0;
-  background: url(../images/brevkasse-genvej.png) no-repeat transparent top left;
-}
+.region-sidebar-first #hurtige-genveje #brevkasse .left, .view-id-mediekit #brevkasse .left { width: 39px; height: 29px; margin: 0 10px 0 0; background: url(../images/brevkasse-genvej.png) no-repeat transparent top left; }
 
-.region-sidebar-first #hurtige-genveje .genvej-wrapper .plus-brevkasse,
-.view-id-mediekit .genvej-wrapper .plus-brevkasse {
-  display: none;
-}
+.region-sidebar-first #hurtige-genveje .genvej-wrapper .plus-brevkasse, .view-id-mediekit .genvej-wrapper .plus-brevkasse { display: none; }
 
-.region-sidebar-first #hurtige-genveje .genvej-wrapper:hover .plus-brevkasse {
-  display: block;
-  width: 68px;
-  height: 80px;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
+.region-sidebar-first #hurtige-genveje .genvej-wrapper:hover .plus-brevkasse { display: block; width: 68px; height: 80px; position: absolute; top: 0; right: 0; }
 
-.region-sidebar-first #hurtige-genveje #brevkasse:hover .left,
-.view-id-mediekit #brevkasse:hover .left {
-  background: url(../images/brevkasse-hover-genvej.png) no-repeat transparent top left;
-}
+.region-sidebar-first #hurtige-genveje #brevkasse:hover .left, .view-id-mediekit #brevkasse:hover .left { background: url(../images/brevkasse-hover-genvej.png) no-repeat transparent top left; }
 
-.region-sidebar-first #hurtige-genveje #debatforum .left {
-  width: 41px;
-  height: 40px;
-  margin: -3px 8px 0 0;
-  background: url(../images/forum-genvej.png) no-repeat transparent top left;
-}
+.region-sidebar-first #hurtige-genveje #debatforum .left { width: 41px; height: 40px; margin: -3px 8px 0 0; background: url(../images/forum-genvej.png) no-repeat transparent top left; }
 
-.region-sidebar-first #hurtige-genveje .genvej-wrapper .plus-debatforum {
-  display: none;
-}
+.region-sidebar-first #hurtige-genveje .genvej-wrapper .plus-debatforum { display: none; }
 
-.region-sidebar-first #hurtige-genveje .genvej-wrapper:hover .plus-debatforum {
-  display: block;
-  width: 68px;
-  height: 80px;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
+.region-sidebar-first #hurtige-genveje .genvej-wrapper:hover .plus-debatforum { display: block; width: 68px; height: 80px; position: absolute; top: 0; right: 0; }
 
-.region-sidebar-first #hurtige-genveje #debatforum:hover .left {
-  background: url(../images/forum-hover-genvej.png) no-repeat transparent top left;
-}
+.region-sidebar-first #hurtige-genveje #debatforum:hover .left { background: url(../images/forum-hover-genvej.png) no-repeat transparent top left; }
 
-.view-id-mediekit #find-hjaelp .left {
-  width: 30px;
-  height: 46px;
-  margin: 0 15px 0 3px;
-  background: url(../images/menu4.png) no-repeat transparent top left;
-}
+.view-id-mediekit #find-hjaelp .left { width: 30px; height: 46px; margin: 0 15px 0 3px; background: url(../images/menu4.png) no-repeat transparent top left; }
 
-.view-id-mediekit #leksikon .left {
-  width: 52px;
-  height: 48px;
-  margin: 0 15px 0 3px;
-  background: url(../images/menu2.png) no-repeat transparent top left;
-}
+.view-id-mediekit #leksikon .left { width: 52px; height: 48px; margin: 0 15px 0 3px; background: url(../images/menu2.png) no-repeat transparent top left; }
 
 /* For the pages to be embedded as iframe */
-body.page-node-796 #page,
-body.page-node-797 #page {
-  width: 280px;
-  padding: 0px;
-}
+body.page-node-796 #page, body.page-node-797 #page { width: 280px; padding: 0px; }
 
-body.page-node-796 .node-middle,
-body.page-node-797 .node-middle {
-  padding: 0px;
-}
+body.page-node-796 .node-middle, body.page-node-797 .node-middle { padding: 0px; }
 
-body.page-node-796 #node-wrapper,
-body.page-node-797 #node-wrapper {
-  margin-top: -20px;
-}
+body.page-node-796 #node-wrapper, body.page-node-797 #node-wrapper { margin-top: -20px; }
 
-body.page-node-796 #page-title,
-body.page-node-796 .node-btm,
-body.page-node-797 #page-title,
-body.page-node-797 .node-btm {
-  display: none;
-}
+body.page-node-796 #page-title, body.page-node-796 .node-btm, body.page-node-797 #page-title, body.page-node-797 .node-btm { display: none; }
 
-.view-id-mediekit a.mediekit-compact {
-  color: #feac01;
-  display: block;
-  font-size: 22px;
-  text-align: center;
-}
+.view-id-mediekit a.mediekit-compact { color: #feac01; display: block; font-size: 22px; text-align: center; }
 
-.view-id-mediekit .mediekit-compact .field-content p {
-  color: #fefefe;
-  font-size: 13px;
-  text-align: center;
-}
+.view-id-mediekit .mediekit-compact .field-content p { color: #fefefe; font-size: 13px; text-align: center; }
 
 /* General row styling */
-.region-sidebar-first #hurtige-genveje .genvej:hover .right .title a,
-.view-id-mediekit .genvej:hover .right .title a {
-  color: #feac01;
-}
+.region-sidebar-first #hurtige-genveje .genvej:hover .right .title a, .view-id-mediekit .genvej:hover .right .title a { color: #feac01; }
 
-.region-sidebar-first #hurtige-genveje .genvej:hover .right .description,
-.view-id-mediekit .genvej:hover .right .description {
-  color: #fefefe;
-  cursor: default;
-}
+.region-sidebar-first #hurtige-genveje .genvej:hover .right .description, .view-id-mediekit .genvej:hover .right .description { color: #fefefe; cursor: default; }
 
-.region-sidebar-first #hurtige-genveje .right a,
-.view-id-mediekit .right a {
-  font-size: 18px;
-  color: #fff;
-}
+.region-sidebar-first #hurtige-genveje .right a, .view-id-mediekit .right a { font-size: 18px; color: #fff; }
 
-.region-sidebar-first #hurtige-genveje .right a,
-.view-id-mediekit .right a {
-  text-decoration: none;
-}
+.region-sidebar-first #hurtige-genveje .right a, .view-id-mediekit .right a { text-decoration: none; }
 
-.region-sidebar-first #hurtige-genveje .right .description,
-.view-id-mediekit .right .description {
-  margin-top: 1px;
-}
+.region-sidebar-first #hurtige-genveje .right .description, .view-id-mediekit .right .description { margin-top: 1px; }
 
-.region-sidebar-first #hurtige-genveje .right .description,
-.view-id-mediekit .views-field-changed {
-  font-size: 13px;
-  color: #b8b8b8;
-}
+.region-sidebar-first #hurtige-genveje .right .description, .view-id-mediekit .views-field-changed { font-size: 13px; color: #b8b8b8; }
 
-.view-id-mediekit .views-field-title {
-  font-size: 16px;
-  text-transform: uppercase;
-}
+.view-id-mediekit .views-field-title { font-size: 16px; text-transform: uppercase; }
 
-.view-id-mediekit .description,
-.view-id-mediekit .views-field-changed .views-label-changed,
-.view-id-mediekit .views-field-changed .description {
-  color: #B8B8B8;
-}
+.view-id-mediekit .description, .view-id-mediekit .views-field-changed .views-label-changed, .view-id-mediekit .views-field-changed .description { color: #B8B8B8; }
 
-.view-id-mediekit .views-row {
-  padding: 5px 0;
-}
+.view-id-mediekit .views-row { padding: 5px 0; }
 
 /* Left content on sub page */
-#leftcontent h3 {
-  margin: 14px 0 4px -6px;
-  padding: 2px 0 2px 6px;
-  background: #e5e4e1;
-  font-size: 14px;
-}
+#leftcontent h3 { margin: 14px 0 4px -6px; padding: 2px 0 2px 6px; background: #e5e4e1; font-size: 14px; }
 
-#leftcontent .block-content h3:first-child {
-  margin-top: 0;
-}
+#leftcontent .block-content h3:first-child { margin-top: 0; }
 
-#leftcontent strong {
-  font-size: 13px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
+#leftcontent strong { font-size: 13px; font-weight: bold; text-transform: uppercase; }
 
-#leftcontent ul {
-  padding: 0;
-  margin: 0;
-  list-style-image: url("../images/content/bullet.jpg");
-  list-style-position: inside;
-}
+#leftcontent ul { padding: 0; margin: 0; list-style-image: url("../images/content/bullet.jpg"); list-style-position: inside; }
 
-#leftcontent ul li {
-  color: #a6a6a6;
-}
+#leftcontent ul li { color: #a6a6a6; }
 
-#leftcontent p {
-  margin: 0;
-  padding: 0;
-}
+#leftcontent p { margin: 0; padding: 0; }
