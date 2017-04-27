@@ -114,7 +114,7 @@ h2, h3, h4, h5, h6 { font-family: "Cabin", sans-serif !important; font-weight: n
 
 .node-encyclopedia-entry ul.horizontal-tabs-list li.selected a:hover { background-color: #ffad00; }
 
-.node-encyclopedia-entry ul.horizontal-tabs-list li.selected a strong { color: #424242; }
+.node-encyclopedia-entry ul.horizontal-tabs-list li.selected a strong { color: #ffffff; }
 
 .node-encyclopedia-entry .horizontal-tabs fieldset.horizontal-tabs-pane { padding: 0; margin: 0; font-size: 13px; font-family: "Cabin", sans-serif; }
 
