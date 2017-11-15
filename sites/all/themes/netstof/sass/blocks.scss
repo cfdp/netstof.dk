@@ -469,7 +469,25 @@
       font-size: $normal-font-size;
       line-height: $normal-line-height;
     }
+    .municipality-counselor {
+      display: block;
+      overflow: auto;
+      margin-bottom: 10px;
+    }
 
+    .left {
+      float: left;
+      clear: both;
+    }
+    
+    .counselor {
+      width: 70px;
+      margin-right: 10px;
+    }
+    
+    .contact-info {
+    }
+ 
     .municipality-img {
       display: inline-block;
       max-width: 120px;
