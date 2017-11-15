@@ -1,12 +1,12 @@
 <?php
-function kort() {
+function kort_enkelt_kommune() {
 
 $view = new view();
-$view->name = 'kort';
+$view->name = 'kort_enkelt_kommune';
 $view->description = '';
 $view->tag = 'default';
 $view->base_table = 'node';
-$view->human_name = 'Kort';
+$view->human_name = 'Kort, enkelt kommune';
 $view->core = 7;
 $view->api_version = '3.0';
 $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -34,59 +34,8 @@ $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'any_label' => NULL,
     'filter_rewrite_values' => NULL,
   ),
-  'field_steder_kommune_tid' => array(
-    'bef_format' => 'default',
-    'more_options' => array(
-      'bef_select_all_none' => FALSE,
-      'bef_collapsible' => 0,
-      'is_secondary' => 0,
-      'any_label' => '',
-      'bef_filter_description' => '<none>',
-      'tokens' => array(
-        'available' => array(
-          0 => 'global_types',
-          1 => 'vocabulary',
-          'secondary_label' => NULL,
-          'collapsible_label' => NULL,
-          'combine_rewrite' => NULL,
-          'reset_label' => NULL,
-          'bef_filter_description' => NULL,
-          'any_label' => NULL,
-          'filter_rewrite_values' => NULL,
-        ),
-        'secondary_label' => NULL,
-        'collapsible_label' => NULL,
-        'combine_rewrite' => NULL,
-        'reset_label' => NULL,
-        'bef_filter_description' => NULL,
-        'any_label' => NULL,
-        'filter_rewrite_values' => NULL,
-      ),
-      'rewrite' => array(
-        'filter_rewrite_values' => '',
-        'secondary_label' => NULL,
-        'collapsible_label' => NULL,
-        'combine_rewrite' => NULL,
-        'reset_label' => NULL,
-        'bef_filter_description' => NULL,
-        'any_label' => NULL,
-      ),
-      'secondary_label' => NULL,
-      'collapsible_label' => NULL,
-      'combine_rewrite' => NULL,
-      'reset_label' => NULL,
-      'filter_rewrite_values' => NULL,
-    ),
-    'secondary_label' => NULL,
-    'collapsible_label' => NULL,
-    'combine_rewrite' => NULL,
-    'reset_label' => NULL,
-    'bef_filter_description' => NULL,
-    'any_label' => NULL,
-    'filter_rewrite_values' => NULL,
-  ),
   'field_steder_over_under18_value' => array(
-    'bef_format' => 'bef',
+    'bef_format' => 'bef_links',
     'more_options' => array(
       'bef_select_all_none' => 0,
       'bef_collapsible' => 0,
@@ -156,7 +105,7 @@ $handler->display->display_options['style_options']['fallback_values'] = array(
   'latitude' => '',
   'longitude' => '',
   'title' => '',
-  'markername' => 'netstof orange',
+  'markername' => 'netstof deep orange',
   'offset' => '',
 );
 $handler->display->display_options['style_options']['field_purposes'] = array(
@@ -174,6 +123,12 @@ $handler->display->display_options['style_options']['field_purposes'] = array(
 );
 $handler->display->display_options['style_options']['center_on_proximityfilter_rel'] = 'none';
 $handler->display->display_options['row_plugin'] = 'fields';
+/* Sidefod: Global: Text area */
+$handler->display->display_options['footer']['area']['id'] = 'area';
+$handler->display->display_options['footer']['area']['table'] = 'views';
+$handler->display->display_options['footer']['area']['field'] = 'area';
+$handler->display->display_options['footer']['area']['content'] = '<br><p>Fandt du ikke hvad du ledte efter? <a href="/find-hjaelp" title="tilbage til Danmarkskortet">Gå tilbage til Danmarkskortet.</a></p>';
+$handler->display->display_options['footer']['area']['format'] = 'filtered_html';
 /* No results behavior: Global: Text area */
 $handler->display->display_options['empty']['area']['id'] = 'area';
 $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -271,6 +226,23 @@ $handler->display->display_options['sorts']['created']['id'] = 'created';
 $handler->display->display_options['sorts']['created']['table'] = 'node';
 $handler->display->display_options['sorts']['created']['field'] = 'created';
 $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+/* Contextual filter: Indhold: Kommune (field_steder_kommune) */
+$handler->display->display_options['arguments']['field_steder_kommune_tid']['id'] = 'field_steder_kommune_tid';
+$handler->display->display_options['arguments']['field_steder_kommune_tid']['table'] = 'field_data_field_steder_kommune';
+$handler->display->display_options['arguments']['field_steder_kommune_tid']['field'] = 'field_steder_kommune_tid';
+$handler->display->display_options['arguments']['field_steder_kommune_tid']['default_action'] = 'default';
+$handler->display->display_options['arguments']['field_steder_kommune_tid']['exception']['title'] = 'Alle';
+$handler->display->display_options['arguments']['field_steder_kommune_tid']['default_argument_type'] = 'php';
+$handler->display->display_options['arguments']['field_steder_kommune_tid']['default_argument_options']['code'] = '$segments = explode(\'/\', current_path());
+if ( count($segments) >= 3 ) {
+  return $segments[2];
+}
+else {
+  return null;
+}';
+$handler->display->display_options['arguments']['field_steder_kommune_tid']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['field_steder_kommune_tid']['summary']['format'] = 'default_summary';
+$handler->display->display_options['arguments']['field_steder_kommune_tid']['summary_options']['items_per_page'] = '25';
 /* Filter criterion: Indhold: Udgivet */
 $handler->display->display_options['filters']['status']['id'] = 'status';
 $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -286,19 +258,20 @@ $handler->display->display_options['filters']['type']['value'] = array(
   'steder' => 'steder',
 );
 $handler->display->display_options['filters']['type']['group'] = 1;
-/* Filter criterion: Indhold: Kommune (field_steder_kommune) */
-$handler->display->display_options['filters']['field_steder_kommune_tid']['id'] = 'field_steder_kommune_tid';
-$handler->display->display_options['filters']['field_steder_kommune_tid']['table'] = 'field_data_field_steder_kommune';
-$handler->display->display_options['filters']['field_steder_kommune_tid']['field'] = 'field_steder_kommune_tid';
-$handler->display->display_options['filters']['field_steder_kommune_tid']['value'] = array(
-  505 => '505',
+/* Filter criterion: Indhold: Over eller under 18 (field_steder_over_under18) */
+$handler->display->display_options['filters']['field_steder_over_under18_value']['id'] = 'field_steder_over_under18_value';
+$handler->display->display_options['filters']['field_steder_over_under18_value']['table'] = 'field_data_field_steder_over_under18';
+$handler->display->display_options['filters']['field_steder_over_under18_value']['field'] = 'field_steder_over_under18_value';
+$handler->display->display_options['filters']['field_steder_over_under18_value']['value'] = array(
+  'under_18' => 'under_18',
+  'over_18' => 'over_18',
 );
-$handler->display->display_options['filters']['field_steder_kommune_tid']['group'] = 1;
-$handler->display->display_options['filters']['field_steder_kommune_tid']['exposed'] = TRUE;
-$handler->display->display_options['filters']['field_steder_kommune_tid']['expose']['operator_id'] = 'field_steder_kommune_tid_op';
-$handler->display->display_options['filters']['field_steder_kommune_tid']['expose']['operator'] = 'field_steder_kommune_tid_op';
-$handler->display->display_options['filters']['field_steder_kommune_tid']['expose']['identifier'] = 'kommune';
-$handler->display->display_options['filters']['field_steder_kommune_tid']['expose']['remember_roles'] = array(
+$handler->display->display_options['filters']['field_steder_over_under18_value']['group'] = 1;
+$handler->display->display_options['filters']['field_steder_over_under18_value']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_steder_over_under18_value']['expose']['operator_id'] = 'field_steder_over_under18_value_op';
+$handler->display->display_options['filters']['field_steder_over_under18_value']['expose']['operator'] = 'field_steder_over_under18_value_op';
+$handler->display->display_options['filters']['field_steder_over_under18_value']['expose']['identifier'] = 'alder';
+$handler->display->display_options['filters']['field_steder_over_under18_value']['expose']['remember_roles'] = array(
   2 => '2',
   1 => 0,
   3 => 0,
@@ -306,19 +279,7 @@ $handler->display->display_options['filters']['field_steder_kommune_tid']['expos
   5 => 0,
   6 => 0,
 );
-$handler->display->display_options['filters']['field_steder_kommune_tid']['type'] = 'select';
-$handler->display->display_options['filters']['field_steder_kommune_tid']['vocabulary'] = 'municipalities';
-$handler->display->display_options['filters']['field_steder_kommune_tid']['error_message'] = FALSE;
-/* Filter criterion: Indhold: Over eller under 18 (field_steder_over_under18) */
-$handler->display->display_options['filters']['field_steder_over_under18_value']['id'] = 'field_steder_over_under18_value';
-$handler->display->display_options['filters']['field_steder_over_under18_value']['table'] = 'field_data_field_steder_over_under18';
-$handler->display->display_options['filters']['field_steder_over_under18_value']['field'] = 'field_steder_over_under18_value';
-$handler->display->display_options['filters']['field_steder_over_under18_value']['group'] = 1;
-$handler->display->display_options['filters']['field_steder_over_under18_value']['exposed'] = TRUE;
-$handler->display->display_options['filters']['field_steder_over_under18_value']['expose']['operator_id'] = 'field_steder_over_under18_value_op';
-$handler->display->display_options['filters']['field_steder_over_under18_value']['expose']['operator'] = 'field_steder_over_under18_value_op';
-$handler->display->display_options['filters']['field_steder_over_under18_value']['expose']['identifier'] = 'alder';
-$handler->display->display_options['filters']['field_steder_over_under18_value']['expose']['multiple'] = TRUE;
+$handler->display->display_options['filters']['field_steder_over_under18_value']['expose']['reduce'] = TRUE;
 /* Filter criterion: adresse */
 $handler->display->display_options['filters']['street']['id'] = 'street';
 $handler->display->display_options['filters']['street']['table'] = 'location';
@@ -333,7 +294,14 @@ $handler->display->display_options['filters']['street']['expose']['identifier'] 
 /* Display: Page */
 $handler = $view->new_display('page', 'Page', 'page');
 $handler->display->display_options['defaults']['header'] = FALSE;
-$handler->display->display_options['path'] = 'kort';
+$handler->display->display_options['defaults']['footer'] = FALSE;
+/* Sidefod: Global: Text area */
+$handler->display->display_options['footer']['area']['id'] = 'area';
+$handler->display->display_options['footer']['area']['table'] = 'views';
+$handler->display->display_options['footer']['area']['field'] = 'area';
+$handler->display->display_options['footer']['area']['content'] = '</br><p>Fandt du ikke hvad du ledte efter? <a href="/find-hjaelp" title="tilbage til Danmarkskortet">Gå tilbage til Danmarkskortet.</a></p>';
+$handler->display->display_options['footer']['area']['format'] = 'full_html';
+$handler->display->display_options['path'] = 'kort-enkelt-kommune';
 
 /* Display: Bilag */
 $handler = $view->new_display('attachment', 'Bilag', 'attachment_1');
@@ -343,18 +311,19 @@ $handler->display->display_options['pager']['type'] = 'none';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['defaults']['style_plugin'] = FALSE;
 $handler->display->display_options['style_plugin'] = 'list';
-$handler->display->display_options['style_options']['grouping'] = array(
-  0 => array(
-    'field' => 'field_steder_kommune',
-    'rendered' => 1,
-    'rendered_strip' => 0,
-  ),
-);
 $handler->display->display_options['defaults']['style_options'] = FALSE;
 $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['row_plugin'] = 'fields';
 $handler->display->display_options['defaults']['row_options'] = FALSE;
 $handler->display->display_options['defaults']['header'] = FALSE;
+/* Overskrift: Global: Text area */
+$handler->display->display_options['header']['area']['id'] = 'area';
+$handler->display->display_options['header']['area']['table'] = 'views';
+$handler->display->display_options['header']['area']['field'] = 'area';
+$handler->display->display_options['header']['area']['content'] = '<h3>Find hjælp i [field_steder_kommune]</h3>';
+$handler->display->display_options['header']['area']['format'] = 'full_html';
+$handler->display->display_options['header']['area']['tokenize'] = TRUE;
+$handler->display->display_options['defaults']['footer'] = FALSE;
 $handler->display->display_options['defaults']['empty'] = FALSE;
 $handler->display->display_options['defaults']['relationships'] = FALSE;
 /* Relationship: Indhold: Taxonomy terms on node */
@@ -447,6 +416,11 @@ $handler->display->display_options['fields']['field_steder_website']['alter']['e
 $handler->display->display_options['fields']['field_steder_website']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['field_steder_website']['group_column'] = 'entity_id';
 $handler->display->display_options['defaults']['sorts'] = FALSE;
+/* Sort criterion: Indhold: Sticky */
+$handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+$handler->display->display_options['sorts']['sticky']['table'] = 'node';
+$handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+$handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
 /* Sort criterion: Ord i ordforråd: Navn */
 $handler->display->display_options['sorts']['name']['id'] = 'name';
 $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
@@ -459,11 +433,12 @@ $handler->display->display_options['sorts']['title']['field'] = 'title';
 $handler->display->display_options['displays'] = array(
   'default' => 'default',
   'page' => 'page',
+  'page_1' => 'page_1',
 );
 $handler->display->display_options['attachment_position'] = 'after';
 $handler->display->display_options['inherit_arguments'] = FALSE;
 $handler->display->display_options['inherit_exposed_filters'] = TRUE;
-$translatables['kort'] = array(
+$translatables['kort_enkelt_kommune'] = array(
   t('Master'),
   t('Kort'),
   t('more'),
@@ -473,8 +448,8 @@ $translatables['kort'] = array(
   t('Asc'),
   t('Desc'),
   t('Avancerede indstillinger'),
-  t('<none>'),
   t('Select any filter and click on Apply to see results'),
+  t('<br><p>Fandt du ikke hvad du ledte efter? <a href="/find-hjaelp" title="tilbage til Danmarkskortet">Gå tilbage til Danmarkskortet.</a></p>'),
   t('<div class="dk-map-blured">
 <p>Vælg kommune</p>
 </div>'),
@@ -482,14 +457,17 @@ $translatables['kort'] = array(
   t('Longitude'),
   t('[street], [postal_code], [city]'),
   t('Find på Google Maps'),
+  t('Alle'),
   t('Page'),
+  t('</br><p>Fandt du ikke hvad du ledte efter? <a href="/find-hjaelp" title="tilbage til Danmarkskortet">Gå tilbage til Danmarkskortet.</a></p>'),
   t('Bilag'),
+  t('<h3>Find hjælp i [field_steder_kommune]</h3>'),
   t('term'),
   t('<b>[title]</b>'),
   t('-'),
   t('[street], [postal_code] [city]'),
 );
 
-  return $view;
+return $view;
 
 }

@@ -156,6 +156,9 @@ $legacy-support-for-ie7: true; */
 .region-sidebar-first .municipality-feature.logo .view-content { padding-top: 23px; text-align: center; }
 .region-sidebar-first .municipality-feature .view-header h3 { font-size: 20px; line-height: 1em; }
 .region-sidebar-first .municipality-feature .block-content p { font-size: 14px; line-height: 18px; }
+.region-sidebar-first .municipality-feature .municipality-counselor { display: block; overflow: auto; margin-bottom: 10px; }
+.region-sidebar-first .municipality-feature .left { float: left; clear: both; }
+.region-sidebar-first .municipality-feature .counselor { width: 70px; margin-right: 10px; }
 .region-sidebar-first .municipality-feature .municipality-img { display: inline-block; max-width: 120px; }
 .region-sidebar-first .municipality-feature .municipality-img.views-row-first { margin-right: 10px; }
 
