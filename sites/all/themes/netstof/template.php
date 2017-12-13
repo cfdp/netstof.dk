@@ -20,6 +20,25 @@
  *    on "netstof".
  * 2. Uncomment the required function to use.
  */
+
+/**
+ * Override or insert variables into the html templates.
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("html" in this case.)
+ */
+function netstof_preprocess_html(&$variables, $hook) {
+  // Add conditional scripts on non-admin pages
+  if (!path_is_admin(current_path())) {
+    //Add questionnaire popup script and css. Popup markup is in block /admin/structure/block/manage/block/26/configure
+    drupal_add_css(drupal_get_path('theme', 'netstof') . '/css/bpopup.css', array('group' => CSS_THEME, 'type' => 'file', 'weight' => 10));
+    drupal_add_js(drupal_get_path('theme', 'netstof') . '/scripts/jquery.bpopup.min.js', array('weight' => 0));
+    drupal_add_js(drupal_get_path('theme', 'netstof') . '/scripts/popup.js', array('weight' => 0));
+  }
+}
+
 /**
  * MENU LINKS
  */

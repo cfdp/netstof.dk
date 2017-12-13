@@ -1,0 +1,14 @@
+/* $legacy-support-for-ie6: true;
+$legacy-support-for-ie7: true; */
+/*-------------------------------
+
+	BPOPUP.CSS
+
+-------------------------------*/
+#block-block-32 { display: none; max-width: 400px; padding: 1em; background-color: white; }
+#block-block-32 a { color: #0B5A7C; }
+#block-block-32 a.blue-btn { color: white; font-weight: bold; text-transform: uppercase; font-size: 15px; line-height: 15px; display: inline-block; background: #0B5A7C; padding: 10px 12px 10px 12px; border-radius: 5px; }
+
+a.b-close { position: absolute; right: 10px; top: 10px; color: #0B5A7C; }
+
+a#decline-popup { margin-left: .5em; }
