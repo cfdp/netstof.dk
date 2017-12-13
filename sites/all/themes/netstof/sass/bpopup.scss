@@ -1,0 +1,35 @@
+// _base.scss imports _custom.scss and other partials.
+@import "base";
+
+/*-------------------------------
+
+	BPOPUP.CSS
+
+-------------------------------*/
+
+#block-block-32 {
+  display: none;
+  max-width: 400px;
+  padding: 1em;
+  background-color: white;
+
+  a {
+    color: $ns_blue;
+  }
+
+  a.blue-btn {
+    @include blue-btn;
+  }
+}
+
+a.b-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: $ns_blue;
+}
+
+a#decline-popup {
+  margin-left: .5em;
+}
+
