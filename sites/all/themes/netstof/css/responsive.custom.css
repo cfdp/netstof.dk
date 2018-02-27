@@ -66,12 +66,16 @@ $legacy-support-for-ie7: true; */
   #search-block-form .container-inline { position: relative; overflow: hidden; width: 100%; }
   #search-block-form .form-actions { width: 58px; position: absolute; top: 0; right: 0; }
   #search-block-form .container-inline > div.form-item { width: 100%; overflow: hidden; }
+  #custom-search-blocks-form-1, #custom-search-blocks-form-2 { float: none; overflow: hidden; width: auto; }
   /* Footer top */
   .region-footer-top .block-last ul.menu { text-align: center; }
   .region-footer-top .block { margin-bottom: 15px; }
   .region-footer-top .block-last { margin-bottom: 35px; }
+  /* Remove decorative graphics from sidebar since it's not optimized for responsive layout */
+  .region-sidebar-first .block { background: transparent; }
+  .region-sidebar-first .block .block-inner { background: transparent; }
+  .not-front .region-sidebar-first .block .block-content { background: transparent; }
   /* HIDE BLOCK REGIONS */
-  .region-sidebar-first { display: none !important; }
   .region-tabs-right { display: none; }
   #branding { display: none; }
   #header-btm-container a { display: none; } }
