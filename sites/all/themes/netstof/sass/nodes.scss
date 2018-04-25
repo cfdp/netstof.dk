@@ -398,29 +398,32 @@ a.open-new-window {
 	border: none;
 }
 
-//Styles for the municipality menu (kommunemenu)
-.menu-name-menu-kommunemenu ul {
-  background-color: #404040;
-  margin-top: 0;
-  padding: 10px;
+// Styles for menu blocks shown on nodes in main content area
+// (Custom content menu)
+#content {
+  .menu-block-4 ul {
+    background-color: #404040;
+    margin-top: 0;
+    padding: 10px;
 
-  li {
-    color: white;
-    display: inline;
-    a {
+    li {
       color: white;
-      font-size: 12px;
-      padding-right: 10px;
-      text-transform: uppercase;
+      display: inline;
+      a {
+        color: white;
+        font-size: 12px;
+        padding-right: 10px;
+        text-transform: uppercase;
+      }
     }
-  }
 
-  li:after {
-    content: "//";
-  }
+    li:after {
+      content: "//";
+    }
 
-  li:last-child:after {
-    content: "";
+    li:last-child:after {
+      content: "";
+    }
   }
 }
 
