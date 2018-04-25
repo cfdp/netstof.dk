@@ -162,11 +162,11 @@ a.open-new-window { background: none repeat scroll 0 0 #0B5A7C; border-radius: 5
 
 #webform-client-form-1052 .form-actions input.form-submit { color: white; font-weight: bold; text-transform: uppercase; font-size: 15px; line-height: 15px; display: inline-block; background: #0B5A7C; padding: 10px 12px 10px 12px; border-radius: 5px; border: none; }
 
-.menu-name-menu-kommunemenu ul { background-color: #404040; margin-top: 0; padding: 10px; }
-.menu-name-menu-kommunemenu ul li { color: white; display: inline; }
-.menu-name-menu-kommunemenu ul li a { color: white; font-size: 12px; padding-right: 10px; text-transform: uppercase; }
-.menu-name-menu-kommunemenu ul li:after { content: "//"; }
-.menu-name-menu-kommunemenu ul li:last-child:after { content: ""; }
+#content .menu-block-4 ul { background-color: #404040; margin-top: 0; padding: 10px; }
+#content .menu-block-4 ul li { color: white; display: inline; }
+#content .menu-block-4 ul li a { color: white; font-size: 12px; padding-right: 10px; text-transform: uppercase; }
+#content .menu-block-4 ul li:after { content: "//"; }
+#content .menu-block-4 ul li:last-child:after { content: ""; }
 
 #node-541 #mc_embed_signup .indicates-required .asterisk { vertical-align: top; }
 #node-541 #mc_embed_signup .mc-field-group.input-group input { width: auto; }
