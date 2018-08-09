@@ -72,7 +72,6 @@ $legacy-support-for-ie7: true; */
   .region-footer-top .block { margin-bottom: 15px; }
   .region-footer-top .block-last { margin-bottom: 35px; }
   /* Remove decorative graphics from sidebar since it's not optimized for responsive layout */
-  .region-sidebar-first {display: block !important; }
   .region-sidebar-first .block { background: transparent; }
   .region-sidebar-first .block .block-inner { background: transparent; }
   .not-front .region-sidebar-first .block .block-content { background: transparent; }
