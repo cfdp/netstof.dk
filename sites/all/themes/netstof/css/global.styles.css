@@ -41,7 +41,7 @@ pre, code, tt, samp, kbd, var { font-family: Consolas, Monaco, 'Courier New', Co
 /* Logo */
 #logo { padding: 10px 0; }
 
-#logo img { vertical-align: bottom; }
+#logo img { vertical-align: bottom; width: 90%; }
 
 /* Wrapper for the site name and slogan (hgroup) */
 /* Site name (h1) */

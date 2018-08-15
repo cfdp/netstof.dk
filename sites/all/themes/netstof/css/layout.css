@@ -5,35 +5,53 @@ body {
  * HEADER
  */
 #header-container {
-	background: url("../images/header-bg.png") repeat;
+	background: #ffffff;
 	min-height: 108px;
-	border-top: 3px solid #ffad00;
 }
-	header {
-	
+	header.container {
+        width: calc(100% - 8em);
+        padding: 0 4em;
 	}
 	#branding{
 	  float:left;
   }
 
 		header #logo {
-			padding: 17px 0 0 0;
+			padding: 27px 0 0 0;
 		}
 	
 #header-btm-container {
 	height: 46px;
-	background: #FFFFFF;
+	background: #ffad00;
+    position: relative;
+    z-index: 1;
 }
 	#header-btm-container .container {
 		position: relative;
 		height: 46px;
+        width: 100%;
 	}
 		#header-btm-container .container #find-hjaelp {
 			position: absolute;
-			left: -16px;
+			left: calc(4em - 20px);
 			bottom: -16px;
 		}
-	
+
+/**
+ * FRONT PAGE BANNER & ENTRIES
+ */
+#banner-front {
+	position: relative;
+    overflow: hidden;
+    height: 500px;
+    margin-bottom: 0;
+    z-index: 0;
+}
+#entries-front {
+	width: 100%;
+    background: #f6f5f5;
+}
+
 /**
  * PAGE
  */

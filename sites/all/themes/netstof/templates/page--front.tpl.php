@@ -132,6 +132,16 @@
 	</div>
 </div>
 
+<!-- region: Front Page Banner & Front Page Entries -->
+<?php if($is_front): ?>
+    <div id="banner-front" class="region">
+        <?php print render($page["banner_front"]); ?>
+    </div>
+    <div id="entries-front" class="region">
+        <?php print render($page["entries_front"]); ?>
+    </div>
+<?php endif; ?> 
+
 <div id="page" class="container <?php print $classes; ?>">
 
   <!-- Breadcrumbs -->
