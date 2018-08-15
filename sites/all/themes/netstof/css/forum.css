@@ -2,31 +2,20 @@
  * DEBATFORUMMER - Oversigt
  */
 .page-forum section#main-content {
-	background: url("../images/big_shadow_top.png") no-repeat top center;
-	padding-top: 11px;
-	position: relative; top: -11px;
+	position: relative;
 }
 .page-forum #main-content-header {
-	padding: 23px 23px 0 23px;
 	background-color: #FFFFFF;
 }
 .page-forum #content {
-	padding: 0 23px 23px 23px;
-	background: white url("../images/content-btm.png") no-repeat bottom center;
 	float: left;
 }
 .page-forum #content-btm-shadow {
-	background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
-	height: 15px;
 	float: left;
 	width: 100%;
 }
 .page-forum h1#page-title {
-	color: #0B5A7C !important;
-	padding: 3px 0 0 52px;
-	background: url("../images/icon-forum.png") no-repeat top left;
-	height: 36px;
-	margin-bottom: 20px;
+	color: #424242 !important;
 }
 .page-forum #tasks {
 	display: none;

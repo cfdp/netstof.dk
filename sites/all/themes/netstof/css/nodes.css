@@ -1,7 +1,7 @@
 /* $legacy-support-for-ie6: true;
 $legacy-support-for-ie7: true; */
 /** UNDERSIDER */
-h1#page-title { font-size: 28px; line-height: 28px; color: #424242; font-weight: normal; margin-bottom: 25px; }
+h1#page-title { font-size: 4em; line-height: 1.1em; color: #424242; font-weight: bolder; margin-bottom: 1em; }
 
 .not-front #main-content > #content { font-size: 14px; line-height: 18px; color: #222; }
 
@@ -12,11 +12,7 @@ h2, h3, h4, h5, h6 { font-family: "Cabin", sans-serif !important; font-weight: n
 /** GENERAL NODE STYLING */
 #node-wrapper { margin-top: -11px; }
 
-.node-top { background: url("../images/big_shadow_top.png") no-repeat top center; height: 11px; }
-
-.node-btm { background: url("../images/big_shadow_bottom.png") no-repeat top center; height: 15px; }
-
-.node-middle { background: white url("../images/content-btm.png") no-repeat bottom center; padding: 25px 23px; overflow: hidden; }
+.node-middle { overflow: hidden; }
 
 .node-middle nav ul li { float: right; padding: 0 0 0 5px; }
 
@@ -25,7 +21,7 @@ h2, h3, h4, h5, h6 { font-family: "Cabin", sans-serif !important; font-weight: n
 .field-name-field-billede { line-height: 0; }
 
 /* Narrow content area */
-#rightcontent.narrow { float: left; padding-left: 23px; width: 357px; max-width: 100%; border-left: 1px dashed #dedddb; }
+#rightcontent.narrow { float: left; padding-left: 23px; width: 357px; max-width: 100%; border-left: 1px solid #dedddb; }
 
 /* Node footer */
 .node-content footer { color: #222; }
@@ -39,8 +35,6 @@ h2, h3, h4, h5, h6 { font-family: "Cabin", sans-serif !important; font-weight: n
 .node-type-questions-and-answers .node-content div { margin-top: 15px; }
 
 .node-type-questions-and-answers .node-content div:first-child { margin-top: 0; }
-
-.node-questions-and-answers .node-content .question, .node-questions-and-answers .node-content .answer { padding: 25px 22px 15px; background: url("../images/content-top.png") no-repeat scroll center top #FFFFFF; box-shadow: 0 0 7px #BBBBBB; }
 
 .node-type-questions-and-answers .node-content #page-title { margin-bottom: 15px; font-size: 28px; color: #0b5a7c; }
 

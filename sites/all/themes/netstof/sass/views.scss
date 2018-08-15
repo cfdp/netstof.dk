@@ -500,7 +500,7 @@
 .view-faq,
 .view-leksikon {
 	padding-top: 15px;
-	border-top: 1px dashed #dedddb;
+	border-top: 1px solid #dedddb;
 	overflow: hidden;
 }
 .view-faq .view-content,
@@ -652,8 +652,8 @@
  * GOOGLE MAPS KORT
  */
 .view-kort .view-empty {
-	border-top: 1px dashed #dedddb;
-	border-bottom: 1px dashed #dedddb;
+	border-top: 1px solid #dedddb;
+	border-bottom: 1px solid #dedddb;
 	float: left;
 	width: 100%;
 	min-height: 405px;
@@ -729,8 +729,8 @@
 /* Kort */
 .view-kort.view-display-id-default > .view-content,
 .view-kort-enkelt-kommune.view-display-id-default > .view-content {
-	border-top: 1px dashed #dedddb;
-	border-bottom: 1px dashed #dedddb;
+	border-top: 1px solid #dedddb;
+	border-bottom: 1px solid #dedddb;
 	float: left;
 	width: 100%;
 	margin: 15px 0 0 0;
@@ -768,7 +768,7 @@
         li {
           margin: 0; padding: 10px 0 10px 0;
           font-size: 13px; line-height: 14px;
-          border-bottom: 1px dashed #dedddb;
+          border-bottom: 1px solid #dedddb;
           overflow: hidden;
           
           > div a {
@@ -933,31 +933,33 @@ ol.search-results {
 .region-banner-front{
     position: relative;
     .slideshow-content{
+        width: 928px;
         color: #fff;
         position: absolute;
         z-index: 99;
-        width: 80%;
-        max-width: 500px;
-        margin: 0 auto;
-        left: 10%;
         top: 50%;
+        left: 50%;
+        margin-left: calc(-928px / 2);
         -ms-transform: translateY(-50%);
         -webkit-transform: translateY(-50%);
         -moz-transform: translateY(-50%);
         -o-transform: translateY(-50%);
-        transform: translateY(-50%);   
+        transform: translateY(-50%);
+        
         span{
             text-transform: uppercase;
         }
         h2{
-            font-size: 4.5em;
+            font-size: 5.5em;
+            line-height: 1.2em;
             font-weight: bolder;
             margin: 0 0 0.2em 0;
-            padding: 0;
+            padding: 0 30% 0 0;
         }
         p{
             line-height: 1.5em;
             font-size: 1.2em;
+            padding-right: 30%;
         }
         .read-more-btn a{
             color: white;
@@ -1190,3 +1192,80 @@ body.page-paaroerende .region-sidebar-first #hurtige-genveje{
 	#leftcontent p{
 		margin:0;padding:0;
 	}
+
+
+
+/*
+FORSIDE INDGANGE
+*/
+
+#entries-front {
+    #hurtige-genveje{
+        width: 928px;
+        margin: 0 auto;
+        .genvej-wrapper{
+            position: relative;
+            float: left;
+            width: 33%;
+            height: 170px;
+            text-align: center;
+            border-right: 1px solid #e3e3e3;
+            .plus-brevkasse, .plus-debatforum{
+                position: absolute;
+                right: 0;
+                top: 0;
+                display: none;
+            }
+            .left{
+                width: 100%;
+                height: 70px;
+                margin: 0 0 15px 0;
+                margin-top: 18px;
+            }
+            .right{
+                .title a{
+                    color: #424242;  
+                    font-weight: bolder;
+                    text-transform: uppercase;
+                    font-size: 18px;
+                }
+                .description{
+                    color: #404040;
+                    text-transform: uppercase;
+                    font-size: 12px;
+                }
+            }
+            &:hover{
+                .plus-brevkasse, .plus-debatforum{
+                    display: block;
+                }
+            }
+        }
+        .genvej-wrapper:nth-child(1){
+            .left{
+                background: url(../images/front-entries/afstemninger.png) no-repeat transparent bottom center;
+            }
+        }
+        .genvej-wrapper:nth-child(2){
+            .left{
+                background: url(../images/front-entries/brevkasser.png) no-repeat transparent bottom center;
+            }
+        }
+        .genvej-wrapper:nth-child(3){
+            border-right: 0;
+            .left{
+                background: url(../images/front-entries/debatfora.png) no-repeat transparent bottom center;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+

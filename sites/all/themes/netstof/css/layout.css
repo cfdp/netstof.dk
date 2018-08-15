@@ -56,7 +56,7 @@ body {
  * PAGE
  */
 #page {
-	padding: 35px 0;
+	padding: 65px 0;
 }
 #page > #columns {
 	position: relative;
@@ -85,13 +85,12 @@ body {
  * FOOTER
  */
 #footer-container {
-	background: url("../images/header-bg.png") repeat;
-	border-top: 3px solid #ffad00;
-	padding: 15px 0;
+	background: #f6f5f5;
+	padding: 4em 0 2em 0;
 	position: relative;
 }
 	footer {
-		color: #FFFFFF;
+		color: #424242;
 		font-size: 13px;
 		line-height: 15px;
 	}
@@ -103,7 +102,7 @@ body {
 	}
 	
 #footer-white {
-	background: #FFFFFF;
+	background: #f6f5f5;
 	height: 35px;
 }
 

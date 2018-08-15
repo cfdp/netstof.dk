@@ -174,7 +174,7 @@ body.page-brevkasse .view-Brevkasse > .view-header, body.page-faq .view-faq > .v
 .view-vidensbanken .views-field-type { font-size: 15px; text-transform: uppercase; text-align: center; margin-top: 18px; margin-bottom: 35px; }
 
 /** FAQ + Leksikon - Oversigt */
-.view-faq, .view-leksikon { padding-top: 15px; border-top: 1px dashed #dedddb; overflow: hidden; }
+.view-faq, .view-leksikon { padding-top: 15px; border-top: 1px solid #dedddb; overflow: hidden; }
 
 .view-faq .view-content, .view-leksikon .view-content { overflow: hidden; }
 
@@ -230,7 +230,7 @@ body.page-brevkasse .view-Brevkasse > .view-header, body.page-faq .view-faq > .v
 .view-faq .views-exposed-form .views-submit-button input[type=submit], .view-leksikon .views-exposed-form .views-submit-button input[type=submit] { border: none; background: #FFAD00; text-transform: uppercase; color: white; width: 58px; height: 38px; font-family: "Cabin", sans-serif; font-size: 14px; }
 
 /** GOOGLE MAPS KORT */
-.view-kort .view-empty { border-top: 1px dashed #dedddb; border-bottom: 1px dashed #dedddb; float: left; width: 100%; min-height: 405px; padding: 15px 0 0 0; margin-top: 15px; }
+.view-kort .view-empty { border-top: 1px solid #dedddb; border-bottom: 1px solid #dedddb; float: left; width: 100%; min-height: 405px; padding: 15px 0 0 0; margin-top: 15px; }
 
 .view-kort.view-display-id-default { overflow: hidden; }
 
@@ -258,7 +258,7 @@ body.page-brevkasse .view-Brevkasse > .view-header, body.page-faq .view-faq > .v
 .view-kort #edit-adresse { display: none; }
 
 /* Kort */
-.view-kort.view-display-id-default > .view-content, .view-kort-enkelt-kommune.view-display-id-default > .view-content { border-top: 1px dashed #dedddb; border-bottom: 1px dashed #dedddb; float: left; width: 100%; margin: 15px 0 0 0; }
+.view-kort.view-display-id-default > .view-content, .view-kort-enkelt-kommune.view-display-id-default > .view-content { border-top: 1px solid #dedddb; border-bottom: 1px solid #dedddb; float: left; width: 100%; margin: 15px 0 0 0; }
 
 .gmap-popup .views-field-title { font-weight: bold; margin-bottom: 10px; }
 
@@ -271,7 +271,7 @@ body.page-brevkasse .view-Brevkasse > .view-header, body.page-faq .view-faq > .v
 .view-kort.view-display-id-default > .attachment .item-list, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list { margin-top: 31px; }
 .view-kort.view-display-id-default > .attachment .item-list h3, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list h3 { font-size: 15px; line-height: 15px; text-transform: uppercase; margin: 0 0 7px 0; }
 .view-kort.view-display-id-default > .attachment .item-list ul, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul { list-style: none; list-style-image: none; margin: 0; padding: 0; }
-.view-kort.view-display-id-default > .attachment .item-list ul li, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li { margin: 0; padding: 10px 0 10px 0; font-size: 13px; line-height: 14px; border-bottom: 1px dashed #dedddb; overflow: hidden; }
+.view-kort.view-display-id-default > .attachment .item-list ul li, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li { margin: 0; padding: 10px 0 10px 0; font-size: 13px; line-height: 14px; border-bottom: 1px solid #dedddb; overflow: hidden; }
 .view-kort.view-display-id-default > .attachment .item-list ul li > div a, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div a { line-height: 18px; }
 .view-kort.view-display-id-default > .attachment .item-list ul li div.views-field-title, .view-kort.view-display-id-default > .attachment .item-list ul li div.views-field-field-steder-website, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li div.views-field-title, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li div.views-field-field-steder-website { width: 60%; float: left; clear: left; margin-bottom: 4px; }
 .view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-title, .view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-website, .view-kort.view-display-id-default > .attachment .item-list ul li > div.views-field-title a, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-title, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-field-steder-website, .view-kort-enkelt-kommune.view-display-id-default > .attachment .item-list ul li > div.views-field-title a { /*            font-size: 16px; color: #222; font-weight: bold;*/ }
@@ -318,10 +318,10 @@ ol.search-results li .search-snippet strong { color: #ffad00; }
 
 /* Slideshow */
 .region-banner-front { position: relative; }
-.region-banner-front .slideshow-content { color: #fff; position: absolute; z-index: 99; width: 80%; max-width: 500px; margin: 0 auto; left: 10%; top: 50%; -ms-transform: translateY(-50%); -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); }
+.region-banner-front .slideshow-content { width: 928px; color: #fff; position: absolute; z-index: 99; top: 50%; left: 50%; margin-left: calc(-928px / 2); -ms-transform: translateY(-50%); -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); }
 .region-banner-front .slideshow-content span { text-transform: uppercase; }
-.region-banner-front .slideshow-content h2 { font-size: 4.5em; font-weight: bolder; margin: 0 0 0.2em 0; padding: 0; }
-.region-banner-front .slideshow-content p { line-height: 1.5em; font-size: 1.2em; }
+.region-banner-front .slideshow-content h2 { font-size: 5.5em; line-height: 1.2em; font-weight: bolder; margin: 0 0 0.2em 0; padding: 0 30% 0 0; }
+.region-banner-front .slideshow-content p { line-height: 1.5em; font-size: 1.2em; padding-right: 30%; }
 .region-banner-front .slideshow-content .read-more-btn a { color: white; font-weight: bold; text-transform: uppercase; font-size: 15px; line-height: 15px; display: block; background: #77b5cf; padding: 20px 35px; float: left; clear: both; }
 .region-banner-front .img-container { background-repeat: no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-position: center top; min-height: 500px; width: 100vw; }
 
@@ -432,3 +432,18 @@ body.page-node-796 #page-title, body.page-node-796 .node-btm, body.page-node-797
 #leftcontent ul li { color: #a6a6a6; }
 
 #leftcontent p { margin: 0; padding: 0; }
+
+/*
+FORSIDE INDGANGE
+*/
+#entries-front #hurtige-genveje { width: 928px; margin: 0 auto; }
+#entries-front #hurtige-genveje .genvej-wrapper { position: relative; float: left; width: 33%; height: 170px; text-align: center; border-right: 1px solid #e3e3e3; }
+#entries-front #hurtige-genveje .genvej-wrapper .plus-brevkasse, #entries-front #hurtige-genveje .genvej-wrapper .plus-debatforum { position: absolute; right: 0; top: 0; display: none; }
+#entries-front #hurtige-genveje .genvej-wrapper .left { width: 100%; height: 70px; margin: 0 0 15px 0; margin-top: 18px; }
+#entries-front #hurtige-genveje .genvej-wrapper .right .title a { color: #424242; font-weight: bolder; text-transform: uppercase; font-size: 18px; }
+#entries-front #hurtige-genveje .genvej-wrapper .right .description { color: #404040; text-transform: uppercase; font-size: 12px; }
+#entries-front #hurtige-genveje .genvej-wrapper:hover .plus-brevkasse, #entries-front #hurtige-genveje .genvej-wrapper:hover .plus-debatforum { display: block; }
+#entries-front #hurtige-genveje .genvej-wrapper:nth-child(1) .left { background: url(../images/front-entries/afstemninger.png) no-repeat transparent bottom center; }
+#entries-front #hurtige-genveje .genvej-wrapper:nth-child(2) .left { background: url(../images/front-entries/brevkasser.png) no-repeat transparent bottom center; }
+#entries-front #hurtige-genveje .genvej-wrapper:nth-child(3) { border-right: 0; }
+#entries-front #hurtige-genveje .genvej-wrapper:nth-child(3) .left { background: url(../images/front-entries/debatfora.png) no-repeat transparent bottom center; }

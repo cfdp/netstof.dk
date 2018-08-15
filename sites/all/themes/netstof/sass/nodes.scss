@@ -6,10 +6,10 @@
  */
 
 h1#page-title {
-	font-size: 28px; line-height: 28px;
+	font-size: 4em; line-height: 1.1em;
 	color: #424242;
-	font-weight: normal;
-	margin-bottom: 25px;
+	font-weight: bolder;
+	margin-bottom: 1em;
 }
 .not-front #main-content > #content {
 	font-size: $normal-font-size;
@@ -34,17 +34,10 @@ h2,h3,h4,h5,h6 {
 	#node-wrapper {
 		margin-top: -11px;
 	}
-		.node-top {
-			background: url("../images/big_shadow_top.png") no-repeat top center;
-			height: 11px;
-		}
 		.node-btm {
-			background: url("../images/big_shadow_bottom.png") no-repeat top center;
-			height: 15px;
+
 		}
 		.node-middle {
-			background: white url("../images/content-btm.png") no-repeat bottom center;
-			padding: 25px 23px;
 			overflow: hidden;
 		}
 			.node-middle nav ul li {
@@ -71,7 +64,7 @@ h2,h3,h4,h5,h6 {
 				padding-left: 23px;
 				width: 357px;
 				max-width: 100%;
-				border-left: 1px dashed #dedddb;
+				border-left: 1px solid #dedddb;
 			}
 	    /* Node footer */
       .node-content footer {
@@ -91,11 +84,6 @@ h2,h3,h4,h5,h6 {
 	}
 		.node-type-questions-and-answers .node-content div{margin-top:15px;}
 		.node-type-questions-and-answers .node-content div:first-child{margin-top:0;}
-			.node-questions-and-answers .node-content .question, .node-questions-and-answers .node-content .answer{
-				padding:25px 22px 15px;
-				background:url("../images/content-top.png") no-repeat scroll center top #FFFFFF;
-				box-shadow:0 0 7px #BBBBBB;
-			}
 				.node-type-questions-and-answers .node-content #page-title{
 					margin-bottom:15px;
 					font-size:28px;color:#0b5a7c;

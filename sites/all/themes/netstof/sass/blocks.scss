@@ -143,16 +143,9 @@
 /**
  * LANDING PAGE BLOCKS - Vidensbank, Raadgivning etc.
  */
-.page-vidensbank h1#page-title,
-.page-raadgivning h1#page-title {
-	margin-bottom: 10px;
-	margin-left: 20px;
-}
 .block.landing_page {
 }
 	.block.landing_page .block-top {
-		background: url("../images/big_shadow_top.png") no-repeat top center;
-		height: 11px;
 	}
 	.block.landing_page .block-middle {
 		background: white url("../images/content-btm.png") no-repeat bottom center;
@@ -160,8 +153,6 @@
 		padding: 0 20px 0 0;
 	}
 	.block.landing_page .block-btm {
-		background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
-		height: 15px;
 	}
 	.block.landing_page img {
 		float: left;
@@ -193,237 +184,153 @@
 /**
  * FORSIDE + PÅRØRENDE + VIDENSBANK - (MASONRY GRID)
  */
-#block-views-front-page-grid-block, #block-views-front-page-grid-block-1 {
-	position: relative;
-}
 .view-vidensbanken {
 	margin-top: -10px;
 }
-	#block-views-front-page-grid-block .block-title, #block-views-front-page-grid-block-1 .block-title {
-		font-size: 28px;
-		color: #404040;
-		font-weight: normal;
-		padding-left: 23px;
-	}
-	.views-fluidgrid-item {
-		float: left;
-		background: url("../images/grid-box-bg.png") no-repeat 0 9px;
-		width: 294px; height: 238px;
-		color: #404040;
-		font-size: 13px; line-height: 15px;
-	}
-	.views-fluidgrid-item a {
-    color: #404040;
-    font-size: 13px; line-height: 15px;
-  }
-	.views-fluidgrid-item .views-fluidgrid-item-inner {
-		padding: 23px 23px;
-		height: 171px;
-		position: relative;
-	}
-	.views-fluidgrid-item .views-fluidgrid-item-top {
-		background: url("../images/small_shadow_top.png") no-repeat top center;
-		height: 9px;
-	}
-	.views-fluidgrid-item .views-fluidgrid-item-btm {
-		background: url("../images/small_shadow_bottom.png") no-repeat bottom center;
-		height: 12px;
-	}
-	#block-views-front-page-grid-block .plus-link, #block-views-front-page-grid-block-1 .plus-link {
-		background: url("../images/grid-active.png") no-repeat;
-		display: block;
-		height: 57px; width: 54px;
-		position: absolute;
-		top: 0; right: 0;
-		display: none;
-	}
-  #block-views-front-page-grid-block-1 .plus-link {
-    background: url("../images/grid-active.png") no-repeat;
-  }
-		#block-views-front-page-grid-block .views-field-created, #block-views-front-page-grid-block-1 .views-field-created {
-			font-size: 12px; line-height: 11px;
-			margin-bottom: 13px;
-			float: left;
-			width: 50%;
-		}
-		#block-views-front-page-grid-block .views-field-comment-count, #block-views-front-page-grid-block-1 .views-field-comment-count {
-			font-size: 12px; line-height: 11px;
-			margin-bottom: 13px;
-			float: right;
-			width: 50%;
-			text-align: right;
-		}
-		  #block-views-front-page-grid-block .views-field-comment-count span, #block-views-front-page-grid-block-1 .views-field-comment-count span {
-				background: url("../images/comment-count.png") no-repeat 0 4px;
-				padding: 0 0 0 14px;
-      }
-		#block-views-front-page-grid-block .views-field-title, #block-views-front-page-grid-block-1 .views-field-title {
-			width: 100%;
-			float: left;
-			margin-bottom: 3px;
-		}
-		#block-views-front-page-grid-block .views-field-title a, #block-views-front-page-grid-block-1 .views-field-title a {
-			font-size: 20px; line-height: 20px;
-			color: #404040;
-		}
-		#block-views-front-page-grid-block .views-field-body, #block-views-front-page-grid-block-1 .views-field-body {
-			float: left;
-			width: 100%;
-		}
-		#block-views-front-page-grid-block .views-field-type {
-			color: #0a597b;
-			text-transform: uppercase;
-			font-size: 15px;
-		}
-		#block-views-front-page-grid-block-1 .views-field-type {
-      color: #ff6521;
-      text-transform: uppercase;
-      font-size: 15px;
+#block-views-front-page-grid-block {
+    h2.block-title{
+        font-size: 3em;
+        font-weight: bolder;
+        margin-bottom: 0.6em;
     }
-			#block-views-front-page-grid-block .views-field-type .Debat {
-				padding: 10px 0 0 50px;
-				height: 45px;
-				background: url("../images/icon-forum.png") no-repeat top left;
-			}
-			#block-views-front-page-grid-block .views-field-type .Spørgsmål-til-brevkassen {
-				padding: 10px 0 0 50px;
-				height: 45px;
-				background: url("../images/icon-brev.png") no-repeat top left;
-			}
-			#block-views-front-page-grid-block .views-field-type .Erfaringer {
-				padding: 10px 0 0 50px;
-				height: 45px;
-				background: url("../images/icon-stories.png") no-repeat top left;
-			}
-
-		/* VIEWS GRID - FILTERS AND VIEW HEADER ON PÅRØRENDE PAGE */
-		#block-views-front-page-grid-block .view-filters,
-		.view-vidensbanken .view-filters,
-		#block-views-front-page-grid-block-1 .view-header  {
-			padding: 15px 0;
-			border-top: 1px dashed #373737;
-			border-bottom: 1px dashed #373737;
-			color: #424242;
-			margin: 15px 0 14px 0;
-			font-size: 15px;
-		}
-		.view-vidensbanken .view-filters {
-			margin-top: 0;
-		}
-		#block-views-front-page-grid-block-1 .view-header  {
-      padding: 8px;
-    }
-  		#block-views-front-page-grid-block-1 .view-header p {
-        margin: 0;
-      }
-      #block-views-front-page-grid-block-1 .view-header #add-question {
-        background: url("../images/icon-plus-mini.png") no-repeat scroll 11px 11px #404040;
-        border-radius: 5px 5px 5px 5px;
-        color: white;
-        display: inline-block;
+    .view-filters  {
+        padding: 15px 0;
+        color: #424242;
+        margin: 15px 0 14px 0;
         font-size: 15px;
-        font-weight: bold;
-        line-height: 15px;
-        margin-left: 15px;
-        padding: 10px 12px 10px 30px;
-        text-transform: uppercase;
-      }
-			#edit-type-1-wrapper> label {
-				float: left;
-				margin: 0 33px 0 23px;
-				text-transform: uppercase;
-			}
-			#edit-type-1-wrapper > div {
-				float: left;
-			}
-			#block-views-front-page-grid-block .view-filters .form-type-radio,
-			.view-vidensbanken .view-filters .form-type-radio {
-				float: left;
-				margin: 0 !important;
-				background: url("../images/filter-sep.png") no-repeat center left;
-				padding: 0 12px 0 25px;
-			}
-				#block-views-front-page-grid-block .view-filters .form-type-radio:first-child,
-				.view-vidensbanken .view-filters .form-type-radio:first-child {
-					background: none;
-					padding-left: 0;
-				}
-				#block-views-front-page-grid-block .view-filters .form-type-radio label,
-				.view-vidensbanken .view-filters .form-type-radio label {
-					cursor: pointer;
-					font-weight: normal;
-					color: #424242;
-					display: block;
-				}
-				#block-views-front-page-grid-block .view-filters .form-type-radio input[checked=checked]+label,
-				.view-vidensbanken .view-filters .form-type-radio input[checked=checked]+label {
-					color: #0b5a7c;
-				}
-					#block-views-front-page-grid-block .view-filters .form-type-radio label[for=edit-type-1-all] {
-					}
-					#block-views-front-page-grid-block .view-filters .form-type-radio label[for=edit-type-1-experience] {
-						background: url("../images/stories_mikro.png") no-repeat center left;
-						padding-left: 25px;
-					}
-					#block-views-front-page-grid-block .view-filters .form-type-radio label[for=edit-type-1-forum] {
-						background: url("../images/forum_mikro.png") no-repeat center left;
-						padding-left: 25px;
-					}
-					#block-views-front-page-grid-block .view-filters .form-type-radio label[for=edit-type-1-questions-and-answers] {
-						background: url("../images/brevkasse_mikro.png") no-repeat top left;
-						padding-left: 25px;
-					}
-
-			#block-views-front-page-grid-block .view-filters input[type=radio],
-			.view-vidensbanken .view-filters input[type=radio]{
+        .form-type-radio {
+            float: left;
+            margin: 0 15px 0 0!important;
+            input[type=radio]{
 				display: none;
 			}
-			.lt-ie9 #block-views-front-page-grid-block .view-filters input[type=radio],
-			.lt-ie9 .view-vidensbanken .view-filters input[type=radio]{
-				position: fixed;
-				top: -50px;
-				left: -50px;
-				display: block;
-			}
-		/* PAGER */
-		#block-views-front-page-grid-block ul.pager,
-		#block-views-front-page-grid-block-1 ul.pager {
-			position: absolute;
-			right: 28px;
-			top: 65px;
+            input[type=radio] + label {
+                padding: 7px 20px;
+                border: 1px solid #424242;
+                font-weight: normal;
+                cursor: pointer;
+                &:hover{
+                    background: #424242;
+                    color: #ffffff;
+                }
+            }
+            input[checked=checked]+label {
+                background: #424242;
+                color: #ffffff;
+            }
+        }
+    }
+    .view-content{
+        .views-row-image{
+            float: left;
+            height: 316px;
+            background-repeat: no-repeat;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-position: center center;
+            &.first{
+                width: calc(100% / 2);
+            }
+            &.last{
+                width: calc(100% / 4);
+            }
+        }
+        .views-row {
+            float: left;
+            width: calc((100% - (46px*4)) / 4); 
+            height: 270px;
+            color: #404040;
+            padding: 23px;
+            font-size: 13px; line-height: 15px;
+            position: relative;
+            &:nth-child(3), &:nth-child(5){
+                background: #f6f5f5;
+            }
+            
+            .views-field-type {
+                margin-bottom: 15px;
+                .forum {
+                    padding: 0 0 0 50px;
+                    height: 45px;
+                    background: url("../images/front-entries/debatfora.png") no-repeat bottom left;
+                    background-size: 48px;
+                }
+                .questions_and_answers {
+                    padding: 0 0 0 50px;
+                    height: 45px;
+                    background: url("../images/front-entries/brevkasser.png") no-repeat bottom left;
+                    background-size: 38px;
+                }
+            }
+            .views-field-title {
+                a{
+                    font-size: 24px;
+                    line-height: 1.2em;
+                    color: #404040;
+                    font-weight: bold;    
+                }
+            }
+            .views-field-body {
+                line-height: 1.6em;
+                margin-top: 10px;
+            }
+            .views-field-nothing {
+                .plus-link{
+                    background: url("../images/grid-active.png") no-repeat;
+                    height: 57px; width: 54px;
+                    position: absolute;
+                    top: 0; right: 0;
+                    display: none;    
+                }
+            }
+            &:hover{
+                .views-field-nothing {
+                    .plus-link{
+                        display: block;    
+                    }
+                }    
+            }
+        }    
+    }
+    .item-list{
+        .pager{
+            position: absolute;
+			right: 0;
+			top: 99px;
 			color: #424242;
 			font-size: 14px;
 			font-weight: normal;
-		}
-		.view-vidensbanken ul.pager {
-			position: absolute;
-			right: 28px;
-			top: 59px;
-			color: #424242;
-			font-size: 14px;
-			font-weight: normal;
-		}
-			#block-views-front-page-grid-block ul.pager li,
-			#block-views-front-page-grid-block-1 ul.pager li,
-			.view-vidensbanken ul.pager li  {
+            li  {
 				padding: 0;
+                a{
+                    color: #FFF;
+                    background: #424242;
+                    padding: 1px 8px;
+                    text-decoration: none;    
+                }
+                &.pager-current{
+                    margin: 0 8px;
+                    font-weight: normal;
+                }
 			}
-			#block-views-front-page-grid-block ul.pager li.pager-current,
-			#block-views-front-page-grid-block-1 ul.pager li.pager-current,
-			.view-vidensbanken ul.pager li.pager-current {
-				padding: 0 10px;
-				font-family: "Cabin", sans-serif;
-				font-size: 15px;
-				font-weight: normal;
-			}
-			#block-views-front-page-grid-block ul.pager li a,
-			#block-views-front-page-grid-block-1 ul.pager li a,
-			.view-vidensbanken ul.pager li a {
-				color: #FFF;
-				background: #424242;
-				padding: 1px 8px;
-				text-decoration: none;
-			}
+        }
+    }
+}
+
+.lt-ie9 #block-views-front-page-grid-block .view-filters input[type=radio],
+.lt-ie9 .view-vidensbanken .view-filters input[type=radio]{
+    position: fixed;
+    top: -50px;
+    left: -50px;
+    display: block;
+}
+
+		
+
+
+	
 
 
 /**
@@ -432,16 +339,12 @@
 .region-sidebar-first {
 
   .block {
-		background: url("../images/small_shadow_top.png") no-repeat top center;
-		padding-top: 9px;
-
+    margin-bottom: 2.5em;  
     .block-content {
       .not-front & {
         font-size: $normal-font-size;
         line-height: $normal-line-height;
         color: #404040;
-        background: url("../images/block-btm.png") no-repeat bottom center;
-        padding: 0 23px 23px 23px;
         overflow: hidden;
       }
     }
@@ -500,8 +403,6 @@
 
 }
 	.region-sidebar-first .block .block-inner {
-		background: url("../images/small_shadow_bottom.png") no-repeat bottom center;
-		padding-bottom: 12px;
 	}
 	.region-sidebar-first .block .block-middle {
 		background: #FFFFFF;
@@ -560,7 +461,7 @@
 		}
 		.region-sidebar-first #block-block-7 .block-content hr,
 		.region-sidebar-first #block-block-8 .block-content hr {
-			border-top: 1px dashed #FFFFFF;
+			border-top: 1px solid #FFFFFF;
 			border-bottom: none;
 			height: 0;
 			margin-bottom: 15px;
@@ -781,7 +682,7 @@ ul.right-side-list {
 		list-style: none;
 		list-style-image: 0;
 		margin: 0 0 12px 0; padding: 0 0 13px 0;
-		border-bottom: 1px dashed #656565;
+		border-bottom: 1px solid #656565;
 	}
 	ul.right-side-list li.views-row-last {
 		border-bottom: none;
@@ -812,28 +713,7 @@ ul.right-side-list {
 				text-transform: uppercase;
 				font-weight: bold;
 			}
-/**
- * FOOTER TOP
- */
-.region-footer-top {
-}
-	.region-footer-top .block {
-		color: #FFFFFF;
-		font-size: 13px; line-height: 15px;
-		margin-bottom: 60px;
-	}
-	.region-footer-top .block-first {
-		width: 50%;
-		float: left;
-		text-transform: uppercase;
-	}
-	.region-footer-top .block-last {
-		width: 50%;
-		float: left;
-	}
-		.region-footer-top .block p {
-			margin-bottom: 0;
-		}
+
 /**
  * FOOTER
  */
@@ -850,6 +730,9 @@ ul.right-side-list {
 		margin-bottom: 18px;
 		text-transform: uppercase;
 		font-weight: normal;
+	}
+    .region-footer .block-content a {
+		color: #000000;
 	}
 	.region-footer .block-last {
 		margin: 0;
@@ -868,21 +751,22 @@ ul.right-side-list {
 	.region-footer-btm .block-last {
 		width: 50%;
 		float: left;
-		text-align: right;
 		font-size: 12px;
-		color: #404040;
+		color: #424242;
 	}
 	.region-footer-btm .block-first {
 		width: 50%;
 		float: left;
 		text-transform: uppercase;
 		text-align: left;
+        font-weight: bold;
+        font-size: 10px;
 	}
 		.region-footer-btm .block p {
 			margin-bottom: 0;
 		}
 		.region-footer-btm .block a {
-			color: #404040;
+			color: #424242;
 		}
 
 /**
@@ -949,16 +833,6 @@ ul.ui-autocomplete {
 	.view-usergenerated-content .views-row {
 		margin-bottom: 5px;
 	}
-		#footer-container .view-usergenerated-content a, #footer-container #block-block-5 a, #footer-container #block-block-6 a, #footer-container #block-block-26 a {
-			font-size: 13px;
-			color: #FFFFFF;
-			border-bottom: 1px #ccc dotted;
-		}
-
-		#footer-container .view-usergenerated-content a:hover, #footer-container #block-block-5 a:hover, #footer-container #block-block-6 a:hover, #footer-container #block-block-26 a:hover {
-			border-bottom: 1px #fff dotted;
-			text-decoration: none;
-		}
 
 /**
  * PAAROERENDE GRID
