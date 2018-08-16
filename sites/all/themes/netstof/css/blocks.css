@@ -45,7 +45,10 @@ $legacy-support-for-ie7: true; */
 #entrances li:hover { background: url("../images/ent-hover.png") no-repeat; }
 
 /** LANDING PAGE BLOCKS - Vidensbank, Raadgivning etc. */
-.block.landing_page .block-middle { background: white url("../images/content-btm.png") no-repeat bottom center; overflow: hidden; padding: 0 20px 0 0; }
+.block.landing_page { padding-bottom: 2em; margin-bottom: 2em; border-bottom: 1px solid #c5c5c5; }
+.block.landing_page.block-last { border: 0; margin-bottom: 0; padding-bottom: 0; }
+
+.block.landing_page .block-middle { overflow: hidden; }
 
 .block.landing_page img { float: left; margin: 0 20px 0 0; }
 
@@ -53,7 +56,7 @@ $legacy-support-for-ie7: true; */
 
 .block.landing_page p { margin-bottom: 13px; }
 
-.block.landing_page a.add-link { color: white; font-weight: bold; text-transform: uppercase; font-size: 15px; line-height: 15px; display: inline-block; background: #0B5A7C url("../images/icon-white-triangle.png") no-repeat 11px 11px; padding: 10px 12px 10px 30px; border-radius: 5px; min-width: 110px; }
+.block.landing_page a.add-link { color: white; font-weight: bold; text-transform: uppercase; font-size: 15px; line-height: 15px; display: inline-block; background: #0B5A7C url("../images/icon-white-triangle.png") no-repeat 34px 15px; padding: 14px 35px 14px 53px; min-width: 110px; }
 
 /** FORSIDE + PÅRØRENDE + VIDENSBANK - (MASONRY GRID) */
 .view-vidensbanken { margin-top: -10px; }
@@ -75,9 +78,11 @@ $legacy-support-for-ie7: true; */
 #block-views-front-page-grid-block .view-content .views-row .views-field-type .questions_and_answers { padding: 0 0 0 50px; height: 45px; background: url("../images/front-entries/brevkasser.png") no-repeat bottom left; background-size: 38px; }
 #block-views-front-page-grid-block .view-content .views-row .views-field-title a { font-size: 24px; line-height: 1.2em; color: #404040; font-weight: bold; }
 #block-views-front-page-grid-block .view-content .views-row .views-field-body { line-height: 1.6em; margin-top: 10px; }
+#block-views-front-page-grid-block .view-content .views-row .views-field-body a { color: #424242; text-decoration: none; }
 #block-views-front-page-grid-block .view-content .views-row .views-field-nothing .plus-link { background: url("../images/grid-active.png") no-repeat; height: 57px; width: 54px; position: absolute; top: 0; right: 0; display: none; }
 #block-views-front-page-grid-block .view-content .views-row:hover .views-field-nothing .plus-link { display: block; }
-#block-views-front-page-grid-block .item-list .pager { position: absolute; right: 0; top: 99px; color: #424242; font-size: 14px; font-weight: normal; }
+#block-views-front-page-grid-block .item-list { position: relative; }
+#block-views-front-page-grid-block .item-list .pager { position: absolute; right: 0; top: -40px; color: #424242; font-size: 14px; font-weight: normal; }
 #block-views-front-page-grid-block .item-list .pager li { padding: 0; }
 #block-views-front-page-grid-block .item-list .pager li a { color: #FFF; background: #424242; padding: 1px 8px; text-decoration: none; }
 #block-views-front-page-grid-block .item-list .pager li.pager-current { margin: 0 8px; font-weight: normal; }
@@ -123,14 +128,14 @@ body.page-paaroerende .region-sidebar-first #block-block-19 .block-content { pad
 
 .region-sidebar-first #block-block-7 .block-content a, .region-sidebar-first #block-block-8 .block-content a { color: #77b5cf; }
 
-.region-sidebar-first #block-block-7 a.add-post, .region-sidebar-first #block-block-8 a.add-post { color: white; font-weight: bold; text-transform: uppercase; font-size: 15px; line-height: 15px; display: block; background: #77b5cf url("../images/icon-plus-mini.png") no-repeat 11px 11px; padding: 10px 12px 10px 30px; border-radius: 5px; float: left; clear: both; }
+.region-sidebar-first #block-block-7 a.add-post, .region-sidebar-first #block-block-8 a.add-post { color: white; font-weight: bold; text-transform: uppercase; font-size: 15px; line-height: 15px; display: block; background: #77b5cf url("../images/icon-plus-mini.png") no-repeat 32px 21px; padding: 20px 35px 20px 53px; float: left; clear: both; }
 
 /** DANMARKSKORT BLOK */
 .region-sidebar-first .maps-block div.block-middle { background: #404040 url("../images/maps-bg-block.png") no-repeat bottom center !important; padding-bottom: 160px; position: relative; }
 
 .region-sidebar-first .maps-block h2.block-title { font-size: 20px; text-transform: uppercase; color: #FFFFFF; background: none; padding-bottom: 15px; }
 
-.not-front .region-sidebar-first .maps-block .content { color: #FFFFFF; font-size: 14px; line-height: 16px; padding-bottom: 0; background: none; }
+.not-front .region-sidebar-first .maps-block .content { color: #FFFFFF; font-size: 14px; line-height: 16px; padding: 0 23px; background: none; }
 
 .maps-block .goto-maps { position: absolute; bottom: 25px; right: 35px; }
 
@@ -280,3 +285,6 @@ ul.ui-autocomplete { border: none; background: none; border-radius: 0; margin: 0
 .region-undercontent .block h3, .region-undercontent .block-title { font-size: 15px; text-transform: uppercase; background: #e5e4e1; padding: 8px 6px; }
 
 .region-undercontent .block-content a { color: #404040; }
+
+/** Disclaimer "Før du læser" */
+#block-block-33 div.messages { margin-bottom: 2em; background: #e2efdf url(../images/alert_icon.png) no-repeat 30px 40px; border-color: #bfcfbb; color: #424242; padding: 15px 15px 15px 135px; }

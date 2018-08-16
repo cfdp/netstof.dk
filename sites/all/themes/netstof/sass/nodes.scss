@@ -9,7 +9,7 @@ h1#page-title {
 	font-size: 4em; line-height: 1.1em;
 	color: #424242;
 	font-weight: bolder;
-	margin-bottom: 1em;
+	margin-bottom: 0.5em;
 }
 .not-front #main-content > #content {
 	font-size: $normal-font-size;
@@ -57,6 +57,8 @@ h2,h3,h4,h5,h6 {
 			}
 			.field-name-field-billede {
 				line-height: 0;
+                margin-bottom: 1em;
+                margin-top: 11px;
 			}
 			/* Narrow content area */
 			#rightcontent.narrow {
@@ -85,8 +87,7 @@ h2,h3,h4,h5,h6 {
 		.node-type-questions-and-answers .node-content div{margin-top:15px;}
 		.node-type-questions-and-answers .node-content div:first-child{margin-top:0;}
 				.node-type-questions-and-answers .node-content #page-title{
-					margin-bottom:15px;
-					font-size:28px;color:#0b5a7c;
+					line-height: 1em;
 				}
 			/* question part */
 			.node-questions-and-answers .node-content .question .date{margin-bottom:15px;}
@@ -110,6 +111,9 @@ h2,h3,h4,h5,h6 {
 			/* answer part */
 			.node-type-questions-and-answers .node-content .answer {
 				padding-bottom:1px;
+                margin-top: 3em;
+                border-top: 1px solid #c5c5c5;
+                padding-top: 2em;
 			}
 			.node-type-questions-and-answers .answer .field-name-field-qna-answer h2{
 				font-size:20px;font-weight:normal;
@@ -260,42 +264,37 @@ h2,h3,h4,h5,h6 {
 
 }
 	#comments-form-wrapper .comment-top {
-		background: url("../images/big_shadow_top.png") no-repeat top center;
-		height: 11px;
+		
 	}
 	#comments-form-wrapper .comment-btm {
-		background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
-		height: 15px;
+		
 	}
 	#comments-form-wrapper h2.comment-title,
 	h2.comment-form {
-		padding: 25px 23px 25px;
-		/* background: white url("../images/content-top.png") no-repeat top center; */
+		padding: 25px 0 25px;
 		background-color: #FFFFFF;
 		font-size: 20px;
-		text-transform: uppercase;
 		font-weight: normal;
 		margin: 0;
+        border-top: 1px solid #c5c5c5;
 	}
 	#comment-form {
-		padding: 0 23px 15px;
-		background: white url("../images/content-btm.png") no-repeat bottom center;
+
 	}
 		#comment-form #edit-comment-body-und-0-format {
 			display: none;
 		}
 		#comment-form #edit-submit {
-			color: white;
-			font-weight: bold;
-			text-transform: uppercase;
-			font-size: 14px;
-			line-height: 14px;
-			background: #0B5A7C url("../images/icon-plus.png") no-repeat 10px 8px;
-			padding: 10px 12px 10px 35px;
-			border: none;
-			border-radius: 5px;
-			text-align: left;
-			margin-top: 15px;
+			color: white !important;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 15px;
+            line-height: 15px;
+            display: inline-block;
+            background: #0B5A7C url(../images/icon-plus-mini.png) no-repeat 29px 21px;
+            padding: 20px 35px 20px 53px;
+            border: 0;
+            margin-top: 15px;
 		}
 		#comments-form-wrapper label {
 			margin-bottom: 3px;

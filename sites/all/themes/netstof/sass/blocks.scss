@@ -144,13 +144,19 @@
  * LANDING PAGE BLOCKS - Vidensbank, Raadgivning etc.
  */
 .block.landing_page {
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+    border-bottom: 1px solid #c5c5c5;
+    &.block-last{
+        border: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
 }
 	.block.landing_page .block-top {
 	}
 	.block.landing_page .block-middle {
-		background: white url("../images/content-btm.png") no-repeat bottom center;
 		overflow: hidden;
-		padding: 0 20px 0 0;
 	}
 	.block.landing_page .block-btm {
 	}
@@ -175,9 +181,8 @@
 		font-size: 15px;
 		line-height: 15px;
 		display: inline-block;
-		background: #0B5A7C url("../images/icon-white-triangle.png") no-repeat 11px 11px;
-		padding: 10px 12px 10px 30px;
-		border-radius: 5px;
+		background: #0B5A7C url("../images/icon-white-triangle.png") no-repeat 34px 15px;
+		padding: 14px 35px 14px 53px;
 		min-width: 110px;
 	}
 
@@ -275,6 +280,10 @@
             .views-field-body {
                 line-height: 1.6em;
                 margin-top: 10px;
+                a{
+                    color: #424242;
+                    text-decoration: none;
+                }
             }
             .views-field-nothing {
                 .plus-link{
@@ -295,10 +304,11 @@
         }    
     }
     .item-list{
+        position: relative;
         .pager{
             position: absolute;
 			right: 0;
-			top: 99px;
+			top: -40px;
 			color: #424242;
 			font-size: 14px;
 			font-weight: normal;
@@ -480,9 +490,8 @@
 		font-size: 15px;
 		line-height: 15px;
 		display: block;
-		background: #77b5cf url("../images/icon-plus-mini.png") no-repeat 11px 11px;
-		padding: 10px 12px 10px 30px;
-		border-radius: 5px;
+		background: #77b5cf url("../images/icon-plus-mini.png") no-repeat 32px 21px;
+		padding: 20px 35px 20px 53px;
 		float: left;
 		clear: both;
 	}
@@ -505,7 +514,7 @@
 		color: #FFFFFF;
 		font-size: 14px;
 		line-height: 16px;
-		padding-bottom: 0;
+		padding: 0 23px;
 		background: none;
 	}
 	.maps-block .goto-maps {
@@ -901,3 +910,17 @@ ul.ui-autocomplete {
 		.region-undercontent .block-content a {
 			color: #404040;
 		}
+
+/**
+ * Disclaimer "Før du læser"
+ */
+
+#block-block-33{
+    div.messages{
+        margin-bottom: 2em;
+        background: #e2efdf url(../images/alert_icon.png) no-repeat 30px 40px;
+        border-color: #bfcfbb;
+        color: #424242;
+        padding: 15px 15px 15px 135px;
+    }
+}
