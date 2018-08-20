@@ -269,21 +269,13 @@ body.page-brevkasse .view-Brevkasse > .view-header, body.page-faq .view-faq > .v
 @media screen and (min-width: 520px) { .view-kort .dk-map-blured { width: 100%; height: 465px; background: url("../images/dk-map-blured.jpg") no-repeat top center; }
   .view-kort .dk-map-blured p { position: relative; top: 91px; left: 145px; } }
 /** SØGERESULTATER */
-.page-search-node section#main-content { background: url("../images/big_shadow_top.png") no-repeat top center; padding-top: 11px; position: relative; top: -11px; }
-
-.page-search-node #main-content-header { padding: 23px 23px 0 23px; background: white url("../images/content-top.png") no-repeat top center; }
-
-.page-search-node #content { padding: 0 23px 23px 23px; background: white url("../images/content-btm.png") no-repeat bottom center; }
-
-.page-search-node #content-btm-shadow { background: url("../images/big_shadow_bottom.png") no-repeat bottom center; height: 15px; }
-
-.page-search-node #content h2 { font-size: 20px; text-transform: uppercase; color: #222; margin-bottom: 20px; margin-top: 30px; }
+.page-search-node #content h2 { font-size: 25px; color: #222; margin-bottom: 35px; margin-top: 45px; font-weight: bolder; }
 
 ol.search-results { margin: 0; padding: 0; }
 
-ol.search-results li { margin-bottom: 22px; }
+ol.search-results li { margin-bottom: 3em; }
 
-ol.search-results li h3 { font-size: 15px; text-transform: uppercase; margin: 0 0 10px 0; padding: 0; }
+ol.search-results li h3 { font-size: 18px; margin: 0 0 10px 0; padding: 0; }
 
 ol.search-results li h3 a { color: #222; }
 
@@ -300,7 +292,7 @@ ol.search-results li .search-snippet strong { color: #ffad00; }
 
 .view-Brevkasse ul.pager li a, .view-leksikon ul.pager li a, .page-search-node ul.pager li a, .view-id-advanced_forum_topic_list ul.pager li a { color: #424242; }
 
-/* Slideshow */
+/* Slideshow forside*/
 .region-banner-front { position: relative; }
 .region-banner-front .slideshow-content { width: 928px; color: #fff; position: absolute; z-index: 99; top: 50%; left: 50%; margin-left: calc(-928px / 2); -ms-transform: translateY(-50%); -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); }
 .region-banner-front .slideshow-content span { text-transform: uppercase; }
@@ -308,6 +300,13 @@ ol.search-results li .search-snippet strong { color: #ffad00; }
 .region-banner-front .slideshow-content p { line-height: 1.5em; font-size: 1.2em; padding-right: 30%; }
 .region-banner-front .slideshow-content .read-more-btn a { color: white; font-weight: bold; text-transform: uppercase; font-size: 15px; line-height: 15px; display: block; background: #77b5cf; padding: 20px 35px; float: left; clear: both; }
 .region-banner-front .img-container { background-repeat: no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-position: center top; min-height: 500px; width: 100vw; }
+
+/* Slideshow Pårørende */
+#block-views-slideshow-block-1 { position: relative; }
+#block-views-slideshow-block-1 .views-field-nothing { background: rgba(0, 0, 0, 0.5); padding: 1.2em 2em; color: #fff; position: absolute; bottom: 24px; left: 0; width: 45%; }
+#block-views-slideshow-block-1 .views-field-nothing span > span { text-transform: uppercase; font-size: 0.8em; }
+#block-views-slideshow-block-1 .views-field-nothing h2 { font-size: 1.6em; line-height: 1.2em; font-weight: bolder; margin: 0 0 0.5em 0; padding: 0; }
+#block-views-slideshow-block-1 .views-field-nothing .read-more-btn a { color: white; font-weight: bold; text-transform: uppercase; font-size: 12px; line-height: 12px; display: block; background: #77b5cf; padding: 12px 20px; float: left; clear: both; }
 
 #leftcontent { width: 160px; margin-top: 20px; padding: 0 20px 0 20px; float: left; }
 

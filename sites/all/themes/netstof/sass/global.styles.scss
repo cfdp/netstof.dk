@@ -1931,3 +1931,18 @@ a.btn {
   font-size: 12px;
   margin-bottom: 10px;
 }
+
+.node-forum-form input[type=submit]{
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 15px;
+    display: block;
+    background: #77b5cf;
+    padding: 20px 35px;
+    float: left;
+    clear: both;
+    border: 0;
+    outline: none;
+}

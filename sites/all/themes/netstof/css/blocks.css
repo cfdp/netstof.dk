@@ -2,14 +2,17 @@
 /* $legacy-support-for-ie6: true;
 $legacy-support-for-ie7: true; */
 /** SEARCH BLOCK / SEARCH FORM */
+/* header search */
+#block-menu-block-1 { float: left; }
+
+#block-search-form { float: left; background: red; }
+#block-search-form form .container-inline { float: left; }
+#block-search-form form .search-icon { background: yellow url("../images/search-icon.png") no-repeat left center; width: 25px; height: 108px; float: left; }
+
 .search-form { margin-bottom: 0; }
 
 /* Right sidebar */
 #block-block-7 { margin-top: 25px; }
-
-#search-form .form-type-textfield label { display: none; }
-
-#search-block-form input[type=search], #search-form input[type=text] { border: none; background: #404040 url("../images/icon-loop.png") no-repeat 14px 16px; padding: 0 10px 0 40px; margin: 0; color: #FFFFFF; height: 44px; width: 186px; font-size: 14px; font-family: "Cabin", sans-serif; outline: none; box-sizing: content-box; }
 
 #search-block-form input[type=submit], #search-form input[type=submit] { border: none; background: #ffad00; text-transform: uppercase; color: #FFFFFF; width: 58px; height: 44px; font-family: "Cabin", sans-serif; font-size: 14px; }
 
@@ -58,7 +61,7 @@ $legacy-support-for-ie7: true; */
 
 .block.landing_page a.add-link { color: white; font-weight: bold; text-transform: uppercase; font-size: 15px; line-height: 15px; display: inline-block; background: #0B5A7C url("../images/icon-white-triangle.png") no-repeat 34px 15px; padding: 14px 35px 14px 53px; min-width: 110px; }
 
-/** FORSIDE + PÅRØRENDE + VIDENSBANK - (MASONRY GRID) */
+/** FORSIDE VIEW */
 .view-vidensbanken { margin-top: -10px; }
 
 #block-views-front-page-grid-block h2.block-title { font-size: 3em; font-weight: bolder; margin-bottom: 0.6em; }
@@ -88,6 +91,27 @@ $legacy-support-for-ie7: true; */
 #block-views-front-page-grid-block .item-list .pager li.pager-current { margin: 0 8px; font-weight: normal; }
 
 .lt-ie9 #block-views-front-page-grid-block .view-filters input[type=radio], .lt-ie9 .view-vidensbanken .view-filters input[type=radio] { position: fixed; top: -50px; left: -50px; display: block; }
+
+/** PÅRØRENDE VIEW */
+#block-views-front-page-grid-block-1 h2.block-title { font-size: 3em; font-weight: bolder; margin-bottom: 0.8em; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 { position: relative; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 .view-header a { color: white; font-weight: bold; text-transform: uppercase; font-size: 15px; line-height: 15px; background: #77b5cf url(../images/icon-plus-mini.png) no-repeat 24px 18px; padding: 15px 25px 15px 43px; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content { margin-top: 4em; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row { float: left; width: calc((100% - (46px*2)) / 2); height: 270px; color: #404040; padding: 23px; font-size: 13px; line-height: 15px; position: relative; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row:nth-child(1), #block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row:nth-child(4) { background: #f6f5f5; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row .views-field-type { margin-bottom: 15px; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row .views-field-type .forum { padding: 0 0 0 50px; height: 45px; background: url("../images/front-entries/debatfora.png") no-repeat bottom left; background-size: 48px; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row .views-field-type .questions_and_answers { padding: 0 0 0 50px; height: 45px; background: url("../images/front-entries/brevkasser.png") no-repeat bottom left; background-size: 38px; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row .views-field-title a { font-size: 24px; line-height: 1.2em; color: #404040; font-weight: bold; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row .views-field-body { line-height: 1.6em; margin-top: 10px; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row .views-field-body a { color: #424242; text-decoration: none; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row .views-field-nothing .plus-link { background: url("../images/grid-active.png") no-repeat; height: 57px; width: 54px; position: absolute; top: 0; right: 0; display: none; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row:hover .views-field-nothing .plus-link { display: block; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 .item-list { position: absolute; top: 0; right: 0; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 .item-list .pager { color: #424242; font-size: 14px; font-weight: normal; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 .item-list .pager li { padding: 0; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 .item-list .pager li a { color: #FFF; background: #424242; padding: 1px 8px; text-decoration: none; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 .item-list .pager li.pager-current { margin: 0 8px; font-weight: normal; }
 
 /** RIGHT SIDEBAR */
 .region-sidebar-first { /** FEATURED MUNICIPALITY PAGES BLOCKS */ }
@@ -191,6 +215,8 @@ ul#netstof-social-list li { float: left; list-style: none; margin: 0 11px 0 0; }
 #block-webform-client-block-564 input[type=text].error, #block-webform-client-block-564 input[type=email].error, #block-webform-client-block-564 textarea.error { border-color: #cc3333; }
 
 #block-webform-client-block-564 textarea { max-width: 100%; min-height: 150px; }
+
+#block-webform-client-block-564 .form-item-captcha-response { width: 130px; }
 
 #block-webform-client-block-564 input[type=submit] { color: white; font-weight: bold; text-transform: uppercase; font-size: 14px; line-height: 14px; background: #0B5A7C; padding: 10px 12px 10px 12px; border: none; border-radius: 5px; text-align: center; width: 100%; }
 

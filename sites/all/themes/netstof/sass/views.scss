@@ -820,38 +820,31 @@
  * SØGERESULTATER
  */
 .page-search-node section#main-content {
-	background: url("../images/big_shadow_top.png") no-repeat top center;
-	padding-top: 11px;
-	position: relative; top: -11px;
 }
 .page-search-node #main-content-header {
-	padding: 23px 23px 0 23px;
-	background: white url("../images/content-top.png") no-repeat top center;
+
 }
 .page-search-node #content {
-	padding: 0 23px 23px 23px;
-	background: white url("../images/content-btm.png") no-repeat bottom center;
+
 }
 .page-search-node #content-btm-shadow {
-	background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
-	height: 15px;
+
 }
 .page-search-node #content h2 {
-	font-size: 20px;
-	text-transform: uppercase;
+	font-size: 25px;
 	color: #222;
-	margin-bottom: 20px;
-	margin-top: 30px;
+	margin-bottom: 35px;
+	margin-top: 45px;
+    font-weight: bolder;
 }
 ol.search-results {
 	margin: 0; padding: 0;
 }
 	ol.search-results li {
-		margin-bottom: 22px;
+		margin-bottom: 3em;
 	}
 		ol.search-results li h3 {
-			font-size: 15px;
-			text-transform: uppercase;
+			font-size: 18px;
 			margin: 0 0 10px 0;
 			padding: 0;
 		}
@@ -894,7 +887,7 @@ ol.search-results {
 		color: #424242;
 	}
 
-/* Slideshow */
+/* Slideshow forside*/
 .region-banner-front{
     position: relative;
     .slideshow-content{
@@ -948,6 +941,43 @@ ol.search-results {
         background-position: center top;
         min-height: 500px;
         width: 100vw;
+    }
+}
+
+/* Slideshow Pårørende */
+#block-views-slideshow-block-1{
+    position: relative;
+    .views-field-nothing{
+        background: rgba(0, 0, 0, 0.5);
+        padding: 1.2em 2em;
+        color: #fff;
+        position: absolute;
+        bottom: 24px;
+        left: 0;;
+        width: 45%;
+        span > span{
+            text-transform: uppercase;
+            font-size: 0.8em;
+        }
+        h2{
+            font-size: 1.6em;
+            line-height: 1.2em;
+            font-weight: bolder;
+            margin: 0 0 0.5em 0;
+            padding: 0;
+        }
+        .read-more-btn a{
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+            line-height: 12px;
+            display: block;
+            background: #77b5cf;
+            padding: 12px 20px;
+            float: left;
+            clear: both;
+        }
     }
 }
 

@@ -4,6 +4,27 @@
 /**
  * SEARCH BLOCK / SEARCH FORM
  */
+
+/* header search */
+#block-menu-block-1{
+    float: left;
+}
+#block-search-form{
+    float: left;
+    background: red;
+    form{
+        .container-inline{
+            float: left;
+        }
+        .search-icon{
+            background: yellow url("../images/search-icon.png") no-repeat left center;
+            width: 25px;
+            height: 108px;
+            float: left;
+        }    
+    }
+}
+
 .search-form {
 	margin-bottom: 0;
 }
@@ -15,23 +36,7 @@
 #search-form {
 
 }
-	#search-form .form-type-textfield label {
-		display: none;
-	}
-	#search-block-form input[type=search],
-	#search-form input[type=text]{
-		border: none;
-		background: #404040 url("../images/icon-loop.png") no-repeat 14px 16px;
-		padding: 0 10px 0 40px;
-		margin: 0;
-		color: #FFFFFF;
-		height: 44px;
-		width: 186px;
-		font-size: 14px;
-		font-family: "Cabin", sans-serif;
-		outline: none;
-		box-sizing: content-box;
-	}
+
 	#search-block-form input[type=submit],
 	#search-form input[type=submit]{
 		border: none;
@@ -187,7 +192,7 @@
 	}
 
 /**
- * FORSIDE + PÅRØRENDE + VIDENSBANK - (MASONRY GRID)
+ * FORSIDE VIEW
  */
 .view-vidensbanken {
 	margin-top: -10px;
@@ -338,7 +343,116 @@
 }
 
 		
+/**
+ * PÅRØRENDE VIEW
+ */
+#block-views-front-page-grid-block-1 {
+    h2.block-title{
+        font-size: 3em;
+        font-weight: bolder;
+        margin-bottom: 0.8em;
+    }
+    .view-display-id-block_1{
+        position: relative;
+        .view-header {
+            a{
+                color: white;
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: 15px;
+                line-height: 15px;
+                background: #77b5cf url(../images/icon-plus-mini.png) no-repeat 24px 18px;
+                padding: 15px 25px 15px 43px;
+            }
+        }
+        .view-content{
+            margin-top: 4em;
+            .views-row {
+                float: left;
+                width: calc((100% - (46px*2)) / 2); 
+                height: 270px;
+                color: #404040;
+                padding: 23px;
+                font-size: 13px; line-height: 15px;
+                position: relative;
+                &:nth-child(1), &:nth-child(4){
+                    background: #f6f5f5;
+                }
 
+                .views-field-type {
+                    margin-bottom: 15px;
+                    .forum {
+                        padding: 0 0 0 50px;
+                        height: 45px;
+                        background: url("../images/front-entries/debatfora.png") no-repeat bottom left;
+                        background-size: 48px;
+                    }
+                    .questions_and_answers {
+                        padding: 0 0 0 50px;
+                        height: 45px;
+                        background: url("../images/front-entries/brevkasser.png") no-repeat bottom left;
+                        background-size: 38px;
+                    }
+                }
+                .views-field-title {
+                    a{
+                        font-size: 24px;
+                        line-height: 1.2em;
+                        color: #404040;
+                        font-weight: bold;    
+                    }
+                }
+                .views-field-body {
+                    line-height: 1.6em;
+                    margin-top: 10px;
+                    a{
+                        color: #424242;
+                        text-decoration: none;
+                    }
+                }
+                .views-field-nothing {
+                    .plus-link{
+                        background: url("../images/grid-active.png") no-repeat;
+                        height: 57px; width: 54px;
+                        position: absolute;
+                        top: 0; right: 0;
+                        display: none;    
+                    }
+                }
+                &:hover{
+                    .views-field-nothing {
+                        .plus-link{
+                            display: block;    
+                        }
+                    }    
+                }
+            }    
+        }
+        .item-list{
+            position: absolute;
+            top: 0;
+            right: 0;
+            .pager{
+                color: #424242;
+                font-size: 14px;
+                font-weight: normal;
+                li  {
+                    padding: 0;
+                    a{
+                        color: #FFF;
+                        background: #424242;
+                        padding: 1px 8px;
+                        text-decoration: none;    
+                    }
+                    &.pager-current{
+                        margin: 0 8px;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+    }
+}
 
 	
 
@@ -653,6 +767,9 @@
 					max-width: 100%;
 					min-height: 150px;
 				}
+            #block-webform-client-block-564 .form-item-captcha-response {
+                width: 130px;
+            }
 			#block-webform-client-block-564 input[type=submit] {
 				color: white;
 				font-weight: bold;
