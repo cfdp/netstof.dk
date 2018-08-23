@@ -119,4 +119,5 @@ FORSIDE INDGANGE
   #block-views-front-page-grid-block .view-content .views-row-image.first { display: none; }
   #block-views-front-page-grid-block .view-content .views-row-image.last { display: none; }
   #block-views-front-page-grid-block .view-content .views-row { width: calc(100% - 46px); height: auto; }
-  #block-views-front-page-grid-block .view-content .views-row.views-row-last { width: calc(100% - 46px); } }
+  #block-views-front-page-grid-block .view-content .views-row.views-row-last { width: calc(100% - 46px); }
+  h1#page-title { font-size: 3em; } }
