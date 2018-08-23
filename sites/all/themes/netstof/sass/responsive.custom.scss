@@ -28,36 +28,42 @@
 
   /* Header */
   #header-container {
-    min-height: 78px;
+    min-height: 100px;
+      .container{
+        width: calc(100% - 2em);
+        padding: 0 1em;      
+      }
   }
+    
   #header-btm-container {
-    height: 23px;
+    height: 50px;
   }
   ul.ui-autocomplete {
     max-width: 294px;
   }
   /* Menu */
   .menu_icon {
-    background-position: center 5px !Important;
+    background-position: center 24px !Important;
   }
   .region-header .menu-block-wrapper > ul.menu {
-    height: 101px;
+    height: 100px;
     position: relative;
   }
   .region-header .menu-block-wrapper > ul.menu > li {
-    height: 101px;
+    height: 150px;
     position: static;
   }
   .region-header .menu-block-wrapper > ul.menu > li > a {
     width: 80px;
-    height: 23px;
+    height: 30px;
     display: block;
-    color: #FFFFFF;
-    padding: 55px 0 0 0 !important;
-    font-size: 13px;
+    color: #424242;
+    padding: 70px 0 0 0 !important;
+    font-size: 11px;
     line-height: 12px;
     text-transform: uppercase;
     font-weight: bold;
+      text-align: center;
   }
   .region-header .menu-block-wrapper > ul.menu > li > a > em {
     display: none;
@@ -69,13 +75,13 @@
     text-align: center;
     position: absolute;
     left: 0;
-    top: 78px;
+    top: 116px;
   }
   .region-header ul.menu > li > ul > li {
     top: 0;
   }
   .region-header ul.menu > li > ul > li > a {
-    font-size: 13px;
+    font-size: 11px;
   }
   /* Page */
   #page {
@@ -193,11 +199,161 @@
  *  MOBILE + TABLETS
  */
 
-@media only screen and (max-width: 942px) {
+@media only screen and (max-width: 955px) {
+    
+    
+/* Slideshow forside*/
+.region-banner-front{
+    .slideshow-content{
+        width: 100%;
+        color: #fff;
+        position: absolute;
+        z-index: 99;
+        top: 50%;
+        left: 0;
+        margin-left: 0;
+        -ms-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+        padding: 0 2em;
+
+        h2{
+            font-size: 3.5em;
+            line-height: 1.2em;
+            font-weight: bolder;
+            margin: 0 0 0.2em 0;
+            padding: 0 30% 0 0;
+        }
+        p{
+            line-height: 1.5em;
+            font-size: 1.2em;
+            padding-right: 30%;
+        }
+        .read-more-btn a{
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 15px;
+            line-height: 15px;
+            display: block;
+            background: #77b5cf;
+            padding: 20px 35px;
+            float: left;
+            clear: both;
+        }
+    }
+    .img-container{
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: center top;
+        min-height: 500px;
+        width: 100vw;
+    }
+}    
+    
+    
+    /*
+FORSIDE INDGANGE
+*/
+
+#entries-front {
+    #hurtige-genveje{
+        width: 100%;
+        .genvej-wrapper{
+            .left{
+                width: 100%;
+                height: 70px;
+                margin: 0 0 15px 0;
+                margin-top: 18px;
+                background-size: 90%;
+            }
+            .right{
+                .title a{
+                    color: #424242;  
+                    font-weight: bolder;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                }
+                .description{
+                    color: #404040;
+                    text-transform: uppercase;
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}
+    
+
+/**
+ * FORSIDE VIEW
+ */
+
+#block-views-front-page-grid-block {
+    h2.block-title{
+        font-size: 2em;
+        margin-bottom: 0.4em;
+    }
+    .view-filters  {
+        font-size: 13px;
+    }
+    .view-content{
+        .views-row-image{
+            height: 266px;
+            &.first{
+                width: calc(100% / 2);
+            }
+            &.last{
+                width: calc(100% / 2);
+            }
+        }
+        .views-row {
+            width: calc((100% - (23px*4)) / 2); 
+            height: 220px;
+            &.views-row-last{
+                width: calc(100% - 46px);
+            }
+            
+            .views-field-type {
+                .forum {
+                    padding: 0 0 0 50px;
+                    height: 45px;
+                    background: url("../images/front-entries/debatfora.png") no-repeat bottom left;
+                    background-size: 48px;
+                }
+                .questions_and_answers {
+                    padding: 0 0 0 50px;
+                    height: 45px;
+                    background: url("../images/front-entries/brevkasser.png") no-repeat bottom left;
+                    background-size: 38px;
+                }
+            }
+            .views-field-title {
+                a{
+                    font-size: 20px;
+                    line-height: 1.2em;
+                }
+            }
+        }    
+    }
+    .item-list{
+        .pager{
+			top: -48px;
+			font-size: 14px;
+        }
+    }
+}
+    
   /* Header */
   .region-header {
-    width: 100%;
+    width: auto;
     float: left !important;
+      position: absolute;
   }
   /* Content */
   #rightcontent.narrow {
@@ -227,7 +383,10 @@
   }
   .region-sidebar-top .region-inner {}
   #search-block-form input[type=search] {
-    width: 100%;
+    width: calc(100% - 2em);
+      padding: 0 1em;
+      text-align: left;
+      font-size: 1.2em;
   }
   #search-block-form .container-inline {
     position: relative;
@@ -235,7 +394,7 @@
     width: 100%;
   }
   #search-block-form .form-actions {
-    width: 58px;
+    width: 90px;
     position: absolute;
     top: 0;
     right: 0;
@@ -293,7 +452,7 @@
  * DESKTOP + TABLET Horizontal
  */
 
-@media only screen and (min-width: 943px) {
+@media only screen and (min-width: 955px) {
   #breadcrumbs {
     display: none;
   }
@@ -305,4 +464,48 @@
   #edit-type-2-wrapper {
     display: none;
   }
+}
+
+
+@media only screen and (max-width: 550px) { 
+    /*
+FORSIDE INDGANGE
+*/
+#entries-front {
+    #hurtige-genveje{
+        width: 100%;
+        .genvej-wrapper{
+            height: 125px;
+            .right{
+                display: none;
+            }
+        }
+    }
+}
+    
+    
+/**
+ * FORSIDE VIEW
+ */
+
+#block-views-front-page-grid-block {
+    .view-content{
+        .views-row-image{
+            &.first{
+                display: none;
+            }
+            &.last{
+                display: none;
+            }
+        }
+        .views-row {
+            width: calc(100% - 46px); 
+            height: auto;
+            &.views-row-last{
+                width: calc(100% - 46px);
+            }
+        }    
+    }
+}    
+    
 }

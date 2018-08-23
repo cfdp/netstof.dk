@@ -35,4 +35,3 @@
   <?php endif; ?>
   <?php print $search_form; ?>    
 </div>
-  <div class="search-icon"></div>

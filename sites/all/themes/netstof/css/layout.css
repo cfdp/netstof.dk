@@ -17,8 +17,11 @@ body {
   }
 
 		header #logo {
-			padding: 27px 0 0 0;
+			padding: 30px 0 0 0;
 		}
+            header #logo img{
+                width: 160px;
+            }
 	
 #header-btm-container {
 	height: 46px;

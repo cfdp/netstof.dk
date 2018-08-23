@@ -5,24 +5,9 @@
  * SEARCH BLOCK / SEARCH FORM
  */
 
-/* header search */
-#block-menu-block-1{
-    float: left;
-}
 #block-search-form{
     float: left;
     background: red;
-    form{
-        .container-inline{
-            float: left;
-        }
-        .search-icon{
-            background: yellow url("../images/search-icon.png") no-repeat left center;
-            width: 25px;
-            height: 108px;
-            float: left;
-        }    
-    }
 }
 
 .search-form {
@@ -690,7 +675,7 @@
 .region-tabs-right {
 	position: fixed;
 	right: -179px;
-	top: 192px;
+	top: 239px;
 	width: 220px;
 	float: left;
 }
@@ -1039,5 +1024,83 @@ ul.ui-autocomplete {
         border-color: #bfcfbb;
         color: #424242;
         padding: 15px 15px 15px 135px;
+    }
+}
+
+/**
+ * Header search
+ */
+
+.header-search{
+    width: 100%;
+    height: 85px;
+    margin-top: -85px;
+    position: relative;
+    -webkit-transition: margin .15s ease-in-out;
+    -moz-transition: margin .15s ease-in-out;
+    -o-transition: margin .15s ease-in-out;
+    transition: margin .15s ease-in-out;
+    .form-item{
+        width: 100%;
+        input[type=search]{
+            padding: 0 2em;
+            text-align: center;
+            height: 85px;
+            width: calc(100% - 4em);
+            border: none;
+            background-image: none;
+            background-color: #0b5a7c;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            color: #fff;
+            font-size: 1.7em;
+        }    
+    }
+    .form-actions{
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        border: none;
+        cursor: pointer;
+        input[type=submit]{
+            width: 8em!important;
+            height: 85px!important;
+            background: #77b5cf!important;
+        }
+    }
+    .close-search{
+        position: absolute;
+        top: 50%;
+        right: 125px;
+        z-index: 9;
+        line-height: 0;
+        margin-top: -17px;
+        cursor: pointer;
+        padding: 10px;
+        .close-search-btn {
+            width: 15px;
+            height: 15px;
+            .cross {
+                fill: #fff;
+            }
+        }
+    }
+    &.open{
+        margin-top: 0;    
+    }
+}
+
+
+.page-search{
+    #page{
+        .search-form{
+            input[type=text]{
+                height: 30px;
+            }
+        }
     }
 }

@@ -8,7 +8,9 @@ html { /* font-size: 81.3%; */ }
 #main-content { margin-right: 0 !important; }
 
 /** NAVIGATION */
-.region-header .menu-block-wrapper > ul.menu { width: 611px; float: left; }
+.region-header .menu-block-wrapper > ul.menu { width: auto; float: left; }
+
+.region-header .menu-block-wrapper > ul.menu > li > a { height: 64px; display: block; color: #424242; font-size: 14px; line-height: 15px; text-transform: uppercase; font-weight: bold; background-size: 36px 37px; padding: 60px 18px 0 20px; text-align: center; background-position: center 16px !important; }
 
 /* Footer */
 .region-footer section.block { margin: 10px 0 0 23px; }

@@ -1,4 +1,21 @@
 /**
+ * Search icon
+ */
+.search-icon{
+    cursor: pointer;
+    margin-left: 15px;
+    line-height: 0;
+    float: right;
+    position: relative;
+    top: 42px;
+}
+.search-icon svg {
+    width: 28px;
+}
+search-icon svg .search-svg {
+        fill: #424242;
+    }
+/**
  * HEADER MAIN MENU
  */
 .region-header {
@@ -193,7 +210,7 @@
 	#breadcrumbs ul li {
 		display: inline-block;
 		background: #404040 url("../images/bread-sep.png") no-repeat top right;
-		background-size: 12px 28px;
+		background-size: 12px 29px;
 		font-size: 13px; line-height: 1em;
 		color: #FFFFFF;
 		text-transform: uppercase;
@@ -202,11 +219,11 @@
 	}
 	#breadcrumbs ul li.first {
 		background: #404040 url("../images/bread-sep-first.png") no-repeat top right;
-		background-size: 70px 28px;
+		background-size: 70px 29px;
 	}
 	#breadcrumbs ul li.last {
 		background: #404040 url("../images/bread-sep-last.png") no-repeat top right;
-		background-size: 9px 28px;
+		background-size: 9px 29px;
 	}
 	#breadcrumbs ul li a {
 		float: left;

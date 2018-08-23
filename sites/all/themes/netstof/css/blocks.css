@@ -2,12 +2,7 @@
 /* $legacy-support-for-ie6: true;
 $legacy-support-for-ie7: true; */
 /** SEARCH BLOCK / SEARCH FORM */
-/* header search */
-#block-menu-block-1 { float: left; }
-
 #block-search-form { float: left; background: red; }
-#block-search-form form .container-inline { float: left; }
-#block-search-form form .search-icon { background: yellow url("../images/search-icon.png") no-repeat left center; width: 25px; height: 108px; float: left; }
 
 .search-form { margin-bottom: 0; }
 
@@ -182,7 +177,7 @@ body.page-paaroerende .region-sidebar-first #block-block-19 .block-content { pad
 #dk_container_kommune ul { padding: 0; margin: 0; }
 
 /** RIGHT SIDE - fixed entrances */
-.region-tabs-right { position: fixed; right: -179px; top: 192px; width: 220px; float: left; }
+.region-tabs-right { position: fixed; right: -179px; top: 239px; width: 220px; float: left; }
 
 .region-tabs-right .block { margin-bottom: 2px; position: relative; background-color: #3b3b3b; padding: 15px 0 15px 41px; right: 0; font-size: 12px; z-index: 10; }
 
@@ -314,3 +309,16 @@ ul.ui-autocomplete { border: none; background: none; border-radius: 0; margin: 0
 
 /** Disclaimer "Før du læser" */
 #block-block-33 div.messages { margin-bottom: 2em; background: #e2efdf url(../images/alert_icon.png) no-repeat 30px 40px; border-color: #bfcfbb; color: #424242; padding: 15px 15px 15px 135px; }
+
+/** Header search */
+.header-search { width: 100%; height: 85px; margin-top: -85px; position: relative; -webkit-transition: margin .15s ease-in-out; -moz-transition: margin .15s ease-in-out; -o-transition: margin .15s ease-in-out; transition: margin .15s ease-in-out; }
+.header-search .form-item { width: 100%; }
+.header-search .form-item input[type=search] { padding: 0 2em; text-align: center; height: 85px; width: calc(100% - 4em); border: none; background-image: none; background-color: #0b5a7c; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: #fff; font-size: 1.7em; }
+.header-search .form-actions { position: absolute; right: 0; top: 0; margin: 0; padding: 0; border-radius: 0; border: none; cursor: pointer; }
+.header-search .form-actions input[type=submit] { width: 8em !important; height: 85px !important; background: #77b5cf !important; }
+.header-search .close-search { position: absolute; top: 50%; right: 125px; z-index: 9; line-height: 0; margin-top: -17px; cursor: pointer; padding: 10px; }
+.header-search .close-search .close-search-btn { width: 15px; height: 15px; }
+.header-search .close-search .close-search-btn .cross { fill: #fff; }
+.header-search.open { margin-top: 0; }
+
+.page-search #page .search-form input[type=text] { height: 30px; }
