@@ -95,7 +95,6 @@
     margin-right: 0 !important;
   }
   .region-content-front {
-    display: none;
   }
   /* Featured */
   .region-featured {
@@ -481,6 +480,40 @@ FORSIDE INDGANGE
             }
         }
     }
+}
+
+    
+/**
+ * PÅRØRENDE VIEW
+ */
+#block-views-front-page-grid-block-1 {
+    h2.block-title{
+        font-size: 2em;
+        margin-bottom: 1.2em;
+    }
+    .view-display-id-block_1{
+        .view-content{
+            overflow: hidden;
+            margin-top: 4em;
+            margin-bottom: 4em;
+            .views-row {
+                width: calc(100% - 46px); 
+                height: auto;
+                font-size: 13px; line-height: 15px;
+                &:nth-child(1), &:nth-child(4){
+                    background: #ffffff;
+                }
+                &:nth-child(odd){
+                    background: #f6f5f5;
+                }
+            }    
+        }
+    }
+}    
+    
+#block-views-slideshow-block-1 .views-field-nothing {
+    bottom: 4px;
+    width: calc(100% - 56px);
 }
     
     

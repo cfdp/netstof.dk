@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* $legacy-support-for-ie6: true;
 $legacy-support-for-ie7: true; */
 /* responsive.custom.css is for custom media queries that are not set via the theme settings, such as cascading media queries.  By default all the other responsive stylesheets used in Adaptivetheme use a "stacking method", however cascading media queries use a waterfall method so you can leverage the cascade and inheritance for all browsers that support media queries, regardless of screen size.  @SEE http://zomigi.com/blog/essential-considerations-for-crafting-quality-media-queries/#mq-overlap-stack  NOTE: this file loads by default, to disable got to your theme settings and look under the "CSS" settings tab. */
@@ -22,7 +23,6 @@ $legacy-support-for-ie7: true; */
   #page { padding: 23px 0 75px 0; }
   #page #columns { padding: 0 13px; max-width: 611px; }
   #main-content { margin-right: 0 !important; }
-  .region-content-front { display: none; }
   /* Featured */
   .region-featured { padding: 0 13px; margin: 0; }
   /* Content */
@@ -115,6 +115,13 @@ FORSIDE INDGANGE
   #entries-front #hurtige-genveje { width: 100%; }
   #entries-front #hurtige-genveje .genvej-wrapper { height: 125px; }
   #entries-front #hurtige-genveje .genvej-wrapper .right { display: none; }
+  /** PÅRØRENDE VIEW */
+  #block-views-front-page-grid-block-1 h2.block-title { font-size: 2em; margin-bottom: 1.2em; }
+  #block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content { overflow: hidden; margin-top: 4em; margin-bottom: 4em; }
+  #block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row { width: calc(100% - 46px); height: auto; font-size: 13px; line-height: 15px; }
+  #block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row:nth-child(1), #block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row:nth-child(4) { background: #ffffff; }
+  #block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row:nth-child(odd) { background: #f6f5f5; }
+  #block-views-slideshow-block-1 .views-field-nothing { bottom: 4px; width: calc(100% - 56px); }
   /** FORSIDE VIEW */
   #block-views-front-page-grid-block .view-content .views-row-image.first { display: none; }
   #block-views-front-page-grid-block .view-content .views-row-image.last { display: none; }
