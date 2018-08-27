@@ -321,4 +321,8 @@ ul.ui-autocomplete { border: none; background: none; border-radius: 0; margin: 0
 .header-search .close-search .close-search-btn .cross { fill: #fff; }
 .header-search.open { margin-top: 0; }
 
-.page-search #page .search-form input[type=text] { height: 30px; }
+.page-search #content .search-form .form-type-textfield { float: left; width: 83%; }
+.page-search #content .search-form .form-type-textfield input[type=text] { height: 30px; }
+.page-search #content .search-form input[type=submit] { float: left; position: relative; bottom: -18px; }
+.page-search #content h2 { float: left; }
+.page-search #content ul { float: left; }

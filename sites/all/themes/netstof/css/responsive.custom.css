@@ -37,9 +37,9 @@ $legacy-support-for-ie7: true; */
   /* Blocks */
   .views-fluidgrid-wrapper > div { margin: auto; float: none !important; position: static !important; }
   .block.landing_page .block-middle { padding: 0 0 10px 0; }
-  .block.landing_page img { float: none; margin: 0; width: 294px; max-width: none; position: relative; left: -23px; }
-  .block.landing_page h2 { padding: 0 23px; }
-  .block.landing_page p { padding: 0 23px; }
+  .block.landing_page img { float: none; margin: 0; width: 100%; max-width: none; }
+  .block.landing_page h2 { padding: 0; }
+  .block.landing_page p { padding: 0; }
   #block-views-front-page-grid-block .block-title, #block-views-front-page-grid-block-1 .block-title { padding-left: 0; }
   /* Footer */
   #footer-container { padding-top: 23px; padding-left: 13px; padding-right: 13px; text-align: center; }

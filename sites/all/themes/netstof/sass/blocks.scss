@@ -1096,11 +1096,27 @@ ul.ui-autocomplete {
 
 
 .page-search{
-    #page{
+    #content{
         .search-form{
-            input[type=text]{
-                height: 30px;
+            .form-type-textfield{
+                float: left;
+                width: 83%;
+                input[type=text]{
+                    height: 30px;
+
+                }    
             }
+            input[type=submit]{
+                float: left;
+                position: relative;
+                bottom: -18px;
+            }
+        }
+        h2{
+            float: left;
+        }
+        ul{
+            float: left;
         }
     }
 }

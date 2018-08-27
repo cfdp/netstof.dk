@@ -5,68 +5,22 @@
 {
 	/* Main Menu */
 	.region-header .menu-2060 {
-		background-image: url("../images/menu1-big.png");
+		background-image: url("../images/menu_icons/menu1_normal.png");
 		background-size: 52px 48px;
 	}
 	.region-header .menu-237 {
-		background-image: url("../images/menu2-big.png");
+		background-image: url("../images/menu_icons/menu2_normal.png");
 		background-size: 52px 48px;
 	}
 	.region-header .menu-2030 {
-		background-image: url("../images/menu3-big.png");
+		background-image: url("../images/menu_icons/menu3_normal.png");
 		background-size: 52px 48px;
 	}
 	.region-header .menu-2031 {
-		background-image: url("../images/menu4-big.png");
+		background-image: url("../images/menu_icons/menu4_normal.png");
 		background-size: 52px 48px;
 	}
-	/* Forum */
-	.page-forum h1#page-title {
-		background: url("../images/icon-forum@x2.png") no-repeat top left;
-		background-size: 43px 41px;
-	}
-	/* Masonry Grid */
-	#block-views-front-page-grid-block .views-field-type .Spørgsmål-til-brevkassen {
-		background: url("../images/icon-brev@x2.png") no-repeat top left;
-		background-size: 43px 41px;
-	}
-	#block-views-front-page-grid-block .views-field-type .Debat {
-		background: url("../images/icon-forum@x2.png") no-repeat top left;
-		background-size: 43px 41px;
-	}
-	#block-views-front-page-grid-block .views-field-type .Erfaringer {
-		background: url("../images/icon-stories@x2.png") no-repeat top left;
-		background-size: 43px 41px;
-	}
-	/* Brevkasse */
-	.page-node-305 h1#page-title {
-		background: url("../images/icon-brev@x2.png") no-repeat top left;
-		background-size: 43px 41px;
-	}
-	.page-node-305 .field-name-field-oversigt .field-item h2.psykolog {
-		background: url("../images/icon-psykolog@x2.png") no-repeat 0 0;
-		background-size: 43px 41px;
-	}
-	.page-node-305 .field-name-field-oversigt .field-item h2.laege {
-		background: url("../images/icon-laege@x2.png") no-repeat 0 0;
-		background-size: 43px 41px;	
-	}
-	.page-node-305 .field-name-field-oversigt .field-item h2.rusmiddel {
-		background: url("../images/icon-professor@x2.png") no-repeat 0 0;
-		background-size: 43px 41px;	
-	}	
-			.view-Brevkasse.view-display-id-page_2 .header-title {
-				background: url("../images/icon-laege@x2.png") no-repeat 0 0;
-				background-size: 43px 41px;				
-			}
-			.view-Brevkasse.view-display-id-page_3 .header-title {
-				background: url("../images/icon-psykolog@x2.png") no-repeat 0 0;
-				background-size: 43px 41px;			
-			}
-			.view-Brevkasse.view-display-id-page_4 .header-title {
-				background: url("../images/icon-professor@x2.png") no-repeat 0 0;
-				background-size: 43px 41px;				
-			}
+	
 	/* Scroll to top link */
 	#scroll-top a {
 		background: url("../images/scroll-top@x2.png") no-repeat;
