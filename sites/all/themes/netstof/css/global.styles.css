@@ -41,7 +41,7 @@ pre, code, tt, samp, kbd, var { font-family: Consolas, Monaco, 'Courier New', Co
 /* Logo */
 #logo { padding: 10px 0; }
 
-#logo img { vertical-align: bottom; }
+#logo img { vertical-align: bottom; width: 90%; }
 
 /* Wrapper for the site name and slogan (hgroup) */
 /* Site name (h1) */
@@ -411,7 +411,7 @@ iframe.chat-header-widget { width: 216px; height: 91px; overflow: hidden; displa
 
 /*Minipolls block overwrites*/
 article.node-image-poll { margin-bottom: 1em; }
-article.node-image-poll .node-header #page-title { background: transparent; font-size: 1.6em; height: auto; margin-bottom: 10px; min-height: 28px; padding: 10px 23px 0; display: block; }
+article.node-image-poll .node-header #page-title { background: transparent; font-size: 1.6em; height: auto; margin-bottom: 10px; min-height: 28px; padding: 10px 0 0 0; display: block; }
 .page-image-polls article.node-image-poll .node-header #page-title { padding: 10px 0 0; }
 
 .field-name-field-extra-info { background: #efefef; border: 1px solid #ccc; font-size: 13px; padding: 9px; width: 434px; }
@@ -434,8 +434,6 @@ article.node-image-poll .node-header #page-title { background: transparent; font
 .minipoll-wrapper .poll.image_poll .choices .choice { width: 145px; }
 .minipoll-wrapper .poll.image_poll .choices .choice .choice-image { height: auto; }
 
-.view-image-polls a.btn { margin-left: 1em; }
-
 .view-display-id-page ul.links.inline { display: none; }
 
 .region-footer-btm .block-first { width: auto !important; float: right !important; }
@@ -449,6 +447,8 @@ article.node-image-poll .node-header #page-title { background: transparent; font
 
 .lt-ie9 #header-btm-container .chat-header-widget { display: none; }
 
-a.btn { color: white !important; font-weight: bold; text-transform: uppercase; font-size: 15px; line-height: 15px; display: inline-block; background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px; padding: 10px 12px 10px 30px; border-radius: 5px; }
+a.btn { color: white !important; font-weight: bold; text-transform: uppercase; font-size: 15px; line-height: 15px; display: inline-block; background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 29px 21px; padding: 20px 35px 20px 53px; }
 
 #views_fluidgrid_front_page_grid_block .views-field-timestamp { float: left; font-size: 12px; margin-bottom: 10px; }
+
+.node-forum-form input[type=submit] { color: white; font-weight: bold; text-transform: uppercase; font-size: 15px; line-height: 15px; display: block; background: #77b5cf; padding: 20px 35px; float: left; clear: both; border: 0; outline: none; }

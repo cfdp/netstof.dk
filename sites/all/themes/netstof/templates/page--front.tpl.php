@@ -121,6 +121,9 @@
     <?php endif; ?>
 
     <!-- region: Header -->
+      <div class="search-icon active">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" class="svg-search"><path class="search-svg" d="M18,16.1l7,7L23.1,25l-7-7A9.9,9.9,0,0,1,10,20,10,10,0,1,1,20,10,9.9,9.9,0,0,1,18,16.1Zm-8,1.3A7.4,7.4,0,1,0,2.7,10,7.4,7.4,0,0,0,10,17.4Z"></path></svg>       
+    </div>
     <?php print render($page['header']); ?>
 
   </header>
@@ -131,6 +134,16 @@
     <a href="/paaroerende" title="Artikler og rådgivning for pårørende"><img src="<?php print $base_path.drupal_get_path("theme","netstof").$variables['paaroerende_img'];?>" id="find-hjaelp" /></a>
 	</div>
 </div>
+
+<!-- region: Front Page Banner & Front Page Entries -->
+<?php if($is_front): ?>
+    <div id="banner-front" class="region">
+        <?php print render($page["banner_front"]); ?>
+    </div>
+    <div id="entries-front" class="region">
+        <?php print render($page["entries_front"]); ?>
+    </div>
+<?php endif; ?> 
 
 <div id="page" class="container <?php print $classes; ?>">
 

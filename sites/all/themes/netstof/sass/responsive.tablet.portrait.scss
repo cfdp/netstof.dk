@@ -28,8 +28,22 @@ html {
  * NAVIGATION
  */
 .region-header .menu-block-wrapper > ul.menu {
-        width: 611px;
+        width: auto;
         float: left;
+}
+
+.region-header .menu-block-wrapper > ul.menu > li > a {
+    height: 64px;
+    display: block;
+    color: #424242;
+    font-size: 14px;
+    line-height: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-size: 36px 37px;
+    padding: 60px 18px 0 20px;
+    text-align: center;
+    background-position: center 16px !important;
 }
 
 /* Footer */

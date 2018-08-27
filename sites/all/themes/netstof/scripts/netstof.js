@@ -49,4 +49,35 @@
       }
     }
   };
+    
+    
+    
+Drupal.behaviors.searchAimation = {
+    attach: function (context, settings) {
+        $('.html', context).once('searchAimation', function () {
+            
+         
+            
+            $(".search-icon").click(function(){
+                $(".header-search").toggleClass("open");
+            });
+            
+            $(".close-search").click(function(){
+                $(".header-search").toggleClass("open");
+            });
+            
+
+
+            $(document).mouseup(function (e){  
+                var container = $(".header-search");
+                if (!container.is(e.target) && container.has(e.target).length === 0 && $( ".header-search" ).hasClass( "open" )){
+                    $( ".header-search" ).toggleClass( "open" );	
+                }
+            });  
+        
+        });
+    }
+};     
+    
+    
 })(jQuery);

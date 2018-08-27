@@ -1,4 +1,21 @@
 /**
+ * Search icon
+ */
+.search-icon{
+    cursor: pointer;
+    margin-left: 15px;
+    line-height: 0;
+    float: right;
+    position: relative;
+    top: 42px;
+}
+.search-icon svg {
+    width: 28px;
+}
+search-icon svg .search-svg {
+        fill: #424242;
+    }
+/**
  * HEADER MAIN MENU
  */
 .region-header {
@@ -13,24 +30,24 @@
 		float: left;
 		list-style: none;
 		list-style-image: none;
-		text-align: center;
-		height: 154px;
+		text-align: left;
 		position: relative;
-        padding: 0px;
+        padding: 0;
 	}
 	.region-header .menu-block-wrapper > ul.menu > li > a {
-		width:140px;height:40px;
+		height:64px;
 		display:block;
-		color: #FFFFFF;
-		padding: 68px 0 0 0 !important;
+		color: #424242;
 		font-size: 14px; line-height: 15px;
 		text-transform: uppercase;
 		font-weight: bold;
-		background-size: 52px 48px;
+		background-size: 36px 37px;
+        padding: 44px 18px 0 55px;
 	}
-	.region-header .menu-block-wrapper > ul.menu > li > a:hover {
+	.region-header .menu-block-wrapper > ul.menu > li:hover > a {
 		text-decoration: none;
-		background-color: #5d5d5d;
+		background-color: #ffad00;
+        color: #424242;
 	}
 	.region-header .menu-block-wrapper > ul.menu > li > a.active-trail {
 		background-color: #ffad00;
@@ -43,20 +60,38 @@
 			font-style: normal;
 			text-transform: none;
 		}
-	.region-header .menu-2060 {
-		background-image: url("../images/menu1.png");
+	.region-header .menu-2143 {
+		background-image: url("../images/menu_icons/menu1_normal.png");
 	}
 	.region-header .menu-237 {
-		background-image: url("../images/menu2.png");
+		background-image: url("../images/menu_icons/menu2_normal.png");
 	}
 	.region-header .menu-2030 {
-		background-image: url("../images/menu3.png");
+		background-image: url("../images/menu_icons/menu3_normal.png");
 	}
 	.region-header .menu-2031 {
-		background-image: url("../images/menu4.png");
+		background-image: url("../images/menu_icons/menu4_normal.png");
 	}
+
+    .region-header .menu-block-wrapper > ul.menu > li:hover > a.menu-2143,
+    .region-header .menu-block-wrapper > ul.menu > li.active-trail > a.menu-2143{
+		background-image: url("../images/menu_icons/menu1_hover.png");
+	}
+	.region-header .menu-block-wrapper > ul.menu > li:hover > a.menu-237,
+    .region-header .menu-block-wrapper > ul.menu > li.active-trail > a.menu-237{
+		background-image: url("../images/menu_icons/menu2_hover.png");
+	}
+	.region-header .menu-block-wrapper > ul.menu > li:hover > a.menu-2030,
+    .region-header .menu-block-wrapper > ul.menu > li.active-trail > a.menu-2030{
+		background-image: url("../images/menu_icons/menu3_hover.png");
+	}
+	.region-header .menu-block-wrapper > ul.menu > li:hover > a.menu-2031,
+    .region-header .menu-block-wrapper > ul.menu > li.active-trail > a.menu-2031{
+		background-image: url("../images/menu_icons/menu4_hover.png");
+	}
+
 	.menu_icon {
-		background-position: center 15px !important;
+		background-position: 12px 36px !important;
 		background-repeat: no-repeat;
 	}
 	/**
@@ -76,6 +111,7 @@
 		margin: 0;
 		position: absolute;
 		top: 108px;
+        left: 15px;
 		text-align: left;
 	}
 		.region-header ul.menu > li  > ul > li {
@@ -84,9 +120,17 @@
 			display: inline;
 			position: relative;
 			z-index: 10;
-			top: 12px;
-			background: url("../images/sub-menu-sep.png") no-repeat center left;
-			padding: 0 8px 0 20px;
+			top: 14px;
+			padding: 0;
+		}
+        .region-header ul.menu > li  > ul > li:after {
+			content: "-";
+            display: inline-block;
+            padding: 0 1em;
+            color: #ffffff;
+		}
+        .region-header ul.menu > li  > ul > li.last:after {
+            display: none;
 		}
 		.region-header ul.menu > li  > ul > li.first {
 			padding-left: 0;
@@ -94,11 +138,11 @@
 		}
 		.region-header ul.menu > li  > ul > li > a {
 			font-size: 13px;
-			color: #3b3b3b;
+			color: #ffffff;
 			text-transform: uppercase;
 		}
 		.region-header ul.menu > li  > ul > li > a.active {
-			color: #ffad00;
+			color: #424242;
 		}
 
 /**
@@ -166,7 +210,7 @@
 	#breadcrumbs ul li {
 		display: inline-block;
 		background: #404040 url("../images/bread-sep.png") no-repeat top right;
-		background-size: 12px 28px;
+		background-size: 12px 29px;
 		font-size: 13px; line-height: 1em;
 		color: #FFFFFF;
 		text-transform: uppercase;
@@ -175,11 +219,11 @@
 	}
 	#breadcrumbs ul li.first {
 		background: #404040 url("../images/bread-sep-first.png") no-repeat top right;
-		background-size: 70px 28px;
+		background-size: 70px 29px;
 	}
 	#breadcrumbs ul li.last {
 		background: #404040 url("../images/bread-sep-last.png") no-repeat top right;
-		background-size: 9px 28px;
+		background-size: 9px 29px;
 	}
 	#breadcrumbs ul li a {
 		float: left;

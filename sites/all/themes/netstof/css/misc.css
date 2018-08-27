@@ -17,23 +17,6 @@ input[type=search], input[type=text], input[type=password], textarea {
 /**
  * ADD NODE FORMS
  */
-.page-node-add section#main-content {
-	background: url("../images/big_shadow_top.png") no-repeat top center;
-	padding-top: 11px;
-	position: relative; top: -11px;
-}
-.page-node-add #main-content-header {
-	padding: 23px 23px 0 23px;
-	background: white url("../images/content-top.png") no-repeat top center;
-}
-.page-node-add #content {
-	padding: 0 23px 23px 23px;
-	background: white url("../images/content-btm.png") no-repeat bottom center;
-}
-.page-node-add #content-btm-shadow {
-	background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
-	height: 15px;
-}
 .node-form {
 	font-family: "Cabin", sans-serif;
 	overflow: hidden;
@@ -71,16 +54,18 @@ input[type=search], input[type=text], input[type=password], textarea {
 		clear: both;
 	}
 	.node-form #edit-submit {
-	color: white;
-	font-weight: bold;
-	text-transform: uppercase;
-	font-size: 14px;
-	line-height: 14px;
-	background: #0B5A7C url("../images/icon-plus.png") no-repeat 10px 8px;
-	padding: 10px 12px 10px 35px;
-	border: none;
-	border-radius: 5px;
-	text-align: left;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 15px;
+        line-height: 15px;
+        display: block;
+        background: #77b5cf url(../images/icon-plus-mini.png) no-repeat 32px 21px;
+        padding: 20px 35px 20px 53px;
+        float: left;
+        clear: both;
+        border: 0;
+        outline: none;
 	}
 	.node-form input[type=text],
 	.comment-form input[type=text] {
@@ -106,7 +91,6 @@ input[type=search], input[type=text], input[type=password], textarea {
 	}
 	/* HEADLINES */
 	.page-node-add h1#page-title {
-		color: #0B5A7C !important;
 	}
 
 
