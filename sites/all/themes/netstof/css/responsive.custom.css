@@ -3,7 +3,8 @@
 $legacy-support-for-ie7: true; */
 /* responsive.custom.css is for custom media queries that are not set via the theme settings, such as cascading media queries.  By default all the other responsive stylesheets used in Adaptivetheme use a "stacking method", however cascading media queries use a waterfall method so you can leverage the cascade and inheritance for all browsers that support media queries, regardless of screen size.  @SEE http://zomigi.com/blog/essential-considerations-for-crafting-quality-media-queries/#mq-overlap-stack  NOTE: this file loads by default, to disable got to your theme settings and look under the "CSS" settings tab. */
 /** MOBILE */
-@media only screen and (max-width: 670px) { .region[class*="float-blocks"] .block { float: none; width: 100%; }
+@media only screen and (max-width: 670px) { #block-block-33 div.messages { margin: 0 10px 2em 10px; }
+  .region[class*="float-blocks"] .block { float: none; width: 100%; }
   /* Header */
   #header-container { min-height: 100px; }
   #header-container .container { width: calc(100% - 2em); padding: 0 1em; }
@@ -37,9 +38,9 @@ $legacy-support-for-ie7: true; */
   /* Blocks */
   .views-fluidgrid-wrapper > div { margin: auto; float: none !important; position: static !important; }
   .block.landing_page .block-middle { padding: 0 0 10px 0; }
-  .block.landing_page img { float: none; margin: 0; width: 294px; max-width: none; position: relative; left: -23px; }
-  .block.landing_page h2 { padding: 0 23px; }
-  .block.landing_page p { padding: 0 23px; }
+  .block.landing_page img { float: none; margin: 0; width: 100%; max-width: none; }
+  .block.landing_page h2 { padding: 0; }
+  .block.landing_page p { padding: 0; }
   #block-views-front-page-grid-block .block-title, #block-views-front-page-grid-block-1 .block-title { padding-left: 0; }
   /* Footer */
   #footer-container { padding-top: 23px; padding-left: 13px; padding-right: 13px; text-align: center; }

@@ -8,6 +8,7 @@
     float: right;
     position: relative;
     top: 42px;
+    height: 28px;
 }
 .search-icon svg {
     width: 28px;

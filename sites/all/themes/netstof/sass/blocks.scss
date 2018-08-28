@@ -598,7 +598,7 @@
 	 * DANMARKSKORT BLOK
 	 */
 	.region-sidebar-first .maps-block div.block-middle {
-		background: #404040 url("../images/maps-bg-block.png") no-repeat bottom center !important;
+		background: #404040 url("../images/maps-bg-block.png") no-repeat bottom left !important;
 		padding-bottom: 160px;
 		position: relative;
 	}
@@ -618,8 +618,8 @@
 	}
 	.maps-block .goto-maps {
 		position: absolute;
-		bottom: 25px;
-		right: 35px;
+        bottom: 25px;
+        left: 176px;
 	}
 		.maps-block .goto-maps a {
 			color: #3b3b3b !important;
@@ -636,9 +636,9 @@
 		}
 	#goto-maps-form {
 		position: absolute;
-		bottom: 115px;
-		right: 23px;
-		width: 143px;
+        bottom: 108px;
+        left: 127px;
+        width: 143px;
 	}
 		#goto-maps-form select {
 			width: 143px;
@@ -674,10 +674,11 @@
  */
 .region-tabs-right {
 	position: fixed;
-	right: -179px;
-	top: 239px;
-	width: 220px;
-	float: left;
+    right: -179px;
+    top: 164px;
+    width: 220px;
+    float: left;
+    z-index: 1;
 }
 	.region-tabs-right .block {
 		margin-bottom: 2px;
@@ -1019,7 +1020,7 @@ ul.ui-autocomplete {
 
 #block-block-33{
     div.messages{
-        margin-bottom: 2em;
+        margin: 0 0 2em 0;
         background: #e2efdf url(../images/alert_icon.png) no-repeat 30px 40px;
         border-color: #bfcfbb;
         color: #424242;
@@ -1096,11 +1097,27 @@ ul.ui-autocomplete {
 
 
 .page-search{
-    #page{
+    #content{
         .search-form{
-            input[type=text]{
-                height: 30px;
+            .form-type-textfield{
+                float: left;
+                width: 83%;
+                input[type=text]{
+                    height: 30px;
+                    width: 100%;
+                }    
             }
+            input[type=submit]{
+                float: left;
+                position: relative;
+                bottom: -18px;
+            }
+        }
+        h2{
+            float: left;
+        }
+        ul{
+            float: left;
         }
     }
 }

@@ -21,7 +21,12 @@
  */
 
 @media only screen and (max-width: 670px) {
-  .region[class*="float-blocks"] .block {
+  
+    #block-block-33 div.messages {
+        margin: 0 10px 2em 10px;
+    }
+    
+    .region[class*="float-blocks"] .block {
     float: none;
     width: 100%;
   }
@@ -143,16 +148,14 @@
   .block.landing_page img {
     float: none;
     margin: 0;
-    width: 294px;
+    width: 100%;
     max-width: none;
-    position: relative;
-    left: -23px;
   }
   .block.landing_page h2 {
-    padding: 0 23px;
+    padding: 0;
   }
   .block.landing_page p {
-    padding: 0 23px;
+    padding: 0;
   }
   #block-views-front-page-grid-block .block-title,
   #block-views-front-page-grid-block-1 .block-title {
