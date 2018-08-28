@@ -21,7 +21,12 @@
  */
 
 @media only screen and (max-width: 670px) {
-  .region[class*="float-blocks"] .block {
+  
+    #block-block-33 div.messages {
+        margin: 0 10px 2em 10px;
+    }
+    
+    .region[class*="float-blocks"] .block {
     float: none;
     width: 100%;
   }

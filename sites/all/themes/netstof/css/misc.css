@@ -71,6 +71,9 @@ input[type=search], input[type=text], input[type=password], textarea {
 	.comment-form input[type=text] {
 		max-width: 90%;
 	}
+    .comment-form #edit-captcha-response {
+		width: 100%;
+	}
 	.node-form .form-type-checkbox {
 		overflow: hidden;
 		margin-bottom: 3px;

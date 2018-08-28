@@ -271,7 +271,7 @@ body.page-brevkasse .view-Brevkasse > .view-header, body.page-faq .view-faq > .v
 /** SØGERESULTATER */
 .page-search-node #content h2 { font-size: 25px; color: #222; margin-bottom: 35px; margin-top: 45px; font-weight: bolder; }
 
-ol.search-results { margin: 0; padding: 0; }
+ol.search-results { margin: 0; padding: 0; float: left; }
 
 ol.search-results li { margin-bottom: 3em; }
 

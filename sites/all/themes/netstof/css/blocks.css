@@ -150,19 +150,19 @@ body.page-paaroerende .region-sidebar-first #block-block-19 .block-content { pad
 .region-sidebar-first #block-block-7 a.add-post, .region-sidebar-first #block-block-8 a.add-post { color: white; font-weight: bold; text-transform: uppercase; font-size: 15px; line-height: 15px; display: block; background: #77b5cf url("../images/icon-plus-mini.png") no-repeat 32px 21px; padding: 20px 35px 20px 53px; float: left; clear: both; }
 
 /** DANMARKSKORT BLOK */
-.region-sidebar-first .maps-block div.block-middle { background: #404040 url("../images/maps-bg-block.png") no-repeat bottom center !important; padding-bottom: 160px; position: relative; }
+.region-sidebar-first .maps-block div.block-middle { background: #404040 url("../images/maps-bg-block.png") no-repeat bottom left !important; padding-bottom: 160px; position: relative; }
 
 .region-sidebar-first .maps-block h2.block-title { font-size: 20px; text-transform: uppercase; color: #FFFFFF; background: none; padding-bottom: 15px; }
 
 .not-front .region-sidebar-first .maps-block .content { color: #FFFFFF; font-size: 14px; line-height: 16px; padding: 0 23px; background: none; }
 
-.maps-block .goto-maps { position: absolute; bottom: 25px; right: 35px; }
+.maps-block .goto-maps { position: absolute; bottom: 25px; left: 176px; }
 
 .maps-block .goto-maps a { color: #3b3b3b !important; font-weight: bold; font-size: 17px; line-height: 17px; display: block; }
 
 .maps-block .goto-maps span { font-size: 9px; line-height: 9px; text-transform: uppercase; color: #878787; clear: both; display: block; }
 
-#goto-maps-form { position: absolute; bottom: 115px; right: 23px; width: 143px; }
+#goto-maps-form { position: absolute; bottom: 108px; left: 127px; width: 143px; }
 
 #goto-maps-form select { width: 143px; }
 
@@ -177,7 +177,7 @@ body.page-paaroerende .region-sidebar-first #block-block-19 .block-content { pad
 #dk_container_kommune ul { padding: 0; margin: 0; }
 
 /** RIGHT SIDE - fixed entrances */
-.region-tabs-right { position: fixed; right: -179px; top: 239px; width: 220px; float: left; }
+.region-tabs-right { position: fixed; right: -179px; top: 164px; width: 220px; float: left; z-index: 1; }
 
 .region-tabs-right .block { margin-bottom: 2px; position: relative; background-color: #3b3b3b; padding: 15px 0 15px 41px; right: 0; font-size: 12px; z-index: 10; }
 
@@ -308,7 +308,7 @@ ul.ui-autocomplete { border: none; background: none; border-radius: 0; margin: 0
 .region-undercontent .block-content a { color: #404040; }
 
 /** Disclaimer "Før du læser" */
-#block-block-33 div.messages { margin-bottom: 2em; background: #e2efdf url(../images/alert_icon.png) no-repeat 30px 40px; border-color: #bfcfbb; color: #424242; padding: 15px 15px 15px 135px; }
+#block-block-33 div.messages { margin: 0 0 2em 0; background: #e2efdf url(../images/alert_icon.png) no-repeat 30px 40px; border-color: #bfcfbb; color: #424242; padding: 15px 15px 15px 135px; }
 
 /** Header search */
 .header-search { width: 100%; height: 85px; margin-top: -85px; position: relative; -webkit-transition: margin .15s ease-in-out; -moz-transition: margin .15s ease-in-out; -o-transition: margin .15s ease-in-out; transition: margin .15s ease-in-out; }
@@ -322,7 +322,7 @@ ul.ui-autocomplete { border: none; background: none; border-radius: 0; margin: 0
 .header-search.open { margin-top: 0; }
 
 .page-search #content .search-form .form-type-textfield { float: left; width: 83%; }
-.page-search #content .search-form .form-type-textfield input[type=text] { height: 30px; }
+.page-search #content .search-form .form-type-textfield input[type=text] { height: 30px; width: 100%; }
 .page-search #content .search-form input[type=submit] { float: left; position: relative; bottom: -18px; }
 .page-search #content h2 { float: left; }
 .page-search #content ul { float: left; }
