@@ -115,7 +115,9 @@ FORSIDE INDGANGE
 */
   #entries-front #hurtige-genveje { width: 100%; }
   #entries-front #hurtige-genveje .genvej-wrapper { height: 125px; }
-  #entries-front #hurtige-genveje .genvej-wrapper .right { display: none; }
+  #entries-front #hurtige-genveje .genvej-wrapper .left { background-size: 40px !important; height: 45px; margin: 13px 0 9px 0; }
+  #entries-front #hurtige-genveje .genvej-wrapper .right .title a { font-size: 12px; }
+  #entries-front #hurtige-genveje .genvej-wrapper .right .description { font-size: 9px; }
   /** PÅRØRENDE VIEW */
   #block-views-front-page-grid-block-1 h2.block-title { font-size: 2em; margin-bottom: 1.2em; }
   #block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content { overflow: hidden; margin-top: 4em; margin-bottom: 4em; }

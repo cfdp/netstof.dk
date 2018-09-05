@@ -478,8 +478,20 @@ FORSIDE INDGANGE
         width: 100%;
         .genvej-wrapper{
             height: 125px;
+            .left{
+                background-size: 40px!important;
+                height: 45px;
+                margin: 13px 0 9px 0;
+            }
             .right{
-                display: none;
+                .title {
+                    a{
+                        font-size: 12px;
+                    }
+                }
+                .description{
+                    font-size: 9px;
+                }
             }
         }
     }
