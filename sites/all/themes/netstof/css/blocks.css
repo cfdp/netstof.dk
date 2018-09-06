@@ -72,8 +72,8 @@ $legacy-support-for-ie7: true; */
 #block-views-front-page-grid-block .view-content .views-row { float: left; width: calc((100% - (46px*4)) / 4); height: 270px; color: #404040; padding: 23px; font-size: 13px; line-height: 15px; position: relative; }
 #block-views-front-page-grid-block .view-content .views-row:nth-child(3), #block-views-front-page-grid-block .view-content .views-row:nth-child(5) { background: #f6f5f5; }
 #block-views-front-page-grid-block .view-content .views-row .views-field-type { margin-bottom: 15px; }
-#block-views-front-page-grid-block .view-content .views-row .views-field-type .forum { padding: 0 0 0 50px; height: 45px; background: url("../images/front-entries/debatfora.png") no-repeat bottom left; background-size: 48px; }
-#block-views-front-page-grid-block .view-content .views-row .views-field-type .questions_and_answers { padding: 0 0 0 50px; height: 45px; background: url("../images/front-entries/brevkasser.png") no-repeat bottom left; background-size: 38px; }
+#block-views-front-page-grid-block .view-content .views-row .views-field-type .forum { padding: 10px 0 0 58px; height: 35px; background: url("../images/front-entries/debatfora.png") no-repeat 0 2px; background-size: 48px; font-weight: bold; }
+#block-views-front-page-grid-block .view-content .views-row .views-field-type .questions_and_answers { padding: 10px 0 0 50px; height: 34px; background: url(../images/front-entries/brevkasser.png) no-repeat 0 2px; background-size: 38px; font-weight: bold; }
 #block-views-front-page-grid-block .view-content .views-row .views-field-title a { font-size: 24px; line-height: 1.2em; color: #404040; font-weight: bold; }
 #block-views-front-page-grid-block .view-content .views-row .views-field-body { line-height: 1.6em; margin-top: 10px; }
 #block-views-front-page-grid-block .view-content .views-row .views-field-body a { color: #424242; text-decoration: none; }
@@ -95,8 +95,8 @@ $legacy-support-for-ie7: true; */
 #block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row { float: left; width: calc((100% - (46px*2)) / 2); height: 270px; color: #404040; padding: 23px; font-size: 13px; line-height: 15px; position: relative; }
 #block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row:nth-child(1), #block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row:nth-child(4) { background: #f6f5f5; }
 #block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row .views-field-type { margin-bottom: 15px; }
-#block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row .views-field-type .forum { padding: 0 0 0 50px; height: 45px; background: url("../images/front-entries/debatfora.png") no-repeat bottom left; background-size: 48px; }
-#block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row .views-field-type .questions_and_answers { padding: 0 0 0 50px; height: 45px; background: url("../images/front-entries/brevkasser.png") no-repeat bottom left; background-size: 38px; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row .views-field-type .forum { padding: 10px 0 0 58px; height: 35px; background: url("../images/front-entries/debatfora.png") no-repeat 0 2px; background-size: 48px; font-weight: bold; }
+#block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row .views-field-type .questions_and_answers { padding: 10px 0 0 50px; height: 34px; background: url(../images/front-entries/brevkasser.png) no-repeat 0 2px; background-size: 38px; font-weight: bold; }
 #block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row .views-field-title a { font-size: 24px; line-height: 1.2em; color: #404040; font-weight: bold; }
 #block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row .views-field-body { line-height: 1.6em; margin-top: 10px; }
 #block-views-front-page-grid-block-1 .view-display-id-block_1 .view-content .views-row .views-field-body a { color: #424242; text-decoration: none; }
@@ -213,7 +213,7 @@ ul#netstof-social-list li { float: left; list-style: none; margin: 0 11px 0 0; }
 
 #block-webform-client-block-564 .form-item-captcha-response { width: 130px; }
 
-#block-webform-client-block-564 input[type=submit] { color: white; font-weight: bold; text-transform: uppercase; font-size: 14px; line-height: 14px; background: #0B5A7C; padding: 10px 12px 10px 12px; border: none; border-radius: 5px; text-align: center; width: 100%; }
+#block-webform-client-block-564 input[type=submit] { color: #ffffff; font-weight: bold; text-transform: uppercase; font-size: 14px; line-height: 14px; background: #0B5A7C; padding: 10px 12px 10px 12px; border: none; border-radius: 5px; text-align: center; width: 100%; }
 
 #scroll-top { position: absolute; right: 0; top: -100px; }
 
@@ -315,7 +315,7 @@ ul.ui-autocomplete { border: none; background: none; border-radius: 0; margin: 0
 .header-search .form-item { width: 100%; }
 .header-search .form-item input[type=search] { padding: 0 2em; text-align: center; height: 85px; width: calc(100% - 4em); border: none; background-image: none; background-color: #0b5a7c; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; color: #fff; font-size: 1.7em; }
 .header-search .form-actions { position: absolute; right: 0; top: 0; margin: 0; padding: 0; border-radius: 0; border: none; cursor: pointer; }
-.header-search .form-actions input[type=submit] { width: 8em !important; height: 85px !important; background: #77b5cf !important; }
+.header-search .form-actions input[type=submit] { width: 8em !important; height: 85px !important; background: #77b5cf !important; color: #ffffff; border: 0; outline: none; }
 .header-search .close-search { position: absolute; top: 50%; right: 125px; z-index: 9; line-height: 0; margin-top: -17px; cursor: pointer; padding: 10px; }
 .header-search .close-search .close-search-btn { width: 15px; height: 15px; }
 .header-search .close-search .close-search-btn .cross { fill: #fff; }
@@ -326,3 +326,8 @@ ul.ui-autocomplete { border: none; background: none; border-radius: 0; margin: 0
 .page-search #content .search-form input[type=submit] { float: left; position: relative; bottom: -18px; }
 .page-search #content h2 { float: left; }
 .page-search #content ul { float: left; }
+
+.search-mobile #search-block-form { margin-bottom: 2em; }
+.search-mobile #search-block-form .container-inline .form-item input[type=search] { padding: 0 6em 0 1em; height: 50px; width: calc(100% - 7em); }
+.search-mobile #search-block-form .container-inline .form-actions { height: 52px; }
+.search-mobile #search-block-form .container-inline .form-actions input[type=submit] { border: none; background: #ffad00; text-transform: uppercase; color: #FFFFFF; width: 90px; height: 52px; font-family: "Cabin", sans-serif; font-size: 14px; }

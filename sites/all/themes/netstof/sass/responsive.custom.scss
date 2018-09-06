@@ -323,15 +323,15 @@ FORSIDE INDGANGE
             
             .views-field-type {
                 .forum {
-                    padding: 0 0 0 50px;
-                    height: 45px;
-                    background: url("../images/front-entries/debatfora.png") no-repeat bottom left;
+                    padding: 10px 0 0 58px;
+                    height: 35px;
+                    background: url("../images/front-entries/debatfora.png") no-repeat 0 2px;
                     background-size: 48px;
                 }
                 .questions_and_answers {
-                    padding: 0 0 0 50px;
-                    height: 45px;
-                    background: url("../images/front-entries/brevkasser.png") no-repeat bottom left;
+                    padding: 15px 0 0 50px;
+                    height: 30px;
+                    background: url("../images/front-entries/brevkasser.png") no-repeat 0 2px;
                     background-size: 38px;
                 }
             }
@@ -560,4 +560,67 @@ h1#page-title {
     font-size: 3em;
 }    
     
+}
+
+// MOBILE/DESKTOP SEARCH
+@media only screen and (max-width: 955px) { 
+
+    .header-search{
+        display: none;    
+    }
+    .search-icon{
+        display: none;
+    }
+    .page-search{
+        .search-mobile {
+            display: none;
+        }
+    }
+    
+    //Menu position
+    .region-header{
+        width: 100%;
+        position: inherit;
+        .menu-block-wrapper{
+            > ul.menu{
+                width: 100%!important;
+                text-align: center;
+                > li{
+                    display: inline-block;
+                    float: none!important;
+                    > ul{
+                        height: 40px;
+                        padding-top: 10px;
+                        top: 100px;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 670px) { 
+
+    .region-header{
+        .menu-block-wrapper{
+            > ul.menu{
+                > li{
+                    > ul{
+                        height: 33px;
+                        padding-top: 17px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (min-width: 955px) { 
+
+    .search-mobile {
+        display: none;
+    }
+
 }

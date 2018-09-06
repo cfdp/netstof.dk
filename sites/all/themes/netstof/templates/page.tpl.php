@@ -136,6 +136,13 @@
 </div>
 
 <div id="page" class="container <?php print $classes; ?>">
+    
+    <div id="columns" class="search-mobile clearfix">
+        <?php
+            $block = module_invoke('search', 'block_view', 'search');
+            print render($block); 
+        ?>
+    </div>
 
   <!-- Messages and Help -->
   <?php print $messages; ?>
