@@ -58,6 +58,12 @@ body {
 /**
  * PAGE
  */
+
+/* Front page */
+.front #page {
+	padding: 25px 0 65px 0;
+}
+
 #page {
 	padding: 65px 0;
 }

@@ -247,16 +247,18 @@
             .views-field-type {
                 margin-bottom: 15px;
                 .forum {
-                    padding: 0 0 0 50px;
-                    height: 45px;
-                    background: url("../images/front-entries/debatfora.png") no-repeat bottom left;
+                    padding: 10px 0 0 58px;
+                    height: 35px;
+                    background: url("../images/front-entries/debatfora.png") no-repeat 0 2px;
                     background-size: 48px;
+                    font-weight: bold;
                 }
                 .questions_and_answers {
-                    padding: 0 0 0 50px;
-                    height: 45px;
-                    background: url("../images/front-entries/brevkasser.png") no-repeat bottom left;
+                    padding: 10px 0 0 50px;
+                    height: 34px;
+                    background: url(../images/front-entries/brevkasser.png) no-repeat 0 2px;
                     background-size: 38px;
+                    font-weight: bold;
                 }
             }
             .views-field-title {
@@ -367,16 +369,18 @@
                 .views-field-type {
                     margin-bottom: 15px;
                     .forum {
-                        padding: 0 0 0 50px;
-                        height: 45px;
-                        background: url("../images/front-entries/debatfora.png") no-repeat bottom left;
+                        padding: 10px 0 0 58px;
+                        height: 35px;
+                        background: url("../images/front-entries/debatfora.png") no-repeat 0 2px;
                         background-size: 48px;
+                        font-weight: bold;
                     }
                     .questions_and_answers {
-                        padding: 0 0 0 50px;
-                        height: 45px;
-                        background: url("../images/front-entries/brevkasser.png") no-repeat bottom left;
+                        padding: 10px 0 0 50px;
+                        height: 34px;
+                        background: url(../images/front-entries/brevkasser.png) no-repeat 0 2px;
                         background-size: 38px;
+                        font-weight: bold;
                     }
                 }
                 .views-field-title {
@@ -757,7 +761,7 @@
                 width: 130px;
             }
 			#block-webform-client-block-564 input[type=submit] {
-				color: white;
+				color: #ffffff;
 				font-weight: bold;
 				text-transform: uppercase;
 				font-size: 14px;
@@ -1071,6 +1075,9 @@ ul.ui-autocomplete {
             width: 8em!important;
             height: 85px!important;
             background: #77b5cf!important;
+            color: #ffffff;
+            border: 0;
+            outline: none;
         }
     }
     .close-search{
@@ -1121,3 +1128,32 @@ ul.ui-autocomplete {
         }
     }
 }
+
+.search-mobile{
+    #search-block-form{
+        margin-bottom: 2em;
+        .container-inline{
+            .form-item{
+                input[type=search]{
+                    padding: 0 6em 0 1em;
+                    height: 50px;
+                    width: calc(100% - 7em);
+                }     
+            }
+            .form-actions{
+                height: 52px;
+                input[type=submit]{
+                    border: none;
+                    background: #ffad00;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
+                    width: 90px;
+                    height: 52px;
+                    font-family: "Cabin", sans-serif;
+                    font-size: 14px;
+                }    
+            }
+        }
+    }
+}
+
