@@ -5,11 +5,7 @@
 
 }
 .page-node-305 h1#page-title {
-	color: #0b5a7c !important;
-	padding: 10px 0 0 52px;
-	background: url("../images/icon-brev.png") no-repeat top left;
-	height: 36px;
-	margin-bottom: 0;
+	
 }
 	.page-node-305 .field-name-field-oversigt {
 		overflow: hidden;
@@ -17,6 +13,7 @@
 	.page-node-305 .field-name-field-oversigt .field-item {
 		display: inline-block;
 		width: 50%;
+        margin-bottom: 2em;
 	}
 		.page-node-305 .field-name-field-oversigt .field-item > div {
 			padding-right: 20px;
@@ -27,55 +24,46 @@
 			font-size: 13px;
 		}
 			.page-node-305 .field-name-field-oversigt .field-item h2 {
-				color: #0b5a7c;
 				font-weight: normal;
-				text-transform: uppercase;
-				font-size: 20px; line-height: 20px;
-				padding-top: 20px;
-				padding-left: 48px;
+				font-size: 25px; line-height: 25px;
+				padding-top: 0;
+				padding-left: 30px;
+                font-weight: bolder;
 			}
 				.page-node-305 .field-name-field-oversigt .field-item h2.psykolog {
-					background: url("../images/icon-psykolog.png") no-repeat 0 0;
+					background: url("../images/psychology.png") no-repeat 0 0;
 				}
 				.page-node-305 .field-name-field-oversigt .field-item h2.laege {
-					background: url("../images/icon-laege.png") no-repeat 0 0;
+					background: url("../images/medicine.png") no-repeat 0 0;
 				}
 				.page-node-305 .field-name-field-oversigt .field-item h2.rusmiddel {
-					background: url("../images/icon-professor.png") no-repeat 0 0;
+					background: url("../images/drug.png") no-repeat 0 0;
+				}
+                .page-node-305 .field-name-field-oversigt .field-item h2.paaroerende {
+					background: url("../images/love.png") no-repeat 0 0;
 				}
 				.page-node-305 .field-name-field-oversigt .field-item p {
 					float: left;
 					width: 100%;
 				}
 			.page-node-305 .field-name-field-oversigt .field-item a.goto-link {
-				color: #FFFFFF;
-				font-weight: bold;
-				text-transform: uppercase;
-				font-size: 15px; line-height: 15px;
-				display: block;
-				background: #0b5a7c url("../images/icon-white-triangle.png") no-repeat 13px 11px;
-				padding: 10px 12px 10px 30px;
-				float: left;
-				-webkit-border-top-left-radius: 5px;
-				-webkit-border-bottom-left-radius: 5px;
-				-moz-border-radius-topleft: 5px;
-				-moz-border-radius-bottomleft: 5px;
-				border-top-left-radius: 5px;
-				border-bottom-left-radius: 5px;
+				color: white;
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: 15px;
+                line-height: 15px;
+                display: block;
+                background: #0B5A7C url(../images/icon-white-triangle.png) no-repeat 32px 21px;
+                padding: 20px 35px 20px 53px;
+                float: left;
 			}
 			.page-node-305 .field-name-field-oversigt .field-item a.add-link {
 				display: block;
-				height: 35px;
-				width: 35px;
+				height: 55px;
+				width: 55px;
 				background: #0b5a7c url("../images/icon-plus-mini.png") no-repeat center center;
 				float: left;
 				margin-left: 3px;
-				-webkit-border-top-right-radius: 5px;
-				-webkit-border-bottom-right-radius: 5px;
-				-moz-border-radius-topright: 5px;
-				-moz-border-radius-bottomright: 5px;
-				border-top-right-radius: 5px;
-				border-bottom-right-radius: 5px;
 			}
 		.page-node-305 .field-name-field-oversigt .field-item .view-content {
 			float: left;
@@ -129,28 +117,12 @@
 }
 	body.page-brevkasse .view-Brevkasse > .view-header,
 	body.page-faq .view-faq > .view-header {
-		margin-bottom: 14px;
-		box-shadow: 0 0 7px #BBB;
+		margin-bottom: 4em;
 		background: #FFF;
-		padding: 23px;
 		position: relative;
 		font-family: "Cabin", sans-serif;
 		overflow: hidden;
 	}
-		.view-Brevkasse > .view-header .header-title,
-		.view-faq > .view-header .header-title {
-			padding: 0 0 0 50px;
-			margin-bottom: 19px;
-		}
-			.view-Brevkasse.view-display-id-page_2 .header-title {
-				background: url("../images/icon-laege.png") no-repeat 0 0;
-			}
-			.view-Brevkasse.view-display-id-page_3 .header-title {
-				background: url("../images/icon-psykolog.png") no-repeat 0 0;
-			}
-			.view-Brevkasse.view-display-id-page_4 .header-title {
-				background: url("../images/icon-professor.png") no-repeat 0 0;
-			}
 			.view-Brevkasse .view-header .header-title span,
 			.view-faq .view-header .header-title span {
 				font-size: 13px;
@@ -158,14 +130,15 @@
 			}
 			.view-Brevkasse > .view-header .header-title h1,
 			.view-faq > .view-header .header-title h1 {
-				color: #0b5a7c;
-				font-size: 28px; line-height: 28px;
-				margin: 0; padding: 4px 0 0 0;
-				font-weight: normal;
-				font-family: "Cabin", sans-serif;
+				font-size: 3.5em;
+                line-height: 1.1em;
+                color: #424242;
+                font-weight: bolder;
+                margin-bottom: 0.2em;
+                margin-top: 0;
 			}
 		.view-Brevkasse > .view-header > .view-brevkasseredaktoerer {
-			width: 50%;
+			width: 100%;
 			float: left;
 		}
 			.view-brevkasseredaktoerer .views-field-picture {
@@ -182,7 +155,7 @@
 				color: #424242;
 				padding: 10px 10px 10px 0;
 				float: left;
-				width: 151px;
+				width: calc(100% - 104px - 10px - 10px);
 			}
 				.view-brevkasseredaktoerer .views-field-name a {
 					color: #424242;
@@ -195,29 +168,34 @@
 				padding: 0 10px 0 0;
 			}
 		.view-Brevkasse > .view-header > .brevkasse-desc {
-			width: 50%;
+			width: 100%;
 			float: left;
 			font-size: 13px;
 			padding: 10px 0 0 0;
 		}
 		.view-Brevkasse > .view-header #add-question {
-			position: absolute;
-			top: 23px;
-			right: 23px;
 			color: white;
-			font-weight: bold;
-			text-transform: uppercase;
-			font-size: 15px;
-			line-height: 15px;
-			display: inline-block;
-			background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px;
-			padding: 10px 12px 10px 30px;
-			border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 15px;
+            line-height: 15px;
+            display: block;
+            background: #77b5cf url(../images/icon-plus-mini.png) no-repeat 32px 21px;
+            padding: 20px 35px 20px 53px;
+            float: left;
+            clear: both;
 		}
+    .views-accordion-faq-page-header{
+        margin-top: 2em;
+    }
 	.view-Brevkasse > .view-content > .views-row,
 	.view-faq > .view-content > .views-row {
 		margin-bottom: 14px;
-		box-shadow: 0 0 7px #BBB;
+        border-bottom: 1px solid #c5c5c5;
+        padding-bottom: 14px;
+        &.views-row-last{
+            border: 0;
+        }
 	}
 		.view-Brevkasse > .view-content > .views-row > .views-field,
 		.view-faq > .view-content > .views-row > .views-field {
@@ -422,44 +400,31 @@
 .view-artikler {
 	position: relative;
 }
-.view-artikler .views-fluidgrid-item {
+.view-artikler .views-row {
 	float: left;
-	background: url("../images/grid-box-bg.png") no-repeat 0 9px;
-	width: 294px; height: auto;
+	width: 294px; height: 335px;
 	max-width: 100%;
 	color: #404040;
 	font-size: 13px; line-height: 15px;
+    margin: 5px;
+    margin-bottom: 15px;
+    .views-field-title {
+        padding: 23px 0 9px;
+        a {
+            color: #1e6381;
+            font-size: 20px; line-height: 20px;
+            text-transform: uppercase;
+        }
+    }
+    .views-field-body {
+        padding: 0;
+        font-size: 13px;
+        color: #404040;
+    }
 }
-	.view-artikler .views-fluidgrid-item .views-fluidgrid-item-inner {
-		height: 335px;
-		position: relative;
-		background: white url("../images/block-btm.png") no-repeat bottom center;
-		padding: 0;
-	}
-	.view-artikler .views-fluidgrid-item .views-fluidgrid-item-top {
-		background: url("../images/small_shadow_top.png") no-repeat top center;
-		height: 9px;
-	}
-	.view-artikler .views-fluidgrid-item .views-fluidgrid-item-btm {
-		background: url("../images/small_shadow_bottom.png") no-repeat bottom center;
-		height: 12px;
-	}
-		.view-artikler .views-fluidgrid-item .views-field-field-image {
-			line-height: 0;
-		}
-		.view-artikler .views-fluidgrid-item .views-field-title {
-				padding: 23px 23px 9px;
-		}
-			.view-artikler .views-fluidgrid-item .views-field-title a {
-				color: #1e6381;
-				font-size: 20px; line-height: 20px;
-				text-transform: uppercase;
-			}
-		.view-artikler .views-fluidgrid-item .views-field-body {
-			padding: 0 23px;
-			font-size: 13px;
-			color: #404040;
-		}
+
+
+
 		/* Pager */
 		.view-artikler ul.pager {
 			color: #424242;
@@ -500,7 +465,7 @@
 .view-faq,
 .view-leksikon {
 	padding-top: 15px;
-	border-top: 1px dashed #dedddb;
+	border-top: 1px solid #dedddb;
 	overflow: hidden;
 }
 .view-faq .view-content,
@@ -630,11 +595,12 @@
 		font-family: "Cabin", sans-serif;
 		color: #FFFFFF;
 		height: 38px;
-		width: 170px;
+		width: 236px;
 		}
 	.view-faq .views-exposed-form .views-submit-button,
 	.view-leksikon .views-exposed-form .views-submit-button {
 		float: left;
+        width: 100%;
 	}
 		.view-faq .views-exposed-form .views-submit-button input[type=submit],
 		.view-leksikon .views-exposed-form .views-submit-button input[type=submit] {
@@ -642,18 +608,17 @@
 			background: #FFAD00;
 			text-transform: uppercase;
 			color: white;
-			width: 58px;
-			height: 38px;
 			font-family: "Cabin", sans-serif;
 			font-size: 14px;
+            padding: 10px 50px;
 		}
 
 /**
  * GOOGLE MAPS KORT
  */
 .view-kort .view-empty {
-	border-top: 1px dashed #dedddb;
-	border-bottom: 1px dashed #dedddb;
+	border-top: 1px solid #dedddb;
+	border-bottom: 1px solid #dedddb;
 	float: left;
 	width: 100%;
 	min-height: 405px;
@@ -729,8 +694,8 @@
 /* Kort */
 .view-kort.view-display-id-default > .view-content,
 .view-kort-enkelt-kommune.view-display-id-default > .view-content {
-	border-top: 1px dashed #dedddb;
-	border-bottom: 1px dashed #dedddb;
+	border-top: 1px solid #dedddb;
+	border-bottom: 1px solid #dedddb;
 	float: left;
 	width: 100%;
 	margin: 15px 0 0 0;
@@ -768,7 +733,7 @@
         li {
           margin: 0; padding: 10px 0 10px 0;
           font-size: 13px; line-height: 14px;
-          border-bottom: 1px dashed #dedddb;
+          border-bottom: 1px solid #dedddb;
           overflow: hidden;
           
           > div a {
@@ -855,38 +820,32 @@
  * SØGERESULTATER
  */
 .page-search-node section#main-content {
-	background: url("../images/big_shadow_top.png") no-repeat top center;
-	padding-top: 11px;
-	position: relative; top: -11px;
 }
 .page-search-node #main-content-header {
-	padding: 23px 23px 0 23px;
-	background: white url("../images/content-top.png") no-repeat top center;
+
 }
 .page-search-node #content {
-	padding: 0 23px 23px 23px;
-	background: white url("../images/content-btm.png") no-repeat bottom center;
+
 }
 .page-search-node #content-btm-shadow {
-	background: url("../images/big_shadow_bottom.png") no-repeat bottom center;
-	height: 15px;
+
 }
 .page-search-node #content h2 {
-	font-size: 20px;
-	text-transform: uppercase;
+	font-size: 25px;
 	color: #222;
-	margin-bottom: 20px;
-	margin-top: 30px;
+	margin-bottom: 35px;
+	margin-top: 45px;
+    font-weight: bolder;
 }
 ol.search-results {
 	margin: 0; padding: 0;
+    float: left;
 }
 	ol.search-results li {
-		margin-bottom: 22px;
+		margin-bottom: 3em;
 	}
 		ol.search-results li h3 {
-			font-size: 15px;
-			text-transform: uppercase;
+			font-size: 18px;
 			margin: 0 0 10px 0;
 			padding: 0;
 		}
@@ -929,68 +888,99 @@ ol.search-results {
 		color: #424242;
 	}
 
-/* Slideshow */
-.netstof-slideshow a{
-	text-decoration:none;color:#faad09;
+/* Slideshow forside*/
+.region-banner-front{
+    position: relative;
+    .slideshow-content{
+        width: 928px;
+        color: #fff;
+        position: absolute;
+        z-index: 99;
+        top: 50%;
+        left: 50%;
+        margin-left: calc(-928px / 2);
+        -ms-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+        
+        span{
+            text-transform: uppercase;
+        }
+        h2{
+            font-size: 5.5em;
+            line-height: 1.2em;
+            font-weight: bolder;
+            margin: 0 0 0.2em 0;
+            padding: 0 30% 0 0;
+        }
+        p{
+            line-height: 1.5em;
+            font-size: 1.2em;
+            padding-right: 30%;
+        }
+        .read-more-btn a{
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 15px;
+            line-height: 15px;
+            display: block;
+            background: #77b5cf;
+            padding: 20px 35px;
+            float: left;
+            clear: both;
+        }
+    }
+    .img-container{
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: center top;
+        min-height: 500px;
+        width: 100vw;
+    }
 }
-.netstof-slideshow .skin-default{
-	position:relative;
+
+/* Slideshow Pårørende */
+#block-views-slideshow-block-1{
+    position: relative;
+    .views-field-nothing{
+        background: rgba(0, 0, 0, 0.5);
+        padding: 1.2em 2em;
+        color: #fff;
+        position: absolute;
+        bottom: 24px;
+        left: 0;;
+        width: 45%;
+        span > span{
+            text-transform: uppercase;
+            font-size: 0.8em;
+        }
+        h2{
+            font-size: 1.6em;
+            line-height: 1.2em;
+            font-weight: bolder;
+            margin: 0 0 0.5em 0;
+            padding: 0;
+        }
+        .read-more-btn a{
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+            line-height: 12px;
+            display: block;
+            background: #77b5cf;
+            padding: 12px 20px;
+            float: left;
+            clear: both;
+        }
+    }
 }
-	.netstof-slideshow .views-slideshow-controls-top{
-		position:absolute;top:0;left:0;z-index:5;
-	}
-	.netstof-slideshow #views_slideshow_cycle_main_slideshow-block{
-		position:relative;top:0;left:0;z-index:4;
-	}
-		/* Text-overlay */
-		.widget_pager_top{position:relative;}
-		.views-slideshow-pager-field-item > div{display:none;}
-		.views-slideshow-pager-field-item > div.views-field-counter{display:block;}
-		.views-slideshow-pager-field-item.active{
-			width:209px;height:159px;margin-top:44px;padding:25px 20px 20px 20px;
-			background:url('../images/slideshow-text-bg.png') repeat-x top left transparent;
-			color:#ffffff;
-		}
-		.netstof-slideshow .views-field-counter{
-			width:18px;height:28px;padding:6px 0 0 12px;
-			background:#404040;
-			color:#ffffff;
-		}
-		.netstof-slideshow .views-slideshow-pager-field-item.active > div.views-field-counter{
-			width:43px;height:34px;
-			background-color:none;
-			background:url('../images/slide-active.png') no-repeat top left;
-		}
-		#widget_pager_top_slideshow-block #views_slideshow_pager_field_item_top_slideshow-block_0 > div.views-field-counter,
-		#widget_pager_top_slideshow-block_1 #views_slideshow_pager_field_item_top_slideshow-block_1_0 > div.views-field-counter{
-			position:absolute;top:0;left:-31px;
-		}
-		#widget_pager_top_slideshow-block #views_slideshow_pager_field_item_top_slideshow-block_1 > div.views-field-counter,
-		#widget_pager_top_slideshow-block_1 #views_slideshow_pager_field_item_top_slideshow-block_1_1 > div.views-field-counter{
-			position:absolute;top:35px;left:-31px;
-		}
-		#widget_pager_top_slideshow-block #views_slideshow_pager_field_item_top_slideshow-block_2 > div.views-field-counter,
-		#widget_pager_top_slideshow-block_1 #views_slideshow_pager_field_item_top_slideshow-block_1_2 > div.views-field-counter{
-			position:absolute;top:70px;left:-31px;
-		}
-		#widget_pager_top_slideshow-block #views_slideshow_pager_field_item_top_slideshow-block_3 > div.views-field-counter,
-		#widget_pager_top_slideshow-block_1 #views_slideshow_pager_field_item_top_slideshow-block_1_3 > div.views-field-counter{
-			position:absolute;top:105px;left:-31px;
-		}
-		.netstof-slideshow .widget_pager_top .views-slideshow-pager-field-item.active > div{display:block;}
-		.netstof-slideshow .widget_pager_top .views-field-title{font-size:18px;}
-		.netstof-slideshow .widget_pager_top .views-field-field-slide-tags{
-			margin-bottom:10px;
-			text-transform:uppercase;font-size:11px;
-		}
-		.netstof-slideshow .widget_pager_top .views-field-body{font-size:13px;line-height:1.3;}
-		.netstof-slideshow .widget_pager_top .views-content-body > p{margin-bottom:10px;}
-		.netstof-slideshow .widget_pager_top .views-field-view-node{
-			margin-right:10px;padding:0 15px 0 0;
-			font-size:13px;
-			text-transform:uppercase;text-align:right;
-			background:url('../images/read-more-arrow.png') no-repeat 190px 4px;
-		}
 
 #leftcontent{
 	width:160px;margin-top:20px;padding:0 20px 0 20px;
@@ -1198,3 +1188,80 @@ body.page-paaroerende .region-sidebar-first #hurtige-genveje{
 	#leftcontent p{
 		margin:0;padding:0;
 	}
+
+
+
+/*
+FORSIDE INDGANGE
+*/
+
+#entries-front {
+    #hurtige-genveje{
+        width: 928px;
+        margin: 0 auto;
+        .genvej-wrapper{
+            position: relative;
+            float: left;
+            width: 33%;
+            height: 170px;
+            text-align: center;
+            border-right: 1px solid #e3e3e3;
+            .plus-brevkasse, .plus-debatforum{
+                position: absolute;
+                right: 0;
+                top: 0;
+                display: none;
+            }
+            .left{
+                width: 100%;
+                height: 70px;
+                margin: 0 0 15px 0;
+                margin-top: 18px;
+            }
+            .right{
+                .title a{
+                    color: #424242;  
+                    font-weight: bolder;
+                    text-transform: uppercase;
+                    font-size: 18px;
+                }
+                .description{
+                    color: #404040;
+                    text-transform: uppercase;
+                    font-size: 12px;
+                }
+            }
+            &:hover{
+                .plus-brevkasse, .plus-debatforum{
+                    display: block;
+                }
+            }
+        }
+        .genvej-wrapper:nth-child(1){
+            .left{
+                background: url(../images/front-entries/afstemninger.png) no-repeat transparent bottom center;
+            }
+        }
+        .genvej-wrapper:nth-child(2){
+            .left{
+                background: url(../images/front-entries/brevkasser.png) no-repeat transparent bottom center;
+            }
+        }
+        .genvej-wrapper:nth-child(3){
+            border-right: 0;
+            .left{
+                background: url(../images/front-entries/debatfora.png) no-repeat transparent bottom center;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+

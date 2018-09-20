@@ -258,6 +258,7 @@ var {
 
 #logo img {
   vertical-align: bottom;
+    width: 90%;
 }
 
 /*
@@ -1778,7 +1779,7 @@ article.node-image-poll{
     height: auto;
     margin-bottom: 10px;
     min-height: 28px;
-    padding: 10px 23px 0;
+    padding: 10px 0 0 0;
 .page-image-polls & { padding: 10px 0 0; }
     display: block;
    }
@@ -1857,7 +1858,6 @@ article.node-image-poll{
 }
 
 .view-image-polls a.btn {
-  margin-left: 1em;
 }
 
 .view-display-id-page ul.links.inline {
@@ -1893,9 +1893,9 @@ article.node-image-poll{
     background: #0b5a7c;
     padding: 10px 12px 10px 12px;
     margin: 10px 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
     cursor: pointer;
     display:inline-block;
     vertical-align: middle;
@@ -1922,13 +1922,27 @@ a.btn {
   font-size: 15px;
   line-height: 15px;
   display: inline-block;
-  background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 11px 11px;
-  padding: 10px 12px 10px 30px;
-  border-radius: 5px
+  background: #0B5A7C url("../images/icon-plus-mini.png") no-repeat 29px 21px;
+  padding: 20px 35px 20px 53px;
 }
 
 #views_fluidgrid_front_page_grid_block .views-field-timestamp{
   float: left;
   font-size: 12px;
   margin-bottom: 10px;
+}
+
+.node-forum-form input[type=submit]{
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 15px;
+    display: block;
+    background: #77b5cf;
+    padding: 20px 35px;
+    float: left;
+    clear: both;
+    border: 0;
+    outline: none;
 }
