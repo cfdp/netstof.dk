@@ -3,7 +3,11 @@
 $legacy-support-for-ie7: true; */
 /* responsive.custom.css is for custom media queries that are not set via the theme settings, such as cascading media queries.  By default all the other responsive stylesheets used in Adaptivetheme use a "stacking method", however cascading media queries use a waterfall method so you can leverage the cascade and inheritance for all browsers that support media queries, regardless of screen size.  @SEE http://zomigi.com/blog/essential-considerations-for-crafting-quality-media-queries/#mq-overlap-stack  NOTE: this file loads by default, to disable got to your theme settings and look under the "CSS" settings tab. */
 /** MOBILE */
-@media only screen and (max-width: 670px) { #block-block-33 div.messages { margin: 0 10px 2em 10px; }
+@media only screen and (min-width: 670px) { .mobile-menu-overlay .close-menu { right: 4em; } }
+@media only screen and (max-width: 670px) { .mobile-menu-overlay .close-menu { right: 1em; }
+  header #logo { padding: 32px 0 0 0; height: 35px; }
+  header #logo svg { width: 130px; height: 35px; }
+  #block-block-33 div.messages { margin: 0 10px 2em 10px; }
   .region[class*="float-blocks"] .block { float: none; width: 100%; }
   /* Header */
   #header-container { min-height: 100px; }
@@ -104,7 +108,6 @@ FORSIDE INDGANGE
   .not-front .region-sidebar-first .block .block-content { background: transparent; }
   /* HIDE BLOCK REGIONS */
   .region-tabs-right { display: none; }
-  #branding { display: none; }
   #header-btm-container a { display: none; } }
 /** DESKTOP + TABLET Horizontal */
 @media only screen and (min-width: 955px) { #breadcrumbs { display: none; }
@@ -134,9 +137,8 @@ FORSIDE INDGANGE
 @media only screen and (max-width: 955px) { .header-search { display: none; }
   .search-icon { display: none; }
   .page-search .search-mobile { display: none; }
-  .region-header { width: 100%; position: inherit; }
-  .region-header .menu-block-wrapper > ul.menu { width: 100% !important; text-align: center; }
-  .region-header .menu-block-wrapper > ul.menu > li { display: inline-block; float: none !important; }
-  .region-header .menu-block-wrapper > ul.menu > li > ul { height: 40px; padding-top: 10px; top: 100px; } }
+  .region-header { display: none; }
+  #header-btm-container { height: 1px; background: #c5c5c5; } }
 @media only screen and (max-width: 670px) { .region-header .menu-block-wrapper > ul.menu > li > ul { height: 33px; padding-top: 17px; } }
-@media only screen and (min-width: 955px) { .search-mobile { display: none; } }
+@media only screen and (min-width: 955px) { .search-mobile { display: none; }
+  .hamburger-icon { display: none; } }

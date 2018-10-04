@@ -19,17 +19,35 @@
 /**
  * MOBILE
  */
+@media only screen and (min-width: 670px) {
+    .mobile-menu-overlay .close-menu {
+        right: 4em;
+    }
+}
 
 @media only screen and (max-width: 670px) {
-  
+    
+    .mobile-menu-overlay .close-menu {
+        right: 1em;
+    }
+    
+    header #logo {
+        padding: 32px 0 0 0;
+        height: 35px;
+    }
+    header #logo svg{
+        width: 130px;
+        height: 35px;
+    }
+    
     #block-block-33 div.messages {
         margin: 0 10px 2em 10px;
     }
     
     .region[class*="float-blocks"] .block {
-    float: none;
-    width: 100%;
-  }
+        float: none;
+        width: 100%;
+      }
 
   /* Header */
   #header-container {
@@ -442,9 +460,7 @@ FORSIDE INDGANGE
   .region-tabs-right {
     display: none;
   }
-  #branding {
-    display: none;
-  }
+
   #header-btm-container a {
     display: none;
   }
@@ -577,25 +593,13 @@ h1#page-title {
         }
     }
     
-    //Menu position
+    //desktop menu hide
     .region-header{
-        width: 100%;
-        position: inherit;
-        .menu-block-wrapper{
-            > ul.menu{
-                width: 100%!important;
-                text-align: center;
-                > li{
-                    display: inline-block;
-                    float: none!important;
-                    > ul{
-                        height: 40px;
-                        padding-top: 10px;
-                        top: 100px;
-                    }
-                }
-            }
-        }
+        display: none;
+    }
+    #header-btm-container{
+        height: 1px;
+        background: #c5c5c5;
     }
     
 }
@@ -620,6 +624,9 @@ h1#page-title {
 @media only screen and (min-width: 955px) { 
 
     .search-mobile {
+        display: none;
+    }
+    .hamburger-icon {
         display: none;
     }
 

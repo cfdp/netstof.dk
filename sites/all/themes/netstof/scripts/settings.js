@@ -58,6 +58,29 @@ $(function () {
       }, 200);
     }
   );
+    
+    
+    
+/**
+* MOBILE MENU ANIMATION
+*/
+$('.hamburger-icon').on('click', function(event) {
+    $(".mobile-menu-overlay").toggleClass("open");
+    $("#logo svg path").css("fill", "#ffffff");
+    $("html").css("overflow", "hidden");
+    $("html").css("position", "fixed");
+}); 
+    
+$('.mobile-menu-overlay').on('click', function(event) {
+    $(".mobile-menu-overlay").toggleClass("open");
+    $("#logo svg path").css("fill", "#424242");
+    $("html").css("overflow", "auto");
+    $("html").css("position", "inherit");
+}); 
+    
+    
+    
+    
 
   /**
    * SCROLL TO FIXED
