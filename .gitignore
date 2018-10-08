@@ -30,3 +30,6 @@ sites/default/files/.htaccess
 .ruby-version
 .sass-cache
 *.sublime-workspace
+
+#ignore docker-compose.yml
+docker-compose.yml
