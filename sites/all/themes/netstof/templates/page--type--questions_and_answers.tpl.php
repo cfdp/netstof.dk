@@ -90,7 +90,7 @@
 ?>
 
 <div id="header-container">
-    
+
   <header class="container">
 
     <?php if ($site_logo || $site_name || $site_slogan): ?>
@@ -107,7 +107,7 @@
           <hgroup<?php print $hgroup_attributes; ?>>
 
             <?php if ($site_name): ?>
-              <h1<?php print $site_name_attributes; ?>><?php print $site_name; ?></h1>
+              <div<?php print $site_name_attributes; ?>><?php print $site_name; ?></div>
             <?php endif; ?>
 
             <?php if ($site_slogan): ?>
@@ -122,9 +122,9 @@
 
     <!-- region: Header -->
     <div class="search-icon active">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" class="svg-search"><path class="search-svg" d="M18,16.1l7,7L23.1,25l-7-7A9.9,9.9,0,0,1,10,20,10,10,0,1,1,20,10,9.9,9.9,0,0,1,18,16.1Zm-8,1.3A7.4,7.4,0,1,0,2.7,10,7.4,7.4,0,0,0,10,17.4Z"></path></svg>       
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" class="svg-search"><path class="search-svg" d="M18,16.1l7,7L23.1,25l-7-7A9.9,9.9,0,0,1,10,20,10,10,0,1,1,20,10,9.9,9.9,0,0,1,18,16.1Zm-8,1.3A7.4,7.4,0,1,0,2.7,10,7.4,7.4,0,0,0,10,17.4Z"></path></svg>
     </div>
-    <div class="hamburger-icon">  
+    <div class="hamburger-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 23" class="burger"> <path class="line" d="M1.4,3h27.3C29.4,3,30,2.3,30,1.5S29.4,0,28.6,0H1.4C0.6,0,0,0.7,0,1.5S0.6,3,1.4,3z"></path> <path class="line" d="M28.6,10H1.4C0.6,10,0,10.7,0,11.5S0.6,13,1.4,13h27.3c0.8,0,1.4-0.7,1.4-1.5S29.4,10,28.6,10z"></path> <path class="line" d="M28.6,20H1.4C0.6,20,0,20.7,0,21.5S0.6,23,1.4,23h27.3c0.8,0,1.4-0.7,1.4-1.5S29.4,20,28.6,20z"></path> </svg>
     </div>
     <?php print render($page['header']); ?>
@@ -133,7 +133,7 @@
 
 <div id="header-btm-container">
   <div class="container">
-    <a href="/paaroerende" title="Artikler og rådgivning for pårørende"><img src="<?php print $base_path.drupal_get_path("theme","netstof").$variables['paaroerende_img'];?>" id="find-hjaelp" /></a>	
+    <a href="/paaroerende" title="Artikler og rådgivning for pårørende"><img src="<?php print $base_path.drupal_get_path("theme","netstof").$variables['paaroerende_img'];?>" id="find-hjaelp" /></a>
   </div>
 </div>
 
