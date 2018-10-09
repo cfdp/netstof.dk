@@ -220,7 +220,7 @@
 	 */
 	.region-header ul.menu > li.expanded  > ul {
 		display: none;
-		width: 370px;
+		width: 430px;
 		z-index: 100;
 	}
 	.region-header ul.menu > li.expanded.active-trail  > ul {
@@ -232,8 +232,8 @@
 		margin: 0;
 		position: absolute;
 		top: 108px;
-        left: 15px;
-		text-align: left;
+        left: -285px;
+		text-align: right;
 	}
 		.region-header ul.menu > li  > ul > li {
 			list-style: none;
