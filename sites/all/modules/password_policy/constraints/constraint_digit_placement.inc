@@ -6,6 +6,7 @@
  *
  * @link https://drupal.org/node/316768
  *
+ * @codingStandardsIgnoreLine
  * @author David Kent Norman (https://deekayen.net/)
  */
 
@@ -38,12 +39,12 @@ function password_policy_constraint_digit_placement_validate($password, $constra
   $chars = drupal_strlen($password);
   $num = 0;
   for ($i = 0; $i < $chars; ++$i) {
-    if (ctype_digit(drupal_substr($password, $i, 1))) {
+    if (preg_match('/[0-9]/', drupal_substr($password, $i, 1))) {
       $num++;
     }
   }
   if ($num < (int) $constraint) {
-    return preg_match("/^(\d+)|(\d+)$/", $password) != 1;
+    return preg_match('/^(\d+)|(\d+)$/', $password) != 1;
   }
   return TRUE;
 }
@@ -78,7 +79,7 @@ function password_policy_constraint_digit_placement_js($constraint, $account) {
       num += substr_count(value, i);
     }
     if (num < $constraint && value.match(/^(\d+)|(\d+)$/) != null) {
-      strength = "low";
+      strength = 'low';
       msg.push(translate.constraint_digit_placement);
     }
 JS;
