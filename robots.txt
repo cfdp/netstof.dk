@@ -78,9 +78,9 @@ Disallow: /user/register/
 Disallow: /user/password/
 Disallow: /user/login/
 Disallow: /user/logout/
-Disallow: /debatforum/hash?*
-Disallow: /debatforum/stoffer?*
-Disallow: /debatforum/alkohol?*
+Disallow: /debatforum/hash?page=*
+Disallow: /debatforum/stoffer?page=*
+Disallow: /debatforum/alkohol?page=*
 # Paths (no clean URLs)
 Disallow: /?q=admin/
 Disallow: /?q=comment/reply/
