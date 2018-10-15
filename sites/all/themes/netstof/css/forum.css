@@ -359,3 +359,17 @@ padding: 35px 0px 40px 1px;
 .page-comment-reply #comment-form {
 	padding-top: 23px;
 }
+
+/**
+* Artikler fikse styling for h2 tags
+*/
+.view-artikler .views-row .views-field-title h2{
+	margin:0;
+}
+
+/**
+* Leksikon fikse styling for h2 tags
+*/
+.view-leksikon .views-row .views-field-title h2{
+	font-size:20px;
+}
