@@ -63,41 +63,41 @@
 <?php print $styles; ?>
 <?php print $scripts; ?>
 <?php print $polyfills; ?>
-
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="4701a8cf-157e-4aa1-899c-83cff9f01318" type="text/javascript" async></script>
 </head>
 <body class="<?php print $classes; ?>"<?php print $attributes; ?>>
-    
+
   <div class="mobile-menu-overlay">
-      <span class="close-menu"> 
-          <svg width="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 23" class="close-menu-btn"> <path class="cross" d="M14.1,11.5l8.6-8.6c0.5-0.5,0.5-1.4-0.1-2c-0.6-0.6-1.5-0.6-2-0.1L12,9.4L3.4,0.8C2.9,0.3,2,0.3,1.4,0.9c-0.6,0.6-0.6,1.5-0.1,2l8.6,8.6l-8.6,8.6c-0.5,0.5-0.5,1.4,0.1,2c0.6,0.6,1.5,0.6,2,0.1l8.6-8.6l8.6,8.6c0.5,0.5,1.4,0.5,2-0.1c0.6-0.6,0.6-1.5,0.1-2L14.1,11.5z"></path> </svg> 
+      <span class="close-menu">
+          <svg width="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 23" class="close-menu-btn"> <path class="cross" d="M14.1,11.5l8.6-8.6c0.5-0.5,0.5-1.4-0.1-2c-0.6-0.6-1.5-0.6-2-0.1L12,9.4L3.4,0.8C2.9,0.3,2,0.3,1.4,0.9c-0.6,0.6-0.6,1.5-0.1,2l8.6,8.6l-8.6,8.6c-0.5,0.5-0.5,1.4,0.1,2c0.6,0.6,1.5,0.6,2,0.1l8.6-8.6l8.6,8.6c0.5,0.5,1.4,0.5,2-0.1c0.6-0.6,0.6-1.5,0.1-2L14.1,11.5z"></path> </svg>
       </span>
       <?php
             $block = module_invoke('menu_block', 'block_view', 1);
-            print render($block['content']); 
+            print render($block['content']);
        ?>
-  </div>    
-    
+  </div>
+
   <div id="skip-link">
     <a href="<?php print $skip_link_target; ?>" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>
-    
-    
+
+
     <div class="header-search">
-        
+
         <?php
             $block = module_invoke('search', 'block_view', 'search');
-            print render($block); 
+            print render($block);
         ?>
         <span class="close-search">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 23" class="close-search-btn">
             <path class="cross" d="M14.1,11.5l8.6-8.6c0.5-0.5,0.5-1.4-0.1-2c-0.6-0.6-1.5-0.6-2-0.1L12,9.4L3.4,0.8C2.9,0.3,2,0.3,1.4,0.9c-0.6,0.6-0.6,1.5-0.1,2l8.6,8.6l-8.6,8.6c-0.5,0.5-0.5,1.4,0.1,2c0.6,0.6,1.5,0.6,2,0.1l8.6-8.6l8.6,8.6c0.5,0.5,1.4,0.5,2-0.1c0.6-0.6,0.6-1.5,0.1-2L14.1,11.5z"></path>
             </svg>
         </span>
-        
+
     </div>
-    
-    
-    
+
+
+
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
