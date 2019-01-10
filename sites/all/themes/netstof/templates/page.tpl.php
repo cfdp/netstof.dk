@@ -133,7 +133,7 @@
 
 <div id="header-btm-container">
 	<div class="container">
-		<a href="/paaroerende" title="Artikler og rådgivning for pårørende"><img src="<?php print $base_path.drupal_get_path("theme","netstof").$variables['paaroerende_img'];?>" id="find-hjaelp" /></a>
+		<a href="/paaroerende" title="Artikler og rådgivning for pårørende"><img src="<?php print $base_path.drupal_get_path("theme","netstof").$variables['paaroerende_img'];?>" id="find-hjaelp" alt="Skilt som linker til side med hjælp til pårørende" /></a>
 	</div>
 </div>
 
