@@ -1025,10 +1025,13 @@ ul.ui-autocomplete {
 #block-block-33{
     div.messages{
         margin: 0 0 2em 0;
-        background: #e2efdf url(../images/alert_icon.png) no-repeat 30px 40px;
+        background: #e2efdf;
         border-color: #bfcfbb;
         color: #424242;
-        padding: 15px 15px 15px 135px;
+		padding: 15px 15px 15px 15px;
+		 h3 {
+			margin: .5em 0;
+		 }
     }
 }
 
