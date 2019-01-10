@@ -308,7 +308,8 @@ ul.ui-autocomplete { border: none; background: none; border-radius: 0; margin: 0
 .region-undercontent .block-content a { color: #404040; }
 
 /** Disclaimer "Før du læser" */
-#block-block-33 div.messages { margin: 0 0 2em 0; background: #e2efdf url(../images/alert_icon.png) no-repeat 30px 40px; border-color: #bfcfbb; color: #424242; padding: 15px 15px 15px 135px; }
+#block-block-33 div.messages { margin: 0 0 2em 0; background: #e2efdf; border-color: #bfcfbb; color: #424242; padding: 15px 15px 15px 15px; }
+#block-block-33 div.messages h3 { margin: .5em 0; }
 
 /** Header search */
 .header-search { width: 100%; height: 85px; margin-top: -85px; position: relative; -webkit-transition: margin .15s ease-in-out; -moz-transition: margin .15s ease-in-out; -o-transition: margin .15s ease-in-out; transition: margin .15s ease-in-out; }
