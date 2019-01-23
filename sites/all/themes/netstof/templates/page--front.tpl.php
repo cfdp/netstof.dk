@@ -244,16 +244,6 @@
 <?php if ($page['footer']): ?>
 
 <div id="footer-container">
-  <div id="cfdp-website-links">
-    <div class="cfdp-website-link-items">
-      <h2 class="block-title">CfDP drifter og udvikler følgende ungerådgivninger</h2>
-      <div class="cfdp-website-link-item first"><a href="https://cyberhus.dk"><img src="/sites/all/themes/netstof/images/cyberhus-dark.png" alt="cyberhus" /></a></div>
-      <div class="cfdp-website-link-item middle"><a href="https://netstof.dk"><img src="/sites/all/themes/netstof/images/netstof-dark.png" alt="netstof" /></a></div>
-      <div class="cfdp-website-link-item middle"><a href="https://mitassist.dk/"><img src="/sites/all/themes/netstof/images/mitassist-dark.png" alt="mitassist" /></a></div>
-      <div class="cfdp-website-link-item last"><a href="https://gruppechat.dk"><img src="/sites/all/themes/netstof/images/gruppechat-dark.png" alt="gruppechat" /></a></div>
-    </div>
-  </div>
-
 	<div id="footer-top" class="container">
 	  <?php print render($page['footer_top']); ?>
 	</div>
@@ -267,7 +257,15 @@
 	</div>
 
 </div>
-
+<div id="cfdp-website-links">
+    <div class="cfdp-website-link-items">
+      <h2 class="block-title">CfDP drifter og udvikler følgende ungerådgivninger</h2>
+      <div class="cfdp-website-link-item first"><a href="https://cyberhus.dk"><img src="/sites/all/themes/netstof/images/cyberhus-dark.png" alt="cyberhus" /></a></div>
+      <div class="cfdp-website-link-item middle"><a href="https://netstof.dk"><img src="/sites/all/themes/netstof/images/netstof-dark.png" alt="netstof" /></a></div>
+      <div class="cfdp-website-link-item middle"><a href="https://mitassist.dk/"><img src="/sites/all/themes/netstof/images/mitassist-dark.png" alt="mitassist" /></a></div>
+      <div class="cfdp-website-link-item last"><a href="https://gruppechat.dk"><img src="/sites/all/themes/netstof/images/gruppechat-dark.png" alt="gruppechat" /></a></div>
+    </div>
+  </div>
 <div id="footer-white">
 	<div id="footer-btm" class="container">
 	  <?php print render($page['footer_btm']); ?>

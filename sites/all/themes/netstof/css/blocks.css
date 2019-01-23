@@ -334,13 +334,11 @@ ul.ui-autocomplete { border: none; background: none; border-radius: 0; margin: 0
 .search-mobile #search-block-form .container-inline .form-actions input[type=submit] { border: none; background: #ffad00; text-transform: uppercase; color: #FFFFFF; width: 90px; height: 52px; font-family: "Cabin", sans-serif; font-size: 14px; }
 
 /*Footer content - Links to other cfdp websites */
-#cfdp-website-links { text-align: center; margin-top: -30px; margin-bottom: 30px; padding-top: 30px; padding-bottom: 30px; background-color: #f1f1f1; width: 100%; }
+#cfdp-website-links { text-align: center; padding-top: 30px; padding-bottom: 30px; background-color: #f1f1f1; width: 100%; }
 #cfdp-website-links h2 { color: #4e4e4e; padding-bottom: 30px; }
 #cfdp-website-links .cfdp-website-link-items { background-color: #f1f1f1; width: 928px; margin: auto; text-align: center; }
 #cfdp-website-links .cfdp-website-link-items .cfdp-website-link-item { background-color: #f1f1f1; width: 24%; height: 42px; display: inline-block; }
 #cfdp-website-links .cfdp-website-link-items .cfdp-website-link-item img { width: 150px; }
-
-#footer-container { padding-top: 0px; }
 
 @media only screen and (max-width: 670px) { #footer-container { padding-top: 0px !important; padding-left: 0px !important; padding-right: 0px !important; text-align: center; }
   .region-footer { padding-left: 13px; padding-right: 13px; } }

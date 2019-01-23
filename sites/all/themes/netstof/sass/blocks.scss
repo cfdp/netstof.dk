@@ -1165,8 +1165,8 @@ ul.ui-autocomplete {
 /*Footer content - Links to other cfdp websites */
 #cfdp-website-links{
   text-align: center;
-  margin-top:-30px;
-  margin-bottom:30px;
+  //margin-top:-30px;
+  //margin-bottom:30px;
   padding-top:30px;
   padding-bottom:30px;
   background-color: #f1f1f1;
@@ -1192,9 +1192,6 @@ ul.ui-autocomplete {
   }
 }
 
-#footer-container{
-	padding-top:0px;
-}
 @media only screen and (max-width: 670px){
 	#footer-container {
 		padding-top: 0px !important;
