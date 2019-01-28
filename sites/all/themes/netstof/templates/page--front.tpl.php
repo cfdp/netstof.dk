@@ -259,7 +259,7 @@
 </div>
 <div id="cfdp-website-links">
     <div class="cfdp-website-link-items">
-      <h2 class="block-title">CfDP drifter og udvikler følgende ungerådgivninger</h2>
+      <h2 class="block-title">Kender du vores andre rådgivninger?</h2>
       <div class="cfdp-website-link-item first"><a href="https://cyberhus.dk"><img src="/sites/all/themes/netstof/images/cyberhus-dark.png" alt="cyberhus" /></a></div>
       <div class="cfdp-website-link-item middle"><a href="https://netstof.dk"><img src="/sites/all/themes/netstof/images/netstof-dark.png" alt="netstof" /></a></div>
       <div class="cfdp-website-link-item middle"><a href="https://mitassist.dk/"><img src="/sites/all/themes/netstof/images/mitassist-dark.png" alt="mitassist" /></a></div>
