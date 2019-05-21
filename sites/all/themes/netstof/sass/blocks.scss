@@ -234,7 +234,7 @@
         }
         .views-row {
             float: left;
-            width: calc((100% - (46px*4)) / 4); 
+            width: calc((100% - (46px*4)) / 4);
             height: 270px;
             color: #404040;
             padding: 23px;
@@ -243,7 +243,7 @@
             &:nth-child(3), &:nth-child(5){
                 background: #f6f5f5;
             }
-            
+
             .views-field-type {
                 margin-bottom: 15px;
                 .forum {
@@ -266,7 +266,7 @@
                     font-size: 24px;
                     line-height: 1.2em;
                     color: #404040;
-                    font-weight: bold;    
+                    font-weight: bold;
                 }
             }
             .views-field-body {
@@ -283,17 +283,17 @@
                     height: 57px; width: 54px;
                     position: absolute;
                     top: 0; right: 0;
-                    display: none;    
+                    display: none;
                 }
             }
             &:hover{
                 .views-field-nothing {
                     .plus-link{
-                        display: block;    
+                        display: block;
                     }
-                }    
+                }
             }
-        }    
+        }
     }
     .item-list{
         position: relative;
@@ -310,7 +310,7 @@
                     color: #FFF;
                     background: #424242;
                     padding: 1px 8px;
-                    text-decoration: none;    
+                    text-decoration: none;
                 }
                 &.pager-current{
                     margin: 0 8px;
@@ -329,7 +329,7 @@
     display: block;
 }
 
-		
+
 /**
  * PÅRØRENDE VIEW
  */
@@ -356,7 +356,7 @@
             margin-top: 4em;
             .views-row {
                 float: left;
-                width: calc((100% - (46px*2)) / 2); 
+                width: calc((100% - (46px*2)) / 2);
                 height: 270px;
                 color: #404040;
                 padding: 23px;
@@ -388,7 +388,7 @@
                         font-size: 24px;
                         line-height: 1.2em;
                         color: #404040;
-                        font-weight: bold;    
+                        font-weight: bold;
                     }
                 }
                 .views-field-body {
@@ -405,17 +405,17 @@
                         height: 57px; width: 54px;
                         position: absolute;
                         top: 0; right: 0;
-                        display: none;    
+                        display: none;
                     }
                 }
                 &:hover{
                     .views-field-nothing {
                         .plus-link{
-                            display: block;    
+                            display: block;
                         }
-                    }    
+                    }
                 }
-            }    
+            }
         }
         .item-list{
             position: absolute;
@@ -431,7 +431,7 @@
                         color: #FFF;
                         background: #424242;
                         padding: 1px 8px;
-                        text-decoration: none;    
+                        text-decoration: none;
                     }
                     &.pager-current{
                         margin: 0 8px;
@@ -443,7 +443,7 @@
     }
 }
 
-	
+
 
 
 /**
@@ -452,7 +452,7 @@
 .region-sidebar-first {
 
   .block {
-    margin-bottom: 2.5em;  
+    margin-bottom: 2.5em;
     .block-content {
       .not-front & {
         font-size: $normal-font-size;
@@ -495,15 +495,15 @@
       float: left;
       clear: both;
     }
-    
+
     .counselor {
       width: 70px;
       margin-right: 10px;
     }
-    
+
     .contact-info {
     }
- 
+
     .municipality-img {
       display: inline-block;
       max-width: 120px;
@@ -833,6 +833,8 @@ ul.right-side-list {
 /**
  * FOOTER
  */
+
+
 .region-footer {
 
 }
@@ -1063,7 +1065,7 @@ ul.ui-autocomplete {
             box-shadow: none;
             color: #fff;
             font-size: 1.7em;
-        }    
+        }
     }
     .form-actions{
         position: absolute;
@@ -1101,7 +1103,7 @@ ul.ui-autocomplete {
         }
     }
     &.open{
-        margin-top: 0;    
+        margin-top: 0;
     }
 }
 
@@ -1115,7 +1117,7 @@ ul.ui-autocomplete {
                 input[type=text]{
                     height: 30px;
                     width: 100%;
-                }    
+                }
             }
             input[type=submit]{
                 float: left;
@@ -1141,7 +1143,7 @@ ul.ui-autocomplete {
                     padding: 0 6em 0 1em;
                     height: 50px;
                     width: calc(100% - 7em);
-                }     
+                }
             }
             .form-actions{
                 height: 52px;
@@ -1154,9 +1156,72 @@ ul.ui-autocomplete {
                     height: 52px;
                     font-family: "Cabin", sans-serif;
                     font-size: 14px;
-                }    
+                }
             }
         }
     }
 }
 
+/*Footer content - Links to other cfdp websites */
+#cfdp-website-links{
+  text-align: center;
+  //margin-top:-30px;
+  //margin-bottom:30px;
+  padding-top:30px;
+  padding-bottom:30px;
+  background-color: #f1f1f1;
+  width:100%;
+  h2{
+	color:#4e4e4e;
+    padding-bottom:30px;
+  }
+  .cfdp-website-link-items{
+	background-color: #f1f1f1;
+    width:928px;
+	margin:auto;
+    text-align: center;
+    .cfdp-website-link-item{
+	  background-color: #f1f1f1;
+      width:24%;
+      height:42px;
+      display: inline-block;
+      img{
+        width:150px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 670px){
+	#footer-container {
+		padding-top: 0px !important;
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+		text-align: center;
+	}
+	.region-footer{
+		padding-left:13px;
+		padding-right:13px;
+	}
+}
+
+@media (max-width: 943px) {
+  #cfdp-website-links{
+	  width:100%;
+    .cfdp-website-link-items{
+      width:100%;
+      h2{
+        padding-bottom:30px;
+      }
+      .cfdp-website-link-item{
+        text-align: center;
+        clear:both;
+        width:100%;
+        padding-bottom:20px;
+	  }
+	  .cfdp-website-link-item.last{
+		  padding-bottom:0px;
+	  }
+    }
+  }
+}
