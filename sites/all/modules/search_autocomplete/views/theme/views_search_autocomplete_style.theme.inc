@@ -68,7 +68,7 @@ function template_preprocess_views_search_autocomplete_style(&$vars) {
     /* ----------------
      * Build the value...
      * ----------------  */
-    $object['value'] = trim($row[$style_options['input_label']]->content);
+    $object['value'] = filter_xss(htmlspecialchars_decode(trim($row[$style_options['input_label']]->content, ENT_QUOTES)));
 
     /* ----------------
      * Build the array of output fields...
@@ -77,7 +77,7 @@ function template_preprocess_views_search_autocomplete_style(&$vars) {
     foreach ($style_options['output_fields'] as $field_name) {
       // Add the field if the value is not null.
       if (array_key_exists($field_name, $row) && $row[$field_name] && $row[$field_name]->content) {
-        $object['fields'][$field_name] = htmlspecialchars_decode(trim($row[$field_name]->label . ' ' . $row[$field_name]->content), ENT_QUOTES);
+        $object['fields'][$field_name] = filter_xss(htmlspecialchars_decode(trim($row[$field_name]->label . ' ' . $row[$field_name]->content), ENT_QUOTES), array('a', 'em', 'strong', 'cite', 'blockquote', 'code', 'ul', 'ol', 'li', 'dl', 'dt', 'dd', 'img'));
       }
     }
 
@@ -118,22 +118,19 @@ function template_preprocess_views_search_autocomplete_style(&$vars) {
   * Add $no_results and $all_results if needed.
   * ----------------  */
   if (!empty($view->autocompletion_data)) {
-    str_replace('[search-phrase]', $view->autocompletion_data['user_input'], $view->autocompletion_data['no_results']);
-
     // Check case between $no_results and $all_results
     if (empty($vars["rows"])) {
-      // No results case
-      $no_result_json = str_replace('[search-phrase]', $view->autocompletion_data['user_input'], $view->autocompletion_data['no_results']);
-      $suggestion = json_decode($no_result_json);
-      $group_id = 'no_results';
+      // No results case.
+      $no_results = str_replace('[search-phrase]', $view->autocompletion_data['user_input'], $view->autocompletion_data['no_results']);
+      $suggestion = json_decode($no_results);
     }
     else {
-      // All results case
-      $all_results_json = str_replace('[search-phrase]', $view->autocompletion_data['user_input'], $view->autocompletion_data['all_results']);
-      $suggestion = json_decode($all_results_json);
+      // All results case.
+      $no_results = str_replace('[search-phrase]', $view->autocompletion_data['user_input'], $view->autocompletion_data['all_results']);
+      $suggestion = json_decode($no_results);
     }
     if (!empty($suggestion->label)) {
-      $suggestion->fields['label'] = $suggestion->label;
+      $suggestion->fields['label'] = html_entity_decode(stripslashes(str_replace('[search-phrase]', $view->autocompletion_data['user_input'], $suggestion->label)));
     }
     $vars["rows"][] = $suggestion;
   }

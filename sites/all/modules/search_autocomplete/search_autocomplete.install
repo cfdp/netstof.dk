@@ -368,7 +368,7 @@ function search_autocomplete_update_7407(&$sandbox) {
  */
 function search_autocomplete_update_7408(&$sandbox) {
 
-  if (!db_field_exists('search_autocomplete_forms', 'translite')) {
+  if (db_field_exists('search_autocomplete_forms', 'translite')) {
     $translite = db_select('search_autocomplete_forms', 'sa')
       ->fields('sa', array('translite'))
       ->execute()
