@@ -13,6 +13,9 @@
  * worked. Otherwise, it returns NULL.
  *
  * The user string so far
+ *
+ * @param string $user_input
+ *   The input data
  */
 function search_autocomplete_views_autocomplete($user_input = '') {
 
@@ -46,8 +49,6 @@ function search_autocomplete_views_autocomplete($user_input = '') {
  *
  * @param string $fid
  *   Description of a parameter for this page.
- * @param string $user_input
- *   The data
  *
  * @return NULL
  *   Never returns; calls exit().
@@ -56,7 +57,8 @@ function search_autocomplete_views_autocomplete($user_input = '') {
  */
 function search_autocomplete_autocomplete($fid) {
 
-  $user_input = filter_xss($_GET['term']);
+  $user_input = isset($_GET['term']) ? $_GET['term']: '';
+  $user_input = filter_xss($user_input);
 
   $result = db_select('search_autocomplete_forms', 'f')
   ->fields('f', array('data_view', 'no_results', 'all_results'))
@@ -74,7 +76,7 @@ function search_autocomplete_autocomplete($fid) {
   }
 
   // Add our custom data in the view for rendering.
-  $view->autocompletion_data['user_input'] = $user_input;
+  $view->autocompletion_data['user_input'] = addslashes($user_input);
   $view->autocompletion_data['no_results'] = $result['no_results'];
   $view->autocompletion_data['all_results'] = $result['all_results'];
 

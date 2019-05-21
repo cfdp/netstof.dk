@@ -14,14 +14,15 @@ include_once('search_autocomplete.view_autocomplete.inc');
 include_once('search_autocomplete.features.inc');
 
 /**
- * Implements hook_init().
+ * Implements hook_page_build().
  *
  * Add autocomplete.js on every page.
  */
 function search_autocomplete_page_build() {
 
-  // Checkout if user have authorization to access the autocompleted form.
+  // Checkout if user have authorization use admin tools.
   if (user_access('administer Search Autocomplete') && variable_get('sa_admin_helper', TRUE)) {
+    // Add the admin tools.
     drupal_add_js(drupal_get_path('module', 'search_autocomplete') . '/js/search_autocomplete.admin.js');
     drupal_add_css(drupal_get_path('module', 'search_autocomplete') . '/css/search_autocomplete.admin.css');
   }
@@ -41,13 +42,13 @@ function search_autocomplete_page_build() {
         $form_id = 'form' . $match->fid;
         $input_data  = explode("\n", $match->data_static);
         $data_static = array();
-        for ($i=0; $i < count($input_data); $i++) {
+        for ($i = 0; $i < count($input_data); $i++) {
           $cut = strripos($input_data[$i], '=>');
           $object = array();
           if ($cut > 0) {
             $object['label']  = trim(substr($input_data[$i], 0, $cut));
             $object['value']  = trim(substr($input_data[$i], 0, $cut));
-            $object['link']   = trim(substr($input_data[$i], $cut+2, strlen($input_data[$i])));
+            $object['link']   = trim(substr($input_data[$i], $cut + 2, strlen($input_data[$i])));
           }
           else {
             $object['label']  = trim($input_data[$i]);
@@ -70,11 +71,11 @@ function search_autocomplete_page_build() {
           }
         }
 
-        // Translate no_results label
+        // Translate no_results label.
         $no_results = json_decode($match->no_results);
         $no_results->label = t($no_results->label);
 
-        // Translate all_results label
+        // Translate all_results label.
         $all_results = json_decode($match->all_results);
         $all_results->label = t($all_results->label);
 
@@ -133,23 +134,6 @@ function search_autocomplete_image_default_styles() {
   );
 
   return $styles;
-}
-
-/**
- * HELP FUNCTION: replace placeholders in the input string.
- *
- * @param string $input
- *   the string to be replaced
- * @param array $args
- *   the array of placeholders and values
- */
-function search_autocomplete_replaceArguments(&$input, &$args) {
-  $modified = FALSE;
-  foreach ($args as $key => $data) {
-    $input = preg_replace('#' . $key . '#', $data, $input);
-    $modified = TRUE;
-  }
-  return $modified;
 }
 
 /**
