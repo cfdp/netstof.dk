@@ -636,7 +636,7 @@ function image_poll_choice_form($form, &$form_state, $values, $previous) {
       }
     }
   } else {
-    $form['choice_' . (strings)$count] = array(
+    $form['choice_' . (string)$count] = array(
       '#type' => $input_type,
       '#title' => '',
       '#options' => drupal_map_assoc($options),
