@@ -1540,7 +1540,7 @@ function image_poll_form_image_poll_choice_form_alter(&$form, &$form_state, $for
 
   // Alter form
   foreach (element_children($form) as $key) {
-    if ($form[$key]['#type'] == 'radios' || $form[$key]['#type'] == 'checkboxes') {
+    if (isset($form[$key]['#type']) && ($form[$key]['#type'] == 'radios' || $form[$key]['#type'] == 'checkboxes')) {
       foreach ($form[$key]['#options'] as $option_value => &$option_text) {
         $form['images'][$option_value]['#markup'] = theme('image_poll_image', array('fid' => $images[$option_value], 'choice_text' => $option_text));
       }
