@@ -238,6 +238,10 @@
         left: -285px;
 		text-align: right;
 	}
+
+	.region-header ul.menu li.menu-mlid-2030 > ul.menu {
+		padding-left: 260px;
+	}
 		.region-header ul.menu > li  > ul > li {
 			list-style: none;
 			list-style-image: none;
