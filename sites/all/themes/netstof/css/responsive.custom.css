@@ -113,7 +113,7 @@ FORSIDE INDGANGE
 @media only screen and (min-width: 955px) { #breadcrumbs { display: none; }
   #content-column > .content-inner { margin-right: 294px; }
   #edit-type-2-wrapper { display: none; } }
-@media only screen and (max-width: 550px) { /*
+@media only screen and (max-width: 550px) {     /*
 FORSIDE INDGANGE
 */
   #entries-front #hurtige-genveje { width: 100%; }
