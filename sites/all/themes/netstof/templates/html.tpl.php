@@ -61,9 +61,9 @@
 <?php print $head; ?>
 <title><?php print $head_title; ?></title>
 <?php print $styles; ?>
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="4701a8cf-157e-4aa1-899c-83cff9f01318" type="text/javascript" data-blockingmode="auto"></script>
 <?php print $scripts; ?>
 <?php print $polyfills; ?>
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="4701a8cf-157e-4aa1-899c-83cff9f01318" type="text/javascript" async></script>
 </head>
 <body class="<?php print $classes; ?>"<?php print $attributes; ?>>
 
