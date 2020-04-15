@@ -1,6 +1,7 @@
 .page-taxonomy-term { /* ============================================================================= Tabs (Select age field on the featured municipality pages) ========================================================================== */ }
 .page-taxonomy-term #main-content { background: white url("../images/content-btm.png") no-repeat bottom center; padding: 25px 23px; overflow: hidden; }
 .page-taxonomy-term #main-content a, .page-taxonomy-term #main-content .view-empty a { color: #1e6381; }
+.page-taxonomy-term #main-content .field-name-field-desc-block-heading { font-weight: bold; margin-bottom: 1em; }
 .page-taxonomy-term #main-content-header { /*  @todo: apply a method to fit text to available width e.g. fittext.js plugin */ }
 .page-taxonomy-term #main-content-header #page-title { background: white url("../images/citysign.png") no-repeat bottom center; border: 3px solid #000; -moz-border-radius: 15px; -webkit-border-radius: 15px; border-radius: 15px; height: 150px; text-align: center; color: #000; font-size: 60px; line-height: 100%; }
 .page-taxonomy-term .views-exposed-form { border-bottom: 1px solid; border-bottom-color: #ccc; border-collapse: collapse; height: auto; line-height: normal; list-style: none; white-space: nowrap; margin: 20px 0; padding: 0 0 0 5px; }
