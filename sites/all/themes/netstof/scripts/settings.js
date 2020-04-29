@@ -94,13 +94,12 @@ $('.mobile-menu-overlay').on('click', function(event) {
   /**
    * VIEWS GRID - FILTER
    */
-  $(".views-fluidgrid-item").live({
-    mouseenter: function () {
-      $(".plus-link", this).stop(true, true).fadeIn(100);
-    },
-    mouseleave: function () {
-      $(".plus-link", this).stop(true, true).fadeOut(100);
-    }
+  $("body").on(".views-fluidgrid-item", 'mouseenter', function () {
+    $(".plus-link", this).stop(true, true).fadeIn(100);
+  });
+
+  $("body").on(".views-fluidgrid-item",'mouseleave', function () {
+    $(".plus-link", this).stop(true, true).fadeOut(100);
   });
 
   /**
