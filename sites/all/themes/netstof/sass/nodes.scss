@@ -131,6 +131,11 @@ h2,h3,h4,h5,h6 {
 			.node-type-questions-and-answers .answer .field-name-field-tags ul li a{display:inline;}
 			.node-type-questions-and-answers .answer .user-picture img{margin:0;padding:0;}
 
+.node-type-slide {
+	.field-name-field-slider-image img{
+		width: 100%;
+	}
+}
 /**
  * Node Type: FAQ
  */
