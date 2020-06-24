@@ -124,6 +124,16 @@ function netstof_uf_user_has_role($role, $user = NULL) {
   return FALSE;
 }
 
+function netstof_uf_get_node_type() {
+  $type = FALSE;
+  if (arg(0) == 'node' && is_numeric(arg(1))) {
+    $nid = arg(1);
+    $node = node_load($nid);
+    $type = $node->type;
+  }
+  return $type;
+}
+
 /**
  * Check if the current time is within opening hours
  * @return
