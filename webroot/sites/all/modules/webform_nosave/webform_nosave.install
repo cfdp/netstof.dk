@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function webform_nosave_schema() {
+  $schema['webform_nosave'] = array(
+    'description' => t('Webform NoSave data'),
+    'fields' => array(
+      'nid' => array('description' => t('The node id'), 'type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE),
+    ),
+    'primary key' => array('nid'),
+  );
+
+  return $schema;
+}

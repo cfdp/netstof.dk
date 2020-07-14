@@ -1,0 +1,68 @@
+<?php
+
+/**
+ * @file
+ *   Disable the storage of Webforms in database
+ *
+ * @author Sven Culley <contact@sense-design.de>
+ */
+
+/**
+ * Implements hook_node_delete().
+ */
+function webform_nosave_node_delete($node) {
+  db_delete('webform_nosave')->condition('nid', $node->nid)->execute();
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function webform_nosave_form_alter(&$form, &$form_state, $form_id) {
+  switch ($form_id) {
+    case 'webform_configure_form':
+      $nosave = db_query("SELECT COUNT(nid) FROM {webform_nosave} WHERE nid = :nid", array(':nid' => $form['nid']['#value']))->fetchField();
+      $form['#submit'][] = 'webform_nosave_configure_save';
+      $form['advanced']['nosave'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Do not save webform submissions to database'),
+        '#description' => t('Check here, if you do not want to save submissions to the database'),
+        '#default_value' => $nosave,
+      );
+      break;
+
+    case strstr($form_id, 'webform_client_form'):
+      $form['#submit'][] = 'webform_nosave_delete_result';
+      break;
+  }
+}
+
+/**
+ * Save webform configuration
+ */
+function webform_nosave_configure_save($form, &$form_state) {
+  $nosave = $form_state['values']['nosave'];
+  $nid = $form_state['values']['nid'];
+
+  // Delete entry from db
+  db_delete('webform_nosave')->condition('nid', $nid)->execute();
+
+  // Add if checked
+  if ($nosave) {
+    db_insert('webform_nosave')->fields(array('nid' => $nid))->execute();
+  }
+}
+
+/**
+ * Delete result from db
+ */
+function webform_nosave_delete_result($form, &$form_state) {
+  $sid = $form_state['values']['details']['sid'];
+  $new = $form_state['values']['details']['is_new'];
+  $nid = $form_state['values']['details']['nid'];
+
+  $nosave = db_query("SELECT COUNT(nid) FROM {webform_nosave} WHERE nid = :nid", array(':nid' => $nid))->fetchField();
+  if ($sid && $new && $nosave) {
+    db_delete('webform_submissions')->condition('sid', $sid)->execute();
+    db_delete('webform_submitted_data')->condition('sid', $sid)->execute();
+  }
+}

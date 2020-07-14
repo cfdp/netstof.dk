@@ -1,0 +1,6 @@
+name = Webform NoSave
+description = Disable the storage of Webforms in database
+core = 7.x
+version = 7.x-3.x-dev
+package = Webform
+dependencies[] = webform
