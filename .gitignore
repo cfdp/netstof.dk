@@ -32,3 +32,4 @@ sites/default/files/.htaccess
 
 #ignore docker-compose.yml
 docker-compose.yml
+/deployer/config.yml
