@@ -246,7 +246,7 @@ $drupal_hash_salt = 'vXC4PdeFyX1dlNxRHgnFdObjZwVW4u6YvkNZki9xBJA';
  * It is not allowed to have a trailing slash; Drupal will add it
  * for you.
  */
-$base_url = 'https://netstof.dk';  // NO trailing slash!
+# $base_url = 'http://www.example.com';  // NO trailing slash!
 
 /**
  * PHP settings:
