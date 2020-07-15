@@ -1,25 +1,27 @@
 # Ignore configuration files that may contain sensitive information.
-sites/*/settings*.php
-.project
-stats
+webroot/sites/*/settings.*.php
+
+# Ignore paths that contain user-generated content.
+webroot/sites/*/files
+webroot/sites/*/private
+
+# Deployment configuration:
+/deployer/config.yml
 
 # Ignore paths that contain user-generated content and devel stuff.
-sites/*/files
-sites/*/private
-sites/all/modules/git_deploy
-sites/all/modules/devel
-sites/all/modules/maillog
-sites/all/modules/reroute_email
-sites/all/modules/masquerade
-sites/all/modules/stage_file_proxy/
-sites/all/modules/hacked/
-sites/all/modules/linkchecker/
-sites/all/modules/security_review/
-sites/all/modules/diff
+webroot/sites/all/modules/git_deploy
+webroot/sites/all/modules/devel
+webroot/sites/all/modules/maillog
+webroot/sites/all/modules/reroute_email
+webroot/sites/all/modules/masquerade
+webroot/sites/all/modules/stage_file_proxy/
+webroot/sites/all/modules/hacked/
+webroot/sites/all/modules/linkchecker/
+webroot/sites/all/modules/security_review/
+webroot/sites/all/modules/diff
 
 #Ignore .htaccess
-.htaccess
-sites/default/files/.htaccess
+webroot/sites/default/files/.htaccess
 
 #Ignore mysql dumps
 *.sql.gz
