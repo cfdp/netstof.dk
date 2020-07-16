@@ -271,3 +271,20 @@ function netstof_uf_views_api() {
     'path' => drupal_get_path('module', 'netstof_uf') . '/views',
   );
 }
+
+/**
+ * Implements hook_mail_alter().
+ */
+function netstof_uf_mail_alter(&$message)
+{
+  if(variable_get('enable_mailcatcher_hack', false)) {
+    if(is_array($message['body'])) {
+      foreach ($message['body'] as $key => $value) {
+        $message['body'][$key] = base64_encode($message['body'][$key]);
+      }
+    } else {
+      $message['body'] = base64_encode($message['body']);
+    }
+    $message['headers']['Content-Transfer-Encoding'] = 'base64';
+  }
+}
