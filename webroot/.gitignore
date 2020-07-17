@@ -9,7 +9,6 @@ webroot/sites/*/private
 /deployer/config.yml
 
 # Ignore paths that contain user-generated content and devel stuff.
-
 webroot/sites/all/modules/git_deploy
 webroot/sites/all/modules/devel
 webroot/sites/all/modules/maillog
@@ -22,7 +21,6 @@ webroot/sites/all/modules/security_review/
 webroot/sites/all/modules/diff
 
 #Ignore .htaccess
-webroot/.htaccess
 webroot/sites/default/files/.htaccess
 
 #Ignore mysql dumps
@@ -33,3 +31,6 @@ webroot/sites/default/files/.htaccess
 .ruby-version
 .sass-cache
 *.sublime-workspace
+
+#ignore docker-compose.yml
+docker-compose.yml

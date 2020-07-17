@@ -1,0 +1,290 @@
+<?php
+
+/**
+ * Implements hook_menu()
+ *
+ * @ingroup hooks
+ */
+function netstof_uf_menu() {
+  $items = array();
+  $items['netstof_uf/sms_receiver'] = array(
+    'title' => 'Netstof Utility Functions SMS message receiver',
+    'page callback' => 'netstof_uf_receivesms',
+    'page arguments' => array(1),
+    'access callback' => TRUE,
+  );
+  $items['netstof_uf/sms_sender'] = array(
+    'title' => 'Netstof Utility Functions SMS message sender',
+    'page callback' => 'netstof_uf_sendsms',
+    'page arguments' => array(1),
+    'access callback' => TRUE,
+  );
+  return $items;
+}
+
+/*
+ * Implementation of hook_form_alter()
+ */
+function netstof_uf_form_alter(&$form, &$form_state, $form_id){
+  switch ($form_id) {
+  case 'questions_and_answers_node_form':
+    $form['#after_build'][] = 'netstof_uf_node_form_after_build';
+    break;
+  }
+}
+
+function netstof_uf_preprocess_html(&$variables) {
+/*  $current_path = current_path();
+  $path_array = explode('/', $current_path);
+  dpm($path_array);
+  if ( ( lenght($path_array) >= 3 ) && ( $path_array[0] == 'taxonomy' ) ) {
+    $term = taxonomy_term_load(arg(2));
+    $variables['classes_array'][] = 'vocabulary-' . strtolower($term->vocabulary_machine_name);
+  }*/
+}
+
+/* Questionnaire function
+ * With this function the scripts needed for a questionnaire
+ * can be added easily
+ */
+function netstof_uf_preprocess_page(&$variables) {
+  $is_active = false;
+  $is_front = drupal_is_front_page();
+  if ($is_active) {
+    drupal_add_css("https://popin.survey-xact.dk/popin/popin.css", 'external');
+    drupal_add_js("https://popin.survey-xact.dk/popin/popin.js", 'external');
+    drupal_add_js("https://popin.survey-xact.dk/dynjs/DTSEEM3L3696/popin.js", 'external');
+    drupal_add_js("https://popin.survey-xact.dk/cookies.js", 'external');
+  }
+}
+
+// afterbuild function - for removing the input text format fields for all users but admins
+function netstof_uf_node_form_after_build($form) {
+  if (netstof_uf_user_has_role('anonymous user')) {
+    /*we limit the number of checkboxes that can be selected via a jQuery script*/
+    drupal_add_js(path_to_theme() . "/scripts/netstof_uf.js");
+  }
+  /*Only admins get to play with the text format*/
+  if (!netstof_uf_user_has_role('administrator')) {
+    $form['body']['und']['0']['format']['guidelines']['#access'] = FALSE;
+    $form['body']['und']['0']['format']['help']['#access'] = FALSE;
+  }
+  return $form;
+}
+
+function netstof_uf_node_update($node) {
+  global $user;
+  //if it is the first time the questions_and_answers node is edited by a counselor, change the author to the current user
+  if (($node->uid == 0) && ($node->type == "questions_and_answers") && netstof_uf_user_has_role('Brevkasseredaktør')) {
+    $node->uid = $user->uid;
+    node_save($node);
+    drupal_set_message(t('Author of Questions and Answers node changed from anonymous to ').$user->name);
+  }
+}
+
+/**
+  * Implements hook_page_build().
+  */
+function netstof_uf_page_build(&$page) {
+  // If user is brevkassered. we might need the jquery UI for showing a modal window
+  if ( netstof_uf_user_has_role('Brevkasseredaktør') ) {
+    drupal_add_library('system', 'ui.dialog');
+  }
+}
+
+/**
+  * Implements hook_page_alter().
+  */
+function netstof_uf_page_alter(&$page) {
+  // If user is brevkassered. we output the html for the modal popup
+  if ( netstof_uf_user_has_role('Brevkasseredaktør') ) {
+    $page['content']['ns-modal-popup'] = array(
+      '#weight' => -10,
+      '#markup' => '<div id="ns-dialog" style="display: none;" title="Husk registreringsskemaet"><p>Kære brevkasserådgiver: Husk at udfylde <a style="color: #0b5a7c; text-decoration: none;" href="https://docs.google.com/a/cyberhus.dk/forms/d/1Zeu7NwMk4nRkbsYpjnyKq7tzzZHRQM2sDyzQEfiiZ74/viewform?formkey=dEVoR2FjeU10WVUzdDVhTFVkdl9WS1E6MA#gid=0" target="_blank">registreringsskemaet.</a></p></div>',
+    );
+  }
+}
+/**
+* Check to see if a user has been assigned a certain role.
+*
+* @param $role
+*   The name of the role you're trying to find.
+* @param $user
+*   The user object for the user you're checking; defaults to the current user.
+* @return
+*   TRUE if the user object has the role, FALSE if it does not.
+*/
+function netstof_uf_user_has_role($role, $user = NULL) {
+  if ($user == NULL) {
+    global $user;
+  }
+  if (is_array($user->roles) && in_array($role, array_values($user->roles))) {
+    return TRUE;
+  }
+  return FALSE;
+}
+
+function netstof_uf_get_node_type() {
+  $type = FALSE;
+  if (arg(0) == 'node' && is_numeric(arg(1))) {
+    $nid = arg(1);
+    $node = node_load($nid);
+    $type = $node->type;
+  }
+  return $type;
+}
+
+/**
+ * Check if the current time is within opening hours
+ * @return
+ *   TRUE if the current time is within opening hours
+ * @todo opening hours should be configurable fields in the administration
+ */
+function netstof_uf_open_to_posts() {
+  $open = true;
+  $closingtime = 22;
+  $openingtime = 9;
+  $timezone = new DateTimeZone( "Europe/Copenhagen" );
+  $date = new DateTime();
+  $date->setTimezone($timezone);
+  $present_hour =  $date->format('H');
+  if($present_hour > ($closingtime -1) || $present_hour < $openingtime ){
+    $open = false;
+  }
+  return $open;
+}
+
+function netstof_uf_test() {
+  $id = variable_get('sms_id', '');
+  drupal_set_message($id);
+}
+
+/**
+* Send SMS message
+* @param $number
+*   The phone number the message should be sent to.
+*/
+function netstof_uf_sendsms($number, $nid){
+  $gateway_url_base = 'https://jclients.azurewebsites.net/sms/sender.aspx';
+  $params = array();
+  global $base_url;
+  $site_path = $base_url . base_path();
+  // Don't try to send SMS if we're on a dev site
+  if ( ($base_url != "http://netstof.dk") && ($base_url != "https://netstof.dk") ) {
+    $status = '<pre>SMS NOT sent - dev mode.</pre>';
+    watchdog('netstof_uf',t($status . ' Base URL: '.  '<pre>'. $base_url .'</pre>'),$params, WATCHDOG_WARNING, $link = NULL);
+    return $status;
+  }
+  $params = array();
+  $user_field = 'id';
+  $user = variable_get('sms_id', '');
+  $params[$user_field]=$user;
+  $number_field = 'sender';
+  $number = '45'.$number;
+  $params[$number_field]=$number;
+  $besked_field = 'message';
+  $besked = "Der er kommet et svar på dit spørgsmål, du kan læse det på ".$site_path."node/".$nid;
+  $besked = drupal_convert_to_utf8($besked, 'utf-8');
+  $params[$besked_field]=$besked;
+  $query_string = http_build_query($params, NULL, '&');
+  $headers = array('Content-Type' => 'application/x-www-form-urlencoded');
+  $http_result = drupal_http_request($gateway_url_base, array('headers' => $headers, 'method' => 'POST', 'data' => $query_string));
+  $status = '<pre>SMS sent</pre>';
+  // Check for HTTP errors
+  if (isset($http_result->error)) {
+    watchdog('netstof_uf',t('http request obj: '.  '<pre>'. print_r($http_result, TRUE) .'</pre>'),$params, WATCHDOG_ERROR, $link = NULL);
+    $status = '<pre>Error: '.$http_result->error.'</pre>';
+  }
+  else {
+    //Don't show the phone number in the log
+    $params[$number_field]=null;
+    watchdog('netstof_uf',t($status),$params, WATCHDOG_INFO, $link = NULL);
+  }
+  return $status;
+}
+
+/**
+* Receive SMS message - inspired by the sms simplegateway module
+*
+* @return
+*   a string reflecting if the SMS was received or not
+*/
+function netstof_uf_receivesms() {
+  //$number_field   = 'sender';
+  $message_field  = 'message';
+  $watchdogmsg = array();
+  $message = "";
+  //$number  = $_REQUEST[$number_field];
+  if (isset($_REQUEST[$message_field])){
+    $message = check_plain($_REQUEST[$message_field]);
+  }
+  if ($message == "") {
+    watchdog('netstof_uf',t('Netstof Utility Functions: SMS message empty.'),$watchdogmsg, WATCHDOG_NOTICE, $link = NULL);
+    $return_this = t("<pre>Netstof Utility Functions: No message received in SMS</pre>");
+    return $return_this;
+  }
+  else {
+    /*we limit the message length to 2000 characters*/
+    $message = wordwrap($message, 2000);
+    $message = explode("\n", $message);
+    $message = $message[0] . '...';
+    $watchdogmsg = array($message);
+    watchdog('netstof_uf',t('Netstof Utility Functions: SMS message received: '.  '<pre>'. print_r($message, TRUE) .'</pre>'),$watchdogmsg, WATCHDOG_NOTICE, $link = NULL);
+    $return_this = t('<pre>SMS message received</pre>');
+    netstof_uf_save_sms($message);
+    return $return_this;
+  }
+}
+
+ /**
+ * Save a sms question in a question and answer node
+ */
+function netstof_uf_save_sms($message) {
+  // Create node object.
+  $node = new StdClass();
+  $node->type = 'questions_and_answers';
+  $node->language = LANGUAGE_NONE;
+  $node->uid = 0;
+  $body_text = $message;
+  node_object_prepare($node);
+  $node->title = "SMS spørgsmål";
+  $node->body[$node->language][0]['value']   = $body_text;
+  $node->body[$node->language][0]['format']  = "filtered_html";
+  $node->field_profile_qna_taxonomy[$node->language][0]['tid'] = "7";
+  $node->field_qna_accept_conditions[$node->language][0]['value']  = "1";
+  $node = node_submit($node);
+  node_save($node);
+}
+
+/**
+ * Implements hook_views_api().
+ *
+ * We are storing some of our views in code
+ */
+function netstof_uf_views_api() {
+  return array(
+    // Indicates the Views API Version:
+    // Views 2 = 2
+    // Views 3 = 3 (Latest)
+    'api' => 3,
+    // This is the path to your views files.
+    'path' => drupal_get_path('module', 'netstof_uf') . '/views',
+  );
+}
+
+/**
+ * Implements hook_mail_alter().
+ */
+function netstof_uf_mail_alter(&$message)
+{
+  if(variable_get('enable_mailcatcher_hack', false)) {
+    if(is_array($message['body'])) {
+      foreach ($message['body'] as $key => $value) {
+        $message['body'][$key] = base64_encode($message['body'][$key]);
+      }
+    } else {
+      $message['body'] = base64_encode($message['body']);
+    }
+    $message['headers']['Content-Transfer-Encoding'] = 'base64';
+  }
+}

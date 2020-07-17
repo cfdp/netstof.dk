@@ -1,0 +1,21 @@
+Index: advanced_forum.module
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- advanced_forum.module	(revision 0c64cb922678faed6119b95b3302552b929d4814)
++++ advanced_forum.module	(date 1594721259751)
+@@ -880,8 +880,11 @@
+     }
+ 
+     if ($allowed) {
+-      $fragment = $node->content['comments']['comment_form']['#id'];
+-
++      if (!isset($node->content)) {
++        $node->content['comments'] = comment_node_page_additions($node);
++      }
++      $fragment = isset($node->content['comments']['comment_form']['#id']) ?
++        $node->content['comments']['comment_form']['#id'] : "comment-form";
+       if (variable_get('comment_form_location_' . $node->type, COMMENT_FORM_SEPARATE_PAGE) == COMMENT_FORM_SEPARATE_PAGE) {
+         // Reply form is on separate page. Grab the href from the node links
+         // so it's automatically corrected for Node Comments if needed.
