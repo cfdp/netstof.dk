@@ -61,9 +61,6 @@
 <?php print $head; ?>
 <title><?php print $head_title; ?></title>
 <?php print $styles; ?>
-<?php if (netstof_uf_get_node_type() != 'slide'): ?>
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="4701a8cf-157e-4aa1-899c-83cff9f01318" type="text/javascript" data-blockingmode="auto"></script>
-<?php endif; ?>
 <?php print $scripts; ?>
 <?php print $polyfills; ?>
 </head>
