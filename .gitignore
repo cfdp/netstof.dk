@@ -28,6 +28,7 @@ webroot/sites/default/files/.htaccess
 #Ignore mysql dumps
 *.sql.gz
 *.sql
+/sql
 
 .DS_Store
 .ruby-version
