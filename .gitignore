@@ -22,6 +22,7 @@ webroot/sites/all/modules/diff
 *.sql
 /sql
 
+.idea
 .DS_Store
 .ruby-version
 .sass-cache
