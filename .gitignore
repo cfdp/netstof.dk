@@ -5,11 +5,7 @@ webroot/sites/*/settings.*.php
 webroot/sites/*/files
 webroot/sites/*/private
 
-# Deployment configuration:
-/deployer/config.yml
-
-# Ignore paths that contain user-generated content and devel stuff.
-
+# Ignore devel stuff.
 webroot/sites/all/modules/git_deploy
 webroot/sites/all/modules/devel
 webroot/sites/all/modules/maillog
@@ -20,10 +16,6 @@ webroot/sites/all/modules/hacked/
 webroot/sites/all/modules/linkchecker/
 webroot/sites/all/modules/security_review/
 webroot/sites/all/modules/diff
-
-#Ignore .htaccess
-webroot/.htaccess
-webroot/sites/default/files/.htaccess
 
 #Ignore mysql dumps
 *.sql.gz
